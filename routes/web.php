@@ -22,6 +22,10 @@ Route::get('/shop',function() {
     return view('shop');
 })->name('shop');
 
+Route::get('/product_details', function() {
+    return view('product');
+})->name('product_details');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
