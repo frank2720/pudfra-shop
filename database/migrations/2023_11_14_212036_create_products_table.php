@@ -18,6 +18,7 @@ return new class extends Migration
             $table->decimal('retail_price');
             $table->longText('description');
             $table->integer('reviews');
+            $table->string('img');
             $table->timestamps();
         });
     }

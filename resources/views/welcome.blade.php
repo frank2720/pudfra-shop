@@ -84,10 +84,10 @@
                 <h1 class="text-2xl font-medium text-gray-800 uppercase mb-6">new products</h1>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
 
-                    @foreach ($products as $product)
+                    @foreach ($recent_products as $product)
                     <div class="bg-white shadow rounded overflow-hidden group">
                         <div class="relative">
-                            <img src="assets/images/products/product7.jpg" alt="product 1" class="w-full">
+                            <img src="{{$product->img}}" alt="product 1" class="w-full">
                             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
                                 <a href="#"
                                     class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition"
@@ -103,8 +103,9 @@
                         </div>
                         <div class="pt-4 pb-3 px-4">
                             <a href="#">
-                                <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-blue-600 transition">Guyer
-                                    Chair</h4>
+                                <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-blue-600 transition">
+                                    {{$product->name}}
+                                </h4>
                             </a>
                             <div class="flex items-baseline mb-1 space-x-2">
                                 <p class="text-xl text-blue-600 font-semibold">Ksh. {{number_format($product->price)}}</p>
