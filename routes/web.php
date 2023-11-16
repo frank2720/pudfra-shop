@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Product;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,10 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ProductController::class,'recent_products'])->name('welcome');
 Route::get('/shop', [ProductController::class, 'products'])->name('shop');
 
-
-Route::get('/product_details', function() {
-    return view('product');
-})->name('product_details');
+Route::get('/product', function(Request $id) {
+    return view('product_details');
+})->name('product');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

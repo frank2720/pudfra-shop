@@ -8,20 +8,22 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
+  
+    /**
+     * Gets the products from the db and display them in the shopping page
+     */
+
     public function products(): View
     {
-        /**
-         * Get the products
-         */
         $products = DB::table('products')->get();
-        return view('shop',['products'=>$products]);
+        return view('shop', ['products'=>$products]);
     }
 
+    /**
+     * Gets 8 recently added products, and display them in the landing/home page
+     */
     public function recent_products(): View
     {
-        /**
-         * Gets the recent added products details
-         */
          $recent_products = DB::table('products')
                     ->latest()
                     ->limit(8)
