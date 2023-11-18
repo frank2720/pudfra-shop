@@ -3,7 +3,7 @@
 	<!-- component -->
 <style>@import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);</style>
 <div class="w-full max-w-6xl rounded bg-white p-10 mx-auto text-gray-800 relative md:text-left mt-4">
-    <div class="md:flex items-center">
+    <div class="md:flex items-center mb-5">
         <div class="w-full md:w-1/2 px-10 mb-10 md:mb-0">
             <div class="relative">
                 <img src="{{$product->img}}" class="w-full relative z-10" alt="">
