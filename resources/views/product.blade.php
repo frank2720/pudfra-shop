@@ -11,13 +11,13 @@
         </div>
         <div class="w-full md:w-1/2 px-10">
             <div class="mb-10">
-                <h1 class="font-bold uppercase text-2xl mb-5">Mens's Ragged <br>Waterproof Jacket</h1>
-                <p class="text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Eos, voluptatum dolorum! Laborum blanditiis consequatur, voluptates, sint enim fugiat saepe, dolor fugit, magnam explicabo eaque quas id quo porro dolorum facilis... <a href="#" class="opacity-50 text-gray-900 hover:opacity-100 inline-block text-xs leading-none border-b border-gray-900">MORE <i class="mdi mdi-arrow-right"></i></a></p>
+                <h1 class="font-bold uppercase text-2xl mb-5">{{$product->name}}</h1>
+                <p class="text-sm">{{$product->description}}<a href="#" class="opacity-50 text-gray-900 hover:opacity-100 inline-block text-xs leading-none border-b border-gray-900">MORE <i class="mdi mdi-arrow-right"></i></a></p>
             </div>
             <div>
                 <div class="inline-block align-bottom mr-5">
-                    <span class="text-2xl leading-none align-baseline">Ksh.</span>
-                    <span class="font-bold text-5xl leading-none align-baseline">{{$product->price}}</span>
+                    <span class="text-2xl leading-none align-baseline"></span>
+                    <span class="font-bold text-5xl leading-none align-baseline">Ksh. {{$product->price}}</span>
                     
                 </div>
                 <div class="inline-block align-bottom">
