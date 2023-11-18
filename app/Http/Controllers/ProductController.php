@@ -22,9 +22,9 @@ class ProductController extends Controller
     /**
      * Gets product details from the db
      */
-    public function product(Request $product, string $id): View
+    public function product(Request $request): View
     {
-        $product = DB::table('products')->find('$id');
+        $product = DB::table('products')->find($request->id);
         return view('product', ['product'=>$product]);
     }
 

@@ -6,8 +6,7 @@
     <div class="md:flex items-center">
         <div class="w-full md:w-1/2 px-10 mb-10 md:mb-0">
             <div class="relative">
-                <img src="https://pngimg.com/uploads/raincoat/raincoat_PNG53.png" class="w-full relative z-10" alt="">
-                <div class="border-4 border-yellow-200 absolute top-10 bottom-10 left-10 right-10 z-0"></div>
+                <img src="{{$product->img}}" class="w-full relative z-10" alt="">
             </div>
         </div>
         <div class="w-full md:w-1/2 px-10">
@@ -19,10 +18,10 @@
                 <div class="inline-block align-bottom mr-5">
                     <span class="text-2xl leading-none align-baseline">Ksh.</span>
                     <span class="font-bold text-5xl leading-none align-baseline">{{$product->price}}</span>
-                    <span class="text-2xl leading-none align-baseline">.99</span>
+                    
                 </div>
                 <div class="inline-block align-bottom">
-                    <button class="bg-yellow-300 opacity-75 hover:opacity-100 text-yellow-900 hover:text-gray-900 rounded-full px-10 py-2 font-semibold"><i class="mdi mdi-cart -ml-2 mr-2"></i> BUY NOW</button>
+                    <button class="bg-blue-600 opacity-75 hover:opacity-100 text-white hover:text-white rounded-full px-10 py-2 font-semibold"><i class="mdi mdi-cart -ml-2 mr-2"></i> BUY NOW</button>
                 </div>
             </div>
         </div>
