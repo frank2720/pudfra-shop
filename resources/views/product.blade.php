@@ -17,8 +17,8 @@
             </div>
             <div>
                 <div class="inline-block align-bottom mr-5">
-                    <span class="text-2xl leading-none align-baseline">$</span>
-                    <span class="font-bold text-5xl leading-none align-baseline">59</span>
+                    <span class="text-2xl leading-none align-baseline">Ksh.</span>
+                    <span class="font-bold text-5xl leading-none align-baseline">{{$product->price}}</span>
                     <span class="text-2xl leading-none align-baseline">.99</span>
                 </div>
                 <div class="inline-block align-bottom">

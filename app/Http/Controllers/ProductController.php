@@ -20,6 +20,15 @@ class ProductController extends Controller
     }
 
     /**
+     * Gets product details from the db
+     */
+    public function product(Request $product, string $id): View
+    {
+        $product = DB::table('products')->find('$id');
+        return view('product', ['product'=>$product]);
+    }
+
+    /**
      * Gets 8 recently added products, and display them in the landing/home page
      */
     public function recent_products(): View

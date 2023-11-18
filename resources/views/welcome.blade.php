@@ -89,7 +89,7 @@
                         <div class="relative">
                             <img src="{{$product->img}}" alt="product 1" class="w-full">
                             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                <a href="{{route('product')}}?id={{$product->id}}"
+                                <a href="/product/{{$product->id}}"
                                     class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition"
                                     title="view product">
                                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -102,7 +102,7 @@
                             </div>
                         </div>
                         <div class="pt-4 pb-3 px-4">
-                            <a href="#">
+                            <a href="/product/{{$product->id}}">
                                 <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-blue-600 transition">
                                     {{$product->name}}
                                 </h4>

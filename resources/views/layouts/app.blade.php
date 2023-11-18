@@ -16,7 +16,7 @@
 
         <!-- Styles -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.css" rel="stylesheet" />
     </head>
     <body class="antialiased">
@@ -42,7 +42,7 @@
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
             <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="images/pudfralogo.svg" class="h-8" alt="Pudfra Logo" />
+                <img src="{{asset('images/pudfralogo.svg')}}" class="h-8" alt="Pudfra Logo" />
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Pudfra</span>
             </a>
           </div>
