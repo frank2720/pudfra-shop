@@ -88,13 +88,16 @@
 
                     <div class="card flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl">
                         <div class="prod-title">
-                          <p class="text-base text-gray-900">{{ucfirst($product->name)}}</p>
+                            <a href="/product?id={{$product->id}}">
+                                <p class="text-base text-gray-900">{{ucfirst($product->name)}}</p>
+                            </a>
                         </div>
                         <div class="prod-img">
-                          <img src="{{$product->img}}"
-                          class="w-full object-cover object-center"  />
+                            <a href="/product?id={{$product->id}}">
+                                <img src="{{$product->img}}" class="w-full object-cover object-center"  />
+                            </a>
                         </div>
-                        <div class="prod-info grid gap-10">
+                        <div class="prod-info grid gap-10 mt-3">
                           <div class="text-orange-500">
                             <ul class="flex flex-row justify-center items-center">
                               <li>
@@ -108,6 +111,12 @@
                               </li>
                               <li>
                                 <span><i class="fa-solid fa-star"></i></span>
+                              </li>
+                              <li>
+                                <span><i class="fa-solid fa-star"></i></span>
+                              </li>
+                              <li>
+                                <span><p class="text-sm ml-2">({{$product->reviews}})</p></span>
                               </li>
                             </ul>
                           </div>
