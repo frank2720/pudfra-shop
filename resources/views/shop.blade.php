@@ -272,47 +272,43 @@
 
         <div class="grid md:grid-cols-3 grid-cols-2 gap-6">
             @foreach ($products as $product)
-            <div class="bg-white shadow rounded overflow-hidden group">
-                <div class="relative">
-                    <img src="{{$product->img}}" alt="product 1" class="w-full">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                    justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                        <a href="/product?id={{$product->id}}"
-                            class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition"
-                            title="view product">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </a>
-                        <a href="#"
-                            class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition"
-                            title="add to wishlist">
-                            <i class="fa-solid fa-heart"></i>
-                        </a>
-                    </div>
+            <div class="card flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl">
+                <div class="prod-title">
+                  <p class="text-base text-gray-900">{{ucfirst($product->name)}}</p>
                 </div>
-                <div class="pt-4 pb-3 px-4">
-                    <a href="/product?id={{$product->id}}">
-                        <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-blue-600 transition">
-                           {{$product->name}}
-                        </h4>
-                    </a>
-                    <div class="flex items-baseline mb-1 space-x-2">
-                        <p class="text-xl text-blue-600 font-semibold">Ksh. {{number_format($product->price)}}</p>
-                        <p class="text-sm text-red-500 line-through">Ksh. {{number_format($product->retail_price)}}</p>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="flex gap-1 text-sm text-orange-500">
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                        </div>
-                        <div class="text-xs text-gray-500 ml-3">({{$product->reviews}})</div>
-                    </div>
+                <div class="prod-img">
+                    <img src="{{$product->img}}"
+                    class="w-full object-cover object-center"  />
                 </div>
-                <a href="#"
-                    class="block w-full py-1 text-center text-white bg-blue-600 border border-blue-600 rounded-b hover:bg-transparent hover:text-blue-600 transition">Add
-                    to cart</a>
+                <div class="prod-info grid gap-10">
+                  <div class="text-orange-500">
+                    <ul class="flex flex-row justify-center items-center">
+                      <li>
+                        <span><i class="fa-solid fa-star"></i></span>
+                      </li>
+                      <li>
+                        <span><i class="fa-solid fa-star"></i></span>
+                      </li>
+                      <li>
+                        <span><i class="fa-solid fa-star"></i></span>
+                      </li>
+                      <li>
+                        <span><i class="fa-solid fa-star"></i></span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex flex-col md:flex-row justify-between items-center text-gray-900">
+                    <p class="text-sm text-blue-600">Ksh. {{number_format($product->price)}}</p>
+                      <button type="button" class="px-5 py-2 rounded-full hover:bg-blue-600 hover:text-white border-2 border-gray-900 focus:outline-none">
+                        <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 11 4-7"/><path d="m19 11-4-7"/><path d="M2 11h20"/>
+                            <path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8c.9 0 1.8-.7 2-1.6l1.7-7.4"/>
+                            <path d="m9 11 1 9"/>
+                            <path d="M4.5 15.5h15"/>
+                            <path d="m15 11-1 9"/>
+                        </svg>
+                      </button>
+                  </div>
+                </div>
             </div>
             @endforeach
         </div>

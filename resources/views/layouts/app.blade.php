@@ -6,6 +6,8 @@
 
         <title>{{ config('app.name','pudfra-shop')}}</title>
 
+        <link rel="icon" type="image/x-icon" href="assets/images/icons/money-back.svg">
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
