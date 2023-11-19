@@ -299,7 +299,7 @@
                         <span><i class="fa-solid fa-star"></i></span>
                       </li>
                       <li>
-                        <span><p class="text-sm ml-2 text-blue-500">({{$product->reviews}})</p></span>
+                        <span><p class="text-sm ml-2">({{$product->reviews}})</p></span>
                       </li>
                     </ul>
                   </div>
