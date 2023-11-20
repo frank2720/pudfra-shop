@@ -132,7 +132,7 @@
                                 @endphp                   
                             @endif
                             <a href="/product?id={{$product->id}}">
-                                <p class="text-xs text-sm text-gray-400 mb-2">{{ucfirst($text)}}</p>
+                                <p class="text-xs text-sm text-center text-gray-400 mb-2">{{ucfirst($text)}}</p>
                             </a>
                           </div>
                           <div class="flex flex-col md:flex-row justify-between items-center text-gray-900">
