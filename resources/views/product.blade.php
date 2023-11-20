@@ -6,7 +6,7 @@
     <div class="md:flex items-center mb-5">
         <div class="w-full md:w-1/2 px-10 mb-10 md:mb-0">
             <div class="relative">
-                <img src="{{$product->img}}" class="w-full relative z-10" alt="">
+                <img src="{{$product->img}}" class="w-full relative z-10 hover:scale-125 transition duration-500 cursor-pointer" alt="">
             </div>
         </div>
         <div class="w-full md:w-1/2 px-10">

@@ -89,7 +89,21 @@
                     <div class="card flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl">
                         <div class="prod-title">
                             <a href="/product?id={{$product->id}}">
-                                <p class="text-base text-gray-900">{{ucfirst($product->name)}}</p>
+                                <p class="text-base text-gray-900 font-bold">{{ucfirst($product->name)}}</p>
+                            </a>
+                            @php
+                                $maxPos = 50;
+                                $text = $product->description;
+                            @endphp
+
+                            @if (strlen($text)>$maxPos)
+                                @php
+                                    $lastPos = ($maxPos) - strlen($text);
+                                    $text = substr($text,0,strrpos($text, ' ',$lastPos)). '....'
+                                @endphp                   
+                            @endif
+                            <a href="/product?id={{$product->id}}">
+                                <p class="text-xs text-sm text-gray-400 mb-2">{{ucfirst($text)}}</p>
                             </a>
                         </div>
                         <div class="prod-img">
