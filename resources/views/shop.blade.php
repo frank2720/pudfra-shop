@@ -324,7 +324,7 @@
                   <div class="flex flex-col md:flex-row justify-between items-center text-gray-900">
                     <p class="text-sm text-blue-600">Ksh. {{number_format($product->price)}}</p>
                     @if ($product->retail_price>$product->price)
-                        <del class="text-sm text-red-400">{{number_format($product->retail_price)}}</del>
+                        <del class="text-sm text-red-500">{{number_format($product->retail_price)}}</del>
                     @else
                     <p>....</p>
                     @endif
