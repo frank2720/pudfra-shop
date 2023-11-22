@@ -3,7 +3,7 @@
             <!--Add anything here-->
     </div>
     <div class="flex items-center space-x-4 mr-4">
-        <a href="#" class="text-center text-gray-700 hover:text-blue-600 transition relative">
+        <a href="{{route('shopping')}}" class="text-center text-gray-700 hover:text-blue-600 transition relative">
             <div class="text-2xl">
                 <i class="fa-solid fa-bag-shopping"></i>
             </div>

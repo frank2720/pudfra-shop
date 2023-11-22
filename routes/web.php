@@ -21,6 +21,7 @@ Route::get('/', [ProductController::class,'recent_products'])->name('welcome');
 Route::get('/shop', [ProductController::class, 'products'])->name('shop');
 Route::get('/product', [ProductController::class, 'product']);
 Route::get('/cart/{id}', [ProductController::class, 'addToCart'])->name('addToCart');
+Route::get('/shopping/cart', [ProductController::class, 'getCart'])->name('shopping');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

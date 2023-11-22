@@ -50,4 +50,16 @@ class ProductController extends Controller
         //dd($request->session()->get('cart'));
         return redirect('/shop');
     }
+
+    public function getCart()
+    {
+        if (session()->missing('cart'))
+        {
+            return view('cart');
+        }
+        $oldCart = session()->get('cart');
+        //dd(session()->get('cart'));
+        $cart = new Cart($oldCart);
+        return view('cart', ['products'=>$cart->items,'totalPrice'=>$cart->totalPrice]);
+    }
 }

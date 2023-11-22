@@ -6,7 +6,7 @@
 
         <title>{{ config('app.name','pudfra-shop')}}</title>
 
-        <link rel="icon" type="image/x-icon" href="assets/images/icons/money-back.svg">
+        <link rel="icon" type="image/x-icon" href="{{asset('assets/images/icons/money-back.svg')}}">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,6 +20,19 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.css" rel="stylesheet" />
+        <style>
+            /* Chrome, Safari, Edge, Opera */
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+            
+            /* Firefox */
+            input[type=number] {
+              -moz-appearance: textfield;
+            }
+            </style>
     </head>
     <body class="antialiased">
         <div class="min-h-screen bg-gray-100">

@@ -36,33 +36,19 @@
                         </span>
                         @endif
                     </p>
-
-                    <form action="" method="">
-                        @csrf
-                        <div class="py-2 px-3 inline-block bg-white border border-gray-200 rounded-lg dark:bg-slate-900 dark:border-gray-700 mt-2">
-                            <input type="number" name="quantity" 
-                            class="p-0 w-20 bg-transparent border-0 text-gray-800 text-center focus:ring-0 dark:text-white"
-                            min="1" required>
-                        </div>
-    
-                        <div class="flex flex-wrap items-center gap-4 mt-4 mb-6">
-                            <button type="submit"
-                            class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded-full">
-                                Add to cart
-                            </button>
-                        </div>
-                    </form>
                     
-
+                    <div class="flex flex-wrap items-center gap-4 mt-4 mb-6">
+                        <button type="submit"
+                        class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded-full">
+                            <a href="{{route('addToCart',['id'=>$product->id])}}">Add to Cart</a>
+                        </button>
+                    </div>
+                    
                     <div class="flex flex-wrap -mx-2 -mb-2">
                         {{$product->description}}
                     </div>
-
                 </div>
-
-
             </div>
-
         </div>
     </div>
 </div>
