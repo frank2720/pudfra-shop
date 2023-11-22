@@ -7,7 +7,7 @@
             @if (session()->has('cart'))
                 @foreach ($products as $product)
                 <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
-                    <img src="{{asset($product['item']->img)}}" alt="product-image" class="w-full rounded-lg sm:w-40" />
+                    <img src="{{asset($product['item']->img)}}" alt="product-image" class="rounded-lg sm:w-40" />
                     <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
                       <div class="mt-5 sm:mt-0">
                         <h2 class="text-lg font-bold text-gray-900">{{$product['item']->name}}</h2>
@@ -38,29 +38,43 @@
                 </div>
                 @endforeach
             @else
-                {{__('No products')}}
+            <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
+              <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
+                <div class="mt-4 flex justify-between im sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
+                  <div class="flex items-center">
+                    <p class="text-red-600">{{__('You have no products in the cart')}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
             @endif
           </div>
           <!-- Sub total -->
-          <div class="mt-6 mb-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3">
-            <div class="mb-2 flex justify-between">
-              <p class="text-gray-700">Subtotal</p>
-              <p class="text-gray-700">Ksh {{number_format($totalPrice)}}</p>
-            </div>
-            <div class="flex justify-between">
-              <p class="text-gray-700">Shipping</p>
-              <p class="text-gray-700">...</p>
-            </div>
-            <hr class="my-4" />
-            <div class="flex justify-between">
-              <p class="text-lg font-bold">Total</p>
-              <div class="">
-                <p class="mb-1 text-lg font-bold">Ksh {{number_format($totalPrice)}}</p>
-                <p class="text-sm text-gray-700">including VAT</p>
+          @if (session()->has('cart'))
+              <div class="mt-6 mb-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3">
+                <div class="mb-2 flex justify-between">
+                  <p class="text-gray-700">Subtotal</p>
+                  <p class="text-gray-700">Ksh {{number_format($totalPrice)}}</p>
+                </div>
+                <div class="flex justify-between">
+                  <p class="text-gray-700">Shipping</p>
+                  <p class="text-gray-700">...</p>
+                </div>
+                <hr class="my-4" />
+                <div class="flex justify-between">
+                  <p class="text-lg font-bold">Total</p>
+                  <div class="">
+                    @if (session()->has('cart'))
+                      <p class="mb-1 text-lg font-bold">Ksh {{number_format($totalPrice)}}</p>
+                    @else
+                      <p class="mb-1 text-lg font-bold">Ksh {{__(0.00)}}</p>
+                    @endif
+                    <p class="text-sm text-gray-700">including VAT</p>
+                  </div>
+                </div>
+                <button class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
               </div>
-            </div>
-            <button class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
-          </div>
+          @endif
         </div>
     </div>
 </x-app-layout>
