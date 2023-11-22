@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -35,5 +37,17 @@ class ProductController extends Controller
     {
          $recent_products = DB::table('products')->latest()->paginate(4);
          return view('welcome', ['recent_products'=>$recent_products]);
+    }
+
+    public function addToCart(Request $request, $id):RedirectResponse
+    {
+        $product = DB::table('products')->find($id);
+        $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->add($product, $product->id);
+
+        $request->session()->put('cart',$cart);
+        //dd($request->session()->get('cart'));
+        return redirect('/shop');
     }
 }
