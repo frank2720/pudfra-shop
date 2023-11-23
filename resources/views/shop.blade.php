@@ -168,66 +168,30 @@
     <div class="col-span-1 bg-white px-4 pb-6 shadow rounded overflow-hiddenb hidden md:block">
         <div class="divide-y divide-gray-200 space-y-5">
             <div>
-                <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">Categories</h3>
+                <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium"></h3>
                 <div class="space-y-2">
                     <div class="flex items-center">
                         <input type="checkbox" name="cat-1" id="cat-1"
                             class="text-blue-600 focus:ring-0 rounded-sm cursor-pointer">
-                        <label for="cat-1" class="text-gray-600 ml-3 cusror-pointer">Bedroom</label>
+                        <label for="cat-1" class="text-gray-600 ml-3 cusror-pointer"></label>
                         <div class="ml-auto text-gray-600 text-sm">(15)</div>
                     </div>
                     <div class="flex items-center">
                         <input type="checkbox" name="cat-2" id="cat-2"
                             class="text-blue-600 focus:ring-0 rounded-sm cursor-pointer">
-                        <label for="cat-2" class="text-gray-600 ml-3 cusror-pointer">Sofa</label>
+                        <label for="cat-2" class="text-gray-600 ml-3 cusror-pointer"></label>
                         <div class="ml-auto text-gray-600 text-sm">(9)</div>
                     </div>
                     <div class="flex items-center">
                         <input type="checkbox" name="cat-3" id="cat-3"
                             class="text-blue-600 focus:ring-0 rounded-sm cursor-pointer">
-                        <label for="cat-3" class="text-gray-600 ml-3 cusror-pointer">Office</label>
+                        <label for="cat-3" class="text-gray-600 ml-3 cusror-pointer"></label>
                         <div class="ml-auto text-gray-600 text-sm">(21)</div>
                     </div>
                     <div class="flex items-center">
                         <input type="checkbox" name="cat-4" id="cat-4"
                             class="text-blue-600 focus:ring-0 rounded-sm cursor-pointer">
-                        <label for="cat-4" class="text-gray-600 ml-3 cusror-pointer">Outdoor</label>
-                        <div class="ml-auto text-gray-600 text-sm">(10)</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pt-4">
-                <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">Brands</h3>
-                <div class="space-y-2">
-                    <div class="flex items-center">
-                        <input type="checkbox" name="brand-1" id="brand-1"
-                            class="text-blue-600 focus:ring-0 rounded-sm cursor-pointer">
-                        <label for="brand-1" class="text-gray-600 ml-3 cusror-pointer">Cooking Color</label>
-                        <div class="ml-auto text-gray-600 text-sm">(15)</div>
-                    </div>
-                    <div class="flex items-center">
-                        <input type="checkbox" name="brand-2" id="brand-2"
-                            class="text-blue-600 focus:ring-0 rounded-sm cursor-pointer">
-                        <label for="brand-2" class="text-gray-600 ml-3 cusror-pointer">Magniflex</label>
-                        <div class="ml-auto text-gray-600 text-sm">(9)</div>
-                    </div>
-                    <div class="flex items-center">
-                        <input type="checkbox" name="brand-3" id="brand-3"
-                            class="text-blue-600 focus:ring-0 rounded-sm cursor-pointer">
-                        <label for="brand-3" class="text-gray-600 ml-3 cusror-pointer">Ashley</label>
-                        <div class="ml-auto text-gray-600 text-sm">(21)</div>
-                    </div>
-                    <div class="flex items-center">
-                        <input type="checkbox" name="brand-4" id="brand-4"
-                            class="text-blue-600 focus:ring-0 rounded-sm cursor-pointer">
-                        <label for="brand-4" class="text-gray-600 ml-3 cusror-pointer">M&D</label>
-                        <div class="ml-auto text-gray-600 text-sm">(10)</div>
-                    </div>
-                    <div class="flex items-center">
-                        <input type="checkbox" name="brand-5" id="brand-5"
-                            class="text-blue-600 focus:ring-0 rounded-sm cursor-pointer">
-                        <label for="brand-5" class="text-gray-600 ml-3 cusror-pointer">Olympic</label>
+                        <label for="cat-4" class="text-gray-600 ml-3 cusror-pointer"></label>
                         <div class="ml-auto text-gray-600 text-sm">(10)</div>
                     </div>
                 </div>
@@ -274,7 +238,7 @@
             @foreach ($products as $product)
             <div class="card flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl">
                 <div class="prod-img">
-                    <a href="/product?id={{$product->id}}">
+                    <a href="{{route('product_details',['id'=>$product->id])}}">
                         <img src="{{$product->img}}" class="w-full object-cover object-center"  />
                     </a>
                 </div>
@@ -302,7 +266,7 @@
                     </ul>
                   </div>
                   <div class="prod-title">
-                    <a href="/product?id={{$product->id}}">
+                    <a href="{{route('product_details',['id'=>$product->id])}}">
                         <p class="text-base text-center text-gray-900 font-bold">{{ucfirst($product->name)}}</p>
                     </a>
 
@@ -317,7 +281,7 @@
                             $text = substr($text,0,strrpos($text, ' ',$lastPos)). '....'
                         @endphp                   
                     @endif
-                    <a href="/product?id={{$product->id}}">
+                    <a href="{{route('product_details',['id'=>$product->id])}}">
                         <p class="text-xs text-sm text-center text-gray-400 mb-2">{{ucfirst($text)}}</p>
                     </a>
                   </div>

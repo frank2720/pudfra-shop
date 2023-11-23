@@ -81,7 +81,7 @@
 
             <!-- product -->
             <div class="container pb-16">
-                <h1 class="text-2xl font-medium text-gray-800 uppercase mb-6">new products</h1>
+                <h1 class="text-2xl font-medium text-gray-800 uppercase mb-6 flex justify-center">new products</h1>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
 
                     @foreach ($recent_products as $product)
@@ -89,7 +89,7 @@
                     <div class="card flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl">
                       
                         <div class="prod-img">
-                            <a href="/product?id={{$product->id}}">
+                            <a href="{{route('product_details',['id'=>$product->id])}}">
                                 <img src="{{$product->img}}" class="w-full object-cover object-center"  />
                             </a>
                         </div>
@@ -117,7 +117,7 @@
                             </ul>
                           </div>
                           <div class="prod-title">
-                            <a href="/product?id={{$product->id}}">
+                            <a href="{{route('product_details',['id'=>$product->id])}}">
                                 <p class="text-base text-center text-gray-900 font-bold">{{ucfirst($product->name)}}</p>
                             </a>
                             @php
@@ -131,7 +131,7 @@
                                     $text = substr($text,0,strrpos($text, ' ',$lastPos)). '....'
                                 @endphp                   
                             @endif
-                            <a href="/product?id={{$product->id}}">
+                            <a href="{{route('product_details',['id'=>$product->id])}}">
                                 <p class="text-xs text-sm text-center text-gray-400 mb-2">{{ucfirst($text)}}</p>
                             </a>
                           </div>
@@ -157,6 +157,12 @@
                     </div>
 
                     @endforeach
+                </div>
+
+                <div class="flex justify-center mt-4 mb-4">
+                    <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                        <a href="{{route('shop')}}">View More</a>
+                    </button>
                 </div>
         </div>
         <!-- ./product -->

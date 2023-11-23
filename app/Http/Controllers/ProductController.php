@@ -17,16 +17,16 @@ class ProductController extends Controller
 
     public function products(): View
     {
-        $products = DB::table('products')->orderBy('name')->simplePaginate(6);
+        $products = DB::table('products')->orderBy('name')->simplePaginate(10);
         return view('shop', ['products'=>$products]);
     }
 
     /**
-     * Gets product details from the db
+     * Gets a product details from the db using the product id
      */
-    public function product(Request $request): View
+    public function product(Request $request, string $id): View
     {
-        $product = DB::table('products')->find($request->id);
+        $product = DB::table('products')->find($id);
         return view('product', ['product'=>$product]);
     }
 
@@ -35,10 +35,13 @@ class ProductController extends Controller
      */
     public function recent_products(): View
     {
-         $recent_products = DB::table('products')->latest()->paginate(4);
+         $recent_products = DB::table('products')->latest()->paginate(8);
          return view('welcome', ['recent_products'=>$recent_products]);
     }
 
+    /**
+     * Gets the product from the db using id for a session
+     */
     public function addToCart(Request $request, $id):RedirectResponse
     {
         $product = DB::table('products')->find($id);

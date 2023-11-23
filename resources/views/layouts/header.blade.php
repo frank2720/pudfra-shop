@@ -21,9 +21,9 @@
                 <i class="fa-regular fa-bell"></i>
             </div>
             <div class="text-xs leading-3">Alert</div>
-            <div
-                class="absolute -right-3 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
-                2</div>
+            <div class="absolute -right-3 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
+                0
+            </div>
         </a>
     </div>
 </x-slot>

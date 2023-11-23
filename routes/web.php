@@ -19,13 +19,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProductController::class,'recent_products'])->name('welcome');
 Route::get('/shop', [ProductController::class, 'products'])->name('shop');
-Route::get('/product', [ProductController::class, 'product']);
+Route::get('/product/{id}', [ProductController::class, 'product'])->name('product_details');
 Route::get('/cart/{id}', [ProductController::class, 'addToCart'])->name('addToCart');
 Route::get('/shopping/cart', [ProductController::class, 'getCart'])->name('shopping');
 
-Route::get('/dashboard', function () {
+/*Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');*/
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
