@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             'description'=>' T14 Gen 2, Core i5 1135G7, 8GB, 512GB SSD, Windows 10 Pro, 14″ FHD Touch Screen 20W000S4UE',
         ]);*/
 
-        Product::factory(10)->create();
-        Category::factory(5)->create();
+       // Product::factory(10)->create();
+        Category::factory(7)->create();
     }
 }
