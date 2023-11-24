@@ -32,7 +32,7 @@
             input[type=number] {
               -moz-appearance: textfield;
             }
-            </style>
+        </style>
     </head>
     <body class="antialiased">
         <div class="min-h-screen bg-gray-100">
