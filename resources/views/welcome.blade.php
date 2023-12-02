@@ -81,7 +81,9 @@
 
             <!-- product -->
             <div class="container pb-16">
-                <h1 class="text-2xl font-medium text-gray-800 uppercase mb-6 flex justify-center">new products</h1>
+                <h1 class="text-2xl font-medium text-gray-800 uppercase mb-6 flex justify-center">
+                    new products
+                </h1>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
 
                     @foreach ($recent_products as $product)
@@ -96,6 +98,6 @@
                         <a href="{{route('shop')}}">View More</a>
                     </button>
                 </div>
-        </div>
+            </div>
         <!-- ./product -->
 </x-app-layout>
