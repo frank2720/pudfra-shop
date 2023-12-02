@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-  
+
     /**
      * Gets the products from the db and display them in the shopping page
      */
@@ -65,5 +65,17 @@ class ProductController extends Controller
         //dd(session()->get('cart'));
         $cart = new Cart($oldCart);
         return view('cart', ['products'=>$cart->items,'totalPrice'=>$cart->totalPrice]);
+    }
+
+    public function removefromCart(Request $request, $id):RedirectResponse
+    {
+        $product =DB::table('products')->find($id);
+        $oldCart = session()->get('cart');
+        $cart = new Cart($oldCart);
+        unset($cart->items[$product->id]);
+        //dd(session()->get('cart'));
+        $request->session()->put('cart',$cart);
+
+        return redirect('/shopping/cart');
     }
 }
