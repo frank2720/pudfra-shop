@@ -23,6 +23,7 @@ Route::get('/product/{id}', [ProductController::class, 'product'])->name('produc
 Route::get('/cart/{id}', [ProductController::class, 'addToCart'])->name('addToCart');
 Route::get('/shopping/cart', [ProductController::class, 'getCart'])->name('shopping');
 Route::get('/shopping/cart/{id}', [ProductController::class, 'removefromCart'])->name('removefromCart');
+Route::get('/shopping/cart/{id}', [ProductController::class, 'reduceInCart'])->name('productReduce');
 
 /*Route::get('/dashboard', function () {
     return view('dashboard');

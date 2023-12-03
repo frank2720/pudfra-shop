@@ -67,12 +67,25 @@ class ProductController extends Controller
         return view('cart', ['products'=>$cart->items,'totalPrice'=>$cart->totalPrice]);
     }
 
+    public function reduceInCart(Request $request, $id):RedirectResponse
+    {
+        $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->reduce($id);
+
+        $request->session()->put('cart',$cart);
+        //dd($request->session()->get('cart'));
+        return redirect('/shopping/cart');
+    }
+
     public function removefromCart(Request $request, $id):RedirectResponse
     {
         $product =DB::table('products')->find($id);
         $oldCart = session()->get('cart');
         $cart = new Cart($oldCart);
         unset($cart->items[$product->id]);
+        unset($cart->totalQty);
+        unset($cart->totalPrice);
         //dd(session()->get('cart'));
         $request->session()->put('cart',$cart);
 
