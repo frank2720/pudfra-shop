@@ -41,5 +41,13 @@ class Cart
         {
             unset($this->items[$id]);
         }
+        if ($this->totalQty<=0)
+        {
+            unset($this->totalQty);
+        }
+        if ($this->totalPrice<=0)
+        {
+            unset($this->totalPrice);
+        }
     }
 }
