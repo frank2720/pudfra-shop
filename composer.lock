@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b9b9491cb9ea2680c36d79a7ab063c6",
+    "content-hash": "c5dd0ef0bfa9b9231645123848726a27",
     "packages": [
         {
             "name": "brick/math",
@@ -135,6 +135,63 @@
                 "source": "https://github.com/dflydev/dflydev-dot-access-data/tree/v3.0.2"
             },
             "time": "2022-10-27T11:44:00+00:00"
+        },
+        {
+            "name": "dlogon/tailwind-alerts",
+            "version": "V0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dlogon/tailwind-alerts.git",
+                "reference": "352a85ce699cf20d0c380d441719bc615ebecc23"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dlogon/tailwind-alerts/zipball/352a85ce699cf20d0c380d441719bc615ebecc23",
+                "reference": "352a85ce699cf20d0c380d441719bc615ebecc23",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Dlogon\\TailwindAlerts\\TailwindAlertsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dlogon\\TailwindAlerts\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Diego Lopez",
+                    "email": "dlogon@outlook.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "create tailwind alerts from static",
+            "homepage": "https://github.com/Dlogon/tailwind-alerts",
+            "keywords": [
+                "laravel",
+                "tailwind-alerts",
+                "toast"
+            ],
+            "support": {
+                "issues": "https://github.com/Dlogon/tailwind-alerts/issues",
+                "source": "https://github.com/Dlogon/tailwind-alerts/tree/V0.2"
+            },
+            "time": "2022-12-07T05:21:16+00:00"
         },
         {
             "name": "doctrine/inflector",

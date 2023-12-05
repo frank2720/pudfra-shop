@@ -1,6 +1,11 @@
 <x-app-layout>
     <div class="mt-4 mb-4">
-    <h1 class="mb-10 text-center text-2xl font-bold">Cart Items</h1>
+    <h1 class="mb-4 text-center text-2xl font-bold">Cart Items</h1>
+    @if (session('status'))
+    <div class="text-center p-4 mb-4 text-sm text-green-800 rounded-lg dark:bg-gray-800 dark:text-green-400">
+        <span>{{ session('status') }}</span>
+    </div>
+    @endif
         <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
           <div class="rounded-lg md:w-2/3">
 

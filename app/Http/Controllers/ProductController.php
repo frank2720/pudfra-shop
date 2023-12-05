@@ -52,7 +52,7 @@ class ProductController extends Controller
 
         $request->session()->put('cart',$cart);
         //dd($request->session()->get('cart'));
-        return back()->withInput();
+        return back()->withInput()->with('status', 'cart updated successfully');
     }
 
     public function getCart()
@@ -75,7 +75,7 @@ class ProductController extends Controller
 
         $request->session()->put('cart',$cart);
         //dd($request->session()->get('cart'));
-        return back()->withInput();
+        return back()->withInput()->with('status', 'cart updated successfully');
     }
 
     public function removefromCart(Request $request, $id):RedirectResponse
