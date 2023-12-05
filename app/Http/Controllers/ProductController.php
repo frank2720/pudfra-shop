@@ -80,15 +80,12 @@ class ProductController extends Controller
 
     public function removefromCart(Request $request, $id):RedirectResponse
     {
-        $product =DB::table('products')->find($id);
-        $oldCart = session()->get('cart');
+        $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
         $cart = new Cart($oldCart);
-        unset($cart->items[$product->id]);
-        unset($cart->totalQty);
-        unset($cart->totalPrice);
-        //dd(session()->get('cart'));
-        $request->session()->put('cart',$cart);
+        $cart->remove($id);
 
-        return redirect('/shopping/cart');
+        $request->session()->put('cart',$cart);
+        //dd($request->session()->get('cart'));
+        return back()->withInput()->with('status', 'cart updated successfully');
     }
 }

@@ -50,4 +50,11 @@ class Cart
             unset($this->totalPrice);
         }
     }
+
+    public function remove($id)
+    {
+        $this->totalPrice -= $this->items[$id]['price'];
+        $this->totalQty -= $this->items[$id]['qty'];
+        unset($this->items[$id]);
+    }
 }
