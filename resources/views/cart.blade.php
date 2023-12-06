@@ -1,15 +1,10 @@
 <x-app-layout>
     <div class="mt-4 mb-4">
     <h1 class="mb-4 text-center text-2xl font-bold">Cart Items</h1>
-    @if (session('status'))
-    <div class="text-center p-4 mb-4 text-sm text-green-800 rounded-lg dark:bg-gray-800 dark:text-green-400">
-        <span>{{ session('status') }}</span>
-    </div>
-    @endif
         <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
           <div class="rounded-lg md:w-2/3">
 
-            @if (session()->has('cart'))
+            @if (session()->has('cart') && number_format($totalPrice)>0)
                 @foreach ($products as $product)
                   <x-cart-products :product="$product"/>
                 @endforeach
@@ -26,7 +21,7 @@
             @endif
           </div>
           <!-- Sub total -->
-          @if (session()->has('cart'))
+          @if (session()->has('cart') && number_format($totalPrice)>0)
               <div class="mt-6 mb-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3">
                 <div class="mb-2 flex justify-between">
                   <p class="text-gray-700">Subtotal</p>
@@ -50,7 +45,7 @@
                 </div>
                 <button class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
               </div>
-          @endif
+            @endif
         </div>
     </div>
 </x-app-layout>
