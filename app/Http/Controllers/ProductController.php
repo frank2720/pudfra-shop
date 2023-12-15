@@ -22,6 +22,11 @@ class ProductController extends Controller
         return view('shop', ['products'=>$products, 'categories'=>$categories]);
     }
 
+    public function product_sort(){
+        $products = DB::table('products')->orderBy('name')->simplePaginate(8);
+        return back()->withInput();
+    }
+
     /**
      * Gets a product details from the db using the product id
      */

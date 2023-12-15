@@ -1,4 +1,5 @@
 <x-app-layout>
+  @include('layouts.header')
     <div class="mt-4 mb-4">
     <h1 class="mb-4 text-center text-2xl font-bold">Cart Items</h1>
         <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
