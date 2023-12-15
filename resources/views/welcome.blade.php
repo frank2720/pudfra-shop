@@ -1,103 +1,352 @@
-<x-app-layout>
-    @include('layouts.header')
-    <div id="default-carousel" class="relative w-full" data-carousel="slide">
-        <!-- Carousel wrapper -->
-        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-            <!-- Item 1 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="images/blackfriday.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-            </div>
-            <!-- Item 2 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="images/arrangement-black-friday-shopping-carts-with-copy-space.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-            </div>
-            <!-- Item 3 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="images/top-view-desk-with-copy-space-tags.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-            </div>
-            <!-- Item 4 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="images/pexels-junior-teixeira-2047905.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-            </div>
-            <!-- Item 5 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="images/new-laptop-balancing-with-water.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-            </div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Pudfra</title>
+        <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+        <script src="{{asset('assets/js/script.js')}}"></script>
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    </head>
+<body>
+    <nav class="fixed flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center bg-secondary z-10">
+        <div class="flex items-center">
+            <img src="{{asset('images/pudfralogo.svg')}}" alt="Logo" class="h-8" />
         </div>
-        <!-- Slider indicators -->
-        <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+        <ul class="font-montserrat items-center hidden md:flex">
+            <li class="mx-3 ">
+              <a class="growing-underline" href="howitworks">
+                How it works
+              </a>
+            </li>
+            <li class="growing-underline mx-3">
+              <a href="features">Features</a>
+            </li>
+            <li class="growing-underline mx-3">
+              <a href="pricing">Pricing</a>
+            </li>
+          </ul>
+          <div class="font-montserrat hidden md:block">
+            <button class="mr-6">Login</button>
+            <button class="py-2 px-4 text-white bg-black rounded-3xl">
+              Signup
+            </button>
+          </div>
+          <div id="showMenu" class="md:hidden">
+            <img src="{{asset('assets/images/logos/Menu.svg')}}" alt="Menu icon" />
+          </div>
+    </nav>
+    <div id='mobileNav' class="hidden px-4 py-6 fixed top-0 left-0 h-full w-full bg-secondary z-20 animate-fade-in-down">
+        <div id="hideMenu" class="flex justify-end">
+            <img src="{{asset('assets/images/logos/Cross.svg')}}" alt="" class="h-16 w-16" />
         </div>
-        <!-- Slider controls -->
-        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-            </svg>
-            <span class="sr-only">Previous</span>
-            </span>
-        </button>
-        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-            </svg>
-            <span class="sr-only">Next</span>
-            </span>
-        </button>
+          <ul class="font-montserrat flex flex-col mx-8 my-24 items-center text-3xl">
+            <li class="my-6">
+              <a href="howitworks">How it works</a>
+            </li>
+            <li class="my-6">
+              <a href="features">Features</a>
+            </li>
+            <li class="my-6">
+              <a href="pricing">Pricing</a>
+            </li>
+          </ul> 
+    </div>
+     <!-- Hero -->
+  <section
+  class="pt-24 md:mt-0 md:h-screen flex flex-col justify-center text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 bg-secondary">
+  <div class="md:flex-1 md:mr-10">
+    <h1 class="font-pt-serif text-4xl font-bold mb-7">
+        Welcome to Pudfra's 
+      <span class="bg-underline1 bg-left-bottom bg-no-repeat pb-2 bg-100%">
+        Ecommerce development hub!
+      </span>
+    </h1>
+    <p class="font-pt-serif font-normal mb-7">
+        Step into the realm of online innovation and seamless shopping experiences. 
+        As a Junior Laravel Developer, I'm excited to invite you to our digital marketplace where every line of code contributes 
+        to a smoother, more delightful e-commerce journey.
+    </p>
+    <div class="font-montserrat">
+      <button class="bg-black px-6 py-4 rounded-lg border-2 border-black border-solid text-white mr-2 mb-2">
+        Call to action
+      </button>
+      <button class="px-6 py-4 border-2 border-black border-solid rounded-lg">
+        Secondary action
+      </button>
+    </div>
+  </div>
+  <div class="flex justify-around md:block mt-8 md:mt-0 md:flex-1">
+    <div class="relative">
+      <img src="{{asset('assets/images/Highlight1.svg')}}" alt="" class="absolute -top-16 -left-10" />
+    </div>
+    <img src= "{{asset('assets/images/MacBook Pro.png')}}" alt="Macbook" />
+    <div class="relative">
+      <img src="{{asset('assets/images/Highlight2.svg')}}" alt="" class="absolute -bottom-10 -right-6" />
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="bg-black text-white sectionSize">
+  <div>
+    <h2 class="secondaryTitle bg-underline2 bg-100%">How it works</h2>
+  </div>
+  <div class="flex flex-col md:flex-row">
+    <div class="flex-1 mx-8 flex flex-col items-center my-4">
+      <div class="border-2 rounded-full bg-secondary text-black h-12 w-12 flex justify-center items-center mb-3">
+        1
+      </div>
+      <h3 class="font-montserrat font-medium text-xl mb-2">Eat</h3>
+      <p class="text-center font-montserrat">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+      </p>
+    </div>
+    <div class="flex-1 mx-8 flex flex-col items-center my-4">
+      <div class="border-2 rounded-full bg-secondary text-black h-12 w-12 flex justify-center items-center mb-3">
+        2
+      </div>
+      <h3 class="font-montserrat font-medium text-xl mb-2">Sleep</h3>
+      <p class="text-center font-montserrat">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+      </p>
+    </div>
+    <div class="flex-1 mx-8 flex flex-col items-center my-4">
+      <div class="border-2 rounded-full bg-secondary text-black h-12 w-12 flex justify-center items-center mb-3">
+        3
+      </div>
+      <h3 class="font-montserrat font-medium text-xl mb-2">Rave</h3>
+      <p class="text-center font-montserrat">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="sectionSize bg-secondary">
+  <div>
+    <h2 class="secondaryTitle bg-underline3 bg-100%">Features</h2>
+  </div>
+  <div class="md:grid md:grid-cols-2 md:grid-rows-2">
+
+    <div class="flex items-start font-montserrat my-6 mr-10">
+      <img src="{{asset('assets/images/logos/Heart.svg')}}" alt='' class="h-7 mr-4" />
+      <div>
+        <h3 class="font-semibold text-2xl">Feature #1</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Quisquam voluptate praesentium tenetur earum repellendus! Dicta
+          culpa consequuntur saepe quibusdam labore, est ex ducimus
+          tempore, quos illum officiis, pariatur ea placeat.
+        </p>
+      </div>
     </div>
 
-     <!-- features -->
-     <div class="container py-16">
-        <div class="w-10/12 grid grid-cols-1 md:grid-cols-3 gap-6 mx-auto justify-center">
-            <div class="border border-blue-600 rounded-sm px-3 py-6 flex justify-center items-center gap-5">
-                <img src="assets/images/icons/delivery-van.svg" alt="Delivery" class="w-12 h-12 object-contain">
-                    <div>
-                        <h4 class="font-medium capitalize text-lg">Free Shipping</h4>
-                        <p class="text-gray-500 text-sm">Order over Ksh. {{number_format(10000)}}</p>
-                    </div>
-            </div>
-            <div class="border border-blue-600 rounded-sm px-3 py-6 flex justify-center items-center gap-5">
-                <img src="assets/images/icons/money-back.svg" alt="Delivery" class="w-12 h-12 object-contain">
-                    <div>
-                        <h4 class="font-medium capitalize text-lg">Money Rturns</h4>
-                        <p class="text-gray-500 text-sm">30 days money returs</p>
-                    </div>
-            </div>
-            <div class="border border-blue-600 rounded-sm px-3 py-6 flex justify-center items-center gap-5">
-                <img src="assets/images/icons/service-hours.svg" alt="Delivery" class="w-12 h-12 object-contain">
-                <div>
-                    <h4 class="font-medium capitalize text-lg">24/7 Support</h4>
-                    <p class="text-gray-500 text-sm">Customer support</p>
-                </div>
-            </div>
-        </div>
+    <div class="flex items-start font-montserrat my-6 mr-10">
+      <img src="{{asset('assets/images/logos/Heart.svg')}}" alt='' class="h-7 mr-4" />
+      <div>
+        <h3 class="font-semibold text-2xl">Feature #2</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Quisquam voluptate praesentium tenetur earum repellendus! Dicta
+          culpa consequuntur saepe quibusdam labore, est ex ducimus
+          tempore, quos illum officiis, pariatur ea placeat.
+        </p>
+      </div>
     </div>
-    <!-- ./features -->
 
-            <!-- product -->
-            <div class="container pb-16">
-                <h1 class="text-2xl font-medium text-gray-800 uppercase mb-6 flex justify-center">
-                    new products
-                </h1>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="flex items-start font-montserrat my-6 mr-10">
+      <img src="{{asset('assets/images/logos/Heart.svg')}}" alt='' class="h-7 mr-4" />
+      <div>
+        <h3 class="font-semibold text-2xl">Feature #3</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Quisquam voluptate praesentium tenetur earum repellendus! Dicta
+          culpa consequuntur saepe quibusdam labore, est ex ducimus
+          tempore, quos illum officiis, pariatur ea placeat.
+        </p>
+      </div>
+    </div>
 
-                    @foreach ($recent_products as $product)
+    <div class="flex items-start font-montserrat my-6 mr-10">
+      <img src="{{asset('assets/images/logos/Heart.svg')}}" alt='' class="h-7 mr-4" />
+      <div>
+        <h3 class="font-semibold text-2xl">Feature #4</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Quisquam voluptate praesentium tenetur earum repellendus! Dicta
+          culpa consequuntur saepe quibusdam labore, est ex ducimus
+          tempore, quos illum officiis, pariatur ea placeat.
+        </p>
+      </div>
+    </div>
 
-                    <x-homepage-product :product="$product"/>
+  </div>
+</section>
 
-                    @endforeach
-                </div>
+<!-- Pricing -->
+<section class="sectionSize bg-secondary py-0">
+  <div>
+    <h2 class="secondaryTitle bg-underline4 mb-0 bg-100%">Pricing</h2>
+  </div>
+  <div class="flex w-full flex-col md:flex-row">
 
-                <div class="flex justify-center mt-4 mb-4">
-                    <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                        <a href="{{route('shop')}}">View More</a>
-                    </button>
-                </div>
-            </div>
-        <!-- ./product -->
-</x-app-layout>
+    <div class='flex-1 flex flex-col mx-6 shadow-2xl relative bg-secondary rounded-2xl py-5 px-8 my-8 md:top-24'>
+      <h3 class="font-pt-serif font-normal text-2xl mb-4">
+        The Good
+      </h3>
+      <div class="font-montserrat font-bold text-2xl mb-4">
+        $25
+        <span class="font-normal text-base"> / month</span>
+      </div>
+
+      <div class="flex">
+        <img src="{{asset('assets/images/logos/CheckedBox.svg')}}" alt="" class="mr-1" />
+        <p>Benefit #1</p>
+      </div>
+      <div class="flex">
+        <img src="{{asset('dist/assets/logos/CheckedBox.svg')}}" alt="" class="mr-1" />
+        <p>Benefit #2</p>
+      </div>
+      <div class="flex">
+        <img src="{{asset('dist/assets/logos/CheckedBox.svg')}}" alt="" class="mr-1" />
+        <p>Benefit #3</p>
+      </div>
+
+      <button class=" border-2 border-solid border-black rounded-xl text-lg py-3 mt-4">
+        Choose plan
+      </button>
+    </div>
+
+    <div class='flex-1 flex flex-col mx-6 shadow-2xl relative bg-secondary rounded-2xl py-5 px-8 my-8 md:top-12'>
+      <h3 class="font-pt-serif font-normal text-2xl mb-4">
+        The Bad
+      </h3>
+      <div class="font-montserrat font-bold text-2xl mb-4">
+        $40
+        <span class="font-normal text-base"> / month</span>
+      </div>
+
+      <div class="flex">
+        <img src="{{asset('dist/assets/logos/CheckedBox.svg')}}" alt="" class="mr-1" />
+        <p>Benefit #1</p>
+      </div>
+      <div class="flex">
+        <img src="{{asset('dist/assets/logos/CheckedBox.svg')}}" alt="" class="mr-1" />
+        <p>Benefit #2</p>
+      </div>
+      <div class="flex">
+        <img src="{{asset('dist/assets/logos/CheckedBox.svg')}}" alt="" class="mr-1" />
+        <p>Benefit #3</p>
+      </div>
+
+      <button class=" border-2 border-solid border-black rounded-xl text-lg py-3 mt-4">
+        Choose plan
+      </button>
+    </div>
+
+    <div class='flex-1 flex flex-col mx-6 shadow-2xl relative bg-secondary rounded-2xl py-5 px-8 my-8 md:top-24'>
+      <h3 class="font-pt-serif font-normal text-2xl mb-4">
+        The Ugly
+      </h3>
+      <div class="font-montserrat font-bold text-2xl mb-4">
+        $50
+        <span class="font-normal text-base"> / month</span>
+      </div>
+
+      <div class="flex">
+        <img src="{{asset('dist/assets/logos/CheckedBox.svg')}}" alt="" class="mr-1" />
+        <p>Benefit #1</p>
+      </div>
+      <div class="flex">
+        <img src="{{asset('dist/assets/logos/CheckedBox.svg')}}" alt="" class="mr-1" />
+        <p>Benefit #2</p>
+      </div>
+      <div class="flex">
+        <img src="{{asset('dist/assets/logos/CheckedBox.svg')}}" alt="" class="mr-1" />
+        <p>Benefit #3</p>
+      </div>
+
+      <button class=" border-2 border-solid border-black rounded-xl text-lg py-3 mt-4">
+        Choose plan
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ  -->
+<section class="sectionSize items-start pt-8 md:pt-36 bg-black text-white">
+  <div>
+    <h2 class="secondaryTitle bg-highlight3 p-10 mb-0 bg-center bg-100%">
+      FAQ
+    </h2>
+  </div>
+
+  <div toggleElement class="w-full py-4">
+    <div class="flex justify-between items-center">
+      <div question class="font-montserrat font-medium mr-auto">
+        Where can I get this HTML template?
+      </div>
+      <img src="{{asset('dist/assets/logos/CaretRight.svg')}}"  alt="" class="transform transition-transform" />
+    </div>
+    <div answer class="font-montserrat text-sm font-extralight pb-8 hidden">
+      You can download it on Gumroad.com
+    </div>
+  </div>
+  <hr class="w-full bg-white" />
+
+  <div toggleElement class="w-full py-4">
+    <div class="flex justify-between items-center">
+      <div question class="font-montserrat font-medium mr-auto">
+        Is this HTML template free?
+      </div>
+      <img src="{{asset('dist/assets/logos/CaretRight.svg')}}" alt="" class="transform transition-transform" />
+    </div>
+    <div answer class="font-montserrat text-sm font-extralight pb-8 hidden">
+      Yes! For you it is free.
+    </div>
+  </div>
+  <hr class="w-full bg-white" />
+
+  <div toggleElement class="w-full py-4">
+    <div class="flex justify-between items-center">
+      <div question class="font-montserrat font-medium mr-auto">
+        Am I awesome?
+      </div>
+      <img src="{{asset('dist/assets/logos/CaretRight.svg')}}" alt="" class="transform transition-transform" />
+    </div>
+    <div answer class="font-montserrat text-sm font-extralight pb-8 hidden">
+      Yes! No doubt about it.
+    </div>
+  </div>
+  <hr class="w-full bg-white" />
+
+</section>
+
+<!-- Footer -->
+<section class="bg-black sectionSize">
+  <div class="mb-4">
+    <img src="{{asset('images/pudfralogo.svg')}}" alt="Logo" class="h-4" />
+  </div>
+  <div class="flex mb-8">
+    <a href="#">
+      <img src="{{asset('assets/images/logos/Facebook.svg')}}" alt="Facebook logo" class="mx-4" />
+    </a>
+    <a href="#">
+      <img src="{{asset('assets/images/logos/Youtube.svg')}}" alt="Youtube logo" class="mx-4" />
+    </a>
+    <a href="#">
+      <img src="{{asset('assets/images/logos/Instagram.svg')}}" alt="Instagram logo" class="mx-4" />
+    </a>
+    <a href="#">
+      <img src="{{asset('assets/images/logos/Twitter.svg')}}" alt="Twitter logo" class="mx-4" />
+    </a>
+  </div>
+  <div class="text-white font-montserrat text-sm">
+    © 2021 STARTUP. All rights reserved
+  </div>
+</section>
+</body>
+</html>
