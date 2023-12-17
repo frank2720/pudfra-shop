@@ -24,32 +24,9 @@
             </nav>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                 @foreach ($products as $product)
-                <div class="justify-center p-10 bg-white shadow-md rounded-xl">
-                <a href="{{route('product_details',['id'=>$product->id])}}">
-                    <img class="hover:grow hover:shadow-lg rounded-lg" src="{{$product->img}}">
-                    <div class="pt-3 flex items-center justify-between">
-                        <p class="">{{ucfirst($product->name)}}</p>
-                        <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 11 4-7"/><path d="m19 11-4-7"/><path d="M2 11h20"/>
-                            <path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8c.9 0 1.8-.7 2-1.6l1.7-7.4"/>
-                            <path d="m9 11 1 9"/>
-                            <path d="M4.5 15.5h15"/>
-                            <path d="m15 11-1 9"/>
-                        </svg>
-                    </div>
-                    <p class="pt-1 text-gray-900">Ksh. {{number_format($product->price)}}</p>
-                    @if ($product->retail_price>$product->price)
-                        <del class="text-sm text-red-500 cursor-auto ml-2">{{number_format($product->retail_price)}}</del>
-                    @endif
-                </a>
-                </div>
+                <x-product-card :product="$product"/>
                 @endforeach
             </div>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            @foreach ($products as $product)
-                <x-product-card :product="$product"/>
-            @endforeach
         </div>
         <div class="mt-3">
             {{$products->links()}}
