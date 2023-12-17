@@ -52,19 +52,13 @@
               <a href="{{route('shop')}}">Shop</a>
             </li>
             <li class="growing-underline mx-3">
-              <a href="{{route('shop')}}">Categories</a>
+              <a href="">Categories</a>
             </li>
             <li class="growing-underline mx-3">
               <a href="{{route('shop')}}">New Arrivals</a>
             </li>
             <li class="growing-underline mx-3">
               <a href="{{route('shop')}}">Deals</a>
-            </li>
-            <li class="growing-underline mx-3">
-              <a href="{{route('shop')}}">About Us</a>
-            </li>
-            <li class="growing-underline mx-3">
-              <a href="{{route('shop')}}">Contact Us</a>
             </li>
           </ul>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
