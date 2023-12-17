@@ -39,8 +39,28 @@
                     <li class="my-6">
                       <a href="{{route('shop')}}">Shop</a>
                     </li>
-                    <li class="my-6">
-                      <a href="">Pricing</a>
+                    @if (Route::has('login'))
+                        @auth
+                        <form method="POST" action="{{route('logout')}}">
+                            @csrf
+                        <li class="my-6">
+                          <a href="{{route('logout')}}"
+                            onclick="event.preventDefault();
+                            this.closest('form').submit();">SignOut
+                          </a>
+                        </li>
+                        </form>
+                        @else
+                        <li class="my-6">
+                        <a href="{{route('login')}}">Login</a>
+                        </li>
+                        @if (Route::has('register'))
+                        <li class="my-6">
+                        <a href="{{route('register')}}">SignUp</a>
+                        </li>
+                        @endif
+                        @endauth
+                    @endif
                     </li>
                   </ul> 
             </div>
