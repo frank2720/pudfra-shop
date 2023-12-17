@@ -1,5 +1,4 @@
 <x-app-layout>
-<!-- shop wrapper -->
 <div class="md:container md:mx-auto px-4 pt-4 pb-16 items-center">
     <!-- products -->
     <div class="col-span-3">
