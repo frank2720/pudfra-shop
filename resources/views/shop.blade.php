@@ -1,6 +1,4 @@
 <x-app-layout>
-@include('layouts.header')
-
 <!-- shop wrapper -->
 <div class="md:container md:mx-auto px-4 pt-4 pb-16 items-center">
     <!-- products -->
@@ -37,5 +35,4 @@
         </div>
     </div>
 </div>
-<!-- ./shop wrapper -->
 </x-app-layout>

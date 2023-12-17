@@ -1,98 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>{{ config('app.name','pudfra-shop')}}</title>
-
-        <link rel="icon" type="image/x-icon" href="{{asset('assets/images/icons/money-back.svg')}}">
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-        <!--Font Awesome Kit-->
-        <script src="https://kit.fontawesome.com/3f96f27cdc.js" crossorigin="anonymous"></script>
-
-        <!-- Styles -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-        <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-        <script src="{{asset('assets/js/script.js')}}"></script>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.css" rel="stylesheet" />
-        <style>
-            /* Chrome, Safari, Edge, Opera */
-            input::-webkit-outer-spin-button,
-            input::-webkit-inner-spin-button {
-              -webkit-appearance: none;
-              margin: 0;
-            }
-            
-            /* Firefox */
-            input[type=number] {
-              -moz-appearance: textfield;
-            }
-        </style>
-    </head>
-<body class="antialiased">
-  <div class="min-h-screen bg-gray-100">
-    <nav class="fixed flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center bg-secondary z-10">
-        <div class="flex items-center">
-            <img src="{{asset('images/pudfralogo.svg')}}" alt="Logo" class="h-8" />
-        </div>
-        <ul class="items-center hidden md:flex">
-            <li class="mx-3 ">
-              <a class="growing-underline" href="{{route('welcome')}}">
-                Home
-              </a>
-            </li>
-            <li class="growing-underline mx-3">
-              <a href="{{route('shop')}}">Shop</a>
-            </li>
-            <li class="growing-underline mx-3">
-              <a href="">Categories</a>
-            </li>
-            <li class="growing-underline mx-3">
-              <a href="{{route('shop')}}">New Arrivals</a>
-            </li>
-            <li class="growing-underline mx-3">
-              <a href="{{route('shop')}}">Deals</a>
-            </li>
-          </ul>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path  class="dark:fill-white" fill-rule="evenodd" clip-rule="evenodd" d="M16.9303 7C16.9621 6.92913 16.977 6.85189 16.9739 6.77432H17C16.8882 4.10591 14.6849 2 12.0049 2C9.325 2 7.12172 4.10591 7.00989 6.77432C6.9967 6.84898 6.9967 6.92535 7.00989 7H6.93171C5.65022 7 4.28034 7.84597 3.88264 10.1201L3.1049 16.3147C2.46858 20.8629 4.81062 22 7.86853 22H16.1585C19.2075 22 21.4789 20.3535 20.9133 16.3147L20.1444 10.1201C19.676 7.90964 18.3503 7 17.0865 7H16.9303ZM15.4932 7C15.4654 6.92794 15.4506 6.85153 15.4497 6.77432C15.4497 4.85682 13.8899 3.30238 11.9657 3.30238C10.0416 3.30238 8.48184 4.85682 8.48184 6.77432C8.49502 6.84898 8.49502 6.92535 8.48184 7H15.4932ZM9.097 12.1486C8.60889 12.1486 8.21321 11.7413 8.21321 11.2389C8.21321 10.7366 8.60889 10.3293 9.097 10.3293C9.5851 10.3293 9.98079 10.7366 9.98079 11.2389C9.98079 11.7413 9.5851 12.1486 9.097 12.1486ZM14.002 11.2389C14.002 11.7413 14.3977 12.1486 14.8858 12.1486C15.3739 12.1486 15.7696 11.7413 15.7696 11.2389C15.7696 10.7366 15.3739 10.3293 14.8858 10.3293C14.3977 10.3293 14.002 10.7366 14.002 11.2389Z" fill="#200E32" />
-          </svg>
-          <div class="hidden md:block">
-            <button class="mr-6">Login</button>
-            <button class="py-2 px-4 text-white bg-black rounded-3xl">
-              Signup
-            </button>
-          </div>
-          <div id="showMenu" class="md:hidden">
-            <img src="{{asset('assets/images/logos/Menu.svg')}}" alt="Menu icon" />
-          </div>
-    </nav>
-    <div id='mobileNav' class="hidden px-4 py-6 fixed top-0 left-0 h-full w-full bg-secondary z-20 animate-fade-in-down">
-        <div id="hideMenu" class="flex justify-end">
-            <img src="{{asset('assets/images/logos/Cross.svg')}}" alt="" class="h-16 w-16" />
-        </div>
-          <ul class="flex flex-col mx-8 my-24 items-center text-3xl">
-            <li class="my-6">
-              <a href="howitworks">How it works</a>
-            </li>
-            <li class="my-6">
-              <a href="features">Features</a>
-            </li>
-            <li class="my-6">
-              <a href="pricing">Pricing</a>
-            </li>
-          </ul> 
-    </div>
-     <!-- Hero -->
-  <section
-  class="pt-24 md:mt-0 md:h-screen flex flex-col justify-center text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 bg-secondary">
+<x-app-layout>
+<section class="pt-24 md:mt-0 md:h-screen flex flex-col justify-center text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 bg-secondary">
   <div class="md:flex-1 md:mr-10">
     <h1 class="font-pt-serif text-4xl font-bold mb-7">
         Welcome to Pudfra's 
@@ -106,9 +13,14 @@
         to a smoother, more delightful e-commerce journey.
     </p>
     <div>
+      <a href="https://wa.me/254741061815">
+        <button class="bg-black px-6 py-4 rounded-lg border-2 border-black border-solid text-white mr-2 mb-2">
+          Quick Contact <i class="fa-brands fa-whatsapp"></i>
+        </button>
+      </a>
       <a href="{{route('shop')}}">
         <button class="px-6 py-4 border-2 border-black border-solid rounded-lg">
-            Visit the Ecommerce-Shop
+            Visit the E-commerce shop <i class="fa-solid fa-bag-shopping"></i>
         </button>
       </a>
     </div>
@@ -161,7 +73,7 @@
 </section>
 
 <!-- About -->
-<section class="sectionSize bg-white">
+<section class="sectionSize bg-secondary">
     <h2 class="secondaryTitle bg-underline3 bg-100%">About</h2>
   <!-- features -->
   <div class="container py-5">
@@ -213,78 +125,59 @@
 <!-- Available products -->
 <section class="sectionSize bg-secondary">
     <h2 class="secondaryTitle bg-underline3 bg-100%">Featured Products</h2>
-</section>
+    <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
 
-</div>
-<!-- Footer -->
-<section class="bg-white dark:bg-gray-900 sectionSize">
-      <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-        <div class="md:flex md:justify-between">
-          <div class="mb-6 md:mb-0">
-            <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="{{asset('images/pudfralogo.svg')}}" class="h-8" alt="Pudfra Logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Pudfra</span>
-            </a>
-          </div>
-          <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-              <div>
-                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
-                  <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                      <li class="mb-4">
-                          <a href="https://pudfra-talk.xyz/" class="hover:underline">Pudfra-talk</a>
-                      </li>
-                      <li>
-                          <a href="" class="hover:underline">Pudfra-Shop</a>
-                      </li>
-                  </ul>
+      <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+          <a href="#">
+              <img class="hover:grow hover:shadow-lg" src="https://images.unsplash.com/photo-1555982105-d25af4182e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
+              <div class="pt-3 flex items-center justify-between">
+                <p class="">Product Name</p>
+                <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+                </svg>
               </div>
-              <div>
-                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
-                  <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                      <li class="mb-4">
-                          <a href="https://github.com/frank2720" class="hover:underline ">Github</a>
-                      </li>
-                      <li>
-                          <a href="" class="hover:underline">Discord</a>
-                      </li>
-                  </ul>
-              </div>
-              <div>
-                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-                  <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                      <li class="mb-4">
-                          <a href="#" class="hover:underline">Privacy Policy</a>
-                      </li>
-                      <li>
-                          <a href="#" class="hover:underline">Terms &amp; Conditions</a>
-                      </li>
-                  </ul>
-              </div>
-          </div>
+            <p class="pt-1 text-gray-900">£9.99</p>
+          </a>
       </div>
-      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-      <div class="sm:flex sm:items-center sm:justify-between">
-          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">&copy; {{date('Y')}} <a href="" class="hover:underline">Pudfra™</a>. All Rights Reserved.
-          </span>
-          <div class="flex mt-4 sm:justify-center sm:mt-0">
-              <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                <i class="fa-brands fa-facebook"></i>
-              </a>
-              <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
-                <i class="fa-brands fa-discord"></i>
-              </a>
-              <a href="https://twitter.com/pudfra" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
-                <i class="fa-brands fa-x-twitter"></i>
-              </a>
-              <a href="https://github.com/frank2720" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
-                <i class="fa-brands fa-github"></i>
-              </a>
-              <a href="https://wa.me/254741061815" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
-                <i class="fa-brands fa-whatsapp"></i>
-              </a>
-          </div>
+
+      <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+          <a href="#">
+              <img class="hover:grow hover:shadow-lg" src="https://images.unsplash.com/photo-1508423134147-addf71308178?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
+              <div class="pt-3 flex items-center justify-between">
+                <p class="">Product Name</p>
+                <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+                </svg>
+              </div>
+            <p class="pt-1 text-gray-900">£9.99</p>
+          </a>
+      </div>
+
+      <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+          <a href="#">
+              <img class="hover:grow hover:shadow-lg" src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
+              <div class="pt-3 flex items-center justify-between">
+                <p class="">Product Name</p>
+                <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+                </svg>
+              </div>
+            <p class="pt-1 text-gray-900">£9.99</p>
+          </a>
+      </div>
+
+      <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+          <a href="#">
+              <img class="hover:grow hover:shadow-lg" src="https://images.unsplash.com/reserve/LJIZlzHgQ7WPSh5KVTCB_Typewriter.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
+              <div class="pt-3 flex items-center justify-between">
+                <p class="">Product Name</p>
+                <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+                </svg>
+              </div>
+            <p class="pt-1 text-gray-900">£9.99</p>
+          </a>
       </div>
     </div>
 </section>
-</body>
-</html>
+</x-app-layout>
