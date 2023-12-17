@@ -1,55 +1,11 @@
 @props(['product'])
-
-<div class="flex flex-col justify-center p-10 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-  <a href="{{route('product_details',['id'=>$product->id])}}">
-   <img src="{{$product->img}}" class="object-cover rounded-t-xl"  />
-  </a>
-    
-    <div class="px-4 py-3">
-      <div class="text-orange-500">
-        <ul class="flex flex-row justify-center items-center">
-          <li>
-            <span><i class="fa-solid fa-star"></i></span>
-          </li>
-          <li>
-            <span><i class="fa-solid fa-star"></i></span>
-          </li>
-          <li>
-            <span><i class="fa-solid fa-star"></i></span>
-          </li>
-          <li>
-            <span><i class="fa-solid fa-star"></i></span>
-          </li>
-          <li>
-            <span><i class="fa-solid fa-star"></i></span>
-          </li>
-          <li>
-            <span><p class="text-sm ml-2">({{$product->reviews}})</p></span>
-          </li>
-        </ul>
-      </div>
-      <div class="prod-title">
-        <a href="{{route('product_details',['id'=>$product->id])}}">
-            <p class="text-base text-center text-gray-900 font-bold">{{ucfirst($product->name)}}</p>
-        </a>
-      </div>
-      <div class="flex flex-col md:flex-row justify-between items-center text-gray-900">
-        <p class="text-sm text-blue-600">Ksh. {{number_format($product->price)}}</p>
-        @if ($product->retail_price>$product->price)
-            <del class="text-sm text-red-500">{{number_format($product->retail_price)}}</del>
-        @else
-        <p>......</p>
-        @endif
-          <button type="button" class="px-5 py-2 rounded-full hover:bg-blue-600 hover:text-white border-2 border-gray-900 focus:outline-none">
-            <a href="{{route('addToCart', ['id'=>$product->id])}}">
-                <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 11 4-7"/><path d="m19 11-4-7"/><path d="M2 11h20"/>
-                    <path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8c.9 0 1.8-.7 2-1.6l1.7-7.4"/>
-                    <path d="m9 11 1 9"/>
-                    <path d="M4.5 15.5h15"/>
-                    <path d="m15 11-1 9"/>
-                </svg>
-            </a>
-          </button>
-      </div>
-    </div>
-</div>
+<a href="{{route('product_details',['id'=>$product->id])}}">
+  <img class="hover:grow hover:shadow-lg rounded-lg" src="{{$product->img}}">
+  <div class="pt-3 flex items-center justify-between">
+    <p class="">{{ucfirst($product->name)}}</p>
+    <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+    </svg>
+  </div>
+<p class="pt-1 text-gray-900">Ksh. {{number_format($product->price)}}</p>
+</a>

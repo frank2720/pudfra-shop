@@ -41,7 +41,7 @@ class ProductController extends Controller
      */
     public function recent_products(): View
     {
-         $recent_products = DB::table('products')->latest()->paginate(8);
+         $recent_products = DB::table('products')->latest()->paginate(4);
          return view('welcome', ['recent_products'=>$recent_products]);
     }
 
