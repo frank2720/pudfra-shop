@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Pudfra</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{{ config('app.name','pudfra-shop')}}</title>
+
+        <link rel="icon" type="image/x-icon" href="{{asset('assets/images/icons/money-back.svg')}}">
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+        <!--Font Awesome Kit-->
+        <script src="https://kit.fontawesome.com/3f96f27cdc.js" crossorigin="anonymous"></script>
+
+        <!-- Styles -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
         <script src="{{asset('assets/js/script.js')}}"></script>
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.css" rel="stylesheet" />
+        <style>
+            /* Chrome, Safari, Edge, Opera */
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+            
+            /* Firefox */
+            input[type=number] {
+              -moz-appearance: textfield;
+            }
+        </style>
     </head>
 <body>
     <nav class="fixed flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center bg-secondary z-10">
@@ -68,12 +96,11 @@
         to a smoother, more delightful e-commerce journey.
     </p>
     <div class="font-montserrat">
-      <button class="bg-black px-6 py-4 rounded-lg border-2 border-black border-solid text-white mr-2 mb-2">
-        Call to action
-      </button>
-      <button class="px-6 py-4 border-2 border-black border-solid rounded-lg">
-        Secondary action
-      </button>
+      <a href="{{route('shop')}}">
+        <button class="px-6 py-4 border-2 border-black border-solid rounded-lg">
+            Visit the Ecommerce-Shop
+        </button>
+      </a>
     </div>
   </div>
   <div class="flex justify-around md:block mt-8 md:mt-0 md:flex-1">
@@ -88,265 +115,166 @@
 </section>
 
 <!-- How it works -->
-<section class="bg-black text-white sectionSize">
+<section class="bg-blue-600 text-white sectionSize">
   <div>
-    <h2 class="secondaryTitle bg-underline2 bg-100%">How it works</h2>
+    <h2 class="secondaryTitle bg-underline2 bg-100%">How to shop</h2>
   </div>
   <div class="flex flex-col md:flex-row">
     <div class="flex-1 mx-8 flex flex-col items-center my-4">
       <div class="border-2 rounded-full bg-secondary text-black h-12 w-12 flex justify-center items-center mb-3">
         1
       </div>
-      <h3 class="font-montserrat font-medium text-xl mb-2">Eat</h3>
+      <h3 class="font-montserrat font-medium text-xl mb-2">Visit shop</h3>
       <p class="text-center font-montserrat">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Visit the products page where a list of Items are listed and add the product you want to cart.
       </p>
     </div>
     <div class="flex-1 mx-8 flex flex-col items-center my-4">
       <div class="border-2 rounded-full bg-secondary text-black h-12 w-12 flex justify-center items-center mb-3">
         2
       </div>
-      <h3 class="font-montserrat font-medium text-xl mb-2">Sleep</h3>
+      <h3 class="font-montserrat font-medium text-xl mb-2">View Cart</h3>
       <p class="text-center font-montserrat">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+       View the number of items added to cart. You can reduce, increase the quantity of the product you want to order.
       </p>
     </div>
     <div class="flex-1 mx-8 flex flex-col items-center my-4">
       <div class="border-2 rounded-full bg-secondary text-black h-12 w-12 flex justify-center items-center mb-3">
         3
       </div>
-      <h3 class="font-montserrat font-medium text-xl mb-2">Rave</h3>
+      <h3 class="font-montserrat font-medium text-xl mb-2">Place Order</h3>
       <p class="text-center font-montserrat">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Place order for products in the cart and wait for the delivery.
       </p>
     </div>
   </div>
 </section>
 
-<!-- Features -->
+<!-- About -->
 <section class="sectionSize bg-secondary">
-  <div>
-    <h2 class="secondaryTitle bg-underline3 bg-100%">Features</h2>
-  </div>
-  <div class="md:grid md:grid-cols-2 md:grid-rows-2">
+    <h2 class="secondaryTitle bg-underline3 bg-100%">About</h2>
+  <!-- features -->
+  <div class="container py-5">
+    <div class="w-10/12 grid grid-cols-1 md:grid-cols-3 gap-6 mx-auto justify-center">
+        <div class="border border-blue-600 rounded-sm px-3 py-6 flex justify-center items-center gap-5">
+            <img src="assets/images/icons/delivery-van.svg" alt="Delivery" class="w-12 h-12 object-contain">
+                <div>
+                    <h4 class="font-medium capitalize text-lg">Free Shipping</h4>
+                    <p class="text-gray-500 text-sm">Order over Ksh. {{number_format(10000)}}</p>
+                </div>
+        </div>
+        <div class="border border-blue-600 rounded-sm px-3 py-6 flex justify-center items-center gap-5">
+            <img src="assets/images/icons/money-back.svg" alt="Delivery" class="w-12 h-12 object-contain">
+                <div>
+                    <h4 class="font-medium capitalize text-lg">Money Rturns</h4>
+                    <p class="text-gray-500 text-sm">30 days money returs</p>
+                </div>
+        </div>
+        <div class="border border-blue-600 rounded-sm px-3 py-6 flex justify-center items-center gap-5">
+            <img src="assets/images/icons/service-hours.svg" alt="Delivery" class="w-12 h-12 object-contain">
+            <div>
+                <h4 class="font-medium capitalize text-lg">24/7 Support</h4>
+                <p class="text-gray-500 text-sm">Customer support</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ./features -->
 
-    <div class="flex items-start font-montserrat my-6 mr-10">
+    <div class="flex items-start font-montserrat">
       <img src="{{asset('assets/images/logos/Heart.svg')}}" alt='' class="h-7 mr-4" />
       <div>
-        <h3 class="font-semibold text-2xl">Feature #1</h3>
+        <h3 class="font-semibold text-2xl"></h3>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Quisquam voluptate praesentium tenetur earum repellendus! Dicta
-          culpa consequuntur saepe quibusdam labore, est ex ducimus
-          tempore, quos illum officiis, pariatur ea placeat.
+            Here, we're not just building a website; 
+            we're crafting a space where your shopping desires meet cutting-edge technology. 
+            From secure payment gateways to a user-friendly interface, every detail is meticulously designed to enhance your online experience.
+            <br><br>
+            Whether you're a fellow developer, business enthusiast, 
+            or a tech-savvy shopper, this is your space to witness the magic of Laravel shaping the future of e-commerce. 
+            Join me in creating a virtual marketplace that's not just functional but a joy to explore.
+            <br><br>
+            Ready to transform your online shopping venture? Let's dive into the world of e-commerce development together! 💻🛒✨
         </p>
       </div>
     </div>
-
-    <div class="flex items-start font-montserrat my-6 mr-10">
-      <img src="{{asset('assets/images/logos/Heart.svg')}}" alt='' class="h-7 mr-4" />
-      <div>
-        <h3 class="font-semibold text-2xl">Feature #2</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Quisquam voluptate praesentium tenetur earum repellendus! Dicta
-          culpa consequuntur saepe quibusdam labore, est ex ducimus
-          tempore, quos illum officiis, pariatur ea placeat.
-        </p>
-      </div>
-    </div>
-
-    <div class="flex items-start font-montserrat my-6 mr-10">
-      <img src="{{asset('assets/images/logos/Heart.svg')}}" alt='' class="h-7 mr-4" />
-      <div>
-        <h3 class="font-semibold text-2xl">Feature #3</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Quisquam voluptate praesentium tenetur earum repellendus! Dicta
-          culpa consequuntur saepe quibusdam labore, est ex ducimus
-          tempore, quos illum officiis, pariatur ea placeat.
-        </p>
-      </div>
-    </div>
-
-    <div class="flex items-start font-montserrat my-6 mr-10">
-      <img src="{{asset('assets/images/logos/Heart.svg')}}" alt='' class="h-7 mr-4" />
-      <div>
-        <h3 class="font-semibold text-2xl">Feature #4</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Quisquam voluptate praesentium tenetur earum repellendus! Dicta
-          culpa consequuntur saepe quibusdam labore, est ex ducimus
-          tempore, quos illum officiis, pariatur ea placeat.
-        </p>
-      </div>
-    </div>
-
-  </div>
 </section>
 
-<!-- Pricing -->
-<section class="sectionSize bg-secondary py-0">
-  <div>
-    <h2 class="secondaryTitle bg-underline4 mb-0 bg-100%">Pricing</h2>
-  </div>
-  <div class="flex w-full flex-col md:flex-row">
-
-    <div class='flex-1 flex flex-col mx-6 shadow-2xl relative bg-secondary rounded-2xl py-5 px-8 my-8 md:top-24'>
-      <h3 class="font-pt-serif font-normal text-2xl mb-4">
-        The Good
-      </h3>
-      <div class="font-montserrat font-bold text-2xl mb-4">
-        $25
-        <span class="font-normal text-base"> / month</span>
-      </div>
-
-      <div class="flex">
-        <img src="{{asset('assets/images/logos/CheckedBox.svg')}}" alt="" class="mr-1" />
-        <p>Benefit #1</p>
-      </div>
-      <div class="flex">
-        <img src="{{asset('dist/assets/logos/CheckedBox.svg')}}" alt="" class="mr-1" />
-        <p>Benefit #2</p>
-      </div>
-      <div class="flex">
-        <img src="{{asset('dist/assets/logos/CheckedBox.svg')}}" alt="" class="mr-1" />
-        <p>Benefit #3</p>
-      </div>
-
-      <button class=" border-2 border-solid border-black rounded-xl text-lg py-3 mt-4">
-        Choose plan
-      </button>
-    </div>
-
-    <div class='flex-1 flex flex-col mx-6 shadow-2xl relative bg-secondary rounded-2xl py-5 px-8 my-8 md:top-12'>
-      <h3 class="font-pt-serif font-normal text-2xl mb-4">
-        The Bad
-      </h3>
-      <div class="font-montserrat font-bold text-2xl mb-4">
-        $40
-        <span class="font-normal text-base"> / month</span>
-      </div>
-
-      <div class="flex">
-        <img src="{{asset('dist/assets/logos/CheckedBox.svg')}}" alt="" class="mr-1" />
-        <p>Benefit #1</p>
-      </div>
-      <div class="flex">
-        <img src="{{asset('dist/assets/logos/CheckedBox.svg')}}" alt="" class="mr-1" />
-        <p>Benefit #2</p>
-      </div>
-      <div class="flex">
-        <img src="{{asset('dist/assets/logos/CheckedBox.svg')}}" alt="" class="mr-1" />
-        <p>Benefit #3</p>
-      </div>
-
-      <button class=" border-2 border-solid border-black rounded-xl text-lg py-3 mt-4">
-        Choose plan
-      </button>
-    </div>
-
-    <div class='flex-1 flex flex-col mx-6 shadow-2xl relative bg-secondary rounded-2xl py-5 px-8 my-8 md:top-24'>
-      <h3 class="font-pt-serif font-normal text-2xl mb-4">
-        The Ugly
-      </h3>
-      <div class="font-montserrat font-bold text-2xl mb-4">
-        $50
-        <span class="font-normal text-base"> / month</span>
-      </div>
-
-      <div class="flex">
-        <img src="{{asset('dist/assets/logos/CheckedBox.svg')}}" alt="" class="mr-1" />
-        <p>Benefit #1</p>
-      </div>
-      <div class="flex">
-        <img src="{{asset('dist/assets/logos/CheckedBox.svg')}}" alt="" class="mr-1" />
-        <p>Benefit #2</p>
-      </div>
-      <div class="flex">
-        <img src="{{asset('dist/assets/logos/CheckedBox.svg')}}" alt="" class="mr-1" />
-        <p>Benefit #3</p>
-      </div>
-
-      <button class=" border-2 border-solid border-black rounded-xl text-lg py-3 mt-4">
-        Choose plan
-      </button>
-    </div>
-
-  </div>
+<!-- Available products -->
+<section class="sectionSize bg-secondary">
+    <h2 class="secondaryTitle bg-underline3 bg-100%">Products Overview</h2>
 </section>
 
-<!-- FAQ  -->
-<section class="sectionSize items-start pt-8 md:pt-36 bg-black text-white">
-  <div>
-    <h2 class="secondaryTitle bg-highlight3 p-10 mb-0 bg-center bg-100%">
-      FAQ
-    </h2>
-  </div>
-
-  <div toggleElement class="w-full py-4">
-    <div class="flex justify-between items-center">
-      <div question class="font-montserrat font-medium mr-auto">
-        Where can I get this HTML template?
-      </div>
-      <img src="{{asset('dist/assets/logos/CaretRight.svg')}}"  alt="" class="transform transition-transform" />
-    </div>
-    <div answer class="font-montserrat text-sm font-extralight pb-8 hidden">
-      You can download it on Gumroad.com
-    </div>
-  </div>
-  <hr class="w-full bg-white" />
-
-  <div toggleElement class="w-full py-4">
-    <div class="flex justify-between items-center">
-      <div question class="font-montserrat font-medium mr-auto">
-        Is this HTML template free?
-      </div>
-      <img src="{{asset('dist/assets/logos/CaretRight.svg')}}" alt="" class="transform transition-transform" />
-    </div>
-    <div answer class="font-montserrat text-sm font-extralight pb-8 hidden">
-      Yes! For you it is free.
-    </div>
-  </div>
-  <hr class="w-full bg-white" />
-
-  <div toggleElement class="w-full py-4">
-    <div class="flex justify-between items-center">
-      <div question class="font-montserrat font-medium mr-auto">
-        Am I awesome?
-      </div>
-      <img src="{{asset('dist/assets/logos/CaretRight.svg')}}" alt="" class="transform transition-transform" />
-    </div>
-    <div answer class="font-montserrat text-sm font-extralight pb-8 hidden">
-      Yes! No doubt about it.
-    </div>
-  </div>
-  <hr class="w-full bg-white" />
-
-</section>
 
 <!-- Footer -->
-<section class="bg-black sectionSize">
-  <div class="mb-4">
-    <img src="{{asset('images/pudfralogo.svg')}}" alt="Logo" class="h-4" />
-  </div>
-  <div class="flex mb-8">
-    <a href="#">
-      <img src="{{asset('assets/images/logos/Facebook.svg')}}" alt="Facebook logo" class="mx-4" />
-    </a>
-    <a href="#">
-      <img src="{{asset('assets/images/logos/Youtube.svg')}}" alt="Youtube logo" class="mx-4" />
-    </a>
-    <a href="#">
-      <img src="{{asset('assets/images/logos/Instagram.svg')}}" alt="Instagram logo" class="mx-4" />
-    </a>
-    <a href="#">
-      <img src="{{asset('assets/images/logos/Twitter.svg')}}" alt="Twitter logo" class="mx-4" />
-    </a>
-  </div>
-  <div class="text-white font-montserrat text-sm">
-    © 2021 STARTUP. All rights reserved
-  </div>
+<section class="bg-white dark:bg-gray-900 sectionSize">
+      <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div class="md:flex md:justify-between">
+          <div class="mb-6 md:mb-0">
+            <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="{{asset('images/pudfralogo.svg')}}" class="h-8" alt="Pudfra Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Pudfra</span>
+            </a>
+          </div>
+          <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+              <div>
+                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+                  <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                      <li class="mb-4">
+                          <a href="https://pudfra-talk.xyz/" class="hover:underline">Pudfra-talk</a>
+                      </li>
+                      <li>
+                          <a href="" class="hover:underline">Pudfra-Shop</a>
+                      </li>
+                  </ul>
+              </div>
+              <div>
+                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+                  <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                      <li class="mb-4">
+                          <a href="https://github.com/frank2720" class="hover:underline ">Github</a>
+                      </li>
+                      <li>
+                          <a href="" class="hover:underline">Discord</a>
+                      </li>
+                  </ul>
+              </div>
+              <div>
+                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                  <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                      <li class="mb-4">
+                          <a href="#" class="hover:underline">Privacy Policy</a>
+                      </li>
+                      <li>
+                          <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+      <div class="sm:flex sm:items-center sm:justify-between">
+          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">&copy; {{date('Y')}} <a href="" class="hover:underline">Pudfra™</a>. All Rights Reserved.
+          </span>
+          <div class="flex mt-4 sm:justify-center sm:mt-0">
+              <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                <i class="fa-brands fa-discord"></i>
+              </a>
+              <a href="https://twitter.com/pudfra" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="https://github.com/frank2720" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://wa.me/254741061815" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+          </div>
+      </div>
+    </div>
 </section>
 </body>
 </html>
