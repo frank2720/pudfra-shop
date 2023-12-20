@@ -2,7 +2,7 @@
   <div class="flex items-center">
       <img src="{{asset('images/pudfralogo.svg')}}" alt="Logo" class="h-8" />
   </div>
-  <ul class="items-center hidden md:flex">
+  <ul class="items-center hidden md:flex font-medium">
       <li class="mx-3 ">
         <a class="growing-underline" href="{{route('welcome')}}">
           Home

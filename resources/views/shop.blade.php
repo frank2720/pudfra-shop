@@ -1,11 +1,11 @@
 <x-app-layout>
-<div class="md:container md:mx-auto px-4 pt-4 pb-16 items-center">
+<section class="sectionSize bg-secondary">
     <!-- products -->
     <div class="col-span-3">
         <div class="mx-auto flex items-center flex-wrap pt-24 pb-12">
             <nav id="store" class="w-full z-30 top-0 px-6 py-1">
                 <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
-                    <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="#">
+                    <a class="uppercase tracking-wide no-underline hover:no-underline font-semibold text-gray-800 text-xl " href="#">
                         Store
                     </a>
                     <div class="flex items-center" id="store-nav-content">
@@ -32,5 +32,5 @@
             {{$products->links()}}
         </div>
     </div>
-</div>
+</section>
 </x-app-layout>

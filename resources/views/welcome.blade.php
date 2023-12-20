@@ -1,13 +1,13 @@
 <x-app-layout>
 <section class="pt-24 md:mt-0 md:h-screen flex flex-col justify-center text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 bg-secondary">
   <div class="md:flex-1 md:mr-10">
-    <h1 class="font-pt-serif text-4xl font-bold mb-7">
+    <h1 class="text-4xl font-semibold mb-7">
         Welcome to Pudfra's 
       <span class="bg-underline1 bg-left-bottom bg-no-repeat pb-2 bg-100%">
         Ecommerce development hub!
       </span>
     </h1>
-    <p class="font-pt-serif font-normal mb-7">
+    <p class="font-normal mb-7">
         Step into the realm of online innovation and seamless shopping experiences. 
         As a Junior Laravel Developer, I'm excited to invite you to our digital marketplace where every line of code contributes 
         to a smoother, more delightful e-commerce journey.
@@ -106,8 +106,7 @@
     <div class="flex items-start">
       <img src="{{asset('assets/images/logos/Heart.svg')}}" alt='' class="h-7 mr-4" />
       <div>
-        <h3 class="font-semibold text-2xl"></h3>
-        <p>
+        <p class="font-medium">
             Here, we're not just building a website; 
             we're crafting a space where your shopping desires meet cutting-edge technology. 
             From secure payment gateways to a user-friendly interface, every detail is meticulously designed to enhance your online experience.
@@ -123,7 +122,7 @@
 </section>
 
 <!-- Available products -->
-<section class="sectionSize bg-secondary">
+<section class="sectionSize">
     <h2 class="secondaryTitle bg-underline3 bg-100%">Featured Products</h2>
     <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
 
