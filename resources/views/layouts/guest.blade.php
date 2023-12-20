@@ -6,7 +6,7 @@
 
         <title>{{ config('app.name','pudfra-shop')}}</title>
 
-        <link rel="icon" type="image/x-icon" href="assets/images/icons/money-back.svg">
+        <link rel="icon" type="image/x-icon" href="{{asset('assets/images/icons/money-back.svg')}}">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,19 +18,64 @@
 
         <!-- Styles -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+        <script src="{{asset('assets/js/script.js')}}"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
     </head>
     <body class="antialiased">
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
 
-            <div class="mr-3 py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16 flex items-center">
-                <div class="w-full lg:max-w-xl p-6 space-y-8 sm:p-8 bg-white rounded-lg shadow-xl dark:bg-gray-800 py-12">
-                    {{$slot}}
+            <div id='mobileNav' class="hidden px-4 py-6 fixed top-0 left-0 h-full w-full bg-secondary z-20 animate-fade-in-down">
+                <div id="hideMenu" class="flex justify-end">
+                    <img src="{{asset('assets/images/logos/Cross.svg')}}" alt="" class="h-16 w-16" />
                 </div>
+                  <ul class="flex flex-col mx-8 my-24 items-center text-3xl">
+                    <li class="my-6">
+                      <a href="{{route('welcome')}}">Home</a>
+                    </li>
+                    <li class="my-6">
+                      <a href="{{route('shop')}}">Shop</a>
+                    </li>
+                    @if (Route::has('login'))
+                        @auth
+                        <form method="POST" action="{{route('logout')}}">
+                            @csrf
+                        <li class="my-6">
+                          <a href="{{route('logout')}}"
+                            onclick="event.preventDefault();
+                            this.closest('form').submit();">SignOut
+                          </a>
+                        </li>
+                        </form>
+                        @else
+                        <li class="my-6">
+                        <a href="{{route('login')}}">Login</a>
+                        </li>
+                        @if (Route::has('register'))
+                        <li class="my-6">
+                        <a href="{{route('register')}}">SignUp</a>
+                        </li>
+                        @endif
+                        @endauth
+                    @endif
+                    </li>
+                  </ul> 
             </div>
-            
+            <!-- Page Heading -->
+            @if (isset($header))
+                <header class="py-4 shadow-sm sm:rounded-lg bg-gray-300">
+                    <div class="container flex items-center justify-between">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endif
+
+            <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+                {{$slot}}
+            </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
     </body>

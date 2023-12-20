@@ -1,7 +1,8 @@
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
-
+<div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+    <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
     <form class="space-y-6" action="{{route('login')}}" method="POST">
         <h5 class="text-xl font-medium text-gray-900 dark:text-white">Login to Pudfra</h5>
         @csrf
@@ -43,4 +44,6 @@
             Not registered yet? <a href="{{route('register')}}" class="text-blue-600 hover:underline dark:text-blue-500">Create account</a>
         </div>
     </form>
+    </div>
+</div>
 </x-guest-layout>

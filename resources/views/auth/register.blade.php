@@ -1,4 +1,6 @@
 <x-guest-layout>
+<div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 pt-12">
+    <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
     <form class="space-y-6" action="{{route('register')}}" method="POST">
         <h5 class="text-xl font-medium text-gray-900 dark:text-white">Register to Pudfra</h5>
         @csrf
@@ -44,4 +46,6 @@
             Already registered ? <a href="{{route('login')}}" class="text-blue-600 hover:underline dark:text-blue-500">Login</a>
         </div>
     </form>
+    </div>
+</div>
 </x-guest-layout>
