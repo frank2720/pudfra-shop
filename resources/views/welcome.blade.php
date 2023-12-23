@@ -106,7 +106,7 @@
     <div class="flex items-start">
       <img src="{{asset('assets/images/logos/Heart.svg')}}" alt='' class="h-7 mr-4" />
       <div>
-        <p class="font-medium">
+        <p class="font-normal">
             Here, we're not just building a website; 
             we're crafting a space where your shopping desires meet cutting-edge technology. 
             From secure payment gateways to a user-friendly interface, every detail is meticulously designed to enhance your online experience.
