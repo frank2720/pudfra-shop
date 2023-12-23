@@ -17,7 +17,6 @@
         <script src="https://kit.fontawesome.com/3f96f27cdc.js" crossorigin="anonymous"></script>
 
         <!-- Styles -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
         <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
         <script src="{{asset('assets/js/script.js')}}"></script>
