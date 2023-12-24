@@ -1,46 +1,67 @@
 <x-app-layout>
-	@include('layouts.header')
-	<!-- component -->
-<style>@import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);</style>
-<div class="w-full rounded bg-white p-10 mx-auto text-gray-800 relative md:text-left">
-    <div class="md:flex items-center mb-5">
-        <div class="w-full md:w-1/2 px-10 mb-10 md:mb-0">
-            <div class="relative">
-                <img src="{{asset($product->img)}}" alt="" class="h-auto max-w-xs">
-                <div class="grid grid-cols-5 gap-4 mt-4">
-                    <img src="{{asset($product->img)}}" alt="product2">
-                    <img src="{{asset($product->img)}}" alt="product2">
-                    <img src="{{asset($product->img)}}" alt="product2">
+<section class="pt-24 md:mt-0 md:h-screen flex flex-col justify-center text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 bg-secondary">    
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row -mx-4">
+            <div class="md:flex-1 px-4">
+                <div class="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
+                    <img class="w-full h-full object-cover" src="{{asset($product->img)}}" alt="Product Image">
+                </div>
+                <div class="flex -mx-2 mb-4">
+                    <div class="w-1/2 px-2">
+                        <button class="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">Add to Cart</button>
+                    </div>
+                    <div class="w-1/2 px-2">
+                        <button class="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600">Add to Wishlist</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="w-full px-4 md:w-1/2 ">
-
-            <div class="lg:pl-20">
-                <div class="mb-8">
-                    <h2 class="max-w-xl mb-6 text-2xl font-bold dark:text-gray-400 md:text-4xl">
-                        {{$product->name}}
-                    </h2>
-                    <p class="inline-block text-4xl text-gray-700 dark:text-gray-400 ">
-                        <span>Ksh {{number_format($product->price)}}</span>
-                        @if ($product->retail_price>$product->price)
-                        <span class="text-base font-normal text-red-500 line-through dark:text-gray-400">
-                            Ksh {{number_format($product->retail_price)}}
-                        </span>
-                        @endif
+            <div class="md:flex-1 px-4">
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">{{$product->name}}</h2>
+                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed
+                    ante justo. Integer euismod libero id mauris malesuada tincidunt.
+                </p>
+                <div class="flex mb-4">
+                    <div class="mr-4">
+                        <span class="font-bold text-gray-700 dark:text-gray-300">Price:</span>
+                        <span class="text-gray-600 dark:text-gray-300">Ksh {{number_format($product->price)}}</span>
+                    </div>
+                    <div>
+                        <span class="font-bold text-gray-700 dark:text-gray-300">Availability:</span>
+                        <span class="text-gray-600 dark:text-gray-300">In Stock</span>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <span class="font-bold text-gray-700 dark:text-gray-300">Select Color:</span>
+                    <div class="flex items-center mt-2">
+                        <button class="w-6 h-6 rounded-full bg-gray-800 dark:bg-gray-200 mr-2"></button>
+                        <button class="w-6 h-6 rounded-full bg-red-500 dark:bg-red-700 mr-2"></button>
+                        <button class="w-6 h-6 rounded-full bg-blue-500 dark:bg-blue-700 mr-2"></button>
+                        <button class="w-6 h-6 rounded-full bg-yellow-500 dark:bg-yellow-700 mr-2"></button>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <span class="font-bold text-gray-700 dark:text-gray-300">Select Size:</span>
+                    <div class="flex items-center mt-2">
+                        <button class="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">S</button>
+                        <button class="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">M</button>
+                        <button class="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">L</button>
+                        <button class="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">XL</button>
+                        <button class="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">XXL</button>
+                    </div>
+                </div>
+                <div>
+                    <span class="font-bold text-gray-700 dark:text-gray-300">Product Description:</span>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm mt-2">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                        sed ante justo. Integer euismod libero id mauris malesuada tincidunt. Vivamus commodo nulla ut
+                        lorem rhoncus aliquet. Duis dapibus augue vel ipsum pretium, et venenatis sem blandit. Quisque
+                        ut erat vitae nisi ultrices placerat non eget velit. Integer ornare mi sed ipsum lacinia, non
+                        sagittis mauris blandit. Morbi fermentum libero vel nisl suscipit, nec tincidunt mi consectetur.
                     </p>
-                    <div class="flex flex-wrap items-center gap-4 mt-4 mb-6">
-                        <button type="submit"
-                        class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded-full">
-                            <a href="{{route('addToCart',['id'=>$product->id])}}">Add to Cart</a>
-                        </button>
-                    </div>
-                    <div class="flex flex-wrap -mx-2 -mb-2">
-                        {{$product->description}}
-                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 </x-app-layout>
