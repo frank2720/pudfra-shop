@@ -17,7 +17,7 @@ class ProductController extends Controller
 
     public function products(): View
     {
-        $products = DB::table('products')->orderBy('name')->simplePaginate(8);
+        $products = DB::table('products')->orderBy('name')->simplePaginate(16);
         $categories = DB::table('categories')->get();
         return view('shop', ['products'=>$products, 'categories'=>$categories]);
     }

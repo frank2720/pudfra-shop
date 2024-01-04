@@ -122,7 +122,7 @@
 </section>
 
 <!-- Available products -->
-<section class="sectionSize">
+<section class="sectionSize bg-secondary">
     <h2 class="secondaryTitle bg-underline3 bg-100%">Featured Products</h2>
     <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
 
