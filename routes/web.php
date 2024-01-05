@@ -29,6 +29,10 @@ Route::get('/shopping/reduceItem/{id}', [ProductController::class, 'reduceInCart
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');*/
 
+Route::get('/dashboard', function () {
+    return view('admin');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

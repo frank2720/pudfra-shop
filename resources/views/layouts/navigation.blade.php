@@ -12,10 +12,10 @@
         <a href="{{route('shop')}}">Shop</a>
       </li>
       <li class="growing-underline mx-3">
-        <a href="">Categories</a>
+        <a href="">New Arrivals</a>
       </li>
       <li class="growing-underline mx-3">
-        <a href="{{route('shop')}}">New Arrivals</a>
+        <a href="">About Us</a>
       </li>
       <li class="growing-underline mx-3">
         <a href="{{route('shop')}}">Deals</a>
