@@ -23,7 +23,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
     </head>
-    <body class="antialiased">
+    <body x-data="{darkMode: false}" :class="{'dark': darkMode === true }" class="antialiased">
         <div class="min-h-screen">
             @include('layouts.navigation')
 
