@@ -29,9 +29,12 @@ Route::get('/shopping/reduceItem/{id}', [ProductController::class, 'reduceInCart
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');*/
 
-Route::get('/dashboard', function () {
-    return view('admin');
-});
+Route::get('/analytics', function () {
+    return view('admin/dashboard');
+})->name('analysis');
+Route::get('/dashboard/product', function() {
+    return view('admin/products');
+})->name('product.management');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
