@@ -1,5 +1,5 @@
 <x-app-layout>
-<section class="pt-24 md:mt-0 md:h-screen flex flex-col justify-center text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 bg-secondary">
+<section class="pt-24 md:mt-0 md:h-screen flex flex-col justify-center text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 bg-grey-100">
   <div class="md:flex-1 md:mr-10">
     <h1 class="text-4xl font-semibold mb-7">
         Welcome to Pudfra's 
@@ -37,7 +37,7 @@
 </section>
 
 <!-- How it works -->
-<section class="bg-blue-600 text-white sectionSize">
+<section class="bg-blue-500 text-white sectionSize">
   <div>
     <h2 class="secondaryTitle bg-underline2 bg-100%">How to shop</h2>
   </div>
