@@ -5,6 +5,7 @@
   @include('admin.sidebar')
   <div class="bg-gray-300 flex-1 p-6 md:mt-16">
     @include('admin.general_report')
+    @include('admin.recent_sales')
   </div>
 </div>
 <!-- end wrapper -->
