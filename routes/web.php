@@ -29,7 +29,7 @@ Route::get('/shopping/reduceItem/{id}', [ProductController::class, 'reduceInCart
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');*/
 
-Route::get('/analytics', function () {
+Route::get('/dashboard', function () {
     return view('admin/dashboard');
 })->name('analysis');
 Route::get('/dashboard/product', function() {

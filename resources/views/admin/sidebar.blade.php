@@ -17,14 +17,13 @@
 
       <!-- link -->
     <a href="{{route('analysis')}}" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-chart-pie text-xs mr-2"></i>                
+        <i class="fa-solid fa-house text-xs mr-2"></i>                
        Dashboard
     </a>
      
       <!-- end link -->
-
       <!-- dropdown-link -->
-    <div class="dropdown relative md:static mb-3 capitalize font-medium text-sm">
+      <div class="dropdown relative md:static mb-3 capitalize font-medium text-sm">
         <button class="menu-btn flex flex-wrap items-center">
         <i class="fa-brands fa-product-hunt text-xs mr-2"></i>
         Product Management
@@ -56,12 +55,83 @@
     </div>
       <!-- end dropdown-link -->
 
+      <!-- dropdown-link -->
+    <div class="dropdown relative md:static mb-3 capitalize font-medium text-sm">
+        <button class="menu-btn flex flex-wrap items-center">
+            <i class="fa-solid fa-basket-shopping text-xs mr-2"></i>
+        Order Management
+        <i class="fad fa-chevron-down ml-2 text-xs leading-none"></i>
+        </button>
+        
+        <ul class="text-gray-700 menu hidden md:mt-10">
+            <li class="mt-2">
+                <i class="fa-solid fa-location-pin text-xs ml-4"></i>
+                <a href="" class="ml-2 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">All orders</a>
+            </li>
+            <li class="mt-2">
+                <i class="fa-solid fa-location-pin text-xs ml-4"></i>
+                <a href="" class="ml-2 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">pending orders</a>
+            </li>
+            <li class="mt-2">
+                <i class="fa-solid fa-location-pin text-xs ml-4"></i>
+                <a href="" class="ml-2 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">delivered orders</a>
+            </li>
+            <li class="mt-2">
+                <i class="fa-solid fa-location-pin text-xs ml-4"></i>
+                <a href="" class="ml-2 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">shipped orders</a>
+            </li>
+            <li class="mt-2">
+                <i class="fa-solid fa-location-pin text-xs ml-4"></i>
+                <a href="" class="ml-2 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">cancelled orders</a>
+            </li>
+        </ul>
+    </div>
+      <!-- end dropdown-link -->
+
+      <!-- dropdown-link -->
+      <div class="dropdown relative md:static mb-3 capitalize font-medium text-sm">
+        <button class="menu-btn flex flex-wrap items-center">
+            <i class="fa-solid fa-truck text-xs mr-2"></i>
+        Shipping Management
+        <i class="fad fa-chevron-down ml-2 text-xs leading-none"></i>
+        </button>
+        
+        <ul class="text-gray-700 menu hidden md:mt-10">
+            <li class="mt-2">
+                <i class="fa-solid fa-location-pin text-xs ml-4"></i>
+                <a href="" class="ml-2 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">All shipments</a>
+            </li>
+        </ul>
+    </div>
+      <!-- end dropdown-link -->
+
+        <!-- dropdown-link -->
+    <div class="dropdown relative md:static mb-3 capitalize font-medium text-sm">
+      <button class="menu-btn flex flex-wrap items-center">
+        <i class="fa-regular fa-image text-xs mr-2"></i>
+      Banners Management
+      <i class="fad fa-chevron-down ml-2 text-xs leading-none"></i>
+      </button>
+      
+      <ul class="text-gray-700 menu hidden md:mt-10">
+          <li class="mt-2">
+              <i class="fa-solid fa-location-pin text-xs ml-4"></i>
+              <a href="" class="ml-2 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">Home banner</a>
+          </li>
+          <li class="mt-2">
+              <i class="fa-solid fa-location-pin text-xs ml-4"></i>
+              <a href="" class="ml-2 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">Promo banners</a>
+          </li>
+      </ul>
+  </div>
+    <!-- end dropdown-link -->
+
       <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">users</p>
 
             <!-- dropdown-link -->
     <div class="dropdown relative md:static mb-3 capitalize font-medium text-sm">
         <button class="menu-btn flex flex-wrap items-center">
-        <i class="fa-brands fa-product-hunt text-xs mr-2"></i>
+        <i class="fa-solid fa-user text-xs mr-2"></i>
         Staff Management
         <i class="fad fa-chevron-down ml-2 text-xs leading-none"></i>
         </button>
@@ -82,7 +152,7 @@
                 <!-- dropdown-link -->
     <div class="dropdown relative md:static mb-3 capitalize font-medium text-sm">
         <button class="menu-btn flex flex-wrap items-center">
-        <i class="fa-brands fa-product-hunt text-xs mr-2"></i>
+            <i class="fa-solid fa-people-group text-xs mr-2"></i>
         Customer Management
         <i class="fad fa-chevron-down ml-2 text-xs leading-none"></i>
         </button>
