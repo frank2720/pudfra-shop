@@ -13,8 +13,8 @@ This is a simple e-commerce shop built using Laravel, a PHP web application fram
 - **Responsive Design**: Ensure a seamless experience across different devices.
 
 ## Installation
-*git clone https://github.com/frank2720/pudfra-shop.git*
-*composer install*
-*cp .env.example .env*
-*php artisan key:generate*
-*php artisan migrate*
+- **git clone https://github.com/frank2720/pudfra-shop.git**
+- **composer install**
+- **cp .env.example .env**
+- **php artisan key:generate**
+- **php artisan migrate**
