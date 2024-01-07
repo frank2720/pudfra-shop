@@ -15,3 +15,8 @@ This is a simple e-commerce shop built using Laravel, a PHP web application fram
 ## Installation
 
 1. Clone the repository:
+   git clone https://github.com/frank2720/pudfra-shop.git
+   composer install
+   cp .env.example .env
+   php artisan key:generate
+   php artisan migrate
