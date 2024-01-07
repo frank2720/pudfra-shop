@@ -50,7 +50,7 @@
         <!-- user -->
         <div class="dropdown relative md:static">
 
-          <button class="menu-btn focus:outline-none focus:shadow-outline flex flex-wrap items-center">
+          <button class="menu-btn focus:text-gray-900 focus:outline-none flex flex-wrap items-center">
             <div class="w-8 h-8 overflow-hidden rounded-full">
               <img class="w-full h-full object-cover" src="{{asset('assets/images/3551739.jpg')}}" >
             </div>                        
@@ -90,7 +90,7 @@
         <!-- notifcation -->
         <div class="dropdown relative mr-5 md:static">
 
-          <button class="text-gray-900 menu-btn p-0 m-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none transition-all ease-in-out duration-300">
+          <button class="text-gray-900 menu-btn p-0 m-0 hover:text-red-700 focus:text-gray-900 focus:outline-none transition-all ease-in-out duration-300">
             <span><i class="fa-solid fa-comments"></i></span>             
           </button>
 

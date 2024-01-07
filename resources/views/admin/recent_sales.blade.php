@@ -22,9 +22,9 @@
                 <td class="border border-l-0 px-4 py-2"><span class="num-2"></span> minutes ago</td>
                 <td class="border border-l-0 px-4 py-2 text-center"><span class="c-pill c-pill--warning">pending</span></td>
                 <td class="border border-l-0 px-4 py-2 text-center">
-                    <span class="text-red-700"><button class="fa-solid fa-trash"></button></span>
-                    <span class="ml-2"><button class="fa-regular fa-eye"></button></span>
-                    <span class="text-blue-600 ml-2"><button class="fa-solid fa-download"></button></span>
+                    <span class="text-red-700"><button class="fa-solid fa-trash focus:text-red-700 focus:outline-none"></button></span>
+                    <span class="ml-2"><button class="fa-regular fa-eye focus:text-gray-900 focus:outline-none"></button></span>
+                    <span class="text-blue-600 ml-2"><button class="fa-solid fa-download focus:outline-none"></button></span>
                 </td>
             </tr>
             <tr>                    
@@ -34,9 +34,9 @@
                 <td class="border border-l-0 px-4 py-2"><span class="num-2"></span> minutes ago</td>
                 <td class="border border-l-0 px-4 py-2 text-center"><span class="c-pill c-pill--success">delivered</span></td>
                 <td class="border border-l-0 px-4 py-2 text-center">
-                    <span class="text-red-700"><button class="fa-solid fa-trash"></button></span>
-                    <span class="ml-2"><button class="fa-regular fa-eye"></button></span>
-                    <span class="text-blue-600 ml-2"><button class="fa-solid fa-download"></button></span>
+                    <span class="text-red-700"><button class="fa-solid fa-trash focus:text-red-700 focus:outline-none"></button></span>
+                    <span class="ml-2"><button class="fa-regular fa-eye focus:text-gray-900 focus:outline-none"></button></span>
+                    <span class="text-blue-600 ml-2"><button class="fa-solid fa-download focus:outline-none"></button></span>
                 </td>
             </tr>
             <tr>                    
@@ -46,9 +46,9 @@
                 <td class="border border-l-0 px-4 py-2"><span class="num-2"></span> minutes ago</td>
                 <td class="border border-l-0 px-4 py-2 text-center"><span class="c-pill c-pill--danger">cancelled</span></td>
                 <td class="border border-l-0 px-4 py-2 text-center">
-                    <span class="text-red-700"><button class="fa-solid fa-trash"></button></span>
-                    <span class="ml-2"><button class="fa-regular fa-eye"></button></span>
-                    <span class="text-blue-600 ml-2"><button class="fa-solid fa-download"></button></span>
+                    <span class="text-red-700"><button class="fa-solid fa-trash focus:text-red-700 focus:outline-none"></button></span>
+                    <span class="ml-2"><button class="fa-regular fa-eye focus:text-gray-900 focus:outline-none"></button></span>
+                    <span class="text-blue-600 ml-2"><button class="fa-solid fa-download focus:outline-none"></button></span>
                 </td>
             </tr>
         </tbody>
