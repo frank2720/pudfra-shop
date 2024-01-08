@@ -32,9 +32,9 @@ Route::get('/shopping/reduceItem/{id}', [ProductController::class, 'reduceInCart
 Route::get('/dashboard', function () {
     return view('admin/dashboard');
 })->name('analysis');
-Route::get('/dashboard/product', function() {
-    return view('admin/products');
-})->name('product.management');
+Route::get('/dashboard/product/add', function() {
+    return view('admin/add_product');
+})->name('add.product');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

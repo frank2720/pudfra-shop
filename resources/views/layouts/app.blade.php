@@ -24,7 +24,7 @@
         <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body x-data="{darkMode: false}" :class="{'dark': darkMode === true }" class="antialiased">
+    <body class="antialiased">
         <div class="min-h-screen">
             @include('layouts.navigation')
 
