@@ -60,7 +60,7 @@
                 <p class="mb-2 ml-6 text-sm text-gray-700 dark:text-gray-700"><span class="font-semibold">Click to upload</span> or drag and drop</p>
                 <p class="text-xs ml-6 text-gray-700 dark:text-gray-700">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
               </div>
-              <input id="file" type="file" name="img" class="hidden" required />
+              <input id="file" type="file" name="img" required />
             </label>
           </div>
         </div>

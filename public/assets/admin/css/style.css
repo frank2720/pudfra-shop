@@ -101376,13 +101376,3 @@ input[type=submit] {
     margin-top: 0;
   }
 }
-
-
-.dropzone {
-  border-radius: 3px;
-  border: 2px dashed rgb(0, 135, 247);
-  border-image: none;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
