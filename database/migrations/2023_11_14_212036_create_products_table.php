@@ -17,8 +17,8 @@ return new class extends Migration
             $table->float('price');
             $table->decimal('retail_price');
             $table->longText('description');
-            $table->integer('reviews');
-            $table->string('img');
+            $table->integer('reviews')->nullable();
+            $table->string('img')->nullable();
             $table->timestamps();
         });
     }

@@ -33,7 +33,7 @@
         <ul class="text-gray-700 menu hidden md:mt-10">
             <li class="mt-2">
                 <i class="fa-solid fa-location-pin text-xs ml-4"></i>
-                <a href="{{route('add.product')}}" class="ml-2 capitalize font-medium text-sm hover:text-blue-700 transition ease-in-out duration-500">add product</a>
+                <a href="{{route('products.create')}}" class="ml-2 capitalize font-medium text-sm hover:text-blue-700 transition ease-in-out duration-500">add product</a>
             </li>
             <li class="mt-2">
                 <i class="fa-solid fa-location-pin text-xs ml-4"></i>

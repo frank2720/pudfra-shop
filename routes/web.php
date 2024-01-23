@@ -32,14 +32,16 @@ Route::get('/shopping/reduceItem/{id}', [ProductController::class, 'reduceInCart
 Route::get('/dashboard', function () {
     return view('admin/dashboard');
 })->name('analysis');
-Route::get('/dashboard/product/add', function() {
-    return view('admin/add_product');
-})->name('add.product');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::resource('products', ProductController::class)
+      ->only(['create','store'])
+      ->middleware(['auth']);
 
 require __DIR__.'/auth.php';

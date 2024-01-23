@@ -5,14 +5,14 @@
   @include('admin.sidebar')
   <div class="bg-gray-300 flex-1 p-6 md:mt-16">
     <div class="container">
-      <form action="" method="post">
+      <form action="{{route('products.store')}}" method="POST">
         @csrf
         <div class="row">
           <div class="col-25">
             <label for="product">product name</label>
           </div>
           <div class="col-75">
-            <input type="text" required name="product_name" id="product">
+            <input type="text" required name="name" id="product">
           </div>
         </div>
         <div class="row">
@@ -28,7 +28,7 @@
           <label for="retail">retail price</label>
         </div>
         <div class="col-75">
-          <input type="number" min="0" required name="retail" id="retail">
+          <input type="number" min="0" required name="retail_price" id="retail">
         </div>
        </div>
         <div class="row">
@@ -36,7 +36,7 @@
             <label for="reviews">reviews</label>
           </div>
           <div class="col-75">
-            <input type="number" min="0" required name="reviews" id="reviews">
+            <input type="number" min="0" name="reviews" id="reviews">
           </div>
         </div>
         <div class="row">
@@ -60,7 +60,7 @@
                 <p class="mb-2 ml-6 text-sm text-gray-700 dark:text-gray-700"><span class="font-semibold">Click to upload</span> or drag and drop</p>
                 <p class="text-xs ml-6 text-gray-700 dark:text-gray-700">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
               </div>
-              <input id="file" type="file" name="img" required />
+              <input id="file" type="file" name="img" />
             </label>
           </div>
         </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Product;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
@@ -11,6 +12,39 @@ use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
 
+     /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        //
+    }
+
+     /**
+     * Show the form for creating a new resource.
+     */
+    public function create():View
+    {
+        return view('admin.add_product');
+    }
+
+     /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request):RedirectResponse
+    {
+        $validated = $request->validate([
+            'name'=>'required|string',
+            'price'=>'required',
+            'retail_price'=>'required',
+            'description'=>'required|string',
+            'reviews'=>'nullable',
+            'img'=>'nullable|string',
+        ]);
+        Product::create($validated);
+        return redirect(route('products.create'))->with('status','Product added successfully');
+    }
+    
     /**
      * Gets the products from the db and display them in the shopping page
      */
