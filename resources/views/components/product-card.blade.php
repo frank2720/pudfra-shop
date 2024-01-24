@@ -2,7 +2,7 @@
 
 <div class="justify-center p-10 bg-white shadow-md rounded-xl">
   <a href="{{route('product_details',['id'=>$product->id])}}">
-      <img class="hover:grow hover:shadow-lg rounded-lg" src="{{$product->img}}">
+      <img class="hover:grow hover:shadow-lg rounded-lg" src="{{Storage::url($product->img)}}">
   </a>
   <div class="pt-3 flex items-center justify-between">
       <p class="font-semibold">{{ucfirst($product->name)}}</p>

@@ -8,16 +8,16 @@
       <x-cart-products :product="$product"/>
       @endforeach
       @else
-      <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
-        <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
-          <div class="mt-4 flex justify-between im sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
-            <div class="">
-              <p class="text-red-600">{{__('You have no products in the cart')}}</p>
+          <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
+            <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
+              <div class="mt-4 flex justify-between im sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
+                <div class="">
+                  <p class="text-red-600">{{__('You have no products in the cart')}}</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-            @endif
+      @endif
           </div>
           <!-- Sub total -->
           @if (session()->has('cart') && number_format($totalPrice)>0)

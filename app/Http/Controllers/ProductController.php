@@ -8,6 +8,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -33,15 +34,28 @@ class ProductController extends Controller
      */
     public function store(Request $request):RedirectResponse
     {
-        $validated = $request->validate([
+        $request->validate([
             'name'=>'required|string',
             'price'=>'required',
             'retail_price'=>'required',
             'description'=>'required|string',
             'reviews'=>'nullable',
-            'img'=>'nullable|string',
+            'img'=>'nullable|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
-        Product::create($validated);
+        
+        if ($request->hasFile(key:'img'))
+        {
+            $product_image = $request->file(key:'img')->store(options:'public');
+        }
+
+        Product::create([
+            'name'=>$request->name,
+            'price'=>$request->price,
+            'retail_price'=>$request->retail_price,
+            'description'=>$request->description,
+            'reviews'=>$request->reviews,
+            'img'=>$product_image ?? null,
+        ]);
         return redirect(route('products.create'))->with('status','Product added successfully');
     }
     

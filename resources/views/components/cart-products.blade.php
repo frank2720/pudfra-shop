@@ -1,7 +1,7 @@
 @props(['product'])
 
 <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
-    <img src="{{asset($product['item']->img)}}" alt="product-image" class="rounded-lg sm:w-40" />
+    <img src="{{Storage::url($product['item']->img)}}" alt="product-image" class="rounded-lg sm:w-40" />
     <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
       <div class="mt-5 sm:mt-0">
         <h2 class="text-lg font-bold text-gray-900">{{$product['item']->name}}</h2>
