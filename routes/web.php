@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/* 
+(client side) Routes
+*/
 Route::get('/', [ProductController::class,'recent_products'])->name('welcome');
 Route::get('/shop', [ProductController::class, 'products'])->name('shop');
 Route::get('/product/{id}', [ProductController::class, 'product'])->name('product_details');
@@ -25,13 +28,16 @@ Route::get('/shopping/cart', [ProductController::class, 'getCart'])->name('shopp
 Route::get('/shopping/removeItem/{id}', [ProductController::class, 'removefromCart'])->name('removefromCart');
 Route::get('/shopping/reduceItem/{id}', [ProductController::class, 'reduceInCart'])->name('productReduce');
 
-/*Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');*/
-
-Route::get('/dashboard', function () {
-    return view('admin/dashboard');
-})->name('analysis');
+/*Product Contoller routes 
+(admin side)
+*/
+Route::resource('products', ProductController::class)
+      ->only(['create','store'])
+      ->middleware(['auth','verified']);
+      
+Route::get('/maar-shop/admin-dash', function () {
+       return view('admin/dashboard');
+})->middleware(['auth','verified'])->name('admin.interphase');
 
 
 Route::middleware('auth')->group(function () {

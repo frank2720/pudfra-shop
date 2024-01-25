@@ -16,7 +16,7 @@
       <p class="uppercase text-xs text-gray-600 mb-4 tracking-wider">main</p>
 
       <!-- link -->
-    <a href="{{route('analysis')}}" class="mb-3 capitalize font-medium text-sm hover:text-blue-700 transition ease-in-out duration-500">
+    <a href="{{route('admin.interphase')}}" class="mb-3 capitalize font-medium text-sm hover:text-blue-700 transition ease-in-out duration-500">
         <i class="fa-solid fa-house text-xs mr-2"></i>                
        Dashboard
     </a>
