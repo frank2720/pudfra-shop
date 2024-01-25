@@ -1874,7 +1874,7 @@
             }
 
             .bg-underline3{
-            background-image: url('assets/images/Underline3.svg');
+            background-image: url({{asset('assets/images/Underline3.svg')}});
             }
 
             .bg-underline4{
@@ -18356,23 +18356,23 @@
             }
 
             .sm\:bg-underline1{
-                background-image: url('images/Underline1.svg');
+                background-image: url('assets/images/Underline1.svg');
             }
 
             .sm\:bg-underline2{
-                background-image: url('images/Underline2.svg');
+                background-image: url('assets/images/Underline2.svg');
             }
 
             .sm\:bg-underline3{
-                background-image: url('images/Underline3.svg');
+                background-image: url({{asset('assets/images/Underline3.svg')}});
             }
 
             .sm\:bg-underline4{
-                background-image: url('images/Underline4.svg');
+                background-image: url('assets/images/Underline4.svg');
             }
 
             .sm\:bg-highlight3{
-                background-image: url('images/Highlight3.svg');
+                background-image: url('assets/images/Highlight3.svg');
             }
 
             .sm\:from-secondary{
@@ -83816,7 +83816,7 @@
             }
 
             .\32xl\:bg-underline3{
-                background-image: url('assets/images/Underline3.svg');
+                background-image: url({{asset('assets/images/Underline3.svg')}});
             }
 
             .\32xl\:bg-underline4{
