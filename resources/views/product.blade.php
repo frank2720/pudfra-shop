@@ -4,7 +4,7 @@
         <div class="flex flex-col md:flex-row -mx-4">
             <div class="md:flex-1 px-4">
                 <div class="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
-                    <img class="w-full h-full object-cover" src="{{asset($product->img)}}" alt="Product Image">
+                    <img class="w-full h-full object-cover" src="{{Storage::url($product->img)}}" alt="Product Image">
                 </div>
                 <div class="flex -mx-2 mb-4">
                     <div class="w-1/2 px-2">
@@ -53,11 +53,7 @@
                 <div>
                     <span class="font-bold text-gray-700 dark:text-gray-300">Product Description:</span>
                     <p class="text-gray-600 dark:text-gray-300 text-sm mt-2">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                        sed ante justo. Integer euismod libero id mauris malesuada tincidunt. Vivamus commodo nulla ut
-                        lorem rhoncus aliquet. Duis dapibus augue vel ipsum pretium, et venenatis sem blandit. Quisque
-                        ut erat vitae nisi ultrices placerat non eget velit. Integer ornare mi sed ipsum lacinia, non
-                        sagittis mauris blandit. Morbi fermentum libero vel nisl suscipit, nec tincidunt mi consectetur.
+                        {!! nl2br(e($product->description)) !!}
                     </p>
                 </div>
             </div>
