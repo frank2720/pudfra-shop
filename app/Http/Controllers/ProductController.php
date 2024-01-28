@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Product;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller

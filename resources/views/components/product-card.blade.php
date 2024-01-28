@@ -1,7 +1,7 @@
 @props(['product'])
 <div class="rounded bg-white shadow-lg">
   <a href="{{route('product_details',['id'=>$product->id])}}">
-    <img class="hover:grow hover:shadow-lg rounded-lg h-48 w-64 object-contain p-3" src="{{Storage::url($product->img)}}">
+    <img class="hover:grow rounded-lg h-48 w-64 object-contain p-3" src="{{Storage::url($product->img)}}">
   </a>
   <div class="pt-3 p-2 flex items-center justify-between">
     <p class="font-semibold">{{ucfirst($product->name)}}</p>
