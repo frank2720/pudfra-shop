@@ -18,18 +18,20 @@
                 event.preventDefault();
                 $.ajax({
                     url:"{{route('products.store')}}",
-                    data:$("#productform").serialize(),
+                    data:new FormData(this),
                     type:"POST",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
                     success:function($result)
                     {
                         $("#productform").trigger("reset");
                         $('#addproductModal').modal('hide');
-                        Command:toastr["success"]("Student added successfully","Success");
+                        Command:toastr["success"]("Product added successfully","Success");
                     }, 
                     error:function($err){
                         let error =$err.responseJSON;
                         $.each(error.errors,function(index,value){
-                            //$('.errMsgContainer').append('<span class="text-danger">'+value+'</span>'+'<br>');
                             Command:toastr["error"](value,"Failed");
                         });
                     },       

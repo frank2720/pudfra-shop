@@ -6,7 +6,7 @@
                     {{__('Add Product')}}
                 </h4>
             </div>
-            <form action="{{route('products.store')}}" method="POST" id="productform" class="form-horizontal" enctype="multipart/form-data">
+            <form action="{{route('products.store')}}" method="POST" id="productform" class="form-horizontal"  enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
