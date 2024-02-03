@@ -1,6 +1,3 @@
-@extends('admin.main')
-@section('content')
-  <!-- strat wrapper -->
 <div class="h-screen flex flex-row flex-wrap">
   @include('admin.sidebar')
   <div class="bg-gray-300 flex-1 p-6 md:mt-16">
@@ -12,7 +9,7 @@
             <label for="product">product name</label>
           </div>
           <div class="col-75">
-            <input type="text" required name="name" id="product">
+            <input type="text" name="name" id="product">
           </div>
         </div>
         <div class="row">
@@ -20,7 +17,7 @@
             <label for="price">product price</label>
           </div>
           <div class="col-75">
-            <input type="number" min="0" required name="price" id="price">
+            <input type="number" min="0" name="price" id="price">
           </div>
         </div>
        <div class="row">
@@ -28,7 +25,7 @@
           <label for="retail">retail price</label>
         </div>
         <div class="col-75">
-          <input type="number" min="0" required name="retail_price" id="retail">
+          <input type="number" min="0" name="retail_price" id="retail">
         </div>
        </div>
         <div class="row">
@@ -44,7 +41,7 @@
             <label for="desc">description</label>
           </div>
           <div class="col-75">
-            <textarea required name="description" id="desc" cols="30" rows="8"></textarea>
+            <textarea name="description" id="desc" cols="30" rows="8"></textarea>
           </div>
         </div>
         <div class="row">
@@ -71,6 +68,3 @@
     </div>
   </div>
 </div>
-<!-- end wrapper -->
-
-@endsection

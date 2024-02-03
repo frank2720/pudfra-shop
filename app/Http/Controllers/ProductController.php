@@ -33,31 +33,33 @@ class ProductController extends Controller
      /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request):RedirectResponse
+    public function store(Request $request)
     {
         $request->validate([
             'name'=>'required|string',
             'price'=>'required',
             'retail_price'=>'required',
             'description'=>'required|string',
-            'reviews'=>'nullable',
-            'img'=>'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'img'=>'required|image|mimes:jpeg,png,jpg,gif,svg',
+        ],
+        [
+            'name.required'=>'Product name required',
+            'price.required'=>'Product price required',
+            'retail_price.required'=>'Product retail price required',
+            'description.required'=>'Product description required',
+            'img.required'=>'Upload product image',
+            
         ]);
-        
-        if ($request->hasFile(key:'img'))
-        {
-            $product_image = $request->file(key:'img')->store(options:'public');
-        }
+        $product_image =  $request->file('img')->store(options:'public');
 
         Product::create([
             'name'=>$request->name,
             'price'=>$request->price,
             'retail_price'=>$request->retail_price,
             'description'=>$request->description,
-            'reviews'=>$request->reviews,
-            'img'=>$product_image ?? null,
+            'img'=>$product_image,
         ]);
-        return redirect(route('products.create'))->with('status','Product added successfully');
+        return response()->json([]);
     }
     
     /**

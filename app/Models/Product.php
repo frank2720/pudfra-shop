@@ -20,7 +20,6 @@ class Product extends Model
         'price',
         'retail_price',
         'description',
-        'reviews',
         'img',
      ];
 }

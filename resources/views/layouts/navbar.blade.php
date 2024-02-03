@@ -1,9 +1,6 @@
 <nav  class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
     <div class="container">
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent1"
-        aria-controls="navbarSupportedContent1"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
         </button>
 
@@ -68,9 +65,10 @@
                     <div class="dropdown">
                       <a href="" class="dropdown-toggle d-flex align-items-center hidden-arrow" id='profiledetails' role='button' data-mdb-toggle='dropdown' aria-expanded='false'>
                         <img src="{{asset('assets/images/3551739.jpg')}}" alt="" class="rounded-circle" height="25" loading="lazy">
-                        <b>{{ucwords(strtolower(Auth::user()->name))}}</b>
                       </a>
                       <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='profiledetails'>
+                        <li><p class='dropdown-item'>{{ucwords(strtolower(Auth::user()->name))}}</p></li>
+                        <hr>
                         <li><a class='dropdown-item' href='/profile'>My profile</a></li>
                         <li>
                           <form method="POST" action="{{route('logout')}}">
