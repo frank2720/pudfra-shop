@@ -2,52 +2,41 @@
 @section('content')
 <main>
     @include('layouts.carousel')
-    <div class="container">
-        <h2 class="mt-4 mb-4 text-center">{{__('Featured Products')}}</h2>
-        <section>
-            <div class="text-center">
-                <div class="row">
+    <section class="section-products">
+		<div class="container">
+				<div class="row justify-content-center text-center">
+						<div class="col-md-8 col-lg-6">
+								<div class="header">
+										<h3>Featured Product</h3>
+										<h2>Popular Products</h2>
+								</div>
+						</div>
+				</div>
+				<div class="row">
                     @foreach ($recent_products as $product)
-                        <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="card">
-                                <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light">
-                                    <img src="{{Storage::url($product->img)}}" alt="" class="w-100 card-img">
-                                    <a href="{{route('product_details',['id'=>$product->id])}}">
-                                        <div class="mask">
-                                            <div class="d-flex justify-content-start align-items-end h-100">
-                                                @if ($product->retail_price > $product->price)
-                                                    <h5>
-                                                        <span class="badge sale-badge ms-2">
-                                                           {{__(round(($product->price/$product->retail_price)*100-100))}} % 
-                                                        </span>
-                                                    </h5>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="hover-overlay">
-                                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <a href="{{route('product_details',['id'=>$product->id])}}" class="text-reset">
-                                      <h5 class="card-title mb-2"><small>{{__(ucfirst(strtolower($product->name)))}}</small></h5>
-                                    </a>
-                                    @if ($product->retail_price > $product->price)
-                                        <h6 class="mb-3 price">
-                                            <s>{{__(number_format($product->retail_price))}}</s>
-                                            <strong class="ms-2 sale"><small>Ksh. {{__(number_format($product->price))}}</small></strong>
-                                        </h6>
-                                    @else
-                                        <h6 class="mb-3 price"><small>Ksh {{__(number_format($product->price))}}</small></h6>
-                                    @endif
-                                </div>
+                        <!-- Single Product -->
+						<div class="col-md-6 col-lg-4 col-xl-3">
+                            <div class="single-product">
+                                    <div class="part-1"  style="background: url('{{Storage::url($product->img)}}');  background-repeat: no-repeat;background-position: center;background-size: cover;">
+                                        @if ($product->retail_price > $product->price)
+                                            <span class="discount">{{__(round((($product->retail_price-$product->price)/$product->retail_price)*100))}}% off</span>
+                                        @endif
+                                            <ul>
+                                                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                            </ul>
+                                    </div>
+                                    <div class="part-2">
+                                        <a href="">
+                                            <h3 class="product-title">{{__(ucfirst(strtolower($product->name)))}}</h3>
+                                            <h4 class="product-price">${{__(number_format($product->price))}}</h4>
+                                        </a>
+                                    </div>
                             </div>
                         </div>
                     @endforeach
-                </div>
-            </div>
-        </section>
-    </div>
+				</div>
+		</div>
+</section>
 </main>
 @endsection

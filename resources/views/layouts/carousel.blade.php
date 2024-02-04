@@ -24,7 +24,7 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="{{asset('assets/images/3551739.jpg')}}" class="d-block w-100"/>
+        <img src="{{asset('assets/images/109.jpg')}}" class="d-block w-100"/>
         <div class="mask" style="background-color: rgba(0, 0, 0, 0.4)"></div>
         <div class="carousel-caption d-none d-sm-block mb-5">
           <h1 class="mb-4">
