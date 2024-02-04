@@ -34,15 +34,11 @@
                   </a>
                   <!-- Dropdown menu -->
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li>
-                        <a class='dropdown-item' href=''>1</a>
-                    </li>
-                    <li>
-                        <a class='dropdown-item' href=''>2</a>
-                    </li>
-                    <li>
-                        <a class='dropdown-item' href=''>3</a>
-                    </li>
+                    @foreach ($categories as $category)
+                        <li>
+                          <a class='dropdown-item' href=''>{{$category->category}}</a>
+                        </li>
+                    @endforeach
                   </ul>
                 </li>
               </ul>

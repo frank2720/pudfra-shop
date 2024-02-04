@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Category;
@@ -30,8 +31,11 @@ Route::middleware(['auth','verified'])->group(function () {
             Route::get('dashboard', function(){
                   return view('admin/dashboard');
             })->name('admin.interphase');
+            /*crud operations on products*/
             Route::resource('products', ProductController::class)
                   ->only(['create','store']);
+            /*crud operations on categories*/
+            Route::resource('categories', CategoryController::class);
       });
 });
 

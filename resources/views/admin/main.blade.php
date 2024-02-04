@@ -12,7 +12,7 @@
     <script>
         $(document).ready(function(){
             //products jquery ajax
-           /* $('#addproduct-btn').click(function () {
+            $('#addproduct-btn').click(function () {
                 $('#addproductModal').modal('show');
             });
             $('#productform').on('submit', function (event) {
@@ -37,9 +37,9 @@
                         });
                     },       
                 });
-            }); */
+            }); 
 
-            /*/category jquery ajax
+            //category jquery ajax
             $('#addcategory-btn').click(function () {
                 $('#addcategoryModal').modal('show');
             });
@@ -63,7 +63,7 @@
                     },       
                 });
             });
-            /*/
+            
         });
 
     </script>

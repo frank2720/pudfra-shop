@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
@@ -93,7 +94,8 @@ class ProductController extends Controller
     public function recent_products(): View
     {
         $recent_products = Product::latest()->paginate(8);
-         return view('home', ['recent_products'=>$recent_products]);
+        $categories = Category::all();
+        return view('home', ['recent_products'=>$recent_products, 'categories'=>$categories]);
     }
 
     /**
