@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <script>
         $(document).ready(function(){
-            $('#addproduct-btn').click(function () {
+            //products jquery ajax
+           /* $('#addproduct-btn').click(function () {
                 $('#addproductModal').modal('show');
             });
             $('#productform').on('submit', function (event) {
@@ -36,7 +37,33 @@
                         });
                     },       
                 });
+            }); */
+
+            /*/category jquery ajax
+            $('#addcategory-btn').click(function () {
+                $('#addcategoryModal').modal('show');
             });
+            $('#categoryform').on('submit', function (event) {
+                event.preventDefault();
+                $.ajax({
+                    url:"{{route('categories.store')}}",
+                    data:$("#categoryform").serialize(),
+                    type:"POST",
+                    success:function($result)
+                    {
+                        $("#categoryform").trigger("reset");
+                        $('#addcategoryModal').modal('hide');
+                        Command:toastr["success"]("Category added successfully","Success");
+                    }, 
+                    error:function($err){
+                        let error =$err.responseJSON;
+                        $.each(error.errors,function(index,value){
+                            Command:toastr["error"](value,"Failed");
+                        });
+                    },       
+                });
+            });
+            /*/
         });
 
     </script>

@@ -1,3 +1,5 @@
+@extends('admin.main')
+@section('content')
 <div id="addcategoryModal" aria-hidden="true" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -21,3 +23,4 @@
         </div>
     </div>
 </div>
+@endsection
