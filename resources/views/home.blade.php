@@ -29,6 +29,9 @@
                                     <div class="part-2">
                                         <a href="{{route('product_details',['id'=>$product->id])}}">
                                             <h3 class="product-title">{{__(ucfirst(strtolower($product->name)))}}</h3>
+                                            @if ($product->retail_price>$product->price)
+                                                <h4 class="product-old-price">${{__(number_format($product->retail_price))}}</h4>
+                                            @endif
                                             <h4 class="product-price">${{__(number_format($product->price))}}</h4>
                                         </a>
                                     </div>
