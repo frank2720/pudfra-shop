@@ -104,6 +104,7 @@ class ProductController extends Controller
         $cart->add($product, $product->id);
 
         $request->session()->put('cart',$cart);
+        return response()->json(['totalQty'=>$cart->totalQty]);
         //return response()->json([]);
         /*dd($request->session()->get('cart'));
         return back()->withInput()->with('status', 'cart updated successfully');*/

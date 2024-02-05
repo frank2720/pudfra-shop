@@ -14,9 +14,9 @@
             />
           </a>
             <!-- Left links -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
                 <li class="nav-item active">
-                  <a class="nav-link " href="/">Home</a>
+                  <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{route('shop')}}">Products</a>
