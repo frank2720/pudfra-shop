@@ -14,6 +14,29 @@
     <title>{{ config('app.name','pudfra-shop')}}</title>
 
     <link rel="icon" type="image/x-icon" href="{{asset('assets/images/icons/money-back.svg')}}">
+    <script>
+        $(document).ready(function(){
+
+            $('#addtocart').click(function (event) {
+                event.preventDefault();
+                $.ajax({
+                    url:"{{route('addToCart',['id'=>$product->id])}}",
+                    data:{},
+                    type:"POST",
+                    success:function($result)
+                    {
+                        Command:toastr["success"]("cart updated successfully","Success");
+                    }, 
+                    error:function($err){
+                        let error =$err.responseJSON;
+                        $.each(error.errors,function(index,value){
+                            Command:toastr["error"](value,"Failed");
+                        });
+                    },       
+                });
+            }); 
+        });
+    </script>
 </head>
 <body>
     @include('layouts.navbar')

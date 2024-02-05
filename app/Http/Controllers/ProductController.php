@@ -96,16 +96,17 @@ class ProductController extends Controller
     /**
      * Gets the product from the db using id for a session
      */
-    public function addToCart(Request $request, $id):RedirectResponse
+    public function addToCart(Request $request, $id)
     {
-        $product = DB::table('products')->find($id);
+        $product = Product::find($id);
         $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->add($product, $product->id);
 
         $request->session()->put('cart',$cart);
-        //dd($request->session()->get('cart'));
-        return back()->withInput()->with('status', 'cart updated successfully');
+        //return response()->json([]);
+        /*dd($request->session()->get('cart'));
+        return back()->withInput()->with('status', 'cart updated successfully');*/
     }
 
     public function getCart()
