@@ -137,14 +137,15 @@ class ProductController extends Controller
         return back()->withInput()->with('status', 'cart updated successfully');
     }
 
-    public function removefromCart(Request $request, $id):RedirectResponse
+    public function removefromCart(Request $request, $id)
     {
         $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->remove($id);
 
         $request->session()->put('cart',$cart);
-        //dd($request->session()->get('cart'));
-        return back()->withInput()->with('status', 'cart updated successfully');
+        return response()->json();
+        /*dd($request->session()->get('cart'));
+        return back()->withInput()->with('status', 'cart updated successfully');*/
     }
 }
