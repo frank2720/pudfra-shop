@@ -126,15 +126,16 @@ class ProductController extends Controller
         return view('cart', ['products'=>$cart->items,'totalPrice'=>$cart->totalPrice,'categories'=>$categories]);
     }*/
 
-    public function reduceInCart(Request $request, $id):RedirectResponse
+    public function reduceInCart(Request $request, $id)
     {
         $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->reduce($id);
 
         $request->session()->put('cart',$cart);
-        //dd($request->session()->get('cart'));
-        return back()->withInput()->with('status', 'cart updated successfully');
+        return response()->json();
+        /*dd($request->session()->get('cart'));
+        return back()->withInput()->with('status', 'cart updated successfully');*/
     }
 
     public function removefromCart(Request $request, $id)

@@ -25,7 +25,7 @@
                     </td>
                     <td class="align-middle inline p-4">
                       <div class="input-group input-size">
-                        <input type="button" value="-" class="button-minus">
+                        <input type="button" value="-" class="button-minus" data-decreased-id="{{$cart_product['item']->id}}">
                         <input type="number" class="form-control text-center" style="background: rgb(246, 246, 247)" disabled value="{{$cart_product['qty']}}">
                         <input type="button" value="+" class="button-plus" data-incresed-id="{{$cart_product['item']->id}}">
                       </div>

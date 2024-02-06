@@ -20,7 +20,8 @@
     <script>
         $(document).ready(function () {
 
-            $('#cart-details').click(function () {
+            $(document).on('click', '#cart-details', function (e) {
+                e.preventDefault();
                 $('#cart-modal').modal('show');
             });
 
@@ -87,6 +88,28 @@
                         $('.badge-notification').load(location.href+' .badge-notification');
                         $('.cart-products').load(location.href+' .cart-products');
                         Command:toastr["success"]("Product quantity increased","Success");
+                    },
+                    error: function (error) {
+                        console.error(error);
+                    }
+                });
+            });
+
+            $(document).on('click','.button-minus', function (e) {
+                e.preventDefault();
+                var productId = $(this).data('decreased-id');
+
+                $.ajax({
+                    url:'/shopping/reduceItem/' + productId,
+                    type: 'get',
+                    dataType: 'json',
+                    data: {
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function (data) {
+                        $('.badge-notification').load(location.href+' .badge-notification');
+                        $('.cart-products').load(location.href+' .cart-products');
+                        Command:toastr["warning"]("Product quantity decreased","Success");
                     },
                     error: function (error) {
                         console.error(error);
