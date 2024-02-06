@@ -75,22 +75,21 @@ class ProductController extends Controller
     }
 
     /**
-     * Gets a product details from the db using the product id
-     */
-    public function product(Request $request, string $id): View
-    {
-        $product = DB::table('products')->find($id);
-        return view('product', ['product'=>$product]);
-    }
-
-    /**
      * Gets 8 recently added products, and display them in the landing/home page
      */
     public function recent_products(): View
     {
         $recent_products = Product::latest()->paginate(8);
         $categories = Category::all();
-        return view('home', ['recent_products'=>$recent_products, 'categories'=>$categories]);
+        $oldCart = session()->get('cart');
+        //dd(session()->get('cart'));
+        $cart = new Cart($oldCart);
+        return view('home', [
+          'recent_products'=>$recent_products,
+          'categories'=>$categories,
+          'cart_products'=>$cart->items,
+          'totalPrice'=>$cart->totalPrice,
+        ]);
     }
 
     /**
@@ -105,9 +104,6 @@ class ProductController extends Controller
 
         $request->session()->put('cart',$cart);
         return response()->json(['totalQty'=>$cart->totalQty]);
-        //return response()->json([]);
-        /*dd($request->session()->get('cart'));
-        return back()->withInput()->with('status', 'cart updated successfully');*/
     }
 
     public function getCart()
@@ -119,7 +115,8 @@ class ProductController extends Controller
         $oldCart = session()->get('cart');
         //dd(session()->get('cart'));
         $cart = new Cart($oldCart);
-        return view('cart', ['products'=>$cart->items,'totalPrice'=>$cart->totalPrice]);
+        $categories = Category::all();
+        return view('cart', ['products'=>$cart->items,'totalPrice'=>$cart->totalPrice,'categories'=>$categories]);
     }
 
     public function reduceInCart(Request $request, $id):RedirectResponse

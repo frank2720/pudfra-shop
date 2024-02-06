@@ -18,6 +18,11 @@
     <link rel="icon" type="image/x-icon" href="{{asset('assets/images/icons/money-back.svg')}}">
     <script>
         $(document).ready(function () {
+
+        $('#cart-details').click(function () {
+            $('#cart-modal').modal('show');
+        });
+
         $('.add-to-cart-btn').on('click', function (e) {
             e.preventDefault();
             var productId = $(this).data('product-id');
@@ -30,9 +35,8 @@
                     _token: '{{ csrf_token() }}'
                 },
                 success: function (data) {
-                    // Update the cart quantity display
-                    //$('.badge-notification').text(data.totalQty);
                     $('.badge-notification').load(location.href+' .badge-notification');
+                    $('.cart-products').load(location.href+' .cart-products');
                     Command:toastr["success"]("Cart updated successfully","Success");
                 },
                 error: function (error) {
@@ -45,6 +49,7 @@
 </head>
 <body>
     @include('layouts.navbar')
+    @include('cart')
     @yield('content')
     @include('layouts.footer')
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>

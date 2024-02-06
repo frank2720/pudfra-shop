@@ -20,7 +20,11 @@
                                             <span class="discount">{{__(round((($product->retail_price-$product->price)/$product->retail_price)*100))}}% off</span>
                                         @endif
                                             <ul>
-                                                    <li><a href="{{route('addToCart',['id'=>$product->id])}}"><i class="fas fa-shopping-cart"></i></a></li>
+                                                    <li>
+                                                        <a href="#" data-product-id="{{$product->id}}" class="add-to-cart-btn">
+                                                            <i class="fas fa-shopping-cart"></i>
+                                                        </a>
+                                                    </li>
                                                     <li><a href="#"><i class="fas fa-heart"></i></a></li>
                                             </ul>
                                     </div>

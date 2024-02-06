@@ -14,7 +14,7 @@
             />
           </a>
             <!-- Left links -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item active">
                   <a class="nav-link" href="/">Home</a>
                 </li>
@@ -46,7 +46,7 @@
         </div>
         <!-- Right elements -->
         <div class="d-flex align-items-center">
-            <a class="nav-link me-3" href="">
+            <a class="nav-link me-3" href="#" id="cart-details">
               <i class="fas fa-shopping-cart"></i>
               <span class="badge rounded-pill badge-notification bg-danger">
                 @if (session()->has('cart'))
