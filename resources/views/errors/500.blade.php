@@ -1,23 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="{{asset('assets/images/icons/money-back.svg')}}">
-
-  <title>500</title>
-
-  @vite(['resources/css/app.css', 'resources/js/app.js'])
-  <meta name="robots" content="noindex, follow">
-</head>
-<body class="flex flex-col h-screen justify-center items-center bg-gray-100">
-  <div class="flex flex-col items-center">
-      <h1 class="text-[120px] font-extrabold text-red-500">500</h1>
-      <p class="text-2xl font-medium text-gray-600">Internal Server Error</p>
-      <p class="text-2xl font-medium text-gray-600 mb-6">We apologize for the inconvenience. Please try again later.</p>
+@extends('errors.main')
+@section('content')
+<section class="py-3 py-md-5 min-vh-100 d-flex justify-content-center align-items-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="text-center">
+          <h2 class="d-flex justify-content-center align-items-center gap-2 mb-4">
+            <span class="display-1 fw-bold">5</span>
+            <i class="bi bi-exclamation-circle-fill text-danger display-4"></i>
+            <span class="display-1 fw-bold">5</span>
+          </h2>
+          <h3 class="h2 mb-2">Oops! server error</h3>
+          <p class="mb-5">We apologize for any inconvinience caused. Try again later</p>
+          <a class="btn bsb-btn-5xl btn-dark rounded-pill px-5 fs-6 m-0" href="{{route('welcome')}}" role="button">Back to Home</a>
+        </div>
+      </div>
+    </div>
   </div>
-</body>
-
-</html>
+</section>
+@endsection
