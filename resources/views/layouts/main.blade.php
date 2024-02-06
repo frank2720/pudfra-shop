@@ -64,7 +64,29 @@
                     success: function (data) {
                         $('.badge-notification').load(location.href+' .badge-notification');
                         $('.cart-products').load(location.href+' .cart-products');
-                        Command:toastr["success"]("Cart updated successfully","Success");
+                        Command:toastr["warning"]("Item removed from the cart","Success");
+                    },
+                    error: function (error) {
+                        console.error(error);
+                    }
+                });
+            });
+
+            $(document).on('click','.button-plus', function (e) {
+                e.preventDefault();
+                var productId = $(this).data('incresed-id');
+
+                $.ajax({
+                    url:'/add-to-cart/' + productId,
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function (data) {
+                        $('.badge-notification').load(location.href+' .badge-notification');
+                        $('.cart-products').load(location.href+' .cart-products');
+                        Command:toastr["success"]("Product quantity increased","Success");
                     },
                     error: function (error) {
                         console.error(error);

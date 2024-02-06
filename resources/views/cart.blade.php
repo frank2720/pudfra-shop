@@ -23,8 +23,12 @@
                       <img src="{{Storage::url($cart_product['item']->img)}}" alt="product-image" class="d-block ui-w-40 ui-bordered">
                       {{$cart_product['item']->name}}
                     </td>
-                    <td class="align-middle p-4">
-                      <input type="number" class="form-control text-center input-size" value="{{$cart_product['qty']}}">
+                    <td class="align-middle inline p-4">
+                      <div class="input-group input-size">
+                        <input type="button" value="-" class="button-minus">
+                        <input type="number" class="form-control text-center" style="background: rgb(246, 246, 247)" disabled value="{{$cart_product['qty']}}">
+                        <input type="button" value="+" class="button-plus" data-incresed-id="{{$cart_product['item']->id}}">
+                      </div>
                     </td>
                     <td>${{number_format($cart_product['price'])}}</td>
                     <td>
@@ -35,6 +39,12 @@
               </tr>
               @endforeach
             </tbody>
+          </table>
+          <table class="table table-bordered m-0">
+            <thead>
+              <th>Total Price</th>
+              <th>${{number_format($totalPrice)}}</th>
+            </thead>
           </table>
         @else
         <p class="text-center text-danger">{{__('You have no products in the cart')}}</p>
