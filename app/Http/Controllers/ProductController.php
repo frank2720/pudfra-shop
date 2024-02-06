@@ -71,7 +71,14 @@ class ProductController extends Controller
     {
         $products = Product::orderBy('name')->paginate(16);
         $categories = Category::all();
-        return view('shop', ['products'=>$products, 'categories'=>$categories]);
+        $oldCart = session()->get('cart');
+        $cart = new Cart($oldCart);
+        return view('shop', [
+            'products'=>$products,
+            'categories'=>$categories,
+            'cart_products'=>$cart->items,
+            'totalPrice'=>$cart->totalPrice,
+        ]);
     }
 
     /**
@@ -106,7 +113,7 @@ class ProductController extends Controller
         return response()->json(['totalQty'=>$cart->totalQty]);
     }
 
-    public function getCart()
+   /* public function getCart()
     {
         if (session()->missing('cart'))
         {
@@ -117,7 +124,7 @@ class ProductController extends Controller
         $cart = new Cart($oldCart);
         $categories = Category::all();
         return view('cart', ['products'=>$cart->items,'totalPrice'=>$cart->totalPrice,'categories'=>$categories]);
-    }
+    }*/
 
     public function reduceInCart(Request $request, $id):RedirectResponse
     {

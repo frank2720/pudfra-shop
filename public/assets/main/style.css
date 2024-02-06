@@ -297,3 +297,22 @@ a:hover {
             padding: 40px 15px 15px 15px;
         }
     }
+
+    .ui-w-40 {
+        width: 40px !important;
+        height: auto;
+    }
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+    /* Firefox */
+    input[type=number] {
+    -moz-appearance: textfield;
+    }
+    
+    .input-size{
+        width: 50px;
+    }
