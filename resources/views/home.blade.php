@@ -1,9 +1,9 @@
 @extends('layouts.main')
 @section('content')
+@include('layouts.carousel')
 <main>
     <section class="section-products">
 		<div class="container">
-            @include('layouts.carousel')
 				<div class="row justify-content-center text-center">
 						<div class="col-md-8 col-lg-6">
 								<div class="header">
@@ -42,7 +42,7 @@
                             </div>
                         </div>
                     @endforeach
-                    <a href="{{route('shop')}}">View more</a>
+                    <a href="{{route('shop')}}" class="text-info">View more >></a>
 				</div>
 		</div>
 </section>
