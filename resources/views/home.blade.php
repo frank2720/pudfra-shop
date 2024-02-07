@@ -1,9 +1,9 @@
 @extends('layouts.main')
 @section('content')
 <main>
-    @include('layouts.carousel')
     <section class="section-products">
 		<div class="container">
+            @include('layouts.carousel')
 				<div class="row justify-content-center text-center">
 						<div class="col-md-8 col-lg-6">
 								<div class="header">
@@ -42,7 +42,7 @@
                             </div>
                         </div>
                     @endforeach
-                    {{$recent_products->links()}}
+                    <a href="{{route('shop')}}">View more</a>
 				</div>
 		</div>
 </section>
