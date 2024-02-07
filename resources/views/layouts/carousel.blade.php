@@ -37,7 +37,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="{{asset('assets/images/ban2.jpg')}}" class="d-block w-100" style="height: auto"/>
+        <img src="{{asset('assets/images/ban1.jpg')}}" class="d-block w-100" style="height: auto"/>
         <div class="mask" style="background-color: rgba(0, 0, 0, 0.4)"></div>
         <div class="carousel-caption d-none d-md-block mb-5">
           <h1 class="mb-4">
@@ -50,7 +50,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="{{asset('assets/images/ban2.jpg')}}" class="d-block w-100" style="height: auto"/>
+        <img src="{{asset('assets/images/ban3.jpg')}}" class="d-block w-100" style="height: auto"/>
         <div class="mask" style="background-color: rgba(0, 0, 0, 0.4)"></div>
         <div class="carousel-caption d-none d-md-block mb-5">
           <h1 class="mb-4">
