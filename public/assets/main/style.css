@@ -337,3 +337,10 @@ a:hover {
     body {
         background: #f0f1f3;
     }
+
+    .profile{
+        margin-top:20px;
+        background:#f8f8f8;
+        font-family: "Poppins", sans-serif;
+        color: #444444;
+    }

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <title>{{ config('app.name','pudfra-shop')}}</title>
 
-    <link rel="icon" type="image/x-icon" href="{{asset('assets/images/icons/money-back.svg')}}">
+    <link rel="icon" type="image/x-icon" href="{{asset('images/pudfralogo.svg')}}">
     <script>
         $(document).ready(function () {
 

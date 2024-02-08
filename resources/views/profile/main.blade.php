@@ -21,7 +21,7 @@
 
     <link rel="icon" type="image/x-icon" href="{{asset('images/pudfralogo.svg')}}">
 </head>
-<body>
+<body class="profile">
     @yield('content')
     @include('layouts.footer')
     <a href="https://wa.me/254768990829" class="float" target="_blank">
