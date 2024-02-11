@@ -1,94 +1,89 @@
-<nav  class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
-    <div class="container">
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-          <a class="navbar-brand mt-2 mt-sm-0" href="https://pudfra-talk.xyz/">
-            <img
-              src="https://pudfra-talk.xyz/images/logo.png"
-              height="20"
-              alt="MDB Logo"
-              loading="lazy"
-            />
-          </a>
-            <!-- Left links -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item active">
-                  <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{route('shop')}}">Products</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdown"
-                    role="button"
-                    data-mdb-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Categories
-                  </a>
-                  <!-- Dropdown menu -->
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    @foreach ($categories as $category)
-                        <li>
-                          <a class='dropdown-item' href=''>{{$category->category}}</a>
-                        </li>
-                    @endforeach
-                  </ul>
-                </li>
-              </ul>
-              <!-- Left links --> 
-        </div>
-        <!-- Right elements -->
-        <div class="d-flex align-items-center">
-            <a class="nav-link me-3" href="#" id="cart-details">
-              <i class="fas fa-shopping-cart"></i>
-              <span class="badge rounded-pill badge-notification bg-danger">
-                @if (session()->has('cart'))
-                  {{session()->get('cart')->totalQty}}
-                @else
-                  {{__('0')}}
-                @endif
-              </span>
+<nav class="navbar navbar-expand-lg bg-info-subtle fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://pudfra-talk.xyz/">
+        <img
+          src="https://pudfra-talk.xyz/images/logo.png"
+          height="20"
+        />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{{route('welcome')}}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('shop')}}">Products</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categories
             </a>
+            <ul class="dropdown-menu">
+                @foreach ($categories as $category)
+                    <li><a class="dropdown-item" href=''>{{$category->category}}</a></li>
+                @endforeach
+            </ul>
+          </li>
+        </ul>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a href="" class="nav-link badge-notification" id="cart-details">
+                    <i class="fas fa-shopping-bag me-2" style="font-size:24px;"></i>
+                    <span class="position-absolute translate-middle badge rounded-pill bg-danger">
+                      @if (session()->has('cart'))
+                      {{session()->get('cart')->totalQty}}
+                      @else
+                        {{__('0')}}
+                      @endif
+                    </span>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             @if (Route::has('login'))
-                @auth
-                    <div class="dropdown">
-                      <a href="" class="dropdown-toggle d-flex align-items-center hidden-arrow" id='profiledetails' role='button' data-mdb-toggle='dropdown' aria-expanded='false'>
-                        <img src="{{asset('assets/images/3551739.jpg')}}" alt="" class="rounded-circle" height="25" loading="lazy">
-                      </a>
-                      <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='profiledetails'>
-                        <li><p class='dropdown-item'>{{ucwords(strtolower(Auth::user()->name))}}</p></li>
-                        <hr>
-                        <li><a class='dropdown-item' href='/profile'>My profile</a></li>
-                        <li>
-                          <form method="POST" action="{{route('logout')}}">
-                            @csrf
-                            <a href="{{route('logout')}}" class="dropdown-item"
-                              onclick="event.preventDefault();
-                              this.closest('form').submit();">Logout
-                            </a>
-                          </form>
-                        </li>
-                      </ul>
-                    </div>
-                @else
-                <button class='btn btn-link px-3 me-2'>
-                  <a href="{{route('login')}}">Login</a>
-                </button>
-                @if (Route::has('register'))
-                    <button class='btn btn-link px-3 me-2'>
-                      <a href="{{route('register')}}">SignUp</a>
-                    </button>
-                @endif
-                @endauth
-                
+            @auth
+              <div class="dropdown-center">
+                  <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="{{asset('assets/images/3551739.jpg')}}" alt="" class="rounded-circle" height="25">
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><p class='dropdown-item'>{{ucwords(strtolower(Auth::user()->name))}}</p></li>
+                    <hr>
+                    <li><a class='dropdown-item' href='/profile'>My profile</a></li>
+                    <li>
+                      <form method="POST" action="{{route('logout')}}">
+                        @csrf
+                        <a href="{{route('logout')}}" class="dropdown-item"
+                          onclick="event.preventDefault();
+                          this.closest('form').submit();">Logout
+                        </a>
+                      </form>
+                    </li>
+                  </ul>
+              </div>
+            @else
+            <li class="px-3 py-2">
+              <button class='btn btn-outline-secondary btn-sm btn-rounded'>
+                <a href="{{route('login')}}" class="nav-link">Login</a>
+              </button>
+            </li>
+            <li class="px-3 py-2">
+              @if (Route::has('register'))
+                  <button class='btn btn-outline-secondary btn-sm btn-rounded'>
+                    <a href="{{route('register')}}" class="nav-link">SignUp</a>
+                  </button>
+              @endif
+            </li>
+            @endauth
             @endif
-        </div>
+        </ul>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </form>
+      </div>
     </div>
 </nav>

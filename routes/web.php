@@ -28,9 +28,7 @@ Route::middleware(['auth','verified'])->group(function () {
             'prefix'=> 'admin',
             'middleware'=>'is_admin',
       ], function() {
-            Route::get('dashboard', function(){
-                  return view('admin/dashboard');
-            })->name('admin.interphase');
+            Route::get('dashboard', [ProductController::class, 'index'])->name('admin.interphase');
             /*crud operations on products*/
             Route::resource('products', ProductController::class)
                   ->only(['create','store']);

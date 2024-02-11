@@ -52,8 +52,12 @@
         
       </div>
       <div class="modal-footer">
+        @if (session()->has('cart') && $totalPrice>0)
         <button type="button" class="btn btn-secondary close" data-dismiss="modal">Continue shopping</button>
         <button type="button" class="btn btn-primary">CheckOut</button>
+        @else
+        <button type="button" class="btn btn-secondary close" data-dismiss="modal">Continue shopping</button>
+        @endif
       </div>
     </div>
   </div>

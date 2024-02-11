@@ -1,37 +1,38 @@
-<div id="addproductModal" aria-hidden="true" class="modal fade">
+<!-- add Modal HTML -->
+<div id="addEmployeeModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">
-                    {{__('Add Product')}}
-                </h4>
-            </div>
-            <form action="{{route('products.store')}}" method="POST" id="productform" class="form-horizontal"  enctype="multipart/form-data">
+            <form action="{{route('products.store')}}" method="POST" enctype="multipart/form-data" id="productform">
                 @csrf
-                <div class="modal-body">
+                <div class="modal-header">						
+                    <h4 class="modal-title">{{__('Add Product')}}</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">					
                     <div class="form-group">
-                        <label for="name">Product name</label>
-                        <input class="form-control" type="text" name="name" id="name">
+                        <label>{{__('Product Name')}}</label>
+                        <input class="form-control" type="text" name="name">
                     </div>
                     <div class="form-group">
-                        <label for="price">Product price:</label>
-                        <input class="form-control" type="number" min="0" name="price" id="price">
+                        <label>{{__('Product Price')}}</label>
+                        <input class="form-control" type="number" min="0" name="price">
                     </div>
                     <div class="form-group">
-                        <label for="retail">Retail price:</label>
-                        <input class="form-control" type="number" min="0" name="retail_price" id="retail">
+                        <label>{{__('Retail Price')}}</label>
+                        <input class="form-control" type="number" min="0" name="retail_price">
                     </div>
                     <div class="form-group">
-                        <label for="description">Description:</label>
-                        <textarea class="form-control" type="text" name="description" id="description"></textarea>
+                        <label>{{__('Description')}}</label>
+                        <textarea class="form-control" type="text" name="description"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="file">Product Image:</label>
-                        <input class="form-control" id="file" type="file" name="img">
-                    </div>
+                        <label>{{__('Image')}}</label>
+                        <input type="file" name="img" class="form-control">
+                    </div>					
                 </div>
                 <div class="modal-footer">
-                    <input type="submit" value="Save">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-success" value="Add">
                 </div>
             </form>
         </div>

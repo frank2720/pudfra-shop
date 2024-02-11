@@ -20,7 +20,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+       $products = Product::paginate(8);
+       return view('admin.dashboard', ['products'=>$products]);
     }
 
      /**
@@ -69,7 +70,7 @@ class ProductController extends Controller
 
     public function products(): View
     {
-        $products = Product::orderBy('name')->paginate(16);
+        $products = Product::orderBy('name')->paginate(8);
         $categories = Category::all();
         $oldCart = session()->get('cart');
         $cart = new Cart($oldCart);

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{asset('assets/main/style.css')}}">
     <title>{{ config('app.name','pudfra-shop')}}</title>
 
-    <link rel="icon" type="image/x-icon" href="{{asset('assets/images/icons/money-back.svg')}}">
+    <link rel="icon" type="image/x-icon" href="{{asset('images/pudfralogo.svg')}}">
 </head>
 <body>
     @yield('content')
