@@ -49,6 +49,6 @@
         </div>
         @endforeach
     </div>
-    <div class="clearfix">{{$recent_products->links()}}</div>
+    <div class="clearfix"><a href="{{route('shop')}}">View more>></a></div>
 </div>
 @endsection

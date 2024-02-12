@@ -24,6 +24,11 @@ class ProductController extends Controller
        return view('admin.dashboard', ['products'=>$products]);
     }
 
+    public function pagination(Request $request)
+    {
+       $products = Product::paginate(8);
+       return view('admin.pagination_dash', ['products'=>$products]);
+    }
      /**
      * Show the form for creating a new resource.
      */
@@ -75,6 +80,20 @@ class ProductController extends Controller
         $oldCart = session()->get('cart');
         $cart = new Cart($oldCart);
         return view('shop', [
+            'products'=>$products,
+            'categories'=>$categories,
+            'cart_products'=>$cart->items,
+            'totalPrice'=>$cart->totalPrice,
+        ]);
+    }
+
+    public function products_paginate(): View
+    {
+        $products = Product::orderBy('name')->paginate(8);
+        $categories = Category::all();
+        $oldCart = session()->get('cart');
+        $cart = new Cart($oldCart);
+        return view('shop_paginate', [
             'products'=>$products,
             'categories'=>$categories,
             'cart_products'=>$cart->items,

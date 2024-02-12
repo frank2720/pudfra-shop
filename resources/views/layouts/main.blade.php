@@ -31,7 +31,7 @@
                       _token: '{{ csrf_token() }}'
                   },
                   success: function (data) {
-                      $('.badge-notification').load(location.href+' .badge-notification');
+                      $('.cart-value').load(location.href+' .cart-value');
                       $('.cart-products').load(location.href+' .cart-products');
                       Command:toastr["success"]("Cart updated successfully","Success");
                   },
@@ -57,7 +57,7 @@
                       _token: '{{ csrf_token() }}'
                   },
                   success: function (data) {
-                      $('.badge-notification').load(location.href+' .badge-notification');
+                      $('.cart-value').load(location.href+' .cart-value');
                       $('.cart-products').load(location.href+' .cart-products');
                       Command:toastr["warning"]("Item removed from the cart","Warning");
                   },
@@ -79,7 +79,7 @@
                       _token: '{{ csrf_token() }}'
                   },
                   success: function (data) {
-                      $('.badge-notification').load(location.href+' .badge-notification');
+                      $('.cart-value').load(location.href+' .cart-value');
                       $('.cart-products').load(location.href+' .cart-products');
                       Command:toastr["success"]("Product quantity increased","Success");
                   },
@@ -101,7 +101,7 @@
                       _token: '{{ csrf_token() }}'
                   },
                   success: function (data) {
-                      $('.badge-notification').load(location.href+' .badge-notification');
+                      $('.cart-value').load(location.href+' .cart-value');
                       $('.cart-products').load(location.href+' .cart-products');
                       Command:toastr["warning"]("Product quantity decreased","Warning");
                   },
@@ -110,6 +110,17 @@
                   }
               });
           });
+
+          $(document).on('click','.pagination a', function (e) {
+			e.preventDefault();
+			var page = $(this).attr('href').split('page=')[1]
+			$.ajax({
+				url:'/pagination/shop_data?page='+page,
+				success:function(data){
+					$('.shop-data').html(data);
+				},
+			});
+		});
       });
     </script>
 </head>

@@ -31,14 +31,16 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
                 <a href="" class="nav-link badge-notification" id="cart-details">
-                    <i class="fas fa-shopping-bag me-2" style="font-size:24px;"></i>
-                    <span class="position-absolute translate-middle badge rounded-pill bg-danger">
-                      @if (session()->has('cart'))
-                      {{session()->get('cart')->totalQty}}
-                      @else
-                        {{__('0')}}
-                      @endif
-                    </span>
+                    <div class="cart-value">
+                      <i class="fas fa-shopping-bag me-2" style="font-size:24px;"></i>
+                      <span class="position-absolute translate-middle badge rounded-pill bg-danger">
+                        @if (session()->has('cart'))
+                        {{session()->get('cart')->totalQty}}
+                        @else
+                          {{__('0')}}
+                        @endif
+                      </span>
+                    </div>
                 </a>
             </li>
         </ul>

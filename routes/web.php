@@ -46,4 +46,7 @@ Route::get('/shopping/cart', [ProductController::class, 'getCart'])->name('shopp
 Route::get('/shopping/removeItem/{id}', [ProductController::class, 'removefromCart'])->name('removefromCart');
 Route::get('/shopping/reduceItem/{id}', [ProductController::class, 'reduceInCart'])->name('productReduce');
 
+Route::get('/pagination/paginate-data',[ProductController::class,'pagination']);
+Route::get('/pagination/shop_data',[ProductController::class,'products_paginate']);
+
 require __DIR__.'/auth.php';
