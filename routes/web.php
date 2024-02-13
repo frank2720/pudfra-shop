@@ -49,4 +49,6 @@ Route::get('/shopping/reduceItem/{id}', [ProductController::class, 'reduceInCart
 Route::get('/pagination/paginate-data',[ProductController::class,'pagination']);
 Route::get('/pagination/shop_data',[ProductController::class,'products_paginate']);
 
+Route::get('/search',[ProductController::class, 'product_search'])->name('product.search');
+
 require __DIR__.'/auth.php';

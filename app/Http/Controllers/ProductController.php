@@ -26,10 +26,10 @@ class ProductController extends Controller
 
     public function pagination(Request $request)
     {
-       $products = Product::paginate(8);
-       return view('admin.pagination_dash', ['products'=>$products]);
+    $products = Product::paginate(8);
+    return view('admin.pagination_dash', ['products'=>$products]);
     }
-     /**
+    /**
      * Show the form for creating a new resource.
      */
     public function create():View
@@ -37,7 +37,7 @@ class ProductController extends Controller
         return view('admin.add_product');
     }
 
-     /**
+    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
@@ -101,6 +101,20 @@ class ProductController extends Controller
         ]);
     }
 
+    public function product_search(Request $request): View
+    {
+        $products = Product::where('name','like', '%'.$request->search_string.'%')
+        ->orwhere('price','like', '%'.$request->search_string.'%')
+        ->orderBy('name')
+        ->paginate(8);
+        if (count($products) >=1) {
+            return view('shop_search', [
+                'products'=>$products,
+            ]);
+        } else {
+            return view('search_error');
+        }
+    }
     /**
      * Gets 8 recently added products, and display them in the landing/home page
      */
@@ -112,10 +126,10 @@ class ProductController extends Controller
         //dd(session()->get('cart'));
         $cart = new Cart($oldCart);
         return view('home', [
-          'recent_products'=>$recent_products,
-          'categories'=>$categories,
-          'cart_products'=>$cart->items,
-          'totalPrice'=>$cart->totalPrice,
+            'recent_products'=>$recent_products,
+            'categories'=>$categories,
+            'cart_products'=>$cart->items,
+            'totalPrice'=>$cart->totalPrice,
         ]);
     }
 
@@ -133,7 +147,7 @@ class ProductController extends Controller
         return response()->json(['totalQty'=>$cart->totalQty]);
     }
 
-   /* public function getCart()
+    /* public function getCart()
     {
         if (session()->missing('cart'))
         {

@@ -12,127 +12,142 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <script>
-      $(document).ready(function () {
+        $(document).ready(function () {
+            $(document).on('click', '#cart-details', function (e) {
+                e.preventDefault();
+                $('#cart-modal').modal('show');
+            });
+            $(document).on('click','.add-to-cart-btn', function (e) {
+                e.preventDefault();
+                var productId = $(this).data('product-id');
+                $.ajax({
+                    url:'/add-to-cart/' + productId,
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function (data) {
+                        $('.cart-value').load(location.href+' .cart-value');
+                        $('.cart-products').load(location.href+' .cart-products');
+                        Command:toastr["success"]("Cart updated successfully","Success");
+                    },
+                    error: function (error) {
+                        console.error(error);
+                    }
+                });
+            });
 
-          $(document).on('click', '#cart-details', function (e) {
-              e.preventDefault();
-              $('#cart-modal').modal('show');
-          });
+            $(document).on('click','.close', function(e){
+                e.preventDefault();
+                $('#cart-modal').modal('hide');
+            });
 
-          $(document).on('click','.add-to-cart-btn', function (e) {
-              e.preventDefault();
-              var productId = $(this).data('product-id');
+            $(document).on('click','.remove-product', function(e){
+                var productremovedId = $(this).data('productremoved-id');
 
-              $.ajax({
-                  url:'/add-to-cart/' + productId,
-                  type: 'post',
-                  dataType: 'json',
-                  data: {
-                      _token: '{{ csrf_token() }}'
-                  },
-                  success: function (data) {
-                      $('.cart-value').load(location.href+' .cart-value');
-                      $('.cart-products').load(location.href+' .cart-products');
-                      Command:toastr["success"]("Cart updated successfully","Success");
-                  },
-                  error: function (error) {
-                      console.error(error);
-                  }
-              });
-          });
+                $.ajax({
+                    url:'/shopping/removeItem/' + productremovedId,
+                    type: 'get',
+                    dataType: 'json',
+                    data: {
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function (data) {
+                        $('.cart-value').load(location.href+' .cart-value');
+                        $('.cart-products').load(location.href+' .cart-products');
+                        Command:toastr["warning"]("Item removed from the cart","Warning");
+                    },
+                    error: function (error) {
+                        console.error(error);
+                    }
+                });
+            });
 
-          $(document).on('click','.close', function(e){
-              e.preventDefault();
-              $('#cart-modal').modal('hide');
-          });
+            $(document).on('click','.button-plus', function (e) {
+                e.preventDefault();
+                var productId = $(this).data('incresed-id');
 
-          $(document).on('click','.remove-product', function(e){
-              var productremovedId = $(this).data('productremoved-id');
+                $.ajax({
+                    url:'/add-to-cart/' + productId,
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function (data) {
+                        $('.cart-value').load(location.href+' .cart-value');
+                        $('.cart-products').load(location.href+' .cart-products');
+                        Command:toastr["success"]("Product quantity increased","Success");
+                    },
+                    error: function (error) {
+                        console.error(error);
+                    }
+                });
+            });
 
-              $.ajax({
-                  url:'/shopping/removeItem/' + productremovedId,
-                  type: 'get',
-                  dataType: 'json',
-                  data: {
-                      _token: '{{ csrf_token() }}'
-                  },
-                  success: function (data) {
-                      $('.cart-value').load(location.href+' .cart-value');
-                      $('.cart-products').load(location.href+' .cart-products');
-                      Command:toastr["warning"]("Item removed from the cart","Warning");
-                  },
-                  error: function (error) {
-                      console.error(error);
-                  }
-              });
-          });
+            $(document).on('click','.button-minus', function (e) {
+                e.preventDefault();
+                var productId = $(this).data('decreased-id');
 
-          $(document).on('click','.button-plus', function (e) {
-              e.preventDefault();
-              var productId = $(this).data('incresed-id');
+                $.ajax({
+                    url:'/shopping/reduceItem/' + productId,
+                    type: 'get',
+                    dataType: 'json',
+                    data: {
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function (data) {
+                        $('.cart-value').load(location.href+' .cart-value');
+                        $('.cart-products').load(location.href+' .cart-products');
+                        Command:toastr["warning"]("Product quantity decreased","Warning");
+                    },
+                    error: function (error) {
+                        console.error(error);
+                    }
+                });
+            });
 
-              $.ajax({
-                  url:'/add-to-cart/' + productId,
-                  type: 'post',
-                  dataType: 'json',
-                  data: {
-                      _token: '{{ csrf_token() }}'
-                  },
-                  success: function (data) {
-                      $('.cart-value').load(location.href+' .cart-value');
-                      $('.cart-products').load(location.href+' .cart-products');
-                      Command:toastr["success"]("Product quantity increased","Success");
-                  },
-                  error: function (error) {
-                      console.error(error);
-                  }
-              });
-          });
+            $(document).on('click','.pagination a', function (e) {
+                e.preventDefault();
+                var page = $(this).attr('href').split('page=')[1]
+                $.ajax({
+                    url:'/pagination/shop_data?page='+page,
+                    success:function(data){
+                        $('.shop-data').html(data);
+                    },
+                });
+            });
 
-          $(document).on('click','.button-minus', function (e) {
-              e.preventDefault();
-              var productId = $(this).data('decreased-id');
-
-              $.ajax({
-                  url:'/shopping/reduceItem/' + productId,
-                  type: 'get',
-                  dataType: 'json',
-                  data: {
-                      _token: '{{ csrf_token() }}'
-                  },
-                  success: function (data) {
-                      $('.cart-value').load(location.href+' .cart-value');
-                      $('.cart-products').load(location.href+' .cart-products');
-                      Command:toastr["warning"]("Product quantity decreased","Warning");
-                  },
-                  error: function (error) {
-                      console.error(error);
-                  }
-              });
-          });
-
-          $(document).on('click','.pagination a', function (e) {
-			e.preventDefault();
-			var page = $(this).attr('href').split('page=')[1]
-			$.ajax({
-				url:'/pagination/shop_data?page='+page,
-				success:function(data){
-					$('.shop-data').html(data);
-				},
-			});
-		});
-      });
+            $(document).on('keyup',function (e) {
+                e.preventDefault();
+                var search_string = $('#search').val();
+                $.ajax({
+                    url:"{{route('product.search')}}",
+                    method:'GET',
+                    data:{
+                        search_string:search_string
+                    },
+                    success:function(data){
+                        $('.shop-data').html(data);
+                    },
+                    error: function (error) {
+                        console.error(error);
+                    }
+                });
+            });
+        });
     </script>
 </head>
 <body>
-  @include('layouts.navbar')
-  @include('layouts.carousel')
-  @include('cart')
-  @yield('content')
-  @include('layouts.footer')
-  <a href="https://wa.me/254741061815" class="float" target="_blank">
+    @include('layouts.navbar')
+    @include('layouts.carousel')
+    @include('cart')
+    @yield('content')
+    <a href="https://wa.me/254741061815" class="float" target="_blank">
     <i class="fa-brands fa-whatsapp  wp-button"></i>
-  </a>
+    </a>
+    @include('layouts.footer')
     <script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
     {!! Toastr::message() !!}
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
