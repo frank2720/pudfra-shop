@@ -1,6 +1,7 @@
 @extends('layouts.guest')
 @section('content')
 <div class="wrapper">
+    <x-auth-session-status class="mb-4" :status="session('status')" />
     <div class="logo">
         <img src="https://pudfra-talk.xyz/images/logo.png" alt="">
     </div>
@@ -22,7 +23,7 @@
         @if (Route::has('password.request'))
         <a href="{{route('password.request')}}">Forgot password?</a>
         @endif
-         or <a href="{{route('register')}}">Sign up</a>
+        or <a href="{{route('register')}}">Sign up</a>
     </div>
 </div>
 @endsection

@@ -7,9 +7,7 @@
     <div class="card p-3">
       <div class="e-navlist e-navlist--active-bg">
         <ul class="nav">
-          <li class="nav-item"><a class="nav-link px-2 active" href=""><i class="fa fa-fw fa-bar-chart mr-1"></i><span>Overview</span></a></li>
-          <li class="nav-item"><a class="nav-link px-2" href="" target="__blank"><i class="fa fa-fw fa-th mr-1"></i><span>CRUD</span></a></li>
-          <li class="nav-item"><a class="nav-link px-2" href="" target="__blank"><i class="fa fa-fw fa-cog mr-1"></i><span>Settings</span></a></li>
+          <li class="nav-item"><a class="nav-link px-2 active" href="{{route('shop')}}">{{__('<<Continue Shopping')}}</a></li>
         </ul>
       </div>
     </div>
