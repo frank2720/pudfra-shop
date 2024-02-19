@@ -1,11 +1,9 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
-use App\Models\Category;
-use App\Models\Product;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +33,12 @@ Route::middleware(['auth','verified'])->group(function () {
             /*crud operations on categories*/
             Route::resource('categories', CategoryController::class);
       });
+});
+
+Route::group([
+      'prefix'=>'payments'
+],function(){
+      Route::post('initiatepush',[PaymentController::class,'initiatestk'])->name('stkpush');
 });
 
 

@@ -13,10 +13,12 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <script>
         $(document).ready(function () {
+
             $(document).on('click', '#cart-details', function (e) {
                 e.preventDefault();
                 $('#cart-modal').modal('show');
             });
+
             $(document).on('click','.add-to-cart-btn', function (e) {
                 e.preventDefault();
                 var productId = $(this).data('product-id');
@@ -38,12 +40,8 @@
                 });
             });
 
-            $(document).on('click','.close', function(e){
-                e.preventDefault();
-                $('#cart-modal').modal('hide');
-            });
-
             $(document).on('click','.remove-product', function(e){
+                e.preventDefault();
                 var productremovedId = $(this).data('productremoved-id');
 
                 $.ajax({

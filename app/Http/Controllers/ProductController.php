@@ -7,21 +7,17 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
 
-     /**
+    /**
      * Display a listing of the resource.
      */
     public function index()
     {
-       $products = Product::paginate(8);
-       return view('admin.dashboard', ['products'=>$products]);
+        $products = Product::paginate(8);
+        return view('admin.dashboard', ['products'=>$products]);
     }
 
     public function pagination(Request $request)
