@@ -134,6 +134,29 @@
                     }
                 });
             });
+
+            $('#payform').on('submit', function (e) {
+            e.preventDefault();
+            $.ajax({
+                url:"{{route('stkpush')}}",
+                data:new FormData(this),
+                type:"POST",
+                cache: false,
+                contentType: false,
+                processData: false,
+                success:function($result)
+                {
+                    $("#payform").trigger("reset");
+                    Command:toastr["success"]("Payment initiated successfully Enter your MPESA pin to complete the payment","Success");
+                }, 
+                error:function($err){
+                        let error =$err.responseJSON;
+                        $.each(error.errors,function(index,value){
+                            Command:toastr["error"](value,"Failed");
+                        });
+                    },       
+                });
+            });
         });
     </script>
 </head>

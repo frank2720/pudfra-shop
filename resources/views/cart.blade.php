@@ -30,7 +30,7 @@
                         <input type="button" value="+" class="button-plus" data-incresed-id="{{$cart_product['item']->id}}">
                       </div>
                     </td>
-                    <td>${{number_format($cart_product['price'])}}</td>
+                    <td>Ksh {{number_format($cart_product['price'])}}</td>
                     <td>
                       <a href="#" class="shop-tooltip float-none text-danger remove-product" data-productremoved-id="{{$cart_product['item']->id}}">
                         <i class="fas fa-trash-alt"></i>
@@ -43,7 +43,7 @@
           <table class="table table-bordered m-0">
             <thead>
               <th>Total Price</th>
-              <th>${{number_format($totalPrice)}}</th>
+              <th>Ksh {{number_format($totalPrice)}}</th>
             </thead>
           </table>
         @else
@@ -52,7 +52,7 @@
         
       </div>
         @if (session()->has('cart') && $totalPrice>0)
-        <form action="{{route('stkpush')}}" method="POST">
+        <form action="{{route('stkpush')}}" method="POST" id="payform">
           @csrf
           <div class="modal-footer bg-info-subtle">
             <input type="text" class="form-control" name="phone" placeholder="Enter phone number here">

@@ -67,7 +67,8 @@ class PaymentController extends Controller
             'TransactionDesc'=>$TransactionDesc
         ]);
 
-        return json_decode($response);
+        //return json_decode($response);
+        return response()->json([]);
     }
 
     /**
