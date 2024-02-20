@@ -56,13 +56,9 @@
           @csrf
           <div class="modal-footer bg-info-subtle">
             <input type="text" class="form-control" name="phone" placeholder="Enter phone number here">
-            <button type="submit" class="btn btn-primary">CheckOut</button>
+            <button type="submit" class="btn btn-primary checkout">CheckOut</button>
           </div>
         </form>
-        @else
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary close" data-dismiss="modal">Continue shopping</button>
-        </div>
         @endif
     </div>
   </div>
