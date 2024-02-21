@@ -15,12 +15,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        //\App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        \App\Models\User::factory()->create([
+                'name' => 'admin',
+                'email' => 'otienof534@gmail.com',
+                'password'=>'admin1234',
+                'is_admin'=>1,
+            ]);
 
         /**Product::create([
             'name'=>'Lenovo ThinkPad',
@@ -30,6 +32,6 @@ class DatabaseSeeder extends Seeder
         ]);*/
 
        // Product::factory(10)->create();
-        Category::factory(7)->create();
+        //Category::factory(7)->create();
     }
 }
