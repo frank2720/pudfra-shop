@@ -149,6 +149,7 @@
 
             $(document).on('submit','#payform', function (e) {
             e.preventDefault();
+            var phone = $('#paynum').val();
             $.ajax({
                 url:"{{route('stkpush')}}",
                 data:new FormData(this),
@@ -156,7 +157,7 @@
                 cache: false,
                 contentType: false,
                 processData: false,
-                success:function($result)
+                success:function(data)
                 {
                     $("#payform").trigger("reset");
                     Command:toastr["success"]("Payment initiated successfully Enter your MPESA pin to complete the payment","Success");

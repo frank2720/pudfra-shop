@@ -4,6 +4,7 @@
     <div class="modal-content cart-products">
       <div class="modal-header">
         <h4 class="modal-title"><small>{{__('Products in Cart')}}</small></h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body table-responsive">
         @if (session()->has('cart') && $totalPrice>0)
