@@ -68,7 +68,7 @@ class PaymentController extends Controller
         ]);
 
         //return json_decode($response);
-        return response()->json([]);
+        //return response()->json([]);
     }
 
     /**
