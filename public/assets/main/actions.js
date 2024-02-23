@@ -128,7 +128,7 @@ $(document).ready(function () {
     $.ajax({
         url:"/payments/initiatepush",
         data:new FormData(this),
-        type:"POST",
+        type:"GET",
         cache: false,
         contentType: false,
         processData: false,

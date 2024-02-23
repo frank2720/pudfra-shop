@@ -7,6 +7,7 @@ use App\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 
 class PaymentController extends Controller
 {
@@ -67,16 +68,14 @@ class PaymentController extends Controller
             'TransactionDesc'=>$TransactionDesc
         ]);
 
-        //return json_decode($response);
+        return json_decode($response);
         //return response()->json([]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function stkcallback()
     {
-        //
+        $data = file_get_contents('php://input');
+        Storage::disk('local')->put('mpesainfo.json',$data);
     }
 
     /**

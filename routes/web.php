@@ -38,7 +38,8 @@ Route::middleware(['auth','verified'])->group(function () {
 Route::group([
       'prefix'=>'payments'
 ],function(){
-      Route::post('initiatepush',[PaymentController::class,'initiatestk'])->name('stkpush');
+      Route::get('/initiatepush',[PaymentController::class,'initiatestk'])->name('stkpush');
+      Route::post('/callback',[PaymentController::class,'stkcallback'])->name('stkcallback');
 });
 
 
