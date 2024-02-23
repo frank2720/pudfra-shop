@@ -42,8 +42,10 @@ Route::group([
       Route::post('/callback',[PaymentController::class,'stkcallback'])->name('stkcallback');
 });
 
-
-Route::get('/', [ProductController::class,'recent_products'])->name('welcome');
+Route::get('/', function(){
+      return view('index');
+});
+//Route::get('/', [ProductController::class,'recent_products'])->name('welcome');
 Route::get('/shop', [ProductController::class, 'products'])->name('shop');
 Route::get('/product/{id}', [ProductController::class, 'product'])->name('product_details');
 Route::post('/add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('addToCart');
