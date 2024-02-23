@@ -51,7 +51,7 @@ class PaymentController extends Controller
         $PartyB=env('PARTY_B');
         $PhoneNumber=$PartyA;
         $callbackURL=env('CALL_BACK_URL');
-        $AccountReference='pudfra12';
+        $AccountReference='Maanar-shop';
         $TransactionDesc='pay for the goods';
 
         $response=Http::withToken($accessToken)->post($url,[
@@ -68,8 +68,7 @@ class PaymentController extends Controller
             'TransactionDesc'=>$TransactionDesc
         ]);
 
-        return json_decode($response);
-        //return response()->json([]);
+        return $response;
     }
 
     public function stkcallback()

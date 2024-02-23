@@ -123,12 +123,11 @@ $(document).ready(function () {
     });
 
     $(document).on('submit','#payform', function (e) {
-    e.preventDefault();
-    var phone = $('#paynum').val();
+    //e.preventDefault();
     $.ajax({
         url:"/payments/initiatepush",
         data:new FormData(this),
-        type:"GET",
+        type:"POST",
         cache: false,
         contentType: false,
         processData: false,
