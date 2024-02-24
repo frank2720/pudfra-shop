@@ -84,15 +84,18 @@
                         </span>
                         <span class="section-subtitle db tc sub-title">Top view in this week</span>
                     </div>
-                    {{$recent_products}}
                     <div class="products nt_products_holder row fl_center row_pr_1 cdt_des_5 round_cd_true nt_cover ratio_nt position_8 space_30">
-                        @foreach ($recent_products as $product)
+                        @foreach ($trending_products as $product)
                         <div class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1">
                             <div class="product-inner pr">
                                 <div class="product-image position-relative oh lazyload">
-                                    <span class="tc nt_labels pa pe_none cw">
-                                        <span class="nt_label new">New</span>
-                                    </span>
+                                    @if ($product->retail_price>$product->price)
+                                        <span class="tc nt_labels pa pe_none cw">
+                                            <span class="onsale nt_label">
+                                                <span>{{round((($product->price-$product->retail_price)/$product->retail_price)*100)}} %</span>
+                                            </span>
+                                        </span>
+                                    @endif
                                     <a class="d-block" href="product-detail-layout-01.html">
                                         <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="{{$product->images[0]->url}}"></div>
                                     </a>
@@ -128,7 +131,6 @@
                         </div>
                         @endforeach
                     </div>
-    
                     <div class="products-footer tc mt__40">
                         <a class="se_cat_lm pr nt_cat_lm button button_default br_rd_true btn_icon_false" href="#">Load More</a>
                     </div>

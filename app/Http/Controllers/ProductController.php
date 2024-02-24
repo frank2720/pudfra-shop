@@ -71,9 +71,6 @@ class ProductController extends Controller
         return response()->json([]);
     }
     
-    /**
-     * Gets the products from the db and display them in the shopping page
-     */
 
     public function products(): View
     {
@@ -84,6 +81,21 @@ class ProductController extends Controller
         return view('shop', [
             'products'=>$products,
             'categories'=>$categories,
+            'cart_products'=>$cart->items,
+            'totalPrice'=>$cart->totalPrice,
+        ]);
+    }
+
+    public function trending_products(): View
+    {
+        $trending_products = Product::with('images')->latest()->paginate(4);
+        $nav_products = Product::with('images')->get();
+        $oldCart = session()->get('cart');
+        //dd(session()->get('cart'));
+        $cart = new Cart($oldCart);
+        return view('index', [
+            'trending_products'=>$trending_products,
+            'nav_product'=>$nav_products,
             'cart_products'=>$cart->items,
             'totalPrice'=>$cart->totalPrice,
         ]);
@@ -116,23 +128,6 @@ class ProductController extends Controller
         } else {
             return view('search_error');
         }
-    }
-    /**
-     * Gets 8 recently added products, and display them in the landing/home page
-     */
-    public function recent_products(): View
-    {
-        $recent_products = Product::with('images')->get();
-        $categories = Category::all();
-        $oldCart = session()->get('cart');
-        //dd(session()->get('cart'));
-        $cart = new Cart($oldCart);
-        return view('index', [
-            'recent_products'=>$recent_products,
-            'categories'=>$categories,
-            'cart_products'=>$cart->items,
-            'totalPrice'=>$cart->totalPrice,
-        ]);
     }
 
     /**
