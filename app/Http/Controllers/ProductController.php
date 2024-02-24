@@ -88,14 +88,17 @@ class ProductController extends Controller
 
     public function trending_products(): View
     {
-        $trending_products = Product::with('images')->latest()->paginate(4);
         $nav_products = Product::with('images')->get();
+        $trending_products = Product::with('images')->latest()->paginate(8);
+        $bestsales = Product::with('images')->whereColumn('retail_price','>','price')->paginate(8);
+        $latest = Product::with('images')->latest()->paginate(8);
         $oldCart = session()->get('cart');
         //dd(session()->get('cart'));
         $cart = new Cart($oldCart);
         return view('index', [
-            'trending_products'=>$trending_products,
             'nav_product'=>$nav_products,
+            'trending_products'=>$trending_products,
+            'bestsales'=>$bestsales,
             'cart_products'=>$cart->items,
             'totalPrice'=>$cart->totalPrice,
         ]);

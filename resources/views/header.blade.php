@@ -84,9 +84,9 @@
                                                                     </div>
                                                                     <div class="product-info mt__15">
                                                                         <h3 class="product-title pr fs__14 mg__0 fwm">
-                                                                            <a class="cd chp" href="product-detail-layout-01.html">Analogue Resin Strap</a>
+                                                                            <a class="cd chp" href="product-detail-layout-01.html">{{$product->name}}</a>
                                                                         </h3>
-                                                                        <span class="price dib mb__5">$30.00</span>
+                                                                        <span class="price dib mb__5">${{number_format($product->price,2,'.',',')}}</span>
                                                                     </div>
                                                                 </div>
                                                             </div>
