@@ -84,7 +84,7 @@
                         </span>
                         <span class="section-subtitle db tc sub-title">Top view in this week</span>
                     </div>
-    
+                    {{$recent_products}}
                     <div class="products nt_products_holder row fl_center row_pr_1 cdt_des_5 round_cd_true nt_cover ratio_nt position_8 space_30">
                         @foreach ($recent_products as $product)
                         <div class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1">
@@ -94,10 +94,10 @@
                                         <span class="nt_label new">New</span>
                                     </span>
                                     <a class="d-block" href="product-detail-layout-01.html">
-                                        <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="{{$product->img}}"></div>
+                                        <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="{{$product->images[0]->url}}"></div>
                                     </a>
                                     <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
-                                        <div class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_571" data-bgset="assets/images/products/pr-02.jpg"></div>
+                                        <div class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_571" data-bgset="{{$product->images[1]->url}}"></div>
                                     </div>
                                     <div class="nt_add_w ts__03 pa ">
                                         <a href="#" class="wishlistadd cb chp ttip_nt tooltip_right">
@@ -120,9 +120,9 @@
                                 </div>
                                 <div class="product-info mt__15">
                                     <h3 class="product-title position-relative fs__14 mg__0 fwm">
-                                        <a class="cd chp" href="product-detail-layout-01.html">Analogue Resin Strap</a>
+                                        <a class="cd chp" href="product-detail-layout-01.html">{{$product->name}}</a>
                                     </h3>
-                                    <span class="price dib mb__5">$30.00</span>
+                                    <span class="price dib mb__5">$ {{number_format($product->price,2,".",",")}}</span>
                                 </div>
                             </div>
                         </div>

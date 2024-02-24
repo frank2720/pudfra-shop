@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Category;
+use App\Models\Image;
 use App\Models\Product;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
@@ -53,17 +54,20 @@ class ProductController extends Controller
             'img.required'=>'Upload product image',
             
         ]);
-        foreach ($request->file('img') as $imagefile) {
-            $product_image =  $imagefile->store('/assets/images/products', ['disk' =>   'my_files']);
-        }
+        $product = new Product;
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->retail_price = $request->retail_price;
+        $product->description = $request->description;
+        $product->save();
 
-        Product::create([
-            'name'=>$request->name,
-            'price'=>$request->price,
-            'retail_price'=>$request->retail_price,
-            'description'=>$request->description,
-            'img'=>$product_image,
-        ]);
+        foreach ($request->file('img') as $imagefile) {
+            $image = new Image;
+            $path =  $imagefile->store('/assets/images/products', ['disk' =>   'my_files']);
+            $image->url = $path;
+            $image->product_id = $product->id;
+            $image->save();
+        }
         return response()->json([]);
     }
     
@@ -118,15 +122,13 @@ class ProductController extends Controller
      */
     public function recent_products(): View
     {
-        $recent_products = Product::latest()->paginate(8);
-        $images = Product::find(1)->images();
+        $recent_products = Product::with('images')->get();
         $categories = Category::all();
         $oldCart = session()->get('cart');
         //dd(session()->get('cart'));
         $cart = new Cart($oldCart);
         return view('index', [
             'recent_products'=>$recent_products,
-            'images'=>$images,
             'categories'=>$categories,
             'cart_products'=>$cart->items,
             'totalPrice'=>$cart->totalPrice,
