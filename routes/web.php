@@ -55,6 +55,7 @@ Route::get('/shopping/reduceItem/{id}', [ProductController::class, 'reduceInCart
 
 Route::get('/pagination/paginate-data',[ProductController::class,'pagination']);
 Route::get('/pagination/shop_data',[ProductController::class,'products_paginate']);
+Route::get('/load-more-data', [ProductController::class,'loadmore'])->name('load.more');
 
 Route::get('/search',[ProductController::class, 'product_search'])->name('product.search');
 

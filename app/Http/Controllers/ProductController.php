@@ -86,22 +86,56 @@ class ProductController extends Controller
         ]);
     }
 
-    public function trending_products(): View
+    public function trending_products(Request $request)
     {
         $nav_products = Product::with('images')->get();
-        $trending_products = Product::with('images')->latest()->paginate(8);
-        $bestsales = Product::with('images')->whereColumn('retail_price','>','price')->paginate(8);
-        $latest = Product::with('images')->latest()->paginate(8);
+
+        $trending_products = Product::with('images')
+                                ->latest()
+                                ->paginate(4);
+
+        $bestsales = Product::with('images')
+                        ->whereColumn('retail_price','>','price')
+                        ->paginate(4);
+
+        $latest = Product::with('images')
+                        ->latest()
+                        ->paginate(4);
+
+        $product_details = Product::with('images')->get();
+
         $oldCart = session()->get('cart');
         //dd(session()->get('cart'));
         $cart = new Cart($oldCart);
-        return view('index', [
-            'nav_product'=>$nav_products,
+
+        if ($request->ajax()) {
+            $view = view('trend', compact('trending_products'))->render();
+            
+            return response()->json(['html' => $view]);
+        }
+        return view('index',[
+            'nav_products'=>$nav_products,
             'trending_products'=>$trending_products,
             'bestsales'=>$bestsales,
-            'newarrivals'=>$latest,
+            'latest'=>$latest,
+            'product_details'=>$product_details,
             'cart_products'=>$cart->items,
             'totalPrice'=>$cart->totalPrice,
+        ]);
+    }
+
+    public function loadmore(Request $request)
+    {
+        $start = $request->input('start');
+
+        $data = Product::with('images')
+                    ->orderBy('id')
+                    ->offset($start)
+                    ->limit(4);
+
+        return response()->json([
+            'data' => $data,
+            'next' => $start + 4
         ]);
     }
 
