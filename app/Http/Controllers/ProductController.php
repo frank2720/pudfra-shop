@@ -99,6 +99,7 @@ class ProductController extends Controller
             'nav_product'=>$nav_products,
             'trending_products'=>$trending_products,
             'bestsales'=>$bestsales,
+            'newarrivals'=>$latest,
             'cart_products'=>$cart->items,
             'totalPrice'=>$cart->totalPrice,
         ]);
