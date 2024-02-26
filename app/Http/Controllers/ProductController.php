@@ -92,7 +92,7 @@ class ProductController extends Controller
 
         $trending_products = Product::with('images')
                                 ->latest()
-                                ->paginate(4);
+                                ->paginate(8);
 
         $bestsales = Product::with('images')
                         ->whereColumn('retail_price','>','price')
@@ -100,7 +100,7 @@ class ProductController extends Controller
 
         $latest = Product::with('images')
                         ->latest()
-                        ->paginate(4);
+                        ->paginate(8);
 
         $product_details = Product::with('images')->get();
 

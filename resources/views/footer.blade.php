@@ -172,31 +172,5 @@
             </div>
         </div>
     </div>
-    <div id="kalles-section-footer_bot" class="kalles-section footer__bot">
-        <div class="footer__bot_wrap pt__20 pb__20">
-            <div class="container pr tc">
-                <div class="row">
-                    <div class="col-lg-6 col-md-12 col-12 col_1">Copyright © 2021
-                        <span class="cp">Kalles</span> all rights reserved. Powered by <a href="https://themes.the4.co/kalles-html">The4</a></div>
-                    <div class="col-lg-6 col-md-12 col-12 col_2">
-                        <ul id="footer-menu" class="clearfix">
-                            <li class="menu-item">
-                                <a href="shop-filter-options.html">Shop</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="about-us.html">About Us</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="contact-us.html">Contact</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="blog-grid.html">Blog</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </footer>
 <!-- end footer -->

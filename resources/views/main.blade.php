@@ -160,7 +160,7 @@
             .done(function (response) {
                 console.log(response);
                 if (response.html == '') {
-                    $('.load-more-data').html('No More Data Available');
+                    $('.load-more-data').html('No more trending products');
                     $('.load-more-data').attr('disabled', true);
                     return;
                 }
