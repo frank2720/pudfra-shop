@@ -1883,44 +1883,7 @@
             }
         }
 
-        $.fn.kallesLoadQuikShop = function () {
-            const $btn       = $( this ),
-                  $container = $( '#quick-shop-tpl' ),
-                  data       = $container.length ? $container.html() : null;
-
-            if ( data.length ) {
-                $.magnificPopup.open( {
-                    items        : {
-                        src  : '<div class="mfp-with-anim pp_qs" id="content_quickview">' + data + '</div>', /* can be a HTML string, jQuery_T4NT object, or CSS selector*/
-                        type : 'inline'
-                    },
-                    tClose       : 'Close (Esc)',
-                    removalDelay : 500, /*delay removal by X to allow out-animation*/
-                    callbacks    : {
-                        beforeOpen : function () {
-                            this.st.mainClass = 'mfp-move-vertical';
-                        },
-                        open       : function () {
-                            body.addClass( 'open_ntqs' );
-                            $btn.removeClass( 'loading' );
-                            const el = $( '.nt_carousel_qs' ), option = el.attr( "data-flickity" ) || '{}';
-                            el.flickity( JSON.parse( option ) );
-                            $( '.kalles_swatch_js' ).kallesSwatches();
-                            $( '.dropdown_picker_js' ).kallesDropdownPicker();
-                        },
-                        close      : function () {
-                            $( '.clicked_ed_js' ).removeClass( 'clicked_ed_js' );
-                            $( '#content_quickview' ).empty();
-                            body.removeClass( 'open_ntqs' );
-                            $( '.dropdown_picker_js' ).kallesDropdownPicker();
-                        }
-                    }
-                } );
-            } else {
-                $btn.removeClass( 'loading' );
-            }
-        }
-
+       
         $.fn.kallesPaymentMethodDropdown = function () {
             if ( $( this ).length ) {
                 $( this ).on( 'change', function () {
@@ -2731,3 +2694,75 @@
     }
 )
 ( window.jQuery );
+
+var ENDPOINT1 = "";
+var page = 1;
+
+$(".load-more-data").click(function(){
+    page++;
+    LoadMore(page);
+});
+function LoadMore(page) {
+    $.ajax({
+            url: ENDPOINT1 + "?page=" + page,
+            datatype: "html",
+            type: "get"
+        })
+        .done(function (response) {
+            if (response.html == '') {
+                $('.load-more-data').html('No more trending products');
+                $('.load-more-data').attr('disabled', true);
+                return;
+            }
+            $('.auto-load').hide();
+            $("#data-wrapper").append("<div class='products nt_products_holder row fl_center row_pr_1 cdt_des_5 round_cd_true nt_cover ratio_nt position_8 space_30'>" + response.html + "</div>");
+        })
+        .fail(function (jqXHR, ajaxOptions, thrownError) {
+            console.log('Server error occured');
+        });
+};
+
+
+$(document).on('click','.quickview', function (e) {
+    e.preventDefault();
+    var productId = $(this).data('product-id');
+
+    $.ajax({
+        url:'/product-details/' + productId,
+        type: 'get',
+        datatype: 'html',
+        success: function (response) {
+            $.magnificPopup.open( {
+                items        : {
+                    src  : '<div class="mfp-with-anim popup-quick-view" id="content_quickview">' + response.html + '</div>',
+                    type : 'inline'
+                },
+                tClose       : 'Close (Esc)',
+                removalDelay : 500, /*delay removal by X to allow out-animation*/
+                callbacks    : {
+                    beforeOpen : function () {
+                        this.st.mainClass = 'mfp-move-horizontal';
+                    },
+                    open       : function () {
+                        const el = $( '.nt_carousel_qv' ), option = el.attr( "data-flickity" ) || '{}';
+                        el.flickity( JSON.parse( option ) );
+                        body.addClass( 'open_ntqv' );
+                        $( '.kalles_swatch_js' ).kallesSwatches();
+                        $( '#callBackVariant_qv .single_add_to_cart_button' ).kallesAnimation();
+                        $( '#nt_countdow_qv' ).initCountdown_pr();
+                        $(this).removeClass( 'loading' );
+                        $( '.dropdown_picker_js' ).kallesDropdownPicker();
+                    },
+                    close      : function () {
+                        $( '#content_quickview' ).empty();
+                        body.removeClass( 'open_ntqv' );
+                        $( '.dropdown_picker_js' ).kallesDropdownPicker();
+                    }
+                },
+            } );
+        },
+        error: function (error) {
+            console.error(error);
+        }
+    });
+});

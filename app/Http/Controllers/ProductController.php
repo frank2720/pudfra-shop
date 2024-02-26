@@ -102,8 +102,6 @@ class ProductController extends Controller
                         ->latest()
                         ->paginate(8);
 
-        $product_details = Product::with('images')->get();
-
         $oldCart = session()->get('cart');
         //dd(session()->get('cart'));
         $cart = new Cart($oldCart);
@@ -118,25 +116,19 @@ class ProductController extends Controller
             'trending_products'=>$trending_products,
             'bestsales'=>$bestsales,
             'latest'=>$latest,
-            'product_details'=>$product_details,
             'cart_products'=>$cart->items,
             'totalPrice'=>$cart->totalPrice,
         ]);
     }
 
-    public function loadmore(Request $request)
+    public function quick_view(Request $request,$id)
     {
-        $start = $request->input('start');
-
-        $data = Product::with('images')
-                    ->orderBy('id')
-                    ->offset($start)
-                    ->limit(4);
-
-        return response()->json([
-            'data' => $data,
-            'next' => $start + 4
-        ]);
+        $product_details = Product::with('images')->findOrFail($id);
+        if ($request->ajax()) {
+            $view = view('quickview', compact('product_details'))->render();
+            return response()->json(['html' => $view]);
+        }
+        return view('quickview', compact('product_details'));
     }
 
     public function products_paginate(): View
@@ -182,19 +174,6 @@ class ProductController extends Controller
         return response()->json(['totalQty'=>$cart->totalQty]);
     }
 
-    /* public function getCart()
-    {
-        if (session()->missing('cart'))
-        {
-            return view('cart');
-        }
-        $oldCart = session()->get('cart');
-        //dd(session()->get('cart'));
-        $cart = new Cart($oldCart);
-        $categories = Category::all();
-        return view('cart', ['products'=>$cart->items,'totalPrice'=>$cart->totalPrice,'categories'=>$categories]);
-    }*/
-
     public function reduceInCart(Request $request, $id)
     {
         $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
@@ -203,8 +182,6 @@ class ProductController extends Controller
 
         $request->session()->put('cart',$cart);
         return response()->json();
-        /*dd($request->session()->get('cart'));
-        return back()->withInput()->with('status', 'cart updated successfully');*/
     }
 
     public function removefromCart(Request $request, $id)
@@ -215,7 +192,5 @@ class ProductController extends Controller
 
         $request->session()->put('cart',$cart);
         return response()->json();
-        /*dd($request->session()->get('cart'));
-        return back()->withInput()->with('status', 'cart updated successfully');*/
     }
 }

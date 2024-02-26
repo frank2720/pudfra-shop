@@ -57,6 +57,8 @@ Route::get('/pagination/paginate-data',[ProductController::class,'pagination']);
 Route::get('/pagination/shop_data',[ProductController::class,'products_paginate']);
 Route::get('/load-more-data', [ProductController::class,'loadmore'])->name('load.more');
 
+Route::get('/product-details/{id}', [ProductController::class,'quick_view'])->name('product.details');
+
 Route::get('/search',[ProductController::class, 'product_search'])->name('product.search');
 
 require __DIR__.'/auth.php';

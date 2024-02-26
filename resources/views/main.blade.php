@@ -143,34 +143,5 @@
 <script src="assets/js/jquery.countdown.min.js"></script>
 <script src="assets/js/interface.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-<script>
-    var ENDPOINT = "{{ route('welcome') }}";
-    var page = 1;
-    
-    $(".load-more-data").click(function(){
-        page++;
-        LoadMore(page);
-    });
-    function LoadMore(page) {
-        $.ajax({
-                url: ENDPOINT + "?page=" + page,
-                datatype: "html",
-                type: "get"
-            })
-            .done(function (response) {
-                console.log(response);
-                if (response.html == '') {
-                    $('.load-more-data').html('No more trending products');
-                    $('.load-more-data').attr('disabled', true);
-                    return;
-                }
-                $('.auto-load').hide();
-                $("#data-wrapper").append("<div class='products nt_products_holder row fl_center row_pr_1 cdt_des_5 round_cd_true nt_cover ratio_nt position_8 space_30'>" + response.html + "</div>");
-            })
-            .fail(function (jqXHR, ajaxOptions, thrownError) {
-                console.log('Server error occured');
-            });
-    }
-</script>
 </body>
 </html>

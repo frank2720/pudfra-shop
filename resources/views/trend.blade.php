@@ -22,7 +22,7 @@
                 </a>
             </div>
             <div class="hover_button op__0 tc pa flex column ts__03">
-                <a class="pr nt_add_qv js_add_qv cd br__40 pl__25 pr__25 bgw tc dib ttip_nt tooltip_top_left" href="#">
+                <a class="pr nt_add_qv js_add_qv cd br__40 pl__25 pr__25 bgw tc dib ttip_nt tooltip_top_left quickview" href="#" data-product-id="{{ $product->id }}">
                     <span class="tt_txt">Quick view</span>
                     <i class="iccl iccl-eye"></i>
                     <span>Quick view</span>

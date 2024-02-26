@@ -6,11 +6,9 @@
                 <span class="tc nt_labels pa pe_none cw"><span class="onsale nt_label"><span>-34%</span></span></span>
                 <div class="images">
                     <div class="product-images-slider tc equal_nt nt_slider nt_carousel_qv p-thumb_qv nt_contain ratio_imgtrue position_8" data-flickity='{ "fade":true,"cellSelector": ".q-item:not(.is_varhide)","cellAlign": "center","wrapAround": true,"autoPlay": false,"prevNextButtons":true,"adaptiveHeight": true,"imagesLoaded": false, "lazyLoad": 0,"dragThreshold" : 0,"pageDots": true,"rightToLeft": false }'>
-                        @foreach ($product->images as $image)
                         <div data-grname="not4" data-grpvl="ntt4" class="js-sl-item q-item sp-pr-gallery__img w__100" data-mdtype="image">
-                            <span class="nt_bg_lz lazyload" data-bgset="{{$image->url}}"></span>
+                            <span class="nt_bg_lz lazyload" data-bgset="{{$product_details}}"></span>
                         </div>
-                        @endforeach
                     </div>
                 </div>
             </div>
@@ -21,8 +19,8 @@
                             <h1 class="product_title entry-title fs__16"><a href="product-detail-layout-01.html">La Bohème Rose Gold</a></h1>
                             <div class="flex wrap fl_between al_center price-review">
                                 <p class="price_range" id="price_qv">
-                                    <del>${{$product->price}}</del>
-                                    <ins>${{$product->price}}</ins>
+                                    <del>$</del>
+                                    <ins></ins>
                                 </p>
                                 <a href="product-detail-layout-01.html" class="rating_sp_kl dib">
                                     <div class="kalles-rating-result">
@@ -37,7 +35,7 @@
                                 </a>
                             </div>
                             <div class="pr_short_des">
-                                <p class="mg__0">Go kalles this summer with this vintage navy and white striped v-neck t-shirt from the Nike. Perfect for pairing with denim and white kicks for a stylish kalles vibe.</p>
+                                <p class="mg__0">{{$product_details}}</p>
                             </div>
                             <div class="btn-atc atc-slide btn_des_1 btn_txt_3">
                                 <div id="callBackVariant_qv" class="nt_pink nt1_ nt2_">
