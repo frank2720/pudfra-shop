@@ -7,7 +7,7 @@
                 <div class="images">
                     <div class="product-images-slider tc equal_nt nt_slider nt_carousel_qv p-thumb_qv nt_contain ratio_imgtrue position_8" data-flickity='{ "fade":true,"cellSelector": ".q-item:not(.is_varhide)","cellAlign": "center","wrapAround": true,"autoPlay": false,"prevNextButtons":true,"adaptiveHeight": true,"imagesLoaded": false, "lazyLoad": 0,"dragThreshold" : 0,"pageDots": true,"rightToLeft": false }'>
                         <div data-grname="not4" data-grpvl="ntt4" class="js-sl-item q-item sp-pr-gallery__img w__100" data-mdtype="image">
-                            <span class="nt_bg_lz lazyload" data-bgset="{{$product_details}}"></span>
+                            <span class="nt_bg_lz lazyload" data-bgset=""></span>
                         </div>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                                 </a>
                             </div>
                             <div class="pr_short_des">
-                                <p class="mg__0">{{$product_details}}</p>
+                                <p class="mg__0"></p>
                             </div>
                             <div class="btn-atc atc-slide btn_des_1 btn_txt_3">
                                 <div id="callBackVariant_qv" class="nt_pink nt1_ nt2_">
