@@ -1,3 +1,4 @@
+@foreach ($trending_products as $product)
     <!--quick view-->
 <div id="quick-view-tpl" class="dn">
     <div class="product-quickview single-product-content img_action_zoom kalles-quick-view-tpl">
@@ -7,7 +8,7 @@
                 <div class="images">
                     <div class="product-images-slider tc equal_nt nt_slider nt_carousel_qv p-thumb_qv nt_contain ratio_imgtrue position_8" data-flickity='{ "fade":true,"cellSelector": ".q-item:not(.is_varhide)","cellAlign": "center","wrapAround": true,"autoPlay": false,"prevNextButtons":true,"adaptiveHeight": true,"imagesLoaded": false, "lazyLoad": 0,"dragThreshold" : 0,"pageDots": true,"rightToLeft": false }'>
                         <div data-grname="not4" data-grpvl="ntt4" class="js-sl-item q-item sp-pr-gallery__img w__100" data-mdtype="image">
-                            <span class="nt_bg_lz lazyload" data-bgset=""></span>
+                            <span class="nt_bg_lz lazyload" data-bgset="{{ $product->images[0]->url}}"></span>
                         </div>
                     </div>
                 </div>
@@ -19,7 +20,7 @@
                             <h1 class="product_title entry-title fs__16"><a href="product-detail-layout-01.html">La Bohème Rose Gold</a></h1>
                             <div class="flex wrap fl_between al_center price-review">
                                 <p class="price_range" id="price_qv">
-                                    <del>$</del>
+                                    <del>${{ $product->price}}</del>
                                     <ins></ins>
                                 </p>
                                 <a href="product-detail-layout-01.html" class="rating_sp_kl dib">
@@ -72,3 +73,4 @@
         </div>
     </div>
 </div>
+@endforeach
