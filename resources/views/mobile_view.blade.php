@@ -13,14 +13,6 @@
                 <span class="kalles_toolbar_label">Filter</span>
             </a>
         </div>
-        <div class="type_toolbar_wish kalles_toolbar_item">
-            <a class="js_link_wis" href="wishlist.html">
-				<span class="toolbar_icon">
-					<span class="jswcount toolbar_count">3</span>
-				</span>
-                <span class="kalles_toolbar_label">Wishlist</span>
-            </a>
-        </div>
         <div class="type_toolbar_cart kalles_toolbar_item">
             <a href="#" class="push_side" data-id="#nt_cart_canvas">
 				<span class="toolbar_icon">

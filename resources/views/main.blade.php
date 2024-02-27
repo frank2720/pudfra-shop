@@ -34,7 +34,6 @@
 <div class="mask-overlay ntpf t__0 r__0 l__0 b__0 op__0 pe_none"></div>
 <!--end mask overlay-->
 
-@include('quickview')
 
 <!--quick shop-->
 <div id="quick-shop-tpl" class="dn">

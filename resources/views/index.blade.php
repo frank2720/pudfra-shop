@@ -130,11 +130,6 @@
                                         </a>
                                     </div>
                                     <div class="hover_button op__0 tc pa flex column ts__03">
-                                        <a class="pr nt_add_qv js_add_qv cd br__40 pl__25 pr__25 bgw tc dib ttip_nt tooltip_top_left" href="#">
-                                            <span class="tt_txt">Quick view</span>
-                                            <i class="iccl iccl-eye"></i>
-                                            <span>Quick view</span>
-                                        </a>
                                         <a href="#" class="pr pr_atc cd br__40 bgw tc dib js_addtc cb chp ttip_nt tooltip_top_left">
                                             <span class="tt_txt">Add to cart</span>
                                             <i class="iccl iccl-cart"></i>
