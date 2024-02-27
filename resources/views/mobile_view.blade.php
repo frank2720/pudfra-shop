@@ -14,9 +14,15 @@
             </a>
         </div>
         <div class="type_toolbar_cart kalles_toolbar_item">
-            <a href="#" class="push_side" data-id="#nt_cart_canvas">
+            <a href="#" class="push_side" data-id="#nt_cart_canvas" data-id-cartvalue="{{session()->get('cart')->totalQty}}">
 				<span class="toolbar_icon">
-					<span class="jsccount toolbar_count">5</span>
+					<span class="jsccount toolbar_count">
+                        @if (session()->has('cart'))
+                            {{session()->get('cart')->totalQty}}
+                        @else
+                            {{__('0')}}
+                        @endif
+                    </span>
 				</span>
                 <span class="kalles_toolbar_label">Cart</span>
             </a>

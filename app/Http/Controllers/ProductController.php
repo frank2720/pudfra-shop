@@ -12,9 +12,7 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
 
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index()
     {
         $products = Product::paginate(8);
@@ -26,17 +24,13 @@ class ProductController extends Controller
     $products = Product::paginate(8);
     return view('admin.pagination_dash', ['products'=>$products]);
     }
-    /**
-     * Show the form for creating a new resource.
-     */
+    
     public function create():View
     {
         return view('admin.add_product');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    
     public function store(Request $request)
     {
         $request->validate([
@@ -86,7 +80,7 @@ class ProductController extends Controller
         ]);
     }
 
-    public function trending_products(Request $request)
+    public function home_products(Request $request)
     {
         $nav_products = Product::with('images')->get();
 
@@ -111,7 +105,7 @@ class ProductController extends Controller
             
             return response()->json(['html' => $view]);
         }
-        return view('index',[
+        return view('home',[
             'nav_products'=>$nav_products,
             'trending_products'=>$trending_products,
             'bestsales'=>$bestsales,

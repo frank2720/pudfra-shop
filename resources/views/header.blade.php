@@ -60,18 +60,7 @@
                                                                         <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
                                                                             <div class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_571" data-bgset="{{$product->images[1]->url}}"></div>
                                                                         </div>
-                                                                        <div class="nt_add_w ts__03 pa ">
-                                                                            <a href="#" class="wishlistadd cb chp ttip_nt tooltip_right">
-                                                                                <span class="tt_txt">Add to Wishlist</span>
-                                                                                <i class="facl facl-heart-o"></i>
-                                                                            </a>
-                                                                        </div>
                                                                         <div class="hover_button op__0 tc pa flex column ts__03">
-                                                                            <a class="pr nt_add_qv js_add_qv cd br__40 pl__25 pr__25 bgw tc dib ttip_nt tooltip_top_left" href="#">
-                                                                                <span class="tt_txt">Quick view</span>
-                                                                                <i class="iccl iccl-eye"></i>
-                                                                                <span>Quick view</span>
-                                                                            </a>
                                                                             <a href="#" class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left">
                                                                                 <span class="tt_txt">Quick Shop</span>
                                                                                 <i class="iccl iccl-cart"></i>
@@ -119,18 +108,7 @@
                                                                         <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
                                                                             <div class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_571" data-bgset="{{$product->images[1]->url}}"></div>
                                                                         </div>
-                                                                        <div class="nt_add_w ts__03 pa ">
-                                                                            <a href="#" class="wishlistadd cb chp ttip_nt tooltip_right">
-                                                                                <span class="tt_txt">Add to Wishlist</span>
-                                                                                <i class="facl facl-heart-o"></i>
-                                                                            </a>
-                                                                        </div>
                                                                         <div class="hover_button op__0 tc pa flex column ts__03">
-                                                                            <a class="pr nt_add_qv js_add_qv cd br__40 pl__25 pr__25 bgw tc dib ttip_nt tooltip_top_left" href="#">
-                                                                                <span class="tt_txt">Quick view</span>
-                                                                                <i class="iccl iccl-eye"></i>
-                                                                                <span>Quick view</span>
-                                                                            </a>
                                                                             <a href="#" class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left">
                                                                                 <span class="tt_txt">Quick Shop</span>
                                                                                 <i class="iccl iccl-cart"></i>
@@ -168,7 +146,7 @@
                                         <i class="iccl iccl-user"></i></a>
                                 </div>
                                 <div class="icon_cart pr">
-                                    <a class="push_side position-relative cb chp db" href="#" data-id="#nt_cart_canvas">
+                                    <a class="push_side position-relative cb chp db" href="#">
                                         <i class="iccl iccl-cart pr">
                                             <span class="op__0 ts_op pa tcount bgb br__50 cw tc">
                                                 @if (session()->has('cart'))

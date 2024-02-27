@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//home page routes
+Route::get('/', [ProductController::class,'home_products'])->name('welcome');
+
 Route::middleware(['auth','verified'])->group(function () {
 
       Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -41,11 +44,8 @@ Route::group([
       Route::post('/initiatepush',[PaymentController::class,'initiatestk'])->name('stkpush');
       Route::post('/callback',[PaymentController::class,'stkcallback'])->name('stkcallback');
 });
-/*
-Route::get('/', function(){
-      return view('index');
-});*/
-Route::get('/', [ProductController::class,'trending_products'])->name('welcome');
+
+
 Route::get('/shop', [ProductController::class, 'products'])->name('shop');
 Route::get('/product/{id}', [ProductController::class, 'product'])->name('product_details');
 Route::post('/add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('addToCart');

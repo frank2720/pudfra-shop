@@ -2165,7 +2165,7 @@
         /**********************************************
          * Quick view / Quick Shop
          * ********************************************/
-        body.on( 'click', '.js_add_qv , .js__qs', function ( e ) {
+        /*body.on( 'click', '.js_add_qv , .js__qs', function ( e ) {
             e.preventDefault();
             e.stopPropagation();
             let $this = $( this ),
@@ -2182,7 +2182,7 @@
                     $this.kallesLoadQuickView();
                 }
             }, delay );
-        } );
+        } );*/
 
         /**********************************************
          * Reply comment form
@@ -2721,48 +2721,3 @@ function LoadMore(page) {
             console.log('Server error occured');
         });
 };
-
-
-$(document).on('click','.quickview', function (e) {
-    e.preventDefault();
-    var productId = $(this).data('product-id');
-
-    $.ajax({
-        url:'/product-details/' + productId,
-        type: 'get',
-        datatype: 'html',
-        success: function (response) {
-            $.magnificPopup.open( {
-                items        : {
-                    src  : '<div class="mfp-with-anim popup-quick-view" id="content_quickview">' + response.html + '</div>',
-                    type : 'inline'
-                },
-                tClose       : 'Close (Esc)',
-                removalDelay : 500, /*delay removal by X to allow out-animation*/
-                callbacks    : {
-                    beforeOpen : function () {
-                        this.st.mainClass = 'mfp-move-horizontal';
-                    },
-                    open       : function () {
-                        const el = $( '.nt_carousel_qv' ), option = el.attr( "data-flickity" ) || '{}';
-                        el.flickity( JSON.parse( option ) );
-                        body.addClass( 'open_ntqv' );
-                        $( '.kalles_swatch_js' ).kallesSwatches();
-                        $( '#callBackVariant_qv .single_add_to_cart_button' ).kallesAnimation();
-                        $( '#nt_countdow_qv' ).initCountdown_pr();
-                        $(this).removeClass( 'loading' );
-                        $( '.dropdown_picker_js' ).kallesDropdownPicker();
-                    },
-                    close      : function () {
-                        $( '#content_quickview' ).empty();
-                        body.removeClass( 'open_ntqv' );
-                        $( '.dropdown_picker_js' ).kallesDropdownPicker();
-                    }
-                },
-            } );
-        },
-        error: function (error) {
-            console.error(error);
-        }
-    });
-});

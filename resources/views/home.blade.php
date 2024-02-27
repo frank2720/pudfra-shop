@@ -1,56 +1,154 @@
 @extends('layouts.main')
 @section('content')
-
-<div class="row p-5 align-items-center" style="background-image:url(https://images.pexels.com/photos/7130560/pexels-photo-7130560.jpeg);background-size:cover">
-    <div class="col-md-6">
-        <h1>Maanar-shop# comfort shopping</h1>
-        <p>This a platform developed for convenient shopping. It is useful for both customers and retailers for they can update each products in their store</p>
-        <div class="d-flex gap-2">
-            <a href="" class="btn btn-dark">Contact</a>
-            <a href="https://pudfra-talk.xyz/" class="btn btn-outline-dark">Know More</a>
-        </div>
-    </div>
-    <div class="col-md-6 text-center">
-        <img src="{{asset('assets/images/ban1.jpg')}}" class="img-fluid rounded-circle w-50" alt="">
-    </div>
-</div> 
-
-<div class="container">
-    <header class="navbar navbar-expand-md navbar-light bg-white">
-        <div class="container-fluid p-0"> <a class="navbar-brand text-uppercase fw-800" href="#"><span class="border-red pe-2">Available</span>Products</a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNav" aria-controls="myNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="fas fa-bars"></span> </button>
-            <div class="collapse navbar-collapse" id="myNav">
-                <div class="navbar-nav ms-auto"> 
-                    <a class="nav-link active" aria-current="page" href="#">All</a> 
-                    @foreach ($categories as $category)
-                    <a class="nav-link" href="#">{{$category->category}}</a>
-                    @endforeach
+            <!-- main slide -->
+            <div class="nt_section type_slideshow type_carousel ">
+                <div class="slideshow-wrapper nt_full se_height_cus_h nt_first">
+                    <div class="fade_flick_1 slideshow row no-gutters equal_nt nt_slider js_carousel prev_next_0 btn_owl_1 dot_owl_2 dot_color_1 btn_vi_2" data-flickity='{ "fade":0,"cellAlign": "center","imagesLoaded": 0,"lazyLoad": 0,"freeScroll": 0,"wrapAround": true,"autoPlay" : 0,"pauseAutoPlayOnHover" : true, "rightToLeft": false, "prevNextButtons": false,"pageDots": true, "contain" : 1,"adaptiveHeight" : 1,"dragThreshold" : 5,"percentPosition": 1 }'>
+    
+                        <!-- first slide -->
+                        <div class="col-12 slideshow__slide">
+                            <div class="oh position-relative nt_img_txt bg-black--transparent">
+                                <div class="js_full_ht4 img_slider_block kalles-slide-element__pdb-600">
+                                    <div class="bg_rp_norepeat bg_sz_cover lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0" data-bgset="assets/images/slide/slider-01.jpg"></div>
+                                </div>
+                                <div class="caption-wrap caption-w-1 pe_none z_100 tl_md tl">
+                                    <div class="pa_txts caption kalles-caption-layout-01 kalles-caption--midle-left">
+                                        <div class="left_right">
+                                            <h4 class="kalles-caption-layout-01__subtitle mg__0 lh__1">SUMMER 2020</h4>
+                                            <h3 class="kalles-caption-layout-01__title mg__0 lh__1">New Arrival Collection</h3>
+                                            <a class="kalles-caption-layout-01__button kalles-button--square slt4_btn button pe_auto round_false btn_icon_false" href="shop-filter-options.html">Explore Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="shop.html" class="pa t__0 l__0 b__0 r__0 pe_none"></a>
+                            </div>
+                        </div>
+                        <!-- end first slide -->
+    
+                        <!-- second slide -->
+                        <div class="col-12 slideshow__slide">
+                            <div class="oh position-relative nt_img_txt bg-black--transparent">
+                                <div class="js_full_ht4 img_slider_block kalles-slide-element__pdb-600">
+                                    <div class="bg_rp_norepeat bg_sz_cover lazyload item__position center center img_zoom pa l__0 t__0 r__0 b__0" data-bgset="assets/images/slide/slider-02.jpg"></div>
+                                </div>
+                                <div class="caption-wrap caption-w-1 pe_none z_100 tr_md tl">
+                                    <div class="pa_txts caption kalles-caption-layout-01 kalles-caption--midle-right">
+                                        <div class="right_left">
+                                            <h4 class="kalles-caption-layout-01__subtitle mg__0 lh__1">NEW SEASON</h4>
+                                            <h3 class="kalles-caption-layout-01__title mg__0 lh__1">Lookbook Collection</h3>
+                                            <a class="kalles-caption-layout-01__button kalles-button--square slt4_btn button pe_auto round_false btn_icon_false" href="shop-filter-options.html">Explore Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="shop.html" class="pa t__0 l__0 b__0 r__0 pe_none"></a>
+                            </div>
+                        </div>
+                        <!-- end second slide -->
+    
+                        <!-- third slide -->
+                        <div class="col-12 slideshow__slide">
+                            <div class="oh position-relative nt_img_txt bg-black--transparent">
+                                <div class="js_full_ht4 img_slider_block kalles-slide-element__pdb-600">
+                                    <div class="bg_rp_norepeat bg_sz_cover lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0" data-bgset="assets/images/slide/slider-03.jpg"></div>
+                                </div>
+                                <div class="caption-wrap caption-w-1 pe_none z_100 tl_md tl">
+                                    <div class="pa_txts caption kalles-caption-layout-01 kalles-caption--midle-left">
+                                        <div class="left_right">
+                                            <h4 class="kalles-caption-layout-01__subtitle mg__0 lh__1">SUMMER SALE</h4>
+                                            <h3 class="kalles-caption-layout-01__title mg__0 lh__1">Save up to 70%</h3>
+                                            <a class="kalles-caption-layout-01__button kalles-button--square slt4_btn button pe_auto round_false btn_icon_false" href="shop-filter-options.html">Explore Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="shop.html" class="pa t__0 l__0 b__0 r__0 pe_none"></a>
+                            </div>
+                        </div>
+                        <!-- end third slide -->
+    
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <div class="home-data">
-        <div class="row">
-            @foreach ($recent_products as $product)
-            <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
-                <div class="product"> <img src="{{Storage::url($product->img)}}" alt="">
-                    <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
-                        <li class="icon"><span class="fas fa-expand-arrows-alt"></span></li>
-                        <li class="icon mx-3"><span class="far fa-heart"></span></li>
-                        <a href="#" class="icon add-to-cart-btn" data-product-id="{{ $product->id }}">
-                            <i class="fas fa-shopping-bag"></i>
-                        </a>
-                    </ul>
+            <!-- end main slide -->
+    
+            <!-- featured collection -->
+            <div class="nt_section type_featured_collection tp_se_cdt">
+                <div class="kalles-otp-01__feature container">
+                    <div class="wrap_title des_title_2">
+                        <h3 class="section-title tc position-relative flex fl_center al_center fs__24 title_2">
+                            <span class="mr__10 ml__10">TRENDING</span>
+                        </h3>
+                        <span class="dn tt_divider">
+                            <span></span>
+                            <i class="dn clprfalse title_2 la-gem"></i>
+                            <span></span>
+                        </span>
+                        <span class="section-subtitle db tc sub-title">Top view in this week</span>
+                    </div>
+                    <div id="data-wrapper">
+                        <div class="products nt_products_holder row fl_center row_pr_1 cdt_des_5 round_cd_true nt_cover ratio_nt position_8 space_30">
+                            @include('trend')
+                        </div>
+                    </div>
+                    <div class="products-footer tc mt__40">
+                        <button class="se_cat_lm pr nt_cat_lm button button_default br_rd_true btn_icon_false load-more-data">Load More</button>
+                    </div>
                 </div>
-                @if ($product->retail_price > $product->price)
-                    <div class="tag bg-red"><i>{{__(round((($product->retail_price-$product->price)/$product->retail_price)*100))}}%</i> off</div>
-                @endif
-                <div class="title pt-4 pb-1">{{__(ucfirst(strtolower($product->name)))}}</div>
-                <div class="d-flex align-content-center justify-content-center"> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> </div>
-                <div class="price">Ksh {{__(number_format($product->price))}}</div>
             </div>
-            @endforeach
-        </div>
-        <div class="clearfix"><a href="{{route('shop')}}">View more>></a></div>
-    </div>
-</div>
+            <!-- end featured collection -->
+    
+            <!-- bestseller products-->
+            <div class="kalles-section nt_section type_featured_collection tp_se_cdt">
+                <div class="kalles-otp-01__featured-collection-2 container">
+                    <div class="wrap_title  des_title_2">
+                        <h3 class="section-title tc pr flex fl_center al_center fs__24 title_2">
+                            <span class="mr__10 ml__10">BEST SELLER</span>
+                        </h3>
+                        <span class="dn tt_divider">
+                        <span></span>
+                        <i class="dn clprfalse title_2 la-gem"></i>
+                        <span></span>
+                    </span>
+                        <span class="section-subtitle db tc sub-title">Top sale in this week</span>
+                    </div>
+    
+                    <div class="products nt_products_holder row fl_center row_pr_1 cdt_des_1 round_cd_false nt_cover ratio_nt position_8 space_30">
+                        @foreach ($bestsales as $product)
+                        <div class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1">
+                            <div class="product-inner pr">
+                                <div class="product-image pr oh">
+    
+                                    <a class="d-block" href="product-detail-layout-01.html">
+                                        <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_586" data-bgset="{{$product->images[0]->url}}"></div>
+                                    </a>
+                                    <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
+                                        <div class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_586" data-bgset="{{$product->images[1]->url}}"></div>
+                                    </div>
+                                    <div class="nt_add_w ts__03 pa ">
+                                        <a href="#" class="wishlistadd cb chp ttip_nt tooltip_right">
+                                            <span class="tt_txt">Add to Wishlist</span>
+                                            <i class="facl facl-heart-o"></i>
+                                        </a>
+                                    </div>
+                                    <div class="hover_button op__0 tc pa flex column ts__03">
+                                        <a href="#" class="pr pr_atc cd br__40 bgw tc dib js_addtc cb chp ttip_nt tooltip_top_left">
+                                            <span class="tt_txt">Add to cart</span>
+                                            <i class="iccl iccl-cart"></i>
+                                            <span>Add to cart</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-info mt__15">
+                                    <h3 class="product-title pr fs__14 mg__0 fwm">
+                                        <a class="cd chp" href="product-detail-layout-01.html">{{$product->name}}</a>
+                                    </h3>
+                                    <span class="price dib mb__5">$ {{number_format($product->price,2,".",",")}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+    
+                    </div>
+                </div>
+            </div>
+            <!-- end bestseller products-->
 @endsection
