@@ -146,17 +146,23 @@
                                         <i class="iccl iccl-user"></i></a>
                                 </div>
                                 <div class="icon_cart pr">
+                                    @if (session()->has('cart'))
                                     <a class="push_side position-relative cb chp db" href="#">
                                         <i class="iccl iccl-cart pr">
-                                            <span class="op__0 ts_op pa tcount bgb br__50 cw tc">
-                                                @if (session()->has('cart'))
-                                                    {{session()->get('cart')->totalQty}}
-                                                @else
-                                                    {{__('0')}}
-                                                @endif
+                                            <span class="op__0 ts_op pa tcount bgb br__50 cw tc cart-val" data-id="{{session()->get('cart')->totalQty}}">
+                                                {{session()->get('cart')->totalQty}}
                                             </span>
                                         </i>
                                     </a>
+                                    @else
+                                    <a class="push_side position-relative cb chp db" href="#">
+                                        <i class="iccl iccl-cart pr">
+                                            <span class="op__0 ts_op pa tcount bgb br__50 cw tc">
+                                                0
+                                            </span>
+                                        </i>
+                                    </a>
+                                    @endif
                                 </div>
                             </div>
                         </div>

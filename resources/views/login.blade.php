@@ -1,6 +1,7 @@
 <!-- login box -->
 <div id="nt_login_canvas" class="nt_fk_canvas dn lazyload">
-    <form id="customer_login" class="nt_mini_cart flex column h__100 is_selected">
+    <form id="customer_login" class="nt_mini_cart flex column h__100 is_selected" action="{{route('login')}}" method="POST">
+        @csrf
         <div class="mini_cart_header flex fl_between al_center">
             <div class="h3 widget-title tu fs__16 mg__0">Login</div>
             <i class="close_pp pegk pe-7s-close ts__03 cd"></i></div>
@@ -8,12 +9,15 @@
             <div class="mini_cart_content fixcl-scroll">
                 <div class="fixcl-scroll-content"><p class="form-row">
                     <label for="CustomerEmail">Email <span class="required">*</span></label>
-                    <input type="email" name="email" id="CustomerEmail" autocomplete="email" autocapitalize="off">
+                    <input type="email" name="email" id="CustomerEmail" autocomplete="email" autocapitalize="off" value="{{old('email')}}">
+                    <x-input-error :messages="$errors->get('email')" />
                 </p>
                     <p class="form-row">
                         <label for="CustomerPassword">Password <span class="required">*</span></label>
                         <input type="password" value="" name="password" autocomplete="current-password" id="CustomerPassword">
-                    </p><input type="submit" class="button button_primary w__100 tu js_add_ld" value="Sign In">
+                        <x-input-error :messages="$errors->get('password')" />
+                    </p>
+                    <input type="submit" class="button button_primary w__100 tu js_add_ld" value="Sign In">
                     <br>
                     <p class="mb__10 mt__20">New customer?
                         <a href="#" data-id="#RegisterForm" class="link_acc">Create your account</a>

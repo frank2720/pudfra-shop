@@ -16,33 +16,17 @@
                                         <span class="txt_title">Maanar</span>
                                         <span class="nav_link_icon ml__5"></span>
                                     </h3>
-                                    <p>
-                                        <i class="pegk pe-7s-map-marker"> </i><span>184 Main Rd E, St Albans <br> <span class="pl__30">VIC 3021, Australia</span></span>
-                                    </p>
                                     <p><i class="pegk pe-7s-mail"></i>
-                                        <span><a href="mailto:contact@company.com">contact@company.com</a></span>
+                                        <span><a href="mailto:contact@company.com">otienof534@gmail.com</a></span>
                                     </p>
-                                    <p><i class="pegk pe-7s-call"></i> <span>+001 2233 456 </span></p>
                                     <div class="nt-social">
-                                        <a href="https://www.facebook.com" class="facebook cb ttip_nt tooltip_top">
-                                            <span class="tt_txt">Follow on Facebook</span>
-                                            <i class="facl facl-facebook"></i>
-                                        </a>
-                                        <a href="https://twitter.com" class="twitter cb ttip_nt tooltip_top">
+                                        <a href="https://twitter.com/pudfra" class="twitter cb ttip_nt tooltip_top">
                                             <span class="tt_txt">Follow on Twitter</span>
                                             <i class="facl facl-twitter"></i>
                                         </a>
-                                        <a href="https://www.instagram.com" class="instagram cb ttip_nt tooltip_top">
-                                            <span class="tt_txt">Follow on Instagram</span>
-                                            <i class="facl facl-instagram"></i>
-                                        </a>
-                                        <a href="https://www.linkedin.com" class="linkedin cb ttip_nt tooltip_top">
+                                        <a href="https://www.linkedin.com/in/francis-otieno-ba7203264/" class="linkedin cb ttip_nt tooltip_top">
                                             <span class="tt_txt">Follow on Linkedin</span>
                                             <i class="facl facl-linkedin"></i>
-                                        </a>
-                                        <a href="https://www.pinterest.com" class="pinterest cb ttip_nt tooltip_top">
-                                            <span class="tt_txt">Follow on Pinterest</span>
-                                            <i class="facl facl-pinterest"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -58,22 +42,22 @@
                             <div class="menu_footer widget_footer">
                                 <ul class="menu">
                                     <li class="menu-item">
-                                        <a href="shop-filter-options.html">Men</a>
+                                        <a href="">Men</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="shop-filter-options.html">Women</a>
+                                        <a href="">Women</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="shop-1600px-layout.html">Accessories</a>
+                                        <a href="">Accessories</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="shop-1600px-layout.html">Shoes</a>
+                                        <a href="">Shoes</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="shop-1600px-layout.html">Denim</a>
+                                        <a href="">Denim</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="shop-1600px-layout.html">Dress</a>
+                                        <a href="">Dress</a>
                                     </li>
                                 </ul>
                             </div>
@@ -88,22 +72,22 @@
                             <div class="menu_footer widget_footer">
                                 <ul class="menu">
                                     <li class="menu-item">
-                                        <a href="about-us.html">About Us</a>
+                                        <a href="">About Us</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="contact-us.html">Contact Us</a>
+                                        <a href="">Contact Us</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="terms-conditions.html">Terms &amp; Conditions</a>
+                                        <a href="">Terms &amp; Conditions</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="returns-exchanges.html">Returns &amp; Exchanges</a>
+                                        <a href="">Returns &amp; Exchanges</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="shipping-delivery.html">Shipping &amp; Delivery</a>
+                                        <a href="">Shipping &amp; Delivery</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="privacy-policy.html">Privacy Policy</a>
+                                        <a href="">Privacy Policy</a>
                                     </li>
                                 </ul>
                             </div>
@@ -118,22 +102,16 @@
                             <div class="menu_footer widget_footer">
                                 <ul class="menu">
                                     <li class="menu-item">
-                                        <a href="store-location.html">Store Location</a>
+                                        <a href="">Store Location</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="blog-grid.html">Latest News</a>
+                                        <a href="">My Account</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="my-account.html">My Account</a>
+                                        <a href="">Size Guide</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="size-guide.html">Size Guide</a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="faqs-2.html">FAQs 2</a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="faqs.html">FAQs</a>
+                                        <a href="">FAQs</a>
                                     </li>
                                 </ul>
                             </div>
