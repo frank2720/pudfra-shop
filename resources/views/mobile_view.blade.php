@@ -34,12 +34,23 @@
                 </a>
             @endif
         </div>
-        <div class="type_toolbar_account kalles_toolbar_item">
-            <a href="#" class="push_side" data-id="#nt_login_canvas">
-                <span class="toolbar_icon"></span>
-                <span class="kalles_toolbar_label">Account</span>
-            </a>
-        </div>
+        @if (Route::has('login'))
+            @auth
+            <div class="type_toolbar_account kalles_toolbar_item">
+                <a href="#" class="db push_side" data-id="#nt_details_canvas">
+                    <span class="toolbar_icon"></span>
+                    <span class="kalles_toolbar_label">Account</span>
+                </a>
+            </div>
+            @else
+            <div class="type_toolbar_account kalles_toolbar_item">
+                <a href="#" class="db push_side" data-id="#nt_login_canvas">
+                    <span class="toolbar_icon"></span>
+                    <span class="kalles_toolbar_label">Account</span>
+                </a>
+            </div>
+            @endauth
+        @endif
         <div class="type_toolbar_search kalles_toolbar_item">
             <a href="#" class="push_side" data-id="#nt_search_canvas">
                 <span class="toolbar_icon"></span>

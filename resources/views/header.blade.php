@@ -140,22 +140,24 @@
                         <div class="col-lg-auto col-md-4 col-3 tr col_group_btns">
                             <div class="nt_action in_flex al_center cart_des_1">
                                 <a class="icon_search push_side cb chp" data-id="#nt_search_canvas" href="#">
-                                    <i class="iccl iccl-search"></i></a>
+                                    <i class="iccl iccl-search"></i>
+                                </a>
+                                @if (Route::has('login'))
                                     @auth
-                                    <form method="POST" action="{{route('logout')}}">
-                                        @csrf
-                                        <a href="{{route('logout')}}" class="dropdown-item"
-                                            onclick="event.preventDefault();
-                                            this.closest('form').submit();">Logout
+                                    <div class="my-account ts__05 position-relative dn db_md">
+                                        <a class="cb chp db push_side" href="" data-id="#nt_details_canvas">
+                                            <i class="iccl iccl-user"></i>
+                                            <span>{{ucwords(strtolower(Auth::user()->name))}}</span>
                                         </a>
-                                    </form>
+                                    </div>
                                     @else
-                                    <a href="login">login</a>
+                                        <div class="my-account ts__05 position-relative dn db_md">
+                                            <a class="cb chp db push_side" href="#" data-id="#nt_login_canvas">
+                                                <i class="iccl iccl-user"></i>
+                                            </a>
+                                        </div>
                                     @endauth
-                                <div class="my-account ts__05 position-relative dn db_md">
-                                    <a class="cb chp db push_side" href="#" data-id="#nt_login_canvas">
-                                        <i class="iccl iccl-user"></i></a>
-                                </div>
+                                @endif
                                 <div class="icon_cart pr">
                                     @if (session()->has('cart'))
                                     <a class="push_side position-relative cb chp db" href="#">
