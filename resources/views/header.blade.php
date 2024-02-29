@@ -141,6 +141,17 @@
                             <div class="nt_action in_flex al_center cart_des_1">
                                 <a class="icon_search push_side cb chp" data-id="#nt_search_canvas" href="#">
                                     <i class="iccl iccl-search"></i></a>
+                                    @auth
+                                    <form method="POST" action="{{route('logout')}}">
+                                        @csrf
+                                        <a href="{{route('logout')}}" class="dropdown-item"
+                                          onclick="event.preventDefault();
+                                          this.closest('form').submit();">Logout
+                                        </a>
+                                    </form>
+                                    @else
+                                    <a href="login">login</a>
+                                    @endauth
                                 <div class="my-account ts__05 position-relative dn db_md">
                                     <a class="cb chp db push_side" href="#" data-id="#nt_login_canvas">
                                         <i class="iccl iccl-user"></i></a>
@@ -149,7 +160,7 @@
                                     @if (session()->has('cart'))
                                     <a class="push_side position-relative cb chp db" href="#">
                                         <i class="iccl iccl-cart pr">
-                                            <span class="op__0 ts_op pa tcount bgb br__50 cw tc cart-val" data-id="{{session()->get('cart')->totalQty}}">
+                                            <span class="op__0 ts_op pa tcount bgb br__50 cw tc cartvalue" data-cartvalue="{{session()->get('cart')->totalQty}}">
                                                 {{session()->get('cart')->totalQty}}
                                             </span>
                                         </i>

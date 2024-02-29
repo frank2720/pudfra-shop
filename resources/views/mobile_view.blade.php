@@ -14,18 +14,25 @@
             </a>
         </div>
         <div class="type_toolbar_cart kalles_toolbar_item">
-            <a href="#" class="push_side" data-id="#nt_cart_canvas">
-				<span class="toolbar_icon">
-					<span class="jsccount toolbar_count">
-                        @if (session()->has('cart'))
+            @if (session()->has('cart'))
+                <a href="#" class="push_side">
+                    <span class="toolbar_icon">
+                        <span class="jsccount toolbar_count cartvalue">
                             {{session()->get('cart')->totalQty}}
-                        @else
-                            {{__('0')}}
-                        @endif
+                        </span>
                     </span>
-				</span>
-                <span class="kalles_toolbar_label">Cart</span>
-            </a>
+                    <span class="kalles_toolbar_label">Cart</span>
+                </a>
+            @else
+                <a href="#" class="push_side">
+                    <span class="toolbar_icon">
+                        <span class="jsccount toolbar_count">
+                            0
+                        </span>
+                    </span>
+                    <span class="kalles_toolbar_label">Cart</span>
+                </a>
+            @endif
         </div>
         <div class="type_toolbar_account kalles_toolbar_item">
             <a href="#" class="push_side" data-id="#nt_login_canvas">
