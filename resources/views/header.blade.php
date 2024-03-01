@@ -147,7 +147,6 @@
                                     <div class="my-account ts__05 position-relative dn db_md">
                                         <a class="cb chp db push_side" href="" data-id="#nt_details_canvas">
                                             <i class="iccl iccl-user"></i>
-                                            <span>{{ucwords(strtolower(Auth::user()->name))}}</span>
                                         </a>
                                     </div>
                                     @else
