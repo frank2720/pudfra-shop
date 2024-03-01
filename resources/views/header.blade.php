@@ -159,7 +159,7 @@
                                 @endif
                                 <div class="icon_cart pr">
                                     @if (session()->has('cart'))
-                                    <a class="push_side position-relative cb chp db" href="#">
+                                    <a class="push_side position-relative js_addtc cb chp db" href="#">
                                         <i class="iccl iccl-cart pr">
                                             <span class="op__0 ts_op pa tcount bgb br__50 cw tc cartvalue" data-cartvalue="{{session()->get('cart')->totalQty}}">
                                                 {{session()->get('cart')->totalQty}}
@@ -167,7 +167,7 @@
                                         </i>
                                     </a>
                                     @else
-                                    <a class="push_side position-relative cb chp db" href="#">
+                                    <a class="push_side position-relative js_addtc cb chp db" href="#">
                                         <i class="iccl iccl-cart pr">
                                             <span class="op__0 ts_op pa tcount bgb br__50 cw tc">
                                                 0
