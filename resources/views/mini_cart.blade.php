@@ -15,6 +15,7 @@
                             <a class="button button_primary tu js_add_ld" href="">Return To Shop</a>
                         </p>
                     </div>
+                    @if (session()->has('cart') && $totalPrice>0)
                     @foreach ($cart_products as $product)
                     <div class="mini_cart_items js_cat_items lazyload">
                         <div class="mini_cart_item js_cart_item flex al_center pr oh">
@@ -37,7 +38,7 @@
                                     <div class="quantity pr mr__10 qty__true">
                                         <input type="number" class="input-text qty text tc qty_cart_js" step="1" min="0" max="9999" disabled value="{{$product['qty']}}">
                                         <div class="qty tc fs__14">
-                                            <button type="button" class="plus db cb pa pd__0 pr__15 tr r__0">
+                                            <button type="button" class="plus db cb pa pd__0 pr__15 tr r__0" data-id="{{$product['item']->id}}">
                                                 <i class="facl facl-plus"></i>
                                             </button>
                                             <button type="button" class="minus db cb pa pd__0 pl__15 tl l__0 qty_1">
@@ -51,7 +52,7 @@
                                             <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
                                         </svg>
                                     </a>
-                                    <a href="#" class="cart_ac_remove js_cart_rem ttip_nt tooltip_top_right"><span class="tt_txt">Remove this item</span>
+                                    <a href="#" class="cart_ac_remove js_cart_rem ttip_nt tooltip_top_right" data-id="{{$product['item']->id}}"><span class="tt_txt">Remove this item</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                             <polyline points="3 6 5 6 21 6"></polyline>
                                             <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
@@ -79,6 +80,14 @@
                             <i class="las la-tag"></i><span class="tt_txt">Add A Coupon</span>
                         </div>
                     </div>
+                    @else
+                    <div class="empty tc mt__40"><i class="las la-shopping-bag pr mb__10"></i>
+                        <p>Your cart is empty.</p>
+                        <p class="return-to-shop mb__15">
+                            <a class="button button_primary tu js_add_ld" href="">Return To Shop</a>
+                        </p>
+                    </div>
+                    @endif
                 </div>
             </div>
             <div class="mini_cart_footer js_cart_footer">

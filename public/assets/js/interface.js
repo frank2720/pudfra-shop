@@ -2117,7 +2117,7 @@
         /**********************************************
          * Product quantity ( plus / minus )
          * ********************************************/
-        body.on( 'click', 'button.plus , a.plus , button.minus , a.minus', function ( e ) {
+        /*body.on( 'click', 'button.plus , a.plus , button.minus , a.minus', function ( e ) {
             e.preventDefault();
             e.stopPropagation();
             const $inputTag = $( this ).closest( '.quantity' ).find( '.qty_cart_js,.qty_pr_js' );
@@ -2133,7 +2133,7 @@
                 }
                 $inputTag.val( value ).trigger( 'change' );
             }
-        } );
+        } );*/
 
         /**********************************************
          * Minicart tools
@@ -2611,7 +2611,7 @@
         /**********************************************
          * Remove mini cart
          * ********************************************/
-        $nt_js_cart.on( 'click', '.cart_ac_remove', function ( evt ) {
+        /*$nt_js_cart.on( 'click', '.cart_ac_remove', function ( evt ) {
             evt.preventDefault();
             evt.stopPropagation();
             let $this       = $( this ),
@@ -2650,7 +2650,7 @@
                     $nt_js_cart.removeClass( 'ld_nt_cl' );
                 }, 1000 );
             }
-        } );
+        } );*/
 
         /**********************************************
          * Remove product in wishlist
