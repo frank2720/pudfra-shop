@@ -2786,10 +2786,7 @@ function removefromcart(productremovedId,$processTag,$wrapItem) {
     $.ajax({
         url:'/shopping/removeItem/' + productremovedId,
         type: 'get',
-        dataType: 'json',
-        data: {
-            _token: $('meta[name="csrf-token"]').attr('content')
-        }
+        dataType: 'json'
     })
     .done(function (data) {
             if ( $processTag.length ) {

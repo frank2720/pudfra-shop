@@ -158,23 +158,13 @@
                                     @endauth
                                 @endif
                                 <div class="icon_cart pr">
-                                    @if (session()->has('cart'))
                                     <a class="push_side position-relative js_addtc cb chp db" href="">
                                         <i class="iccl iccl-cart pr" id="cartvalue">
                                             <span class="op__0 ts_op pa tcount bgb br__50 cw tc">
-                                                {{session()->get('cart')->totalQty}}
+                                                {{session()->get('cart')->totalQty??0}}
                                             </span>
                                         </i>
                                     </a>
-                                    @else
-                                    <a class="push_side position-relative js_addtc cb chp db" href="#">
-                                        <i class="iccl iccl-cart pr">
-                                            <span class="op__0 ts_op pa tcount bgb br__50 cw tc">
-                                                0
-                                            </span>
-                                        </i>
-                                    </a>
-                                    @endif
                                 </div>
                             </div>
                         </div>

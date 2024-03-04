@@ -37,14 +37,6 @@
                                 <div class="mini_cart_actions">
                                     <div class="quantity pr mr__10 qty__true">
                                         <input type="number" class="input-text qty text tc qty_cart_js" step="1" min="0" max="9999" disabled value="{{$product['qty']}}">
-                                        <div class="qty tc fs__14">
-                                            <button type="button" class="plus db cb pa pd__0 pr__15 tr r__0" data-id="{{$product['item']->id}}">
-                                                <i class="facl facl-plus"></i>
-                                            </button>
-                                            <button type="button" class="minus db cb pa pd__0 pl__15 tl l__0 qty_1">
-                                                <i class="facl facl-minus"></i>
-                                            </button>
-                                        </div>
                                     </div>
                                     <a href="#" class="cart_ac_edit js__qs ttip_nt tooltip_top_right"><span class="tt_txt">Edit this item</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">

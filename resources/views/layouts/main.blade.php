@@ -151,29 +151,7 @@
         $('#cart-modal').modal('show');
     });
 
-    $(document).on('click','button.plus , a.plus', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        var productId = $(this).data('incresed-id');
-
-        $.ajax({
-            url:'/add-to-cart/' + productId,
-            type: 'post',
-            dataType: 'json',
-            data: {
-                _token: $('meta[name="csrf-token"]').attr('content')
-            },
-            success: function (data) {
-                $('.cart-value').load(location.href+' .cart-value');
-                $('.cart-products').load(location.href+' .cart-products');
-                Command:toastr["success"]("Product quantity increased","Success");
-            },
-            error: function (error) {
-                console.error(error);
-            }
-        });
-    });
-
+    
     $(document).on('click','.button-minus', function (e) {
         e.preventDefault();
         var productId = $(this).data('decreased-id');
