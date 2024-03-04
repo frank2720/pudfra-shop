@@ -58,6 +58,16 @@ class ProductController extends Controller
         return response()->json(['totalQty'=>$cart->totalQty,'subtotal'=>$cart->totalPrice]);
     }
     
+    public function removefromCart(Request $request, $id)
+    {
+        $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->remove($id);
+
+        $request->session()->put('cart',$cart);
+        return response()->json(['totalQty'=>$cart->totalQty,'subtotal'=>$cart->totalPrice]);
+    }
+
     public function index()
     {
         $products = Product::paginate(8);
@@ -159,16 +169,6 @@ class ProductController extends Controller
         $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->reduce($id);
-
-        $request->session()->put('cart',$cart);
-        return response()->json();
-    }
-
-    public function removefromCart(Request $request, $id)
-    {
-        $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
-        $cart = new Cart($oldCart);
-        $cart->remove($id);
 
         $request->session()->put('cart',$cart);
         return response()->json();

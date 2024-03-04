@@ -2752,6 +2752,8 @@ function addtocart(productId) {
             } 
         }, 500);
         $('.add-to-cart-btn').removeClass( 'loading' );
+        $('.toolbar_count').hide()
+        $('.tcount').hide()
         $('#mobcartvalue').append("<span class='jsccount toolbar_count'>"+data.totalQty+"</span>")
         $('#cartvalue').append("<span class='op__0 ts_op pa tcount bgb br__50 cw tc'>"+data.totalQty+"</span>")
         $('.cart_tot_price').hide()
@@ -2766,4 +2768,74 @@ function addtocart(productId) {
         console.log('Server error occured');
     });
     
+}
+
+/**********************************************
+ * Remove mini cart
+ *********************************************/
+$(".cart_ac_remove").click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    var productremovedId = $(this).data('id');
+    var $wrapItem   = $(this).closest( '.mini_cart_item' );
+    var $processTag = $wrapItem.find( '.ld_cart_bar' );
+    $(document).addClass('ld_nt_cl')
+    removefromcart(productremovedId,$processTag,$wrapItem)
+});
+function removefromcart(productremovedId,$processTag,$wrapItem) {
+    $.ajax({
+        url:'/shopping/removeItem/' + productremovedId,
+        type: 'get',
+        dataType: 'json',
+        data: {
+            _token: $('meta[name="csrf-token"]').attr('content')
+        }
+    })
+    .done(function (data) {
+            if ( $processTag.length ) {
+                $processTag.addClass( 'on_star' );
+                setTimeout( () => {
+                    $processTag.addClass( 'on_end' );
+                    $wrapItem.slideUp( 300, 'swing', function () {
+                        $( this ).remove()
+                        if ( !$(document).find( '.mini_cart_item' ).length ) {
+                            $(document).find( '.mini_cart_items , .mini_cart_tool' ).remove();
+                            $(document).find( '.empty.tc' ).show( 300, 'swing', function () {
+                                $( this ).removeClass( 'dn' )
+                            } );
+                        }
+                        console.log( $(document).find( '.mini_cart_item' ).length );
+                    } );
+                    $(document).removeClass( 'ld_nt_cl' );
+
+            }, 1000 );
+            } else {
+                setTimeout( () => {
+                    $wrapItem.slideUp( 300, 'swing', function () {
+                        $( this ).remove();
+                        if ( !$(document).find( '.mini_cart_item' ).length ) {
+                            $(document).find( '.mini_cart_items , .mini_cart_tool' ).remove();
+                            $(document).find( '.empty.tc' ).show( 300, 'swing', function () {
+                                $( this ).removeClass( 'dn' )
+                            } );
+                        }
+                    } );
+                    $(document).removeClass( 'ld_nt_cl' );
+                }, 1000 );
+            }
+            $('.toolbar_count').hide()
+            $('.tcount').hide()
+            $('#mobcartvalue').append("<span class='jsccount toolbar_count'>"+data.totalQty+"</span>")
+            $('#cartvalue').append("<span class='op__0 ts_op pa tcount bgb br__50 cw tc'>"+data.totalQty+"</span>")
+            $('.cart_tot_price').hide()
+            $('.js_cat_ttprice').append("<div class='cart_tot_price'>"+new Intl.NumberFormat('en-US', 
+            {  
+                style: 'currency',  
+                currency: 'USD' 
+            }).format(data.subtotal)+"</div>")
+        })
+
+        .fail(function (jqXHR, ajaxOptions, thrownError) {
+            console.log('Server error occured');
+        });
 }

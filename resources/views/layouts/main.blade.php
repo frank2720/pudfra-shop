@@ -150,66 +150,6 @@
         e.preventDefault();
         $('#cart-modal').modal('show');
     });
-    
-    /**********************************************
-     * Remove mini cart
-     * ********************************************/
-
-    $(document).on('click','.cart_ac_remove', function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        var productremovedId = $(this).data('id');
-        var $wrapItem   = $(this).closest( '.mini_cart_item' );
-        var $processTag = $wrapItem.find( '.ld_cart_bar' );
-        $(document).addClass('ld_nt_cl')
-        $.ajax({
-            url:'/shopping/removeItem/' + productremovedId,
-            type: 'get',
-            dataType: 'json',
-            data: {
-                _token: $('meta[name="csrf-token"]').attr('content')
-            },
-            success: function (data) {
-                //$('.cart-value').load(location.href+' .cart-value');
-                //$('.cart-products').load(location.href+' .cart-products');
-                //Command:toastr["warning"]("Item removed from the cart","Warning");
-                if ( $processTag.length ) {
-                $processTag.addClass( 'on_star' );
-                setTimeout( () => {
-                    $processTag.addClass( 'on_end' );
-                    $wrapItem.slideUp( 300, 'swing', function () {
-                        $( this ).remove()
-                        if ( !$(document).find( '.mini_cart_item' ).length ) {
-                            $(document).find( '.mini_cart_items , .mini_cart_tool' ).remove();
-                            $(document).find( '.empty.tc' ).show( 300, 'swing', function () {
-                                $( this ).removeClass( 'dn' )
-                            } );
-                        }
-                        console.log( $(document).find( '.mini_cart_item' ).length );
-                    } );
-                    $(document).removeClass( 'ld_nt_cl' );
-
-                }, 1000 );
-                } else {
-                    setTimeout( () => {
-                        $wrapItem.slideUp( 300, 'swing', function () {
-                            $( this ).remove();
-                            if ( !$(document).find( '.mini_cart_item' ).length ) {
-                                $(document).find( '.mini_cart_items , .mini_cart_tool' ).remove();
-                                $(document).find( '.empty.tc' ).show( 300, 'swing', function () {
-                                    $( this ).removeClass( 'dn' )
-                                } );
-                            }
-                        } );
-                        $(document).removeClass( 'ld_nt_cl' );
-                    }, 1000 );
-                }
-            },
-            error: function (error) {
-                console.error(error);
-            }
-        });
-    });
 
     $(document).on('click','button.plus , a.plus', function (e) {
         e.preventDefault();
