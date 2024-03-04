@@ -2695,6 +2695,10 @@
 )
 ( window.jQuery );
 
+
+/**********************************************
+ * Load more data
+ *********************************************/
 var ENDPOINT1 = "";
 var page = 1;
 
@@ -2705,7 +2709,7 @@ $(".load-more-data").click(function(){
 function LoadMore(page) {
     $.ajax({
             url: ENDPOINT1 + "?page=" + page,
-            datatype: "html",
+            datatype: "json",
             type: "get"
         })
         .done(function (response) {
@@ -2721,3 +2725,45 @@ function LoadMore(page) {
             console.log('Server error occured');
         });
 };
+
+/**********************************************
+ * Add products to cart
+ *********************************************/
+$(".add-to-cart-btn").click(function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    productId = $(this).data('product-id');
+    $(this).addClass( 'loading' );
+    addtocart(productId)
+});
+function addtocart(productId) {
+    $.ajax({
+        url:'/add-to-cart/' + productId,
+        type:'POST',
+        datatype:'json',
+        data: {
+            _token: $('meta[name="csrf-token"]').attr('content')
+        },
+    })
+    .done(function (data) {
+        setTimeout( function () {
+            if ( $('.add-to-cart-btn').hasClass( 'js__qs' ) ) {
+                Command:toastr["success"]("Cart updated successfully","Success");
+            } 
+        }, 500);
+        $('.add-to-cart-btn').removeClass( 'loading' );
+        $('#mobcartvalue').append("<span class='jsccount toolbar_count'>"+data.totalQty+"</span>")
+        $('#cartvalue').append("<span class='op__0 ts_op pa tcount bgb br__50 cw tc'>"+data.totalQty+"</span>")
+        $('.cart_tot_price').hide()
+        $('.js_cat_ttprice').append("<div class='cart_tot_price'>"+new Intl.NumberFormat('en-US', 
+        {  
+            style: 'currency',  
+            currency: 'USD' 
+        }).format(data.subtotal)+"</div>")
+    })
+
+    .fail(function (jqXHR, ajaxOptions, thrownError) {
+        console.log('Server error occured');
+    });
+    
+}

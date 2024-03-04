@@ -144,49 +144,13 @@
 <script src="assets/js/interface.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 <script>
-    let cartvalue = $('.cartvalue').data('cartvalue')
     $(document).ready(function () {
 
     $(document).on('click', '#cart-details', function (e) {
         e.preventDefault();
         $('#cart-modal').modal('show');
     });
-
-    /**********************************************
-     * Add products to cart
-     * ********************************************/
-    $(document).on('click','.add-to-cart-btn', function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        let $this = $( this );
-        $this.addClass( 'loading' );
-        var productId = $this.data('product-id');
-        $.ajax({
-            url:'/add-to-cart/' + productId,
-            type: 'post',
-            dataType: 'json',
-            data: {
-                _token: $('meta[name="csrf-token"]').attr('content')
-            },
-            success: function (data) {
-                setTimeout( function () {
-                    if ( $this.hasClass( 'js__qs' ) ) {
-                        Command:toastr["success"]("Cart updated successfully","Success");
-                        cartvalue++
-                        $('.cartvalue').text(cartvalue)
-                        //$('.tcount').load(location.href+cartvalue);
-                    } 
-                }, 500);
-                $this.removeClass( 'loading' );
-                //$('.cart-products').load(location.href+' .cart-products');
-                //Command:toastr["success"]("Cart updated successfully","Success");
-            },
-            error: function (error) {
-                console.error(error);
-            }
-        });
-    });
-
+    
     /**********************************************
      * Remove mini cart
      * ********************************************/

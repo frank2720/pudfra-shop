@@ -15,16 +15,16 @@
         </div>
         <div class="type_toolbar_cart kalles_toolbar_item">
             @if (session()->has('cart'))
-                <a href="#" class="js_addtc push_side">
-                    <span class="toolbar_icon">
-                        <span class="jsccount toolbar_count cartvalue">
+                <a href="" class="js_addtc push_side">
+                    <span class="toolbar_icon" id="mobcartvalue">
+                        <span class="jsccount toolbar_count">
                             {{session()->get('cart')->totalQty}}
                         </span>
                     </span>
                     <span class="kalles_toolbar_label">Cart</span>
                 </a>
             @else
-                <a href="#" class="js_addtc push_side">
+                <a href="" class="js_addtc push_side">
                     <span class="toolbar_icon">
                         <span class="jsccount toolbar_count">
                             0
