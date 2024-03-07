@@ -113,9 +113,14 @@
                         </li>
                     </ul>
                 </li>
-                <li class="menu-item menu-item-btns menu-item-acount">
-                    <a href="#" class="push_side" data-id="#nt_login_canvas"><span class="iconbtns">Login / Register</span></a>
-                </li>
+                @if (Route::has('login'))
+                    @auth
+                    @else
+                    <li class="menu-item menu-item-btns menu-item-acount">
+                        <a href="#" class="push_side" data-id="#nt_login_canvas"><span class="iconbtns">Login / Register</span></a>
+                    </li>
+                    @endauth
+                @endif
             </ul>
         </div>
     </div>
