@@ -1,29 +1,48 @@
 @extends('layouts.guest')
 @section('content')
-<div class="wrapper">
-    <x-auth-session-status class="mb-4" :status="session('status')" />
-    <div class="logo">
-        <img src="https://pudfra-talk.xyz/images/logo.png" alt="">
-    </div>
-    <form class="p-3 mt-3" action="{{route('login')}}" method="POST">
-        @csrf
-        <div class="form-field d-flex align-items-center">
-            <span class="far fa-user"></span>
-            <input type="email" name="email" placeholder="name@company.com" value="{{old('email')}}" required autofocus autocomplete="username">
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12 min-vh-100 d-flex flex-column justify-content-center">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <div class="card rounded shadow shadow-sm">
+                        <div class="card-header">
+                            <h3 class="mb-0">Login</h3>
+                        </div>
+                        <div class="card-body">
+                            <x-auth-session-status class="mb-4" :status="session('status')" />
+                            <form class="nt_mini_cart flex column h__100" action="{{route('login')}}" method="POST">
+                                @csrf
+                                <div class="mini_cart_wrap">
+                                    <div class="mini_cart_content fixcl-scroll">
+                                        <div>
+                                            <p class="form-group">
+                                                <label for="CustomerEmail">Email <span class="text-danger">*</span></label>
+                                                <input type="email" name="email" id="CustomerEmail" autocomplete="email" autocapitalize="off" value="{{old('email')}}">
+                                                <x-input-error :messages="$errors->get('email')" />
+                                            </p>
+                                            <p class="form-group">
+                                                <label for="CustomerPassword">Password <span class="text-danger">*</span></label>
+                                                <input type="password" value="" name="password" autocomplete="current-password" id="CustomerPassword">
+                                                <x-input-error :messages="$errors->get('password')" />
+                                            </p>
+                                            <input type="submit" class="button button_primary" value="Sign In">
+                                                <br>
+                                            <p class="mb__10 mt__20">New customer?
+                                                <a href="{{route('register')}}" class="link_acc">Create your account</a>
+                                            </p>
+                                            <p>Lost password?
+                                                <a href="{{route('password.request')}}" class="link_acc">Recover password</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        <div class="form-field d-flex align-items-center">
-            <span class="fas fa-key"></span>
-            <input type="password" name="password" required autocomplete="current-password" placeholder="••••••••">
-        </div>
-        <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        <button type="submit" class="btn mt-3">Login</button>
-    </form>
-    <div class="text-center fs-6">
-        @if (Route::has('password.request'))
-        <a href="{{route('password.request')}}">Forgot password?</a>
-        @endif
-        or <a href="{{route('register')}}">Sign up</a>
     </div>
 </div>
 @endsection
