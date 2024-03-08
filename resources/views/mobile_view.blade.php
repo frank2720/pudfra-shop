@@ -14,25 +14,14 @@
             </a>
         </div>
         <div class="type_toolbar_cart kalles_toolbar_item">
-            @if (session()->has('cart'))
-                <a href="" class="js_addtc push_side">
-                    <span class="toolbar_icon" id="mobcartvalue">
-                        <span class="jsccount toolbar_count">
-                            {{session()->get('cart')->totalQty}}
-                        </span>
+            <a href="" class="js_addtc push_side">
+                <span class="toolbar_icon" id="mobcartvalue">
+                    <span class="jsccount toolbar_count">
+                        {{session()->get('cart')->totalQty??0}}
                     </span>
-                    <span class="kalles_toolbar_label">Cart</span>
-                </a>
-            @else
-                <a href="" class="js_addtc push_side">
-                    <span class="toolbar_icon">
-                        <span class="jsccount toolbar_count">
-                            0
-                        </span>
-                    </span>
-                    <span class="kalles_toolbar_label">Cart</span>
-                </a>
-            @endif
+                </span>
+                <span class="kalles_toolbar_label">Cart</span>
+            </a>
         </div>
         @if (Route::has('login'))
             @auth

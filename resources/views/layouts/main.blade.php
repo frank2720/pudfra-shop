@@ -4,18 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="{{asset('assets/images/favicon.png')}}">
     <title>{{config('app.name')}}</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:300,300i,400,400i,500,500i&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/font-icon.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/defined.css">
-    <link rel="stylesheet" href="assets/css/base.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/home-default.css">
+    <link rel="stylesheet" href="{{asset('assets/css/font-icon.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/reset.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/defined.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/base.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/home-default.css')}}">
     <link rel="stylesheet" href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
@@ -133,15 +133,15 @@
 <a id="nt_backtop" class="pf br__50 z__100 des_bt1" href="#"><span class="tc br__50 db cw"><i class="pr pegk pe-7s-angle-up"></i></span></a>
 <script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 {!! Toastr::message() !!}
-<script src="assets/js/jarallax.min.js"></script>
-<script src="assets/js/packery.pkgd.min.js"></script>
-<script src="assets/js/jquery.hoverIntent.min.js"></script>
-<script src="assets/js/magnific-popup.min.js"></script>
-<script src="assets/js/flickity.pkgd.min.js"></script>
-<script src="assets/js/lazysizes.min.js"></script>
-<script src="assets/js/js-cookie.min.js"></script>
-<script src="assets/js/jquery.countdown.min.js"></script>
-<script src="assets/js/interface.js"></script>
+<script src="{{asset('assets/js/jarallax.min.js')}}"></script>
+<script src="{{asset('assets/js/packery.pkgd.min.js')}}"></script>
+<script src="{{asset('assets/js/jquery.hoverIntent.min.js')}}"></script>
+<script src="{{asset('assets/js/magnific-popup.min.js')}}"></script>
+<script src="{{asset('assets/js/flickity.pkgd.min.js')}}"></script>
+<script src="{{asset('assets/js/lazysizes.min.js')}}"></script>
+<script src="{{asset('assets/js/js-cookie.min.js')}}"></script>
+<script src="{{asset('assets/js/jquery.countdown.min.js')}}"></script>
+<script src="{{asset('assets/js/interface.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 <script>
     $(document).ready(function () {

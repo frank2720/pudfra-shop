@@ -2752,8 +2752,8 @@ function addtocart(productId) {
             } 
         }, 500);
         $('.add-to-cart-btn').removeClass( 'loading' );
-        $('.toolbar_count').hide()
         $('.tcount').hide()
+        $('.toolbar_count').hide()
         $('#mobcartvalue').append("<span class='jsccount toolbar_count'>"+data.totalQty+"</span>")
         $('#cartvalue').append("<span class='op__0 ts_op pa tcount bgb br__50 cw tc'>"+data.totalQty+"</span>")
         $('.cart_tot_price').hide()
