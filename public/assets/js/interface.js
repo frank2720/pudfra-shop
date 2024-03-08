@@ -2710,7 +2710,10 @@ function LoadMore(page) {
     $.ajax({
             url: ENDPOINT1 + "?page=" + page,
             datatype: "json",
-            type: "get"
+            type: "get",
+            data: {
+                _token: $('meta[name="csrf-token"]').attr('content')
+            },
         })
         .done(function (response) {
             if (response.html == '') {

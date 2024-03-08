@@ -7,7 +7,7 @@
                 <div class="col-lg-6 col-md-8 mx-auto">
                     <div class="card rounded shadow shadow-sm">
                         <div class="card-header">
-                            <h3 class="mb-0">Register</h3>
+                            <h3 class="mb-0">Reset your password</h3>
                         </div>
                         <div class="card-body">
                             <form class="nt_mini_cart flex column h__100" method="POST" action="{{ route('password.store') }}">

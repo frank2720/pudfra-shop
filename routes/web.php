@@ -53,8 +53,8 @@ Route::get('/shopping/cart', [ProductController::class, 'getCart'])->name('shopp
 Route::get('/shopping/removeItem/{id}', [ProductController::class, 'removefromCart'])->name('removefromCart');
 Route::get('/shopping/reduceItem/{id}', [ProductController::class, 'reduceInCart'])->name('productReduce');
 
-Route::get('/pagination/paginate-data',[ProductController::class,'pagination']);
-Route::get('/pagination/shop_data',[ProductController::class,'products_paginate']);
+Route::get('/pagination/paginate-data',[ProductController::class,'home_products']);
+Route::get('/pagination/products',[ProductController::class,'products_paginate']);
 Route::get('/load-more-data', [ProductController::class,'loadmore'])->name('load.more');
 
 Route::get('/product-details/{id}', [ProductController::class,'quick_view'])->name('product.details');

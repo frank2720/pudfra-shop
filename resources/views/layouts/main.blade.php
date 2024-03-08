@@ -146,39 +146,11 @@
 <script>
     $(document).ready(function () {
 
-    $(document).on('click', '#cart-details', function (e) {
-        e.preventDefault();
-        $('#cart-modal').modal('show');
-    });
-
-    
-    $(document).on('click','.button-minus', function (e) {
-        e.preventDefault();
-        var productId = $(this).data('decreased-id');
-
-        $.ajax({
-            url:'/shopping/reduceItem/' + productId,
-            type: 'get',
-            dataType: 'json',
-            data: {
-                _token: $('meta[name="csrf-token"]').attr('content')
-            },
-            success: function (data) {
-                $('.cart-value').load(location.href+' .cart-value');
-                $('.cart-products').load(location.href+' .cart-products');
-                Command:toastr["warning"]("Product quantity decreased","Warning");
-            },
-            error: function (error) {
-                console.error(error);
-            }
-        });
-    });
-
     $(document).on('click','.pagination a', function (e) {
         e.preventDefault();
         var page = $(this).attr('href').split('page=')[1]
         $.ajax({
-            url:'/pagination/shop_data?page='+page,
+            url:'/pagination/products?page='+page,
             success:function(data){
                 $('.shop-data').html(data);
             },
