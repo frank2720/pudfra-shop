@@ -16,7 +16,9 @@
                         <div class="col-lg-2 col-md-4 col-6 tc tl_lg">
                             <div class=" branding ts__05 lh__1">
                                 <a class="dib" href="">
-                                    <p class="w__95 logo_normal dn db_lg">Maanar</p>
+                                    <img class="w__95 logo_normal dn db_lg" src="{{asset("assets/images/svg/maanar.svg")}}" alt="Kalles Template">
+                                    <img class="w__100 logo_sticky dn" src="{{asset("assets/images/svg/maanar.svg")}}" alt="Kalles Template">
+                                    <img class="w__100 logo_mobile dn_lg" src="{{asset("assets/images/svg/maanar.svg")}}" alt="Kalles Template">
                                 </a>
                             </div>
                         </div>
