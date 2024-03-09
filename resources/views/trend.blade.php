@@ -9,7 +9,7 @@
                     </span>
                 </span>
             @endif
-            <a class="d-block" href="product-detail-layout-01.html">
+            <a class="d-block" href="">
                 <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="{{Storage::url($product->images[0]->url)}}"></div>
             </a>
             <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
@@ -25,7 +25,7 @@
         </div>
         <div class="product-info mt__15">
             <h3 class="product-title position-relative fs__14 mg__0 fwm">
-                <a class="cd chp" href="product-detail-layout-01.html">{{__(ucfirst(strtolower($product->name)))}}</a>
+                <a class="cd chp" href="">{{__(ucfirst(strtolower($product->name)))}}</a>
             </h3>
             <span class="price dib mb__5">$ {{number_format($product->price,2,".",",")}}</span>
         </div>
