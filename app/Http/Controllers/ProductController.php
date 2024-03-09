@@ -8,6 +8,7 @@ use App\Models\Image;
 use App\Models\Product;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -38,7 +39,8 @@ class ProductController extends Controller
 
         foreach ($request->file('img') as $imagefile) {
             $image = new Image;
-            $path =  $imagefile->store('/assets/images/products', ['disk' =>   'my_files']);
+            $path =  $imagefile->store('public');
+            //$path =Storage::disk('public')->put('/',$imagefile);
             $image->url = $path;
             $image->product_id = $product->id;
             $image->save();
