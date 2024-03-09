@@ -16,11 +16,11 @@
                             <div class="left_right">
                                 <h4 class="kalles-caption-layout-01__subtitle mg__0 lh__1">SUMMER 2020</h4>
                                 <h3 class="kalles-caption-layout-01__title mg__0 lh__1">New Arrival Collection</h3>
-                                <a class="kalles-caption-layout-01__button kalles-button--square slt4_btn button pe_auto round_false btn_icon_false" href="shop-filter-options.html">Explore Now</a>
+                                <a class="kalles-caption-layout-01__button kalles-button--square slt4_btn button pe_auto round_false btn_icon_false" href="">Explore Now</a>
                             </div>
                         </div>
                     </div>
-                    <a href="shop.html" class="pa t__0 l__0 b__0 r__0 pe_none"></a>
+                    <a href="" class="pa t__0 l__0 b__0 r__0 pe_none"></a>
                 </div>
             </div>
             <!-- end first slide -->
@@ -36,11 +36,11 @@
                             <div class="right_left">
                                 <h4 class="kalles-caption-layout-01__subtitle mg__0 lh__1">NEW SEASON</h4>
                                 <h3 class="kalles-caption-layout-01__title mg__0 lh__1">Lookbook Collection</h3>
-                                <a class="kalles-caption-layout-01__button kalles-button--square slt4_btn button pe_auto round_false btn_icon_false" href="shop-filter-options.html">Explore Now</a>
+                                <a class="kalles-caption-layout-01__button kalles-button--square slt4_btn button pe_auto round_false btn_icon_false" href="">Explore Now</a>
                             </div>
                         </div>
                     </div>
-                    <a href="shop.html" class="pa t__0 l__0 b__0 r__0 pe_none"></a>
+                    <a href="" class="pa t__0 l__0 b__0 r__0 pe_none"></a>
                 </div>
             </div>
             <!-- end second slide -->
@@ -56,11 +56,11 @@
                             <div class="left_right">
                                 <h4 class="kalles-caption-layout-01__subtitle mg__0 lh__1">SUMMER SALE</h4>
                                 <h3 class="kalles-caption-layout-01__title mg__0 lh__1">Save up to 70%</h3>
-                                <a class="kalles-caption-layout-01__button kalles-button--square slt4_btn button pe_auto round_false btn_icon_false" href="shop-filter-options.html">Explore Now</a>
+                                <a class="kalles-caption-layout-01__button kalles-button--square slt4_btn button pe_auto round_false btn_icon_false" href="">Explore Now</a>
                             </div>
                         </div>
                     </div>
-                    <a href="shop.html" class="pa t__0 l__0 b__0 r__0 pe_none"></a>
+                    <a href="" class="pa t__0 l__0 b__0 r__0 pe_none"></a>
                 </div>
             </div>
             <!-- end third slide -->

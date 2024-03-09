@@ -34,14 +34,14 @@
                                             <div class="container megamenu-content-1200px">
                                                 <div class="row lazy_menu lazyload" data-jspackery='{ "itemSelector": ".sub-column-item","gutter": 0,"percentPosition": true,"originLeft": true }'>
                                                     <div class="type_mn_link2 menu-item sub-column-item col-2">
-                                                        <a href="shop-full-width-layout.html">Accessories</a>
-                                                        <a href="shop-1600px-layout.html">Footwear</a>
-                                                        <a href="shop-filter-options.html">Women</a>
-                                                        <a href="shop-left-sidebar.html">T-Shirt</a>
-                                                        <a href="shop-right-sidebar.html">Shoes</a>
-                                                        <a href="shop-masonry-layout.html">Denim</a>
-                                                        <a href="shop-1600px-layout.html">Dress</a>
-                                                        <a href="shop-filter-options.html">Men</a>
+                                                        <a href="">Accessories</a>
+                                                        <a href="">Footwear</a>
+                                                        <a href="">Women</a>
+                                                        <a href="">T-Shirt</a>
+                                                        <a href="">Shoes</a>
+                                                        <a href="">Denim</a>
+                                                        <a href="">Dress</a>
+                                                        <a href="">Men</a>
                                                     </div>
                                                     <div class="type_mn_pr menu-item sub-column-item col-10">
                                                         <div class="prs_nav js_carousel nt_slider products nt_products_holder row al_center row_pr_1 cdt_des_1 round_cd_false nt_cover ratio_nt position_8 flickity-enabled is-draggable" data-flickity='{"imagesLoaded": 0,"adaptiveHeight": 0, "contain": 1, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": 1,"prevNextButtons": 1,"percentPosition": 1,"pageDots": 0, "autoPlay" : 0, "pauseAutoPlayOnHover" : 1, "rightToLeft": false }'>
@@ -56,7 +56,7 @@
                                                                             </span>
                                                                         </span>
                                                                         @endif
-                                                                        <a class="d-block" href="product-detail-layout-01.html">
+                                                                        <a class="d-block" href="">
                                                                             <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="{{Storage::url($product->images[0]->url)}}"></div>
                                                                         </a>
                                                                         <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
@@ -72,7 +72,7 @@
                                                                     </div>
                                                                     <div class="product-info mt__15">
                                                                         <h3 class="product-title pr fs__14 mg__0 fwm">
-                                                                            <a class="cd chp" href="product-detail-layout-01.html">{{__(ucfirst(strtolower($product->name)))}}</a>
+                                                                            <a class="cd chp" href="">{{__(ucfirst(strtolower($product->name)))}}</a>
                                                                         </h3>
                                                                         <span class="price dib mb__5">${{number_format($product->price,2,'.',',')}}</span>
                                                                     </div>
@@ -86,7 +86,7 @@
                                         </div>
                                     </li>
                                     <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                        <a class="lh__1 flex al_center pr kalles-lbl__nav-sale" href="shop-filter-sidebar.html">New arrivals
+                                        <a class="lh__1 flex al_center pr kalles-lbl__nav-sale" href="">New arrivals
                                             <span class="lbc_nav">New</span>
                                         </a>
                                         <div class="cus sub-menu">
@@ -101,7 +101,7 @@
                                                                     <span class="tc nt_labels pa pe_none cw">
                                                                         <span class="nt_label new">New</span>
                                                                     </span>
-                                                                        <a class="d-block" href="product-detail-layout-01.html">
+                                                                        <a class="d-block" href="">
                                                                             <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="{{Storage::url($product->images[0]->url)}}"></div>
                                                                         </a>
                                                                         <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
@@ -117,7 +117,7 @@
                                                                     </div>
                                                                     <div class="product-info mt__15">
                                                                         <h3 class="product-title pr fs__14 mg__0 fwm">
-                                                                            <a class="cd chp" href="product-detail-layout-01.html">{{__(ucfirst(strtolower($product->name)))}}</a>
+                                                                            <a class="cd chp" href="">{{__(ucfirst(strtolower($product->name)))}}</a>
                                                                         </h3>
                                                                         <span class="price dib mb__5">${{number_format($product->price,2,'.',',')}}</span>
                                                                     </div>
