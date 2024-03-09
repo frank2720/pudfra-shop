@@ -89,10 +89,14 @@
                 @include('trend')
             </div>
         </div>
-        @if (!empty($trending_products))
+        @if (empty($trending_products))
+            <div class="products-footer tc mt__40">
+                <button disabled class="se_cat_lm pr nt_cat_lm button button_default br_rd_true btn_icon_false load-more-data">No trending products available</button>
+            </div>   
+        @else
             <div class="products-footer tc mt__40">
                 <button class="se_cat_lm pr nt_cat_lm button button_default br_rd_true btn_icon_false load-more-data">Load More</button>
-            </div>
+            </div> 
         @endif
     </div>
 </div>
