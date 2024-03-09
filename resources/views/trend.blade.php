@@ -1,4 +1,4 @@
-@foreach ($trending_products as $product)
+@forelse ($trending_products as $product)
 <div class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1">
     <div class="product-inner pr">
         <div class="product-image position-relative oh lazyload">
@@ -31,4 +31,6 @@
         </div>
     </div>
 </div>
-@endforeach
+@empty
+<p>No products</p>
+@endforelse
