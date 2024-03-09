@@ -89,9 +89,11 @@
                 @include('trend')
             </div>
         </div>
-        <div class="products-footer tc mt__40">
-            <button class="se_cat_lm pr nt_cat_lm button button_default br_rd_true btn_icon_false load-more-data">Load More</button>
-        </div>
+        @if (!empty($trending_products))
+            <div class="products-footer tc mt__40">
+                <button class="se_cat_lm pr nt_cat_lm button button_default br_rd_true btn_icon_false load-more-data">Load More</button>
+            </div>
+        @endif
     </div>
 </div>
 <!-- end featured collection -->

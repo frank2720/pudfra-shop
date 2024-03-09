@@ -32,5 +32,4 @@
     </div>
 </div>
 @empty
-<p>No products</p>
 @endforelse
