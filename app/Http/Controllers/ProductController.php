@@ -12,6 +12,40 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
 
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name'=>'required|string',
+            'price'=>'required',
+            'retail_price'=>'required',
+            'description'=>'required|string',
+            'img'=>'required',
+        ],
+        [
+            'name.required'=>'Product name required',
+            'price.required'=>'Product price required',
+            'retail_price.required'=>'Product retail price required',
+            'description.required'=>'Product description required',
+            'img.required'=>'Upload product image',
+            
+        ]);
+        $product = new Product;
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->retail_price = $request->retail_price;
+        $product->description = $request->description;
+        $product->save();
+
+        foreach ($request->file('img') as $imagefile) {
+            $image = new Image;
+            $path =  $imagefile->store('/assets/images/products', ['disk' =>   'my_files']);
+            $image->url = $path;
+            $image->product_id = $product->id;
+            $image->save();
+        }
+        return response()->json([]);
+    }
+    
     public function home_products(Request $request)
     {
         $nav_products = Product::with('images')->get();
@@ -107,40 +141,7 @@ class ProductController extends Controller
     }
 
     
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name'=>'required|string',
-            'price'=>'required',
-            'retail_price'=>'required',
-            'description'=>'required|string',
-            'img'=>'required',
-        ],
-        [
-            'name.required'=>'Product name required',
-            'price.required'=>'Product price required',
-            'retail_price.required'=>'Product retail price required',
-            'description.required'=>'Product description required',
-            'img.required'=>'Upload product image',
-            
-        ]);
-        $product = new Product;
-        $product->name = $request->name;
-        $product->price = $request->price;
-        $product->retail_price = $request->retail_price;
-        $product->description = $request->description;
-        $product->save();
-
-        foreach ($request->file('img') as $imagefile) {
-            $image = new Image;
-            $path =  $imagefile->store('/assets/images/products', ['disk' =>   'my_files']);
-            $image->url = $path;
-            $image->product_id = $product->id;
-            $image->save();
-        }
-        return response()->json([]);
-    }
-    
+   
 
     public function products(): View
     {
