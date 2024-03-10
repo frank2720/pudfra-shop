@@ -1,10 +1,13 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CartController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //home page routes
-Route::get('/', [ProductController::class,'home_products'])->name('welcome');
+Route::get('/', [HomeController::class,'index'])->name('welcome');
 
 Route::middleware(['auth','verified'])->group(function () {
 
@@ -48,10 +51,10 @@ Route::group([
 
 Route::get('/shop', [ProductController::class, 'products'])->name('shop');
 Route::get('/product/{id}', [ProductController::class, 'product'])->name('product_details');
-Route::post('/add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('addToCart');
+Route::post('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('addToCart');
 Route::get('/shopping/cart', [ProductController::class, 'getCart'])->name('shopping');
-Route::get('/shopping/removeItem/{id}', [ProductController::class, 'removefromCart'])->name('removefromCart');
-Route::get('/shopping/reduceItem/{id}', [ProductController::class, 'reduceInCart'])->name('productReduce');
+Route::get('/shopping/removeItem/{id}', [CartController::class, 'removefromCart'])->name('removefromCart');
+Route::get('/shopping/reduceItem/{id}', [CartController::class, 'reduceInCart'])->name('productReduce');
 
 Route::get('/pagination/paginate-data',[ProductController::class,'home_products']);
 Route::get('/pagination/products',[ProductController::class,'products_paginate']);
@@ -61,4 +64,6 @@ Route::get('/product-details/{id}', [ProductController::class,'quick_view'])->na
 
 Route::get('/search',[ProductController::class, 'product_search'])->name('product.search');
 
-require __DIR__.'/auth.php';
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

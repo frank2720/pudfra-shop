@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
+    public function index()
+    {
+        $products = Product::paginate(8);
+        return view('admin.dashboard', ['products'=>$products]);
+    }
 
     public function store(Request $request)
     {
@@ -47,89 +52,6 @@ class ProductController extends Controller
         }
         return response()->json([]);
     }
-    
-    public function home_products(Request $request)
-    {
-        $nav_products = Product::with('images')->get();
-
-        $trending_products = Product::with('images')
-                                ->latest()
-                                ->paginate(8);
-
-        $bestsales = Product::with('images')
-                        ->whereColumn('retail_price','>','price')
-                        ->paginate(4);
-
-        $latest = Product::with('images')
-                        ->latest()
-                        ->paginate(8);
-
-        $oldCart = session()->get('cart');
-        //dd(session()->get('cart'));
-        $cart = new Cart($oldCart);
-
-        if ($request->ajax()) {
-            $view = view('trend', compact('trending_products'))->render();
-            
-            return response()->json(['html' => $view]);
-        }
-        return view('home',[
-            'nav_products'=>$nav_products,
-            'trending_products'=>$trending_products,
-            'bestsales'=>$bestsales,
-            'latest'=>$latest,
-            'cart_products'=>$cart->items,
-            'totalPrice'=>$cart->totalPrice,
-        ]);
-    }
-
-    public function addToCart(Request $request, $id)
-    {
-        $product = Product::find($id);
-        $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
-        $cart = new Cart($oldCart);
-        $cart->add($product, $product->id);
-
-        $request->session()->put('cart',$cart);
-        return response()->json([
-            'totalQty'=>$cart->totalQty,
-            'subtotal'=>$cart->totalPrice,
-            'productquantity'=>$cart->items[$id]['qty']
-        ]);
-    }
-    
-    public function removefromCart(Request $request, $id)
-    {
-        $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
-        $cart = new Cart($oldCart);
-        $cart->remove($id);
-
-        $request->session()->put('cart',$cart);
-        return response()->json([
-            'totalQty'=>$cart->totalQty,
-            'subtotal'=>$cart->totalPrice
-        ]);
-    }
-
-    public function reduceInCart(Request $request, $id)
-    {
-        $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
-        $cart = new Cart($oldCart);
-        $cart->reduce($id);
-
-        $request->session()->put('cart',$cart);
-        return response()->json([
-            'totalQty'=>$cart->totalQty??0,
-            'subtotal'=>$cart->totalPrice??0,
-            'productquantity'=>$cart->items[$id]['qty']??0
-        ]);
-    }
-
-    public function index()
-    {
-        $products = Product::paginate(8);
-        return view('admin.dashboard', ['products'=>$products]);
-    }
 
     public function pagination(Request $request)
     {
@@ -140,23 +62,6 @@ class ProductController extends Controller
     public function create():View
     {
         return view('admin.add_product');
-    }
-
-    
-   
-
-    public function products(): View
-    {
-        $products = Product::orderBy('name')->paginate(8);
-        $categories = Category::all();
-        $oldCart = session()->get('cart');
-        $cart = new Cart($oldCart);
-        return view('shop', [
-            'products'=>$products,
-            'categories'=>$categories,
-            'cart_products'=>$cart->items,
-            'totalPrice'=>$cart->totalPrice,
-        ]);
     }
 
     public function products_paginate(): View
