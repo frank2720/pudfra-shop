@@ -34,15 +34,33 @@
                 <i class="close_pp pegk pe-7s-close ts__03 cd"></i></div>
             <div class="mini_cart_wrap">
                 <div class="mini_cart_content fixcl-scroll">
-                    <div class="fixcl-scroll-content"><p class="form-row">
-                        <label for="CustomerEmail">Email <span class="required">*</span></label>
-                        <input type="email" name="email" id="CustomerEmail" autocomplete="email" autocapitalize="off" value="{{old('email')}}">
-                        <x-input-error :messages="$errors->get('email')" />
-                    </p>
+                    <div class="fixcl-scroll-content">
                         <p class="form-row">
-                            <label for="CustomerPassword">Password <span class="required">*</span></label>
-                            <input type="password" value="" name="password" autocomplete="current-password" id="CustomerPassword">
-                            <x-input-error :messages="$errors->get('password')" />
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </p>
+                        <p class="form-row">
+                            <label for="password">Password <span class="required">*</span></label>
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </p>
+                        <p class="mb__10 mt__20">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                <label class="form-check-label" for="remember">
+                                    {{ __('Remember Me') }}
+                                </label>
+                            </div>
                         </p>
                         <input type="submit" class="button button_primary w__100 tu js_add_ld" value="Sign In">
                         <br>
@@ -78,7 +96,8 @@
             </div>
         </form>
 
-        <form id="RegisterForm" class="nt_mini_cart flex column h__100">
+        <form id="RegisterForm" class="nt_mini_cart flex column h__100" method="POST" action="{{ route('register') }}">
+            @csrf
             <div class="mini_cart_header flex fl_between al_center">
                 <div class="h3 widget-title tu fs__16 mg__0">Register</div>
                 <i class="close_pp pegk pe-7s-close ts__03 cd"></i>
@@ -87,20 +106,35 @@
                 <div class="mini_cart_content fixcl-scroll">
                     <div class="fixcl-scroll-content">
                         <p class="form-row">
-                            <label for="-FirstName">First Name</label>
-                            <input type="text" name="f-name" id="-FirstName" autocomplete="given-name">
+                            <label for="name">{{ __('Name') }}<span class="required">*</span></label>
+                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                         </p>
                         <p class="form-row">
-                            <label for="-LastName">Last Name</label>
-                            <input type="text" name="last_name" id="-LastName" autocomplete="family-name">
+                            <label for="email">{{ __('Email Address') }} <span class="required">*</span></label>
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </p>
                         <p class="form-row">
-                            <label for="-email">Email <span class="required">*</span></label>
-                            <input type="email" name="email" id="-email" class="" autocapitalize="off" autocomplete="email" aria-required="true">
+                            <label for="password">{{ __('Password') }} <span class="required">*</span></label>
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </p>
                         <p class="form-row">
-                            <label for="-password">Password <span class="required">*</span></label>
-                            <input type="password" name="password" id="-password" class="" autocomplete="current-password" aria-required="true">
+                            <label for="confirm-password">{{ __('Confirm Password') }} <span class="required">*</span></label>
+                            <input id="confirm-password" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </p>
                         <input type="submit" value="Register" class="button button_primary w__100 tu js_add_ld">
                         <br>
