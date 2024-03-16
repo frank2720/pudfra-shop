@@ -368,7 +368,7 @@
                             @endif
 
                             <td>
-                                <a href="" class="edit" data-toggle="modal"><i class='bx bx-edit-alt' title="edit"></i></a>
+                                <a href="" class="edit" data-bs-toggle="modal" data-bs-target="#editModal"><i class='bx bx-edit-alt' title="edit"></i></a>
                                 <a href="" class="delete" data-toggle="modal"><i class='bx bx-trash' title="delete"></i></a>
                             </td>
                         </tr>
@@ -380,8 +380,9 @@
                     {{$products->links()}}
                 </div>
             </div>
+            @include('admin.addproduct')
+            @include('admin.editproduct')
         </div>
-        @include('admin.addproduct')
     </div>
     <!--Container Main end-->
 <script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>

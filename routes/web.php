@@ -24,7 +24,7 @@ Route::middleware(['auth','verified'])->group(function () {
       ], function() {
             Route::get('home', [ProductController::class, 'index'])->name('admin.home');
             Route::resource('products', ProductController::class)
-                  ->only(['create','store']);
+                  ->only(['store','edit','update']);
             Route::resource('categories', CategoryController::class);
       });
 });

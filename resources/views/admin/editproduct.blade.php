@@ -1,33 +1,30 @@
 <!-- Edit Modal HTML -->
-<div id="editEmployeeModal" class="modal fade">
+<div id="editModal" aria-labelledby="editModalLabel" aria-hidden="true" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="{{route('products.store')}}" method="POST" enctype="multipart/form-data" id="productform">
+            <form action="{{route('products.update',$product)}}" method="POST" enctype="multipart/form-data" id="productform">
                 @csrf
+                @method('patch')
                 <div class="modal-header">						
-                    <h4 class="modal-title">{{__('Add Product')}}</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">{{__('Update Product')}}</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">					
                     <div class="form-group">
                         <label>{{__('Product Name')}}</label>
-                        <input class="form-control" type="text" name="name">
+                        <input class="form-control" type="text" name="name" value="{{old('name',$product->name)}}">
                     </div>
                     <div class="form-group">
                         <label>{{__('Product Price')}}</label>
-                        <input class="form-control" type="number" min="0" name="price">
+                        <input class="form-control" type="number" min="0" name="price" value="{{old('price',$product->price)}}">
                     </div>
                     <div class="form-group">
                         <label>{{__('Retail Price')}}</label>
-                        <input class="form-control" type="number" min="0" name="retail_price">
+                        <input class="form-control" type="number" min="0" name="retail_price" value="{{old('retail_price')}}">
                     </div>
                     <div class="form-group">
                         <label>{{__('Description')}}</label>
-                        <textarea class="form-control" type="text" name="description"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>{{__('Image')}}</label>
-                        <input type="file" name="img" class="form-control">
+                        <textarea class="form-control" type="text" name="description">{{old('description',$product->description)}}</textarea>
                     </div>					
                 </div>
                 <div class="modal-footer">
