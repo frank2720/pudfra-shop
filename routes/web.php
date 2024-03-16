@@ -44,7 +44,7 @@ Route::get('/shopping/cart', [ProductController::class, 'getCart'])->name('shopp
 Route::get('/shopping/removeItem/{id}', [CartController::class, 'removefromCart'])->name('removefromCart');
 Route::get('/shopping/reduceItem/{id}', [CartController::class, 'reduceInCart'])->name('productReduce');
 
-Route::get('/pagination/paginate-data',[ProductController::class,'home_products']);
+Route::get('/pagination/paginate-products',[ProductController::class,'index']);
 Route::get('/pagination/products',[ProductController::class,'products_paginate']);
 Route::get('/load-more-data', [ProductController::class,'loadmore'])->name('load.more');
 

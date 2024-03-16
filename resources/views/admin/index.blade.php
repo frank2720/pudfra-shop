@@ -271,7 +271,7 @@
             e.preventDefault();
             var page = $(this).attr('href').split('page=')[1]
             $.ajax({
-                url:'/pagination/paginate-data?page='+page,
+                url:'/pagination/paginate-products?page='+page,
                 success:function(data){
                     $('.table-wrapper').html(data);
                 },
@@ -296,7 +296,8 @@
                     <a href="#" class="nav_link active"> 
                         <i class='bx bx-store-alt nav_icon'></i> 
                         <span class="nav_name">Dashboard</span> 
-                    </a> <a href="#" class="nav_link"> 
+                    </a> 
+                    <a href="" class="nav_link" data-bs-toggle="modal" data-bs-target="#addModal"> 
                         <i class='bx bx-folder-plus nav_icon'></i> 
                         <span class="nav_name">Add products</span> 
                     </a> 
@@ -317,10 +318,15 @@
                     </a> 
                 </div>
             </div> 
-            <a href="#" class="nav_link"> 
+            <a href="{{route('logout')}}" class="nav_link"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();"> 
                 <i class='bx bx-log-out nav_icon'></i> 
                 <span class="nav_name">SignOut</span> 
             </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
         </nav>
     </div>
     <!--Container Main start-->
