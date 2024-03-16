@@ -9,17 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-//home page routes
+
 Route::get('/', [HomeController::class,'index'])->name('welcome');
 
 Route::middleware(['auth','verified'])->group(function () {
@@ -32,11 +22,9 @@ Route::middleware(['auth','verified'])->group(function () {
             'prefix'=> 'admin',
             'middleware'=>'is_admin',
       ], function() {
-            Route::get('dashboard', [ProductController::class, 'index'])->name('admin.interphase');
-            /*crud operations on products*/
+            Route::get('home', [ProductController::class, 'index'])->name('admin.home');
             Route::resource('products', ProductController::class)
                   ->only(['create','store']);
-            /*crud operations on categories*/
             Route::resource('categories', CategoryController::class);
       });
 });

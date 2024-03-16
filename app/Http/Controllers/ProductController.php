@@ -12,10 +12,11 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
+
     public function index()
     {
         $products = Product::paginate(8);
-        return view('admin.dashboard', ['products'=>$products]);
+        return view('admin.index',['products'=>$products]);
     }
 
     public function store(Request $request)
@@ -25,7 +26,7 @@ class ProductController extends Controller
             'price'=>'required',
             'retail_price'=>'required',
             'description'=>'required|string',
-            'img'=>'required',
+            'img.*'=>'required|image',
         ],
         [
             'name.required'=>'Product name required',
@@ -33,6 +34,7 @@ class ProductController extends Controller
             'retail_price.required'=>'Product retail price required',
             'description.required'=>'Product description required',
             'img.required'=>'Upload product image',
+            'img.image'=>'file must be an image'
             
         ]);
         $product = new Product;

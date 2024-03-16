@@ -1,12 +1,12 @@
 <!-- add Modal HTML -->
-<div id="addEmployeeModal" class="modal fade">
+<div id="addModal" aria-labelledby="addModalLabel" aria-hidden="true" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <form action="{{route('products.store')}}" method="POST" enctype="multipart/form-data" id="productform">
                 @csrf
                 <div class="modal-header">						
                     <h4 class="modal-title">{{__('Add Product')}}</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">					
                     <div class="form-group">
