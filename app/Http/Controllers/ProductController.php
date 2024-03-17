@@ -11,7 +11,6 @@ use Brian2694\Toastr\Facades\Toastr;
 use App\Models\Image as ProductImage;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Laravel\Facades\Image;
 
 class ProductController extends Controller
 {
@@ -48,15 +47,11 @@ class ProductController extends Controller
         $product->save();
 
         foreach ($request->file('img') as $imagefile) {
-            $imagep = new ProductImage;
+            $image = new ProductImage;
             //$path =  $imagefile->store('products');
             $path =Storage::disk('public')->put('products',$imagefile);
-            $image = Image::make($path);
-            $image->resize(150, 150, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save($path);
-            $imagep->url = $path;
-            $imagep->product_id = $product->id;
+            $image->url = $path;
+            $image->product_id = $product->id;
             $image->save();
         }
         return response()->json([]);
