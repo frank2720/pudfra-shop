@@ -22,9 +22,11 @@ Route::middleware(['auth','verified'])->group(function () {
             'middleware'=>'is_admin',
       ], function() {
             Route::get('home', [ProductController::class, 'index'])->name('admin.home');
-            Route::get('product/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
+            Route::get('edit/{product}', [ProductController::class, 'edit'])->name('products.edit');
+            Route::put('update/{id}', [ProductController::class, 'update'])->name('products.update');
+            Route::get('delete/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
             Route::resource('products', ProductController::class)
-                  ->only(['store','edit','update']);
+                  ->only(['store']);
       });
 });
 
