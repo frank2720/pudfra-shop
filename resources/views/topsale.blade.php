@@ -7,7 +7,7 @@
                 <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_586" data-bgset="{{Storage::url($product->images[0]->url)}}"></div>
             </a>
             <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
-                <div class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_586" data-bgset="{{Storage::url($product->images[1]->url)}}"></div>
+                <div class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_586" data-bgset="{{Storage::url($product->images[1]->url??$product->images[0]->url)}}"></div>
             </div>
             <div class="nt_add_w ts__03 pa ">
                 <a href="#" class="wishlistadd cb chp ttip_nt tooltip_right">

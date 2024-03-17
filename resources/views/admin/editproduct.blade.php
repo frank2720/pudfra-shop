@@ -2,7 +2,7 @@
 <div id="editModal" aria-labelledby="editModalLabel" aria-hidden="true" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="{{route('products.update',$product)}}" method="POST" enctype="multipart/form-data" id="productform">
+            <form action="" method="POST" enctype="multipart/form-data" id="productform">
                 @csrf
                 @method('patch')
                 <div class="modal-header">						
@@ -12,11 +12,11 @@
                 <div class="modal-body">					
                     <div class="form-group">
                         <label>{{__('Product Name')}}</label>
-                        <input class="form-control" type="text" name="name" value="{{old('name',$product->name)}}">
+                        <input class="form-control" type="text" name="name" value="{{old('name')}}">
                     </div>
                     <div class="form-group">
                         <label>{{__('Product Price')}}</label>
-                        <input class="form-control" type="number" min="0" name="price" value="{{old('price',$product->price)}}">
+                        <input class="form-control" type="number" min="0" name="price" value="{{old('price')}}">
                     </div>
                     <div class="form-group">
                         <label>{{__('Retail Price')}}</label>
@@ -24,7 +24,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{__('Description')}}</label>
-                        <textarea class="form-control" type="text" name="description">{{old('description',$product->description)}}</textarea>
+                        <textarea class="form-control" type="text" name="description">{{old('description')}}</textarea>
                     </div>					
                 </div>
                 <div class="modal-footer">

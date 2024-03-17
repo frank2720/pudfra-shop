@@ -7,7 +7,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CategoryController;
 
 
 Route::get('/', [HomeController::class,'index'])->name('welcome');
@@ -23,9 +22,9 @@ Route::middleware(['auth','verified'])->group(function () {
             'middleware'=>'is_admin',
       ], function() {
             Route::get('home', [ProductController::class, 'index'])->name('admin.home');
+            Route::get('product/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
             Route::resource('products', ProductController::class)
                   ->only(['store','edit','update']);
-            Route::resource('categories', CategoryController::class);
       });
 });
 

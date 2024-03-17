@@ -6,6 +6,7 @@ use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Image;
 use App\Models\Product;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -46,13 +47,22 @@ class ProductController extends Controller
 
         foreach ($request->file('img') as $imagefile) {
             $image = new Image;
-            $path =  $imagefile->store('public');
-            //$path =Storage::disk('public')->put('/',$imagefile);
+            //$path =  $imagefile->store('products');
+            $path =Storage::disk('public')->put('products',$imagefile);
             $image->url = $path;
             $image->product_id = $product->id;
             $image->save();
         }
         return response()->json([]);
+    }
+
+    public function destroy($product):RedirectResponse
+    {
+        $product = Product::find($product);
+        
+            $product->delete();
+        
+        return back()->withInput();
     }
 
     public function pagination(Request $request)

@@ -332,6 +332,11 @@
     <!--Container Main start-->
     <div class="height-100 bg-light">
         <div class="container">
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            @endif
             <div class="table-wrapper table-responsive">
                 <div class="table-title">
                     <div class="row">
@@ -369,7 +374,7 @@
 
                             <td>
                                 <a href="" class="edit" data-bs-toggle="modal" data-bs-target="#editModal"><i class='bx bx-edit-alt' title="edit"></i></a>
-                                <a href="" class="delete" data-toggle="modal"><i class='bx bx-trash' title="delete"></i></a>
+                                <a href="{{route('products.destroy',['product'=>$product->id])}}" class="delete" data-toggle="modal"><i class='bx bx-trash' title="delete"></i></a>
                             </td>
                         </tr>
                         @endforeach
