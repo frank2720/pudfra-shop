@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{__('Image')}}</label>
-                        <input type="file" name="img[]" class="form-control" multiple>
+                        <input type="file" name="img[]" class="form-control" multiple required>
                     </div>					
                 </div>
                 <div class="modal-footer">
