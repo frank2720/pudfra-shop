@@ -30,7 +30,7 @@
         <tbody>
             @foreach ($products as $product)
             <tr>
-                <td><img src="{{Storage::url($product->images[0]->url)}}" alt="" style="height: 30px"></td>
+                <td><img src="{{Storage::url($product->images[0]->url??null)}}" alt="" style="height: 30px"></td>
                 <td>{{$product->name}}</td>
                 <td>{{$product->price}}</td>
                 <td>{{$product->retail_price}}</td>
