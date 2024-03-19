@@ -11,6 +11,8 @@ use Brian2694\Toastr\Facades\Toastr;
 use App\Models\Image as ProductImage;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 class ProductController extends Controller
 {
@@ -47,12 +49,19 @@ class ProductController extends Controller
         $product->save();
 
         foreach ($request->file('img') as $imagefile) {
-            $image = new ProductImage;
+            $imagename = str()->uuid().'.webp';
+            $imagedetails = new ProductImage;
+
+            
+            $manager = new ImageManager(new Driver());
+            $image = $manager->read($imagefile);
+            $image = $image->scale(640,640);
+            $image->toWebp()->save(storage_path('app/public/products/'.$imagename));
             //$path =  $imagefile->store('products');
-            $path =Storage::disk('public')->put('products',$imagefile);
-            $image->url = $path;
-            $image->product_id = $product->id;
-            $image->save();
+            //$path =Storage::disk('public')->put('products',$imagefile);
+            $imagedetails->url = 'products/'.$imagename;
+            $imagedetails->product_id = $product->id;
+            $imagedetails->save();
         }
         return response()->json([]);
     }
