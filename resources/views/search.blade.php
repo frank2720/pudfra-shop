@@ -35,20 +35,25 @@
             <div class="search_header__content mini_cart_content fixcl-scroll widget">
                 <div class="fixcl-scroll-content product_list_widget">
                     <div class="js_prs_search" id="search_product">
-
-                        @foreach ($latest as $product)
-                            <div class="row mb__10 pb__10">
-                                <div class="col widget_img_pr">
-                                    <a class="db pr oh" href=""><img src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20768%20768%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" class="w__100 lz_op_ef lazyload" alt="cru thermos jug" data-src="" width="80" height="80"></a>
-                                </div>
-                                <div class="col widget_if_pr">
-                                    <a class="product-title db" href="product-detail-layout-01.html">{{$product->name}}</a>
-                                    ${{$product->price}}
+                        <div class="container-fluid  mt-100">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Search result</h5>
+                                        </div>
+                                        <div class="card-body cart">
+                                            <div class="col-sm-12 empty-cart-cls text-center">
+                                                <img src="{{asset('images/not-found.png')}}" width="130" height="130" class="img-fluid mb-4 mr-3">
+                                                <h3><strong class="text-danger">Nothing searched</strong></h3>
+                                                <h4>Start searching for an item in our store</h4>
+                                                <a href="{{route('shop')}}" class="btn btn-primary cart-btn-transform m-3" data-abc="true">continue shopping</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        @endforeach
-                        <a href="#" class="btn fwsb detail_link">View All
-                            <i class="las la-arrow-right fs__18"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
