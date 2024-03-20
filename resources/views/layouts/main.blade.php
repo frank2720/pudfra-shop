@@ -168,13 +168,73 @@
                 search_string:search_string
             },
             success:function(data){
-                $('.shop-data').html(data);
+                let htmlView = '';
+            for(let i = 0; i < data.length; i++){
+                htmlView += "<div class='row mb__10 pb__10'><div class='col widget_img_pr'><a class='db pr oh' href='product-detail-layout-01.html'><img src='data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%201200%201200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E' class='w__100 lz_op_ef lazyload' alt='sunlight bell solar lamp' data-src='assets/images/mini-cart/product-01.jpg' width='80' height='80'></a></div><div class='col widget_if_pr'><a class='product-title db' href='product-detail-layout-01.html'>"+data[i].name+"</a>$35.00</div></div>";
+            }    
+            $('#search_product').html(htmlView);
             },
             error: function (error) {
                 console.error(error);
             }
         });
     });
+/*
+    $(document).on('keyup',function (e) {
+        e.preventDefault();
+        var keyword = $('#search').val();
+        $.ajax({
+            url:"{{route('product.search')}}",
+            {_token: $('meta[name="csrf-token"]').attr('content'),
+            keyword:keyword
+            }
+            method:'GET',
+            data:{
+                search_string:search_string
+            },
+            success:function(data){
+                $('.js_prs_search').html(data);
+            },
+            error: function (error) {
+                console.error(error);
+            }
+        });
+    });
+*/
+
+   /* $('#search').on('keyup',function(){
+        search();
+    });
+    search();
+    function search(){ 
+            var keyword = $('#search').val();
+            $.post('{{ route("product.search") }}',
+            function(data){
+                product_post(data);
+                console.log(data);
+            });
+        }
+       
+        product_post(res){
+            let htmlView = '';
+            if(res.products.length <= 0){
+                htmlView+= `<div class="row mb__10 pb__10">No product found</div>`;
+            }
+            for(let i = 0; i < res.products.length; i++){
+                    htmlView += `
+                    <div class="row mb__10 pb__10">
+                            <div class="col widget_img_pr">
+                                <a class="db pr oh" href="product-detail-layout-01.html"><img src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%201200%201200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" class="w__100 lz_op_ef lazyload" alt="sunlight bell solar lamp" data-src="assets/images/mini-cart/product-01.jpg" width="80" height="80"></a>
+                            </div>
+                            <div class="col widget_if_pr">
+                                <a class="product-title db" href="product-detail-layout-01.html">sunlight bell solar lamp</a>$35.00
+                            </div>
+                    </div>`;
+            }     
+            $('.js_prs_search').html(htmlView);
+        }
+
+*/
 
     $(document).on('submit','#payform', function (e) {
     //e.preventDefault();

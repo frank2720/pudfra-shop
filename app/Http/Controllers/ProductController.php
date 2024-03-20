@@ -129,19 +129,4 @@ class ProductController extends Controller
             'totalPrice'=>$cart->totalPrice,
         ]);
     }
-
-    public function product_search(Request $request): View
-    {
-        $products = Product::where('name','like', '%'.$request->search_string.'%')
-        ->orwhere('price','like', '%'.$request->search_string.'%')
-        ->orderBy('name')
-        ->paginate(8);
-        if (count($products) >=1) {
-            return view('shop_search', [
-                'products'=>$products,
-            ]);
-        } else {
-            return view('search_error');
-        }
-    }
 }

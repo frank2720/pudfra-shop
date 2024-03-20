@@ -51,7 +51,7 @@ Route::get('/load-more-data', [ProductController::class,'loadmore'])->name('load
 
 Route::get('/product-details/{id}', [ProductController::class,'quick_view'])->name('product.details');
 
-Route::get('/search',[ProductController::class, 'product_search'])->name('product.search');
+Route::get('/search',[HomeController::class, 'product_search'])->name('product.search');
 
 Auth::routes();
 

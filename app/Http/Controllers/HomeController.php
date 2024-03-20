@@ -52,4 +52,12 @@ class HomeController extends Controller
             'totalPrice'=>$cart->totalPrice,
         ]);
     }
+
+    public function product_search(Request $request)
+    {
+        $products = Product::where('name','like', '%'.$request->search_string.'%')->get();
+        if (count($products) >=1) {
+            return response()->json($products);
+        }
+    }
 }
