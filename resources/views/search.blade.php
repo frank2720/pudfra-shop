@@ -39,7 +39,7 @@
                         @foreach ($latest as $product)
                             <div class="row mb__10 pb__10">
                                 <div class="col widget_img_pr">
-                                    <a class="db pr oh" href="product-detail-layout-01.html"><img src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20768%20768%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" class="w__100 lz_op_ef lazyload" alt="cru thermos jug" data-src="assets/images/mini-cart/product-02.jpg" width="80" height="80"></a>
+                                    <a class="db pr oh" href=""><img src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20768%20768%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" class="w__100 lz_op_ef lazyload" alt="cru thermos jug" data-src="" width="80" height="80"></a>
                                 </div>
                                 <div class="col widget_if_pr">
                                     <a class="product-title db" href="product-detail-layout-01.html">{{$product->name}}</a>
