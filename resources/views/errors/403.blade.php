@@ -1,4 +1,4 @@
-@extends('errors.main')
+@extends('layouts.errors')
 @section('content')
 <section class="py-3 py-md-5 min-vh-100 d-flex justify-content-center align-items-center">
   <div class="container">
@@ -7,7 +7,7 @@
         <div class="text-center">
           <h2 class="d-flex justify-content-center align-items-center gap-2 mb-4">
             <span class="display-1 fw-bold">4</span>
-            <i class="bi bi-exclamation-circle-fill text-danger display-4"></i>
+            <span class="display-1 fw-bold">0</span>
             <span class="display-1 fw-bold">3</span>
           </h2>
           <h3 class="h2 mb-2">Oops! You're not authorized.</h3>
