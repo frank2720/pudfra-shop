@@ -23,10 +23,6 @@
 </head>
 <body>
     @yield('content')
-    @include('layouts.footer')
-    <a href="https://wa.me/254768990829" class="float" target="_blank">
-        <i class="fa fa-whatsapp wp-button"></i>
-    </a>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
 <script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 </body>
