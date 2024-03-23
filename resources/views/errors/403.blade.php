@@ -10,8 +10,8 @@
             <span class="display-1 fw-bold">0</span>
             <span class="display-1 fw-bold">3</span>
           </h2>
-          <h3 class="h2 mb-2">Oops! You're not authorized.</h3>
-          <p class="mb-5">You dont have the authority to access this page.</p>
+          <h3 class="h2 mb-2">Oops! You're Forbidden.</h3>
+          <p class="mb-5">You dont have the rights to access this page.</p>
           <a class="btn bsb-btn-5xl btn-dark rounded-pill px-5 fs-6 m-0" href="{{route('welcome')}}" role="button">Back to Home</a>
         </div>
       </div>
