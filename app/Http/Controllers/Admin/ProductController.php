@@ -1,22 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Cart;
 use App\Models\Product;
-use App\Models\Category;
-use Illuminate\View\View;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
+use Intervention\Image\ImageManager;
 use App\Models\Image as ProductImage;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Storage;
-use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 class ProductController extends Controller
 {
-
     public function index()
     {
         $products = Product::paginate(6);
@@ -103,30 +99,5 @@ class ProductController extends Controller
             $product->delete();
         Toastr::warning('Product deleted!', 'Delete', ["positionClass" => "toast-top-right"]);
         return back();
-    }
-
-    public function pagination(Request $request)
-    {
-        $products = Product::paginate(8);
-        return view('admin.pagination_dash', ['products'=>$products]);
-    }
-    
-    public function create():View
-    {
-        return view('admin.add_product');
-    }
-
-    public function products_paginate(): View
-    {
-        $products = Product::orderBy('name')->paginate(8);
-        $categories = Category::all();
-        $oldCart = session()->get('cart');
-        $cart = new Cart($oldCart);
-        return view('shop_paginate', [
-            'products'=>$products,
-            'categories'=>$categories,
-            'cart_products'=>$cart->items,
-            'totalPrice'=>$cart->totalPrice,
-        ]);
     }
 }
