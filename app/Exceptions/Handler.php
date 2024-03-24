@@ -40,6 +40,9 @@ class Handler extends ExceptionHandler
             if ($e->getStatusCode() == 500) {
                 return response()->view('errors.500', [], 500);
             }
+            if ($e->getStatusCode() == 503) {
+                return response()->view('errors.503',[], 503);
+            }
         }
         return parent::render($request, $e);
     }
