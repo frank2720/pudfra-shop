@@ -11,11 +11,7 @@ use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
-    public function pagination(Request $request)
-    {
-        $products = Product::paginate(8);
-        return view('admin.pagination_dash', ['products'=>$products]);
-    }
+    
 
     public function products_paginate(): View
     {
