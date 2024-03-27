@@ -1,6 +1,6 @@
 :root {
-    --main-color: #56cfe1;
-    --hover-main-color: #007e91;
+    --main-color: #0f78af;
+    --hover-main-color: #085a86;
     --text: #222222;
     --tooltip-boder-color: #383838;
 }
@@ -9025,7 +9025,7 @@ body.dark-mode .nt_menu ul li.is_hover a {
 }
 
 .cp, .chp:hover {
-    color: #56cfe1;
+    color: #0f78af;
 }
 
 .cw, .bghp:hover {
@@ -9058,7 +9058,7 @@ body.dark-mode .nt_menu ul li.is_hover a {
 
 /* Black Lighter */
 .bgp, .bghp:hover {
-    background: #56cfe1;
+    background: #0f78af;
 }
 
 .bgd {
@@ -22138,7 +22138,7 @@ img.lz_op_ef.lazyloaded,
     left: 8px;
     right: 8px;
     bottom: 8px;
-    background: #56cfe1;
+    background: #0f78af;
     transition: all .3s;
     -webkit-transform: scale(0);
     -ms-transform: scale(0);
@@ -24046,7 +24046,7 @@ button.mfp-close:hover {
 }
 
 .mini_cart_footer .button.btn-checkout {
-    background: #56cfe1;
+    background: #0f78af;
     color: #fff;
 }
 
@@ -26617,9 +26617,9 @@ html.wf-fontawesome5free-n9-loading .tab-heading:after {
 
 .shipping_calculator input.get_rates,
 input.button.btn_back {
-    background-color: #56cfe1;
+    background-color: #0f78af;
     cursor: pointer;
-    border: 2px solid #56cfe1;
+    border: 2px solid #0f78af;
     padding: 6px 35px;
     color: #fff;
     border-radius: 40px;
@@ -29130,7 +29130,7 @@ a.pswp__share--download:hover {
 }
 
 .pswp_tp_light .pswp_thumb_item.pswp_tb_active {
-    box-shadow: 0 0 0 2px #56cfe1;
+    box-shadow: 0 0 0 2px #0f78af;
 }
 
 .pswp_tp_light .pswp__caption__center {
@@ -31317,7 +31317,7 @@ input.search_header__input:not([type="submit"]):not([type="checkbox"]) {
 }
 
 .mini_cart_footer .button.btn-checkout {
-    background: #56cfe1;
+    background: #0f78af;
     color: #fff;
 }
 
@@ -31864,9 +31864,9 @@ input[type="checkbox"].css_agree_ck {
 
 .shipping_calculator input.get_rates,
 input.button.btn_back {
-    background-color: #56cfe1;
+    background-color: #0f78af;
     cursor: pointer;
-    border: 2px solid #56cfe1;
+    border: 2px solid #0f78af;
     padding: 6px 35px;
     color: #fff;
     border-radius: 40px;
@@ -32790,7 +32790,7 @@ body .tooltip_bottom_right:hover .tt_txt {
 .variations.style__radio li:hover span.radio_styled,
 .variations.style__radio li.is-selected span.radio_styled,
 .variations.style__radio li.is-selected-nt span.radio_styled {
-    border-color: #56cfe1;
+    border-color: #0f78af;
 }
 
 .kalles-default-distance > .container,
@@ -32924,7 +32924,7 @@ body .tooltip_bottom_right:hover .tt_txt {
     padding: 30px;
     width: 100%;
     max-width: 500px;
-    background-color: #56cfe1;
+    background-color: #0f78af;
     color: #fff;
     background-size: cover;
     background-repeat: no-repeat;
@@ -33032,7 +33032,7 @@ body .tooltip_bottom_right:hover .tt_txt {
 *! footer
 ========================================================================== */
 .footer__top a:hover {
-    color: #56cfe1
+    color: #0f78af
 }
 
 .footer__top .signup-newsletter-form, .footer__top .signup-newsletter-form input.input-text {
@@ -33074,7 +33074,7 @@ body .tooltip_bottom_right:hover .tt_txt {
 }
 
 .footer__bot_wrap a:hover {
-    color: #56cfe1
+    color: #0f78af
 }
 
 .footer__bot_wrap {
@@ -33375,7 +33375,7 @@ a, a:hover, a:focus, a:active {
 }
 
 a:hover, a:active {
-    color: #56cfe1;
+    color: #0f78af;
 }
 
 em {
@@ -33537,8 +33537,8 @@ a.external_btn.truncate.button {
 input[type="submit"]:hover,
 button:hover,
 a.button:hover {
-    border-color: #56cfe1;
-    background-color: #56cfe1;
+    border-color: #0f78af;
+    background-color: #0f78af;
     color: #fff;
 }
 
