@@ -2607,51 +2607,7 @@
                 }
             }
         } );
-
-        /**********************************************
-         * Remove mini cart
-         * ********************************************/
-        /*$nt_js_cart.on( 'click', '.cart_ac_remove', function ( evt ) {
-            evt.preventDefault();
-            evt.stopPropagation();
-            let $this       = $( this ),
-                $wrapItem   = $this.closest( '.mini_cart_item' ),
-                $processTag = $wrapItem.find( '.ld_cart_bar' );
-
-            $nt_js_cart.addClass( 'ld_nt_cl' );
-            if ( $processTag.length ) {
-                $processTag.addClass( 'on_star' );
-                setTimeout( () => {
-                    $processTag.addClass( 'on_end' );
-                    $wrapItem.slideUp( 300, 'swing', function () {
-                        $( this ).remove()
-                        if ( !$nt_js_cart.find( '.mini_cart_item' ).length ) {
-                            $nt_js_cart.find( '.mini_cart_items , .mini_cart_tool' ).remove();
-                            $nt_js_cart.find( '.empty.tc' ).show( 300, 'swing', function () {
-                                $( this ).removeClass( 'dn' )
-                            } );
-                        }
-                        console.log( $nt_js_cart.find( '.mini_cart_item' ).length );
-                    } );
-                    $nt_js_cart.removeClass( 'ld_nt_cl' );
-
-                }, 1000 );
-            } else {
-                setTimeout( () => {
-                    $wrapItem.slideUp( 300, 'swing', function () {
-                        $( this ).remove();
-                        if ( !$nt_js_cart.find( '.mini_cart_item' ).length ) {
-                            $nt_js_cart.find( '.mini_cart_items , .mini_cart_tool' ).remove();
-                            $nt_js_cart.find( '.empty.tc' ).show( 300, 'swing', function () {
-                                $( this ).removeClass( 'dn' )
-                            } );
-                        }
-                    } );
-                    $nt_js_cart.removeClass( 'ld_nt_cl' );
-                }, 1000 );
-            }
-        } );*/
-
+        
         /**********************************************
          * Remove product in wishlist
          * ********************************************/
@@ -2755,11 +2711,13 @@ function addtocart(productId) {
             } 
         }, 500);
         $('.add-to-cart-btn').removeClass( 'loading' );
-        $('.tcount').hide()
-        $('.toolbar_count').hide()
+        //$('.tcount').hide()
+        $(document).find('.tcount').remove()
+        $(document).find('.toolbar_count').remove()
+        //$('.toolbar_count').hide()
         $('#mobcartvalue').append("<span class='jsccount toolbar_count'>"+data.totalQty+"</span>")
         $('#cartvalue').append("<span class='op__0 ts_op pa tcount bgb br__50 cw tc'>"+data.totalQty+"</span>")
-        $('.cart_tot_price').hide()
+        $(document).find('.cart_tot_price').remove()
         $('.js_cat_ttprice').append("<div class='cart_tot_price'>"+new Intl.NumberFormat('en-US', 
         {  
             style: 'currency',  
@@ -2823,11 +2781,11 @@ function removefromcart(productremovedId,$processTag,$wrapItem) {
                     $(document).removeClass( 'ld_nt_cl' );
                 }, 1000 );
             }
-            $('.toolbar_count').hide()
-            $('.tcount').hide()
+            $(document).find('.tcount').remove()
+            $(document).find('.toolbar_count').remove()
             $('#mobcartvalue').append("<span class='jsccount toolbar_count'>"+data.totalQty+"</span>")
             $('#cartvalue').append("<span class='op__0 ts_op pa tcount bgb br__50 cw tc'>"+data.totalQty+"</span>")
-            $('.cart_tot_price').hide()
+            $(document).find('.cart_tot_price').remove()
             $('.js_cat_ttprice').append("<div class='cart_tot_price'>"+new Intl.NumberFormat('en-US', 
             {  
                 style: 'currency',  

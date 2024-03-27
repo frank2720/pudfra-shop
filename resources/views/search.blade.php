@@ -26,7 +26,7 @@
                     </select>
                 </div>
                 <div class="frm_search_input pr oh">
-                    <input class="search_header__input js_iput_search placeholder-black" autocomplete="off" type="text" name="search" id="search" placeholder="Search for products">
+                    <input class="search_header__input js_iput_search placeholder-black" autocomplete="search" type="text" name="search" id="search" placeholder="Search for products">
                     <button class="search_header__submit js_btn_search" type="submit"><i class="iccl iccl-search"></i>
                     </button>
                 </div>

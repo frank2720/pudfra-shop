@@ -16,7 +16,8 @@
                         </p>
                     </div>
                     @if (session()->has('cart') && $totalPrice>0)
-                    @foreach ($cart_products as $product)
+                    <div id="cart-p">
+                        @foreach ($cart_products as $product)
                     <div class="mini_cart_items js_cat_items lazyload">
                         <div class="mini_cart_item js_cart_item flex al_center pr oh">
                             <div class="ld_cart_bar"></div>
@@ -57,6 +58,7 @@
                         </div>
                     </div>
                     @endforeach
+                    </div>
                     <div class="mini_cart_tool js_cart_tool tc ">
                         <div data-id="note" class="mini_cart_tool_note js_cart_tls ttip_nt tooltip_top">
                             <span class="txt_add_note "><i class="lar la-clipboard"></i><span class="tt_txt">Add Order Note</span></span>

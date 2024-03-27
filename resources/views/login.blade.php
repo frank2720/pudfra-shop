@@ -11,8 +11,8 @@
                     <div class="mini_cart_content fixcl-scroll">
                         <div class="fixcl-scroll-content">
                             <p class="form-row">
-                                <label for="email">Email <span class="required">*</span></label>
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <label for="login-email">Email <span class="required">*</span></label>
+                                <input id="login-email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -20,8 +20,8 @@
                                 @enderror
                             </p>
                             <p class="form-row">
-                                <label for="password">Password <span class="required">*</span></label>
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <label for="login-password">Password <span class="required">*</span></label>
+                                <input id="login-password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
