@@ -50,7 +50,7 @@ Route::get('/pagination/paginate-products',[AdminProductController::class,'index
 Route::get('/pagination/products',[UserProductController::class,'products_paginate']);
 Route::get('/load-more-data', [UserProductController::class,'loadmore'])->name('load.more');
 
-Route::get('/product-details/{id}', [UserProductController::class,'quick_view'])->name('product.details');
+Route::get('/product-details/{id}', [UserProductController::class,'product_details'])->name('product.details');
 
 Route::get('/search',[HomeController::class, 'product_search'])->name('product.search');
 

@@ -4,26 +4,27 @@ namespace App\Http\Controllers\User;
 
 use App\Models\Cart;
 use App\Models\Product;
-use App\Models\Category;
-use Illuminate\View\View;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
     
 
-    public function products_paginate(): View
+    public function product_details($id)
     {
-        $products = Product::orderBy('name')->paginate(8);
-        $categories = Category::all();
+        $nav_products = Product::with('images')->get();
+        $product = Product::with('images')->find($id);
+        $latest = Product::with('images')
+                        ->latest()
+                        ->paginate(8);
         $oldCart = session()->get('cart');
+        //dd(session()->get('cart'));
         $cart = new Cart($oldCart);
-        return view('shop_paginate', [
-            'products'=>$products,
-            'categories'=>$categories,
-            'cart_products'=>$cart->items,
-            'totalPrice'=>$cart->totalPrice,
-        ]);
+        return view('product-detail', 
+        ['products'=>$product,
+        'nav_products'=>$nav_products,
+        'latest'=>$latest,
+        'cart_products'=>$cart->items,
+        'totalPrice'=>$cart->totalPrice]);
     }
 }
