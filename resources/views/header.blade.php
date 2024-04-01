@@ -15,7 +15,7 @@
                             </a></div>
                         <div class="col-lg-2 col-md-4 col-6 tc tl_lg">
                             <div class=" branding ts__05 lh__1">
-                                <a class="dib" href="">
+                                <a class="dib" href="{{route("home")}}">
                                     <img class="w__95 logo_normal dn db_lg" src="{{asset("assets/images/svg/maanar.svg")}}" alt="Kalles Template">
                                     <img class="w__100 logo_sticky dn" src="{{asset("assets/images/svg/maanar.svg")}}" alt="Kalles Template">
                                     <img class="w__100 logo_mobile dn_lg" src="{{asset("assets/images/svg/maanar.svg")}}" alt="Kalles Template">
@@ -26,7 +26,7 @@
                             <nav class="nt_navigation kl_navigation tc hover_side_up nav_arrow_false">
                                 <ul id="nt_menu_id" class="nt_menu in_flex wrap al_center">
                                     <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                        <a class="lh__1 flex al_center pr" href="">Home</a>
+                                        <a class="lh__1 flex al_center pr" href="{{route("home")}}">Home</a>
                                     </li>
                                     <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
                                         <a class="lh__1 flex al_center pr kalles-lbl__nav-sale" href="">Products</a>

@@ -25,7 +25,7 @@
         </div>
         <div class="product-info mt__15">
             <h3 class="product-title position-relative fs__14 mg__0 fwm">
-                <a class="cd chp" href="">{{__(ucfirst(strtolower($product->name)))}}</a>
+                <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">{{__(ucfirst(strtolower($product->name)))}}</a>
             </h3>
             <span class="price dib mb__5">$ {{number_format($product->price,2,".",",")}}</span>
         </div>
