@@ -21,7 +21,7 @@ class ProductController extends Controller
         //dd(session()->get('cart'));
         $cart = new Cart($oldCart);
         return view('product-detail', 
-        ['products'=>$product,
+        ['product'=>$product,
         'nav_products'=>$nav_products,
         'latest'=>$latest,
         'cart_products'=>$cart->items,
