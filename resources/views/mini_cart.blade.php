@@ -93,8 +93,8 @@
                     </div>
                 </div>
                 <p class="txt_tax_ship mb__5 fs__12">Taxes, shipping and discounts codes calculated at checkout</p>
-                <a href="shopping-cart.html" class="button btn-cart mt__10 mb__10 js_add_ld d-inline-flex justify-content-center align-items-center cd-imp">View cart</a>
-                <a href="checkout.html" class="button btn-checkout mt__10 mb__10 js_add_ld d-inline-flex justify-content-center align-items-center text-white">Check Out</a>
+                <a href="" class="button btn-cart mt__10 mb__10 js_add_ld d-inline-flex justify-content-center align-items-center cd-imp">View cart</a>
+                <a href="" class="button btn-checkout mt__10 mb__10 js_add_ld d-inline-flex justify-content-center align-items-center text-white">Check Out</a>
             </div>
         </div>
 
@@ -133,26 +133,14 @@
             <div class="shipping_calculator">
                 <h3>Estimate Shipping</h3>
                 <p class="field">
-                    <label for="address_country_ship">Country</label>
-                    <select id="address_country_ship" class=" lazyload">
-                        <option value="" selected>---</option>
-                        <option value="United States">United States</option>
-                        <option value="United Kingdom">United Kingdom</option>
-                        <option value="Italy">Italy</option>
-                        <option value="Germany">Germany</option>
-                        <option value="France">France</option>
-                        <option value="Spain">Spain</option>
-                        <option value="Australia">Australia</option>
-                        <option value="Finland">Finland</option>
-                        <option value="Austria">Austria</option>
-                        <option value="Belgium">Belgium</option>
-                        <option value="Brazil">Brazil</option>
-                        <option value="Canada">Canada</option>
-                        <option value="Chile">Chile</option>
-                        <option value="Cuba">Cuba</option>
-                        <option value="India">India</option>
-                        <option value="Indonesia">Indonesia</option>
-                        <option value="Japan">Japan</option>
+                    <label for="">Region</label>
+                    <select id="" class=" lazyload">
+                        <option value="" selected disabled>---</option>
+                        <option value="region 1">region 1</option>
+                        <option value="region 2">region 2</option>
+                        <option value="region 3">region 3</option>
+                        <option value="region 4">region 4</option>
+                        <option value="region 5">region 5</option>
                     </select>
                 </p>
                 <p class="field">

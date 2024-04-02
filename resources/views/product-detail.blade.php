@@ -32,7 +32,7 @@
                     </dd>
                 </dl>
                 <hr>
-                <button type="submit" data-time="6000" data-ani="shake" class="single_add_to_cart_button button truncate w__100 mt__20 order-4 d-inline-block animated">
+                <button type="button" data-product-id="{{$product->id}}" class="single_add_to_cart_button button truncate w__100 mt__20 order-4 d-inline-block animated add-to-cart-btn">
                         <span class="txt_add ">Add to cart</span>
                 </button>
             </article>

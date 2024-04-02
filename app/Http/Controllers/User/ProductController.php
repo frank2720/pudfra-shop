@@ -27,4 +27,21 @@ class ProductController extends Controller
         'cart_products'=>$cart->items,
         'totalPrice'=>$cart->totalPrice]);
     }
+
+    public function products()
+    {
+        $products = Product::with('images')->get();
+        $nav_products = Product::with('images')->get();
+        $latest = Product::with('images')
+                        ->latest()
+                        ->paginate(8);
+        $oldCart = session()->get('cart');
+        //dd(session()->get('cart'));
+        $cart = new Cart($oldCart);
+        return view('shop',['products'=>$products,
+        'nav_products'=>$nav_products,
+        'latest'=>$latest,
+        'cart_products'=>$cart->items,
+        'totalPrice'=>$cart->totalPrice]);
+    }
 }

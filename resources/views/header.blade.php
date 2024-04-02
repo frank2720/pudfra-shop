@@ -29,19 +29,19 @@
                                         <a class="lh__1 flex al_center pr" href="{{route("home")}}">Home</a>
                                     </li>
                                     <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                        <a class="lh__1 flex al_center pr kalles-lbl__nav-sale" href="">Products</a>
+                                        <a class="lh__1 flex al_center pr kalles-lbl__nav-sale" href="{{route('shop')}}">Products</a>
                                         <div class="cus sub-menu">
                                             <div class="container megamenu-content-1200px">
                                                 <div class="row lazy_menu lazyload" data-jspackery='{ "itemSelector": ".sub-column-item","gutter": 0,"percentPosition": true,"originLeft": true }'>
                                                     <div class="type_mn_link2 menu-item sub-column-item col-2">
-                                                        <a href="">Accessories</a>
-                                                        <a href="">Footwear</a>
-                                                        <a href="">Women</a>
-                                                        <a href="">T-Shirt</a>
-                                                        <a href="">Shoes</a>
-                                                        <a href="">Denim</a>
-                                                        <a href="">Dress</a>
-                                                        <a href="">Men</a>
+                                                        <a href="{{route('shop')}}">Accessories</a>
+                                                        <a href="{{route('shop')}}">Footwear</a>
+                                                        <a href="{{route('shop')}}">Women</a>
+                                                        <a href="{{route('shop')}}">T-Shirt</a>
+                                                        <a href="{{route('shop')}}">Shoes</a>
+                                                        <a href="{{route('shop')}}">Denim</a>
+                                                        <a href="{{route('shop')}}">Dress</a>
+                                                        <a href="{{route('shop')}}">Men</a>
                                                     </div>
                                                     <div class="type_mn_pr menu-item sub-column-item col-10">
                                                         <div class="prs_nav js_carousel nt_slider products nt_products_holder row al_center row_pr_1 cdt_des_1 round_cd_false nt_cover ratio_nt position_8 flickity-enabled is-draggable" data-flickity='{"imagesLoaded": 0,"adaptiveHeight": 0, "contain": 1, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": 1,"prevNextButtons": 1,"percentPosition": 1,"pageDots": 0, "autoPlay" : 0, "pauseAutoPlayOnHover" : 1, "rightToLeft": false }'>
