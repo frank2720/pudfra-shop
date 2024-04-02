@@ -18,7 +18,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
-<body class="kalles-template header_full_true des_header_3 css_scrollbar lazy_icons btnt4_style_2 zoom_tp_2 css_scrollbar template-index kalles_toolbar_true hover_img2 swatch_style_rounded swatch_list_size_small label_style_rounded wrapper_full_width header_full_true hide_scrolld_true lazyload">
+<body class="kalles-template header_full_true des_header_3 css_scrollbar lazy_icons btnt4_style_2 zoom_tp_2 css_scrollbar template-index kalles_toolbar_true hover_img2 swatch_style_rounded swatch_list_size_small label_style_rounded wrapper_full_width header_full_true hide_scrolld_true lazyload font-poppins">
 <div id="nt_wrapper">
 
     @include('header')
@@ -124,6 +124,17 @@
             },       
         });
     });
+    });
+
+    $(document).ready(function() {
+        $('.img-small-wrap img').mouseover(function() {
+            var imgSrc = $(this).attr('src');
+            $('.zoomed-image').html('<img src="' + imgSrc + '">').fadeIn();
+        });
+
+        $('.img-small-wrap img').mouseleave(function() {
+            $('.zoomed-image').fadeOut().html('');
+        });
     });
 </script>
 </body>

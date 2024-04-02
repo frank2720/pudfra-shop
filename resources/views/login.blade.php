@@ -5,7 +5,7 @@
             <form id="customer_login" class="nt_mini_cart flex column h__100 is_selected" action="{{route('login')}}" method="POST">
                 @csrf
                 <div class="mini_cart_header flex fl_between al_center">
-                    <div class="h3 widget-title tu fs__16 mg__0">Login</div>
+                    <h3 class="widget-title tu fs__16 mg__0 font-poppins">Login</h3>
                     <i class="close_pp pegk pe-7s-close ts__03 cd"></i></div>
                 <div class="mini_cart_wrap">
                     <div class="mini_cart_content fixcl-scroll">
@@ -57,7 +57,7 @@
             <form id="RegisterForm" class="nt_mini_cart flex column h__100" method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="mini_cart_header flex fl_between al_center">
-                    <div class="h3 widget-title tu fs__16 mg__0">Register</div>
+                    <h3 class="widget-title tu fs__16 mg__0 font-poppins">Register</h3>
                     <i class="close_pp pegk pe-7s-close ts__03 cd"></i>
                 </div>
                 <div class="mini_cart_wrap">

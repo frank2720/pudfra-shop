@@ -34677,7 +34677,7 @@ body.rtl .nt_fk_canvas {
 }
 
 .gallery-wrap .img-big-wrap img {
-    height: 450px;
+    height:min-content;
     width: auto;
     display: inline-block;
     cursor: zoom-in;
@@ -34702,4 +34702,15 @@ body.rtl .nt_fk_canvas {
     object-fit: cover;
     border-radius: 4px;
     cursor: zoom-in;
+}
+
+.zoomed-image {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    max-width: 80%;
+    max-height: 80%;
 }

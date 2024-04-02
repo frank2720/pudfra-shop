@@ -3,32 +3,31 @@
 <div class="container">
     <div class="card">
         <div class="row">
-            <aside class="col-sm-5 border-right">
+        <aside class="col-sm-5 border-right">
                 <article class="gallery-wrap"> 
                     <div class="img-big-wrap">
                         <div> <a href="#"><img src="{{Storage::url($product->images[0]->url)}}"></a></div>
                     </div>
                     <div class="img-small-wrap">
                         @foreach ($product->images as $image)
-                            <div class="item-gallery"> <img src="{{Storage::url($image->url)}}"> </div>
+                            <div class="item-gallery"><img src="{{Storage::url($image->url)}}" height="256"></div>
                         @endforeach
                     </div>
+                    <div class="zoomed-image"></div>
                 </article>
 		</aside>
         <aside class="col-sm-7">
             <article class="card-body p-5">
-                <h3 class="title mb-3">Original Version of Some product name</h3>
+                <h3 class="title mb-3">{{$product->name}}</h3>
                 <p class="price-detail-wrap"> 
                     <span class="price h3 text-warning"> 
-                        <span class="currency">US $</span><span class="num">1299</span>
+                        <span class="currency">$</span><span class="num">{{$product->price}}</span>
                     </span>
                 </p>
                 <dl class="item-property">
                     <dt>Description</dt>
                     <dd>
-                        <p>Here goes description consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco 
+                        <p>{{$product->description}}
                         </p>
                     </dd>
                 </dl>
