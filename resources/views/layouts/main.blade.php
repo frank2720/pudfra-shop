@@ -127,14 +127,23 @@
     });
 
     $(document).ready(function() {
+        // For desktop hover
         $('.img-small-wrap img').mouseover(function() {
-            var imgSrc = $(this).attr('src');
-            $('.zoomed-image').html('<img src="' + imgSrc + '">').fadeIn();
+            enlargeImage($(this).attr('src'));
         });
 
         $('.img-small-wrap img').mouseleave(function() {
             $('.zoomed-image').fadeOut().html('');
         });
+
+        // For mobile touch
+        $('.img-small-wrap img').on('touchstart', function() {
+            enlargeImage($(this).attr('src'));
+        });
+
+        function enlargeImage(src) {
+            $('.zoomed-image').html('<img src="' + src + '">').fadeIn();
+        }
     });
 </script>
 </body>
