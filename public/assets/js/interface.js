@@ -727,9 +727,6 @@
 
                             /* Single product sticky detail*/
                             $( '.pr_sticky_content' ).kallesStickySingleProductDetail( !is_smaller_768 && body.hasClass( 'single-product-template' ) );
-
-                            /*Single thumbnail magnifier*/
-                            $( '.sp-single' ).kallesButtonShowGallery();
                         }
                     }
                 } )
@@ -1136,191 +1133,6 @@
             }
 
         };
-
-        $.fn.kallesButtonShowGallery = function () {
-            if ( $( this ).length ) {
-                let $productGallery   = $( '.product-images' ),
-                    $single_thumbnail = $( '.sp-single' ),
-                    $mainImages       = $( '.p-thumb' ),
-                    img_visible       = $mainImages.find( '.img_ptw:not(.is_varhide)' ),
-                    small767          = ( window_w < 768 && $( window ).height() < 768 );
-
-                let getProductItems           = function ( getvl ) {
-                    let items   = [],
-                        _html   = '',
-                        img_url = '{width}x',
-                        img;
-
-                    img_visible.each( function () {
-                        let $this   = $( this ),
-                            src     = $this.data( 'bgset' ),
-                            width   = $this.attr( 'data-width' ),
-                            height  = $this.attr( 'data-height' ),
-                            caption = $this.data( 'cap' ),
-                            img     = $this.data( 'bgset' );
-
-                        items.push( {
-                            src   : src,
-                            w     : width,
-                            h     : height,
-                            title : caption
-                        } );
-
-                        _html += '<div class="pswp_thumb_item"><img class="lazyload" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20' + width + '%20' + height + '%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" data-src="' + img.replace( '1x1', img_url ) + '" data-widths="[50, 100]" data-sizes="auto" alt=""></div>'
-
-                    } );
-
-                    if ( getvl === 'thumb' ) {
-                        return _html;
-                    } else {
-                        return items;
-                    }
-
-                };
-                let getCurrentGalleryIndex    = function ( e ) {
-                    if ( $mainImages.hasClass( 'flickity-enabled' ) )
-                        return $mainImages.find( '.js-sl-item.is-selected' ).index();
-                    else if ( $( e.currentTarget ).hasClass( 'show_btn_pr_gallery' ) )
-                        return 0
-                    else return $( e.currentTarget ).index();
-                }
-                let adjustMobileThumbPosition = function () {
-                    if ( !small767 ) return;
-                    let selectedThumb      = $( '.pswp_tb_active' )[ 0 ],
-                        $pswp__thumb       = $( '.pswp__thumbnails' ),
-                        thumbContainer     = $pswp__thumb[ 0 ],
-                        thumbBounds        = selectedThumb.getBoundingClientRect(),
-                        thumbWrapperBounds = thumbContainer.getBoundingClientRect();
-
-                    if ( thumbBounds.left + thumbBounds.width > thumbWrapperBounds.width ) {
-                        $pswp__thumb.animate( { scrollLeft : selectedThumb.offsetLeft + thumbBounds.width - thumbWrapperBounds.width + 10 }, 200 );
-                    } else if ( selectedThumb.offsetLeft < thumbContainer.scrollLeft ) {
-                        $pswp__thumb.animate( { scrollLeft : selectedThumb.offsetLeft - 10 }, 200 );
-                    }
-                }
-                let callPhotoSwipe            = function ( index, items ) {
-                    let pswpElement = document.querySelectorAll( '.pswp' )[ 0 ];
-                    $( '.pswp_size_guide' ).removeClass( 'pswp_size_guide' );
-
-                    if ( rtl_mode ) {
-                        index = items.length - index - 1;
-                        items = items.reverse();
-                    }
-
-                    /*define options (if needed)*/
-                    let options = {
-                        history          : false,
-                        maxSpreadZoom    : 1,
-                        bgOpacity        : 1,
-                        showHideOpacity  : ( $mainImages.hasClass( 'nt_contain' ) || $mainImages.hasClass( 'nt_cover' ) ),
-                        index            : index, // start at first slide
-                        shareButtons     : [
-                            { id : 'facebook', label : 'Share on Facebook', url : 'https://www.facebook.com/sharer/sharer.php?u={{url}}' },
-                            { id : 'twitter', label : 'Tweet', url : 'https://twitter.com/intent/tweet?text={{text}}&url={{url}}' },
-                            { id : 'pinterest', label : 'Pin it', url : 'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}' }
-                        ],
-                        getThumbBoundsFn : function ( index ) {
-                            let thumbnail                                                                    = $( ".p-thumb .p_ptw:visible" ).eq( index )[ 0 ],
-                                pageYScroll = window.pageYOffset || document.documentElement.scrollTop, rect = thumbnail.getBoundingClientRect();
-                            return { x : rect.left, y : rect.top + pageYScroll, w : rect.width };
-                        }
-                    };
-
-                    /*Initializes and opens PhotoSwipe*/
-                    let gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options );
-
-                    gallery.init();
-
-                    gallery.listen( 'afterChange', function () {
-                        let i = gallery.getCurrentIndex();
-                        $( '.pswp_tb_active' ).removeClass( 'pswp_tb_active' );
-                        $( '.pswp_thumb_item:eq(' + i + ')' ).addClass( 'pswp_tb_active' );
-                        adjustMobileThumbPosition();
-                    } );
-
-                    $( '.pswp' ).off( 'click' ).on( 'click', '.pswp_thumb_item', function () {
-                        gallery.goTo( $( this ).index() );
-                    } );
-
-                    gallery.listen( 'close', function () {
-                        setTimeout( () => {
-                            $( '.pswp_pp_prs' ).removeClass( 'pswp_pp_prs' );
-                            $( '.pswp_t4_js' ).remove( 'pswp--open' );
-                        }, 500 );
-                        $( '.p-thumb.flickity-enabled' ).flickity( 'select', gallery.getCurrentIndex(), false, true );
-                    } );
-
-                };
-
-                $( this ).on( 'click', '.show_btn_pr_gallery', function ( e ) {
-                    e.preventDefault();
-                    $( '.pswp' ).remove();
-                    body.append( '<div class="pswp pswp_t4_js dn pswp_tp_light pswp_pp_prs" role="dialog" aria-hidden="true"><div class="pswp__bg"></div><div class="pswp__scroll-wrap"><div class="pswp__container"><div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div><div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter"></div> <button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div> <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div><div class="pswp__thumbnails"></div></div>' );
-
-                    if ( $( '.thumb_2' ).length > 0 || $( '.thumb_3' ).length > 0 ) {
-                        img_visible = $mainImages.find( '.js-sl-item:not(.is_varhide) .img_ptw' );
-                    } else {
-                        img_visible = $mainImages.find( '.img_ptw:not(.is_varhide)' );
-                    }
-                    /*build items array*/
-                    let items      = getProductItems(),
-                        thumb_item = getProductItems( 'thumb' ),
-                        p_thumb    = $( '.pswp__thumbnails' ),
-                        index      = $mainImages.hasClass( 'isotope_ok' ) ? $( this ).parents().index() : getCurrentGalleryIndex( e );
-                    if ( index === -1 ) {
-                        index = 0;
-                    }
-
-                    callPhotoSwipe( index, items );
-                    if ( p_thumb.length > 0 && img_visible.length > 1 ) {
-                        p_thumb.html( thumb_item );
-                        $( '.pswp_thumb_item:eq(' + index + ')' ).addClass( 'pswp_tb_active' );
-                        adjustMobileThumbPosition();
-                    }
-                } );
-
-                if ( $productGallery.hasClass( 'img_action_zoom' ) && window_w > 1025 ) {
-                    let p_thumb     = $mainImages,
-                        p_infors    = $( '.product-infors' ),
-                        zoom_target = $mainImages.find( '.img_ptw' ),
-                        dt_zoom_img = $( '.dt_img_zoom' )[ 0 ],
-                        zoom_tpl    = 2,
-                        z_magnify   = 2,
-                        z_touch     = false;
-
-                    if ( body.hasClass( 'zoom_tp_3' ) ) {
-                        zoom_tpl = 3;
-                    }
-
-                    if ( zoom_tpl === 2 && ( $( '.thumb_2' ).length > 0 || $( '.thumb_3' ).length > 0 ) ) {
-                        zoom_tpl = 1;
-                        body.removeClass( 'zoom_tpl_2' ).addClass( 'zoom_tpl_1' );
-                    }
-                    zoom_target.each( function () {
-                        let $this = $( this ),
-                            _this = $this[ 0 ],
-                            w     = $this.attr( 'data-width' ),
-                            h     = $this.attr( 'data-height' );
-                        new Drift( _this, {
-                            sourceAttribute  : 'data-src',
-                            paneContainer    : zoom_tpl === 2 ? dt_zoom_img : _this,
-                            zoomFactor       : z_magnify,
-                            inlinePane       : zoom_tpl === 3,
-                            hoverBoundingBox : zoom_tpl === 2, //false , true
-                            handleTouch      : false,
-                            onShow           : function onShow () {
-                                p_thumb.addClass( 'zoom_fade_ic' );
-                                p_infors.addClass( 'zoom_fade_if' );
-                            },
-                            onHide           : function onHide () {
-                                p_thumb.removeClass( 'zoom_fade_ic' );
-                                p_infors.removeClass( 'zoom_fade_if' );
-                            }
-                        } );
-                    } );
-                }
-            }
-        }
 
         $.fn.kallesStickyAddToCart = function () {
             const $trigger   = $( '.entry-summary .variations_form' ),
@@ -1731,116 +1543,6 @@
                     } );
                 } );
                 /*Search product title init*/
-            }
-        };
-
-        $.fn.KallesGalleryPhotoSwipe = function () {
-
-            if ( $( this ).length ) {
-
-                let callgalleryPhotoSwipe = function ( index, items ) {
-
-                    let pswpElement = document.querySelectorAll( '.pswp' )[ 0 ];
-
-                    if ( rtl_mode ) {
-                        index = items.length - index - 1;
-                        items = items.reverse();
-                    }
-
-                    let options = {
-                        history         : false,
-                        maxSpreadZoom   : 2,
-                        showHideOpacity : true,
-                        fullscreenEl    : false,
-                        shareEl         : false,
-                        counterEl       : false,
-                        bgOpacity       : 1,
-                        index           : index, // start at first slide
-                        shareButtons    : [
-                            { id : 'facebook', label : 'Share on Facebook', url : 'https://www.facebook.com/sharer/sharer.php?u={{url}}' },
-                            { id : 'twitter', label : 'Tweet', url : 'https://twitter.com/intent/tweet?text={{text}}&url={{url}}' },
-                            { id : 'pinterest', label : 'Pin it', url : 'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}' }
-                        ],
-                    };
-
-                    /*Initializes and opens PhotoSwipe*/
-                    let gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options );
-                    gallery.init();
-                };
-
-                let getGalleryImages = function ( el ) {
-                    let items = [];
-                    el.find( 'a' ).each( function () {
-                        items.push( {
-                            src : $( this ).attr( 'data-src' ),
-                            w   : $( this ).attr( 'data-w' ),
-                            h   : $( this ).attr( 'data-h' )
-                        } );
-                    } );
-                    return items;
-                };
-
-                $( document ).on( 'click', '.nt_gallery_item a', function ( e ) {
-                    e.preventDefault();
-                    $( '.pswp' ).remove();
-                    body.append( '<div class="pswp pswp_t4_js dn pswp_tp_light pswp_pp_prs" role="dialog" aria-hidden="true"><div class="pswp__bg"></div><div class="pswp__scroll-wrap"><div class="pswp__container"><div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div><div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter"></div> <button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div> <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div><div class="pswp__thumbnails"></div></div>' );
-                    let $parent = $( this ).parents(),
-                        holder  = $( this ).closest( '.type_gallery' ),
-                        index   = $parent.index(),
-                        items   = getGalleryImages( holder );
-                    callgalleryPhotoSwipe( index, items );
-                } );
-
-            }
-        };
-
-        $.fn.kallesDiscountPromotionPopup = function () {
-            const yesHover = Modernizr.hovermq;
-            if ( $( this ).length === 0 || window_w < 1025 || !yesHover || ( Cookies.get( 'kalles_age_verify' ) !== 'confirmed' && $( '.popup_age_wrap' ).length > 0 ) || Cookies.get( 'kalles_prpr_pp' ) === 'shown' ) {
-
-            } else {
-                let $wrap_popup = $( this ).find( '.popup_prpr_wrap' );
-                let $el         = $wrap_popup.find( '.js_carousel' );
-                let stt         = $wrap_popup.data( 'stt' );
-                let showPopup   = function () {
-                    $.magnificPopup.open( {
-                        items        : { src : '#kalles-section-promo_pr_pp .popup_prpr_wrap' },
-                        type         : 'inline',
-                        removalDelay : 500, //delay removal by X to allow out-animation
-                        tClose       : 'Close (Esc)',
-                        callbacks    : {
-                            beforeOpen : function () {
-                                this.st.mainClass = 'mfp-move-horizontal prpr_pp_wrapper';
-                            },
-                            open       : function () {
-                                $el.kallesRefresh_flickity();
-                                $el.kallesFlickityResponsive( false );
-                                $wrap_popup.find( '.pr_coun_dt:not(.done_cd) , .sepr_coun_dt:not(.done_cd)' ).initCountdown();
-                                $( document ).off( 'mouseleave.registerexit' );
-                                // Will fire when this exact popup is opened
-                                // this - is Magnific Popup object
-                            },
-                            close      : function () {
-                                Cookies.set( 'kalles_prpr_pp', 'shown', { expires : stt.day_next, path : '/' } );
-                            }
-                        }
-                    } );
-                };
-
-                $( '.kalles_open_promopr' ).on( 'click', function ( e ) {
-                    e.preventDefault();
-                    showPopup();
-                } );
-
-                $wrap_popup.on( 'open_promopr', function () {
-                    showPopup();
-                } );
-
-                $( document ).on( 'mouseleave.registerexit', function ( e ) {
-                    if ( e.clientY < 60 && $( '.mfp-content' ).length === 0 ) {
-                        showPopup();
-                    }
-                } );
             }
         };
 
@@ -2426,11 +2128,6 @@
 
         setTimeout( () => $( '.flickity-enabled' ).kallesDisableNavSlider(), 3000 );
 
-        /**********************************************
-         * Single product magnifier and thumbnail gallery
-         * ********************************************/
-        $( '.sp-single' ).kallesButtonShowGallery();
-
         $( '.kalles-section-pr_summary .single_add_to_cart_button , .sticky_atc_btn .single_add_to_cart_button' ).kallesAnimation();
 
         $( '.pr_flash_sold' ).kallesFlashSold();
@@ -2554,16 +2251,6 @@
             $this.addClass( 'jscl_ld' );
             setTimeout( () => $this.removeClass( 'jscl_ld' ), 2000 );
         } );
-
-        /**********************************************
-         * Gallery PhotoSwipe
-         * ********************************************/
-        $( '.nt_gallery_item' ).KallesGalleryPhotoSwipe();
-
-        /**********************************************
-         * Promotion popup
-         * ********************************************/
-        $( '#kalles-section-promo_pr_pp' ).kallesDiscountPromotionPopup();
 
         /**********************************************
          * Related and crosses slide
