@@ -9,13 +9,13 @@
                 <div class="row al_center">
                     <div class="col">
                         <nav class="sp-breadcrumb">
-                            <a href="index.html">Home</a><i class="facl facl-angle-right"></i><a href="shop-filter-sidebar.html">New Arrival</a><i class="facl facl-angle-right"></i>Blush Beanie
+                            <a href="{{route('home')}}">Home</a><i class="facl facl-angle-right"></i><a href="">New Arrival</a><i class="facl facl-angle-right"></i>Blush Beanie
                         </nav>
                     </div>
                     <div class="col-auto flex al_center">
-                        <a href="product-detail-layout-01.html" class="pl__5 pr__5 fs__18 cd chp ttip_nt tooltip_bottom_left"><i class="las la-angle-left"></i><span class="tt_txt">Ridley High Waist</span></a>
-                        <a href="product-detail-layout-01.html" class="pl__5 pr__5 fs__20 cd chp ttip_nt tooltip_bottom_left"><i class="fwb iccl iccl-grid fs__15"></i><span class="tt_txt">Back to New Arrival</span></a>
-                        <a href="product-detail-layout-01.html" class="pl__5 pr__5 fs__18 cd chp ttip_nt tooltip_bottom_left"><i class="las la-angle-right"></i><span class="tt_txt">Cluse La Boheme Rose Gold</span></a>
+                        <a href="" class="pl__5 pr__5 fs__18 cd chp ttip_nt tooltip_bottom_left"><i class="las la-angle-left"></i><span class="tt_txt">Ridley High Waist</span></a>
+                        <a href="{{route('product.details',['id'=>$product->id])}}" class="pl__5 pr__5 fs__20 cd chp ttip_nt tooltip_bottom_left"><i class="fwb iccl iccl-grid fs__15"></i><span class="tt_txt">Back to New Arrival</span></a>
+                        <a href="{{route('product.details',['id'=>$product->id])}}" class="pl__5 pr__5 fs__18 cd chp ttip_nt tooltip_bottom_left"><i class="las la-angle-right"></i><span class="tt_txt">Cluse La Boheme Rose Gold</span></a>
                     </div>
                 </div>
             </div>
@@ -81,40 +81,6 @@
                                     </div>
                                     <div class="btn-atc atc-slide btn_des_1 btn_txt_3">
                                         <div id="callBackVariant_ppr">
-                                            <div class="variations mb__40 style__circle size_medium style_color des_color_1">
-                                                <div class="swatch is-color kalles_swatch_js">
-                                                    <h4 class="swatch__title">Color:
-                                                        <span class="nt_name_current user_choose_js">Pink</span>
-                                                    </h4>
-                                                    <ul class="swatches-select swatch__list_pr d-flex">
-                                                        <li class="ttip_nt tooltip_top_right nt-swatch swatch_pr_item" data-escape="Grey">
-                                                            <span class="tt_txt">Grey</span><span class="swatch__value_pr pr bg_color_grey lazyload"></span>
-                                                        </li>
-                                                        <li class="ttip_nt tooltip_top nt-swatch swatch_pr_item is-selected" data-escape="Pink">
-                                                            <span class="tt_txt">Pink</span><span class="swatch__value_pr pr bg_color_pink lazyload"></span>
-                                                        </li>
-                                                        <li class="ttip_nt tooltip_top nt-swatch swatch_pr_item" data-escape="Black">
-                                                            <span class="tt_txt">Black</span><span class="swatch__value_pr pr bg_color_black lazyload"></span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="swatch is-label kalles_swatch_js">
-                                                    <h4 class="swatch__title">Size:
-                                                        <span class="nt_name_current user_choose_js">M</span>
-                                                    </h4>
-                                                    <ul class="swatches-select swatch__list_pr d-flex">
-                                                        <li class="nt-swatch swatch_pr_item pr" data-escape="S">
-                                                            <span class="swatch__value_pr">S</span>
-                                                        </li>
-                                                        <li class="nt-swatch swatch_pr_item pr is-selected" data-escape="M">
-                                                            <span class="swatch__value_pr">M</span>
-                                                        </li>
-                                                        <li class="nt-swatch swatch_pr_item pr " data-escape="L">
-                                                            <span class="swatch__value_pr">L</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
                                             <div class="nt_cart_form variations_form variations_form_ppr">
                                                 <div class="variations_button in_flex column w__100 buy_qv_false">
                                                     <div class="flex wrap">
@@ -127,70 +93,11 @@
                                                                     <i class="facl facl-minus"></i></button>
                                                             </div>
                                                         </div>
-                                                        <div class="nt_add_w ts__03 pa order-3">
-                                                            <a href="#" class="wishlistadd cb chp ttip_nt tooltip_top_left">
-                                                                <span class="tt_txt">Add to Wishlist</span><i class="facl facl-heart-o"></i>
-                                                            </a>
-                                                        </div>
                                                         <button type="submit" data-time="6000" data-ani="shake" class="single_add_to_cart_button button truncate w__100 mt__20 order-4 d-inline-block animated">
                                                             <span class="txt_add ">Add to cart</span></button>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div id="trust_seal_ppr" class="pr_trust_seal tl_md tc">
-                                        <img class="img_tr_s1 lazyload w__100 max-width__330px" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%202244%20285%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" alt="" data-srcset="assets/images/single-product/trust_img2.png"/>
-                                    </div>
-                                    <div class="extra-link mt__35 fwsb">
-                                        <a class="ajax_pp_js cd chp mr__20" href="#" data-id="#popup-size-guide">Size Guide</a>
-                                        <a class="ajax_pp_js cd chp mr__20" href="#" data-id="#popup-delivery-and-return">Delivery &amp; Return</a>
-                                        <a class="ajax_pp_js cd chp" href="#" data-id="#popup-ask-a-question">Ask a Question</a>
-                                    </div>
-                                    <div class="product_meta">
-                                        <span class="sku_wrapper"><span class="cb">SKU:</span> <span class="sku value cg d-inline-block">P15-2</span></span>
-                                        <span class="posted_in"><span class="cb">Categories:</span> <a href="shop-filter-options.html" class="cg">All</a>, <a href="shop-filter-options.html" class="cg">Best seller</a>, <a href="shop-filter-options.html" class="cg">Bottom</a>, <a href="shop-filter-options.html" class="cg">Dress</a>, <a href="shop-filter-options.html" class="cg">New Arrival</a>, <a href="shop-filter-options.html" class="cg">Women</a></span>
-                                        <span class="tagged_as"><span class="cb">Tags:</span> <a href="shop-filter-options.html" class="cg">Color Black</a>, <a href="shop-filter-options.html" class="cg">Color Grey</a>, <a href="shop-filter-options.html" class="cg">Color Pink</a>, <a href="shop-filter-options.html" class="cg">Price $7-$50</a>, <a href="shop-filter-options.html" class="cg">Size L</a>, <a href="shop-filter-options.html" class="cg">Size M</a>, <a href="shop-filter-options.html" class="cg">Size S</a></span>
-                                    </div>
-                                    <div class="social-share tc">
-                                        <div class="at-share-btn-elements kalles-social-media d-block text-left fs__0 lh__1">
-                                            <a href="https://www.facebook.com/" class="at-icon-wrapper at-share-btn at-svc-facebook bg-white kalles-social-media__btn">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="at-icon at-icon-facebook">
-                                                    <g>
-                                                        <path d="M22 5.16c-.406-.054-1.806-.16-3.43-.16-3.4 0-5.733 1.825-5.733 5.17v2.882H9v3.913h3.837V27h4.604V16.965h3.823l.587-3.913h-4.41v-2.5c0-1.123.347-1.903 2.198-1.903H22V5.16z" fill-rule="evenodd"></path>
-                                                    </g>
-                                                </svg>
-                                            </a>
-                                            <a href="https://twitter.com/" class="at-icon-wrapper at-share-btn at-svc-twitter bg-white kalles-social-media__btn">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="at-icon at-icon-twitter">
-                                                    <g>
-                                                        <path d="M27.996 10.116c-.81.36-1.68.602-2.592.71a4.526 4.526 0 0 0 1.984-2.496 9.037 9.037 0 0 1-2.866 1.095 4.513 4.513 0 0 0-7.69 4.116 12.81 12.81 0 0 1-9.3-4.715 4.49 4.49 0 0 0-.612 2.27 4.51 4.51 0 0 0 2.008 3.755 4.495 4.495 0 0 1-2.044-.564v.057a4.515 4.515 0 0 0 3.62 4.425 4.52 4.52 0 0 1-2.04.077 4.517 4.517 0 0 0 4.217 3.134 9.055 9.055 0 0 1-5.604 1.93A9.18 9.18 0 0 1 6 23.85a12.773 12.773 0 0 0 6.918 2.027c8.3 0 12.84-6.876 12.84-12.84 0-.195-.005-.39-.014-.583a9.172 9.172 0 0 0 2.252-2.336" fill-rule="evenodd"></path>
-                                                    </g>
-                                                </svg>
-                                            </a>
-                                            <a href="https://www.google.com/gmail/about" class="at-icon-wrapper at-share-btn at-svc-email bg-white">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="at-icon at-icon-email kalles-social-media__btn">
-                                                    <g>
-                                                        <g fill-rule="evenodd"></g>
-                                                        <path d="M27 22.757c0 1.24-.988 2.243-2.19 2.243H7.19C5.98 25 5 23.994 5 22.757V13.67c0-.556.39-.773.855-.496l8.78 5.238c.782.467 1.95.467 2.73 0l8.78-5.238c.472-.28.855-.063.855.495v9.087z"></path>
-                                                        <path d="M27 9.243C27 8.006 26.02 7 24.81 7H7.19C5.988 7 5 8.004 5 9.243v.465c0 .554.385 1.232.857 1.514l9.61 5.733c.267.16.8.16 1.067 0l9.61-5.733c.473-.283.856-.96.856-1.514v-.465z"></path>
-                                                    </g>
-                                                </svg>
-                                            </a>
-                                            <a href="https://www.pinterest.com/" class="at-icon-wrapper at-share-btn at-svc-pinterest_share bg-white kalles-social-media__btn">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="at-icon at-icon-pinterest_share">
-                                                    <g>
-                                                        <path d="M7 13.252c0 1.81.772 4.45 2.895 5.045.074.014.178.04.252.04.49 0 .772-1.27.772-1.63 0-.428-1.174-1.34-1.174-3.123 0-3.705 3.028-6.33 6.947-6.33 3.37 0 5.863 1.782 5.863 5.058 0 2.446-1.054 7.035-4.468 7.035-1.232 0-2.286-.83-2.286-2.018 0-1.742 1.307-3.43 1.307-5.225 0-1.092-.67-1.977-1.916-1.977-1.692 0-2.732 1.77-2.732 3.165 0 .774.104 1.63.476 2.336-.683 2.736-2.08 6.814-2.08 9.633 0 .87.135 1.728.224 2.6l.134.137.207-.07c2.494-3.178 2.405-3.8 3.533-7.96.61 1.077 2.182 1.658 3.43 1.658 5.254 0 7.614-4.77 7.614-9.067C26 7.987 21.755 5 17.094 5 12.017 5 7 8.15 7 13.252z" fill-rule="evenodd"></path>
-                                                    </g>
-                                                </svg>
-                                            </a>
-                                            <a href="https://www.messenger.com" class="at-icon-wrapper at-share-btn at-svc-messenger bg-white kalles-social-media__btn">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="at-icon at-icon-messenger">
-                                                    <g>
-                                                        <path d="M16 6C9.925 6 5 10.56 5 16.185c0 3.205 1.6 6.065 4.1 7.932V28l3.745-2.056c1 .277 2.058.426 3.155.426 6.075 0 11-4.56 11-10.185C27 10.56 22.075 6 16 6zm1.093 13.716l-2.8-2.988-5.467 2.988 6.013-6.383 2.868 2.988 5.398-2.987-6.013 6.383z" fill-rule="evenodd"></path>
-                                                    </g>
-                                                </svg>
-                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -241,78 +148,13 @@
                             </p>
                             <div class="row equal_nt nt_contain">
                                 <div class="col-12 col-md-4 mb-md-0 mb-4">
-                                    <div class="sp-pr-gallery__img w__100 nt_bg_lz lazyload padding-top__127_586" data-bgset="assets/images/single-product/des-01.jpg"></div>
+                                    <div class="sp-pr-gallery__img w__100 nt_bg_lz lazyload padding-top__127_586" data-bgset="{{asset('assets/images/single-product/des-01.jpg')}}"></div>
                                 </div>
                                 <div class="col-12 col-md-4 mb-md-0 mb-4">
-                                    <div class="sp-pr-gallery__img w__100 nt_bg_lz lazyload padding-top__127_586" data-bgset="assets/images/single-product/des-02.jpg"></div>
+                                    <div class="sp-pr-gallery__img w__100 nt_bg_lz lazyload padding-top__127_586" data-bgset="{{asset('assets/images/single-product/des-02.jpg')}}"></div>
                                 </div>
                                 <div class="col-12 col-md-4">
-                                    <div class="sp-pr-gallery__img w__100 nt_bg_lz lazyload padding-top__127_586" data-bgset="assets/images/single-product/des-03.jpg"></div>
-                                </div>
-                            </div>
-                            <div class="row al_center fl_center bgbl_ pt__100 pb__35">
-                                <div class="col-12 col-md-3 tc tr_md">
-                                    <div class="row fl_center al_center no-gutters mb__60">
-                                        <div class="col-12 col-md-auto cl_depr_img ml__10 mr__10 order-md-4">
-                                            <img height="40" width="44" alt="rain" class="lazyload" data-src="assets/images/single-product/water-resistant.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-                                        </div>
-                                        <div class="col-12 col-md">
-                                            Rain &amp; Water<br/>
-                                            Resistant
-                                        </div>
-                                    </div>
-                                    <div class="row fl_center al_center no-gutters mb__60">
-                                        <div class="col-12 col-md-auto cl_depr_img ml__10 mr__10 order-md-4">
-                                            <img height="39" width="36" alt="sun" data-src="assets/images/single-product/uv-resistant.png" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-                                        </div>
-                                        <div class="col-12 col-md">
-                                            UV Resistant<br/>
-                                            Coatings
-                                        </div>
-                                    </div>
-                                    <div class="row fl_center al_center no-gutters">
-                                        <div class="col-12 col-md-auto cl_depr_img ml__10 mr__10 order-md-4">
-                                            <img height="33" width="49" alt="sea-water" data-src="assets/images/single-product/corrosion-resistance.png" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-                                        </div>
-                                        <div class="col-12 col-md">
-                                            Corrosion Resistance<br/>
-                                            to Sea water
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 dn_md mt__40"></div>
-                                <div class="col-12 col-md-6">
-                                    <img class="lazyload w__100 db" data-srcset="assets/images/single-product/athun.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
-                                </div>
-                                <div class="col-12 dn_md mt__40"></div>
-                                <div class="col-12 col-md-3 tc tl_md">
-                                    <div class="row fl_center al_center no-gutters mb__60">
-                                        <div class="col-12 col-md-auto cl_depr_img ml__10 mr__10">
-                                            <img height="51" width="52" alt="lead" data-src="assets/images/single-product/lead-free.png" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-                                        </div>
-                                        <div class="col-12 col-md">
-                                            Lead-free<br/>
-                                            Powdercoat Finish
-                                        </div>
-                                    </div>
-                                    <div class="row fl_center al_center no-gutters mb__60">
-                                        <div class="col-12 col-md-auto cl_depr_img ml__10 mr__10">
-                                            <img height="37" width="52" alt="spills" data-src="assets/images/single-product/resistant-to-spills.png" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-                                        </div>
-                                        <div class="col-12 col-md">
-                                            Resistant to<br/>
-                                            Spills
-                                        </div>
-                                    </div>
-                                    <div class="row fl_center al_center no-gutters">
-                                        <div class="col-12 col-md-auto cl_depr_img ml__10 mr__10">
-                                            <img height="38" width="39" alt="recycle" data-src="assets/images/single-product/recyclable.png" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-                                        </div>
-                                        <div class="col-12 col-md">
-                                            Recyclable<br/>
-                                            Aluminium Frame
-                                        </div>
-                                    </div>
+                                    <div class="sp-pr-gallery__img w__100 nt_bg_lz lazyload padding-top__127_586" data-bgset="{{asset('assets/images/single-product/des-03.jpg')}}"></div>
                                 </div>
                             </div>
                         </div>
@@ -442,88 +284,6 @@
                                                                     <span class="r--total-view">13 <span>reviews</span></span>
                                                                 </div>
                                                             </div>
-                                                            <table class="r--rateList r--rate-850">
-                                                                <tr class="">
-                                                                    <td class="r--rate-name">
-                                                                        <div>Excellent</div>
-                                                                    </td>
-                                                                    <td class="r--rate-numeral">
-                                                                        <span class="r--total-bar-default">
-                                                                            <span class="r--bar_bak_gray width__93">
-                                                                                <span class="r--bar-active">
-                                                                                    <span class="r--rate-percent-default">12
-                                                                                        <span class="r--rate-after"></span> <span class="r--rate-before"></span>
-                                                                                    </span>
-                                                                                </span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="r--disable">
-                                                                    <td class="r--rate-name">
-                                                                        <div>Very Good</div>
-                                                                    </td>
-                                                                    <td class="r--rate-numeral">
-                                                                        <span class="r--total-bar-default">
-                                                                            <span class="r--bar_bak_gray">
-                                                                                <span class="r--bar-active r--noneBack">
-                                                                                    <span class="r--rate-percent-default">0
-                                                                                        <span class="r--rate-after"></span> <span class="r--rate-before"></span>
-                                                                                    </span>
-                                                                                </span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="">
-                                                                    <td class="r--rate-name">
-                                                                        <div>Average</div>
-                                                                    </td>
-                                                                    <td class="r--rate-numeral">
-                                                                        <span class="r--total-bar-default">
-                                                                            <span class="r--bar_bak_gray width__7">
-                                                                                <span class="r--bar-active">
-                                                                                    <span class="r--rate-percent-default">1
-                                                                                        <span class="r--rate-after"></span> <span class="r--rate-before"></span>
-                                                                                    </span>
-                                                                                </span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="r--disable">
-                                                                    <td class="r--rate-name">
-                                                                        <div>Poor</div>
-                                                                    </td>
-                                                                    <td class="r--rate-numeral">
-                                                                        <span class="r--total-bar-default">
-                                                                            <span class="r--bar_bak_gray">
-                                                                                <span class="r--bar-active r--noneBack">
-                                                                                    <span class="r--rate-percent-default">0
-                                                                                        <span class="r--rate-after"></span> <span class="r--rate-before"></span>
-                                                                                    </span>
-                                                                                </span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="r--disable">
-                                                                    <td class="r--rate-name">
-                                                                        <div>Terrible</div>
-                                                                    </td>
-                                                                    <td class="r--rate-numeral">
-                                                                        <span class="r--total-bar-default">
-                                                                            <span class="r--bar_bak_gray">
-                                                                                <span class="r--bar-active r--noneBack">
-                                                                                    <span class="r--rate-percent-default">0
-                                                                                        <span class="r--rate-after"></span> <span class="r--rate-before"></span>
-                                                                                    </span>
-                                                                                </span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
                                                         </div>
                                                         <div class="r--overview-right">
                                                             <div class="show-modal-mobile">
@@ -551,13 +311,13 @@
                                                             <div class="r--sortBy">
                                                                 <div class="r--unset-select r--sort-button r--filter-link r--flex-center el-popover__reference">
                                                                     <span class="r--select">Sort by: Latest </span>
-                                                                    <img src="assets/images/single-product/icon-down.svg" width="8" height="4" class="r--select r--icon-down" alt="">
+                                                                    <img src="{{asset('assets/images/single-product/icon-down.svg')}}" width="8" height="4" class="r--select r--icon-down" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="r--filter">
                                                                 <div class="r--unset-select r--sort-button r--filter-link r--flex-center el-popover__reference">
                                                                     <span class="r--select">Filter</span>
-                                                                    <img src="assets/images/single-product/icon-down.svg" width="8" height="4" class="r--select r--icon-down" alt="">
+                                                                    <img src="{{asset('assets/images/single-product/icon-down.svg')}}" width="8" height="4" class="r--select r--icon-down" alt="">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -590,63 +350,6 @@
                                                         <p class="r--title-review r--body-item">Contrary to popular belief</p>
                                                         <p class="r--content-review r--body-item">It is a long established fact that a reader will be distracted by the readable content of a page </p>
                                                         <time datetime="2020-01-28T17:29:54Z" class="r--date-review r--top r--text-limit">15 days ago</time>
-                                                        <ul class="r--reply-helpul r--body-item r--flex-center">
-                                                            <li class="r--helpul-item">
-                                                                <div class="r--like">
-                                                                    <div class="r--like-icon like r--flex-center">
-                                                                        <svg width="14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.762 17.939" class="r--icon-like">
-                                                                            <g transform="translate(-926.048 -414.43)">
-                                                                                <path d="M0,14.842V6.033l.266.709S3.779,4.692,3.9,1.674s2.5-1.661,2.624.45-.095,2.192.517,3.909c1.392-.021,2.211-.013,2.59-.006H9.71q.06,0,.119,0l.056,0v0A1.532,1.532,0,0,1,10.923,8.5a1.533,1.533,0,0,1,.45,2.515,1.533,1.533,0,0,1-.387,2.485,1.859,1.859,0,0,1,.257.966c0,.847-.515,1.584-1.15,1.584L9.237,16c-.7.042-2.286.125-2.717.131H6.448A31.646,31.646,0,0,1,0,14.842Z" transform="translate(929.463 415.021)" class="cls-1"></path>
-                                                                                <path d="M945.558,421.769v11.039l-2.9-.279V422.22Z" transform="translate(-16.112 -0.939)" class="cls-2"></path>
-                                                                            </g>
-                                                                        </svg>
-                                                                        <span class="r--like-count like_0">12</span>
-                                                                    </div>
-                                                                    <div class="r--like-icon dislike r--flex-center">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.762 17.659" class="r--icon-dislike">
-                                                                            <g transform="translate(956.922 435.325) rotate(180)">
-                                                                                <path d="M0,14.842V6.033l.266.709S3.779,4.692,3.9,1.674s2.5-1.661,2.624.45-.095,2.192.517,3.909c1.392-.021,2.211-.013,2.59-.006H9.71q.06,0,.119,0l.056,0v0A1.532,1.532,0,0,1,10.923,8.5a1.533,1.533,0,0,1,.45,2.515,1.533,1.533,0,0,1-.387,2.485,1.859,1.859,0,0,1,.257.966c0,.847-.515,1.584-1.15,1.584L9.237,16c-.7.042-2.286.125-2.717.131H6.448A31.646,31.646,0,0,1,0,14.842Z" transform="translate(944.575 418.257)" class="cls-1"></path>
-                                                                                <path d="M945.558,421.946v10.321l-2.9.261V421.777Z" transform="translate(-1 2.296)" class="cls-2"></path>
-                                                                            </g>
-                                                                        </svg>
-                                                                        <span class="r--like-count like_0">08</span>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="r--helpul-item r--reply-review r--flex-center ajax_pp_js" data-id="#popup-reply-review">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.125 17.584" class="r--icon-reply">
-                                                                    <defs>
-                                                                        <clipPath>
-                                                                            <rect width="14.094" height="3.924" class="cls-1"></rect>
-                                                                        </clipPath>
-                                                                    </defs>
-                                                                    <g transform="translate(-784.909 -833.715)">
-                                                                        <path d="M4.01,12.938H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0H18.125a2,2,0,0,1,2,2v8.937a2,2,0,0,1-2,2H8.78l-.667.923L6.4,16.232Z" transform="translate(785.409 834.215)" class="cls-2"></path>
-                                                                        <g transform="translate(788.554 839.127)" class="cls-3">
-                                                                            <g transform="translate(-739 -839)">
-                                                                                <g transform="translate(739 839)" class="cls-4">
-                                                                                    <circle cx="1.75" cy="1.75" r="1.75" class="cls-5"></circle>
-                                                                                    <circle cx="1.75" cy="1.75" r="1.25" class="cls-1"></circle>
-                                                                                </g>
-                                                                            </g>
-                                                                            <g transform="translate(-734 -839)">
-                                                                                <g transform="translate(739 839)" class="cls-4">
-                                                                                    <circle cx="1.75" cy="1.75" r="1.75" class="cls-5"></circle>
-                                                                                    <circle cx="1.75" cy="1.75" r="1.25" class="cls-1"></circle>
-                                                                                </g>
-                                                                            </g>
-                                                                            <g transform="translate(-729 -839)">
-                                                                                <g transform="translate(739 839)" class="cls-4">
-                                                                                    <circle cx="1.75" cy="1.75" r="1.75" class="cls-5"></circle>
-                                                                                    <circle cx="1.75" cy="1.75" r="1.25" class="cls-1"></circle>
-                                                                                </g>
-                                                                            </g>
-                                                                        </g>
-                                                                    </g>
-                                                                </svg>
-                                                                <span>02</span>
-                                                            </li>
-                                                        </ul>
                                                     </div>
                                                 </div>
                                                 <div class="r--grid-item">
@@ -671,63 +374,6 @@
                                                         <p class="r--title-review r--body-item">Contrary to popular belief</p>
                                                         <p class="r--content-review r--body-item">It is a long established fact that a reader will be distracted by the readable content of a page </p>
                                                         <time datetime="2020-01-28T17:29:54Z" class="r--date-review r--top r--text-limit">15 days ago</time>
-                                                        <ul class="r--reply-helpul r--body-item r--flex-center">
-                                                            <li class="r--helpul-item">
-                                                                <div class="r--like">
-                                                                    <div class="r--like-icon like r--flex-center">
-                                                                        <svg width="14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.762 17.939" class="r--icon-like">
-                                                                            <g transform="translate(-926.048 -414.43)">
-                                                                                <path d="M0,14.842V6.033l.266.709S3.779,4.692,3.9,1.674s2.5-1.661,2.624.45-.095,2.192.517,3.909c1.392-.021,2.211-.013,2.59-.006H9.71q.06,0,.119,0l.056,0v0A1.532,1.532,0,0,1,10.923,8.5a1.533,1.533,0,0,1,.45,2.515,1.533,1.533,0,0,1-.387,2.485,1.859,1.859,0,0,1,.257.966c0,.847-.515,1.584-1.15,1.584L9.237,16c-.7.042-2.286.125-2.717.131H6.448A31.646,31.646,0,0,1,0,14.842Z" transform="translate(929.463 415.021)" class="cls-1"></path>
-                                                                                <path d="M945.558,421.769v11.039l-2.9-.279V422.22Z" transform="translate(-16.112 -0.939)" class="cls-2"></path>
-                                                                            </g>
-                                                                        </svg>
-                                                                        <span class="r--like-count like_0">12</span>
-                                                                    </div>
-                                                                    <div class="r--like-icon dislike r--flex-center">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.762 17.659" class="r--icon-dislike">
-                                                                            <g transform="translate(956.922 435.325) rotate(180)">
-                                                                                <path d="M0,14.842V6.033l.266.709S3.779,4.692,3.9,1.674s2.5-1.661,2.624.45-.095,2.192.517,3.909c1.392-.021,2.211-.013,2.59-.006H9.71q.06,0,.119,0l.056,0v0A1.532,1.532,0,0,1,10.923,8.5a1.533,1.533,0,0,1,.45,2.515,1.533,1.533,0,0,1-.387,2.485,1.859,1.859,0,0,1,.257.966c0,.847-.515,1.584-1.15,1.584L9.237,16c-.7.042-2.286.125-2.717.131H6.448A31.646,31.646,0,0,1,0,14.842Z" transform="translate(944.575 418.257)" class="cls-1"></path>
-                                                                                <path d="M945.558,421.946v10.321l-2.9.261V421.777Z" transform="translate(-1 2.296)" class="cls-2"></path>
-                                                                            </g>
-                                                                        </svg>
-                                                                        <span class="r--like-count like_0">08</span>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="r--helpul-item r--reply-review r--flex-center ajax_pp_js" data-id="#popup-reply-review">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.125 17.584" class="r--icon-reply">
-                                                                    <defs>
-                                                                        <clipPath>
-                                                                            <rect width="14.094" height="3.924" class="cls-1"></rect>
-                                                                        </clipPath>
-                                                                    </defs>
-                                                                    <g transform="translate(-784.909 -833.715)">
-                                                                        <path d="M4.01,12.938H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0H18.125a2,2,0,0,1,2,2v8.937a2,2,0,0,1-2,2H8.78l-.667.923L6.4,16.232Z" transform="translate(785.409 834.215)" class="cls-2"></path>
-                                                                        <g transform="translate(788.554 839.127)" class="cls-3">
-                                                                            <g transform="translate(-739 -839)">
-                                                                                <g transform="translate(739 839)" class="cls-4">
-                                                                                    <circle cx="1.75" cy="1.75" r="1.75" class="cls-5"></circle>
-                                                                                    <circle cx="1.75" cy="1.75" r="1.25" class="cls-1"></circle>
-                                                                                </g>
-                                                                            </g>
-                                                                            <g transform="translate(-734 -839)">
-                                                                                <g transform="translate(739 839)" class="cls-4">
-                                                                                    <circle cx="1.75" cy="1.75" r="1.75" class="cls-5"></circle>
-                                                                                    <circle cx="1.75" cy="1.75" r="1.25" class="cls-1"></circle>
-                                                                                </g>
-                                                                            </g>
-                                                                            <g transform="translate(-729 -839)">
-                                                                                <g transform="translate(739 839)" class="cls-4">
-                                                                                    <circle cx="1.75" cy="1.75" r="1.75" class="cls-5"></circle>
-                                                                                    <circle cx="1.75" cy="1.75" r="1.25" class="cls-1"></circle>
-                                                                                </g>
-                                                                            </g>
-                                                                        </g>
-                                                                    </g>
-                                                                </svg>
-                                                                <span>02</span>
-                                                            </li>
-                                                        </ul>
                                                     </div>
                                                 </div>
                                                 <div class="r--grid-item">
@@ -752,63 +398,6 @@
                                                         <p class="r--title-review r--body-item">Contrary to popular belief</p>
                                                         <p class="r--content-review r--body-item">It is a long established fact that a reader will be distracted by the readable content of a page </p>
                                                         <time datetime="2020-01-28T17:29:54Z" class="r--date-review r--top r--text-limit">15 days ago</time>
-                                                        <ul class="r--reply-helpul r--body-item r--flex-center">
-                                                            <li class="r--helpul-item">
-                                                                <div class="r--like">
-                                                                    <div class="r--like-icon like r--flex-center">
-                                                                        <svg width="14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.762 17.939" class="r--icon-like">
-                                                                            <g transform="translate(-926.048 -414.43)">
-                                                                                <path d="M0,14.842V6.033l.266.709S3.779,4.692,3.9,1.674s2.5-1.661,2.624.45-.095,2.192.517,3.909c1.392-.021,2.211-.013,2.59-.006H9.71q.06,0,.119,0l.056,0v0A1.532,1.532,0,0,1,10.923,8.5a1.533,1.533,0,0,1,.45,2.515,1.533,1.533,0,0,1-.387,2.485,1.859,1.859,0,0,1,.257.966c0,.847-.515,1.584-1.15,1.584L9.237,16c-.7.042-2.286.125-2.717.131H6.448A31.646,31.646,0,0,1,0,14.842Z" transform="translate(929.463 415.021)" class="cls-1"></path>
-                                                                                <path d="M945.558,421.769v11.039l-2.9-.279V422.22Z" transform="translate(-16.112 -0.939)" class="cls-2"></path>
-                                                                            </g>
-                                                                        </svg>
-                                                                        <span class="r--like-count like_0">12</span>
-                                                                    </div>
-                                                                    <div class="r--like-icon dislike r--flex-center">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.762 17.659" class="r--icon-dislike">
-                                                                            <g transform="translate(956.922 435.325) rotate(180)">
-                                                                                <path d="M0,14.842V6.033l.266.709S3.779,4.692,3.9,1.674s2.5-1.661,2.624.45-.095,2.192.517,3.909c1.392-.021,2.211-.013,2.59-.006H9.71q.06,0,.119,0l.056,0v0A1.532,1.532,0,0,1,10.923,8.5a1.533,1.533,0,0,1,.45,2.515,1.533,1.533,0,0,1-.387,2.485,1.859,1.859,0,0,1,.257.966c0,.847-.515,1.584-1.15,1.584L9.237,16c-.7.042-2.286.125-2.717.131H6.448A31.646,31.646,0,0,1,0,14.842Z" transform="translate(944.575 418.257)" class="cls-1"></path>
-                                                                                <path d="M945.558,421.946v10.321l-2.9.261V421.777Z" transform="translate(-1 2.296)" class="cls-2"></path>
-                                                                            </g>
-                                                                        </svg>
-                                                                        <span class="r--like-count like_0">08</span>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="r--helpul-item r--reply-review r--flex-center ajax_pp_js" data-id="#popup-reply-review">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.125 17.584" class="r--icon-reply">
-                                                                    <defs>
-                                                                        <clipPath>
-                                                                            <rect width="14.094" height="3.924" class="cls-1"></rect>
-                                                                        </clipPath>
-                                                                    </defs>
-                                                                    <g transform="translate(-784.909 -833.715)">
-                                                                        <path d="M4.01,12.938H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0H18.125a2,2,0,0,1,2,2v8.937a2,2,0,0,1-2,2H8.78l-.667.923L6.4,16.232Z" transform="translate(785.409 834.215)" class="cls-2"></path>
-                                                                        <g transform="translate(788.554 839.127)" class="cls-3">
-                                                                            <g transform="translate(-739 -839)">
-                                                                                <g transform="translate(739 839)" class="cls-4">
-                                                                                    <circle cx="1.75" cy="1.75" r="1.75" class="cls-5"></circle>
-                                                                                    <circle cx="1.75" cy="1.75" r="1.25" class="cls-1"></circle>
-                                                                                </g>
-                                                                            </g>
-                                                                            <g transform="translate(-734 -839)">
-                                                                                <g transform="translate(739 839)" class="cls-4">
-                                                                                    <circle cx="1.75" cy="1.75" r="1.75" class="cls-5"></circle>
-                                                                                    <circle cx="1.75" cy="1.75" r="1.25" class="cls-1"></circle>
-                                                                                </g>
-                                                                            </g>
-                                                                            <g transform="translate(-729 -839)">
-                                                                                <g transform="translate(739 839)" class="cls-4">
-                                                                                    <circle cx="1.75" cy="1.75" r="1.75" class="cls-5"></circle>
-                                                                                    <circle cx="1.75" cy="1.75" r="1.25" class="cls-1"></circle>
-                                                                                </g>
-                                                                            </g>
-                                                                        </g>
-                                                                    </g>
-                                                                </svg>
-                                                                <span>02</span>
-                                                            </li>
-                                                        </ul>
                                                     </div>
                                                 </div>
                                                 <div class="r--grid-item">
@@ -833,63 +422,6 @@
                                                         <p class="r--title-review r--body-item">Contrary to popular belief</p>
                                                         <p class="r--content-review r--body-item">It is a long established fact that a reader will be distracted by the readable content of a page </p>
                                                         <time datetime="2020-01-28T17:29:54Z" class="r--date-review r--top r--text-limit">15 days ago</time>
-                                                        <ul class="r--reply-helpul r--body-item r--flex-center">
-                                                            <li class="r--helpul-item">
-                                                                <div class="r--like">
-                                                                    <div class="r--like-icon like r--flex-center">
-                                                                        <svg width="14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.762 17.939" class="r--icon-like">
-                                                                            <g transform="translate(-926.048 -414.43)">
-                                                                                <path d="M0,14.842V6.033l.266.709S3.779,4.692,3.9,1.674s2.5-1.661,2.624.45-.095,2.192.517,3.909c1.392-.021,2.211-.013,2.59-.006H9.71q.06,0,.119,0l.056,0v0A1.532,1.532,0,0,1,10.923,8.5a1.533,1.533,0,0,1,.45,2.515,1.533,1.533,0,0,1-.387,2.485,1.859,1.859,0,0,1,.257.966c0,.847-.515,1.584-1.15,1.584L9.237,16c-.7.042-2.286.125-2.717.131H6.448A31.646,31.646,0,0,1,0,14.842Z" transform="translate(929.463 415.021)" class="cls-1"></path>
-                                                                                <path d="M945.558,421.769v11.039l-2.9-.279V422.22Z" transform="translate(-16.112 -0.939)" class="cls-2"></path>
-                                                                            </g>
-                                                                        </svg>
-                                                                        <span class="r--like-count like_0">12</span>
-                                                                    </div>
-                                                                    <div class="r--like-icon dislike r--flex-center">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.762 17.659" class="r--icon-dislike">
-                                                                            <g transform="translate(956.922 435.325) rotate(180)">
-                                                                                <path d="M0,14.842V6.033l.266.709S3.779,4.692,3.9,1.674s2.5-1.661,2.624.45-.095,2.192.517,3.909c1.392-.021,2.211-.013,2.59-.006H9.71q.06,0,.119,0l.056,0v0A1.532,1.532,0,0,1,10.923,8.5a1.533,1.533,0,0,1,.45,2.515,1.533,1.533,0,0,1-.387,2.485,1.859,1.859,0,0,1,.257.966c0,.847-.515,1.584-1.15,1.584L9.237,16c-.7.042-2.286.125-2.717.131H6.448A31.646,31.646,0,0,1,0,14.842Z" transform="translate(944.575 418.257)" class="cls-1"></path>
-                                                                                <path d="M945.558,421.946v10.321l-2.9.261V421.777Z" transform="translate(-1 2.296)" class="cls-2"></path>
-                                                                            </g>
-                                                                        </svg>
-                                                                        <span class="r--like-count like_0">08</span>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="r--helpul-item r--reply-review r--flex-center ajax_pp_js" data-id="#popup-reply-review">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.125 17.584" class="r--icon-reply">
-                                                                    <defs>
-                                                                        <clipPath>
-                                                                            <rect width="14.094" height="3.924" class="cls-1"></rect>
-                                                                        </clipPath>
-                                                                    </defs>
-                                                                    <g transform="translate(-784.909 -833.715)">
-                                                                        <path d="M4.01,12.938H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0H18.125a2,2,0,0,1,2,2v8.937a2,2,0,0,1-2,2H8.78l-.667.923L6.4,16.232Z" transform="translate(785.409 834.215)" class="cls-2"></path>
-                                                                        <g transform="translate(788.554 839.127)" class="cls-3">
-                                                                            <g transform="translate(-739 -839)">
-                                                                                <g transform="translate(739 839)" class="cls-4">
-                                                                                    <circle cx="1.75" cy="1.75" r="1.75" class="cls-5"></circle>
-                                                                                    <circle cx="1.75" cy="1.75" r="1.25" class="cls-1"></circle>
-                                                                                </g>
-                                                                            </g>
-                                                                            <g transform="translate(-734 -839)">
-                                                                                <g transform="translate(739 839)" class="cls-4">
-                                                                                    <circle cx="1.75" cy="1.75" r="1.75" class="cls-5"></circle>
-                                                                                    <circle cx="1.75" cy="1.75" r="1.25" class="cls-1"></circle>
-                                                                                </g>
-                                                                            </g>
-                                                                            <g transform="translate(-729 -839)">
-                                                                                <g transform="translate(739 839)" class="cls-4">
-                                                                                    <circle cx="1.75" cy="1.75" r="1.75" class="cls-5"></circle>
-                                                                                    <circle cx="1.75" cy="1.75" r="1.25" class="cls-1"></circle>
-                                                                                </g>
-                                                                            </g>
-                                                                        </g>
-                                                                    </g>
-                                                                </svg>
-                                                                <span>02</span>
-                                                            </li>
-                                                        </ul>
                                                     </div>
                                                 </div>
                                                 <div class="r--grid-item">
@@ -914,63 +446,6 @@
                                                         <p class="r--title-review r--body-item">Contrary to popular belief</p>
                                                         <p class="r--content-review r--body-item">It is a long established fact that a reader will be distracted by the readable content of a page </p>
                                                         <time datetime="2020-01-28T17:29:54Z" class="r--date-review r--top r--text-limit">15 days ago</time>
-                                                        <ul class="r--reply-helpul r--body-item r--flex-center">
-                                                            <li class="r--helpul-item">
-                                                                <div class="r--like">
-                                                                    <div class="r--like-icon like r--flex-center">
-                                                                        <svg width="14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.762 17.939" class="r--icon-like">
-                                                                            <g transform="translate(-926.048 -414.43)">
-                                                                                <path d="M0,14.842V6.033l.266.709S3.779,4.692,3.9,1.674s2.5-1.661,2.624.45-.095,2.192.517,3.909c1.392-.021,2.211-.013,2.59-.006H9.71q.06,0,.119,0l.056,0v0A1.532,1.532,0,0,1,10.923,8.5a1.533,1.533,0,0,1,.45,2.515,1.533,1.533,0,0,1-.387,2.485,1.859,1.859,0,0,1,.257.966c0,.847-.515,1.584-1.15,1.584L9.237,16c-.7.042-2.286.125-2.717.131H6.448A31.646,31.646,0,0,1,0,14.842Z" transform="translate(929.463 415.021)" class="cls-1"></path>
-                                                                                <path d="M945.558,421.769v11.039l-2.9-.279V422.22Z" transform="translate(-16.112 -0.939)" class="cls-2"></path>
-                                                                            </g>
-                                                                        </svg>
-                                                                        <span class="r--like-count like_0">12</span>
-                                                                    </div>
-                                                                    <div class="r--like-icon dislike r--flex-center">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.762 17.659" class="r--icon-dislike">
-                                                                            <g transform="translate(956.922 435.325) rotate(180)">
-                                                                                <path d="M0,14.842V6.033l.266.709S3.779,4.692,3.9,1.674s2.5-1.661,2.624.45-.095,2.192.517,3.909c1.392-.021,2.211-.013,2.59-.006H9.71q.06,0,.119,0l.056,0v0A1.532,1.532,0,0,1,10.923,8.5a1.533,1.533,0,0,1,.45,2.515,1.533,1.533,0,0,1-.387,2.485,1.859,1.859,0,0,1,.257.966c0,.847-.515,1.584-1.15,1.584L9.237,16c-.7.042-2.286.125-2.717.131H6.448A31.646,31.646,0,0,1,0,14.842Z" transform="translate(944.575 418.257)" class="cls-1"></path>
-                                                                                <path d="M945.558,421.946v10.321l-2.9.261V421.777Z" transform="translate(-1 2.296)" class="cls-2"></path>
-                                                                            </g>
-                                                                        </svg>
-                                                                        <span class="r--like-count like_0">08</span>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="r--helpul-item r--reply-review r--flex-center ajax_pp_js" data-id="#popup-reply-review">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.125 17.584" class="r--icon-reply">
-                                                                    <defs>
-                                                                        <clipPath>
-                                                                            <rect width="14.094" height="3.924" class="cls-1"></rect>
-                                                                        </clipPath>
-                                                                    </defs>
-                                                                    <g transform="translate(-784.909 -833.715)">
-                                                                        <path d="M4.01,12.938H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0H18.125a2,2,0,0,1,2,2v8.937a2,2,0,0,1-2,2H8.78l-.667.923L6.4,16.232Z" transform="translate(785.409 834.215)" class="cls-2"></path>
-                                                                        <g transform="translate(788.554 839.127)" class="cls-3">
-                                                                            <g transform="translate(-739 -839)">
-                                                                                <g transform="translate(739 839)" class="cls-4">
-                                                                                    <circle cx="1.75" cy="1.75" r="1.75" class="cls-5"></circle>
-                                                                                    <circle cx="1.75" cy="1.75" r="1.25" class="cls-1"></circle>
-                                                                                </g>
-                                                                            </g>
-                                                                            <g transform="translate(-734 -839)">
-                                                                                <g transform="translate(739 839)" class="cls-4">
-                                                                                    <circle cx="1.75" cy="1.75" r="1.75" class="cls-5"></circle>
-                                                                                    <circle cx="1.75" cy="1.75" r="1.25" class="cls-1"></circle>
-                                                                                </g>
-                                                                            </g>
-                                                                            <g transform="translate(-729 -839)">
-                                                                                <g transform="translate(739 839)" class="cls-4">
-                                                                                    <circle cx="1.75" cy="1.75" r="1.75" class="cls-5"></circle>
-                                                                                    <circle cx="1.75" cy="1.75" r="1.25" class="cls-1"></circle>
-                                                                                </g>
-                                                                            </g>
-                                                                        </g>
-                                                                    </g>
-                                                                </svg>
-                                                                <span>02</span>
-                                                            </li>
-                                                        </ul>
                                                     </div>
                                                 </div>
                                                 <div class="r--grid-item">
@@ -995,63 +470,6 @@
                                                         <p class="r--title-review r--body-item">Contrary to popular belief</p>
                                                         <p class="r--content-review r--body-item">It is a long established fact that a reader will be distracted by the readable content of a page </p>
                                                         <time datetime="2020-01-28T17:29:54Z" class="r--date-review r--top r--text-limit">15 days ago</time>
-                                                        <ul class="r--reply-helpul r--body-item r--flex-center">
-                                                            <li class="r--helpul-item">
-                                                                <div class="r--like">
-                                                                    <div class="r--like-icon like r--flex-center">
-                                                                        <svg width="14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.762 17.939" class="r--icon-like">
-                                                                            <g transform="translate(-926.048 -414.43)">
-                                                                                <path d="M0,14.842V6.033l.266.709S3.779,4.692,3.9,1.674s2.5-1.661,2.624.45-.095,2.192.517,3.909c1.392-.021,2.211-.013,2.59-.006H9.71q.06,0,.119,0l.056,0v0A1.532,1.532,0,0,1,10.923,8.5a1.533,1.533,0,0,1,.45,2.515,1.533,1.533,0,0,1-.387,2.485,1.859,1.859,0,0,1,.257.966c0,.847-.515,1.584-1.15,1.584L9.237,16c-.7.042-2.286.125-2.717.131H6.448A31.646,31.646,0,0,1,0,14.842Z" transform="translate(929.463 415.021)" class="cls-1"></path>
-                                                                                <path d="M945.558,421.769v11.039l-2.9-.279V422.22Z" transform="translate(-16.112 -0.939)" class="cls-2"></path>
-                                                                            </g>
-                                                                        </svg>
-                                                                        <span class="r--like-count like_0">12</span>
-                                                                    </div>
-                                                                    <div class="r--like-icon dislike r--flex-center">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.762 17.659" class="r--icon-dislike">
-                                                                            <g transform="translate(956.922 435.325) rotate(180)">
-                                                                                <path d="M0,14.842V6.033l.266.709S3.779,4.692,3.9,1.674s2.5-1.661,2.624.45-.095,2.192.517,3.909c1.392-.021,2.211-.013,2.59-.006H9.71q.06,0,.119,0l.056,0v0A1.532,1.532,0,0,1,10.923,8.5a1.533,1.533,0,0,1,.45,2.515,1.533,1.533,0,0,1-.387,2.485,1.859,1.859,0,0,1,.257.966c0,.847-.515,1.584-1.15,1.584L9.237,16c-.7.042-2.286.125-2.717.131H6.448A31.646,31.646,0,0,1,0,14.842Z" transform="translate(944.575 418.257)" class="cls-1"></path>
-                                                                                <path d="M945.558,421.946v10.321l-2.9.261V421.777Z" transform="translate(-1 2.296)" class="cls-2"></path>
-                                                                            </g>
-                                                                        </svg>
-                                                                        <span class="r--like-count like_0">08</span>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="r--helpul-item r--reply-review r--flex-center ajax_pp_js" data-id="#popup-reply-review">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.125 17.584" class="r--icon-reply">
-                                                                    <defs>
-                                                                        <clipPath>
-                                                                            <rect width="14.094" height="3.924" class="cls-1"></rect>
-                                                                        </clipPath>
-                                                                    </defs>
-                                                                    <g transform="translate(-784.909 -833.715)">
-                                                                        <path d="M4.01,12.938H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0H18.125a2,2,0,0,1,2,2v8.937a2,2,0,0,1-2,2H8.78l-.667.923L6.4,16.232Z" transform="translate(785.409 834.215)" class="cls-2"></path>
-                                                                        <g transform="translate(788.554 839.127)" class="cls-3">
-                                                                            <g transform="translate(-739 -839)">
-                                                                                <g transform="translate(739 839)" class="cls-4">
-                                                                                    <circle cx="1.75" cy="1.75" r="1.75" class="cls-5"></circle>
-                                                                                    <circle cx="1.75" cy="1.75" r="1.25" class="cls-1"></circle>
-                                                                                </g>
-                                                                            </g>
-                                                                            <g transform="translate(-734 -839)">
-                                                                                <g transform="translate(739 839)" class="cls-4">
-                                                                                    <circle cx="1.75" cy="1.75" r="1.75" class="cls-5"></circle>
-                                                                                    <circle cx="1.75" cy="1.75" r="1.25" class="cls-1"></circle>
-                                                                                </g>
-                                                                            </g>
-                                                                            <g transform="translate(-729 -839)">
-                                                                                <g transform="translate(739 839)" class="cls-4">
-                                                                                    <circle cx="1.75" cy="1.75" r="1.75" class="cls-5"></circle>
-                                                                                    <circle cx="1.75" cy="1.75" r="1.25" class="cls-1"></circle>
-                                                                                </g>
-                                                                            </g>
-                                                                        </g>
-                                                                    </g>
-                                                                </svg>
-                                                                <span>02</span>
-                                                            </li>
-                                                        </ul>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1085,7 +503,7 @@
                         <div class="col-lg-3 pr_animated col-md-3 col-6 mt__30 pr_grid_item product nt_pr desgin__1 done">
                             <div class="product-inner pr">
                                 <div class="product-image pr oh lazyload">
-                                    <a class="d-block" href="product-detail-layout-01.html">
+                                    <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
                                         <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="assets/images/home-classic/pr-03.jpg"></div>
                                     </a>
                                     <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
@@ -1103,7 +521,7 @@
                                 </div>
                                 <div class="product-info mt__15">
                                     <h3 class="product-title pr fs__14 mg__0 fwm">
-                                        <a class="cd chp" href="product-detail-layout-01.html">Ridley High Waist</a>
+                                        <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">Ridley High Waist</a>
                                     </h3>
                                     <span class="price dib mb__5">$36.00</span>
                                 </div>
@@ -1113,7 +531,7 @@
                             <div class="product-inner pr">
                                 <div class="product-image pr oh lazyload">
                                     <span class="tc nt_labels pa pe_none cw"><span class="onsale nt_label"><span>-40%</span></span></span>
-                                    <a class="d-block" href="product-detail-layout-01.html">
+                                    <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
                                         <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="assets/images/home-fashion-9/pr-s-49.jpg"></div>
                                     </a>
                                     <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
@@ -1131,7 +549,7 @@
                                 </div>
                                 <div class="product-info mt__15">
                                     <h3 class="product-title pr fs__14 mg__0 fwm">
-                                        <a class="cd chp" href="product-detail-layout-01.html">Skin Sweatpans</a>
+                                        <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">Skin Sweatpans</a>
                                     </h3>
                                     <span class="price dib mb__5"><del>$75.00</del><ins>$45.00</ins></span>
                                     <div class="swatch__list_js swatch__list lh__1 nt_swatches_on_grid">
@@ -1144,7 +562,7 @@
                         <div class="col-lg-3 pr_animated col-md-3 col-6 mt__30 pr_grid_item product nt_pr desgin__1 done">
                             <div class="product-inner pr">
                                 <div class="product-image pr oh lazyload">
-                                    <a class="d-block" href="product-detail-layout-01.html">
+                                    <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
                                         <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="assets/images/home-classic/pr-21.jpg"></div>
                                     </a>
                                     <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
@@ -1160,7 +578,7 @@
                                 </div>
                                 <div class="product-info mt__15">
                                     <h3 class="product-title pr fs__14 mg__0 fwm">
-                                        <a class="cd chp" href="product-detail-layout-01.html">Black mountain hat</a>
+                                        <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">Black mountain hat</a>
                                     </h3>
                                     <span class="price dib mb__5">$50.00</span>
                                 </div>
@@ -1169,7 +587,7 @@
                         <div class="col-lg-3 pr_animated col-md-3 col-6 mt__30 pr_grid_item product nt_pr desgin__1 done">
                             <div class="product-inner pr">
                                 <div class="product-image pr oh lazyload">
-                                    <a class="d-block" href="product-detail-layout-01.html">
+                                    <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
                                         <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="assets/images/home-classic/pr-31.jpg"></div>
                                     </a>
                                     <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
@@ -1185,7 +603,7 @@
                                 </div>
                                 <div class="product-info mt__15">
                                     <h3 class="product-title pr fs__14 mg__0 fwm">
-                                        <a class="cd chp" href="product-detail-layout-01.html">Men pants</a>
+                                        <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">Men pants</a>
                                     </h3>
                                     <span class="price dib mb__5">$49.00 – $56.00</span>
                                     <div class="swatch__list_js swatch__list lh__1 nt_swatches_on_grid">
@@ -1198,7 +616,7 @@
                         <div class="col-lg-3 pr_animated col-md-3 col-6 mt__30 pr_grid_item product nt_pr desgin__1 done">
                             <div class="product-inner pr">
                                 <div class="product-image pr oh lazyload">
-                                    <a class="d-block" href="product-detail-layout-01.html">
+                                    <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
                                         <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="assets/images/home-classic/pr-19.jpg"></div>
                                     </a>
                                     <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
@@ -1214,7 +632,7 @@
                                 </div>
                                 <div class="product-info mt__15">
                                     <h3 class="product-title pr fs__14 mg__0 fwm">
-                                        <a class="cd chp" href="product-detail-layout-01.html">Cream women pants</a>
+                                        <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">Cream women pants</a>
                                     </h3>
                                     <span class="price dib mb__5">$35.00</span>
                                 </div>
@@ -1223,7 +641,7 @@
                         <div class="col-lg-3 pr_animated col-md-3 col-6 mt__30 pr_grid_item product nt_pr desgin__1 done">
                             <div class="product-inner pr">
                                 <div class="product-image pr oh lazyload">
-                                    <a class="d-block" href="product-detail-layout-01.html">
+                                    <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
                                         <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="assets/images/home-fashion-9/pr-s-33.jpg"></div>
                                     </a>
                                     <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
@@ -1238,7 +656,7 @@
                                     </div>
                                 </div>
                                 <div class="product-info mt__15"><h3 class="product-title pr fs__14 mg__0 fwm">
-                                    <a class="cd chp" href="product-detail-layout-01.html">Sunny Life</a>
+                                    <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">Sunny Life</a>
                                 </h3>
                                     <span class="price dib mb__5">$68.00</span></div>
                             </div>
@@ -1265,7 +683,7 @@
                                     <span class="tc nt_labels pa pe_none cw">
                                         <span class="onsale nt_label"><span>-34%</span></span>
                                     </span>
-                                    <a class="d-block" href="product-detail-layout-01.html">
+                                    <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
                                         <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="assets/images/megamenu/pr-11.jpg"></div>
                                     </a>
                                     <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
@@ -1281,7 +699,7 @@
                                 </div>
                                 <div class="product-info mt__15">
                                     <h3 class="product-title pr fs__14 mg__0 fwm">
-                                        <a class="cd chp" href="product-detail-layout-01.html">La Bohème Rose Gold</a>
+                                        <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">La Bohème Rose Gold</a>
                                     </h3>
                                     <span class="price dib mb__5"><del>$60.00</del><ins>$40.00</ins></span>
                                     <div class="swatch__list_js swatch__list lh__1 nt_swatches_on_grid">
@@ -1294,7 +712,7 @@
                         <div class="col-lg-3 pr_animated col-md-3 col-6 mt__30 pr_grid_item product nt_pr desgin__1 done">
                             <div class="product-inner pr">
                                 <div class="product-image pr oh lazyload">
-                                    <a class="d-block" href="product-detail-layout-01.html">
+                                    <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
                                         <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="assets/images/home-fashion-9/pr-s-37.png"></div>
                                     </a>
                                     <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
@@ -1310,7 +728,7 @@
                                 </div>
                                 <div class="product-info mt__15">
                                     <h3 class="product-title pr fs__14 mg__0 fwm">
-                                        <a class="cd chp" href="product-detail-layout-01.html">Simple Skin T-shirt</a>
+                                        <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">Simple Skin T-shirt</a>
                                     </h3>
                                     <span class="price dib mb__5">$56.00</span>
                                 </div>
@@ -1320,7 +738,7 @@
                             <div class="product-inner pr">
                                 <div class="product-image pr oh lazyload">
                                     <span class="tc nt_labels pa pe_none cw"><span class="nt_label new">New</span></span>
-                                    <a class="d-block" href="product-detail-layout-01.html">
+                                    <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
                                         <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="assets/images/home-classic/pr-01.jpg"></div>
                                     </a>
                                     <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
@@ -1337,7 +755,7 @@
                                         <p class="truncate mg__0 w__100">XS, S, M, L, XL</p></div>
                                 </div>
                                 <div class="product-info mt__15"><h3 class="product-title pr fs__14 mg__0 fwm">
-                                    <a class="cd chp" href="product-detail-layout-01.html">Analogue Resin Strap</a>
+                                    <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">Analogue Resin Strap</a>
                                 </h3>
                                     <span class="price dib mb__5">$30.00</span></div>
                             </div>
@@ -1345,7 +763,7 @@
                         <div class="col-lg-3 pr_animated col-md-3 col-6 mt__30 pr_grid_item product nt_pr desgin__1 done">
                             <div class="product-inner pr">
                                 <div class="product-image pr oh lazyload">
-                                    <a class="d-block" href="product-detail-layout-01.html">
+                                    <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
                                         <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="assets/images/home-lookbook-collection/pr-pin-51.jpg"></div>
                                     </a>
                                     <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
@@ -1367,7 +785,7 @@
                                 </div>
                                 <div class="product-info mt__15">
                                     <h3 class="product-title pr fs__14 mg__0 fwm">
-                                        <a class="cd chp" href="product-detail-layout-01.html">Stripe Long Sleeve Top</a>
+                                        <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">Stripe Long Sleeve Top</a>
                                     </h3>
                                     <span class="price dib mb__5">$15.00 </span>
                                 </div>
@@ -1376,7 +794,7 @@
                         <div class="col-lg-3 pr_animated col-md-3 col-6 mt__30 pr_grid_item product nt_pr desgin__1 done">
                             <div class="product-inner pr">
                                 <div class="product-image pr oh lazyload">
-                                    <a class="db" href="product-detail-layout-01.html">
+                                    <a class="db" href="{{route('product.details',['id'=>$product->id])}}">
                                         <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="assets/images/single-product/pr-viewed-01.jpg"></div>
                                     </a>
                                     <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
@@ -1398,7 +816,7 @@
                                 </div>
                                 <div class="product-info mt__15">
                                     <h3 class="product-title pr fs__14 mg__0 fwm">
-                                        <a class="cd chp" href="product-detail-layout-01.html">Felt Cowboy Hat</a>
+                                        <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">Felt Cowboy Hat</a>
                                     </h3>
                                     <span class="price dib mb__5">$22.00 </span>
                                 </div>
@@ -1407,7 +825,7 @@
                         <div class="col-lg-3 pr_animated col-md-3 col-6 mt__30 pr_grid_item product nt_pr desgin__1 done">
                             <div class="product-inner pr">
                                 <div class="product-image pr oh lazyload">
-                                    <a class="db" href="product-detail-layout-01.html">
+                                    <a class="db" href="{{route('product.details',['id'=>$product->id])}}">
                                         <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="assets/images/single-product/pr-viewed-03.jpg"></div>
                                     </a>
                                     <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
@@ -1431,7 +849,7 @@
                                 </div>
                                 <div class="product-info mt__15">
                                     <h3 class="product-title pr fs__14 mg__0 fwm">
-                                        <a class="cd chp" href="product-detail-layout-01.html">Blue Jean</a></h3>
+                                        <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">Blue Jean</a></h3>
                                     <span class="price dib mb__5">$25.00 </span>
                                 </div>
                             </div>
