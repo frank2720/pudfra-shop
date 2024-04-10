@@ -49,7 +49,7 @@
                                             <a class='product-title db' href=''>
                                                 {{$product->name}}
                                             </a>
-                                            $ {{number_format($product->price)}}
+                                            Ksh {{number_format($product->price)}}
                                             </div>
                                         </div>
                                     @endforeach

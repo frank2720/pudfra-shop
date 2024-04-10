@@ -21,7 +21,7 @@
                 <h3 class="title mb-3">{{$product->name}}</h3>
                 <p class="price-detail-wrap"> 
                     <span class="price h3 text-warning"> 
-                        <span class="currency">$</span><span class="num">{{$product->price}}</span>
+                        <span class="currency">Ksh</span><span class="num">{{$product->price}}</span>
                     </span>
                 </p>
                 <dl class="item-property">

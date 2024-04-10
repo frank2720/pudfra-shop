@@ -159,22 +159,22 @@
                                     <div class="loke_scroll">
                                         <ul class="nt_filter_block nt_filter_styleck css_ntbar" data-filter_condition="or">
                                             <li>
-                                                <a href="#" aria-label="Narrow selection to products matching tag price $50-$100">$50-$100</a>
+                                                <a href="#" aria-label="Narrow selection to products matching tag price 50-100">50-100</a>
                                             </li>
                                             <li>
-                                                <a href="#" aria-label="Narrow selection to products matching tag price $100-$150">$100-$150</a>
+                                                <a href="#" aria-label="Narrow selection to products matching tag price 100-150">100-150</a>
                                             </li>
                                             <li>
-                                                <a href="#" aria-label="Narrow selection to products matching tag price $150-$200">$150-$200</a>
+                                                <a href="#" aria-label="Narrow selection to products matching tag price 150-200">150-200</a>
                                             </li>
                                             <li>
-                                                <a href="#" aria-label="Narrow selection to products matching tag price $250-$300">$250-$300</a>
+                                                <a href="#" aria-label="Narrow selection to products matching tag price 250-300">250-300</a>
                                             </li>
                                             <li>
-                                                <a href="#" aria-label="Narrow selection to products matching tag price $350-$400">$350-$400</a>
+                                                <a href="#" aria-label="Narrow selection to products matching tag price 350-400">350-400</a>
                                             </li>
                                             <li>
-                                                <a href="#" aria-label="Narrow selection to products matching tag price $450-$500">$450-$500</a>
+                                                <a href="#" aria-label="Narrow selection to products matching tag price 450-500">450-500</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -279,7 +279,7 @@
                                     <h3 class="product-title pr fs__14 mg__0 fwm">
                                         <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">{{$product->name}}</a>
                                     </h3>
-                                    <span class="price dib mb__5">${{$product->price}}</span>
+                                    <span class="price dib mb__5">Ksh {{$product->price}}</span>
                                 </div>
                             </div>
                         </div>
