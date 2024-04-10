@@ -2392,23 +2392,104 @@ function addtocart(productId) {
         },
     })
     .done(function (data) {
+        var cartItems = data.cart_products
         setTimeout( function () {
             if ( $('.add-to-cart-btn').hasClass( 'js__qs' ) ) {
                 Command:toastr["success"]("Cart updated successfully","Success");
             } 
         }, 500);
         $('.add-to-cart-btn').removeClass( 'loading' );
-        //$('.tcount').hide()
+
+        $('.fixcl-scroll-content').find('.empty.tc').remove()
+        $(document).find('.mini_cart_tool').remove()
+        $('.mini_cart_items').remove();
+
+        $.each(cartItems, function(key, value) {
+            console.log("Object key: " + key);
+            
+            //console.log("Name: " + value.name);  // Accessing name property
+            //console.log("Age: " + value.age);    // Accessing age property
+
+            var cartItem = `<div class="mini_cart_items js_cat_items lazyload">
+            <div class="mini_cart_item js_cart_item flex al_center pr oh">
+                <div class="ld_cart_bar"></div>
+                <a href="" class="mini_cart_img">
+                    <img class="w__100 lazyload" data-src="storage/`+value.item.images[0].url+`" width="120" height="153" alt="" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTUzIiB2aWV3Qm94PSIwIDAgMTIwIDE1MyI+PC9zdmc+">
+                </a>
+                <div class="mini_cart_info">
+                    <a href="" class="mini_cart_title truncate"> `+value.item.name+`</a>
+                    <div class="mini_cart_meta">
+                        <p class="cart_selling_plan"></p>
+                        <div class="cart_meta_price price">
+                            <div class="cart_price">
+                                <del>Ksh `+value.item.retail_price+`</del>
+                                <ins>Ksh  `+value.item.price+`</ins>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mini_cart_actions">
+                        <div class="quantity pr mr__10 qty__true">
+                            <input type="number" class="input-text qty text tc qty_cart_js" step="1" min="0" max="9999" disabled value="`+value.qty+`">
+                        </div>
+                        <a href="#" class="cart_ac_edit js__qs ttip_nt tooltip_top_right"><span class="tt_txt">Edit this item</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                        <a href="" class="cart_ac_remove js_cart_rem ttip_nt tooltip_top_right" data-id="1"><span class="tt_txt">Remove this item</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="3 6 5 6 21 6"></polyline>
+                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                <line x1="10" y1="11" x2="10" y2="17"></line>
+                                <line x1="14" y1="11" x2="14" y2="17"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+        $('.fixcl-scroll-content').append(cartItem);
+
+        $(".cart_ac_remove").click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var productremovedId = value.item.id;
+            var $wrapItem   = $(this).closest( '.mini_cart_item' );
+            var $processTag = $wrapItem.find( '.ld_cart_bar' );
+            $(document).addClass('ld_nt_cl')
+            removefromcart(productremovedId,$processTag,$wrapItem)
+        });
+
+        });
+
+        $('.fixcl-scroll-content').append(`
+        <div class="mini_cart_tool js_cart_tool tc">
+            <div data-id="note" class="mini_cart_tool_note js_cart_tls ttip_nt tooltip_top">
+                <span class="txt_add_note "><i class="lar la-clipboard"></i><span class="tt_txt">Add Order Note</span></span>
+                <span class="txt_edit_note dn"><i class="las la-clipboard-list"></i><span class="tt_txt">Edit Order Note</span></span>
+            </div>
+            <div data-id="gift" class="mini_cart_tool_gift js_cart_tls js_gift_wrap ttip_nt tooltip_top">
+                <i class="las la-gift"></i><span class="tt_txt">Add A Gift Wrap</span>
+            </div>
+            <div data-id="ship" class="mini_cart_tool_ship js_cart_tls ttip_nt tooltip_top">
+                <i class="las la-truck-moving"></i><span class="tt_txt">Estimate Shipping</span>
+            </div>
+            <div data-id="dis" class="mini_cart_tool_dis js_cart_tls ttip_nt tooltip_top">
+                <i class="las la-tag"></i><span class="tt_txt">Add A Coupon</span>
+            </div>
+        </div>`)
+
         $(document).find('.tcount').remove()
         $(document).find('.toolbar_count').remove()
-        //$('.toolbar_count').hide()
+    
         $('#mobcartvalue').append("<span class='jsccount toolbar_count'>"+data.totalQty+"</span>")
         $('#cartvalue').append("<span class='op__0 ts_op pa tcount bgb br__50 cw tc'>"+data.totalQty+"</span>")
         $(document).find('.cart_tot_price').remove()
         $('.js_cat_ttprice').append("<div class='cart_tot_price'>"+new Intl.NumberFormat('en-US', 
         {  
             style: 'currency',  
-            currency: 'USD' 
+            currency: 'Ksh' 
         }).format(data.subtotal)+"</div>")
     })
 
@@ -2476,7 +2557,7 @@ function removefromcart(productremovedId,$processTag,$wrapItem) {
             $('.js_cat_ttprice').append("<div class='cart_tot_price'>"+new Intl.NumberFormat('en-US', 
             {  
                 style: 'currency',  
-                currency: 'USD' 
+                currency: 'Ksh' 
             }).format(data.subtotal)+"</div>")
         })
 

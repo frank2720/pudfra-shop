@@ -11,16 +11,16 @@ class CartController extends Controller
 {
     public function addToCart(Request $request, $id)
     {
-        $product = Product::find($id);
+        $product = Product::with('images')->find($id);
         $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->add($product, $product->id);
 
         $request->session()->put('cart',$cart);
         return response()->json([
+            'cart_products'=>$cart->items,
             'totalQty'=>$cart->totalQty,
             'subtotal'=>$cart->totalPrice,
-            'productquantity'=>$cart->items[$id]['qty']
         ]);
     }
     
