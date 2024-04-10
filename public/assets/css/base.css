@@ -22106,7 +22106,6 @@ body.dark-mode .nt_menu ul li.is_hover a {
 }
 
 .swatch__list_js.lazyload, .swatch__list_js.lazyloading {
-    background-image: url(../images/svg/lds-sw.svg);
     background-size: 70px;
     background-repeat: no-repeat;
     background-position: center left;
@@ -24959,15 +24958,10 @@ body .tooltip_bottom_right:hover .tt_txt {
 }
 
 .nt_cat_lm, .view_more, .js_add_ld {
-    background-image: url('../images/svg/lds-sw.svg') !important;
     background-size: 0 !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
     transition: none !important;
-}
-
-.nt_cat_lm.swl, .view_more.swl, .js_add_ld.swl {
-    background-image: url('../images/svg/lds-swl.svg') !important;
 }
 
 .jscl_ld {
