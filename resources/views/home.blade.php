@@ -7,7 +7,7 @@
     background-repeat:no-repeat">
     <div class="p-5 mb-4 lc-block col-xxl-7 col-lg-8 col-12" style=" backdrop-filter: blur(6px) saturate(102%);
         -webkit-backdrop-filter: blur(6px) saturate(102%);
-        background-color: rgba(255, 255, 255, 0.45);
+        background-color: rgba(255, 255, 255, 0.548);
         border-radius: 12px;
         border: 1px solid rgba(209, 213, 219, 0.3);">
         <div class="lc-block">

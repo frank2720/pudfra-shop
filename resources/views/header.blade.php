@@ -12,15 +12,12 @@
                                     <rect y="7" width="20" height="1.5"></rect>
                                     <rect y="14" width="30" height="1.5"></rect>
                                 </svg>
-                            </a></div>
-                        <div class="col-lg-2 col-md-4 col-6 tc tl_lg">
-                            <div class=" branding ts__05 lh__1">
-                                <a class="dib" href="{{route("home")}}">
-                                    <img class="w__95 logo_normal dn db_lg" src="{{asset("assets/images/svg/maanar.svg")}}" alt="Kalles Template">
-                                    <img class="w__100 logo_sticky dn" src="{{asset("assets/images/svg/maanar.svg")}}" alt="Kalles Template">
-                                    <img class="w__100 logo_mobile dn_lg" src="{{asset("assets/images/svg/maanar.svg")}}" alt="Kalles Template">
-                                </a>
-                            </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-6">
+                            <a class="dib" href="{{route("home")}}">
+                                <img style="border-radius: 50%;width: 50px;height: 50px;overflow: hidden;" src="{{asset("assets/logo/logo.png")}}" alt="Kalles Template">
+                            </a>
                         </div>
                         <div class="col dn db_lg">
                             <nav class="nt_navigation kl_navigation tc hover_side_up nav_arrow_false">

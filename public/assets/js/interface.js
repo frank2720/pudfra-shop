@@ -2366,6 +2366,13 @@ function LoadMore(page) {
             }
             $('.auto-load').hide();
             $("#data-wrapper").append("<div class='products nt_products_holder row fl_center row_pr_1 cdt_des_5 round_cd_true nt_cover ratio_nt position_8 space_30'>" + response.html + "</div>");
+            $(".add-to-cart-btn").click(function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+                productId = $(this).data('product-id');
+                $(this).addClass( 'loading' );
+                addtocart(productId)
+            });
         })
         .fail(function (jqXHR, ajaxOptions, thrownError) {
             console.log('Server error occured');
@@ -2405,11 +2412,6 @@ function addtocart(productId) {
         $('.mini_cart_items').remove();
 
         $.each(cartItems, function(key, value) {
-            console.log("Object key: " + key);
-            
-            //console.log("Name: " + value.name);  // Accessing name property
-            //console.log("Age: " + value.age);    // Accessing age property
-
             var cartItem = `<div class="mini_cart_items js_cat_items lazyload">
             <div class="mini_cart_item js_cart_item flex al_center pr oh">
                 <div class="ld_cart_bar"></div>
