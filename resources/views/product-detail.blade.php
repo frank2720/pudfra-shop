@@ -21,13 +21,13 @@
                 <h3 class="title mb-3">{{$product->name}}</h3>
                 <p class="price-detail-wrap"> 
                     <span class="price h3 text-warning"> 
-                        <span class="currency">Ksh</span><span class="num">{{$product->price}}</span>
+                        <span class="currency">Ksh</span><span class="num">{{number_format($product->price)}}</span>
                     </span>
                 </p>
                 <dl class="item-property">
                     <dt>Description</dt>
                     <dd>
-                        <p>{{$product->description}}
+                        <p>{!!nl2br(e($product->description))!!}
                         </p>
                     </dd>
                 </dl>

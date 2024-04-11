@@ -279,7 +279,7 @@
                                     <h3 class="product-title pr fs__14 mg__0 fwm">
                                         <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">{{$product->name}}</a>
                                     </h3>
-                                    <span class="price dib mb__5">Ksh {{$product->price}}</span>
+                                    <span class="price dib mb__5">Ksh {{number_format($product->price,2,".",",")}}</span>
                                 </div>
                             </div>
                         </div>
