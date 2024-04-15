@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,7 +22,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
                 'name' => 'admin',
                 'email' => 'otienof534@gmail.com',
-                'password'=>'admin1234',
+                'password'=>Hash::make('admin1234'),
                 'is_admin'=>1,
             ]);
 
