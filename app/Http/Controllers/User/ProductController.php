@@ -14,6 +14,9 @@ class ProductController extends Controller
     public function product_details($id)
     {
         $nav_products = Product::with('images')->get();
+        $json_data = File::get(storage_path('app/public/towns/towns.json'));
+
+        $towns = json_decode($json_data);
         $product = Product::with('images')->find($id);
         $latest = Product::with('images')
                         ->latest()
@@ -22,6 +25,7 @@ class ProductController extends Controller
         //dd(session()->get('cart'));
         $cart = new Cart($oldCart);
         return view('product-detail', [
+        'towns'=>$towns,
         'product'=>$product,
         'nav_products'=>$nav_products,
         'latest'=>$latest,
