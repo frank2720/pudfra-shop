@@ -50,4 +50,48 @@ class CartController extends Controller
             'productquantity'=>$cart->items[$id]['qty']??0
         ]);
     }
+
+    public function getCart()
+    {
+        $products = Product::with('images')->get();
+        $nav_products = Product::with('images')->get();
+        $latest = Product::with('images')
+                        ->latest()
+                        ->paginate(8);
+        $trending_products = Product::with('images')
+                ->latest()
+                ->paginate(8);
+
+        $oldCart = session()->get('cart');
+        $cart = new Cart($oldCart);
+        return view('shopping_cart',[
+        'products'=>$products,
+        'nav_products'=>$nav_products,
+        'trending_products'=>$trending_products,
+        'latest'=>$latest,
+        'cart_products'=>$cart->items,
+        'totalPrice'=>$cart->totalPrice]);
+    }
+
+    public function checkout()
+    {
+        $products = Product::with('images')->get();
+        $nav_products = Product::with('images')->get();
+        $latest = Product::with('images')
+                        ->latest()
+                        ->paginate(8);
+        $trending_products = Product::with('images')
+                ->latest()
+                ->paginate(8);
+
+        $oldCart = session()->get('cart');
+        $cart = new Cart($oldCart);
+        return view('checkout',[
+        'products'=>$products,
+        'nav_products'=>$nav_products,
+        'trending_products'=>$trending_products,
+        'latest'=>$latest,
+        'cart_products'=>$cart->items,
+        'totalPrice'=>$cart->totalPrice]);
+    }
 }

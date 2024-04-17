@@ -41,12 +41,12 @@
                                     @foreach ($latest as $product)
                                         <div class='row mb__10 pb__10'>
                                             <div class='col widget_img_pr'>
-                                                <a class='db pr oh' href=''>
+                                                <a class='db pr oh' href='{{route('product.details',['id'=>$product->id])}}'>
                                                     <img src='data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%201200%201200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E' class='w__100 lz_op_ef lazyload' alt='sunlight bell solar lamp' data-src='{{Storage::url($product->images[0]->url??null)}}' width='80' height='80'>
                                                 </a>
                                             </div>
                                             <div class='col widget_if_pr'>
-                                            <a class='product-title db' href=''>
+                                            <a class='product-title db' href='{{route('product.details',['id'=>$product->id])}}'>
                                                 {{$product->name}}
                                             </a>
                                             Ksh {{number_format($product->price)}}

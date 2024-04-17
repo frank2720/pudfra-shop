@@ -2424,7 +2424,6 @@ function addtocart(productId) {
                         <p class="cart_selling_plan"></p>
                         <div class="cart_meta_price price">
                             <div class="cart_price">
-                                <del>Ksh `+value.item.retail_price+`</del>
                                 <ins>Ksh  `+value.item.price+`</ins>
                             </div>
                         </div>
