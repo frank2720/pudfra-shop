@@ -21,6 +21,7 @@ class PaymentController extends Controller
         $url = env('MPESA_AUTH_URL');
 
         $response=Http::withBasicAuth($consumerKey,$consumerSecret)->get($url);
+        ///dd($response);
         return $response['access_token'];
     }
 

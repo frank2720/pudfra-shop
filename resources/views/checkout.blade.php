@@ -6,15 +6,6 @@
 <div class="row">
     <div class="col-12 col-md-6 col-lg-7">
         <div class="checkout-section">
-            <h3 class="checkout-section__title">Billing details</h3>
-            <div class="row">
-                <p class="checkout-section__field col-12">
-                    <label for="phone">Phone Number</label>
-                    <input type="text" id="phone" placeholder="Enter phone number for payment"/>
-                </p>
-            </div>
-        </div>
-        <div class="checkout-section">
             <div class="row">
                 <p class="checkout-section__field col-12">
                     <div class="order-review__wrapper">
@@ -51,9 +42,31 @@
                                 </tr>
                                 </tfoot>
                             </table>
-                            <div class="checkout-payment">
-                                <button type="button" class="button button_primary btn checkout-payment__btn-place-order">Place order</button>
+                            @if ($totalPrice == 0)
+                            <div class="empty tc mt__40"><i class="las la-shopping-bag pr mb__10"></i>
+                                <p>Your cart is empty.</p>
+                                <p class="return-to-shop mb__15">
+                                    <a class="button button_primary tu js_add_ld" href="{{route('shop')}}">Return To Shop</a>
+                                </p>
                             </div>
+                            @else
+                                <div class="checkout-payment">
+                                    <h3 class="checkout-section__title">Billing details</h3>
+                                    <form action="{{route('stkpush')}}" method="POST" id="payform">
+                                        @csrf
+                                        <p class="checkout-section__field col-12">
+                                            <label for="no.">Phone Number</label>
+                                            <input type="text" id="no." name="phone" required placeholder="Enter phone number for payment" class="mb-3"/>
+                                            @error('phone')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                            <button type="submit" class="button button_primary btn checkout-payment__btn-place-order">Place order</button>
+                                        </p>
+                                    </form>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </p>

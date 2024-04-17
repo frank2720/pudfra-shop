@@ -54,7 +54,7 @@
     });
 
     $(document).on('submit','#payform', function (e) {
-    //e.preventDefault();
+    e.preventDefault();
     $.ajax({
         url:"/payments/initiatepush",
         data:new FormData(this),
@@ -65,15 +65,12 @@
         success:function(data)
         {
             $("#payform").trigger("reset");
-            Command:toastr["success"]("Payment initiated successfully Enter your MPESA pin to complete the payment","Success");
+            Command:toastr["success"]("Payment initiated successfully Enter your MPESA pin to complete the order","Success");
             $('#cart-modal').modal('hide');
         }, 
-        error:function($err){
-                let error =$err.responseJSON;
-                $.each(error.errors,function(index,value){
-                    Command:toastr["error"](value,"Failed");
-                });
-            },       
+        error: function (error) {
+                console.log('Server error occured');
+            }     
         });
     });
     });

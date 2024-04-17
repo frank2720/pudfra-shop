@@ -2416,7 +2416,7 @@ function addtocart(productId) {
             <div class="mini_cart_item js_cart_item flex al_center pr oh">
                 <div class="ld_cart_bar"></div>
                 <a href="" class="mini_cart_img">
-                    <img class="w__100 lazyload" data-src="storage/`+value.item.images[0].url+`" width="120" height="153" alt="" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTUzIiB2aWV3Qm94PSIwIDAgMTIwIDE1MyI+PC9zdmc+">
+                    <img class="w__100 lazyload" style="height: 100px;width:100px;object-fit:cover" data-src="storage/`+value.item.images[0].url+`" width="120" height="153" alt="" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTUzIiB2aWV3Qm94PSIwIDAgMTIwIDE1MyI+PC9zdmc+">
                 </a>
                 <div class="mini_cart_info">
                     <a href="" class="mini_cart_title truncate"> `+value.item.name+`</a>
