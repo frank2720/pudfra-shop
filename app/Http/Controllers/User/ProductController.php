@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Models\Cart;
 use App\Models\Product;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -20,8 +21,8 @@ class ProductController extends Controller
         $oldCart = session()->get('cart');
         //dd(session()->get('cart'));
         $cart = new Cart($oldCart);
-        return view('product-detail', 
-        ['product'=>$product,
+        return view('product-detail', [
+        'product'=>$product,
         'nav_products'=>$nav_products,
         'latest'=>$latest,
         'cart_products'=>$cart->items,
@@ -36,9 +37,14 @@ class ProductController extends Controller
                         ->latest()
                         ->paginate(8);
         $oldCart = session()->get('cart');
+        $json_data = File::get(storage_path('app/public/towns/towns.json'));
+
+        $towns = json_decode($json_data);
         //dd(session()->get('cart'));
         $cart = new Cart($oldCart);
-        return view('shop',['products'=>$products,
+        return view('shop',[
+        'towns'=>$towns,
+        'products'=>$products,
         'nav_products'=>$nav_products,
         'latest'=>$latest,
         'cart_products'=>$cart->items,

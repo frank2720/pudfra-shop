@@ -59,18 +59,11 @@
                         @endforeach
                     </div>
                     <div class="mini_cart_tool js_cart_tool tc ">
-                        <div data-id="note" class="mini_cart_tool_note js_cart_tls ttip_nt tooltip_top">
-                            <span class="txt_add_note "><i class="lar la-clipboard"></i><span class="tt_txt">Add Order Note</span></span>
-                            <span class="txt_edit_note dn"><i class="las la-clipboard-list"></i><span class="tt_txt">Edit Order Note</span></span>
-                        </div>
                         <div data-id="gift" class="mini_cart_tool_gift js_cart_tls js_gift_wrap ttip_nt tooltip_top">
                             <i class="las la-gift"></i><span class="tt_txt">Add A Gift Wrap</span>
                         </div>
                         <div data-id="ship" class="mini_cart_tool_ship js_cart_tls ttip_nt tooltip_top">
                             <i class="las la-truck-moving"></i><span class="tt_txt">Estimate Shipping</span>
-                        </div>
-                        <div data-id="dis" class="mini_cart_tool_dis js_cart_tls ttip_nt tooltip_top">
-                            <i class="las la-tag"></i><span class="tt_txt">Add A Coupon</span>
                         </div>
                     </div>
                     @else
@@ -97,14 +90,6 @@
             </div>
         </div>
 
-        <!--mini cart tool cart node-->
-        <div class="mini_cart_note pe_none">
-            <label for="CartSpecialInstructions" class="mb__5 dib"><span class="txt_add_note ">Add Order Note</span><span class="txt_edit_note dn">Edit Order Note</span></label>
-            <textarea name="note" id="CartSpecialInstructions" placeholder="How can we help you?"></textarea>
-            <input type="button" class="button btn_back js_cart_tls_back mt__15 mb__10" value="Save">
-            <input type="button" class="button btn_back btn_back2 js_cart_tls_back" value="Cancel">
-        </div>
-
         <!--mini cart tool cart gift-->
         <div class="mini_cart_gift pe_none">
             <div class="shipping_calculator tc">
@@ -119,7 +104,7 @@
                     <span class="gift_wrap_text mt__10 db"><span class="cd">Do you want a gift wrap?</span> Only Ksh 100.00</span>
                 </p>
                 <p class="field">
-                    <a href="{{route('shop')}}" class="w__100 tu tc button button_primary truncate js_addtc">Add A Gift Wrap</a>
+                    <input type="button"class="button btn-checkout get_rates mt__10 mb__10 js_add_ld d-inline-flex justify-content-center align-items-center text-white" value="Add Gift">
                 </p>
                 <p class="field">
                     <input type="button" class="button btn_back js_cart_tls_back" value="Cancel">
@@ -135,39 +120,18 @@
                     <label for="">Region</label>
                     <select id="" class=" lazyload">
                         <option value="" selected disabled>---</option>
-                        <option value="region 1">region 1</option>
-                        <option value="region 2">region 2</option>
-                        <option value="region 3">region 3</option>
-                        <option value="region 4">region 4</option>
-                        <option value="region 5">region 5</option>
+                        @foreach ($towns as $town)
+                            <option value="region 1">{{$town->city}}</option>
+                        @endforeach
                     </select>
                 </p>
                 <p class="field">
-                    <label for="address_zip_ship">Postal/Zip Code</label>
-                    <input type="text" id="address_zip_ship">
-                </p>
-                <p class="field">
-                    <input type="button" class="get_rates button" value="Calculate Shipping">
+                    <input type="button"class="button btn-checkout get_rates mt__10 mb__10 js_add_ld d-inline-flex justify-content-center align-items-center text-white" value="Calculate Shipping">
                 </p>
                 <p class="field">
                     <input type="button" class="button btn_back js_cart_tls_back" value="Cancel">
                 </p>
                 <div id="response_calcship"></div>
-            </div>
-        </div>
-
-        <!--mini cart tool coupon-->
-        <div class="mini_cart_dis pe_none">
-            <div class="shipping_calculator">
-                <h3>Add A Coupon</h3>
-                <p>Coupon code will work on checkout page</p>
-                <p class="field">
-                    <input type="text" name="discount" value="" placeholder="Coupon code">
-                </p>
-                <p class="field">
-                    <input type="button" class="button btn_back js_cart_tls_back" value="Save">
-                </p>
-                <input type="button" class="button btn_back btn_back2 js_cart_tls_back" value="Cancel">
             </div>
         </div>
 

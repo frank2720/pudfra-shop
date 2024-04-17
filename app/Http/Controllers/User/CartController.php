@@ -6,6 +6,7 @@ use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 
 class CartController extends Controller
 {
@@ -62,9 +63,13 @@ class CartController extends Controller
                 ->latest()
                 ->paginate(8);
 
+        $json_data = File::get(storage_path('app/public/towns/towns.json'));
+
+        $towns = json_decode($json_data);
         $oldCart = session()->get('cart');
         $cart = new Cart($oldCart);
         return view('shopping_cart',[
+        'towns'=>$towns,
         'products'=>$products,
         'nav_products'=>$nav_products,
         'trending_products'=>$trending_products,
@@ -84,9 +89,14 @@ class CartController extends Controller
                 ->latest()
                 ->paginate(8);
 
+        $json_data = File::get(storage_path('app/public/towns/towns.json'));
+
+        $towns = json_decode($json_data);
+
         $oldCart = session()->get('cart');
         $cart = new Cart($oldCart);
         return view('checkout',[
+        'towns'=>$towns,
         'products'=>$products,
         'nav_products'=>$nav_products,
         'trending_products'=>$trending_products,

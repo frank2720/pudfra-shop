@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class HomeController extends Controller
 {
@@ -26,6 +27,10 @@ class HomeController extends Controller
                                 ->latest()
                                 ->paginate(8);
 
+        $json_data = File::get(storage_path('app/public/towns/towns.json'));
+
+        $towns = json_decode($json_data);
+
         $bestsales = Product::with('images')
                         ->whereColumn('retail_price','>','price')
                         ->paginate(4);
@@ -38,12 +43,15 @@ class HomeController extends Controller
         //dd(session()->get('cart'));
         $cart = new Cart($oldCart);
 
+
         if ($request->ajax()) {
             $view = view('trend', compact('trending_products'))->render();
             
             return response()->json(['html' => $view]);
         }
+
         return view('home',[
+            'towns'=>$towns,
             'nav_products'=>$nav_products,
             'trending_products'=>$trending_products,
             'bestsales'=>$bestsales,
