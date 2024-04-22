@@ -40,7 +40,7 @@ Route::group([
 
 
 Route::get('/shop', [UserProductController::class, 'products'])->name('shop');
-Route::get('/product/{id}', [UserProductController::class, 'product'])->name('product_details');
+Route::get('/product_{id}', [UserProductController::class, 'product'])->name('product_details');
 Route::post('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('addToCart');
 Route::get('/shopping-cart', [CartController::class, 'getCart'])->name('shopping');
 Route::get('/shopping-checkout', [CartController::class, 'checkout'])->name('checkout');
