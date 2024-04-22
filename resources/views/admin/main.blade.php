@@ -198,86 +198,6 @@
             font-weight: normal;
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function(event) {
-
-        const showNavbar = (toggleId, navId, bodyId, headerId) =>{
-        const toggle = document.getElementById(toggleId),
-        nav = document.getElementById(navId),
-        bodypd = document.getElementById(bodyId),
-        headerpd = document.getElementById(headerId)
-        
-        // Validate that all variables exist
-        if(toggle && nav && bodypd && headerpd){
-        toggle.addEventListener('click', ()=>{
-        // show navbar
-        nav.classList.toggle('show')
-        // change icon
-        toggle.classList.toggle('bx-x')
-        // add padding to body
-        bodypd.classList.toggle('body-pd')
-        // add padding to header
-        headerpd.classList.toggle('body-pd')
-        })
-        }
-        }
-        
-        showNavbar('header-toggle','nav-bar','body-pd','header')
-        
-        /*===== LINK ACTIVE =====*/
-        const linkColor = document.querySelectorAll('.nav_link')
-        
-        function colorLink(){
-        if(linkColor){
-        linkColor.forEach(l=> l.classList.remove('active'))
-        this.classList.add('active')
-        }
-        }
-        linkColor.forEach(l=> l.addEventListener('click', colorLink))
-        
-            // Your code to run since DOM is loaded and ready
-        });
-
-        $(document).ready(function(){
-        // Activate tooltip
-        $('[data-toggle="tooltip"]').tooltip();
-
-        $('#productform').on('submit', function (event) {
-            event.preventDefault();
-            $.ajax({
-                url:"{{route('products.store')}}",
-                data:new FormData(this),
-                type:"POST",
-                cache: false,
-                contentType: false,
-                processData: false,
-                success:function($result)
-                {
-                    $("#productform").trigger("reset");
-                    $('.table-wrapper').load('');
-                    Command:toastr["success"]("Product added successfully","Success");
-                }, 
-                error:function($err){
-                    let error =$err.responseJSON;
-                    $.each(error.errors,function(index,value){
-                        Command:toastr["error"](value,"Failed");
-                    });
-                },       
-            });
-        });
-
-        $(document).on('click','.pagination a', function (e) {
-            e.preventDefault();
-            var page = $(this).attr('href').split('page=')[1]
-            $.ajax({
-                url:'/pagination/paginate-products?page='+page,
-                success:function(data){
-                    $('.table-wrapper').html(data);
-                },
-            });
-        });
-        });
-    </script>
 </head>
 <body id="body-pd">
     <header class="header" id="header">
@@ -338,5 +258,60 @@
     <!--Container Main end-->
 <script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 {!! Toastr::message() !!}
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+
+    const showNavbar = (toggleId, navId, bodyId, headerId) =>{
+    const toggle = document.getElementById(toggleId),
+    nav = document.getElementById(navId),
+    bodypd = document.getElementById(bodyId),
+    headerpd = document.getElementById(headerId)
+    
+    // Validate that all variables exist
+    if(toggle && nav && bodypd && headerpd){
+    toggle.addEventListener('click', ()=>{
+    // show navbar
+    nav.classList.toggle('show')
+    // change icon
+    toggle.classList.toggle('bx-x')
+    // add padding to body
+    bodypd.classList.toggle('body-pd')
+    // add padding to header
+    headerpd.classList.toggle('body-pd')
+    })
+    }
+    }
+    
+    showNavbar('header-toggle','nav-bar','body-pd','header')
+    
+    /*===== LINK ACTIVE =====*/
+    const linkColor = document.querySelectorAll('.nav_link')
+    
+    function colorLink(){
+    if(linkColor){
+    linkColor.forEach(l=> l.classList.remove('active'))
+    this.classList.add('active')
+    }
+    }
+    linkColor.forEach(l=> l.addEventListener('click', colorLink))
+    
+        // Your code to run since DOM is loaded and ready
+    });
+
+    $(document).ready(function(){
+    // Activate tooltip
+    $('[data-toggle="tooltip"]').tooltip();
+    $(document).on('click','.pagination a', function (e) {
+        e.preventDefault();
+        var page = $(this).attr('href').split('page=')[1]
+        $.ajax({
+            url:'/pagination/paginate-products?page='+page,
+            success:function(data){
+                $('.table-wrapper').html(data);
+            },
+        });
+    });
+    });
+</script>
 </body>
 </html>

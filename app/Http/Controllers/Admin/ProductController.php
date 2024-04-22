@@ -51,7 +51,7 @@ class ProductController extends Controller
             
             $manager = new ImageManager(new Driver());
             $image = $manager->read($imagefile);
-            $image = $image->scale(640,480);
+            $image = $image->scale(360,360);
             $image->toWebp()->save(storage_path('app/public/products/'.$imagename));
             //$path =  $imagefile->store('products');
             //$path =Storage::disk('public')->put('products',$imagefile);
@@ -59,7 +59,7 @@ class ProductController extends Controller
             $imagedetails->product_id = $product->id;
             $imagedetails->save();
         }
-        return response()->json([]);
+        return redirect(route('admin.home'))->with('success','product uploaded successfully');
     }
 
     public function edit($product)

@@ -2,7 +2,7 @@
 <div id="addModal" aria-labelledby="addModalLabel" aria-hidden="true" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="{{route('products.store')}}" method="POST" enctype="multipart/form-data" id="productform">
+            <form action="{{route('products.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-header">						
                     <h4 class="modal-title">{{__('Add Product')}}</h4>
@@ -11,19 +11,19 @@
                 <div class="modal-body">					
                     <div class="form-group">
                         <label>{{__('Product Name')}}</label>
-                        <input class="form-control" type="text" name="name">
+                        <input class="form-control" type="text" name="name" required>
                     </div>
                     <div class="form-group">
                         <label>{{__('Product Price')}}</label>
-                        <input class="form-control" type="number" min="0" name="price">
+                        <input class="form-control" type="number" min="0" name="price" required>
                     </div>
                     <div class="form-group">
                         <label>{{__('Retail Price')}}</label>
-                        <input class="form-control" type="number" min="0" name="retail_price">
+                        <input class="form-control" type="number" min="0" name="retail_price" required>
                     </div>
                     <div class="form-group">
                         <label>{{__('Description')}}</label>
-                        <textarea class="form-control" type="text" name="description"></textarea>
+                        <textarea class="form-control" type="text" name="description" required></textarea>
                     </div>
                     <div class="form-group">
                         <label>{{__('Image')}}</label>

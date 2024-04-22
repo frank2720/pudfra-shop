@@ -1,9 +1,9 @@
 @extends('admin.main')
 @section('content')
-    @if (session('status'))
-    <div class="alert alert-success">
-        {{ session('status') }}
-    </div>
+    @if (session('success'))
+        <div class="alert alert-success alert-dismissable">
+            <strong>{{ session('success') }}</strong>
+        </div>
     @endif
     <div class="table-wrapper table-responsive">
     <div class="table-title">
