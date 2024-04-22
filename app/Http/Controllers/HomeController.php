@@ -64,7 +64,9 @@ class HomeController extends Controller
     public function product_search(Request $request)
     {
         $products = Product::with('images')
-        ->where('name','like', '%'.$request->search_string.'%')->get();
+                ->where('name','like', '%'.$request->search_string.'%')
+                ->orwhere('description','like', '%'.$request->search_string.'%')
+                ->get();
         if (count($products) >=1) {
             return response()->json($products);
         }
