@@ -15,7 +15,9 @@
         border: 1px solid rgba(209, 213, 219, 0.3);">
         <div class="lc-block">
             <div editable="rich">
-                <h2 class="fw-bolder">Easy shopping & We deliver</h2>
+                <h6 class="fw-bolder">Maanar Ecommerce Application is for SALE.</h6>
+                <h6>Contact to view the admin dashboard.</h6>
+                <h6>Get a Web app for your Business today!</h6>
             </div>
         </div>
     </div>
