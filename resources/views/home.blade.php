@@ -1,4 +1,7 @@
 @extends('layouts.main')
+@section('title')
+{{config('app.name')}}-{{__('Home')}}
+@endsection
 @section('content')
 
 <div lc-helper="background" class="container-fluid py-5 mb-4 d-flex justify-content-center" style="  background-image: url('https://images.pexels.com/photos/5077039/pexels-photo-5077039.jpeg?auto=compress&cs=tinysrgb&w=600');

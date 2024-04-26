@@ -1,4 +1,7 @@
 @extends('layouts.main')
+@section('title')
+    {{__('List of products')}}
+@endsection
 @section('content')
 <div id="nt_content">
 

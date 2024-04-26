@@ -1,4 +1,7 @@
 @extends('layouts.main')
+@section('title')
+    {{__('Shopping checkout')}}
+@endsection
 @section('content')
 <!--cart section-->
 <div class="kalles-section cart_page_section container mt__60">

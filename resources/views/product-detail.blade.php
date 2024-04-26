@@ -1,4 +1,7 @@
 @extends('layouts.main')
+@section('title')
+{{$product->name}}{{__(' details')}}
+@endsection
 @section('content')
 <div class="container">
     <div class="card">
