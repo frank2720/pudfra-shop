@@ -1,5 +1,7 @@
 @extends('layouts.guest')
-
+@section('title')
+    {{__('reset password')}}
+@endsection
 @section('auth')
 <style>
     .main-content{
