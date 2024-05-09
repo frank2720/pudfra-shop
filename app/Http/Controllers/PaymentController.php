@@ -17,6 +17,7 @@ class PaymentController extends Controller
         $cSecret = env('MPESA_SECRET_KEY');
         $aUrl = env('MPESA_AUTH_URL');
         $AccessToken = new Payment($cKey,$cSecret,$aUrl);
+        $token=$AccessToken->authorization();
         
         $Express_url = env('MPESA_EXPRESS_URL');
         $TransactionType=env('TRANSC_TYPE');
@@ -34,7 +35,7 @@ class PaymentController extends Controller
         $AccountReference='Maanar-shop';
         $TransactionDesc='pay for the goods';
 
-        $response=Http::withToken($AccessToken->authorization())->post($Express_url,[
+        $response=Http::withToken($token)->post($Express_url,[
             'BusinessShortCode'=>$BusinessShortCode,
             'Password'=>$password,
             'Timestamp'=>$Timestamp,
