@@ -11,51 +11,30 @@ use Illuminate\Support\Facades\Storage;
 
 class PaymentController extends Controller
 {
-    /**
-     * Get the access token.
-     */
-    public function token()
-    {
-        $consumerKey = env('MPESA_CONSUMER_KEY');
-        $consumerSecret = env('MPESA_SECRET_KEY');
-        $url = env('MPESA_AUTH_URL');
-
-        $response=Http::withBasicAuth($consumerKey,$consumerSecret)->get($url);
-        ///dd($response);
-        return $response['access_token'];
-    }
-
-    /**
-     * Initiate the stk push.
-     */
     public function initiatestk(Request $request)
     {
-        $oldCart = session()->get('cart');
-        $cart = new Cart($oldCart);
+        $cKey = env('MPESA_CONSUMER_KEY');
+        $cSecret = env('MPESA_SECRET_KEY');
+        $aUrl = env('MPESA_AUTH_URL');
+        $AccessToken = new Payment($cKey,$cSecret,$aUrl);
         
-        $request->validate([
-            'phone'=>'required',
-        ],
-        [
-            'phone.required'=>'phone number required',
-        ]);
-        
-        $accessToken = $this->token();
-        $url = env('MPESA_EXPRESS_URL');
+        $Express_url = env('MPESA_EXPRESS_URL');
+        $TransactionType=env('TRANSC_TYPE');
+        $callbackURL=env('CALL_BACK_URL');
         $passKey =env('PASS_KEY');
         $BusinessShortCode=env('SHORTCODE');
+        $PartyB=env('PARTY_B');
         $Timestamp=Carbon::now()->format('YmdHis');
+        $cart = new Cart(session()->get('cart'));
+
         $password=base64_encode($BusinessShortCode.$passKey.$Timestamp);
-        $TransactionType=env('TRANSC_TYPE');
         $Amount=$cart->totalPrice;
         $PartyA=preg_replace('/^0/','254',str_replace("+","",$request->phone));
-        $PartyB=env('PARTY_B');
         $PhoneNumber=$PartyA;
-        $callbackURL=env('CALL_BACK_URL');
         $AccountReference='Maanar-shop';
         $TransactionDesc='pay for the goods';
 
-        $response=Http::withToken($accessToken)->post($url,[
+        $response=Http::withToken($AccessToken->authorization())->post($Express_url,[
             'BusinessShortCode'=>$BusinessShortCode,
             'Password'=>$password,
             'Timestamp'=>$Timestamp,
@@ -76,37 +55,5 @@ class PaymentController extends Controller
     {
         $data = file_get_contents('php://input');
         Storage::disk('local')->put('mpesainfo.json',$data);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Payment $payment)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Payment $payment)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Payment $payment)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Payment $payment)
-    {
-        //
     }
 }

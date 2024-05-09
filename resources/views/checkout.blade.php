@@ -55,16 +55,11 @@
                             @else
                                 <div class="checkout-payment">
                                     <h3 class="checkout-section__title">Billing details</h3>
-                                    <form action="{{route('stkpush')}}" method="POST" id="payform">
+                                    <form action="{{route('stkpush')}}" method="POST">
                                         @csrf
                                         <p class="checkout-section__field col-12">
                                             <label for="no.">Phone Number</label>
                                             <input type="text" id="no." name="phone" required placeholder="Enter phone number for payment" class="mb-3"/>
-                                            @error('phone')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
                                             <button type="submit" class="button button_primary btn checkout-payment__btn-place-order">Place order</button>
                                         </p>
                                     </form>
