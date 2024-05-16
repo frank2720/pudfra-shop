@@ -140,9 +140,6 @@
                                     </div>
 
                                 </form>
-                                <p class="mt__20">
-                                    <img class="w__100 lz_op_ef lazyload w__max-width__197" data-src="assets/images/payment2.png" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20197%2020%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E" alt="">
-                                </p>
                             </div>
                         </div>
                     </div>

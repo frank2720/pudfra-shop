@@ -1,8 +1,4 @@
 {
-  "resources/assets/css/lds-sw.svg": {
-    "file": "assets/lds-sw-5944ae61.svg",
-    "src": "resources/assets/css/lds-sw.svg"
-  },
   "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Bold.woff": {
     "file": "assets/AvenirNextRoundedStd-Bold-91759bd2.woff",
     "src": "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Bold.woff"

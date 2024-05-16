@@ -2634,13 +2634,6 @@ a.br_rd_false {
     border-radius: 50%;
 }
 
-.remove_soldout_false.variations.style_color .swatch.is-color .swatches-select > .nt_soldout > span.swatch__value_pr:before {
-    background-image: url('../images/sold_out.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 0 0
-}
-
 .remove_soldout_false.variations .swatches-select > li.nt_soldout a,
 .remove_soldout_false.variations.variant_simple .input-dropdown-inner .dropdown-list li.current-item.nt_soldout a,
 .remove_soldout_false.variations.variant_simple .input-dropdown-inner .dropdown-list li.nt_soldout a {
@@ -3110,10 +3103,6 @@ svg.ic_triangle_svg {
     margin-left: -125px;
     width: 250px;
     height: 30px;
-}
-
-.title_5.lazyloaded:after {
-    background-image: url(../images/svg/svg_title.svg);
 }
 
 .title_6 + .tt_divider {
@@ -25410,11 +25399,6 @@ ul.nt_filter_styleck > li > a:before,
 }
 
 ul.nt_filter_styleck > li.active > a:before,
-.nt_filter_color li.active .filter-swatch > span:after {
-    background-image: url(../images/svg/filter_selected.svg);
-    background-size: 12px;
-}
-
 input[type="checkbox"].js_agree_ck,
 input[type="checkbox"].css_agree_ck {
     display: none
@@ -28376,20 +28360,11 @@ html.hside_opened, body.pside_opened {
 
 .pswp__button,
 .pswp__button--arrow--left:before,
-.pswp__button--arrow--right:before {
-    background: url(../images/default-skin.png) 0 0 no-repeat;
-    background-size: 264px 88px;
-    width: 44px;
-    height: 44px;
-}
 
 @media (-webkit-min-device-pixel-ratio: 1.1), (-webkit-min-device-pixel-ratio: 1.09375), (min-resolution: 105dpi), (min-resolution: 1.1dppx) {
     /* Serve SVG sprite if browser supports SVG and resolution is more than 105dpi */
     .pswp--svg .pswp__button,
     .pswp--svg .pswp__button--arrow--left:before,
-    .pswp--svg .pswp__button--arrow--right:before {
-        background-image: url(../images/svg/default-skin.svg);
-    }
 
     .pswp--svg .pswp__button--arrow--left,
     .pswp--svg .pswp__button--arrow--right {
@@ -28687,11 +28662,6 @@ a.pswp__share--download:hover {
 
 .pswp__preloader--active {
     opacity: 1;
-}
-
-.pswp__preloader--active .pswp__preloader__icn {
-    /* We use .gif in browsers that don't support CSS animation */
-    background: url(../images/preloader.gif) 0 0 no-repeat;
 }
 
 .pswp--css_animation .pswp__preloader--active {
@@ -29297,24 +29267,6 @@ a.pswp__share--download:hover {
     background-color: #f9f9f9;
 }
 
-.threesixty .nav_bar .butn > span {
-    width: 24px;
-    height: 24px;
-    background: url("../images/svg/prev.svg");
-}
-
-.threesixty .nav_bar .butn .icon-play {
-    background: url("../images/svg/play.svg");
-}
-
-.threesixty .nav_bar .butn .icon-forward {
-    background: url("../images/svg/next.svg");
-}
-
-.threesixty .nav_bar .butn .icon-pause {
-    background: url("../images/svg/pause.svg");
-}
-
 .p_group_btns.nt_hide {
     pointer-events: none;
 }
@@ -29374,19 +29326,6 @@ img.zoomImg {
     background-color: rgba(0, 0, 0, .04);
 }
 
-.flagst4.lazyloaded:before {
-    background-image: url(../images/currency_flags.png);
-    background-repeat: no-repeat;
-    border-radius: 0;
-    width: 30px;
-    height: 20px;
-    content: "";
-    vertical-align: middle;
-    margin-right: 5px;
-    display: inline-block;
-    overflow: hidden;
-}
-
 .languages .flagst4.lazyloaded:before {
     display: none;
 }
@@ -29433,12 +29372,6 @@ img.zoomImg {
 
 .flagst4-SGD:before {
     background-position: -125px -95px;
-}
-
-.flagst4-sm.lazyloaded:before {
-    background-image: url(../images/currency_flags_sm.png);
-    width: 15px;
-    height: 10px;
 }
 
 .flagst4-sm.flagst4-VND:before {
@@ -29522,51 +29455,6 @@ img.zoomImg {
     width: 16px !important;
     height: 12px !important;
 }
-
-.flagst4-VND.lazyloaded:before {
-    background-image: url(../images/svg/vnd.svg);
-}
-
-.flagst4-USD.lazyloaded:before {
-    background-image: url(../images/svg/usd.svg);
-}
-
-.flagst4-AUD.lazyloaded:before {
-    background-image: url(../images/svg/aud.svg);
-}
-
-.flagst4-GBP.lazyloaded:before {
-    background-image: url(../images/svg/gbp.svg);
-}
-
-.flagst4-CAD.lazyloaded:before {
-    background-image: url(../images/svg/cad.svg);
-}
-
-.flagst4-DKK.lazyloaded:before {
-    background-image: url(../images/svg/dkk.svg);
-}
-
-.flagst4-EUR.lazyloaded:before {
-    background-image: url(../images/svg/eur.svg);
-}
-
-.flagst4-HKD.lazyloaded:before {
-    background-image: url(../images/svg/hkd.svg);
-}
-
-.flagst4-JPY.lazyloaded:before {
-    background-image: url(../images/svg/jpy.svg);
-}
-
-.flagst4-NZD.lazyloaded:before {
-    background-image: url(../images/svg/nzd.svg);
-}
-
-.flagst4-SGD.lazyloaded:before {
-    background-image: url(../images/svg/sgd.svg);
-}
-
 #ld_cl_bar, .ld_cart_bar, .ld_bar_search {
     position: fixed;
     top: 0;
@@ -30901,62 +30789,9 @@ body:not(.h_calc_ready) #kalles-section-header_banner {
     transform: none;
 }
 
-[class^=nt-currency-flag]::before {
-    background-image: url(../images/svg/usd.svg);
-    background-repeat: no-repeat;
-    border-radius: 0;
-    width: 30px;
-    height: 20px;
-    content: "";
-    vertical-align: middle;
-    margin-right: 5px;
-    display: inline-block;
-    overflow: hidden;
-}
-
 .nt_currency [class*=--w16-h-12]::before {
     width: 16px;
     height: 12px;
-}
-
-.nt_currency [class*=flag--usd]::before {
-    background-image: url(../images/svg/usd.svg);
-}
-
-.nt_currency [class*=flag--aud]::before {
-    background-image: url(../images/svg/aud.svg);
-}
-
-.nt_currency [class*=flag--cad]::before {
-    background-image: url(../images/svg/cad.svg);
-}
-
-.nt_currency [class*=flag--dkk]::before {
-    background-image: url(../images/svg/dkk.svg);
-}
-
-.nt_currency [class*=flag--eur]::before {
-    background-image: url(../images/svg/eur.svg);
-}
-
-.nt_currency [class*=flag--jpy]::before {
-    background-image: url(../images/svg/jpy.svg);
-}
-
-.nt_currency [class*=flag--gbp]::before {
-    background-image: url(../images/svg/gbp.svg);
-}
-
-.nt_currency [class*=flag--hkd]::before {
-    background-image: url(../images/svg/hkd.svg);
-}
-
-.nt_currency [class*=flag--nzd]::before {
-    background-image: url(../images/svg/nzd.svg);
-}
-
-.nt_currency [class*=flag--sgd]::before {
-    background-image: url(../images/svg/sgd.svg);
 }
 
 .header-text i {
@@ -31608,10 +31443,6 @@ ul.nt_filter_styleck > li > a:before,
 }
 
 ul.nt_filter_styleck > li.active > a:before,
-.nt_filter_color li.active .filter-swatch > span:after {
-    background-image: url(../images/filter_selected.svg);
-    background-size: 12px;
-}
 
 input[type="checkbox"].js_agree_ck,
 input[type="checkbox"].css_agree_ck {
@@ -32731,21 +32562,10 @@ body .tooltip_bottom_right:hover .tt_txt {
     display: flex;
 }
 
-.kalles-rating-result__start {
-    display: inline-block;
-    background-image: url(../images/active-start.svg);
-    height: 13px;
-    width: 13px;
-}
-
 .kalles-rating-result__start--big {
     height: 15px;
     width: 15px;
     background-size: contain;
-}
-
-.kalles-rating-result__start.active ~ .kalles-rating-result__start {
-    background-image: url(../images/deactive-start.svg);
 }
 
 .kalles-rating-result__start + .kalles-rating-result__start {
