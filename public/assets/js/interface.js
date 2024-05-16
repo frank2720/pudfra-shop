@@ -2430,7 +2430,7 @@ function addtocart(productId) {
                     </div>
                     <div class="mini_cart_actions">
                         <div class="quantity pr mr__10 qty__true">
-                            <input type="number" class="input-text qty text tc qty_cart_js" step="1" min="0" max="9999" disabled value="`+value.qty+`">
+                            <input type="number" class="input-text qty text tc qty_cart_js" name="product_`+value.item.id+`" disabled value="`+value.qty+`">
                         </div>
                         <a href="#" class="cart_ac_edit js__qs ttip_nt tooltip_top_right"><span class="tt_txt">Edit this item</span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
