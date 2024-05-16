@@ -1,11 +1,355 @@
 {
+  "resources/assets/css/lds-sw.svg": {
+    "file": "assets/lds-sw-5944ae61.svg",
+    "src": "resources/assets/css/lds-sw.svg"
+  },
+  "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Bold.woff": {
+    "file": "assets/AvenirNextRoundedStd-Bold-91759bd2.woff",
+    "src": "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Bold.woff"
+  },
+  "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Bold.woff2": {
+    "file": "assets/AvenirNextRoundedStd-Bold-15b4d277.woff2",
+    "src": "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Bold.woff2"
+  },
+  "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-BoldIt.woff": {
+    "file": "assets/AvenirNextRoundedStd-BoldIt-f43133ae.woff",
+    "src": "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-BoldIt.woff"
+  },
+  "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-BoldIt.woff2": {
+    "file": "assets/AvenirNextRoundedStd-BoldIt-67ce468e.woff2",
+    "src": "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-BoldIt.woff2"
+  },
+  "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Demi.woff": {
+    "file": "assets/AvenirNextRoundedStd-Demi-8c913a72.woff",
+    "src": "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Demi.woff"
+  },
+  "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Demi.woff2": {
+    "file": "assets/AvenirNextRoundedStd-Demi-753316b4.woff2",
+    "src": "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Demi.woff2"
+  },
+  "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-DemiIt.woff": {
+    "file": "assets/AvenirNextRoundedStd-DemiIt-533ec905.woff",
+    "src": "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-DemiIt.woff"
+  },
+  "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-DemiIt.woff2": {
+    "file": "assets/AvenirNextRoundedStd-DemiIt-58875532.woff2",
+    "src": "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-DemiIt.woff2"
+  },
+  "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Italic.woff": {
+    "file": "assets/AvenirNextRoundedStd-Italic-79c201f3.woff",
+    "src": "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Italic.woff"
+  },
+  "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Italic.woff2": {
+    "file": "assets/AvenirNextRoundedStd-Italic-8fed95fb.woff2",
+    "src": "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Italic.woff2"
+  },
+  "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Med.woff": {
+    "file": "assets/AvenirNextRoundedStd-Med-25017b14.woff",
+    "src": "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Med.woff"
+  },
+  "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Med.woff2": {
+    "file": "assets/AvenirNextRoundedStd-Med-68e9fcdf.woff2",
+    "src": "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Med.woff2"
+  },
+  "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-MedIt.woff": {
+    "file": "assets/AvenirNextRoundedStd-MedIt-eeba424c.woff",
+    "src": "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-MedIt.woff"
+  },
+  "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-MedIt.woff2": {
+    "file": "assets/AvenirNextRoundedStd-MedIt-6bdf15dc.woff2",
+    "src": "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-MedIt.woff2"
+  },
+  "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Reg.woff": {
+    "file": "assets/AvenirNextRoundedStd-Reg-5a42f3de.woff",
+    "src": "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Reg.woff"
+  },
+  "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Reg.woff2": {
+    "file": "assets/AvenirNextRoundedStd-Reg-bbbf7113.woff2",
+    "src": "resources/assets/fonts/avenir-next-rounded/AvenirNextRoundedStd-Reg.woff2"
+  },
+  "resources/assets/fonts/fakalles.eot": {
+    "file": "assets/fakalles-e6fee5f8.eot",
+    "src": "resources/assets/fonts/fakalles.eot"
+  },
+  "resources/assets/fonts/fakalles.svg": {
+    "file": "assets/fakalles-9b754ebf.svg",
+    "src": "resources/assets/fonts/fakalles.svg"
+  },
+  "resources/assets/fonts/fakalles.ttf": {
+    "file": "assets/fakalles-01c04d70.ttf",
+    "src": "resources/assets/fonts/fakalles.ttf"
+  },
+  "resources/assets/fonts/fakalles.woff": {
+    "file": "assets/fakalles-b395dc0e.woff",
+    "src": "resources/assets/fonts/fakalles.woff"
+  },
+  "resources/assets/fonts/fakalles.woff2": {
+    "file": "assets/fakalles-94fe3aa7.woff2",
+    "src": "resources/assets/fonts/fakalles.woff2"
+  },
+  "resources/assets/fonts/futura/FuturaLT-Bold.woff": {
+    "file": "assets/FuturaLT-Bold-3b04d881.woff",
+    "src": "resources/assets/fonts/futura/FuturaLT-Bold.woff"
+  },
+  "resources/assets/fonts/futura/FuturaLT-Bold.woff2": {
+    "file": "assets/FuturaLT-Bold-224d481c.woff2",
+    "src": "resources/assets/fonts/futura/FuturaLT-Bold.woff2"
+  },
+  "resources/assets/fonts/futura/FuturaLT-BoldOblique.woff": {
+    "file": "assets/FuturaLT-BoldOblique-7285e3ef.woff",
+    "src": "resources/assets/fonts/futura/FuturaLT-BoldOblique.woff"
+  },
+  "resources/assets/fonts/futura/FuturaLT-BoldOblique.woff2": {
+    "file": "assets/FuturaLT-BoldOblique-cd718e3f.woff2",
+    "src": "resources/assets/fonts/futura/FuturaLT-BoldOblique.woff2"
+  },
+  "resources/assets/fonts/futura/FuturaLT-Book.woff": {
+    "file": "assets/FuturaLT-Book-f193f096.woff",
+    "src": "resources/assets/fonts/futura/FuturaLT-Book.woff"
+  },
+  "resources/assets/fonts/futura/FuturaLT-Book.woff2": {
+    "file": "assets/FuturaLT-Book-29a13c4e.woff2",
+    "src": "resources/assets/fonts/futura/FuturaLT-Book.woff2"
+  },
+  "resources/assets/fonts/futura/FuturaLT-BookOblique.woff": {
+    "file": "assets/FuturaLT-BookOblique-20e5689b.woff",
+    "src": "resources/assets/fonts/futura/FuturaLT-BookOblique.woff"
+  },
+  "resources/assets/fonts/futura/FuturaLT-BookOblique.woff2": {
+    "file": "assets/FuturaLT-BookOblique-1d56727a.woff2",
+    "src": "resources/assets/fonts/futura/FuturaLT-BookOblique.woff2"
+  },
+  "resources/assets/fonts/futura/FuturaLT-ExtraBold.woff": {
+    "file": "assets/FuturaLT-ExtraBold-3963112d.woff",
+    "src": "resources/assets/fonts/futura/FuturaLT-ExtraBold.woff"
+  },
+  "resources/assets/fonts/futura/FuturaLT-ExtraBold.woff2": {
+    "file": "assets/FuturaLT-ExtraBold-30769f58.woff2",
+    "src": "resources/assets/fonts/futura/FuturaLT-ExtraBold.woff2"
+  },
+  "resources/assets/fonts/futura/FuturaLT-ExtraBoldOblique.woff": {
+    "file": "assets/FuturaLT-ExtraBoldOblique-150441d9.woff",
+    "src": "resources/assets/fonts/futura/FuturaLT-ExtraBoldOblique.woff"
+  },
+  "resources/assets/fonts/futura/FuturaLT-ExtraBoldOblique.woff2": {
+    "file": "assets/FuturaLT-ExtraBoldOblique-434f3d2e.woff2",
+    "src": "resources/assets/fonts/futura/FuturaLT-ExtraBoldOblique.woff2"
+  },
+  "resources/assets/fonts/futura/FuturaLT-Heavy.woff": {
+    "file": "assets/FuturaLT-Heavy-aaea43a8.woff",
+    "src": "resources/assets/fonts/futura/FuturaLT-Heavy.woff"
+  },
+  "resources/assets/fonts/futura/FuturaLT-Heavy.woff2": {
+    "file": "assets/FuturaLT-Heavy-05f99884.woff2",
+    "src": "resources/assets/fonts/futura/FuturaLT-Heavy.woff2"
+  },
+  "resources/assets/fonts/futura/FuturaLT-HeavyOblique.woff": {
+    "file": "assets/FuturaLT-HeavyOblique-44263ab7.woff",
+    "src": "resources/assets/fonts/futura/FuturaLT-HeavyOblique.woff"
+  },
+  "resources/assets/fonts/futura/FuturaLT-HeavyOblique.woff2": {
+    "file": "assets/FuturaLT-HeavyOblique-f1c7ba96.woff2",
+    "src": "resources/assets/fonts/futura/FuturaLT-HeavyOblique.woff2"
+  },
+  "resources/assets/fonts/futura/FuturaLT-Light.woff": {
+    "file": "assets/FuturaLT-Light-23ef719e.woff",
+    "src": "resources/assets/fonts/futura/FuturaLT-Light.woff"
+  },
+  "resources/assets/fonts/futura/FuturaLT-Light.woff2": {
+    "file": "assets/FuturaLT-Light-fa2ff6d6.woff2",
+    "src": "resources/assets/fonts/futura/FuturaLT-Light.woff2"
+  },
+  "resources/assets/fonts/futura/FuturaLT-LightOblique.woff": {
+    "file": "assets/FuturaLT-LightOblique-de03305c.woff",
+    "src": "resources/assets/fonts/futura/FuturaLT-LightOblique.woff"
+  },
+  "resources/assets/fonts/futura/FuturaLT-LightOblique.woff2": {
+    "file": "assets/FuturaLT-LightOblique-b6bb8c6e.woff2",
+    "src": "resources/assets/fonts/futura/FuturaLT-LightOblique.woff2"
+  },
+  "resources/assets/fonts/futura/FuturaLT-Oblique.woff": {
+    "file": "assets/FuturaLT-Oblique-48f16ee9.woff",
+    "src": "resources/assets/fonts/futura/FuturaLT-Oblique.woff"
+  },
+  "resources/assets/fonts/futura/FuturaLT-Oblique.woff2": {
+    "file": "assets/FuturaLT-Oblique-efb0af8f.woff2",
+    "src": "resources/assets/fonts/futura/FuturaLT-Oblique.woff2"
+  },
+  "resources/assets/fonts/futura/FuturaLT.woff": {
+    "file": "assets/FuturaLT-386648cb.woff",
+    "src": "resources/assets/fonts/futura/FuturaLT.woff"
+  },
+  "resources/assets/fonts/futura/FuturaLT.woff2": {
+    "file": "assets/FuturaLT-f4172fdd.woff2",
+    "src": "resources/assets/fonts/futura/FuturaLT.woff2"
+  },
+  "resources/assets/fonts/iconKalles.svg": {
+    "file": "assets/iconKalles-2283070a.svg",
+    "src": "resources/assets/fonts/iconKalles.svg"
+  },
+  "resources/assets/fonts/iconKalles.ttf": {
+    "file": "assets/iconKalles-1b14bddb.ttf",
+    "src": "resources/assets/fonts/iconKalles.ttf"
+  },
+  "resources/assets/fonts/iconKalles.woff": {
+    "file": "assets/iconKalles-1aef1642.woff",
+    "src": "resources/assets/fonts/iconKalles.woff"
+  },
+  "resources/assets/fonts/la-brands-400.eot": {
+    "file": "assets/la-brands-400-c0e32387.eot",
+    "src": "resources/assets/fonts/la-brands-400.eot"
+  },
+  "resources/assets/fonts/la-brands-400.svg": {
+    "file": "assets/la-brands-400-4da18191.svg",
+    "src": "resources/assets/fonts/la-brands-400.svg"
+  },
+  "resources/assets/fonts/la-brands-400.ttf": {
+    "file": "assets/la-brands-400-fbc98702.ttf",
+    "src": "resources/assets/fonts/la-brands-400.ttf"
+  },
+  "resources/assets/fonts/la-brands-400.woff": {
+    "file": "assets/la-brands-400-14c63377.woff",
+    "src": "resources/assets/fonts/la-brands-400.woff"
+  },
+  "resources/assets/fonts/la-brands-400.woff2": {
+    "file": "assets/la-brands-400-ff70c9bc.woff2",
+    "src": "resources/assets/fonts/la-brands-400.woff2"
+  },
+  "resources/assets/fonts/la-regular-400.eot": {
+    "file": "assets/la-regular-400-7dc456f0.eot",
+    "src": "resources/assets/fonts/la-regular-400.eot"
+  },
+  "resources/assets/fonts/la-regular-400.svg": {
+    "file": "assets/la-regular-400-884ce19c.svg",
+    "src": "resources/assets/fonts/la-regular-400.svg"
+  },
+  "resources/assets/fonts/la-regular-400.ttf": {
+    "file": "assets/la-regular-400-4b6ab8d0.ttf",
+    "src": "resources/assets/fonts/la-regular-400.ttf"
+  },
+  "resources/assets/fonts/la-regular-400.woff": {
+    "file": "assets/la-regular-400-7711fabc.woff",
+    "src": "resources/assets/fonts/la-regular-400.woff"
+  },
+  "resources/assets/fonts/la-regular-400.woff2": {
+    "file": "assets/la-regular-400-51ca2c00.woff2",
+    "src": "resources/assets/fonts/la-regular-400.woff2"
+  },
+  "resources/assets/fonts/la-solid-900.eot": {
+    "file": "assets/la-solid-900-8a57f8a9.eot",
+    "src": "resources/assets/fonts/la-solid-900.eot"
+  },
+  "resources/assets/fonts/la-solid-900.svg": {
+    "file": "assets/la-solid-900-0ce0cc40.svg",
+    "src": "resources/assets/fonts/la-solid-900.svg"
+  },
+  "resources/assets/fonts/la-solid-900.ttf": {
+    "file": "assets/la-solid-900-07ce3559.ttf",
+    "src": "resources/assets/fonts/la-solid-900.ttf"
+  },
+  "resources/assets/fonts/la-solid-900.woff": {
+    "file": "assets/la-solid-900-a0d21b2a.woff",
+    "src": "resources/assets/fonts/la-solid-900.woff"
+  },
+  "resources/assets/fonts/la-solid-900.woff2": {
+    "file": "assets/la-solid-900-10a68e01.woff2",
+    "src": "resources/assets/fonts/la-solid-900.woff2"
+  },
+  "resources/assets/fonts/pe-icon-7-stroke.eot": {
+    "file": "assets/pe-icon-7-stroke-d9896922.eot",
+    "src": "resources/assets/fonts/pe-icon-7-stroke.eot"
+  },
+  "resources/assets/fonts/pe-icon-7-stroke.svg": {
+    "file": "assets/pe-icon-7-stroke-c508f5a3.svg",
+    "src": "resources/assets/fonts/pe-icon-7-stroke.svg"
+  },
+  "resources/assets/fonts/pe-icon-7-stroke.ttf": {
+    "file": "assets/pe-icon-7-stroke-99620ded.ttf",
+    "src": "resources/assets/fonts/pe-icon-7-stroke.ttf"
+  },
+  "resources/assets/fonts/pe-icon-7-stroke.woff": {
+    "file": "assets/pe-icon-7-stroke-6fb42170.woff",
+    "src": "resources/assets/fonts/pe-icon-7-stroke.woff"
+  },
+  "resources/assets/images/favicon.png": {
+    "file": "assets/favicon-ff1983d7.png",
+    "src": "resources/assets/images/favicon.png"
+  },
+  "resources/assets/images/plyr.svg": {
+    "file": "assets/plyr-abe6c300.svg",
+    "src": "resources/assets/images/plyr.svg"
+  },
+  "resources/assets/images/preloader.gif": {
+    "file": "assets/preloader-80d7ed3f.gif",
+    "src": "resources/assets/images/preloader.gif"
+  },
+  "resources/assets/images/snow.png": {
+    "file": "assets/snow-738fbb7d.png",
+    "src": "resources/assets/images/snow.png"
+  },
+  "resources/assets/images/snow1.png": {
+    "file": "assets/snow1-b0d2c849.png",
+    "src": "resources/assets/images/snow1.png"
+  },
+  "resources/assets/images/snow2.png": {
+    "file": "assets/snow2-932897dd.png",
+    "src": "resources/assets/images/snow2.png"
+  },
+  "resources/assets/images/sold_out.png": {
+    "file": "assets/sold_out-981146b0.png",
+    "src": "resources/assets/images/sold_out.png"
+  },
+  "resources/assets/images/sold_out_white.png": {
+    "file": "assets/sold_out_white-135395b8.png",
+    "src": "resources/assets/images/sold_out_white.png"
+  },
+  "resources/assets/logo/logo.png": {
+    "file": "assets/logo-ed49ad7b.png",
+    "src": "resources/assets/logo/logo.png"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app-574dc71e.css",
+    "src": "resources/js/app.css"
+  },
   "resources/js/app.js": {
-    "file": "assets/app-4ed98349.js",
+    "assets": [
+      "assets/la-brands-400-c0e32387.eot",
+      "assets/la-brands-400-ff70c9bc.woff2",
+      "assets/la-brands-400-14c63377.woff",
+      "assets/la-brands-400-fbc98702.ttf",
+      "assets/la-brands-400-4da18191.svg",
+      "assets/la-regular-400-7dc456f0.eot",
+      "assets/la-regular-400-51ca2c00.woff2",
+      "assets/la-regular-400-7711fabc.woff",
+      "assets/la-regular-400-4b6ab8d0.ttf",
+      "assets/la-regular-400-884ce19c.svg",
+      "assets/la-solid-900-8a57f8a9.eot",
+      "assets/la-solid-900-10a68e01.woff2",
+      "assets/la-solid-900-a0d21b2a.woff",
+      "assets/la-solid-900-07ce3559.ttf",
+      "assets/la-solid-900-0ce0cc40.svg",
+      "assets/iconKalles-1b14bddb.ttf",
+      "assets/iconKalles-1aef1642.woff",
+      "assets/iconKalles-2283070a.svg",
+      "assets/fakalles-e6fee5f8.eot",
+      "assets/fakalles-94fe3aa7.woff2",
+      "assets/fakalles-b395dc0e.woff",
+      "assets/fakalles-01c04d70.ttf",
+      "assets/fakalles-9b754ebf.svg",
+      "assets/pe-icon-7-stroke-d9896922.eot",
+      "assets/pe-icon-7-stroke-6fb42170.woff",
+      "assets/pe-icon-7-stroke-99620ded.ttf",
+      "assets/pe-icon-7-stroke-c508f5a3.svg"
+    ],
+    "css": [
+      "assets/app-574dc71e.css"
+    ],
+    "file": "assets/app-ede19491.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-1bd03d06.css",
+    "file": "assets/app-8b7b945e.css",
     "isEntry": true,
     "src": "resources/sass/app.scss"
   }
