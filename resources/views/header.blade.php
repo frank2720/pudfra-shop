@@ -16,7 +16,7 @@
                         </div>
                         <div class="col-lg-2 col-md-4 col-6">
                             <a class="dib" href="{{route("home")}}">
-                                <img style="border-radius: 50%;width: 50px;height: 50px;overflow: hidden;" src="{{asset("assets/logo/logo.png")}}" alt="Kalles Template">
+                                <img style="border-radius: 50%;width: 50px;height: 50px;overflow: hidden;" src="{{Vite::asset('resources/assets/logo/logo.png')}}" alt="Maanar Shop">
                             </a>
                         </div>
                         <div class="col dn db_lg">
