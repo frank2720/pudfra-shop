@@ -3,23 +3,17 @@
     <div class="kalles_toolbar kalles_toolbar_label_true ntpf r__0 l__0 b__0 flex fl_between al_center">
         <div class="type_toolbar_shop kalles_toolbar_item">
             <a href="{{route('shop')}}">
-                <span class="toolbar_icon"></span>
+                <i class='bx bxs-grid-alt'></i>
                 <span class="kalles_toolbar_label">Shop</span>
-            </a>
-        </div>
-        <div class="type_toolbar_filter kalles_toolbar_item dn">
-            <a class="dt_trigger_cl" href="#" data-trigger=".btn_filter">
-                <span class="toolbar_icon"></span>
-                <span class="kalles_toolbar_label">Filter</span>
             </a>
         </div>
         <div class="type_toolbar_cart kalles_toolbar_item">
             <a href="" class="js_addtc push_side">
-                <span class="toolbar_icon" id="mobcartvalue">
+                <i class='bx bxs-shopping-bag pr' id="mobcartvalue">
                     <span class="jsccount toolbar_count">
                         {{session()->get('cart')->totalQty??0}}
                     </span>
-                </span>
+                </i>
                 <span class="kalles_toolbar_label">Cart</span>
             </a>
         </div>
@@ -27,14 +21,14 @@
             @auth
             <div class="type_toolbar_account kalles_toolbar_item">
                 <a href="#" class="db push_side" data-id="#nt_details_canvas">
-                    <span class="toolbar_icon"></span>
+                    <i class='bx bx-user'></i>
                     <span class="kalles_toolbar_label">Account</span>
                 </a>
             </div>
             @else
             <div class="type_toolbar_account kalles_toolbar_item">
                 <a href="#" class="db push_side" data-id="#nt_login_canvas">
-                    <span class="toolbar_icon"></span>
+                    <i class='bx bx-user'></i>
                     <span class="kalles_toolbar_label">Account</span>
                 </a>
             </div>
@@ -42,7 +36,7 @@
         @endif
         <div class="type_toolbar_search kalles_toolbar_item">
             <a href="#" class="push_side" data-id="#nt_search_canvas">
-                <span class="toolbar_icon"></span>
+                <i class='bx bx-search-alt-2' ></i>
                 <span class="kalles_toolbar_label">Search</span>
             </a>
         </div>
@@ -90,26 +84,26 @@
         <div id="kalles-section-mb_cat" class="kalles-section">
             <ul id="menu_mb_cat" class="nt_mb_menu">
                 <li class="menu-item">
-                    <a href="{{route('shop')}}"><i class="las la-female mr__10 fs__20"></i>Women’s Clothing</a></li>
+                    <a href="{{route('shop')}}"></i>Women’s Clothing</a></li>
                 <li class="menu-item">
-                    <a href="{{route('shop')}}"><i class="las la-male mr__10 fs__20"></i>Men’s Clothing</a></li>
+                    <a href="{{route('shop')}}"></i>Men’s Clothing</a></li>
                 <li class="menu-item">
-                    <a href="shop-1600px-layout.html"><i class="las la-clock mr__10 fs__20"></i>Watches</a></li>
+                    <a href="shop-1600px-layout.html"></i>Watches</a></li>
                 <li class="menu-item">
-                    <a href="{{route('shop')}}"><i class="las la-glasses mr__10 fs__20"></i>Accessories</a></li>
+                    <a href="{{route('shop')}}"></i>Accessories</a></li>
                 <li class="menu-item">
-                    <a href="{{route('shop')}}"><i class="las la-camera-retro mr__10 fs__20"></i>Electric</a></li>
+                    <a href="{{route('shop')}}"></i>Electric</a></li>
                 <li class="menu-item">
-                    <a href="shop-1600px-layout.html"><i class="las la-shoe-prints mr__10 fs__20"></i>Shoes</a></li>
+                    <a href="shop-1600px-layout.html"></i>Shoes</a></li>
                 <li class="menu-item">
-                    <a href="{{route('shop')}}"><i class="las la-gem mr__10 fs__20"></i>Jewellery</a></li>
+                    <a href="{{route('shop')}}"></i>Jewellery</a></li>
                 <li class="menu-item">
-                    <a href="{{route('shop')}}"><i class="las la-tshirt mr__10 fs__20"></i>T-Shirt</a></li>
+                    <a href="{{route('shop')}}"></i>T-Shirt</a></li>
                 <li class="menu-item">
-                    <a href="shop-1600px-layout.html"><i class="las la-child mr__10 fs__20"></i>Toys, Kids &amp; Baby</a>
+                    <a href="shop-1600px-layout.html"></i>Toys, Kids &amp; Baby</a>
                 </li>
                 <li class="menu-item">
-                    <a href="{{route('shop')}}"><i class="las la-chair mr__10 fs__20"></i>Decor</a>
+                    <a href="{{route('shop')}}"></i>Decor</a>
                 </li>
             </ul>
         </div>

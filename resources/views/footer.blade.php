@@ -12,23 +12,9 @@
                             </h3>
                             <div class="widget_footer">
                                 <div class="footer-contact">
-                                    <h3 class="widget-title fwsb flex al_center fl_between fs__16 mg__0 mb__30">
-                                        <span class="txt_title">Maanar</span>
-                                        <span class="nav_link_icon ml__5"></span>
-                                    </h3>
-                                    <p><i class="pegk pe-7s-mail"></i>
+                                    <p>
                                         <span><a href="mailto:contact@company.com">otienof534@gmail.com</a></span>
                                     </p>
-                                    <div class="nt-social">
-                                        <a href="https://twitter.com/pudfra" class="twitter cb ttip_nt tooltip_top">
-                                            <span class="tt_txt">Follow on Twitter</span>
-                                            <i class="facl facl-twitter"></i>
-                                        </a>
-                                        <a href="https://www.linkedin.com/in/francis-otieno-ba7203264/" class="linkedin cb ttip_nt tooltip_top">
-                                            <span class="tt_txt">Follow on Linkedin</span>
-                                            <i class="facl facl-linkedin"></i>
-                                        </a>
-                                    </div>
                                 </div>
                             </div>
                         </div>

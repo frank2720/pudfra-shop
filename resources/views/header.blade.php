@@ -133,26 +133,26 @@
                         <div class="col-lg-auto col-md-4 col-3 tr col_group_btns">
                             <div class="nt_action in_flex al_center cart_des_1">
                                 <a class="icon_search push_side cb chp" data-id="#nt_search_canvas" href="#">
-                                    <i class="iccl iccl-search"></i>
+                                    <i class='bx bx-search-alt-2' ></i>
                                 </a>
                                 @if (Route::has('login'))
                                     @auth
                                     <div class="my-account ts__05 position-relative dn db_md">
                                         <a class="cb chp db push_side" href="" data-id="#nt_details_canvas">
-                                            <i class="iccl iccl-user"></i>
+                                            <i class='bx bx-user'></i>
                                         </a>
                                     </div>
                                     @else
                                         <div class="my-account ts__05 position-relative dn db_md">
                                             <a class="cb chp db push_side" href="#" data-id="#nt_login_canvas">
-                                                <i class="iccl iccl-user"></i>
+                                                <i class='bx bx-user'></i>
                                             </a>
                                         </div>
                                     @endauth
                                 @endif
                                 <div class="icon_cart pr">
                                     <a class="push_side position-relative js_addtc cb chp db" href="">
-                                        <i class="iccl iccl-cart pr" id="cartvalue">
+                                        <i class='bx bxs-shopping-bag pr' id="cartvalue">
                                             <span class="op__0 ts_op pa tcount bgb br__50 cw tc">
                                                 {{session()->get('cart')->totalQty??0}}
                                             </span>

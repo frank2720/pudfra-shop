@@ -3,7 +3,7 @@
     <div class="nt_mini_cart flex column h__100">
         <div class="mini_cart_header flex fl_between al_center">
             <h3 class="widget-title tu fs__16 mg__0 font-poppins">Search Our Site</h3>
-            <i class="close_pp pegk pe-7s-close ts__03 cd"></i>
+            <i class='bx bx-x close_pp pegk ts__03 cd'></i>
         </div>
         <div class="mini_cart_wrap">
             <div class="search_header mini_search_frm pr js_frm_search" role="search">
@@ -27,7 +27,7 @@
                 </div>
                 <div class="frm_search_input pr oh">
                     <input class="search_header__input js_iput_search placeholder-black" autocomplete="search" type="text" name="search" id="search" placeholder="Search for products">
-                    <button class="search_header__submit js_btn_search" type="submit"><i class="iccl iccl-search"></i>
+                    <button class="search_header__submit js_btn_search" type="submit"><i class='bx bx-search-alt-2' ></i>
                     </button>
                 </div>
                 <div class="ld_bar_search"></div>

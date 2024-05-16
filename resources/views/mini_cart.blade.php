@@ -3,7 +3,7 @@
     <div class="nt_mini_cart nt_js_cart flex column h__100 btns_cart_1">
         <div class="mini_cart_header flex fl_between al_center">
             <h3 class="widget-title tu fs__16 mg__0 font-poppins">Shopping cart</h3>
-            <i class="close_pp pegk pe-7s-close ts__03 cd"></i>
+            <i class='bx bx-x close_pp pegk ts__03 cd'></i>
         </div>
         
         <div class="mini_cart_wrap">
