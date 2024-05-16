@@ -117,32 +117,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-12 mb__50 order-lg-5 order-1">
-                        <div class="widget widget_text">
-                            <h3 class="widget-title fwsb flex al_center fl_between fs__16 mg__0 mb__30">
-                                <span class="txt_title">Newsletter Signup</span>
-                                <span class="nav_link_icon ml__5"></span>
-                            </h3>
-                            <div class="widget_footer newl_des_1">
-                                <p>Subscribe to our newsletter and get 10% off your first purchase</p>
-                                <form id="contact_form" class="mc4wp-form pr z_100">
-                                    <div class="mc4wp-form-fields">
-                                        <div class="signup-newsletter-form row no-gutters pr oh ">
-                                            <div class="col col_email">
-                                                <input type="email" name="email" placeholder="Your email address" value="" class="tc tl_md input-text" required="required">
-                                            </div>
-                                            <div class="col-auto">
-                                                <button type="submit" class="btn_new_icon_false w__100 submit-btn truncate">
-                                                    <span>Subscribe</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </form>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

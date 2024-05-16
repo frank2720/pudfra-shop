@@ -117,8 +117,8 @@
             <div class="shipping_calculator">
                 <h3>Estimate Shipping</h3>
                 <p class="field">
-                    <label for="">Region</label>
-                    <select id="" class=" lazyload">
+                    <label for="location">Region</label>
+                    <select id="location" class="lazyload">
                         <option value="" selected disabled>---</option>
                         @foreach ($towns as $town)
                             <option value="region 1">{{$town->city}}</option>
