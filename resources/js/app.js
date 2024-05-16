@@ -1,5 +1,4 @@
 import './bootstrap';
-import '../assets/css/font-icon.min.css';
 import '../assets/css/base.css';
 import 'boxicons';
 

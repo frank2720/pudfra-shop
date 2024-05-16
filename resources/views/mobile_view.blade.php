@@ -62,21 +62,10 @@
                     <a href="{{route('shop')}}"><span class="nav_link_txt flex al_center">Shop</span><span class="nav_link_icon ml__5"></span></a>
                     <ul class="sub-menu">
                         <li class="menu-item">
-                            <a href="{{route('shop')}}">Grid Layout</a>
-                        </li>
-                        <li class="menu-item">
                             <a href="">Shopping cart</a>
                         </li>
                     </ul>
                 </li>
-                @if (Route::has('login'))
-                    @auth
-                    @else
-                    <li class="menu-item menu-item-btns menu-item-acount">
-                        <a href="#" class="push_side" data-id="#nt_login_canvas"><span class="iconbtns">Login / Register</span></a>
-                    </li>
-                    @endauth
-                @endif
             </ul>
         </div>
     </div>

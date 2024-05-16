@@ -6,7 +6,8 @@
                 @csrf
                 <div class="mini_cart_header flex fl_between al_center">
                     <h3 class="widget-title tu fs__16 mg__0 font-poppins">Login</h3>
-                    <i class="close_pp pegk pe-7s-close ts__03 cd"></i></div>
+                    <i class='bx bx-x close_pp pegk ts__03 cd'></i>
+                </div>
                 <div class="mini_cart_wrap">
                     <div class="mini_cart_content fixcl-scroll">
                         <div class="fixcl-scroll-content">
@@ -58,7 +59,7 @@
                 @csrf
                 <div class="mini_cart_header flex fl_between al_center">
                     <h3 class="widget-title tu fs__16 mg__0 font-poppins">Register</h3>
-                    <i class="close_pp pegk pe-7s-close ts__03 cd"></i>
+                    <i class='bx bx-x close_pp pegk ts__03 cd'></i>
                 </div>
                 <div class="mini_cart_wrap">
                     <div class="mini_cart_content fixcl-scroll">

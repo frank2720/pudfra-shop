@@ -11377,170 +11377,6 @@ body.dark-mode .nt_menu ul li.is_hover a {
     z-index: 1;
   }
 
-  @font-face {
-    font-family: 'Avenir Next Rounded Std';
-    src: url('../fonts/avenir-next-rounded/AvenirNextRoundedStd-Reg.woff2') format('woff2'), url('../fonts/avenir-next-rounded/AvenirNextRoundedStd-Reg.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Avenir Next Rounded Std';
-    src: url('../fonts/avenir-next-rounded/AvenirNextRoundedStd-Italic.woff2') format('woff2'), url('../fonts/avenir-next-rounded/AvenirNextRoundedStd-Italic.woff') format('woff');
-    font-weight: 400;
-    font-style: italic;
-}
-
-
-@font-face {
-    font-family: 'Avenir Next Rounded Std';
-    src: url('../fonts/avenir-next-rounded/AvenirNextRoundedStd-Med.woff2') format('woff2'), url('../fonts/avenir-next-rounded/AvenirNextRoundedStd-Med.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Avenir Next Rounded Std';
-    src: url('../fonts/avenir-next-rounded/AvenirNextRoundedStd-MedIt.woff2') format('woff2'), url('../fonts/avenir-next-rounded/AvenirNextRoundedStd-MedIt.woff') format('woff');
-    font-weight: 500;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Avenir Next Rounded Std';
-    src: url('../fonts/avenir-next-rounded/AvenirNextRoundedStd-Demi.woff2') format('woff2'), url('../fonts/avenir-next-rounded/AvenirNextRoundedStd-Demi.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-}
-
-
-@font-face {
-    font-family: 'Avenir Next Rounded Std';
-    src: url('../fonts/avenir-next-rounded/AvenirNextRoundedStd-DemiIt.woff2') format('woff2'), url('../fonts/avenir-next-rounded/AvenirNextRoundedStd-DemiIt.woff') format('woff');
-    font-weight: 600;
-    font-style: italic;
-}
-
-
-@font-face {
-    font-family: 'Avenir Next Rounded Std';
-    src: url('../fonts/avenir-next-rounded/AvenirNextRoundedStd-Bold.woff2') format('woff2'), url('../fonts/avenir-next-rounded/AvenirNextRoundedStd-Bold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-}
-
-
-@font-face {
-    font-family: 'Avenir Next Rounded Std';
-    src: url('../fonts/avenir-next-rounded/AvenirNextRoundedStd-BoldIt.woff2') format('woff2'), url('../fonts/avenir-next-rounded/AvenirNextRoundedStd-BoldIt.woff') format('woff');
-    font-weight: 700;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: Futura;
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-    src: url("../fonts/futura/FuturaLT-Light.woff2") format("woff2"), url("../fonts/futura/FuturaLT-Light.woff") format("woff");
-}
-
-@font-face {
-    font-family: Futura;
-    font-weight: 300;
-    font-style: oblique;
-    font-display: swap;
-    src: url("../fonts/futura/FuturaLT-LightOblique.woff2") format("woff2"), url("../fonts/futura/FuturaLT-LightOblique.woff") format("woff");
-}
-
-@font-face {
-    font-family: Futura;
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-    src: url("../fonts/futura/FuturaLT-Book.woff2") format("woff2"), url("../fonts/futura/FuturaLT-Book.woff") format("woff");
-}
-
-@font-face {
-    font-family: Futura;
-    font-weight: 400;
-    font-style: oblique;
-    font-display: swap;
-    src: url("../fonts/futura/FuturaLT-BookOblique.woff2") format("woff2"), url("../fonts/futura/FuturaLT-BookOblique.woff") format("woff");
-}
-
-@font-face {
-    font-family: Futura;
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-    src: url("../fonts/futura/FuturaLT.woff2") format("woff2"), url("../fonts/futura/FuturaLT.woff") format("woff");
-}
-
-@font-face {
-    font-family: Futura;
-    font-weight: 500;
-    font-style: oblique;
-    font-display: swap;
-    src: url("../fonts/futura/FuturaLT-Oblique.woff2") format("woff2"), url("../fonts/futura/FuturaLT-Oblique.woff") format("woff");
-}
-
-@font-face {
-    font-family: Futura;
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-    src: url("../fonts/futura/FuturaLT-Heavy.woff2") format("woff2"), url("../fonts/futura/FuturaLT-Heavy.woff") format("woff");
-}
-
-@font-face {
-    font-family: Futura;
-    font-weight: 600;
-    font-style: oblique;
-    font-display: swap;
-    src: url("../fonts/futura/FuturaLT-HeavyOblique.woff2") format("woff2"), url("../fonts/futura/FuturaLT-HeavyOblique.woff") format("woff");
-}
-
-@font-face {
-    font-family: Futura;
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-    src: url("../fonts/futura/FuturaLT-Bold.woff2") format("woff2"), url("../fonts/futura/FuturaLT-Bold.woff") format("woff");
-}
-
-@font-face {
-    font-family: Futura;
-    font-weight: 700;
-    font-style: oblique;
-    font-display: swap;
-    src: url("../fonts/futura/FuturaLT-BoldOblique.woff2") format("woff2"), url("../fonts/futura/FuturaLT-BoldOblique.woff") format("woff");
-}
-
-@font-face {
-    font-family: Futura;
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
-    src: url("../fonts/futura/FuturaLT-ExtraBold.woff2") format("woff2"), url("../fonts/futura/FuturaLT-ExtraBold.woff") format("woff");
-}
-
-@font-face {
-    font-family: Futura;
-    font-weight: 800;
-    font-style: oblique;
-    font-display: swap;
-    src: url("../fonts/futura/FuturaLT-ExtraBoldOblique.woff2") format("woff2"), url("../fonts/futura/FuturaLT-ExtraBoldOblique.woff") format("woff");
-}
-
-@font-face {
-    font-family: Futura;
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-    src: url(../fonts/futura/FuturaLT-Heavy.woff) format("woff"), url(../fonts/futura/FuturaLT-Heavy.woff2) format("woff2");
-}
-
 /****************************************
  * Font Line Awesome Brands
  ****************************************/
@@ -17371,40 +17207,13 @@ body.dark-mode .nt_menu ul li.is_hover a {
      width: auto;
  }
  
- @font-face {
-     font-family: 'Line Awesome Brands';
-     font-style: normal;
-     font-weight: normal;
-     font-display: auto;
-     src: url("../fonts/la-brands-400.eot");
-     src: url("../fonts/la-brands-400.eot?#iefix") format("embedded-opentype"), url("../fonts/la-brands-400.woff2") format("woff2"), url("../fonts/la-brands-400.woff") format("woff"), url("../fonts/la-brands-400.ttf") format("truetype"), url("../fonts/la-brands-400.svg#lineawesome") format("svg");
- }
- 
  .lab {
      font-family: 'Line Awesome Brands';
- }
- 
- @font-face {
-     font-family: 'Line Awesome Free';
-     font-style: normal;
-     font-weight: 400;
-     font-display: auto;
-     src: url("../fonts/la-regular-400.eot");
-     src: url("../fonts/la-regular-400.eot?#iefix") format("embedded-opentype"), url("../fonts/la-regular-400.woff2") format("woff2"), url("../fonts/la-regular-400.woff") format("woff"), url("../fonts/la-regular-400.ttf") format("truetype"), url("../fonts/la-regular-400.svg#lineawesome") format("svg");
  }
  
  .lar {
      font-family: 'Line Awesome Free';
      font-weight: 400;
- }
- 
- @font-face {
-     font-family: 'Line Awesome Free';
-     font-style: normal;
-     font-weight: 900;
-     font-display: auto;
-     src: url("../fonts/la-solid-900.eot");
-     src: url("../fonts/la-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/la-solid-900.woff2") format("woff2"), url("../fonts/la-solid-900.woff") format("woff"), url("../fonts/la-solid-900.ttf") format("truetype"), url("../fonts/la-solid-900.svg#lineawesome") format("svg");
  }
  
  .la,
@@ -20190,15 +19999,7 @@ body.dark-mode .nt_menu ul li.is_hover a {
  /****************************************
   * Font iconKalles
   ****************************************/
- @font-face {
-     font-family: 'iconKalles';
-     font-display: swap;
-     src: url('../fonts/iconKalles.ttf') format('truetype'),
-     url('../fonts/iconKalles.woff') format('woff'),
-     url('../fonts/iconKalles.svg') format('svg');
-     font-weight: normal;
-     font-style: normal;
- }
+ 
  
  .iccl {
      font-family: iconKalles, sans-serif;
@@ -20326,18 +20127,6 @@ body.dark-mode .nt_menu ul li.is_hover a {
  /***************************************
  * font fakalles
  ***************************************/
- @font-face {
-     font-family: 'fakalles';
-     font-display: swap;
-     src: url('../fonts/fakalles.eot');
-     src: url('../fonts/fakalles.eot') format('embedded-opentype'),
-     url('../fonts/fakalles.woff2') format('woff2'),
-     url('../fonts/fakalles.woff') format('woff'),
-     url('../fonts/fakalles.ttf') format('truetype'),
-     url('../fonts/fakalles.svg') format('svg');
-     font-weight: normal;
-     font-style: normal;
- }
  
  .facl {
      display: inline-block;
@@ -20591,18 +20380,7 @@ body.dark-mode .nt_menu ul li.is_hover a {
  .facl-telegram:before {
      content: '\f2c6'
  }
- 
- /****************************************
-  * Pe-icon-7-stroke
-  ****************************************/
- @font-face {
-     font-family: Pe-icon-7-stroke;
-     font-display: swap;
-     src: url(../fonts/pe-icon-7-stroke.eot);
-     src: url(../fonts/pe-icon-7-stroke.eot) format('embedded-opentype'), url(../fonts/pe-icon-7-stroke.woff) format('woff'), url(../fonts/pe-icon-7-stroke.ttf) format('truetype'), url(../fonts/pe-icon-7-stroke.svg) format('svg');
-     font-weight: 400;
-     font-style: normal
- }
+
  
  .pegk {
      display: inline-block;
