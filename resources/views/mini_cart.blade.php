@@ -36,7 +36,7 @@
                                         </div>
                                         <div class="mini_cart_actions">
                                             <div class="quantity pr mr__10 qty__true">
-                                                <input type="number" class="input-text qty text tc qty_cart_js" id="product_{{$product['item']->id]}}" disabled value="{{$product['qty']}}">
+                                                <input type="number" class="input-text qty text tc qty_cart_js" id="product_{{$product['item']->id}}" disabled value="{{$product['qty']}}">
                                             </div>
                                             <a href="{{route('shopping')}}" class="cart_ac_edit js__qs ttip_nt tooltip_top_right"><span class="tt_txt">Edit this item</span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
