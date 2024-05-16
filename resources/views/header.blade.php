@@ -1,5 +1,5 @@
 <!-- header -->
-<header id="ntheader" class="ntheader header_3 h_icon_iccl ">
+<header class="ntheader header_3 h_icon_iccl ">
     <div class="kalles-header__wrapper ntheader_wrapper pr z_200">
         <div class="sp_header_mid">
             <div class="header__mid">
