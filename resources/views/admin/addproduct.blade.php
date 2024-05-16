@@ -10,24 +10,24 @@
                 </div>
                 <div class="modal-body">					
                     <div class="form-group">
-                        <label>{{__('Product Name')}}</label>
-                        <input class="form-control" type="text" name="name" required>
+                        <label for="p_name">{{__('Product Name')}}</label>
+                        <input class="form-control" type="text" id="p_name" name="name" required autocomplete="off">
                     </div>
                     <div class="form-group">
-                        <label>{{__('Product Price')}}</label>
-                        <input class="form-control" type="number" min="0" name="price" required>
+                        <label for="p_price">{{__('Product Price')}}</label>
+                        <input class="form-control" id="p_price" type="number" min="0" name="price" required autocomplete="off">
                     </div>
                     <div class="form-group">
-                        <label>{{__('Retail Price')}}</label>
-                        <input class="form-control" type="number" min="0" name="retail_price" required>
+                        <label for="o_price">{{__('Retail Price')}}</label>
+                        <input class="form-control" id="o_price" type="number" min="0" name="retail_price" required autocomplete="off">
                     </div>
                     <div class="form-group">
-                        <label>{{__('Description')}}</label>
-                        <textarea class="form-control" type="text" name="description" required></textarea>
+                        <label for="p_desc">{{__('Description')}}</label>
+                        <textarea class="form-control" id="p_desc" type="text" name="description" required autocomplete="off"></textarea>
                     </div>
                     <div class="form-group">
-                        <label>{{__('Image')}}</label>
-                        <input type="file" name="img[]" class="form-control" multiple required>
+                        <label for="p_img">{{__('Image')}}</label>
+                        <input type="file" id="p_img" name="img[]" class="form-control" multiple required autocomplete="off">
                     </div>					
                 </div>
                 <div class="modal-footer">
