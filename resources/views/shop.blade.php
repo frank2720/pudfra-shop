@@ -9,10 +9,6 @@
 
         <!--grid control-->
         <div class="cat_toolbar row fl_center al_center mt__30">
-            <div class="cat_filter col op__0 pe_none">
-                <a href="#" data-opennt="#kalles-section-nt_filter" data-pos="left" data-remove="true" data-class="popup_filter" data-bg="hide_btn" class="has_icon btn_filter mgr"><i class="iccl fwb iccl-filter fwb mr__5"></i>Filter</a>
-                <a href="#" data-id="#kalles-section-nt_filter" class="btn_filter js_filter dn mgr"><i class="iccl fwb iccl-filter fwb mr__5"></i>Filter</a>
-            </div>
             <div class="cat_view col-auto">
                 <div class="dn dev_desktop">
                     <a href="#" data-mode="grid" data-dev="dk" data-col="6" class="pr mr__10 cat_view_page view_6"></a>
@@ -33,9 +29,8 @@
             </div>
             <div class="cat_sortby cat_sortby_js col tr kalles_dropdown kalles_dropdown_container">
                 <a class="in_flex fl_between al_center sortby_pick kalles_dropDown_label" href="#">
-                    <span class="lbl-title sr_txt dn">Featured</span>
                     <span class="lbl-title sr_txt_mb">Sort by</span>
-                    <i class="ml__5 mr__5 facl facl-angle-down"></i>
+                    <i class='bx bx-chevron-down'></i>
                 </a>
                 <div class="nt_sortby dn">
                     <svg class="ic_triangle_svg" viewBox="0 0 20 9" role="presentation">

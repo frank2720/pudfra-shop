@@ -27,7 +27,7 @@
             </div>
             @else
             <div class="type_toolbar_account kalles_toolbar_item">
-                <a href="#" class="db push_side" data-id="#nt_login_canvas">
+                <a href="{{route('login')}}" class="db push_side">
                     <i class='bx bx-user'></i>
                     <span class="kalles_toolbar_label">Account</span>
                 </a>
@@ -46,7 +46,7 @@
 
 <!-- mobile menu -->
 <div id="nt_menu_canvas" class="nt_fk_canvas nt_sleft dn lazyload">
-    <i class="close_pp pegk pe-7s-close ts__03 cd"></i>
+    <i class='bx bx-x close_pp pegk ts__03 cd'></i>
     <div class="mb_nav_tabs flex al_center mb_cat_true">
         <div class="mb_nav_title pr mb_nav_ul flex al_center fl_center active" data-id="#kalles-section-mb_nav_js">
             <span class="db truncate">Menu</span>

@@ -62,7 +62,7 @@
                                                                         <div class="hover_button op__0 tc pa flex column ts__03">
                                                                             <a href="" class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left add-to-cart-btn" data-product-id="{{$product->id}}">
                                                                                 <span class="tt_txt">Quick Shop</span>
-                                                                                <i class="iccl iccl-cart"></i>
+                                                                                <i class='bx bxs-cart-add'></i>
                                                                                 <span>Quick Shop</span>
                                                                             </a>
                                                                         </div>
@@ -107,7 +107,7 @@
                                                                         <div class="hover_button op__0 tc pa flex column ts__03">
                                                                             <a href="#" class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left add-to-cart-btn" data-product-id="{{$product->id}}">
                                                                                 <span class="tt_txt">Quick Shop</span>
-                                                                                <i class="iccl iccl-cart"></i>
+                                                                                <i class='bx bxs-cart-add'></i>
                                                                                 <span>Quick Shop</span>
                                                                             </a>
                                                                         </div>
@@ -144,7 +144,7 @@
                                     </div>
                                     @else
                                         <div class="my-account ts__05 position-relative dn db_md">
-                                            <a class="cb chp db push_side" href="#" data-id="#nt_login_canvas">
+                                            <a class="cb chp db push_side" href="{{route('login')}}">
                                                 <i class='bx bx-user'></i>
                                             </a>
                                         </div>
