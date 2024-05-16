@@ -1,14 +1,5 @@
 <script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 {!! Toastr::message() !!}
-<script src="{{Vite::asset('resources/assets/js/jarallax.min.js')}}"></script>
-<script src="{{Vite::asset('resources/assets/js/packery.pkgd.min.js')}}"></script>
-<script src="{{Vite::asset('resources/assets/js/jquery.hoverIntent.min.js')}}"></script>
-<script src="{{Vite::asset('resources/assets/js/magnific-popup.min.js')}}"></script>
-<script src="{{Vite::asset('resources/assets/js/flickity.pkgd.min.js')}}"></script>
-<script src="{{Vite::asset('resources/assets/js/lazysizes.min.js')}}"></script>
-<script src="{{Vite::asset('resources/assets/js/js-cookie.min.js')}}"></script>
-<script src="{{Vite::asset('resources/assets/js/jquery.countdown.min.js')}}"></script>
-<script src="{{Vite::asset('resources/assets/js/interface.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 <script>
     $(document).ready(function () {

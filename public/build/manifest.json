@@ -83,6 +83,122 @@
     "file": "assets/fakalles-94fe3aa7.woff2",
     "src": "resources/assets/fonts/fakalles.woff2"
   },
+  "resources/assets/fonts/futura-pt/FuturaPT-Bold.woff": {
+    "file": "assets/FuturaPT-Bold-a60c08d4.woff",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-Bold.woff"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-Bold.woff2": {
+    "file": "assets/FuturaPT-Bold-21b624b8.woff2",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-Bold.woff2"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-BoldObl.woff": {
+    "file": "assets/FuturaPT-BoldObl-170b9ab0.woff",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-BoldObl.woff"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-BoldObl.woff2": {
+    "file": "assets/FuturaPT-BoldObl-68a06f19.woff2",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-BoldObl.woff2"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-Book.woff": {
+    "file": "assets/FuturaPT-Book-b4d73175.woff",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-Book.woff"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-Book.woff2": {
+    "file": "assets/FuturaPT-Book-02d86790.woff2",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-Book.woff2"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-BookObl.woff": {
+    "file": "assets/FuturaPT-BookObl-da1333ad.woff",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-BookObl.woff"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-BookObl.woff2": {
+    "file": "assets/FuturaPT-BookObl-b2c4bdba.woff2",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-BookObl.woff2"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-Demi.woff": {
+    "file": "assets/FuturaPT-Demi-58ed1f03.woff",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-Demi.woff"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-Demi.woff2": {
+    "file": "assets/FuturaPT-Demi-b95050f5.woff2",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-Demi.woff2"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-DemiObl.woff": {
+    "file": "assets/FuturaPT-DemiObl-524606e4.woff",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-DemiObl.woff"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-DemiObl.woff2": {
+    "file": "assets/FuturaPT-DemiObl-4d10c0d3.woff2",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-DemiObl.woff2"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-ExtraBold.woff": {
+    "file": "assets/FuturaPT-ExtraBold-ea64c142.woff",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-ExtraBold.woff"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-ExtraBold.woff2": {
+    "file": "assets/FuturaPT-ExtraBold-7fdd8fc8.woff2",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-ExtraBold.woff2"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-ExtraBoldObl.woff": {
+    "file": "assets/FuturaPT-ExtraBoldObl-02f74dfb.woff",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-ExtraBoldObl.woff"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-ExtraBoldObl.woff2": {
+    "file": "assets/FuturaPT-ExtraBoldObl-5ec335b7.woff2",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-ExtraBoldObl.woff2"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-Heavy.woff": {
+    "file": "assets/FuturaPT-Heavy-6e9aedf3.woff",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-Heavy.woff"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-Heavy.woff2": {
+    "file": "assets/FuturaPT-Heavy-3cafcedf.woff2",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-Heavy.woff2"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-HeavyObl.woff": {
+    "file": "assets/FuturaPT-HeavyObl-4e98b5b8.woff",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-HeavyObl.woff"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-HeavyObl.woff2": {
+    "file": "assets/FuturaPT-HeavyObl-38aba452.woff2",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-HeavyObl.woff2"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-Light.woff": {
+    "file": "assets/FuturaPT-Light-e26b7467.woff",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-Light.woff"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-Light.woff2": {
+    "file": "assets/FuturaPT-Light-a80b3622.woff2",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-Light.woff2"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-LightObl.woff": {
+    "file": "assets/FuturaPT-LightObl-a67e1a6e.woff",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-LightObl.woff"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-LightObl.woff2": {
+    "file": "assets/FuturaPT-LightObl-b1253507.woff2",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-LightObl.woff2"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-Medium.woff": {
+    "file": "assets/FuturaPT-Medium-d380dbb1.woff",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-Medium.woff"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-Medium.woff2": {
+    "file": "assets/FuturaPT-Medium-753d472a.woff2",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-Medium.woff2"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-MediumObl.woff": {
+    "file": "assets/FuturaPT-MediumObl-537f2a34.woff",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-MediumObl.woff"
+  },
+  "resources/assets/fonts/futura-pt/FuturaPT-MediumObl.woff2": {
+    "file": "assets/FuturaPT-MediumObl-3c6a2f0b.woff2",
+    "src": "resources/assets/fonts/futura-pt/FuturaPT-MediumObl.woff2"
+  },
+  "resources/assets/fonts/futura-pt/url.txt": {
+    "file": "assets/url-5f819ada.txt",
+    "src": "resources/assets/fonts/futura-pt/url.txt"
+  },
   "resources/assets/fonts/futura/FuturaLT-Bold.woff": {
     "file": "assets/FuturaLT-Bold-3b04d881.woff",
     "src": "resources/assets/fonts/futura/FuturaLT-Bold.woff"
@@ -98,6 +214,10 @@
   "resources/assets/fonts/futura/FuturaLT-BoldOblique.woff2": {
     "file": "assets/FuturaLT-BoldOblique-cd718e3f.woff2",
     "src": "resources/assets/fonts/futura/FuturaLT-BoldOblique.woff2"
+  },
+  "resources/assets/fonts/futura/FuturaLT-Book-old.woff2": {
+    "file": "assets/FuturaLT-Book-old-5022bfc0.woff2",
+    "src": "resources/assets/fonts/futura/FuturaLT-Book-old.woff2"
   },
   "resources/assets/fonts/futura/FuturaLT-Book.woff": {
     "file": "assets/FuturaLT-Book-f193f096.woff",
@@ -170,6 +290,10 @@
   "resources/assets/fonts/futura/FuturaLT-Oblique.woff2": {
     "file": "assets/FuturaLT-Oblique-efb0af8f.woff2",
     "src": "resources/assets/fonts/futura/FuturaLT-Oblique.woff2"
+  },
+  "resources/assets/fonts/futura/FuturaLT-old.woff2": {
+    "file": "assets/FuturaLT-old-ca316974.woff2",
+    "src": "resources/assets/fonts/futura/FuturaLT-old.woff2"
   },
   "resources/assets/fonts/futura/FuturaLT.woff": {
     "file": "assets/FuturaLT-386648cb.woff",
@@ -380,7 +504,7 @@
     "css": [
       "assets/app-a039cae0.css"
     ],
-    "file": "assets/app-20513067.js",
+    "file": "assets/app-575c736d.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
