@@ -24932,15 +24932,6 @@ body .tooltip_bottom_right:hover .tt_txt {
     transition: opacity .25s ease;
 }
 
-.nt_svg_loader {
-    width: 100px;
-    height: 100px;
-    background-image: url('lds-sw.svg?1945');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 0 auto;
-}
 
 .ajax_loading .nt_svg_loader {
     display: block
@@ -28126,7 +28117,6 @@ html.hside_opened, body.pside_opened {
     z-index: 15000000;
     -webkit-text-size-adjust: 100%;
     /* create separate layer, to avoid paint on window.onscroll in webkit/blink */
-    -webkit-backface-visibility: hidden;
     outline: none;
 }
 
@@ -28179,7 +28169,6 @@ html.hside_opened, body.pside_opened {
     opacity: 0;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
     will-change: opacity;
 }
 
@@ -28238,10 +28227,6 @@ html.hside_opened, body.pside_opened {
     transition: none;
 }
 
-.pswp__container,
-.pswp__zoom-wrap {
-    -webkit-backface-visibility: hidden;
-}
 
 .pswp__item {
     position: absolute;
@@ -28360,17 +28345,6 @@ html.hside_opened, body.pside_opened {
 
 .pswp__button,
 .pswp__button--arrow--left:before,
-
-@media (-webkit-min-device-pixel-ratio: 1.1), (-webkit-min-device-pixel-ratio: 1.09375), (min-resolution: 105dpi), (min-resolution: 1.1dppx) {
-    /* Serve SVG sprite if browser supports SVG and resolution is more than 105dpi */
-    .pswp--svg .pswp__button,
-    .pswp--svg .pswp__button--arrow--left:before,
-
-    .pswp--svg .pswp__button--arrow--left,
-    .pswp--svg .pswp__button--arrow--right {
-        background: none;
-    }
-}
 
 .pswp__button--close {
     background-position: 0 -44px;
