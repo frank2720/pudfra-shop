@@ -1,4 +1,8 @@
 {
+  "resources/assets/images/baground.webp": {
+    "file": "assets/baground-92ee8717.webp",
+    "src": "resources/assets/images/baground.webp"
+  },
   "resources/assets/images/favicon.png": {
     "file": "assets/favicon-ff1983d7.png",
     "src": "resources/assets/images/favicon.png"
@@ -23,7 +27,7 @@
     "css": [
       "assets/app-c15ac155.css"
     ],
-    "file": "assets/app-4bccbcfb.js",
+    "file": "assets/app-8110d3ae.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },

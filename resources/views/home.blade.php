@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 
-<div lc-helper="background" class="container-fluid py-5 mb-4 d-flex justify-content-center" style="  background-image: url('https://images.pexels.com/photos/5077039/pexels-photo-5077039.jpeg?auto=compress&cs=tinysrgb&w=600');
+<div lc-helper="background" class="container-fluid py-5 mb-4 d-flex justify-content-center" style="  background-image: url('{{Vite::asset('resources/assets/images/baground.webp')}}');
     background-position: center;
     background-size:cover;
     background-repeat:no-repeat">
