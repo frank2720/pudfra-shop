@@ -2465,10 +2465,10 @@ function addtocart(productId) {
         $('.fixcl-scroll-content').append(`
         <div class="mini_cart_tool js_cart_tool tc">
             <div data-id="gift" class="mini_cart_tool_gift js_cart_tls js_gift_wrap ttip_nt tooltip_top">
-                <i class="las la-gift"></i><span class="tt_txt">Add A Gift Wrap</span>
+            <i class='bx bx-gift'></i><span class="tt_txt">Add A Gift Wrap</span>
             </div>
             <div data-id="ship" class="mini_cart_tool_ship js_cart_tls ttip_nt tooltip_top">
-                <i class="las la-truck-moving"></i><span class="tt_txt">Estimate Shipping</span>
+            <i class='bx bx-taxi'></i><span class="tt_txt">Estimate Shipping</span>
             </div>
         </div>`)
 

@@ -67,10 +67,10 @@
                         </div>
                     </div>
                     @else
-                    <div class="empty tc mt__40"><i class="las la-shopping-bag pr mb__10"></i>
+                    <div class="empty tc mt__40"><i class='bx bx-shopping-bag'></i>
                         <p>Your cart is empty.</p>
                         <p class="return-to-shop mb__15">
-                            <a class="button button_primary tu js_add_ld" href="{{route('shop')}}">Return To Shop</a>
+                            <a class="button button_primary" href="{{route('shop')}}">Return To Shop</a>
                         </p>
                     </div>
                     @endif
