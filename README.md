@@ -1,10 +1,10 @@
-#Maanar Ecommerce
+# Maanar Ecommerce
 
 *Welcome to the ecommerce project, an initiative to replicate the Pudfra Shop using core PHP. This project includes several key features essential for a fully functional ecommerce platform.*
 
-##Admin Dashboard Documentation
+### Client side Docs
 
-###Features
+##### Features
 
     Shopping Cart System Model
         A robust shopping cart that allows users to add, update, and remove items.
@@ -25,15 +25,15 @@
         Automated email notifications for various user actions, such as registration, order confirmation, and shipping updates.
         Customizable email templates to enhance user engagement.
 
-###Live Demo
+##### Live Demo
 
-You can access the live version of this project at https://maanar-shop.xyz
+*You can access the live version of this project [here](https://maanar-shop.xyz)*
 
-##Admin Dashboard Documentation
+### Admin Dashboard Docs
 
 *This section outlines the features and functionalities of the Admin Dashboard included in the ecommerce project. The Admin Dashboard allows administrators to manage the online store efficiently and effectively.*
 
-###Features
+##### Features
 
     User Management
         View a list of all registered users.
@@ -77,8 +77,8 @@ You can access the live version of this project at https://maanar-shop.xyz
         Manage API keys and integration settings.
         Backup and restore database.
 
-Accessing the Admin Dashboard
+##### Accessing the Admin Dashboard
 
     Login
-        Navigate to the admin login page at https://maanar-shop.xyz/admin/home
+        Navigate to the admin login page by clicking [here](https://maanar-shop.xyz/admin/home) 
         Enter your admin credentials to log in.
