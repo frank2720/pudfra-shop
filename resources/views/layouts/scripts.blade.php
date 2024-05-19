@@ -53,7 +53,7 @@
         });
     });
 
-    $(document).on('submit','#payfo', function (e) {
+    $(document).on('submit','#payform', function (e) {
     e.preventDefault();
     $.ajax({
         url:"/payments/initiatepush",

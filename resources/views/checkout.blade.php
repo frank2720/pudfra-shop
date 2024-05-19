@@ -55,7 +55,7 @@
                             @else
                                 <div class="checkout-payment">
                                     <h3 class="checkout-section__title">Billing details</h3>
-                                    <form action="{{route('stkpush')}}" method="POST">
+                                    <form action="{{route('stkpush')}}" id="payform" method="POST">
                                         @csrf
                                         <p class="checkout-section__field col-12">
                                             <label for="no.">Phone Number</label>

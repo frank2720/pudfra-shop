@@ -13,13 +13,13 @@ class PaymentController extends Controller
 {
     public function initiatestk(Request $request)
     {
-        $cKey = env('MPESA_CONSUMER_KEY');
-        $cSecret = env('MPESA_SECRET_KEY');
-        $aUrl = env('MPESA_AUTH_URL');
+        $cKey = env('CONSUMER_KEY');
+        $cSecret = env('SECRET_KEY');
+        $aUrl = env('AUTH_URL');
         $AccessToken = new Payment($cKey,$cSecret,$aUrl);
         $token=$AccessToken->authorization();
         
-        $Express_url = env('MPESA_EXPRESS_URL');
+        $Express_url = env('EXPRESS_URL');
         $TransactionType=env('TRANSC_TYPE');
         $callbackURL=env('CALL_BACK_URL');
         $passKey =env('PASS_KEY');
