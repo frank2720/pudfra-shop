@@ -23771,18 +23771,7 @@ button.mfp-close:hover {
     font-size: 55px
 }
 
-.nt_mini_cart .empty > i:after,
-.empty_cart_page > i:after {
-    font-size: 22px;
-    line-height: 1;
-    left: 17px;
-    top: 50%;
-    margin-top: -5px;
-    position: absolute;
-    font-family: 'Line Awesome Free', sans-serif;
-    font-weight: 900;
-    content: "\f00d";
-}
+
 
 .empty_cart_page > i:after {
     font-size: 35px;
@@ -30855,19 +30844,6 @@ input.search_header__input:not([type="submit"]):not([type="checkbox"]) {
 
 .nt_mini_cart .empty > i {
     font-size: 55px
-}
-
-.nt_mini_cart .empty > i:after,
-.empty_cart_page > i:after {
-    font-size: 22px;
-    line-height: 1;
-    left: 17px;
-    top: 50%;
-    margin-top: -5px;
-    position: absolute;
-    font-family: 'Line Awesome Free', sans-serif;
-    font-weight: 900;
-    content: "\f00d";
 }
 
 .empty_cart_page > i:after {

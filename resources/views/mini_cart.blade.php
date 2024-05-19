@@ -9,12 +9,6 @@
         <div class="mini_cart_wrap">
             <div class="mini_cart_content fixcl-scroll">
                 <div class="fixcl-scroll-content">
-                    <div class="empty tc mt__40 dn"><i class="las la-shopping-bag pr mb__10"></i>
-                        <p>Your cart is empty.</p>
-                        <p class="return-to-shop mb__15">
-                            <a class="button button_primary tu js_add_ld" href="">Return To Shop</a>
-                        </p>
-                    </div>
                     @if (session()->has('cart') && $totalPrice>0)
                     <div id="cart-p">
                         @foreach ($cart_products as $product)
@@ -67,10 +61,11 @@
                         </div>
                     </div>
                     @else
-                    <div class="empty tc mt__40"><i class='bx bx-shopping-bag'></i>
+                    <div class="empty tc mt__40">
+                        <i class='bx bx-shopping-bag'></i>
                         <p>Your cart is empty.</p>
                         <p class="return-to-shop mb__15">
-                            <a class="button button_primary" href="{{route('shop')}}">Return To Shop</a>
+                            <a class="button button_primary tu js_add_ld" href="">Return To Shop</a>
                         </p>
                     </div>
                     @endif

@@ -20,14 +20,14 @@
     "src": "resources/assets/logo/logo.png"
   },
   "resources/js/app.css": {
-    "file": "assets/app-c15ac155.css",
+    "file": "assets/app-4fb06f2f.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
     "css": [
-      "assets/app-c15ac155.css"
+      "assets/app-4fb06f2f.css"
     ],
-    "file": "assets/app-8110d3ae.js",
+    "file": "assets/app-76df5bd2.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },

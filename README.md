@@ -1,4 +1,4 @@
-Ecommerce Project Documentation
+Maanar Ecommerce
 
 Welcome to the ecommerce project, an initiative to replicate the Pudfra Shop using core PHP. This project includes several key features essential for a fully functional ecommerce platform.
 Features
