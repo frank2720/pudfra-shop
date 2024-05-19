@@ -1,7 +1,10 @@
-Maanar Ecommerce
+#Maanar Ecommerce
 
-Welcome to the ecommerce project, an initiative to replicate the Pudfra Shop using core PHP. This project includes several key features essential for a fully functional ecommerce platform.
-Features
+*Welcome to the ecommerce project, an initiative to replicate the Pudfra Shop using core PHP. This project includes several key features essential for a fully functional ecommerce platform.*
+
+##Admin Dashboard Documentation
+
+###Features
 
     Shopping Cart System Model
         A robust shopping cart that allows users to add, update, and remove items.
@@ -22,14 +25,15 @@ Features
         Automated email notifications for various user actions, such as registration, order confirmation, and shipping updates.
         Customizable email templates to enhance user engagement.
 
-Live Demo
+###Live Demo
 
 You can access the live version of this project at https://maanar-shop.xyz
 
-Admin Dashboard Documentation
+##Admin Dashboard Documentation
 
-This section outlines the features and functionalities of the Admin Dashboard included in the ecommerce project. The Admin Dashboard allows administrators to manage the online store efficiently and effectively.
-Features
+*This section outlines the features and functionalities of the Admin Dashboard included in the ecommerce project. The Admin Dashboard allows administrators to manage the online store efficiently and effectively.*
+
+###Features
 
     User Management
         View a list of all registered users.
