@@ -15,8 +15,14 @@ class ProductController extends Controller
 {
     public function index()
     {
+        $Tproducts = Product::count();
+        return view('admin.index',['Tproducts'=>$Tproducts]);
+    }
+
+    public function products()
+    {
         $products = Product::paginate(5);
-        return view('admin.index',['products'=>$products]);
+        return view('admin.products',['products'=>$products]);
     }
 
     public function store(Request $request)

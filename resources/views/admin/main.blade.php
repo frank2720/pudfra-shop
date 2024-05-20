@@ -181,7 +181,7 @@
 <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-    <a class="nav-link " href="">
+    <a class="nav-link " href="{{route('admin.dashboard')}}">
         <i class='bx bxs-home'></i>
         <span>Dashboard</span>
     </a>
@@ -193,7 +193,7 @@
     </a>
     <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-        <a href="">
+        <a href="{{route('admin.products.list')}}">
             <i class='bx bx-closet'></i><span>Products</span>
         </a>
         </li>
@@ -210,6 +210,16 @@
 </aside><!-- End Sidebar-->
 
 <main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
+            <li class="breadcrumb-item active">@yield('maintitle')</li>
+            <li class="breadcrumb-item active">@yield('pagetitle')</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
     @yield('content')
 </main>
 </body>

@@ -1,7 +1,7 @@
 <!-- Edit Modal HTML -->
 @extends('admin.main')
 @section('content')
-    <form action="{{route('products.update',['id'=>$product->id])}}" method="POST">
+    <form action="{{route('admin.products.update',['id'=>$product->id])}}" method="POST">
         @csrf
         @method('put')
         <div class="modal-header">						

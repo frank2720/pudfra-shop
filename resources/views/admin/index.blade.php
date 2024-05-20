@@ -1,53 +1,78 @@
 @extends('admin.main')
 @section('title')
-    {{__('List of products')}}
+    {{__('Dashboard Analysis')}}
+@endsection
+@section('maintitle')
+    {{__('Dashboard')}}
+@endsection
+@section('pagetitle')
+    {{__('Summary')}}
 @endsection
 @section('content')
-<!-- Top Selling -->
-<div class="col-12 dashboard">
-    <div class="card products_list overflow-auto">
+<div class="col-lg-12 dashboard">
+    <div class="row">
+        <div class="col-xxl-4 col-md-4">
+            <div class="card info-card sales-card">
 
-    <div class="card-body pb-0">
-    <h5 class="card-title">List of Available Products</h5>
+                <div class="card-body">
+                <h5 class="card-title">Orders</h5>
 
-    <table class="table table-borderless">
-        <thead>
-        <tr>
-            <th scope="col">Preview</th>
-            <th scope="col">Product</th>
-            <th scope="col">Price</th>
-            <th scope="col">Old price</th>
-            <th scope="col">Discount</th>
-            <th scope="col">Action</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach ($products as $product)
-        <tr>
-            <td scope="row"><a href=""><img src="{{Storage::url($product->images[0]->url??null)}}" alt=""></a></td>
-            <td>{{$product->name}}</td>
-            <td>{{$product->price}}</td>
-            <td>{{$product->retail_price}}</td>
-            @if ($product->retail_price>$product->price)
-            <td>{{__(round((($product->retail_price-$product->price)/$product->retail_price)*100))}}%</td>
-            @else
-            <td>{{__('--')}} </td>
-            @endif
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class='bx bx-purchase-tag'></i>
+                    </div>
+                    <div class="ps-3">
+                    <h6>145</h6>
+                    <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
 
-            <td>
-                <a href="{{route('products.edit',['product'=>$product->id])}}" class="edit"><i class='bx bx-edit-alt' title="edit"></i></a>
-                <a href="{{route('products.destroy',['product'=>$product->id])}}" class="delete" data-toggle="modal"><i class='bx bx-trash' title="delete"></i></a>
-            </td>
-        </tr>
-        @endforeach
-        </tbody>
-    </table>
+                    </div>
+                </div>
+                </div>
 
+            </div>
+        </div>
+
+        <div class="col-xxl-4 col-md-4">
+            <div class="card info-card revenue-card">
+
+                <div class="card-body">
+                <h5 class="card-title">Products</h5>
+
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class='bx bx-closet' ></i>
+                    </div>
+                    <div class="ps-3">
+                    <h6>{{$Tproducts}}</h6>
+                    <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+
+                    </div>
+                </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-xxl-4 col-md-4">
+            <div class="card info-card revenue-card">
+
+                <div class="card-body">
+                <h5 class="card-title">Customers</h5>
+
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class='bx bx-male-female'></i>
+                    </div>
+                    <div class="ps-3">
+                    <h6>264</h6>
+                    <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+
+                    </div>
+                </div>
+                </div>
+
+            </div>
+        </div>
     </div>
-
-    </div>
-    <div class="clearfix">
-        {{$products->links()}}
-    </div>
-</div><!-- End Top Selling -->
+</div>
 @endsection

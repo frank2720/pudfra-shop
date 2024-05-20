@@ -2,7 +2,7 @@
 <div id="addModal" aria-labelledby="addModalLabel" aria-hidden="true" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="{{route('products.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('admin.products.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-header">						
                     <h4 class="modal-title">{{__('Add Product')}}</h4>

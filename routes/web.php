@@ -21,8 +21,10 @@ Route::middleware(['auth','verified'])->group(function () {
       Route::group([
             'prefix'=> 'admin',
             'middleware'=>'is_admin',
+            'as'=>'admin.'
       ], function() {
-            Route::get('home', [AdminProductController::class, 'index'])->name('admin.home');
+            Route::get('home', [AdminProductController::class, 'index'])->name('dashboard');
+            Route::get('products', [AdminProductController::class, 'products'])->name('products.list');
             Route::get('edit/{product}', [AdminProductController::class, 'edit'])->name('products.edit');
             Route::put('update/{id}', [AdminProductController::class, 'update'])->name('products.update');
             Route::get('delete/{product}', [AdminProductController::class, 'destroy'])->name('products.destroy');

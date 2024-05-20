@@ -6,7 +6,7 @@
                     {{__('Add Products Category')}}
                 </h4>
             </div>
-            <form action="{{route('categories.store')}}" method="POST" id="categoryform" class="form-horizontal">
+            <form action="{{route('admin.categories.store')}}" method="POST" id="categoryform" class="form-horizontal">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
