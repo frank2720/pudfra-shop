@@ -80,7 +80,7 @@
 
         <li class="message-item">
             <a href="#">
-            <img src="{{Vite::asset('assets/images/favicon.png')}}" alt="" class="rounded-circle">
+            <img src="{{Vite::asset('resources/assets/images/favicon.png')}}" alt="" class="rounded-circle">
             <div>
                 <h4>Maria Hudson</h4>
                 <p>some message from client</p>
@@ -94,7 +94,7 @@
 
         <li class="message-item">
             <a href="#">
-            <img src="{{Vite::asset('assets/images/favicon.png')}}" alt="" class="rounded-circle">
+            <img src="{{Vite::asset('resources/assets/images/favicon.png')}}" alt="" class="rounded-circle">
             <div>
                 <h4>Anna Nelson</h4>
                 <p>Notification from client here</p>
