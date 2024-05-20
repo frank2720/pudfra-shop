@@ -52,8 +52,8 @@
         <li class="notification-item">
             <i class="bi bi-exclamation-circle text-warning"></i>
             <div>
-            <h4>Lorem Ipsum</h4>
-            <p>Quae dolorem earum veritatis oditseno</p>
+            <h4>Jackton</h4>
+            <p>Some messages here</p>
             <p>30 min. ago</p>
             </div>
         </li>
