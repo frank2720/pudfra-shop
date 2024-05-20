@@ -5,7 +5,7 @@
 @section('content')
 <!-- Top Selling -->
 <div class="col-12 dashboard">
-    <div class="card top-selling overflow-auto">
+    <div class="card products_list overflow-auto">
 
     <div class="card-body pb-0">
     <h5 class="card-title">List of Available Products</h5>

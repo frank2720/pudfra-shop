@@ -936,23 +936,23 @@
   }
   
   /* Top Selling */
-  .dashboard .top-selling {
+  .dashboard .products_list {
     font-size: 14px;
   }
   
-  .dashboard .top-selling .table thead {
+  .dashboard .products_list .table thead {
     background: #f6f6fe;
   }
   
-  .dashboard .top-selling .table thead th {
+  .dashboard .products_list .table thead th {
     border: 0;
   }
   
-  .dashboard .top-selling .table tbody td {
+  .dashboard .products_list .table tbody td {
     vertical-align: middle;
   }
   
-  .dashboard .top-selling img {
+  .dashboard .products_list img {
     border-radius: 5px;
     max-width: 60px;
     max-height: 60px;
