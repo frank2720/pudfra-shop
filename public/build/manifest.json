@@ -1,4 +1,7 @@
 {
+  "_bootstrap-89eab77c.js": {
+    "file": "assets/bootstrap-89eab77c.js"
+  },
   "resources/assets/images/baground.webp": {
     "file": "assets/baground-92ee8717.webp",
     "src": "resources/assets/images/baground.webp"
@@ -19,6 +22,21 @@
     "file": "assets/logo-ed49ad7b.png",
     "src": "resources/assets/logo/logo.png"
   },
+  "resources/js/admin.css": {
+    "file": "assets/admin-4a92abbd.css",
+    "src": "resources/js/admin.css"
+  },
+  "resources/js/admin.js": {
+    "css": [
+      "assets/admin-4a92abbd.css"
+    ],
+    "file": "assets/admin-19b17bc8.js",
+    "imports": [
+      "_bootstrap-89eab77c.js"
+    ],
+    "isEntry": true,
+    "src": "resources/js/admin.js"
+  },
   "resources/js/app.css": {
     "file": "assets/app-4fb06f2f.css",
     "src": "resources/js/app.css"
@@ -27,7 +45,10 @@
     "css": [
       "assets/app-4fb06f2f.css"
     ],
-    "file": "assets/app-76df5bd2.js",
+    "file": "assets/app-a354f862.js",
+    "imports": [
+      "_bootstrap-89eab77c.js"
+    ],
     "isEntry": true,
     "src": "resources/js/app.js"
   },
