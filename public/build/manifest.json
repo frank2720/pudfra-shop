@@ -23,14 +23,14 @@
     "src": "resources/assets/logo/logo.png"
   },
   "resources/js/admin.css": {
-    "file": "assets/admin-4a92abbd.css",
+    "file": "assets/admin-f3138f04.css",
     "src": "resources/js/admin.css"
   },
   "resources/js/admin.js": {
     "css": [
-      "assets/admin-4a92abbd.css"
+      "assets/admin-f3138f04.css"
     ],
-    "file": "assets/admin-19b17bc8.js",
+    "file": "assets/admin-432a1796.js",
     "imports": [
       "_bootstrap-89eab77c.js"
     ],
