@@ -1,4 +1,7 @@
 @extends('admin.main')
+@section('title')
+    {{__('List of products')}}
+@endsection
 @section('content')
 <!-- Top Selling -->
 <div class="col-12 dashboard">
