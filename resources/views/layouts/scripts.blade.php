@@ -2,13 +2,11 @@
 {!! Toastr::message() !!}
 <script src="{{asset('assets/js/jarallax.min.js')}}"></script>
 <script src="{{asset('assets/js/packery.pkgd.min.js')}}"></script>
-<script src="{{asset('assets/js/jquery.hoverIntent.min.js')}}"></script>
 <script src="{{asset('assets/js/magnific-popup.min.js')}}"></script>
 <script src="{{asset('assets/js/flickity.pkgd.min.js')}}"></script>
 <script src="{{asset('assets/js/lazysizes.min.js')}}"></script>
 <script src="{{asset('assets/js/js-cookie.min.js')}}"></script>
 <script src="{{asset('assets/js/jquery.countdown.min.js')}}"></script>
-<script src="{{asset('assets/js/interface.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
