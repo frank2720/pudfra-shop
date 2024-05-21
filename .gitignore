@@ -2,6 +2,7 @@
 /node_modules
 /public/storage
 public/hot
+resources/assets/*
 /storage/*.key
 /vendor
 .env
