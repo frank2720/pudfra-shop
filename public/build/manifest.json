@@ -2,6 +2,26 @@
   "_bootstrap-89eab77c.js": {
     "file": "assets/bootstrap-89eab77c.js"
   },
+  "node_modules/boxicons/fonts/boxicons.eot": {
+    "file": "assets/boxicons-c23887bb.eot",
+    "src": "node_modules/boxicons/fonts/boxicons.eot"
+  },
+  "node_modules/boxicons/fonts/boxicons.svg": {
+    "file": "assets/boxicons-3fe502d8.svg",
+    "src": "node_modules/boxicons/fonts/boxicons.svg"
+  },
+  "node_modules/boxicons/fonts/boxicons.ttf": {
+    "file": "assets/boxicons-47509a2d.ttf",
+    "src": "node_modules/boxicons/fonts/boxicons.ttf"
+  },
+  "node_modules/boxicons/fonts/boxicons.woff": {
+    "file": "assets/boxicons-d5d511cf.woff",
+    "src": "node_modules/boxicons/fonts/boxicons.woff"
+  },
+  "node_modules/boxicons/fonts/boxicons.woff2": {
+    "file": "assets/boxicons-4b87cbc7.woff2",
+    "src": "node_modules/boxicons/fonts/boxicons.woff2"
+  },
   "resources/assets/images/baground.webp": {
     "file": "assets/baground-92ee8717.webp",
     "src": "resources/assets/images/baground.webp"
@@ -38,14 +58,21 @@
     "src": "resources/js/admin.js"
   },
   "resources/js/app.css": {
-    "file": "assets/app-4fb06f2f.css",
+    "file": "assets/app-eb604050.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
-    "css": [
-      "assets/app-4fb06f2f.css"
+    "assets": [
+      "assets/boxicons-c23887bb.eot",
+      "assets/boxicons-4b87cbc7.woff2",
+      "assets/boxicons-d5d511cf.woff",
+      "assets/boxicons-47509a2d.ttf",
+      "assets/boxicons-3fe502d8.svg"
     ],
-    "file": "assets/app-614b2a8e.js",
+    "css": [
+      "assets/app-eb604050.css"
+    ],
+    "file": "assets/app-822fca64.js",
     "imports": [
       "_bootstrap-89eab77c.js"
     ],
