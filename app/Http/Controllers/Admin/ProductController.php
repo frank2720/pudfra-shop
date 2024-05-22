@@ -65,7 +65,7 @@ class ProductController extends Controller
             $imagedetails->product_id = $product->id;
             $imagedetails->save();
         }
-        return redirect(route('admin.home'))->with('success','product uploaded successfully');
+        return back()->with('success','Product added successfully');
     }
 
     public function edit($product)
@@ -95,7 +95,7 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->save();
         Toastr::success('Products details updated successfully', 'Update', ["positionClass" => "toast-top-right"]);
-        return redirect('/admin/home');
+        return redirect()->route('admin.products.list')->with('success','Details updated successfully');
     }
 
     public function destroy($product):RedirectResponse
