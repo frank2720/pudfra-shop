@@ -41,8 +41,14 @@
             @endif
 
             <td>
-                <a href="{{route('admin.products.edit',['product'=>$product->id])}}"><i class='bx bx-edit-alt' title="edit"></i></a>
-                <a href="{{route('admin.products.destroy',['product'=>$product->id])}}" class="text-danger"><i class='bx bx-trash' title="delete"></i></a>
+                <ul class="list-inline m-0">
+                    <li class="list-inline-item">
+                        <a href="{{route('admin.products.edit',['product'=>$product->id])}}"><i class='bx bx-edit-alt' title="edit"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="{{route('admin.products.destroy',['product'=>$product->id])}}" class="text-danger"><i class='bx bx-trash' title="delete"></i></a>
+                    </li>
+                </ul>
             </td>
         </tr>
         @endforeach
