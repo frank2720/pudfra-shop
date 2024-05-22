@@ -1,6 +1,20 @@
 {
-  "_bootstrap-89eab77c.js": {
-    "file": "assets/bootstrap-89eab77c.js"
+  "_boxicons-0aef6dc0.js": {
+    "assets": [
+      "assets/boxicons-c23887bb.eot",
+      "assets/boxicons-4b87cbc7.woff2",
+      "assets/boxicons-d5d511cf.woff",
+      "assets/boxicons-47509a2d.ttf",
+      "assets/boxicons-3fe502d8.svg"
+    ],
+    "css": [
+      "assets/boxicons-b52582cf.css"
+    ],
+    "file": "assets/boxicons-0aef6dc0.js"
+  },
+  "boxicons.css": {
+    "file": "assets/boxicons-b52582cf.css",
+    "src": "boxicons.css"
   },
   "node_modules/boxicons/fonts/boxicons.eot": {
     "file": "assets/boxicons-c23887bb.eot",
@@ -50,31 +64,24 @@
     "css": [
       "assets/admin-f3138f04.css"
     ],
-    "file": "assets/admin-432a1796.js",
+    "file": "assets/admin-baa167a6.js",
     "imports": [
-      "_bootstrap-89eab77c.js"
+      "_boxicons-0aef6dc0.js"
     ],
     "isEntry": true,
     "src": "resources/js/admin.js"
   },
   "resources/js/app.css": {
-    "file": "assets/app-eb604050.css",
+    "file": "assets/app-4fb06f2f.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
-    "assets": [
-      "assets/boxicons-c23887bb.eot",
-      "assets/boxicons-4b87cbc7.woff2",
-      "assets/boxicons-d5d511cf.woff",
-      "assets/boxicons-47509a2d.ttf",
-      "assets/boxicons-3fe502d8.svg"
-    ],
     "css": [
-      "assets/app-eb604050.css"
+      "assets/app-4fb06f2f.css"
     ],
-    "file": "assets/app-822fca64.js",
+    "file": "assets/app-edc71401.js",
     "imports": [
-      "_bootstrap-89eab77c.js"
+      "_boxicons-0aef6dc0.js"
     ],
     "isEntry": true,
     "src": "resources/js/app.js"
