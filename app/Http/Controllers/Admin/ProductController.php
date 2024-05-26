@@ -43,6 +43,7 @@ class ProductController extends Controller
             'img.image'=>'file must be an image'
             
         ]);
+        
         $product = new Product;
         $product->name = $request->name;
         $product->price = $request->price;
@@ -50,20 +51,16 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->save();
 
-        foreach ($request->file('img') as $imagefile) {
+        foreach ($request->file('img') as $productImg) {
             $imagename = str()->uuid().'.webp';
-            $imagedetails = new ProductImage;
-
-            
             $manager = new ImageManager(new Driver());
-            $image = $manager->read($imagefile);
-            $image = $image->scale(360,360);
-            $image->toWebp()->save(storage_path('app/public/products/'.$imagename));
-            //$path =  $imagefile->store('products');
-            //$path =Storage::disk('public')->put('products',$imagefile);
-            $imagedetails->url = 'products/'.$imagename;
-            $imagedetails->product_id = $product->id;
-            $imagedetails->save();
+            $manager->read($productImg)->scale(360,360)->toWebp()->save(storage_path('app/public/products/'.$imagename));
+            //$path =  $productImg->store('products');
+            //$path =Storage::disk('public')->put('products',$productImg);
+            $image = new ProductImage;
+            $image->url = 'products/'.$imagename;
+            $image->product_id = $product->id;
+            $image->save();
         }
         return back()->with('success','Product added successfully');
     }
@@ -94,16 +91,13 @@ class ProductController extends Controller
         $product->retail_price = $request->retail_price;
         $product->description = $request->description;
         $product->save();
-        Toastr::success('Products details updated successfully', 'Update', ["positionClass" => "toast-top-right"]);
         return redirect()->route('admin.products.list')->with('success','Details updated successfully');
     }
 
     public function destroy($product):RedirectResponse
     {
         $product = Product::find($product);
-        
-            $product->delete();
-        Toastr::warning('Product deleted!', 'Delete', ["positionClass" => "toast-top-right"]);
+        $product->delete();
         return back();
     }
 }
