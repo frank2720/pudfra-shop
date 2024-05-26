@@ -709,7 +709,7 @@
         success:function(data)
         {
             $("#payform").trigger("reset");
-            Command:toastr["success"]("Payment initiated successfully Enter your MPESA pin to complete the order","Success");
+            Command:toastr["success"]("Enter your MPESA pin to complete the order","Success");
             $('#cart-modal').modal('hide');
         }, 
         error: function (error) {

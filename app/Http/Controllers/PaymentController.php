@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Payment;
+use App\Models\StkRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
@@ -35,26 +36,54 @@ class PaymentController extends Controller
         $AccountReference='Maanar-shop';
         $TransactionDesc='pay for the goods';
 
-        $response=Http::withToken($token)->post($Express_url,[
-            'BusinessShortCode'=>$BusinessShortCode,
-            'Password'=>$password,
-            'Timestamp'=>$Timestamp,
-            'TransactionType'=>$TransactionType,
-            'Amount'=>$Amount,
-            'PartyA'=>$PartyA,
-            'PartyB'=>$PartyB,
-            'PhoneNumber'=>$PhoneNumber,
-            'CallBackURL'=>$callbackURL,
-            'AccountReference'=>$AccountReference,
-            'TransactionDesc'=>$TransactionDesc
-        ]);
+        try {
+            $response=Http::withToken($token)->post($Express_url,[
+                'BusinessShortCode'=>$BusinessShortCode,
+                'Password'=>$password,
+                'Timestamp'=>$Timestamp,
+                'TransactionType'=>$TransactionType,
+                'Amount'=>$Amount,
+                'PartyA'=>$PartyA,
+                'PartyB'=>$PartyB,
+                'PhoneNumber'=>$PhoneNumber,
+                'CallBackURL'=>$callbackURL,
+                'AccountReference'=>$AccountReference,
+                'TransactionDesc'=>$TransactionDesc
+            ]);
+        } catch (\Throwable $error) {
+            return $error->getMessage();
+        }
 
-        return $response;
+        $res = json_decode($response);
+        $stkrequest = new StkRequest;
+        $stkrequest->PhoneNumber=$PhoneNumber;
+        $stkrequest->Amount=$Amount;
+        $stkrequest->MerchantRequestID=$res->MerchantRequestID;
+        $stkrequest->CheckoutRequestID=$res->CheckoutRequestID;
+        $stkrequest->Status='Requested';
+        $stkrequest->save();
+        return $res->CustomerMessage;
     }
 
     public function stkcallback()
     {
         $data = file_get_contents('php://input');
         Storage::disk('local')->put('PaymentsInfo.json',$data);
+        $response = json_decode($data);
+
+        $CallbackMetadata = $response->Body->stkCallback->CallbackMetadata->Item;
+        $Item = array_column($CallbackMetadata,'Value','Name');
+
+        if ($response->Body->stkCallback->ResultCode=0) {
+            $payment = StkRequest::find($response->Body->stkCallback->CheckoutRequestID);
+            $payment->Status='Paid';
+            $payment->Receipt=$Item["MpesaReceiptNumber"];
+            $payment->TransactionDate=$Item["TransactionDate"];
+            $payment->save();
+        } else {
+            $payment = StkRequest::find($response->Body->stkCallback->CheckoutRequestID);
+            $payment->Status='Failed';
+            $payment->save();
+        }
     }
 }
