@@ -68,7 +68,6 @@ class PaymentController extends Controller
     public function stkcallback()
     {
         $data = file_get_contents('php://input');
-        Storage::disk('local')->put('PaymentsInfo.json',$data);
         $response = json_decode($data);
 
         $CallbackMetadata = $response->Body->stkCallback->CallbackMetadata->Item;
