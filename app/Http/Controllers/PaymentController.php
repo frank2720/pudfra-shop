@@ -77,6 +77,7 @@ class PaymentController extends Controller
         if ($response->Body->stkCallback->ResultCode==0) {
             $payment = StkRequest::where('CheckoutRequestID','=',$response->Body->stkCallback->CheckoutRequestID)->firstOrFail();
             $payment->Status='Paid';
+            $payment->ResultDesc=$response->Body->stkCallback->ResultDesc;
             $payment->Receipt=$Item["MpesaReceiptNumber"];
             $payment->TransactionDate=$Item["TransactionDate"];
             $payment->save();
