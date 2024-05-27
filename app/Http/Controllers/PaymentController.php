@@ -72,16 +72,16 @@ class PaymentController extends Controller
         $response = json_decode($data);
 
         $CallbackMetadata = $response->Body->stkCallback->CallbackMetadata->Item;
-        $Item = array_column($CallbackMetadata,'Value','Name');
+	    $Item = array_column($CallbackMetadata,'Value','Name');
 
-        if ($response->Body->stkCallback->ResultCode=0) {
-            $payment = StkRequest::find($response->Body->stkCallback->CheckoutRequestID);
+        if ($response->Body->stkCallback->ResultCode==0) {
+            $payment = StkRequest::where('CheckoutRequestID','=',$response->Body->stkCallback->CheckoutRequestID)->firstOrFail();
             $payment->Status='Paid';
             $payment->Receipt=$Item["MpesaReceiptNumber"];
             $payment->TransactionDate=$Item["TransactionDate"];
             $payment->save();
         } else {
-            $payment = StkRequest::find($response->Body->stkCallback->CheckoutRequestID);
+            $payment = StkRequest::where('CheckoutRequestID','=',$response->Body->stkCallback->CheckoutRequestID)->firstOrFail();
             $payment->Status='Failed';
             $payment->save();
         }
