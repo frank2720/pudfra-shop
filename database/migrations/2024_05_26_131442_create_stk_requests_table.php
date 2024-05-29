@@ -20,7 +20,7 @@ return new class extends Migration
             $table->enum('Status',['Requested','Paid','Failed']);
             $table->string('ResultDesc')->nullable();
             $table->string('Receipt')->nullable();
-            $table->dateTime('TransactionDate')->nullable();
+            $table->string('TransactionDate')->nullable();
             $table->timestamps();
         });
     }
