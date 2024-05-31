@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
 use App\Models\Town;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTownRequest;
 use App\Http\Requests\UpdateTownRequest;
+
 
 class TownController extends Controller
 {
@@ -13,7 +15,7 @@ class TownController extends Controller
      */
     public function index()
     {
-        //
+        return Town::all();
     }
 
     /**
