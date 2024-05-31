@@ -1,29 +1,14 @@
 <?php
-namespace App\Services\V1;
+namespace App\Filters;
 
 use Illuminate\Http\Request;
 
-class TownQuery{
-    protected $allowed_fields = [
-        "town"=> ['eq'],
-        "latitude"=> ['eq','gt','lt','gte','lte'],
-        "longitude"=> ['eq','gt','lt','gte','lte'],
-        "state"=> ['eq'],
-        "country"=> ['eq'],
-        "adminName"=> ['eq']
-    ];
+class ApiFilter{
+    protected $allowed_fields = [];
 
-    protected $columMap = [
-        'adminName' => 'admin_name',
-    ];
+    protected $columMap = [];
 
-    protected $operatorMap = [
-        'eq'=>'=',
-        'gt'=> '>',
-        'gte'=> '>=',
-        'lt'=> '<',
-        'lte'=> '<='
-    ]; 
+    protected $operatorMap = []; 
 
     public function transform(Request $request)
     {
