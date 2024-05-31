@@ -3,9 +3,13 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Models\Town;
+use Illuminate\Http\Request;
+use App\Services\V1\TownQuery;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTownRequest;
+use App\Http\Resources\V1\TownResource;
 use App\Http\Requests\UpdateTownRequest;
+use App\Http\Resources\V1\TownCollection;
 
 
 class TownController extends Controller
@@ -13,9 +17,16 @@ class TownController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return Town::all();
+        $filter = new TownQuery();
+        $queryItems = $filter->transform($request);
+        
+        if (count($queryItems)==0) {
+            return new TownCollection(Town::paginate());
+        } else {
+            return new TownCollection(Town::where($queryItems)->paginate());
+        }
     }
 
     /**
@@ -39,7 +50,7 @@ class TownController extends Controller
      */
     public function show(Town $town)
     {
-        //
+        return new TownResource($town);
     }
 
     /**

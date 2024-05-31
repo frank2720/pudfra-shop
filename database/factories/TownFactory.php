@@ -17,10 +17,12 @@ class TownFactory extends Factory
     public function definition(): array
     {
         return [
-            'city'=> $this->faker->city(),
+            'town'=> $this->faker->city(),
             'latitude'=> $this->faker->latitude(-6.5,3),
             'longitude'=> $this->faker->longitude(10,60),
+            'county'=> $this->faker->state(),
             'country'=> $this->faker->country(),
+            'admin_name'=> $this->faker->name(),
         ];
     }
 }
