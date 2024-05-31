@@ -17,7 +17,7 @@ class CategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            'category'=>'Laptops, Desktops, Desktop Accessories, Laptop Accessories, Smart Phones, Watches, Phones',
+            'category'=> $this->faker->unique()->randomElement(['Laptops', 'Desktop Accessories', 'Laptop Accessories', 'Smart Phones', 'Watches', 'Phones','Men Clothes','Women clothes'])
         ];
     }
 }
