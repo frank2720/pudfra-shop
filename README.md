@@ -30,8 +30,6 @@
 
 ### Admin Dashboard Docs
 
-*This section outlines the features and functionalities of the Admin Dashboard included in the ecommerce project. The Admin Dashboard allows administrators to manage the online store efficiently and effectively.*
-
 ##### Features
 >User Management
 1. View a list of all registered users.
