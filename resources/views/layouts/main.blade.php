@@ -51,14 +51,9 @@
                                                 <div class="container megamenu-content-1200px">
                                                     <div class="row lazy_menu lazyload" data-jspackery='{ "itemSelector": ".sub-column-item","gutter": 0,"percentPosition": true,"originLeft": true }'>
                                                         <div class="type_mn_link2 menu-item sub-column-item col-2">
-                                                            <a href="{{route('shop')}}">Accessories</a>
-                                                            <a href="{{route('shop')}}">Footwear</a>
-                                                            <a href="{{route('shop')}}">Women</a>
-                                                            <a href="{{route('shop')}}">T-Shirt</a>
-                                                            <a href="{{route('shop')}}">Shoes</a>
-                                                            <a href="{{route('shop')}}">Denim</a>
-                                                            <a href="{{route('shop')}}">Dress</a>
-                                                            <a href="{{route('shop')}}">Men</a>
+                                                            @foreach ($categories as $category)
+                                                                <a href="{{route('shop')}}">{{$category->category}}</a>
+                                                            @endforeach
                                                         </div>
                                                         <div class="type_mn_pr menu-item sub-column-item col-10">
                                                             <div class="prs_nav js_carousel nt_slider products nt_products_holder row al_center row_pr_1 cdt_des_1 round_cd_false nt_cover ratio_nt position_8 flickity-enabled is-draggable" data-flickity='{"imagesLoaded": 0,"adaptiveHeight": 0, "contain": 1, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": 1,"prevNextButtons": 1,"percentPosition": 1,"pageDots": 0, "autoPlay" : 0, "pauseAutoPlayOnHover" : 1, "rightToLeft": false }'>
@@ -617,28 +612,11 @@
     <div id="kalles-section-mb_cat_js" class="mb_nav_tab">
         <div id="kalles-section-mb_cat" class="kalles-section">
             <ul id="menu_mb_cat" class="nt_mb_menu">
+                @foreach ($categories as $category)
                 <li class="menu-item">
-                    <a href="{{route('shop')}}"></i>Women’s Clothing</a></li>
-                <li class="menu-item">
-                    <a href="{{route('shop')}}"></i>Men’s Clothing</a></li>
-                <li class="menu-item">
-                    <a href="shop-1600px-layout.html"></i>Watches</a></li>
-                <li class="menu-item">
-                    <a href="{{route('shop')}}"></i>Accessories</a></li>
-                <li class="menu-item">
-                    <a href="{{route('shop')}}"></i>Electric</a></li>
-                <li class="menu-item">
-                    <a href="shop-1600px-layout.html"></i>Shoes</a></li>
-                <li class="menu-item">
-                    <a href="{{route('shop')}}"></i>Jewellery</a></li>
-                <li class="menu-item">
-                    <a href="{{route('shop')}}"></i>T-Shirt</a></li>
-                <li class="menu-item">
-                    <a href="shop-1600px-layout.html"></i>Toys, Kids &amp; Baby</a>
+                    <a href="{{route('shop')}}"></i>{{$category->category}}</a>
                 </li>
-                <li class="menu-item">
-                    <a href="{{route('shop')}}"></i>Decor</a>
-                </li>
+                @endforeach
             </ul>
         </div>
     </div>

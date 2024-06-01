@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -13,6 +14,8 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $nav_products = Product::with('images')->get();
+        
+        $categories =  Category::all();
 
         $trending_products = Product::with('images')
                                 ->latest()
@@ -44,6 +47,7 @@ class HomeController extends Controller
         return view('home',[
             'towns'=>$towns,
             'nav_products'=>$nav_products,
+            'categories'=> $categories,
             'trending_products'=>$trending_products,
             'bestsales'=>$bestsales,
             'latest'=>$latest,
