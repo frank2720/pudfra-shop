@@ -29,7 +29,7 @@ class ProductController extends Controller
         return view('product-detail', [
         'towns'=>$towns,
         'product'=>$product,
-        'categoories'=>$categories,
+        'categories'=>$categories,
         'nav_products'=>$nav_products,
         'latest'=>$latest,
         'cart_products'=>$cart->items,
