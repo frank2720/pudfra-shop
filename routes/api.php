@@ -23,4 +23,6 @@ Route::group([
     'namespace'=>'App\Http\Controllers\Api\V1'
 ], function () {
     Route::apiResource('towns',TownController::class);
+    Route::apiResource('customers', CustomerController::class);
+    Route::apiResource('invoices', InvoiceController::class);
 });
