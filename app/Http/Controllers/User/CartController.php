@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Models\Cart;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
@@ -56,6 +57,7 @@ class CartController extends Controller
     {
         $products = Product::with('images')->get();
         $nav_products = Product::with('images')->get();
+        $categories =  Category::all();
         $latest = Product::with('images')
                         ->latest()
                         ->paginate(8);
@@ -71,6 +73,7 @@ class CartController extends Controller
         return view('shopping_cart',[
         'towns'=>$towns,
         'products'=>$products,
+        'categories'=> $categories,
         'nav_products'=>$nav_products,
         'trending_products'=>$trending_products,
         'latest'=>$latest,
@@ -82,6 +85,7 @@ class CartController extends Controller
     {
         $products = Product::with('images')->get();
         $nav_products = Product::with('images')->get();
+        $categories = Category::all();
         $latest = Product::with('images')
                         ->latest()
                         ->paginate(8);
@@ -98,6 +102,7 @@ class CartController extends Controller
         return view('checkout',[
         'towns'=>$towns,
         'products'=>$products,
+        'categories'=>$categories,
         'nav_products'=>$nav_products,
         'trending_products'=>$trending_products,
         'latest'=>$latest,
