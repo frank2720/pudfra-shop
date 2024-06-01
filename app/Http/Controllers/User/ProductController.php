@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Models\Cart;
 use App\Models\Product;
+use App\Models\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 
@@ -14,6 +15,7 @@ class ProductController extends Controller
     public function product_details($id)
     {
         $nav_products = Product::with('images')->get();
+        $categories =  Category::all();
         $json_data = File::get(storage_path('app/public/towns/towns.json'));
 
         $towns = json_decode($json_data);
@@ -27,6 +29,7 @@ class ProductController extends Controller
         return view('product-detail', [
         'towns'=>$towns,
         'product'=>$product,
+        'categoories'=>$categories,
         'nav_products'=>$nav_products,
         'latest'=>$latest,
         'cart_products'=>$cart->items,
@@ -36,6 +39,9 @@ class ProductController extends Controller
     public function products()
     {
         $products = Product::with('images')->get();
+
+        $categories =  Category::all();
+
         $nav_products = Product::with('images')->get();
         $latest = Product::with('images')
                         ->latest()
@@ -50,6 +56,7 @@ class ProductController extends Controller
         'towns'=>$towns,
         'products'=>$products,
         'nav_products'=>$nav_products,
+        'categories'=>$categories,
         'latest'=>$latest,
         'cart_products'=>$cart->items,
         'totalPrice'=>$cart->totalPrice]);
