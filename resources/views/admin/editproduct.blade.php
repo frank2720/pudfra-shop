@@ -15,7 +15,7 @@
         <h5 class="card-title">Update Product details</h5>
         <form action="{{route('admin.products.update',['id'=>$product->id])}}" method="POST">
             @csrf
-            @method('put')					
+            @method('put')
                 <div class="form-group">
                     <label>{{__('Product Name')}}</label>
                     <input class="form-control" type="text" name="name" value="{{$product->name}}">

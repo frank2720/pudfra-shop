@@ -21,11 +21,11 @@ class InvoiceController extends Controller
         $filter = new InvoiceFilter();
         $invoicesQuery = $filter->transform($request);
 
-        if(count($invoicesQuery)==0){
+        if (count($invoicesQuery)==0) {
             return new InvoiceCollection(Invoice::paginate());
-        }else{
+        } else {
             $invoices = Invoice::where($invoicesQuery)->paginate();
-            return new InvoiceCollection($invoices->append($request->query()));
+            return new InvoiceCollection($invoices->appends($request->query()));
         }
     }
 
