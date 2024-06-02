@@ -19,7 +19,7 @@ class HomeController extends Controller
 
         $trending_products = Product::with('images')
                                 ->inRandomOrder()
-                                ->paginate(8);
+                                ->paginate(12);
 
         $json_data = File::get(storage_path('app/public/towns/towns.json'));
 
@@ -27,7 +27,7 @@ class HomeController extends Controller
 
         $bestsales = Product::with('images')
                         ->inRandomOrder()
-                        ->paginate(4);
+                        ->paginate(8);
 
         $latest = Product::with('images')
                         ->latest()
