@@ -10,15 +10,15 @@ use Illuminate\Support\Facades\File;
 
 class HomeController extends Controller
 {
-    
+
     public function index(Request $request)
     {
         $nav_products = Product::with('images')->get();
-        
+
         $categories =  Category::all();
 
         $trending_products = Product::with('images')
-                                ->latest()
+                                ->inRandomOrder()
                                 ->paginate(8);
 
         $json_data = File::get(storage_path('app/public/towns/towns.json'));
@@ -40,7 +40,7 @@ class HomeController extends Controller
 
         if ($request->ajax()) {
             $view = view('trend', compact('trending_products'))->render();
-            
+
             return response()->json(['html' => $view]);
         }
 
