@@ -63,4 +63,4 @@
 - Get products data and their categories. 
 
 ##### Features 
-- Filtering capabilities
+- Filtering capabilities, for example https://maanar-shop.xyz/api/v1/invoices?amount[gt]=12000&status[eq]=Paid
