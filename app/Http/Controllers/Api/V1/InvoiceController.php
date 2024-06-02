@@ -8,15 +8,25 @@ use App\Http\Requests\StoreInvoiceRequest;
 use App\Http\Requests\UpdateInvoiceRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\InvoiceCollection;
+use Illuminate\Http\Request;
+use App\Filters\V1\InvoiceFilter;
 
 class InvoiceController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return new InvoiceCollection(Invoice::paginate());
+        $filter = new InvoiceFilter();
+        $invoicesQuery = $filter->transform($request);
+
+        if(count($invoicesQuery)==0){
+            return new InvoiceCollection(Invoice::paginate());
+        }else{
+            $invoices = Invoice::where($invoicesQuery)->paginate();
+            return new InvoiceCollection($invoices->append($request->query()));
+        }
     }
 
     /**
