@@ -5,42 +5,31 @@
 ##### Features
 
 >Shopping Cart System Model
-1. Shopping cart that allows users to add, update, and remove items.
-2. Supports multiple product types and quantities.
-3. Provides a detailed summary of the cart contents before checkout.
-
-
+- Shopping cart that allows users to add, update, and remove items.
 >Authentication System
-1. User registration and login functionalities.
-2. Secure password hashing and session management.
-3. Role-based access control for different sections of the platform.
-
+- User registration and login functionalities.
 >Mpesa-Express API Integration
-1. Seamless integration with the Mpesa-Express API for mobile payments.
-2. Real-time transaction processing and status updates.
-3. Secure handling of payment data and user information.
+- Integration with the Mpesa-Express API for mobile payments.
+- Real-time transaction processing and status updates.
+- Secure handling of payment data and user information.
 
 >Email Notifications
-1. Automated email notifications for various user actions, such as registration, order confirmation, and shipping updates.
-2. Customizable email templates to enhance user engagement.
-
+- Automated email notifications for various user actions, such as registration, order confirmation, and shipping updates.
 ##### Live Demo
 
-*You can access the live version of this project [here](https://maanar-shop.xyz)*
+*You can access the live version of the client side [here](https://maanar-shop.xyz)*
 
-### Admin Dashboard Docs
+### Admin Side Docs
 
 ##### Features
->User Management
-1. View a list of all registered users.
-2. Edit user details such as name, email, and roles.
-3. Activate, deactivate, or delete user accounts.
+
 
 >Product Management
-1. Add new products with detailed descriptions, pricing, and images.
-2. Edit existing product information.
-3. Delete products from the catalog.
-4. Manage product categories and tags for better organization.
+
+- Add new products with detailed descriptions, pricing, and images. 
+- Edit existing product information. 
+- Delete products from the catalog. 
+- Manage product categories.
 
 >Order Management
 
@@ -50,6 +39,7 @@
 4. Access detailed order information, including customer details and purchased items.
 
 >Inventory Management
+
 1. Track stock levels for all products.
 2. Set up low-stock alerts to notify when inventory is running low.
 3. Update stock quantities manually.
@@ -59,21 +49,7 @@
 2. View sales trends and performance metrics.
 3. Export reports for further analysis.
 
->Payment Management
-1. Monitor transactions processed through the Mpesa-Express API.
-2. Resolve payment issues and handle disputes.
-3. View detailed payment histories.
 
->Email Management
-1. Customize email templates for notifications.
-2. Manage email settings and configurations.
-3. View logs of sent emails and troubleshoot delivery issues.
-
->System Settings
-1. Configure site-wide settings such as site name, logo, and contact information.
-2. Manage API keys and integration settings.
-3. Backup and restore database.
-
-##### Accessing the Admin Dashboard
+##### Admin Dashboard Live Demo
 
 *Login: Navigate to the admin login page by clicking [here](https://maanar-shop.xyz/admin/home) Enter your admin credentials to log in.*
