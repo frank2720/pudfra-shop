@@ -63,4 +63,4 @@
 - Get products data and their categories. 
 
 ##### Features 
-- Filtering capabilities, for example https://maanar-shop.xyz/api/v1/invoices?status[eq]=Paid
+- Filtering capabilities, for example https://maanar-shop.xyz/api/v1/invoices?status[eq]=Paid to filter data with status "paid"
