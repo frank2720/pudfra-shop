@@ -26,7 +26,7 @@ class HomeController extends Controller
         $towns = json_decode($json_data);
 
         $bestsales = Product::with('images')
-                        ->whereColumn('retail_price','>','price')
+                        ->inRandomOrder()
                         ->paginate(4);
 
         $latest = Product::with('images')
