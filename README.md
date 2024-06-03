@@ -64,3 +64,4 @@
 
 ##### Features 
 - Filtering capabilities, for example https://maanar-shop.xyz/api/v1/invoices?status[eq]=Paid to filter data with status "paid"
+- Include related data for example https://maanar-shop.xyz/api/v1/customers?includeInvoices=true
