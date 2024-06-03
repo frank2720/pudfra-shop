@@ -15,6 +15,7 @@ class TownResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
+            "id"=> $this->id,
             "town"=> $this->town,
             "latitude"=> $this->latitude,
             "longitude"=> $this->longitude,
