@@ -15,6 +15,7 @@ class InvoiceResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
+            "customerId"=>$this->customer_id,
             "amount"=> $this->amount,
             "status"=> $this->status,
             "billedDate"=> $this->billed_dated,

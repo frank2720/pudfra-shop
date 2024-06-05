@@ -25,4 +25,5 @@ Route::group([
     Route::apiResource('towns',TownController::class);
     Route::apiResource('customers', CustomerController::class);
     Route::apiResource('invoices', InvoiceController::class);
+    Route::post('invoices/bulk',[\App\Http\Controllers\Api\V1\InvoiceController::class,'bulkStore']);
 });
