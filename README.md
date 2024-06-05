@@ -65,3 +65,26 @@
 ##### Features 
 - Filtering capabilities, for example https://maanar-shop.xyz/api/v1/invoices?status[eq]=Paid to filter data with status "paid"
 - Include related data for example https://maanar-shop.xyz/api/v1/customers?includeInvoices=true includes customers invoices when loaded
+- Bulk invoice insert capability. -*Bulk data can be submitted in format below.* To https://maanar-shop.xyz/api/v1/invoices/bulk
+###### Format of bulk data insert
+
+
+```array
+Example:
+
+[
+{
+"customerId": "1",
+"amount": "2000",
+"status": "Paid",
+"billedDate": "2016-11-18 19:08:34",
+"paidDate": "2017-06-04 16:26:31"
+},
+{
+"customerId": "1",
+"amount": "12000",
+"status": "void",
+"billedDate": "2014-12-07 02:44:09"
+}
+]
+```
