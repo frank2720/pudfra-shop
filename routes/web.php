@@ -1,13 +1,13 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\User\CartController;
 use App\Http\Controllers\User\ProductController as UserProductController;
-use App\Http\Controllers\Admin\ProductController as AdminProductController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [HomeController::class,'index'])->name('welcome');

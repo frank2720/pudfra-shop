@@ -1,70 +1,68 @@
-@extends('profile.main')
+@extends('layouts.main')
 @section('content')
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="container">
-<div class="row flex-lg-nowrap">
-  <div class="col-12 col-lg-auto mb-3" style="width: 200px;">
-    <div class="card p-3">
-      <div class="e-navlist e-navlist--active-bg">
-        <ul class="nav">
-          <li class="nav-item"><a class="nav-link px-2 active" href="{{route('shop')}}">{{__('<<Continue Shopping')}}</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+    <div class="container light-style flex-grow-1 container-p-y">
 
-  <div class="col">
-    <div class="row">
-      <div class="col mb-3">
-        <div class="card">
-          <div class="card-body">
-            <div class="e-profile">
-              <div class="row">
-                <div class="col-12 col-sm-auto mb-3">
-                  <div class="mx-auto" style="width: 140px;">
-                    <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
-                      <span style="color: rgb(166, 168, 170); font: bold 8pt Arial;">140x140</span>
+        <h4 class="font-weight-bold py-3 mb-4">
+            Account settings
+        </h4>
+
+        <div class="card overflow-hidden">
+            <div class="row no-gutters row-bordered row-border-light">
+                <div class="col-md-3 pt-0">
+                    <div class="list-group list-group-flush account-settings-links">
+                        <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info">Account Information</a>
                     </div>
-                  </div>
                 </div>
-                <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
-                  <div class="text-center text-sm-left mb-2 mb-sm-0">
-                    <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{$user->name}}</h4>
-                    <p class="mb-0">{{$user->email}}</p>
-                    <div class="text-muted"><small>Last seen 2 hours ago</small></div>
-                    <div class="mt-2">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fa fa-fw fa-camera"></i>
-                        <span>Change Photo</span>
-                      </button>
+                <div class="col-md-9">
+                    <div class="tab-content">
+                        <div class="tab-pane fade active show" id="account-general">
+
+                            <div class="container my-3">
+                                <div class="main-body">
+                                    <div class="row gutters-sm">
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="d-flex flex-column align-items-center text-center">
+                                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                                                        <div class="mt-3">
+                                                            <h4>{{$user->name}}</h4>
+                                                            <p class="text-secondary mb-1">{{$user->email}}</p>
+                                                            <p class="text-muted font-size-sm"><b>{{$user->is_admin=1?'Admin':'Customer'}}</b></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card mb-3">
+                                                <div class="card-body">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="account-info">
+                            <div class="card my-3 mx-3">
+                                <div class="card-body">
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="text-center text-sm-right">
-                    @if ($user->is_admin == 1)
-                        <span class="badge bg-secondary">administrator</span>
-                    @else
-                        <span class="badge bg-secondary">Customer</span>
-                    @endif
-                    <div class="text-muted"><small>Joined {{date_format(($user->created_at),'M d, Y')}}</small></div>
-                  </div>
                 </div>
-              </div>
-              <ul class="nav nav-tabs">
-                <li class="nav-item"><a href="" class="active nav-link">Settings</a></li>
-              </ul>
-              <div class="tab-content pt-3">
-                <div class="tab-pane active">
-                  @include('profile.partials.update-profile-information-form')
-                  @include('profile.partials.update-password-form')
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
 
-  </div>
-</div>
-</div>
+        <div class="text-right my-3">
+            <button type="button" class="btn btn-primary">Save changes</button>&nbsp;
+            <button type="button" class="btn btn-default">Cancel</button>
+        </div>
+
+    </div>
 @endsection

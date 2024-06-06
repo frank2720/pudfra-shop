@@ -153,7 +153,7 @@
                                     @if (Route::has('login'))
                                         @auth
                                         <div class="my-account ts__05 position-relative dn db_md">
-                                            <a class="cb chp db push_side" href="" data-id="#nt_details_canvas">
+                                            <a class="cb chp db push_side" href="{{route('profile.edit')}}">
                                                 <i class='bx bx-user'></i>
                                             </a>
                                         </div>
@@ -313,7 +313,7 @@
             <h3 class="widget-title tu fs__16 mg__0 font-poppins">Shopping cart</h3>
             <i class='bx bx-x close_pp pegk ts__03 cd'></i>
         </div>
-        
+
         <div class="mini_cart_wrap">
             <div class="mini_cart_content fixcl-scroll">
                 <div class="fixcl-scroll-content">
@@ -522,7 +522,7 @@
                 <div class="">
                     <div class="widget-title tu fs__16 mg__0">{{ucwords(strtolower(Auth::user()->name))}}</div>
                     <p class="mb__10 mt__10">{{ucwords(strtolower(Auth::user()->email))}}</p>
-                    <a href="{{route('logout')}}" class="button button_primary" 
+                    <a href="{{route('logout')}}" class="button button_primary"
                                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
@@ -661,12 +661,12 @@
                     htmlView+= `<div class="text-danger text-center">No product found</div>`;
                 }
                 for(let i = 0; i < data.length; i++){
-                    htmlView += "<div class='row mb__10 pb__10'><div class='col widget_img_pr'><a class='db pr oh' href='/product-details_"+data[i].id+"'><img src='data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%201200%201200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E' class='w__100 lz_op_ef lazyload' alt='sunlight bell solar lamp' data-src='storage/"+data[i].images[0].url+"' width='80' height='80'></a></div><div class='col widget_if_pr'><a class='product-title db' href='/product-details_"+data[i].id+"'>"+data[i].name+"</a>"+new Intl.NumberFormat('en-US', 
-                                {  
-                                    style: 'currency',  
-                                    currency: 'Ksh' 
+                    htmlView += "<div class='row mb__10 pb__10'><div class='col widget_img_pr'><a class='db pr oh' href='/product-details_"+data[i].id+"'><img src='data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%201200%201200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E' class='w__100 lz_op_ef lazyload' alt='sunlight bell solar lamp' data-src='storage/"+data[i].images[0].url+"' width='80' height='80'></a></div><div class='col widget_if_pr'><a class='product-title db' href='/product-details_"+data[i].id+"'>"+data[i].name+"</a>"+new Intl.NumberFormat('en-US',
+                                {
+                                    style: 'currency',
+                                    currency: 'Ksh'
                                 }).format(data[i].price)+"</div></div>";
-                }    
+                }
                 $('#search_product').html(htmlView);
             },
             error: function (error) {
@@ -689,10 +689,10 @@
             $("#payform").trigger("reset");
             Command:toastr["success"]("Enter your MPESA pin to complete the order","Success");
             $('#cart-modal').modal('hide');
-        }, 
+        },
         error: function (error) {
                 console.log('Server error occured');
-            }     
+            }
         });
     });
     });
