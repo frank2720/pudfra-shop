@@ -153,7 +153,7 @@
                                     @if (Route::has('login'))
                                         @auth
                                         <div class="my-account ts__05 position-relative dn db_md">
-                                            <a class="cb chp db push_side" href="{{route('profile.edit')}}">
+                                            <a class="cb chp db push_side" href="{{route('profile.profile')}}">
                                                 <i class='bx bx-user'></i>
                                             </a>
                                         </div>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ProfileUpdateRequest;
+use App\Http\Requests\Profile\ProfileUpdateRequest;
 use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Product;
@@ -16,10 +16,8 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-    /**
-     * Display the user's profile form.
-     */
-    public function edit(Request $request): View
+
+    public function profile(Request $request): View
     {
         $nav_products = Product::with('images')->get();
         $categories =  Category::all();
@@ -32,7 +30,7 @@ class ProfileController extends Controller
         $oldCart = session()->get('cart');
         //dd(session()->get('cart'));
         $cart = new Cart($oldCart);
-        return view('profile.edit', [
+        return view('profile.profile', [
             'towns'=>$towns,
             'nav_products'=>$nav_products,
             'categories'=>$categories,
@@ -55,7 +53,7 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        return Redirect::route('profile.profile')->with('status', 'profile-updated');
     }
 
     /**

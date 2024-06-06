@@ -1,9 +1,9 @@
 @extends('layouts.main')
 @section('content')
-    <div class="container light-style flex-grow-1 container-p-y">
+    <div class="container light-style flex-grow-1 container-p-y my-3">
 
         <h4 class="font-weight-bold py-3 mb-4">
-            Account settings
+            Account Details
         </h4>
 
         <div class="card overflow-hidden">
@@ -38,7 +38,7 @@
                                         <div class="col-md-8">
                                             <div class="card mb-3">
                                                 <div class="card-body">
-
+                                                    <h1>Customer Invoices or Shopping section</h1>
                                                 </div>
                                             </div>
                                         </div>
@@ -50,7 +50,7 @@
                         <div class="tab-pane fade" id="account-info">
                             <div class="card my-3 mx-3">
                                 <div class="card-body">
-
+                                    <h1>More details about the account here</h1>
                                 </div>
                             </div>
                         </div>
@@ -58,11 +58,5 @@
                 </div>
             </div>
         </div>
-
-        <div class="text-right my-3">
-            <button type="button" class="btn btn-primary">Save changes</button>&nbsp;
-            <button type="button" class="btn btn-default">Cancel</button>
-        </div>
-
     </div>
 @endsection

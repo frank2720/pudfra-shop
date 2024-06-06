@@ -13,16 +13,24 @@ use Intervention\Image\Drivers\Gd\Driver;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $Tproducts = Product::count();
-        return view('admin.index',['Tproducts'=>$Tproducts]);
+        $user = $request->user();
+        return view('admin.index',[
+            'Tproducts'=>$Tproducts,
+            'user'=>$user
+        ]);
     }
 
-    public function products()
+    public function products(Request $request)
     {
+        $user = $request->user();
         $products = Product::paginate(5);
-        return view('admin.products',['products'=>$products]);
+        return view('admin.products',[
+            'products'=>$products,
+            'user'=>$user
+        ]);
     }
 
     public function store(Request $request)
@@ -41,9 +49,9 @@ class ProductController extends Controller
             'description.required'=>'Product description required',
             'img.required'=>'Upload product image',
             'img.image'=>'file must be an image'
-            
+
         ]);
-        
+
         $product = new Product;
         $product->name = $request->name;
         $product->price = $request->price;
@@ -67,8 +75,12 @@ class ProductController extends Controller
 
     public function edit($product)
     {
+        $user = request()->user();
         $product = Product::find($product);
-        return view('admin.editproduct',['product'=>$product]);
+        return view('admin.editproduct',[
+            'product'=>$product,
+            'user'=>$user
+        ]);
     }
 
     public function update(Request $request,$id)
