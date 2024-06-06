@@ -454,19 +454,9 @@
                 <div class="frm_search_cat mb__20">
                     <select name="product_type">
                         <option value="*">All Categories</option>
-                        <option value="Accessories">Accessories</option>
-                        <option value="Bag">Bag</option>
-                        <option value="Camera">Camera</option>
-                        <option value="Decor">Decor</option>
-                        <option value="Earphones">Earphones</option>
-                        <option value="Electric">Electric</option>
-                        <option value="Furniture">Furniture</option>
-                        <option value="Headphone">Headphone</option>
-                        <option value="Men">Men</option>
-                        <option value="Shoes">Shoes</option>
-                        <option value="Speaker">Speaker</option>
-                        <option value="Watch">Watch</option>
-                        <option value="Women">Women</option>
+                        @foreach ($categories as $category)
+                            <option value="">{{$category->category}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="frm_search_input pr oh">
