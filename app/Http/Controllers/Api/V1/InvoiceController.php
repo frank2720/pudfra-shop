@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Requests\V1\BulkStoreInvoiceRequest;
-use App\Http\Resources\V1\InvoiceResource;
-use App\Models\Invoice;
+use App\Filters\V1\InvoiceFilter;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Api\V1\BulkStoreInvoiceRequest;
 use App\Http\Requests\StoreInvoiceRequest;
 use App\Http\Requests\UpdateInvoiceRequest;
-use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\InvoiceCollection;
+use App\Http\Resources\V1\InvoiceResource;
+use App\Models\Invoice;
 use Illuminate\Http\Request;
-use App\Filters\V1\InvoiceFilter;
 use Illuminate\Support\Arr;
 
 class InvoiceController extends Controller
