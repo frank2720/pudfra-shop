@@ -550,7 +550,7 @@
         @if (Route::has('login'))
             @auth
             <div class="type_toolbar_account kalles_toolbar_item">
-                <a href="#" class="db push_side" data-id="#nt_details_canvas">
+                <a href="{{route('profile.profile')}}" class="db push_side">
                     <i class='bx bx-user'></i>
                     <span class="kalles_toolbar_label">Account</span>
                 </a>
