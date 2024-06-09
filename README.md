@@ -63,7 +63,16 @@
 - Get products data and their categories. 
 
 ##### Features 
-- Authenticated api. Post your credentials to https://maanar-shop.xyz/api/login to get the access token
+
+- Authenticated api. Post your credentials in the format
+```json
+{
+    "email":"your email",
+    "password":"your password"
+}
+``` 
+to https://maanar-shop.xyz/api/login to get the access token
+
 - Filtering capabilities, for example https://maanar-shop.xyz/api/v1/invoices?status[eq]=Paid to filter data with status "paid"
 - Include related data for example https://maanar-shop.xyz/api/v1/customers?includeInvoices=true includes customers invoices when loaded
 - Bulk invoice insert capability. -*Bulk data can be submitted in format below.* To https://maanar-shop.xyz/api/v1/invoices/bulk
