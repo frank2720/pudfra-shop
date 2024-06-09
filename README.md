@@ -75,13 +75,8 @@ to https://maanar-shop.xyz/api/login to get the access token
 
 - Filtering capabilities, for example https://maanar-shop.xyz/api/v1/invoices?status[eq]=Paid to filter data with status "paid"
 - Include related data for example https://maanar-shop.xyz/api/v1/customers?includeInvoices=true includes customers invoices when loaded
-- Bulk invoice insert capability. -*Bulk data can be submitted in format below.* To https://maanar-shop.xyz/api/v1/invoices/bulk
-###### Format of bulk data insert
-
-
-```array
-Example:
-
+- Bulk invoice post capability. -*Post bulk data in the format.*
+```json
 [
 {
 "customerId": "1",
@@ -98,3 +93,6 @@ Example:
 }
 ]
 ```
+To https://maanar-shop.xyz/api/v1/invoices/bulk
+
+
