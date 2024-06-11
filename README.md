@@ -84,7 +84,7 @@ $ curl -X GET -g https://maanar-shop.xyz/api/v1/invoices?status[eq]=Paid \
 Output
 
 ```json
-
+{
 "data":[
     {
         "customerId":"1",
@@ -116,26 +116,26 @@ Output
     }
     ]
 
-```
-- Include related data for example https://maanar-shop.xyz/api/v1/customers?includeInvoices=true includes customers invoices when loaded
-- Bulk invoice post capability. -Post bulk data in the format
-```json
-[
-{
-"customerId": "1",
-"amount": "2000",
-"status": "Paid",
-"billedDate": "2016-11-18 19:08:34",
-"paidDate": "2017-06-04 16:26:31"
-},
-{
-"customerId": "1",
-"amount": "12000",
-"status": "void",
-"billedDate": "2014-12-07 02:44:09"
+    ...............
+
 }
-]
+
 ```
-to https://maanar-shop.xyz/api/v1/invoices/bulk
+Include related data for example send ``GET`` request to the endpoint https://maanar-shop.xyz/api/v1/customers?includeInvoices=true to customers invoices when loaded.
 
+```curl
+$ curl -X GET -g https://maanar-shop.xyz/api/v1/customers/1?includeInvoices=true \
+  -H "Accept: application/json" \
+  -H "Content-type: application/json" \
+  -H "Authorization: Bearer 2|we9e8SQf4tB6MzDHTKXqguRIRWz99vyWnJgiMTlq89c3c3f8"
+```
 
+Bulk invoice post capability. Send a ``POST`` request to the end point https://maanar-shop.xyz/api/v1/invoices/bulk
+
+```curl
+$ curl -X POST https://maanar-shop.xyz/api/v1/invoices/bulk \
+  -H "Accept: application/json" \
+  -H "Content-type: application/json" \
+  -H "Authorization: Bearer 2|we9e8SQf4tB6MzDHTKXqguRIRWz99vyWnJgiMTlq89c3c3f8" \
+  -d "[{\"customerId\": \"1\", \"amount\": \"2000\", \"status\": \"Paid\", \"billedDate\": \"2016-11-18 19:08:34\",\"paidDate\": \"2017-06-04 16:26:31\" },{\"customerId\": \"1\", \"amount\": \"2400\", \"status\": \"Void\", \"billedDate\": \"2016-11-18 19:08:34\",\"paidDate\": \"2017-06-04 18:26:34\" }]"
+```
