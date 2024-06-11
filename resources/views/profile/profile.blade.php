@@ -1,4 +1,7 @@
 @extends('layouts.main')
+@section('title')
+    {{__('Profile')}}
+@endsection
 @section('content')
     <div class="container light-style flex-grow-1 container-p-y my-3">
 
@@ -32,6 +35,15 @@
                                                             <p class="text-muted font-size-sm"><b>{{$user->is_admin=1?'Admin':'Customer'}}</b></p>
                                                         </div>
                                                     </div>
+                                                    <a class="button" href="{{route('logout')}}"
+                                                        onclick="event.preventDefault();
+                                                                document.getElementById('logout-form').submit();">
+                                                        <i class='bx bx-log-out-circle'></i>
+                                                        <span>Sign Out</span>
+                                                        </a>
+                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                                        @csrf
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
