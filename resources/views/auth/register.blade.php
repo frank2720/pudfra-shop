@@ -16,7 +16,7 @@
         @enderror
     </div>
     <div class="form-group">
-        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Password">
+        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email">
         @error('email')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
