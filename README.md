@@ -75,10 +75,47 @@ Output
 Filtering capabilities, for example send a ``GET`` request to the endpoint as shown below to filter invoice data with status "paid"
 
 ```curl
-$ curl -X POST  https://maanar-shop.xyz/api/v1/invoices?status[eq]=Paid \
+$ curl -X GET -g https://maanar-shop.xyz/api/v1/invoices?status[eq]=Paid \
   -H "Accept: application/json" \
   -H "Content-type: application/json" \
   -H "Authorization: Bearer 2|we9e8SQf4tB6MzDHTKXqguRIRWz99vyWnJgiMTlq89c3c3f8"
+```
+
+Output
+
+```json
+
+"data":[
+    {
+        "customerId":"1",
+        "amount":"1375",
+        "status":"Paid",
+        "billedDate":"2022-12-14 14:46:30",
+        "paidDate":"2016-04-08 18:12:11"
+    },
+    {
+        "customerId":"1",
+        "amount":"6996",
+        "status":"Paid",
+        "billedDate":"2014-06-14 17:26:50",
+        "paidDate":"2019-01-11 11:46:19"
+    },
+    {
+        "customerId":"1",
+        "amount":"19619",
+        "status":"Paid",
+        "billedDate":"2022-07-29 18:40:11",
+        "paidDate":"2022-03-23 05:26:51"
+    },
+    {
+        "customerId":"2",
+        "amount":"9365",
+        "status":"Paid",
+        "billedDate":"2016-05-23 01:02:37",
+        "paidDate":"2015-07-12 22:22:09"
+    }
+    ]
+
 ```
 - Include related data for example https://maanar-shop.xyz/api/v1/customers?includeInvoices=true includes customers invoices when loaded
 - Bulk invoice post capability. -Post bulk data in the format
