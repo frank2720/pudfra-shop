@@ -66,12 +66,11 @@
 
 - Authenticated api. To get the access token to use send your credentials to the end point as shown here
 ```curl
-$ curl -X POST localhost:8000/api/login \
+$ curl -X POST https://maanar-shop.xyz/api/login \
   -H "Accept: application/json" \
   -H "Content-type: application/json" \
   -d "{\"email\": \"user@maanar.xyz\", \"password\": \"password\" }"
-``` 
-to https://maanar-shop.xyz/api/login to get the access token
+```
 
 - Filtering capabilities, for example https://maanar-shop.xyz/api/v1/invoices?status[eq]=Paid to filter data with status "paid"
 - Include related data for example https://maanar-shop.xyz/api/v1/customers?includeInvoices=true includes customers invoices when loaded
