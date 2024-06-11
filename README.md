@@ -72,6 +72,14 @@ $ curl -X POST https://maanar-shop.xyz/api/login \
   -d "{\"email\": \"user@maanar.xyz\", \"password\": \"password\" }"
 ```
 
+Output
+
+```json
+{
+    "token":"2|we9e8SQf4tB6MzDHTKXqguRIRWz99vyWnJgiMTlq89c3c3f8"
+}
+```
+
 - Filtering capabilities, for example https://maanar-shop.xyz/api/v1/invoices?status[eq]=Paid to filter data with status "paid"
 - Include related data for example https://maanar-shop.xyz/api/v1/customers?includeInvoices=true includes customers invoices when loaded
 - Bulk invoice post capability. -Post bulk data in the format
