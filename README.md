@@ -99,25 +99,10 @@ Output
         "status":"Paid",
         "billedDate":"2014-06-14 17:26:50",
         "paidDate":"2019-01-11 11:46:19"
-    },
-    {
-        "customerId":"1",
-        "amount":"19619",
-        "status":"Paid",
-        "billedDate":"2022-07-29 18:40:11",
-        "paidDate":"2022-03-23 05:26:51"
-    },
-    {
-        "customerId":"2",
-        "amount":"9365",
-        "status":"Paid",
-        "billedDate":"2016-05-23 01:02:37",
-        "paidDate":"2015-07-12 22:22:09"
     }
-    ]
-
     ...............
 
+    ]
 }
 
 ```
