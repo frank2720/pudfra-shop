@@ -2,16 +2,11 @@
 
 ##### Features
 
->Shopping Cart System Model
-- Shopping cart that allows users to add, update, and remove items.
->Authentication System
+- Shopping cart system that allows users to add, update, and remove items.
 - User registration and login functionalities.
->Mpesa-Express API Integration
 - Integration with the Mpesa-Express API for mobile payments.
 - Real-time transaction processing and status updates.
 - Secure handling of payment data and user information.
-
->Email Notifications
 - Automated email notifications for various user actions, such as registration, order confirmation, and shipping updates.
 ##### Live Demo
 
