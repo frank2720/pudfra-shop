@@ -24,25 +24,6 @@
 - Delete products from the catalog. 
 - Manage product categories.
 
->Order Management
-
-1. View all orders placed by customers.
-2. Update order statuses (e.g., processing, shipped, delivered).
-3. Issue refunds and manage returns.
-4. Access detailed order information, including customer details and purchased items.
-
->Inventory Management
-
-1. Track stock levels for all products.
-2. Set up low-stock alerts to notify when inventory is running low.
-3. Update stock quantities manually.
-
->Sales Reports
-1. Generate sales reports for specific periods.
-2. View sales trends and performance metrics.
-3. Export reports for further analysis.
-
-
 ##### Admin Dashboard Live Demo
 
 *Login: Navigate to the admin login page by clicking [here](https://maanar-shop.xyz/admin/home) Enter your admin credentials to log in.*
