@@ -52,15 +52,7 @@
 
 *Login: Navigate to the admin login page by clicking [here](https://maanar-shop.xyz/admin/home) Enter your admin credentials to log in.*
 
-### Apis Docs
-
-> Customers api & Invoices api
-- Get the data about customers and the invoices. 
-- Checkout [here](https://maanar-shop.xyz/api/v1/customers) for customers api.
-- Checkout [here](https://maanar-shop.xyz/api/v1/invoices) for invoices api
-
->Products api
-- Get products data and their categories. 
+### APIs Docs 
 
 ##### Features 
 
