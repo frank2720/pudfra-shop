@@ -64,12 +64,12 @@
 
 ##### Features 
 
-- Authenticated api. Post your credentials in the format
-```json
-{
-    "email":"your email",
-    "password":"your password"
-}
+- Authenticated api. To get the access token to use send your credentials to the end point as shown here
+```curl
+$ curl -X POST localhost:8000/api/login \
+  -H "Accept: application/json" \
+  -H "Content-type: application/json" \
+  -d "{\"email\": \"user@maanar.xyz\", \"password\": \"password\" }"
 ``` 
 to https://maanar-shop.xyz/api/login to get the access token
 
