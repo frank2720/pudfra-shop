@@ -64,7 +64,7 @@
 
 ##### Features 
 
-- Authenticated api. To get the access token to use send your credentials to the end point as shown here
+Authenticated api. To get the access token to use send ``POST`` request of credentials to the endpoint as shown here
 ```curl
 $ curl -X POST https://maanar-shop.xyz/api/login \
   -H "Accept: application/json" \
@@ -80,7 +80,14 @@ Output
 }
 ```
 
-- Filtering capabilities, for example https://maanar-shop.xyz/api/v1/invoices?status[eq]=Paid to filter data with status "paid"
+Filtering capabilities, for example send a ``GET`` request to the endpoint as shown below to filter invoice data with status "paid"
+
+```curl
+$ curl -X POST  https://maanar-shop.xyz/api/v1/invoices?status[eq]=Paid \
+  -H "Accept: application/json" \
+  -H "Content-type: application/json" \
+  -H "Authorization: Bearer 2|we9e8SQf4tB6MzDHTKXqguRIRWz99vyWnJgiMTlq89c3c3f8"
+```
 - Include related data for example https://maanar-shop.xyz/api/v1/customers?includeInvoices=true includes customers invoices when loaded
 - Bulk invoice post capability. -Post bulk data in the format
 ```json
