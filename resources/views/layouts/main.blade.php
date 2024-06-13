@@ -196,14 +196,22 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-6 col-12 mb__50 order-lg-1 order-1">
                             <div class="widget widget_text widget_logo">
-                                <h3 class="widget-title fwsb flex al_center fl_between fs__16 mg__0 mb__30 dn_md">
+                                <h3 class="widget-title fwsb flex al_center fl_between fs__16 mg__0 mb__30">
                                     <span class="txt_title">Get in touch</span>
                                     <span class="nav_link_icon ml__5"></span>
                                 </h3>
                                 <div class="widget_footer">
                                     <div class="footer-contact">
+                                        <ul class="menu">
+                                            <li class="menu-item">
+                                                <a href="https://wa.me/254741061815">WhatsApp Contact</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="mailto:otienof534@gmail.com">Send an Email</a>
+                                            </li>
+                                        </ul>
                                         <p>
-                                            <span><a href="mailto:contact@company.com">otienof534@gmail.com</a></span>
+                                            <span></span>
                                         </p>
                                     </div>
                                 </div>
@@ -217,24 +225,11 @@
                                 </h3>
                                 <div class="menu_footer widget_footer">
                                     <ul class="menu">
+                                        @foreach ($categories as $category)
                                         <li class="menu-item">
-                                            <a href="">Men</a>
+                                            <a href="{{route('shop')}}"></i>{{$category->category}}</a>
                                         </li>
-                                        <li class="menu-item">
-                                            <a href="">Women</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="">Accessories</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="">Shoes</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="">Denim</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="">Dress</a>
-                                        </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
@@ -251,19 +246,7 @@
                                             <a href="">About Us</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="">Contact Us</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="">Terms &amp; Conditions</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="">Returns &amp; Exchanges</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="">Shipping &amp; Delivery</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="">Privacy Policy</a>
+                                            <a href="mailto:otienof534@gmail.com">Contact Us</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -278,16 +261,13 @@
                                 <div class="menu_footer widget_footer">
                                     <ul class="menu">
                                         <li class="menu-item">
-                                            <a href="">Store Location</a>
+                                            <a href="{{route('shop')}}">Store</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="">My Account</a>
+                                            <a href="{{route('profile.profile')}}">My Account</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="">Size Guide</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="">FAQs</a>
+                                            <a href="">APIs documentation</a>
                                         </li>
                                     </ul>
                                 </div>
