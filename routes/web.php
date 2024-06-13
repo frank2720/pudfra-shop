@@ -8,30 +8,50 @@ use App\Http\Controllers\User\CartController;
 use App\Http\Controllers\User\ProductController as UserProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 
+Auth::routes();
 
 Route::get('/', [HomeController::class,'index'])->name('welcome');
 
-Route::middleware(['auth','verified'])->group(function () {
+Route::middleware('auth')->group(function () {
 
-      Route::get('/profile', [ProfileController::class, 'profile'])->name('profile.profile');
-      Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-      Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+      Route::get('email/verify', function(){
+            return view('auth.verify');
+      })->name('verification.notice');
 
-      Route::get('/shopping-checkout', [CartController::class, 'checkout'])->name('checkout');
+      Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $r) {
+            $r->fulfill();
+            return redirect('/home');
+      })->middleware('signed')->name('verification.verify');
 
-      Route::group([
-            'prefix'=> 'admin',
-            'middleware'=>'is_admin',
-            'as'=>'admin.'
-      ], function() {
-            Route::get('home', [AdminProductController::class, 'index'])->name('dashboard');
-            Route::get('products', [AdminProductController::class, 'products'])->name('products.list');
-            Route::get('edit/{product}', [AdminProductController::class, 'edit'])->name('products.edit');
-            Route::put('update/{id}', [AdminProductController::class, 'update'])->name('products.update');
-            Route::get('delete/{product}', [AdminProductController::class, 'destroy'])->name('products.destroy');
-            Route::resource('products', AdminProductController::class)
-                  ->only(['store']);
+      Route::post('/email/verification-notification', function (Request $r) {
+            $r->user()->sendEmailVerificationNotification();
+            return back()->with('resent', 'Verification link sent ');
+      })->middleware('throttle:6,1')->name('verification.resend');
+
+
+      Route::middleware('verified')->group(function () {
+            Route::get('/profile', [ProfileController::class, 'profile'])->name('profile.profile');
+            Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+            Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+            Route::get('/shopping-checkout', [CartController::class, 'checkout'])->name('checkout');
+
+            Route::group([
+                  'prefix'=> 'admin',
+                  'middleware'=>'is_admin',
+                  'as'=>'admin.'
+            ], function() {
+                  Route::get('home', [AdminProductController::class, 'index'])->name('dashboard');
+                  Route::get('products', [AdminProductController::class, 'products'])->name('products.list');
+                  Route::get('edit/{product}', [AdminProductController::class, 'edit'])->name('products.edit');
+                  Route::put('update/{id}', [AdminProductController::class, 'update'])->name('products.update');
+                  Route::get('delete/{product}', [AdminProductController::class, 'destroy'])->name('products.destroy');
+                  Route::resource('products', AdminProductController::class)
+                        ->only(['store']);
+            });
       });
 });
 
@@ -57,7 +77,5 @@ Route::get('/load-more-data', [UserProductController::class,'loadmore'])->name('
 Route::get('/product-details_{id}', [UserProductController::class,'product_details'])->name('product.details');
 
 Route::get('/search',[HomeController::class, 'product_search'])->name('product.search');
-
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
