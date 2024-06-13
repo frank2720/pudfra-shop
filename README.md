@@ -28,7 +28,7 @@
 
 *Login: Navigate to the admin login page by clicking [here](https://maanar-shop.xyz/admin/home) Enter your admin credentials to log in.*
 
-**admin credential:- email: user@maanar.xyz password:password**
+**admin credential:- *email:* user@maanar.xyz *password:* password**
 
 ### APIs Docs 
 
