@@ -35,6 +35,7 @@ class ProfileController extends Controller
             'nav_products'=>$nav_products,
             'categories'=>$categories,
             'latest'=>$latest,
+            'cart_products'=>$cart->items,
             'user' => $request->user(),
             'totalPrice'=>$cart->totalPrice,
         ]);
