@@ -21,13 +21,13 @@ Route::middleware('auth')->group(function () {
             return view('auth.verify');
       })->name('verification.notice');
 
-      Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $r) {
-            $r->fulfill();
+      Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+            $request->fulfill();
             return redirect('/home');
       })->middleware('signed')->name('verification.verify');
 
-      Route::post('/email/verification-notification', function (Request $r) {
-            $r->user()->sendEmailVerificationNotification();
+      Route::post('/email/verification-notification', function (Request $request) {
+            $request->user()->sendEmailVerificationNotification();
             return back()->with('resent', 'Verification link sent ');
       })->middleware('throttle:6,1')->name('verification.resend');
 
