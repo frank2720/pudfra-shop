@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Carbon\Carbon;
+use App\Models\Order;
 use App\Models\Product;
+use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
 use Intervention\Image\ImageManager;
@@ -13,12 +17,36 @@ use Intervention\Image\Drivers\Gd\Driver;
 
 class ProductController extends Controller
 {
+    public function getIncrease($rise,$cVal)
+    {
+        $percentageIncrease = round(($rise/$cVal)*100,1);
+        return $percentageIncrease;
+    }
     public function index(Request $request)
     {
         $Tproducts = Product::count();
+        $Tcustomers = Customer::count();
+        $Torders = Order::count();
+        $productsIncrease = Product::query()
+                            ->whereDate("created_at",">=", Carbon::yesterday())
+                            ->whereDate("created_at","<=", Carbon::now())
+                            ->count();
+        $ordersIncrease = Order::query()
+                            ->whereDate("created_at",">=", Carbon::yesterday())
+                            ->whereDate("created_at","<=", Carbon::now())
+                            ->count();
+        $customersIncrease = Customer::query()
+                            ->whereDate("created_at",">=", Carbon::yesterday())
+                            ->whereDate("created_at","<=", Carbon::now())
+                            ->count();
         $user = $request->user();
         return view('admin.index',[
             'Tproducts'=>$Tproducts,
+            'productsIncrease'=> $this->getIncrease($productsIncrease,$Tproducts),
+            'ordersIncrease'=> $this->getIncrease($ordersIncrease,$Torders),
+            'customersIncrease'=> $this->getIncrease($customersIncrease,$Tcustomers),
+            'Tcustomers'=> $Tcustomers,
+            'Torders' => $Torders,
             'user'=>$user
         ]);
     }

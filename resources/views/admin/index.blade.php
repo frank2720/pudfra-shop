@@ -23,8 +23,8 @@
                             <i class='bx bx-purchase-tag'></i>
                         </div>
                         <div class="ps-3">
-                        <h6>145</h6>
-                        <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                        <h6>{{$Torders}}</h6>
+                        <span class="text-success small pt-1 fw-bold">{{$ordersIncrease}}%</span> <span class="text-muted small pt-2 ps-1">increase Today</span>
     
                         </div>
                     </div>
@@ -47,7 +47,7 @@
                         </div>
                         <div class="ps-3">
                         <h6>{{$Tproducts}}</h6>
-                        <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                        <span class="text-success small pt-1 fw-bold">{{$productsIncrease}}%</span> <span class="text-muted small pt-2 ps-1">increase Today</span>
     
                         </div>
                     </div>
@@ -69,8 +69,8 @@
                             <i class='bx bx-male-female'></i>
                         </div>
                         <div class="ps-3">
-                        <h6>264</h6>
-                        <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                        <h6>{{$Tcustomers}}</h6>
+                        <span class="text-success small pt-1 fw-bold">{{$customersIncrease}}%</span> <span class="text-muted small pt-2 ps-1">increase</span>
     
                         </div>
                     </div>

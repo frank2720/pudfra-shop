@@ -16,15 +16,18 @@ class CustomerSeeder extends Seeder
         Customer::factory()
                 ->count(30)
                 ->hasinvoices(12)
+                ->hasorders(12)
                 ->create();
 
         Customer::factory()
                 ->count(10)
+                ->hasorders(25)
                 ->hasinvoices(25)
                 ->create();
         
         Customer::factory()
                 ->count(100)
+                ->hasorders(5)
                 ->hasinvoices(5)
                 ->create();
         
