@@ -27,24 +27,43 @@ class ProductController extends Controller
         $Tproducts = Product::count();
         $Tcustomers = Customer::count();
         $Torders = Order::count();
+
         $productsIncrease = Product::query()
                             ->whereDate("created_at",">=", Carbon::yesterday())
                             ->whereDate("created_at","<=", Carbon::now())
                             ->count();
+        if ($Tproducts==0) {
+            $pIncrease = 0;
+        }else{
+            $pIncrease = $this->getIncrease($productsIncrease,$Tproducts);
+        }
+
         $ordersIncrease = Order::query()
                             ->whereDate("created_at",">=", Carbon::yesterday())
                             ->whereDate("created_at","<=", Carbon::now())
                             ->count();
+        if ($Torders==0) {
+            $cIncrease = 0;
+        }else{
+            $oIncrease = $this->getIncrease($ordersIncrease,$Torders);
+        }
+        
         $customersIncrease = Customer::query()
                             ->whereDate("created_at",">=", Carbon::yesterday())
                             ->whereDate("created_at","<=", Carbon::now())
                             ->count();
+        if ($Tcustomers==0) {
+            $cIncrease = 0;
+        }else{
+            $cIncrease = $this->getIncrease($customersIncrease,$Tcustomers);
+        }
+
         $user = $request->user();
         return view('admin.index',[
             'Tproducts'=>$Tproducts,
-            'productsIncrease'=> $this->getIncrease($productsIncrease,$Tproducts),
-            'ordersIncrease'=> $this->getIncrease($ordersIncrease,$Torders),
-            'customersIncrease'=> $this->getIncrease($customersIncrease,$Tcustomers),
+            'productsIncrease'=> $pIncrease,
+            'ordersIncrease'=> $oIncrease,
+            'customersIncrease'=> $cIncrease,
             'Tcustomers'=> $Tcustomers,
             'Torders' => $Torders,
             'user'=>$user
