@@ -88,8 +88,8 @@
                     <textarea class="form-control" type="text" name="description">{{$product->description}}</textarea>
                 </div>
             <div class="mt-3">
-                <a href="{{route('admin.products.list')}}" class="btn btn-default">{{__('Cancel')}}</a>
-                <input type="submit" class="btn btn-success" value="Update">
+                <a href="{{route('admin.products.list')}}" class="btn btn-default mb-3">{{__('Cancel')}}</a>
+                <input type="submit" class="btn btn-success mb-3" value="Update">
             </div>
         </form>
     </div>
