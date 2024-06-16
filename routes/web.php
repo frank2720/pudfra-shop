@@ -47,10 +47,10 @@ Route::middleware('auth')->group(function () {
                   Route::get('home', [AdminProductController::class, 'index'])->name('dashboard');
                   Route::get('products', [AdminProductController::class, 'products'])->name('products.list');
                   Route::get('edit/{product}', [AdminProductController::class, 'edit'])->name('products.edit');
-                  Route::put('update/{id}', [AdminProductController::class, 'update'])->name('products.update');
+                  Route::patch('update/{id}', [AdminProductController::class, 'update'])->name('products.update');
                   Route::get('delete/{product}', [AdminProductController::class, 'destroy'])->name('products.destroy');
-                  Route::resource('products', AdminProductController::class)
-                        ->only(['store']);
+                  Route::post('products',[AdminProductController::class,'store'])->name('products.store');
+                  Route::get('image/delete/{id}', [AdminProductController::class,'imgDelete'])->name('image.delete');
             });
       });
 });

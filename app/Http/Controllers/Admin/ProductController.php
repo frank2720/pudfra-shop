@@ -124,8 +124,10 @@ class ProductController extends Controller
     {
         $user = request()->user();
         $product = Product::find($product);
+        $images = ProductImage::where('product_id','=',$product->id)->get();
         return view('admin.editproduct',[
             'product'=>$product,
+            'images'=>$images,
             'user'=>$user
         ]);
     }
@@ -133,16 +135,10 @@ class ProductController extends Controller
     public function update(Request $request,$id)
     {
         $request->validate([
-            'name'=>'required|string',
-            'price'=>'required',
-            'retail_price'=>'required',
-            'description'=>'required|string'
-        ],
-        [
-            'name.required'=>'Product name required',
-            'price.required'=>'Product price required',
-            'retail_price.required'=>'Product retail price required',
-            'description.required'=>'Product description required',
+            'name'=>'sometimes|string',
+            'price'=>'sometimes',
+            'retail_price'=>'sometimes',
+            'description'=>'sometimes|string'
         ]);
         $product = Product::find($id);
         $product->name = $request->name;
@@ -164,5 +160,20 @@ class ProductController extends Controller
             $image->delete();
         }
         return back()->with('success','deleted successfully!');
+    }
+
+    public function imgDelete($id)
+    {
+        $img = ProductImage::find($id);
+        if(!$img) abort(404);
+    
+        $imgCount = ProductImage::where('product_id','=',$img->product_id)->count();
+        if ($imgCount <= 1) {
+            return back()->with('warning','Product need an image!');
+        }else{
+            unlink(storage_path('app/public/'.$img->url));
+            $img->delete();
+            return back()->with('success','image deleted!');
+        }
     }
 }
