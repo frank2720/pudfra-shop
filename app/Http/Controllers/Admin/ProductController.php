@@ -73,7 +73,7 @@ class ProductController extends Controller
     public function products(Request $request)
     {
         $user = $request->user();
-        $products = Product::paginate(5);
+        $products = Product::with('images')->paginate(10);
         return view('admin.products',[
             'products'=>$products,
             'user'=>$user
@@ -117,7 +117,7 @@ class ProductController extends Controller
             $image->product_id = $product->id;
             $image->save();
         }
-        return back()->with('success','Product added successfully');
+        return back()->with('success','added successfully!');
     }
 
     public function edit($product)
@@ -150,13 +150,19 @@ class ProductController extends Controller
         $product->retail_price = $request->retail_price;
         $product->description = $request->description;
         $product->save();
-        return redirect()->route('admin.products.list')->with('success','Details updated successfully');
+        return redirect()->route('admin.products.list')->with('success','updated successfully!');
     }
 
     public function destroy($product):RedirectResponse
     {
         $product = Product::find($product);
+        $images = ProductImage::where('product_id','=',$product->id)->get();
+        if(!$product&&$images) abort(404);
         $product->delete();
-        return back();
+        foreach ($images as $image) {
+            unlink(storage_path('app/public/'.$image->url));
+            $image->delete();
+        }
+        return back()->with('success','deleted successfully!');
     }
 }
