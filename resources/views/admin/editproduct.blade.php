@@ -42,12 +42,10 @@
             top: -10px;
             right: -11px;
             }
-            .image-area {
-            position: relative;
-            }
-            .image-area img{
-            max-width: 100%;
-            height: auto;
+            img {
+            width: 200px;
+            height: 300px;
+            object-fit: contain;
             }
             .row {
             display: flex;
@@ -55,7 +53,6 @@
 
             .column {
             flex: 20%;
-            padding: 5px;
             }
             .btn-update {
             font-weight: 300;
@@ -64,17 +61,43 @@
             width: 80%;
             margin-left: 3px;
             }
+            [data-title]{
+                position: relative;
+            }
+
+            [data-title]:hover::before {
+            content: attr(data-title);
+            position: absolute;
+            bottom: -26px;
+            display: inline-block;
+            padding: 3px 6px;
+            border-radius: 2px;
+            background: #000;
+            color: #fff;
+            font-size: 12px;
+            font-family: sans-serif;
+            white-space: nowrap;
+            }
+            [data-title]:hover::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 8px;
+            display: inline-block;
+            color: #fff;
+            border: 8px solid transparent;	
+            border-bottom: 8px solid #000;
+            }
         </style>
         <div class="row my-3">
             @foreach ($images as $image)
             <div class="column">
-                <div class="image-area">
-                    <img src="{{Storage::url($image->url??null)}}"  alt="product image">
-                    <a class="remove-image" href="{{route('admin.image.delete',['id'=>$image->id])}}" style="display: inline;" title="delete">&#215;</a>
-                </div>
+                <img src="{{Storage::url($image->url??null)}}"  alt="product image">
+                <a class="remove-image" href="{{route('admin.image.delete',['id'=>$image->id])}}" style="display: inline;" data-title="Delete image">&#215;</a>
             </div>
             @endforeach
-        </div> 
+        </div>
+        <button class="btn btn-dark" data-title="Add more image" data-bs-toggle="modal" data-bs-target="#addImages"><i class="bx bx-folder-open"></i></button>
         <form action="{{route('admin.products.update',['id'=>$product->id])}}" method="POST">
             @csrf
             @method('patch')
@@ -114,4 +137,35 @@
         </form>
     </div>
 </div>
+
+<div class="modal fade" id="addImages" tabindex="-1" data-bs-backdrop="false">
+    <div class="modal-dialog">
+    <div class="modal-content">
+
+        <form action="{{route('admin.add.images',['id'=>$product->id])}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="modal-header">
+                <h5 class="modal-title">Add More Images</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="controls">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="fw-bolder my-2" for="p_img">{{__('Images')}}</label>
+                                <input type="file" id="p_img" name="img[]" class="form-control" multiple required autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancel">
+                <input type="submit" class="btn btn-success" value="Add">
+            </div>
+        </form>
+    </div>
+    </div>
+</div><!-- End moreImages Modal-->
 @endsection

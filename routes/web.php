@@ -50,6 +50,7 @@ Route::middleware('auth')->group(function () {
                   Route::patch('update/{id}', [AdminProductController::class, 'update'])->name('products.update');
                   Route::get('delete/{product}', [AdminProductController::class, 'destroy'])->name('products.destroy');
                   Route::post('products',[AdminProductController::class,'store'])->name('products.store');
+                  Route::post('add/images/{id}',[AdminProductController::class,'moreImages'])->name('add.images');
                   Route::get('image/delete/{id}', [AdminProductController::class,'imgDelete'])->name('image.delete');
             });
       });

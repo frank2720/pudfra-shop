@@ -15,7 +15,7 @@
 
     <div class="card-body pb-0">
     <h5 class="card-title">List of Available Products</h5>
-    <button class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#addproducts">Add Products</button>
+    <button class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#addproduct">Add Products</button>
     <table class="table table-borderless">
         <thead>
         <tr>

@@ -152,8 +152,19 @@ class ProductController extends Controller
     public function moreImages(Request $request, $id)
     {
         $request->validate([
-            'img.*'=> 'images',
+            'img.*'=> 'required|image'
         ]);
+
+        foreach ($request->file('img') as $productImg) {
+            $imagename = str()->uuid().'.webp';
+            $manager = new ImageManager(new Driver());
+            $manager->read($productImg)->scale(360,360)->toWebp()->save(storage_path('app/public/products/'.$imagename));
+            $image = new ProductImage;
+            $image->url = 'products/'.$imagename;
+            $image->product_id = $id;
+            $image->save();
+        }
+        return back()->with('success','added successfully!');
     }
 
     public function destroy($product):RedirectResponse

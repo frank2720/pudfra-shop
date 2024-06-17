@@ -214,7 +214,7 @@
         </nav>
     </div><!-- End Page Title -->
 
-    <div class="modal fade" id="addproducts" tabindex="-1" data-bs-backdrop="false">
+    <div class="modal fade" id="addproduct" tabindex="-1" data-bs-backdrop="false">
         <div class="modal-dialog">
         <div class="modal-content">
 
