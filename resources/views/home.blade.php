@@ -63,10 +63,10 @@
                     <div class="product-image pr oh">
 
                         <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
-                            <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_586" data-bgset="{{Storage::url($product->images[0]->url)}}"></div>
+                            <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_586" data-bgset="{{Storage::url($product->images[0]->url??null)}}"></div>
                         </a>
                         <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
-                            <div class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_586" data-bgset="{{Storage::url($product->images[1]->url??$product->images[0]->url)}}"></div>
+                            <div class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_586" data-bgset="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}"></div>
                         </div>
                         <div class="hover_button op__0 tc pa flex column ts__03">
                             <a href="" class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left add-to-cart-btn"  data-product-id="{{$product->id}}">
