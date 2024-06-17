@@ -146,7 +146,14 @@ class ProductController extends Controller
         $product->retail_price = $request->retail_price;
         $product->description = $request->description;
         $product->save();
-        return redirect()->route('admin.products.list')->with('success','updated successfully!');
+        return back()->with('success','updated successfully!');
+    }
+
+    public function moreImages(Request $request, $id)
+    {
+        $request->validate([
+            'img.*'=> 'images',
+        ]);
     }
 
     public function destroy($product):RedirectResponse

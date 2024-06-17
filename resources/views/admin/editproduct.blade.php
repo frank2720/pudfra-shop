@@ -57,13 +57,20 @@
             flex: 20%;
             padding: 5px;
             }
+            .btn-update {
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            width: 80%;
+            margin-left: 3px;
+            }
         </style>
-        <div class="row mt-3">
+        <div class="row my-3">
             @foreach ($images as $image)
             <div class="column">
                 <div class="image-area">
                     <img src="{{Storage::url($image->url??null)}}"  alt="product image">
-                    <a class="remove-image" href="{{route('admin.image.delete',['id'=>$image->id])}}" style="display: inline;">&#215;</a>
+                    <a class="remove-image" href="{{route('admin.image.delete',['id'=>$image->id])}}" style="display: inline;" title="delete">&#215;</a>
                 </div>
             </div>
             @endforeach
@@ -71,25 +78,38 @@
         <form action="{{route('admin.products.update',['id'=>$product->id])}}" method="POST">
             @csrf
             @method('patch')
-                <div class="form-group">
-                    <label>{{__('Product Name')}}</label>
-                    <input class="form-control" type="text" name="name" value="{{$product->name}}">
+            <div class="controls">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group my-3">
+                            <label class="fw-bolder mb-2">{{__('Product Name')}}</label>
+                            <input class="form-control" type="text" name="name" value="{{$product->name}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group my-3">
+                            <label class="fw-bolder mb-2">{{__('Product Price')}}</label>
+                            <input class="form-control" type="number" min="0" name="price" value="{{$product->price}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group my-3">
+                            <label class="fw-bolder mb-2">{{__('Retail Price')}}</label>
+                            <input class="form-control" type="number" min="0" name="retail_price" value="{{$product->retail_price}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group my-3">
+                            <label class="fw-bolder mb-2">{{__('Description')}}</label>
+                            <textarea class="form-control" type="text" name="description">{{$product->description}}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="my-5">
+                            <input type="submit" class="btn btn-success btn-update" value="Update">
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>{{__('Product Price')}}</label>
-                    <input class="form-control" type="number" min="0" name="price" value="{{$product->price}}">
-                </div>
-                <div class="form-group">
-                    <label>{{__('Retail Price')}}</label>
-                    <input class="form-control" type="number" min="0" name="retail_price" value="{{$product->retail_price}}">
-                </div>
-                <div class="form-group">
-                    <label>{{__('Description')}}</label>
-                    <textarea class="form-control" type="text" name="description">{{$product->description}}</textarea>
-                </div>
-            <div class="mt-3">
-                <a href="{{route('admin.products.list')}}" class="btn btn-default mb-3">{{__('Cancel')}}</a>
-                <input type="submit" class="btn btn-success mb-3" value="Update">
             </div>
         </form>
     </div>
