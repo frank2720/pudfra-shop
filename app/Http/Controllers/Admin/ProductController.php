@@ -80,6 +80,16 @@ class ProductController extends Controller
         ]);
     }
 
+    public function customers()
+    {
+        $user=request()->user();
+        $customers = Customer::paginate(20);
+        return view('admin.customers',[
+                'user'=>$user,
+                'customers'=>$customers
+        ]);
+    }
+
     public function store(Request $request)
     {
         $request->validate([

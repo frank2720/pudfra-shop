@@ -46,6 +46,7 @@ Route::middleware('auth')->group(function () {
             ], function() {
                   Route::get('home', [AdminProductController::class, 'index'])->name('dashboard');
                   Route::get('products', [AdminProductController::class, 'products'])->name('products.list');
+                  Route::get('customers',[AdminProductController::class,'customers'])->name('customers.list');
                   Route::get('edit/{product}', [AdminProductController::class, 'edit'])->name('products.edit');
                   Route::patch('update/{id}', [AdminProductController::class, 'update'])->name('products.update');
                   Route::get('delete/{product}', [AdminProductController::class, 'destroy'])->name('products.destroy');

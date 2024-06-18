@@ -58,7 +58,7 @@
         </div>
 
         <div class="col-xxl-4 col-md-4">
-            <a href="">
+            <a href="{{route('admin.customers.list')}}">
                 <div class="card info-card revenue-card">
 
                     <div class="card-body">
