@@ -39,6 +39,10 @@ class ProductController extends Controller
     public function products()
     {
         $products = Product::with('images')->get();
+        $productsAZ = Product::with('images')->orderBy('name','asc')->get();
+        $productsZA = Product::with('images')->orderBy('name','desc')->get();
+        $productsLH = Product::with('images')->orderBy('price','asc')->get();
+        $productsHL = Product::with('images')->orderBy('price','desc')->get();
 
         $categories =  Category::all();
 
@@ -55,6 +59,10 @@ class ProductController extends Controller
         return view('shop',[
         'towns'=>$towns,
         'products'=>$products,
+        'productsAZ'=>$productsAZ,
+        'productsZA'=>$productsZA,
+        'productsLH'=>$productsLH,
+        'productsHL'=>$productsHL,
         'nav_products'=>$nav_products,
         'categories'=>$categories,
         'latest'=>$latest,
