@@ -21,12 +21,12 @@
                                     <div class="color"><span class="text-grey"></span><span class="font-weight-bold">&nbsp;</span></div>
                                 </div>
                             </div>
-                            <div class="d-flex flex-row align-items-center qty"><i class='bx bx-minus text-danger' ></i>
-                                <h5 class="text-grey mt-1 mr-1 ml-1">{{__($product['qty'])}}</h5><i class='bx bx-plus text-success' ></i></div>
+                            <div class="d-flex flex-row align-items-center qty"><a href="{{route('reduceQty',['id'=>$product['item']->id])}}"><i class='bx bx-minus text-danger mx-2'></i></a>
+                                <h5 class="text-grey mt-1 mr-1 ml-1">{{__($product['qty'])}}</h5><a href="{{route('increaseQty',['id'=>$product['item']->id])}}"><i class='bx bx-plus text-success mx-2' ></i></a></div>
                             <div>
                                 <h5 class="text-grey">Ksh {{number_format($product['price'],2,'.',',')}}</h5>
                             </div>
-                            <div class="d-flex align-items-center"><a href="{{route('removefromCart',['id'=>$product['item']->id])}}"><i class='bx bx-trash mb-1 text-danger'></i></a></div>
+                            <div class="d-flex align-items-center"><a href="{{route('removeProduct',['id'=>$product['item']->id])}}"><i class='bx bx-trash mb-1 text-danger'></i></a></div>
                         </div>
                     @endforeach
                     <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><a href="{{route('checkout')}}" class="btn btn-primary btn-block btn-lg ml-2 pay-button">Proceed to Pay</a></div>
@@ -34,8 +34,8 @@
             </div>
         </div>
     @else
-    <div class="empty tc mt__40"><i class='bx bx-shopping-bag'></i>
-        <p>Your cart is empty.</p>
+    <div class="tc my-60"><h1><i class='bx bx-shopping-bag display-1'></i></h1>
+        <h3>Your cart is empty.</h3>
         <p class="return-to-shop mb__15">
             <a class="button button_primary tu js_add_ld" href="{{route('shop')}}">Return To Shop</a>
         </p>

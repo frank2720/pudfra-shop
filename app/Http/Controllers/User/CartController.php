@@ -25,21 +25,24 @@ class CartController extends Controller
             'subtotal'=>$cart->totalPrice,
         ]);
     }
-    
-    public function removefromCart(Request $request, $id)
+
+    public function increaseQty(Request $request, $id)
+    {
+        $product = Product::with('images')->find($id);
+        $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->add($product, $product->id);
+        $request->session()->put('cart',$cart);
+        return back();
+    }
+
+    public function reduceQty(Request $request, $id)
     {
         $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
         $cart = new Cart($oldCart);
-        $cart->remove($id);
-
+        $cart->reduce($id);
         $request->session()->put('cart',$cart);
         return back();
-
-        /*
-        return response()->json([
-            'totalQty'=>$cart->totalQty,
-            'subtotal'=>$cart->totalPrice
-        ]);*/
     }
 
     public function reduceInCart(Request $request, $id)
@@ -49,14 +52,33 @@ class CartController extends Controller
         $cart->reduce($id);
         $request->session()->put('cart',$cart);
 
-        return back();
-
-       /* 
         return response()->json([
             'totalQty'=>$cart->totalQty??0,
             'subtotal'=>$cart->totalPrice??0,
             'productquantity'=>$cart->items[$id]['qty']??0
-        ]);*/
+        ]);
+    }
+    
+    public function removeProduct(Request $request, $id)
+    {
+        $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->remove($id);
+
+        $request->session()->put('cart',$cart);
+        return back();
+    }
+    public function removefromCart(Request $request, $id)
+    {
+        $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->remove($id);
+
+        $request->session()->put('cart',$cart);
+        return response()->json([
+            'totalQty'=>$cart->totalQty,
+            'subtotal'=>$cart->totalPrice
+        ]);
     }
 
     public function getCart()

@@ -71,6 +71,9 @@ Route::post('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('ad
 Route::get('/shopping-cart', [CartController::class, 'getCart'])->name('shopping');
 Route::get('/shopping/removeItem/{id}', [CartController::class, 'removefromCart'])->name('removefromCart');
 Route::get('/shopping/reduceItem/{id}', [CartController::class, 'reduceInCart'])->name('productReduce');
+Route::get('/shopping/increaseQty/{id}', [CartController::class, 'increaseQty'])->name('increaseQty');
+Route::get('/shopping/reduceQty/{id}', [CartController::class, 'reduceQty'])->name('reduceQty');
+Route::get('/shopping/removeProduct/{id}', [CartController::class, 'removeProduct'])->name('removeProduct');
 
 Route::get('/pagination/paginate-products',[AdminProductController::class,'index']);
 Route::get('/pagination/products',[UserProductController::class,'products_paginate']);
