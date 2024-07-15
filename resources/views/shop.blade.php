@@ -28,15 +28,13 @@
                 </div>
             </div>
             <div class="cat_sortby cat_sortby_js col tr kalles_dropdown kalles_dropdown_container">
-                <a class="in_flex fl_between al_center sortby_pick kalles_dropDown_label" href="#">
-                    <span class="lbl-title sr_txt_mb">Sort by</span>
-                    <i class='bx bx-chevron-down'></i>
-                </a>
+                <button class="btn in_flex fl_between al_center sortby_pick kalles_dropDown_label featurnBtn rounded-pill dropdown-toggle show" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+                    Sort products by
+                </button>
                 <div class="nt_sortby dn">
                     <div class="nt_ajaxsortby wrap_sortby">
-                        <a data-label="Featured" class="list-group-item list-group-item-action active text-white" disabled>Sort by:</a>
-                        <a data-label="Alphabetically, A-Z" class="list-group-item list-group-item-action" href="#A-Z">Alphabetically, A-Z</a>
-                        <a data-label="Alphabetically, Z-A" class="list-group-item list-group-item-action" href="#Z-A">Alphabetically, Z-A</a>
+                        <a data-label="Alphabetically, A-Z" class="list-group-item list-group-item-action" href="#A-Z">Alphabetical, A-Z</a>
+                        <a data-label="Alphabetically, Z-A" class="list-group-item list-group-item-action" href="#Z-A">Alphabetical, Z-A</a>
                         <a data-label="Price, low to high" class="list-group-item list-group-item-action" href="#lowHigh">Price, low to high</a>
                         <a data-label="Price, high to low" class="list-group-item list-group-item-action" href="#highLow">Price, high to low</a>
                     </div>
@@ -53,134 +51,6 @@
                     <!--products list-->
                     <div class="on_list_view_false products nt_products_holder row fl_center row_pr_1 cdt_des_1 round_cd_false nt_cover ratio_nt position_8 space_30 nt_default">
                         @foreach ($products as $product)
-                            <div class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1">
-                                <div class="product-inner pr">
-                                    <div class="product-image pr oh lazyload">
-                                        <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
-                                            <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="{{Storage::url($product->images[0]->url??null)}}"></div>
-                                        </a>
-                                        <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
-                                            <div class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_571" data-bgset="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}"></div>
-                                        </div>
-                                        <div class="hover_button op__0 tc pa flex column ts__03">
-                                            <a href="" class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left add-to-cart-btn" data-product-id="{{$product->id}}">
-                                                <span class="tt_txt">Quick Shop</span>
-                                                <i class='bx bxs-cart-add'></i>
-                                                <span>Quick Shop</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info mt__15">
-                                        <h3 class="product-title pr fs__14 mg__0 fwm">
-                                            <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">{{$product->name}}</a>
-                                        </h3>
-                                        <span class="price dib mb__5">Ksh {{number_format($product->price,2,".",",")}}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    <!--end products list-->
-
-                    <!--products list-->
-                    <div class="on_list_view_false products nt_products_holder row fl_center row_pr_1 cdt_des_1 round_cd_false nt_cover ratio_nt position_8 space_30 nt_default" id="A-Z">
-                        @foreach ($productsAZ as $product)
-                            <div class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1">
-                                <div class="product-inner pr">
-                                    <div class="product-image pr oh lazyload">
-                                        <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
-                                            <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="{{Storage::url($product->images[0]->url??null)}}"></div>
-                                        </a>
-                                        <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
-                                            <div class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_571" data-bgset="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}"></div>
-                                        </div>
-                                        <div class="hover_button op__0 tc pa flex column ts__03">
-                                            <a href="" class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left add-to-cart-btn" data-product-id="{{$product->id}}">
-                                                <span class="tt_txt">Quick Shop</span>
-                                                <i class='bx bxs-cart-add'></i>
-                                                <span>Quick Shop</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info mt__15">
-                                        <h3 class="product-title pr fs__14 mg__0 fwm">
-                                            <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">{{$product->name}}</a>
-                                        </h3>
-                                        <span class="price dib mb__5">Ksh {{number_format($product->price,2,".",",")}}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    <!--end products list-->
-
-                    <!--products list-->
-                    <div class="on_list_view_false products nt_products_holder row fl_center row_pr_1 cdt_des_1 round_cd_false nt_cover ratio_nt position_8 space_30 nt_default" id="Z-A">
-                        @foreach ($productsZA as $product)
-                            <div class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1">
-                                <div class="product-inner pr">
-                                    <div class="product-image pr oh lazyload">
-                                        <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
-                                            <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="{{Storage::url($product->images[0]->url??null)}}"></div>
-                                        </a>
-                                        <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
-                                            <div class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_571" data-bgset="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}"></div>
-                                        </div>
-                                        <div class="hover_button op__0 tc pa flex column ts__03">
-                                            <a href="" class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left add-to-cart-btn" data-product-id="{{$product->id}}">
-                                                <span class="tt_txt">Quick Shop</span>
-                                                <i class='bx bxs-cart-add'></i>
-                                                <span>Quick Shop</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info mt__15">
-                                        <h3 class="product-title pr fs__14 mg__0 fwm">
-                                            <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">{{$product->name}}</a>
-                                        </h3>
-                                        <span class="price dib mb__5">Ksh {{number_format($product->price,2,".",",")}}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    <!--end products list-->
-
-                    <!--products list-->
-                    <div class="on_list_view_false products nt_products_holder row fl_center row_pr_1 cdt_des_1 round_cd_false nt_cover ratio_nt position_8 space_30 nt_default" id="lowHigh">
-                        @foreach ($productsLH as $product)
-                            <div class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1">
-                                <div class="product-inner pr">
-                                    <div class="product-image pr oh lazyload">
-                                        <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
-                                            <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="{{Storage::url($product->images[0]->url??null)}}"></div>
-                                        </a>
-                                        <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
-                                            <div class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_571" data-bgset="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}"></div>
-                                        </div>
-                                        <div class="hover_button op__0 tc pa flex column ts__03">
-                                            <a href="" class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left add-to-cart-btn" data-product-id="{{$product->id}}">
-                                                <span class="tt_txt">Quick Shop</span>
-                                                <i class='bx bxs-cart-add'></i>
-                                                <span>Quick Shop</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info mt__15">
-                                        <h3 class="product-title pr fs__14 mg__0 fwm">
-                                            <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">{{$product->name}}</a>
-                                        </h3>
-                                        <span class="price dib mb__5">Ksh {{number_format($product->price,2,".",",")}}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    <!--end products list-->
-
-                    <!--products list-->
-                    <div class="on_list_view_false products nt_products_holder row fl_center row_pr_1 cdt_des_1 round_cd_false nt_cover ratio_nt position_8 space_30 nt_default" id="highLow">
-                        @foreach ($productsHL as $product)
                             <div class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1">
                                 <div class="product-inner pr">
                                     <div class="product-image pr oh lazyload">
