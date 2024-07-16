@@ -28,17 +28,18 @@
                 </div>
             </div>
             <div class="cat_sortby cat_sortby_js col tr kalles_dropdown kalles_dropdown_container">
-                <button class="btn in_flex fl_between al_center sortby_pick kalles_dropDown_label featurnBtn rounded-pill dropdown-toggle show" type="button" data-bs-toggle="dropdown" aria-expanded="true">
-                    Sort products by
-                </button>
-                <div class="nt_sortby dn">
-                    <div class="nt_ajaxsortby wrap_sortby">
-                        <a data-label="Alphabetically, A-Z" class="list-group-item list-group-item-action" href="#A-Z">Alphabetical, A-Z</a>
-                        <a data-label="Alphabetically, Z-A" class="list-group-item list-group-item-action" href="#Z-A">Alphabetical, Z-A</a>
-                        <a data-label="Price, low to high" class="list-group-item list-group-item-action" href="#lowHigh">Price, low to high</a>
-                        <a data-label="Price, high to low" class="list-group-item list-group-item-action" href="#highLow">Price, high to low</a>
+
+                <select id="sortCriteria" class="selectpicker show-tick in_flex fl_between al_center sortby_pick kalles_dropDown_label featurnBtn rounded-pill dropdown-toggle show">
+                    <div class="nt_sortby dn">
+                        <div class="nt_ajaxsortby wrap_sortby">
+                            <option value="" disabled selected>Sort product by:</option>
+                            <option value="name_asc">Alphabetical, A-Z</option>
+                            <option value="name_desc">Alphabetical, Z-A</option>
+                            <option value="price_asc">Price, low to high</option>
+                            <option value="price_desc">Price, high to low</option>
+                        </div>
                     </div>
-                </div>
+                </select>
             </div>
         </div>
         <!--end grid control-->
@@ -49,7 +50,7 @@
                 <div class="kalles-section tp_se_cdt">
 
                     <!--products list-->
-                    <div class="on_list_view_false products nt_products_holder row fl_center row_pr_1 cdt_des_1 round_cd_false nt_cover ratio_nt position_8 space_30 nt_default">
+                    <div class="on_list_view_false products nt_products_holder row fl_center row_pr_1 cdt_des_1 round_cd_false nt_cover ratio_nt position_8 space_30 nt_default" id="productList">
                         @foreach ($products as $product)
                             <div class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1">
                                 <div class="product-inner pr">
