@@ -39,27 +39,23 @@ class ProductController extends Controller
 
     public function products(Request $request)
     {
-        $criteria = $request->input('criteria');
-        $products = Product::query();
-
-        switch ($criteria) {
+        switch ($request->creteria) {
             case 'name_asc':
-                $products->with('images')->orderBy('name', 'asc');
+                $products = Product::with('images')->orderBy('name', 'asc')->get();
                 break;
             case 'name_desc':
-                $products->with('images')->orderBy('name', 'desc');
+                $products = Product::with('images')->orderBy('name', 'desc')->get();
                 break;
             case 'price_asc':
-                $products->with('images')->orderBy('price', 'asc');
+                $products = Product::with('images')->orderBy('price', 'asc')->get();
                 break;
             case 'price_desc':
-                $products->with('images')->orderBy('price', 'desc');
+                $products = Product::with('images')->orderBy('price', 'desc')->get();
                 break;
             default:
-                $products->with('images')->orderBy('name', 'asc'); // Default sorting
+                $products = Product::with('images')->orderBy('name', 'asc')->get(); // Default sorting
                 break;
         }
-        $products = $products->get();
 
         if ($request->ajax()) {
             // If the request is AJAX, return the sorted products as JSON
