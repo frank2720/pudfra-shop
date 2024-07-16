@@ -29,7 +29,7 @@
             </div>
             <div class="cat_sortby cat_sortby_js col tr kalles_dropdown kalles_dropdown_container">
 
-                <select id="sortCriteria" class="selectpicker show-tick in_flex fl_between al_center sortby_pick kalles_dropDown_label featurnBtn rounded-pill dropdown-toggle show">
+                <select id="sortCriteria" class="col-md-3 selectpicker show-tick in_flex fl_between al_center sortby_pick kalles_dropDown_label featurnBtn rounded-pill dropdown-toggle show">
                     <div class="nt_sortby dn">
                         <div class="nt_ajaxsortby wrap_sortby">
                             <option value="" disabled selected>Sort product by:</option>
