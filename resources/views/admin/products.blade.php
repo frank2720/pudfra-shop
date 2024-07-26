@@ -36,12 +36,7 @@
             <td>{{$product->category->category??null}}</td>
             <td>{{number_format($product->price)}}</td>
             <td>{{number_format($product->retail_price)}}</td>
-            @if ($product->retail_price>$product->price)
-            <td>{{__(round((($product->retail_price-$product->price)/$product->retail_price)*100))}}%</td>
-            @else
-            <td>{{__('--')}} </td>
-            @endif
-
+            <td>{{$product->retail_price>$product->price?round((($product->retail_price-$product->price)/$product->retail_price)*100).__('%'):null}}</td>
             <td>
                 <ul class="list-inline m-0">
                     <li class="list-inline-item">
