@@ -24,12 +24,13 @@ class Product extends Model
          'img',
       ];
 
-      /**
-       * Get images of a product
-       */
-
       public function images():HasMany
       {
          return $this->hasMany(Image::class, 'product_id');
+      }
+
+      public function category()
+      {
+         return $this->belongsTo(Category::class,'category_id');
       }
 }
