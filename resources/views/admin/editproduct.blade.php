@@ -109,6 +109,19 @@
                             <input class="form-control" type="text" name="name" value="{{$product->name}}">
                         </div>
                     </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group my-3">
+                            <label class="fw-bolder mb-2">Select Category</label>
+                          <select class="form-select" name="category">
+                            <option selected disabled>{{$product->category->category??__('Open to select Category')}}</option>
+                            @foreach ($categories as $category)
+                                <option value={{$category->id}}>{{$category->category}}</option>
+                            @endforeach
+                          </select>
+                        </div>
+                    </div>
+
                     <div class="col-md-6">
                         <div class="form-group my-3">
                             <label class="fw-bolder mb-2">{{__('Product Price')}}</label>
@@ -127,7 +140,7 @@
                             <textarea class="form-control" type="text" name="description">{{$product->description}}</textarea>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="my-5">
                             <input type="submit" class="btn btn-success btn-update" value="Update">
                         </div>

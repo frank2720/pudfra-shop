@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Carbon\Carbon;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\Category;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -137,11 +138,13 @@ class ProductController extends Controller
     public function edit($product)
     {
         $user = request()->user();
-        $product = Product::find($product);
+        $categories = Category::all();
+        $product = Product::with(['category'])->find($product);
         $images = ProductImage::where('product_id','=',$product->id)->get();
         return view('admin.editproduct',[
             'product'=>$product,
             'images'=>$images,
+            'categories'=>$categories,
             'user'=>$user
         ]);
     }
@@ -150,12 +153,14 @@ class ProductController extends Controller
     {
         $request->validate([
             'name'=>'sometimes|string',
+            'category_id'=>'sometimes',
             'price'=>'sometimes',
             'retail_price'=>'sometimes',
             'description'=>'sometimes|string'
         ]);
         $product = Product::find($id);
         $product->name = $request->name;
+        $product->category_id = $request->category;
         $product->price = $request->price;
         $product->retail_price = $request->retail_price;
         $product->description = $request->description;

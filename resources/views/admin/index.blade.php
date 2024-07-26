@@ -483,7 +483,7 @@
     <div class="col-lg-6">
     <div class="card">
         <div class="card-body">
-        <h5 class="card-title">Orders, Customers, Products</h5>
+        <h5 class="card-title">Number of (Orders, Customers, Products) per Month</h5>
 
         <!-- Column Chart -->
         <div id="columnChart"></div>
