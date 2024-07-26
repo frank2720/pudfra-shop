@@ -550,7 +550,7 @@
     <div class="col-lg-6">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Customers type</h5>
+            <h5 class="card-title">Customers Type Chart</h5>
 
             <!-- Pie Chart -->
             <div id="pieChart"></div>
@@ -582,6 +582,48 @@
 
 
             </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Product Categories Chart</h5>
+
+            <!-- Bar Chart -->
+            <div id="cartegoryChart"></div>
+
+            <script>
+              document.addEventListener("DOMContentLoaded", () => {
+                const data = @json($data);
+                const categories = data.map(item => item.category);
+                const seriesData = data.map(item => item.total);
+                new ApexCharts(document.querySelector("#cartegoryChart"), {
+                  series: [{
+                    data: seriesData
+                  }],
+                  chart: {
+                    type: 'bar',
+                    height: 350
+                  },
+                  plotOptions: {
+                    bar: {
+                      borderRadius: 4,
+                      horizontal: true,
+                    }
+                  },
+                  dataLabels: {
+                    enabled: false
+                  },
+                  xaxis: {
+                    categories: categories,
+                  }
+                }).render();
+              });
+            </script>
+            <!-- End Bar Chart -->
+
+          </div>
         </div>
     </div>
 </div>

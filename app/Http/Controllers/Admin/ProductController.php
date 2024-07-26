@@ -31,6 +31,21 @@ class ProductController extends Controller
         $TCustomerIndividual = Customer::where("type","I")->count();
         $Torders = Order::count();
 
+        /*$data = DB::table('products')
+                    ->join('categories', 'products.category_id', '=', 'categories.id')
+                    ->select('categories.category as category', DB::raw('count(*) as total'))
+                    ->groupBy('categories.category')
+                    ->get();*/
+
+        $data = Category::withCount('products')
+                ->get()
+                ->map(function($category) {
+                    return [
+                        'category' => $category->category,
+                        'total' => $category->products_count
+                    ];
+                });
+
         $productsIncrease = Product::query()
                             ->whereDate("created_at",">=", Carbon::yesterday())
                             ->whereDate("created_at","<=", Carbon::now())
@@ -71,7 +86,8 @@ class ProductController extends Controller
             'TCustomerIndividual'=> $TCustomerIndividual,
             'TCustomerBusiness'=>$TCustomerBusiness,
             'Torders' => $Torders,
-            'user'=>$user
+            'user'=>$user,
+            'data'=>$data
         ]);
     }
 
