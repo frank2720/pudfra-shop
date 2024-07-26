@@ -21,6 +21,7 @@
         <tr>
             <th scope="col">Preview</th>
             <th scope="col">Product</th>
+            <th scope="col">Category</th>
             <th scope="col">Price</th>
             <th scope="col">Old price</th>
             <th scope="col">Discount</th>
@@ -32,8 +33,9 @@
         <tr>
             <td scope="row"><a href="{{route('admin.products.edit',['product'=>$product->id])}}"><img src="{{Storage::url($product->images[0]->url??null)}}" alt=""></a></td>
             <td>{{$product->name}}</td>
-            <td>{{$product->price}}</td>
-            <td>{{$product->retail_price}}</td>
+            <td>{{$product->category->category??null}}</td>
+            <td>{{number_format($product->price)}}</td>
+            <td>{{number_format($product->retail_price)}}</td>
             @if ($product->retail_price>$product->price)
             <td>{{__(round((($product->retail_price-$product->price)/$product->retail_price)*100))}}%</td>
             @else

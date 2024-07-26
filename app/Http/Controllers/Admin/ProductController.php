@@ -77,7 +77,7 @@ class ProductController extends Controller
     public function products(Request $request)
     {
         $user = $request->user();
-        $products = Product::with('images')->paginate(10);
+        $products = Product::with(['images','category'])->paginate(10);
         return view('admin.products',[
             'products'=>$products,
             'user'=>$user
