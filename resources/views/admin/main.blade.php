@@ -7,6 +7,8 @@
     <title>@yield('title')</title>
     <link rel="shortcut icon" type="image/png" href="{{Vite::asset('resources/assets/images/favicon.png')}}">
     @vite(['resources/sass/app.scss', 'resources/js/admin.js'])
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 </head>
 <body>
     <!-- ======= Header ======= -->
