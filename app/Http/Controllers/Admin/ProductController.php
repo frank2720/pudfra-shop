@@ -26,6 +26,8 @@ class ProductController extends Controller
     {
         $Tproducts = Product::count();
         $Tcustomers = Customer::count();
+        $TCustomerBusiness = Customer::where("type","B")->count();
+        $TCustomerIndividual = Customer::where("type","I")->count();
         $Torders = Order::count();
 
         $productsIncrease = Product::query()
@@ -65,6 +67,8 @@ class ProductController extends Controller
             'ordersIncrease'=> $oIncrease,
             'customersIncrease'=> $cIncrease,
             'Tcustomers'=> $Tcustomers,
+            'TCustomerIndividual'=> $TCustomerIndividual,
+            'TCustomerBusiness'=>$TCustomerBusiness,
             'Torders' => $Torders,
             'user'=>$user
         ]);
