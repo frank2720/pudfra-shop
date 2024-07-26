@@ -197,6 +197,12 @@
             <i class='bx bx-male-female'></i><span>Customers</span>
         </a>
         </li>
+
+        <li>
+        <a href="{{route('admin.category.list')}}">
+            <i class='bx bx-category-alt'></i><span>Categories</span>
+        </a>
+        </li>
     </ul>
     </li><!-- End Components Nav -->
 

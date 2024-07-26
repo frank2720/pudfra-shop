@@ -108,11 +108,21 @@ class ProductController extends Controller
     public function customers()
     {
         $user=request()->user();
-        $customers = Customer::paginate(20);
+        $customers = Customer::orderBy('name')->paginate(20);
         $categories = Category::all();
         return view('admin.customers',[
                 'user'=>$user,
                 'customers'=>$customers,
+                'categories' => $categories,
+        ]);
+    }
+
+    public function categories()
+    {
+        $user=request()->user();
+        $categories = Category::all();
+        return view('admin.categories',[
+                'user'=>$user,
                 'categories' => $categories,
         ]);
     }

@@ -10,7 +10,7 @@
 @endsection
 @section('content')
 <div class="table-responsive">
-	<table class="table table-bordered">
+	<table class="table table-bordered table-striped border-primary">
 		<thead>
 			<tr class="fw-bold fs-6 text-gray-800">
 				<th>Name</th>
