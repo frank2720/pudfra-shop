@@ -150,6 +150,13 @@ class ProductController extends Controller
         return back()->with('success','updated successfully!');
     }
 
+    public function destroy_category($category):RedirectResponse
+    {
+        $category = Category::find($category);
+        $category->delete();
+        return back()->with('success','deleted successfully!');
+    }
+
     public function store(Request $request)
     {
         $request->validate([
