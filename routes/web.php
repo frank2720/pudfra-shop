@@ -51,6 +51,11 @@ Route::middleware('auth')->group(function () {
                   Route::get('edit/{product}', [AdminProductController::class, 'edit'])->name('products.edit');
                   Route::patch('update/{id}', [AdminProductController::class, 'update'])->name('products.update');
                   Route::get('delete/{product}', [AdminProductController::class, 'destroy'])->name('products.destroy');
+
+                  Route::get('edit_category/{category}', [AdminProductController::class, 'edit_category'])->name('category.edit');
+                  Route::patch('update_category/{id}', [AdminProductController::class, 'update_category'])->name('category.update');
+                  Route::get('delete_category/{category}', [AdminProductController::class, 'destroy_category'])->name('category.destroy');
+
                   Route::post('products',[AdminProductController::class,'store'])->name('products.store');
                   Route::post('add/images/{id}',[AdminProductController::class,'moreImages'])->name('add.images');
                   Route::get('image/delete/{id}', [AdminProductController::class,'imgDelete'])->name('image.delete');

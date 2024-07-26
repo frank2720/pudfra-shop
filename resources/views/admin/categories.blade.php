@@ -22,6 +22,17 @@
             <tr>
 				<td>{{$category->id}}</td>
 				<td>{{$category->category}}</td>
+
+                <td>
+                    <ul class="list-inline m-0">
+                        <li class="list-inline-item">
+                            <a href="{{route('admin.category.edit',['category'=>$category->id])}}"><i class='bx bx-edit-alt' title="edit"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="{{route('admin.category.destroy',['category'=>$category->id])}}" class="text-danger"><i class='bx bx-trash' title="delete"></i></a>
+                        </li>
+                    </ul>
+                </td>
 			</tr>
             @endforeach
 		</tbody>

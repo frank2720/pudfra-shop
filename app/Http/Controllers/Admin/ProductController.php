@@ -127,6 +127,29 @@ class ProductController extends Controller
         ]);
     }
 
+    public function edit_category($category)
+    {
+        $user = request()->user();
+        $categories = Category::all();
+        $category = Category::find($category);
+        return view('admin.editcategory',[
+            'category'=>$category,
+            'categories'=>$categories,
+            'user'=>$user
+        ]);
+    }
+
+    public function update_category(Request $request,$id)
+    {
+        $request->validate([
+            'name'=>'sometimes|string',
+        ]);
+        $product = Category::find($id);
+        $product->category = $request->name;
+        $product->save();
+        return back()->with('success','updated successfully!');
+    }
+
     public function store(Request $request)
     {
         $request->validate([
