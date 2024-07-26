@@ -26,6 +26,7 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $Tproducts = Product::count();
+        $categories = Category::all();
         $Tcustomers = Customer::count();
         $TCustomerBusiness = Customer::where("type","B")->count();
         $TCustomerIndividual = Customer::where("type","I")->count();
@@ -87,7 +88,8 @@ class ProductController extends Controller
             'TCustomerBusiness'=>$TCustomerBusiness,
             'Torders' => $Torders,
             'user'=>$user,
-            'data'=>$data
+            'data'=>$data,
+            'categories'=>$categories
         ]);
     }
 
@@ -95,8 +97,10 @@ class ProductController extends Controller
     {
         $user = $request->user();
         $products = Product::with(['images','category'])->paginate(10);
+        $categories = Category::all();
         return view('admin.products',[
             'products'=>$products,
+            'categories' => $categories,
             'user'=>$user
         ]);
     }
@@ -105,9 +109,11 @@ class ProductController extends Controller
     {
         $user=request()->user();
         $customers = Customer::paginate(20);
+        $categories = Category::all();
         return view('admin.customers',[
                 'user'=>$user,
-                'customers'=>$customers
+                'customers'=>$customers,
+                'categories' => $categories,
         ]);
     }
 
@@ -115,6 +121,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'name'=>'required|string',
+            'category'=>'required',
             'price'=>'required',
             'retail_price'=>'required',
             'description'=>'required|string',
@@ -132,6 +139,7 @@ class ProductController extends Controller
 
         $product = new Product;
         $product->name = $request->name;
+        $product->category_id = $request->category;
         $product->price = $request->price;
         $product->retail_price = $request->retail_price;
         $product->description = $request->description;

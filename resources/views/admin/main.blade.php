@@ -235,6 +235,19 @@
                                     <input class="form-control" type="text" id="p_name" name="name" required autocomplete="off">
                                 </div>
                             </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="fw-bolder my-2">Select Category</label>
+                                  <select class="form-select" required name="category">
+                                    <option selected disabled>{{__('Open to select Category')}}</option>
+                                    @foreach ($categories as $category)
+                                        <option value={{$category->id}}>{{$category->category}}</option>
+                                    @endforeach
+                                  </select>
+                                </div>
+                            </div>
+
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="fw-bolder my-2" for="p_price">{{__('Product Price')}}</label>
@@ -253,7 +266,7 @@
                                     <input type="file" id="p_img" name="img[]" class="form-control" multiple required autocomplete="off">
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="fw-bolder my-2" for="p_desc">{{__('Description')}}</label>
                                     <textarea class="form-control" id="p_desc" type="text" name="description" required autocomplete="off"></textarea>
