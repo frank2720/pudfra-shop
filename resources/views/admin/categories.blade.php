@@ -13,14 +13,12 @@
 	<table class="table table-bordered table-striped border-primary">
 		<thead>
 			<tr class="fw-bold fs-6 text-gray-800">
-				<th>Number</th>
 				<th>Category</th>
 			</tr>
 		</thead>
 		<tbody>
             @foreach ($categories as $category)
             <tr>
-				<td>{{$category->id}}</td>
 				<td>{{$category->category}}</td>
 
                 <td>
