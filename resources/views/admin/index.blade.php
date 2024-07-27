@@ -558,29 +558,23 @@
 
             <!-- Pie Chart -->
             <div id="pieChart"></div>
-            <div id="bsType" style="display: none">{{$TCustomerBusiness}}</div>
-            <div id="inType" style="display: none">{{$TCustomerIndividual}}</div>
-
             <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                var bsTypeDiv = document.getElementById("bsType");
-                var inTypeDiv = document.getElementById("inType");
-                
-                var bsType = parseInt(bsTypeDiv.textContent);
-                var inType = parseInt(inTypeDiv.textContent);
+                document.addEventListener("DOMContentLoaded", () => {
+                    const bsType = @json($TCustomerBusiness);
+                    const inType = @json($TCustomerIndividual);
 
-                new ApexCharts(document.querySelector("#pieChart"), {
-                series: [bsType, inType],
-                chart: {
-                    height: 350,
-                    type: 'pie',
-                    toolbar: {
-                    show: true
-                    }
-                },
-                labels: ['Business', 'Individual']
-                }).render();
-            });
+                    new ApexCharts(document.querySelector("#pieChart"), {
+                    series: [bsType, inType],
+                    chart: {
+                        height: 350,
+                        type: 'pie',
+                        toolbar: {
+                        show: true
+                        }
+                    },
+                    labels: ['Business', 'Individual']
+                    }).render();
+                });
             </script>
             <!-- End Pie Chart -->
 
