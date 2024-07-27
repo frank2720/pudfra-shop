@@ -493,13 +493,13 @@
             new ApexCharts(document.querySelector("#columnChart"), {
                 series: [{
                 name: 'Products',
-                data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+                data: 
                 }, {
                 name: 'Orders',
-                data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+                data: 
                 }, {
                 name: 'Customers',
-                data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
+                data: 
                 }],
                 chart: {
                 type: 'bar',
@@ -595,7 +595,7 @@
 
             <script>
               document.addEventListener("DOMContentLoaded", () => {
-                const data = @json($data);
+                const data = @json($categoryData);
                 const categories = data.map(item => item.category);
                 const seriesData = data.map(item => item.total);
                 new ApexCharts(document.querySelector("#cartegoryChart"), {

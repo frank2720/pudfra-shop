@@ -32,50 +32,40 @@ class ProductController extends Controller
         $TCustomerIndividual = Customer::where("type","I")->count();
         $Torders = Order::count();
 
+
+        $productsIncrease = Product::query()
+                            ->whereDate("created_at",">=", Carbon::yesterday())
+                            ->whereDate("created_at","<=", Carbon::now())
+                            ->count();
+        $Tproducts==0?$pIncrease = 0:$pIncrease = $this->getIncrease($productsIncrease,$Tproducts);
+        
+        $ordersIncrease = Order::query()
+                            ->whereDate("created_at",">=", Carbon::yesterday())
+                            ->whereDate("created_at","<=", Carbon::now())
+                            ->count();
+        $Torders==0?$cIncrease = 0:$oIncrease = $this->getIncrease($ordersIncrease,$Torders);
+        
+        $customersIncrease = Customer::query()
+                            ->whereDate("created_at",">=", Carbon::yesterday())
+                            ->whereDate("created_at","<=", Carbon::now())
+                            ->count();
+        $Tcustomers==0?$cIncrease = 0:$cIncrease = $this->getIncrease($customersIncrease,$Tcustomers);
+
         /*$data = DB::table('products')
                     ->join('categories', 'products.category_id', '=', 'categories.id')
                     ->select('categories.category as category', DB::raw('count(*) as total'))
                     ->groupBy('categories.category')
                     ->get();*/
 
-        $data = Category::withCount('products')
-                ->get()
-                ->map(function($category) {
-                    return [
-                        'category' => $category->category,
-                        'total' => $category->products_count
-                    ];
-                });
-
-        $productsIncrease = Product::query()
-                            ->whereDate("created_at",">=", Carbon::yesterday())
-                            ->whereDate("created_at","<=", Carbon::now())
-                            ->count();
-        if ($Tproducts==0) {
-            $pIncrease = 0;
-        }else{
-            $pIncrease = $this->getIncrease($productsIncrease,$Tproducts);
-        }
-
-        $ordersIncrease = Order::query()
-                            ->whereDate("created_at",">=", Carbon::yesterday())
-                            ->whereDate("created_at","<=", Carbon::now())
-                            ->count();
-        if ($Torders==0) {
-            $cIncrease = 0;
-        }else{
-            $oIncrease = $this->getIncrease($ordersIncrease,$Torders);
-        }
+        $categoryData = Category::withCount('products')
+                            ->get()
+                            ->map(function($category) {
+                                return [
+                                    'category' => $category->category,
+                                    'total' => $category->products_count
+                                ];
+                            });
         
-        $customersIncrease = Customer::query()
-                            ->whereDate("created_at",">=", Carbon::yesterday())
-                            ->whereDate("created_at","<=", Carbon::now())
-                            ->count();
-        if ($Tcustomers==0) {
-            $cIncrease = 0;
-        }else{
-            $cIncrease = $this->getIncrease($customersIncrease,$Tcustomers);
-        }
 
         $user = $request->user();
         return view('admin.index',[
@@ -88,7 +78,7 @@ class ProductController extends Controller
             'TCustomerBusiness'=>$TCustomerBusiness,
             'Torders' => $Torders,
             'user'=>$user,
-            'data'=>$data,
+            'categoryData'=>$categoryData,
             'categories'=>$categories
         ]);
     }
