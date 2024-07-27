@@ -113,11 +113,11 @@
                     <div class="col-md-6">
                         <div class="form-group my-3">
                             <label class="fw-bolder mb-2">Select Category</label>
-                          <select class="form-select" name="category">
-                            <option selected disabled value="{{$product->category_id??null}}">{{$product->category->category??__('Open to select Category')}}</option>
-                            @foreach ($categories as $category)
-                                <option value={{$category->id}}>{{$category->category}}</option>
-                            @endforeach
+                          <select class="form-select" value="{{$product->category->category}}" name="category">
+                                <option disabled>{{__('Open to select Category')}}</option>
+                                @foreach ($categories as $category)
+                                    <option value={{$category->id}}>{{$category->category}}</option>
+                                @endforeach
                           </select>
                         </div>
                     </div>
