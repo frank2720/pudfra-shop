@@ -98,7 +98,7 @@
             @endforeach
         </div>
         <button class="btn btn-dark" data-title="Add more image" data-bs-toggle="modal" data-bs-target="#addImages"><i class="bx bx-folder-open"></i></button>
-        <form action="{{route('admin.products.update',['id'=>$product->id])}}" method="POST">
+        <form id="product-form" action="{{route('admin.products.update',['id'=>$product->id])}}" method="POST">
             @csrf
             @method('patch')
             <div class="controls">
@@ -114,7 +114,7 @@
                         <div class="form-group my-3">
                             <label class="fw-bolder mb-2">Select Category</label>
                           <select class="form-select" name="category">
-                            <option selected disabled>{{$product->category->category??__('Open to select Category')}}</option>
+                            <option selected disabled value="{{$product->category_id??null}}">{{$product->category->category??__('Open to select Category')}}</option>
                             @foreach ($categories as $category)
                                 <option value={{$category->id}}>{{$category->category}}</option>
                             @endforeach
@@ -137,7 +137,10 @@
                     <div class="col-md-6">
                         <div class="form-group my-3">
                             <label class="fw-bolder mb-2">{{__('Description')}}</label>
-                            <textarea class="form-control" type="text" name="description">{{$product->description}}</textarea>
+                            <!-- Quill editor container -->
+                            <div id="editor-container">{!! $product->description !!}</div>
+                            <!-- Hidden textarea to store the Quill editor content -->
+                            <textarea name="description" hidden id="quill-editor-area"></textarea>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -148,6 +151,23 @@
                 </div>
             </div>
         </form>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var quill = new Quill('#editor-container', {
+                    theme: 'snow'
+                });
+        
+                var quillEditor = document.getElementById('quill-editor-area');
+                quill.on('text-change', function() {
+                        quillEditor.value = quill.root.innerHTML;
+                });
+                quillEditor.addEventListener('input', function() {
+                    quill.root.innerHTML = quillEditor.value;
+                });
+            });
+        </script>
+        
     </div>
 </div>
 

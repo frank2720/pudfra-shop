@@ -9,6 +9,7 @@
     @vite(['resources/sass/app.scss', 'resources/js/admin.js'])
 
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
 <body>
     <!-- ======= Header ======= -->
@@ -305,6 +306,7 @@
         </div>
     @endif
     @yield('content')
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
 </main>
 </body>
 </html>

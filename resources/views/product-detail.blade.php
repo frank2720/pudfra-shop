@@ -30,7 +30,7 @@
                 <dl class="item-property">
                     <dt>Description</dt>
                     <dd>
-                        <p>{!!nl2br(e($product->description))!!}
+                        <p>{!! $product->description !!}
                         </p>
                     </dd>
                 </dl>
