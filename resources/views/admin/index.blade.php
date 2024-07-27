@@ -490,16 +490,20 @@
 
         <script>
             document.addEventListener("DOMContentLoaded", () => {
+                const months = @json($months);
+                const monthlyProducts = @json($monthlyProducts);
+                const monthlyOrders = @json($monthlyOrders);
+                const monthlyCustomers = @json($monthlyCustomers);
             new ApexCharts(document.querySelector("#columnChart"), {
                 series: [{
                 name: 'Products',
-                data: 
+                data: monthlyProducts
                 }, {
                 name: 'Orders',
-                data: 
+                data: monthlyOrders
                 }, {
                 name: 'Customers',
-                data: 
+                data: monthlyCustomers
                 }],
                 chart: {
                 type: 'bar',
@@ -521,7 +525,7 @@
                 colors: ['transparent']
                 },
                 xaxis: {
-                categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+                categories: months,
                 },
                 yaxis: {
                 title: {

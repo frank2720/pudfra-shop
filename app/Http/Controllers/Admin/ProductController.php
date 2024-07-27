@@ -51,6 +51,35 @@ class ProductController extends Controller
                             ->count();
         $Tcustomers==0?$cIncrease = 0:$cIncrease = $this->getIncrease($customersIncrease,$Tcustomers);
 
+        $startDate = Carbon::now()->subMonths(8)->startOfMonth();
+        $endDate = Carbon::now()->endOfMonth();
+
+        $products = Product::whereBetween('created_at', [$startDate, $endDate])
+                        ->selectRaw('MONTH(created_at) as month, COUNT(*) as total')
+                        ->groupBy('month')
+                        ->pluck('total', 'month')
+                        ->toArray();
+        
+        $orders = Order::whereBetween('created_at', [$startDate, $endDate])
+                    ->selectRaw('MONTH(created_at) as month, COUNT(*) as total')
+                    ->groupBy('month')
+                    ->pluck('total', 'month')
+                    ->toArray();
+
+        $customers = Customer::whereBetween('created_at', [$startDate, $endDate])
+                        ->selectRaw('MONTH(created_at) as month, COUNT(*) as total')
+                        ->groupBy('month')
+                        ->pluck('total', 'month')
+                        ->toArray();
+
+        $months = collect(range(0, 8))->map(function ($i) {
+            return Carbon::now()->subMonths($i)->format('M');
+        })->reverse()->values()->all();
+
+        $monthlyProducts = $this->formatMonthlyData($products, 9);
+        $monthlyOrders = $this->formatMonthlyData($orders, 9);
+        $monthlyCustomers = $this->formatMonthlyData($customers, 9);
+
         /*$data = DB::table('products')
                     ->join('categories', 'products.category_id', '=', 'categories.id')
                     ->select('categories.category as category', DB::raw('count(*) as total'))
@@ -79,8 +108,22 @@ class ProductController extends Controller
             'Torders' => $Torders,
             'user'=>$user,
             'categoryData'=>$categoryData,
-            'categories'=>$categories
+            'categories'=>$categories,
+
+            'months' => $months,
+            'monthlyProducts' => $monthlyProducts,
+            'monthlyOrders' => $monthlyOrders,
+            'monthlyCustomers' => $monthlyCustomers
         ]);
+    }
+
+    private function formatMonthlyData($data, $months)
+    {
+        $formatted = array_fill(0, $months, 0);
+        foreach ($data as $month => $count) {
+            $formatted[$month - 1] = $count;
+        }
+        return $formatted;
     }
 
     public function products(Request $request)
