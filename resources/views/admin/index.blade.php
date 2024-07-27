@@ -592,32 +592,32 @@
             <div id="cartegoryChart"></div>
 
             <script>
-              document.addEventListener("DOMContentLoaded", () => {
-                const data = @json($categoryData);
-                const categories = data.map(item => item.category);
-                const seriesData = data.map(item => item.total);
-                new ApexCharts(document.querySelector("#cartegoryChart"), {
-                  series: [{
-                    data: seriesData
-                  }],
-                  chart: {
-                    type: 'bar',
-                    height: 350
-                  },
-                  plotOptions: {
-                    bar: {
-                      borderRadius: 4,
-                      horizontal: true,
+                document.addEventListener("DOMContentLoaded", () => {
+                    const data = @json($categoryData);
+                    const categories = data.map(item => item.category);
+                    const seriesData = data.map(item => item.total);
+                    new ApexCharts(document.querySelector("#cartegoryChart"), {
+                    series: [{
+                        data: seriesData
+                    }],
+                    chart: {
+                        type: 'bar',
+                        height: 350
+                    },
+                    plotOptions: {
+                        bar: {
+                        borderRadius: 4,
+                        horizontal: true,
+                        }
+                    },
+                    dataLabels: {
+                        enabled: false
+                    },
+                    xaxis: {
+                        categories: categories,
                     }
-                  },
-                  dataLabels: {
-                    enabled: false
-                  },
-                  xaxis: {
-                    categories: categories,
-                  }
-                }).render();
-              });
+                    }).render();
+                });
             </script>
             <!-- End Bar Chart -->
 
