@@ -32,27 +32,21 @@ class ProductController extends Controller
         $TCustomerIndividual = Customer::where("type","I")->count();
         $Torders = Order::count();
 
-
-        $productsIncrease = Product::query()
-                            ->whereDate("created_at",">=", Carbon::yesterday())
-                            ->whereDate("created_at","<=", Carbon::now())
-                            ->count();
-        $Tproducts==0?$pIncrease = 0:$pIncrease = $this->getIncrease($productsIncrease,$Tproducts);
-        
-        $ordersIncrease = Order::query()
-                            ->whereDate("created_at",">=", Carbon::yesterday())
-                            ->whereDate("created_at","<=", Carbon::now())
-                            ->count();
-        $Torders==0?$cIncrease = 0:$oIncrease = $this->getIncrease($ordersIncrease,$Torders);
-        
-        $customersIncrease = Customer::query()
-                            ->whereDate("created_at",">=", Carbon::yesterday())
-                            ->whereDate("created_at","<=", Carbon::now())
-                            ->count();
-        $Tcustomers==0?$cIncrease = 0:$cIncrease = $this->getIncrease($customersIncrease,$Tcustomers);
+        $yesterday =  Carbon::yesterday();
+        $today = Carbon::now();
 
         $startDate = Carbon::now()->subMonths(8)->startOfMonth();
         $endDate = Carbon::now()->endOfMonth();
+
+
+        $productsIncrease = Product::whereBetween('created_at',[$yesterday,$today])->count();
+        $Tproducts==0?$pIncrease = 0:$pIncrease = $this->getIncrease($productsIncrease,$Tproducts);
+        
+        $ordersIncrease = Order::whereBetween('created_at',[$yesterday,$today])->count();
+        $Torders==0?$cIncrease = 0:$oIncrease = $this->getIncrease($ordersIncrease,$Torders);
+        
+        $customersIncrease = Customer::whereBetween('created_at',[$yesterday,$today])->count();
+        $Tcustomers==0?$cIncrease = 0:$cIncrease = $this->getIncrease($customersIncrease,$Tcustomers);
 
         $products = Product::whereBetween('created_at', [$startDate, $endDate])
                         ->selectRaw('MONTH(created_at) as month, COUNT(*) as total')
