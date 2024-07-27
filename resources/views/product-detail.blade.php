@@ -28,7 +28,6 @@
                     </span>
                 </p>
                 <dl class="item-property">
-                    <dt>Description</dt>
                     <dd>
                         <p>{!! $product->description !!}
                         </p>
