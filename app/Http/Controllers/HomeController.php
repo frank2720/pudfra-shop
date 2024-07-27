@@ -34,7 +34,6 @@ class HomeController extends Controller
                         ->paginate(8);
 
         $oldCart = session()->get('cart');
-        //dd(session()->get('cart'));
         $cart = new Cart($oldCart);
 
 
