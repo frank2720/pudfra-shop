@@ -23,7 +23,7 @@
         <div class="kalles-header__wrapper ntheader_wrapper pr z_200">
             <div class="sp_header_mid">
                 <div class="header__mid">
-                    <div class="container">
+                    <div class="container bg-light">
                         <div class="row al_center css_h_se">
                             <div class="col-md-4 col-3 dn_lg">
                                 <a href="#" data-id="#nt_menu_canvas" class="push_side push-menu-btn  lh__1 flex al_center">
@@ -510,7 +510,7 @@
 
 <!-- mobile toolbar -->
 <div id="kalles-section-toolbar_mobile" class="kalles-section">
-    <div class="kalles_toolbar kalles_toolbar_label_true ntpf r__0 l__0 b__0 flex fl_between al_center">
+    <div class="kalles_toolbar kalles_toolbar_label_true ntpf r__0 l__0 b__0 flex fl_between al_center bg-light">
         <div class="type_toolbar_shop kalles_toolbar_item">
             <a href="{{route('shop')}}">
                 <i class='bx bxs-grid-alt'></i>
