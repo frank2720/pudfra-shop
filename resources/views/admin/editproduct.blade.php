@@ -112,13 +112,15 @@
 
                     <div class="col-md-6">
                         <div class="form-group my-3">
-                            <label class="fw-bolder mb-2">Select Category</label>
-                          <select class="form-select" value="{{$product->category->category}}" name="category">
-                                <option disabled>{{__('Open to select Category')}}</option>
+                            <label for="category" class="fw-bolder mb-2">Product Category:</label>
+                            <select name="category" required class="form-control" id="category">
+                                <option value="">--- Choose a category ---</option>
+
                                 @foreach ($categories as $category)
-                                    <option value={{$category->id}}>{{$category->category}}</option>
+                                <option value="{{$category->id}}" @selected($product->category->id == $category->id)>{{$category->category}}</option>
                                 @endforeach
-                          </select>
+                                
+                            </select>
                         </div>
                     </div>
 
@@ -134,7 +136,7 @@
                             <input class="form-control" type="number" min="0" name="retail_price" value="{{$product->retail_price}}">
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="form-group my-3">
                             <label class="fw-bolder mb-2">{{__('Description')}}</label>
                             <!-- Quill editor container -->
@@ -159,11 +161,12 @@
                 });
         
                 var quillEditor = document.getElementById('quill-editor-area');
+                quillEditor.value = quill.root.innerHTML;
                 quill.on('text-change', function() {
                         quillEditor.value = quill.root.innerHTML;
                 });
                 quillEditor.addEventListener('input', function() {
-                    quill.root.innerHTML = quillEditor.value;
+                    quillEditor.value = quill.root.innerHTML;
                 });
             });
         </script>

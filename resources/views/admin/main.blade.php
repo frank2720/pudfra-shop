@@ -295,11 +295,12 @@
                     });
             
                     var quillEditor = document.getElementById('quill-area');
+                    quillEditor.value = quill.root.innerHTML;
                     quill.on('text-change', function() {
                             quillEditor.value = quill.root.innerHTML;
                     });
                     quillEditor.addEventListener('input', function() {
-                        quill.root.innerHTML = quillEditor.value;
+                        quillEditor.value = quill.root.innerHTML;
                     });
                 });
             </script>

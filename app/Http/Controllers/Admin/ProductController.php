@@ -255,7 +255,7 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->retail_price = $request->retail_price;
         $product->description = $request->description;
-        $product->save();
+        $product->update();
         return back()->with('success','updated successfully!');
     }
 
