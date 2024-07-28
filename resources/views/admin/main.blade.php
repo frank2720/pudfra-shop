@@ -273,10 +273,11 @@
                                     <input type="file" id="p_img" name="img[]" class="form-control" multiple required autocomplete="off">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="fw-bolder my-2" for="p_desc">{{__('Description')}}</label>
-                                    <textarea class="form-control" id="p_desc" type="text" name="description" required autocomplete="off"></textarea>
+                                    <div id="editor-area"></div>
+                                    <textarea hidden name="description" id="quill-area"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -287,6 +288,21 @@
                     <input type="submit" class="btn btn-success" value="Add">
                 </div>
             </form>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var quill = new Quill('#editor-area', {
+                        theme: 'snow'
+                    });
+            
+                    var quillEditor = document.getElementById('quill-area');
+                    quill.on('text-change', function() {
+                            quillEditor.value = quill.root.innerHTML;
+                    });
+                    quillEditor.addEventListener('input', function() {
+                        quill.root.innerHTML = quillEditor.value;
+                    });
+                });
+            </script>
         </div>
         </div>
     </div><!-- End addproduct Modal-->
