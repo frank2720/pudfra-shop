@@ -4,36 +4,6 @@
 @endsection
 @section('content')
 <!--cart section-->
-<style>
-.cart{
-background-color: #fff;
-padding: 4vh 5vh;
-border-bottom-left-radius: 1rem;
-border-top-left-radius: 1rem;
-}
-.cart-card{
-    margin: auto;
-    max-width: 950px;
-    width: 90%;
-    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 1rem;
-    border: transparent;
-}
-
-@media(max-width:767px){
-    .cart-card{
-        margin: 3vh auto;
-    }
-}
-
-@media(max-width:767px){
-    .cart{
-        padding: 4vh;
-        border-bottom-left-radius: unset;
-        border-top-right-radius: 1rem;
-    }
-}
-</style>
 <div class="container mt__60">
     @if (session()->has('cart') && $totalPrice>0)
         <div class="card cart-card mt-5 mb-5 cart">
