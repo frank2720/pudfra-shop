@@ -68,7 +68,7 @@
                                                                                 </span>
                                                                             </span>
                                                                             @endif
-                                                                            <a class="d-block" href="">
+                                                                            <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
                                                                                 <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="{{Storage::url($product->images[0]->url??null)}}"></div>
                                                                             </a>
                                                                             <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
@@ -113,7 +113,7 @@
                                                                         <span class="tc nt_labels pa pe_none cw">
                                                                             <span class="nt_label new">New</span>
                                                                         </span>
-                                                                            <a class="d-block" href="">
+                                                                            <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
                                                                                 <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="{{Storage::url($product->images[0]->url??null)}}"></div>
                                                                             </a>
                                                                             <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
