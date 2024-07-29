@@ -4,32 +4,64 @@
 @endsection
 @section('content')
 <!--cart section-->
-<div class="kalles-section cart_page_section container mt__60">
+<style>
+.cart{
+background-color: #fff;
+padding: 4vh 5vh;
+border-bottom-left-radius: 1rem;
+border-top-left-radius: 1rem;
+}
+.cart-card{
+    margin: auto;
+    max-width: 950px;
+    width: 90%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    border: transparent;
+}
+
+@media(max-width:767px){
+    .cart-card{
+        margin: 3vh auto;
+    }
+}
+
+@media(max-width:767px){
+    .cart{
+        padding: 4vh;
+        border-bottom-left-radius: unset;
+        border-top-right-radius: 1rem;
+    }
+}
+</style>
+<div class="container mt__60">
     @if (session()->has('cart') && $totalPrice>0)
-        <div class="container mt-5 mb-5">
+        <div class="card cart-card mt-5 mb-5 cart">
             <div class="d-flex justify-content-center row">
-                <div class="col-md-8">
+                <div class="">
                     <div class="p-2">
-                        <h4>Shopping cart</h4>
+                        <h4><b>Shopping Cart</b></h4>
                     </div>
                     @foreach ($cart_products as $product)
-                        <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
-                            <div class="mr-1"> <a href="{{route('product.details',['id'=>$product['item']->id])}}"><img class="rounded" src="{{Storage::url($product['item']->images[0]->url??$product['item']->images[1]->url??null)}}" width="70"></a></div>
-                            <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">{{$product['item']->name}}</span>
-                                <div class="d-flex flex-row product-desc">
-                                    <div class="size mr-1"><span class="text-grey"></span><span class="font-weight-bold">&nbsp;</span></div>
-                                    <div class="color"><span class="text-grey"></span><span class="font-weight-bold">&nbsp;</span></div>
+                        <div class="row border-bottom">
+                            <div class="row align-items-center">
+                                <div class="col-2"><img class="img-fluid rounded" style="width: 3.5rem" src="{{Storage::url($product['item']->images[0]->url??$product['item']->images[1]->url??null)}}"></div>
+                                <div class="col">
+                                    <div class="row">{{$product['item']->name}}</div>
                                 </div>
+                                <div class="col">
+                                    <a href="{{route('reduceQty',['id'=>$product['item']->id])}}"><i class='bx bx-minus text-danger mx-2'></i></a>
+                                    <a href="" class="border">{{__($product['qty'])}}</a>
+                                    <a href="{{route('increaseQty',['id'=>$product['item']->id])}}"><i class='bx bx-plus text-success mx-2' ></i></a>
+                                </div>
+                                <div class="col"><a href="{{route('removeProduct',['id'=>$product['item']->id])}}"><span class="text-danger font-weight-bold">&#10005;</span></a></div>
                             </div>
-                            <div class="d-flex flex-row align-items-center qty"><a href="{{route('reduceQty',['id'=>$product['item']->id])}}"><i class='bx bx-minus text-danger mx-2'></i></a>
-                                <h5 class="text-grey mt-1 mr-1 ml-1">{{__($product['qty'])}}</h5><a href="{{route('increaseQty',['id'=>$product['item']->id])}}"><i class='bx bx-plus text-success mx-2' ></i></a></div>
-                            <div>
-                                <h5 class="text-grey">Ksh {{number_format($product['price'],2,'.',',')}}</h5>
-                            </div>
-                            <div class="d-flex align-items-center"><a href="{{route('removeProduct',['id'=>$product['item']->id])}}"><i class='bx bx-trash mb-1 text-danger'></i></a></div>
                         </div>
                     @endforeach
-                    <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><a href="{{route('checkout')}}" class="btn btn-primary btn-block btn-lg ml-2 pay-button">Proceed to Pay</a></div>
+                    <div class="col my-3">
+                        <a href="{{route('checkout')}}" class="btn btn-primary">Proceed to Pay</a>
+                    </div>
+                    
                 </div>
             </div>
         </div>
