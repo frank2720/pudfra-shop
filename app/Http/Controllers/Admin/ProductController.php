@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\Auth;
 use Intervention\Image\ImageManager;
 use App\Models\Image as ProductImage;
 use Illuminate\Http\RedirectResponse;
@@ -225,6 +226,12 @@ class ProductController extends Controller
         }
         return back()->with('success','added successfully!');
     }
+
+    public function markAsRead(){
+        Auth::user()->unreadNotifications->markAsRead();
+        return redirect()->back();
+    }
+    
 
     public function edit($product)
     {

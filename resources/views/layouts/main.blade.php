@@ -165,7 +165,18 @@
                                             </div>
                                         @endauth
                                     @endif
-                                    <div class="icon_cart pr">
+                                    
+                                    <div class="push_side notf_icon pr">
+                                        <a class="position-relative cb chp db" href="" id="dLabel" role="button" data-toggle="dropdown" data-target="#">
+                                            <i class='bx bx-bell'>
+                                                <span class="op__0 ts_op pa ntc br__50 cw tc">
+                                                    {{auth()->user()->unreadNotifications->count()}}
+                                                </span>
+                                            </i>
+                                        </a>
+                                    </div>
+
+                                    <div class="notf_icon pr">
                                         <a class="push_side position-relative js_addtc cb chp db" href="">
                                             <i class='bx bxs-shopping-bag pr' id="cartvalue">
                                                 <span class="op__0 ts_op pa tcount bgb br__50 cw tc">

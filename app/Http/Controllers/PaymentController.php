@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\User;
 use App\Models\Payment;
 use App\Models\StkRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
+use App\Notifications\OrderSuccessful;
 use Illuminate\Support\Facades\Storage;
 
 class PaymentController extends Controller
@@ -62,6 +65,7 @@ class PaymentController extends Controller
         $stkrequest->CheckoutRequestID=$res->CheckoutRequestID;
         $stkrequest->Status='Requested';
         $stkrequest->save();
+        User::find(Auth::user()->id)->notify(new OrderSuccessful($stkrequest->Amount));
         return $res->CustomerMessage;
     }
 

@@ -52,6 +52,8 @@ Route::middleware('auth')->group(function () {
                   Route::patch('update/{id}', [AdminProductController::class, 'update'])->name('products.update');
                   Route::get('delete/{product}', [AdminProductController::class, 'destroy'])->name('products.destroy');
 
+                  Route::get('/mark-as-read',[AdminProductController::class,'markAsRead'])->name('mark-as-read');
+
                   Route::get('edit_category/{category}', [AdminProductController::class, 'edit_category'])->name('category.edit');
                   Route::patch('update_category/{id}', [AdminProductController::class, 'update_category'])->name('category.update');
                   Route::get('delete_category/{category}', [AdminProductController::class, 'destroy_category'])->name('category.destroy');
