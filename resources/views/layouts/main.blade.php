@@ -157,6 +157,17 @@
                                                 <i class='bx bx-user'></i>
                                             </a>
                                         </div>
+
+                                        <div class="push_side notf_icon pr">
+                                            <a class="position-relative cb chp db" href="" id="dLabel" role="button" data-toggle="dropdown" data-target="#">
+                                                <i class='bx bx-bell'>
+                                                    <span class="op__0 ts_op pa ntc br__50 cw tc">
+                                                        {{auth()->user()->unreadNotifications->count()}}
+                                                    </span>
+                                                </i>
+                                            </a>
+                                        </div>
+                                        
                                         @else
                                             <div class="my-account ts__05 position-relative dn db_md">
                                                 <a class="cb chp db push_side" href="{{route('login')}}">
@@ -165,16 +176,6 @@
                                             </div>
                                         @endauth
                                     @endif
-                                    
-                                    <div class="push_side notf_icon pr">
-                                        <a class="position-relative cb chp db" href="" id="dLabel" role="button" data-toggle="dropdown" data-target="#">
-                                            <i class='bx bx-bell'>
-                                                <span class="op__0 ts_op pa ntc br__50 cw tc">
-                                                    {{auth()->user()->unreadNotifications->count()}}
-                                                </span>
-                                            </i>
-                                        </a>
-                                    </div>
 
                                     <div class="notf_icon pr">
                                         <a class="push_side position-relative js_addtc cb chp db" href="">
