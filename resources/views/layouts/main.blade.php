@@ -159,13 +159,26 @@
                                         </div>
 
                                         <div class="push_side notf_icon pr">
-                                            <a class="position-relative cb chp db" href="" id="dLabel" role="button" data-toggle="dropdown" data-target="#">
+                                            <a class="position-relative cb chp db" href="" id="notfbell">
                                                 <i class='bx bx-bell'>
                                                     <span class="op__0 ts_op pa ntc br__50 cw tc">
                                                         {{auth()->user()->unreadNotifications->count()}}
                                                     </span>
                                                 </i>
                                             </a>
+                                        </div>
+                                        <div class="notf" id="box">
+                                            @if (auth()->user()->unreadNotifications->count()!==0)
+                                                <a href="{{route('mark-as-read')}}"><span class="badge rounded-pill bg-primary p-2 ms-2 my-2">View all</span></a>
+                                            @endif
+                                            
+                                            @foreach (auth()->user()->unreadNotifications as $notification)
+                                            <div class="notf-item">
+                                                <div class="text">
+                                                    <p class="text-success">{{$notification->data['data']}}</p>
+                                                </div>
+                                            </div>
+                                            @endforeach
                                         </div>
                                         
                                         @else

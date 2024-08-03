@@ -31,6 +31,8 @@ Route::middleware('auth')->group(function () {
             return back()->with('resent', 'Verification link sent ');
       })->middleware('throttle:6,1')->name('verification.resend');
 
+      Route::get('/mark-as-read',[HomeController::class,'markAsRead'])->name('mark-as-read');
+
 
       Route::middleware('verified')->group(function () {
             Route::get('/profile', [ProfileController::class, 'profile'])->name('profile.profile');
@@ -51,8 +53,6 @@ Route::middleware('auth')->group(function () {
                   Route::get('edit/{product}', [AdminProductController::class, 'edit'])->name('products.edit');
                   Route::patch('update/{id}', [AdminProductController::class, 'update'])->name('products.update');
                   Route::get('delete/{product}', [AdminProductController::class, 'destroy'])->name('products.destroy');
-
-                  Route::get('/mark-as-read',[AdminProductController::class,'markAsRead'])->name('mark-as-read');
 
                   Route::get('edit_category/{category}', [AdminProductController::class, 'edit_category'])->name('category.edit');
                   Route::patch('update_category/{id}', [AdminProductController::class, 'update_category'])->name('category.update');
