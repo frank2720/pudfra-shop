@@ -2,7 +2,7 @@
 @section('title')
     {{__('Page Error 403')}}
 @endsection
-@section('content')
+@section('page')
 <section class="py-3 py-md-5 min-vh-100 d-flex justify-content-center align-items-center">
   <div class="container">
     <div class="row">
