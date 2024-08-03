@@ -1,5 +1,8 @@
 @extends('layouts.errors')
-@section('content')
+@section('title')
+    {{__('Page Error-404')}}
+@endsection
+@section('page')
 <section class="py-3 py-md-5 min-vh-100 d-flex justify-content-center align-items-center">
       <div class="container">
         <div class="row">
@@ -10,8 +13,7 @@
               </h2>
               <h2>Page Not Found</h2>
               <p>
-                  Sorry, the page you are looking
-                  for does not exist.
+                  {{$exception->getMessage()}}.
               </p>
               <a class="btn bsb-btn-5xl btn-dark rounded-pill px-5 fs-6 m-0" href="{{route('welcome')}}" role="button">Back to Home</a>
             </div>
