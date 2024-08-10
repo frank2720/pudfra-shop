@@ -28,10 +28,15 @@
                             </div>
                         </div>
                     @endforeach
-                    <div class="col my-3">
-                        <a href="{{route('checkout')}}" class="btn btn-primary">Proceed to Pay</a>
-                    </div>
-                    
+
+                    <form action="{{route('stkpush')}}" method="POST" class="form-inline">
+                        @csrf
+                        <div class="form-group">
+                            <label for="no." class="small fw-bold mt-3">PHONE NUMBER</label>
+                            <input type="text" name="phone" style="border-radius: 1rem" required placeholder="Enter phone number" class="my-3"/>
+                            <button type="submit" class="button button_primary btn checkout-payment__btn-place-order">Place order</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
