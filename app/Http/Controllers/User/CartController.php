@@ -108,33 +108,4 @@ class CartController extends Controller
         'cart_products'=>$cart->items,
         'totalPrice'=>$cart->totalPrice]);
     }
-
-    public function checkout()
-    {
-        $products = Product::with('images')->get();
-        $nav_products = Product::with('images')->get();
-        $categories = Category::all();
-        $latest = Product::with('images')
-                        ->latest()
-                        ->paginate(8);
-        $trending_products = Product::with('images')
-                ->latest()
-                ->paginate(8);
-
-        $json_data = File::get(storage_path('app/public/towns/towns.json'));
-
-        $towns = json_decode($json_data);
-
-        $oldCart = session()->get('cart');
-        $cart = new Cart($oldCart);
-        return view('checkout',[
-        'towns'=>$towns,
-        'products'=>$products,
-        'categories'=>$categories,
-        'nav_products'=>$nav_products,
-        'trending_products'=>$trending_products,
-        'latest'=>$latest,
-        'cart_products'=>$cart->items,
-        'totalPrice'=>$cart->totalPrice]);
-    }
 }
