@@ -20,24 +20,27 @@ class PaymentController extends Controller
         $cKey = env('CONSUMER_KEY');
         $cSecret = env('SECRET_KEY');
         $aUrl = env('AUTH_URL');
+
         $AccessToken = new Payment($cKey,$cSecret,$aUrl);
         $token=$AccessToken->authorization();
         
         $Express_url = env('EXPRESS_URL');
-        $TransactionType=env('TRANSC_TYPE');
-        $callbackURL=env('CALL_BACK_URL');
+        
+        
         $passKey =env('PASS_KEY');
-        $BusinessShortCode=env('SHORTCODE');
-        $PartyB=env('PARTY_B');
         $Timestamp=Carbon::now()->format('YmdHis');
         $cart = new Cart(session()->get('cart'));
 
+        $BusinessShortCode=env('SHORTCODE');
         $password=base64_encode($BusinessShortCode.$passKey.$Timestamp);
+        $TransactionType=env('TRANSC_TYPE');
         $Amount=$cart->totalPrice;
         $PartyA=preg_replace('/^0/','254',str_replace("+","",$request->phone));
+        $PartyB=env('PARTY_B');
         $PhoneNumber=$PartyA;
+        $callbackURL=env('CALL_BACK_URL');
         $AccountReference='Maanar-shop';
-        $TransactionDesc='pay for the goods';
+        $TransactionDesc='Order the Product';
 
         try {
             $response=Http::withToken($token)->post($Express_url,[
