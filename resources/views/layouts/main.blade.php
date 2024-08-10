@@ -321,7 +321,7 @@
 
         <div class="mini_cart_wrap">
             <div class="mini_cart_content fixcl-scroll">
-                <div class="fixcl-scroll-content">
+                <div class="fixcl-scroll-content cart-products">
                     @if (session()->has('cart') && $totalPrice>0)
                     <div id="cart-p">
                         @foreach ($cart_products as $product)
@@ -346,18 +346,10 @@
                                                 <input type="number" class="input-text qty text tc qty_cart_js" name="product_{{$product['item']->id}}" disabled value="{{$product['qty']}}">
                                             </div>
                                             <a href="{{route('shopping')}}" class="cart_ac_edit js__qs ttip_nt tooltip_top_right"><span class="tt_txt">Edit this item</span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                                                </svg>
+                                                <i class='bx bxs-edit h4'></i>
                                             </a>
                                             <a href="#" class="cart_ac_remove js_cart_rem ttip_nt tooltip_top_right" data-id="{{$product['item']->id}}"><span class="tt_txt">Remove this item</span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                    <polyline points="3 6 5 6 21 6"></polyline>
-                                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                                                    <line x1="10" y1="11" x2="10" y2="17"></line>
-                                                    <line x1="14" y1="11" x2="14" y2="17"></line>
-                                                </svg>
+                                                <i class='bx bx-x h4'></i>
                                             </a>
                                         </div>
                                     </div>
@@ -366,9 +358,6 @@
                         @endforeach
                     </div>
                     <div class="mini_cart_tool js_cart_tool tc ">
-                        <div data-id="gift" class="mini_cart_tool_gift js_cart_tls js_gift_wrap ttip_nt tooltip_top">
-                            <i class='bx bx-gift' ></i></i><span class="tt_txt">Add A Gift Wrap</span>
-                        </div>
                         <div data-id="ship" class="mini_cart_tool_ship js_cart_tls ttip_nt tooltip_top">
                             <i class='bx bx-taxi'></i></i><span class="tt_txt">Estimate Shipping</span>
                         </div>
@@ -393,30 +382,7 @@
                     </div>
                 </div>
                 <p class="txt_tax_ship mb__5 fs__12">Taxes, shipping and discounts codes calculated at checkout</p>
-                <a href="{{route('shopping')}}" class="button btn-cart mt__10 mb__10 js_add_ld d-inline-flex justify-content-center align-items-center cd-imp">View cart</a>
-                <a href="{{route('checkout')}}" class="button btn-checkout mt__10 mb__10 js_add_ld d-inline-flex justify-content-center align-items-center text-white">Check Out</a>
-            </div>
-        </div>
-
-        <!--mini cart tool cart gift-->
-        <div class="mini_cart_gift pe_none">
-            <div class="shipping_calculator tc">
-                <p class="field">
-                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="cd dib pr">
-                        <polyline points="20 12 20 22 4 22 4 12"></polyline>
-                        <rect x="2" y="7" width="20" height="5"></rect>
-                        <line x1="12" y1="22" x2="12" y2="7"></line>
-                        <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
-                        <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
-                    </svg>
-                    <span class="gift_wrap_text mt__10 db"><span class="cd">Do you want a gift wrap?</span> Only Ksh 100.00</span>
-                </p>
-                <p class="field">
-                    <input type="button"class="button btn-checkout get_rates mt__10 mb__10 js_add_ld d-inline-flex justify-content-center align-items-center text-white" value="Add Gift">
-                </p>
-                <p class="field">
-                    <input type="button" class="button btn_back js_cart_tls_back" value="Cancel">
-                </p>
+                <a href="{{route('shopping')}}" class="button btn-checkout mt__10 mb__10 js_add_ld d-inline-flex justify-content-center align-items-center cd-imp">Check Out</a>
             </div>
         </div>
 
@@ -503,48 +469,18 @@
 </div>
 <!-- end search box -->
 
-<!--logged in-->
-@guest
-@else
-<div id="nt_details_canvas" class="nt_fk_canvas dn lazyload">
-    <div class="nt_mini_cart flex column h__100 is_selected">
-        <div class="mini_cart_header flex fl_between al_center">
-            <h3 class="widget-title tu fs__16 mg__0 font-poppins">Account details</h3>
-            <i class='bx bx-x close_pp pegk ts__03 cd'></i>
-        </div>
-        <div class="mini_cart_wrap">
-            <div class="fixcl-scroll">
-                <div class="">
-                    <div class="widget-title tu fs__16 mg__0">{{ucwords(strtolower(Auth::user()->name))}}</div>
-                    <p class="mb__10 mt__10">{{ucwords(strtolower(Auth::user()->email))}}</p>
-                    <a href="{{route('logout')}}" class="button button_primary"
-                                    onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endguest
-<!--end logged in-->
-
 <!-- mobile toolbar -->
 <div id="kalles-section-toolbar_mobile" class="kalles-section">
     <div class="kalles_toolbar kalles_toolbar_label_true ntpf r__0 l__0 b__0 flex fl_between al_center bg-light">
         <div class="type_toolbar_shop kalles_toolbar_item">
             <a href="{{route('shop')}}">
-                <i class='bx bxs-grid-alt'></i>
+                <i class='bx bxs-grid-alt h4'></i>
                 <span class="kalles_toolbar_label">Shop</span>
             </a>
         </div>
         <div class="type_toolbar_cart kalles_toolbar_item">
             <a href="" class="js_addtc push_side">
-                <i class='bx bxs-shopping-bag pr' id="mobcartvalue">
+                <i class='bx bxs-shopping-bag h4 pr' id="mobcartvalue">
                     <span class="jsccount toolbar_count">
                         {{session()->get('cart')->totalQty??0}}
                     </span>
@@ -556,14 +492,14 @@
             @auth
             <div class="type_toolbar_account kalles_toolbar_item">
                 <a href="{{route('profile.profile')}}" class="db push_side">
-                    <i class='bx bx-user'></i>
+                    <i class='bx bx-user h4'></i>
                     <span class="kalles_toolbar_label">Account</span>
                 </a>
             </div>
             @else
             <div class="type_toolbar_account kalles_toolbar_item">
                 <a href="{{route('login')}}" class="db push_side">
-                    <i class='bx bx-user'></i>
+                    <i class='bx bx-user h4'></i>
                     <span class="kalles_toolbar_label">Account</span>
                 </a>
             </div>
@@ -571,7 +507,7 @@
         @endif
         <div class="type_toolbar_search kalles_toolbar_item">
             <a href="#" class="push_side" data-id="#nt_search_canvas">
-                <i class='bx bx-search-alt-2' ></i>
+                <i class='bx bx-search-alt-2 h4' ></i>
                 <span class="kalles_toolbar_label">Search</span>
             </a>
         </div>
