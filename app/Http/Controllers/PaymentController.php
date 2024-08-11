@@ -78,6 +78,8 @@ class PaymentController extends Controller
     public function stkcallback()
     {
         $data = file_get_contents('php://input');
+        Storage::disk('public')->put('stk.txt',$data);
+
         $response = json_decode($data,true);
         $Item = $response['Body']['stkCallback']['CallbackMetadata']['Item'];
 
@@ -92,19 +94,17 @@ class PaymentController extends Controller
 
         $mpesaMetaData = array_merge($mpesaData,$metaData);
 
-        if ($mpesaMetaData['ResultCode' == 0]) {
-            $payment = StkRequest::where('CheckoutRequestID','=',$mpesaMetaData['CheckoutRequestID'])->firstOrFail();
+        if ($mpesaMetaData['ResultCode'] == 0) {
+            $payment = StkRequest::where('CheckoutRequestID',$mpesaMetaData['CheckoutRequestID'])->first();
             $payment->Status='Paid';
             $payment->ResultDesc=$mpesaMetaData['ResultDesc'];
             $payment->Receipt=$mpesaMetaData["MpesaReceiptNumber"];
             $payment->TransactionDate=date("Y-m-d h:i:s",strtotime($mpesaMetaData["TransactionDate"]));
-            $payment->save();
+            $payment->update();
         } else {
-            $payment = StkRequest::where('CheckoutRequestID','=',$mpesaMetaData['CheckoutRequestID'])->firstOrFail();
+            $payment = StkRequest::where('CheckoutRequestID',$mpesaMetaData['CheckoutRequestID'])->firstOrFail();
             $payment->Status='Failed';
-            $payment->save();
+            $payment->update();
         }
-
-        Storage::disk('local')->put('stk.json',$data);
     }
 }
