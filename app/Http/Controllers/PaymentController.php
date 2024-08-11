@@ -68,8 +68,11 @@ class PaymentController extends Controller
         $stkrequest->CheckoutRequestID=$res->CheckoutRequestID;
         $stkrequest->Status='Requested';
         $stkrequest->save();
+
         User::find(Auth::user()->id)->notify(new OrderSuccessful($stkrequest->Amount));
-        return $res->CustomerMessage;
+        toastr()->success($res->CustomerMessage);
+
+        return redirect()->back();
     }
 
     public function stkcallback()
