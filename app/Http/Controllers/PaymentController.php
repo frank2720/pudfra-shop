@@ -15,36 +15,41 @@ use Illuminate\Support\Facades\Storage;
 
 class PaymentController extends Controller
 {
+
+    protected $accessToken;
+    protected $consumerKey = env('CONSUMER_KEY');
+    protected $consumerSecret = env('SECRET_KEY');
+    protected $authUrl = env('AUTH_URL');
+    protected $STKpushURL = env('EXPRESS_URL');
+    protected $passKey =env('PASS_KEY');
+    protected $BusinessShortCode=env('SHORTCODE');
+    protected $callbackURL=env('CALL_BACK_URL');
+
+    public function __construct()
+    {
+        $response=Http::withBasicAuth($this->consumerKey,$this->consumerSecret)->get($this->authUrl);
+        $this->accessToken = $response['access_token'];
+    }
+
     public function initiatestk(Request $request)
     {
-        $cKey = env('CONSUMER_KEY');
-        $cSecret = env('SECRET_KEY');
-        $aUrl = env('AUTH_URL');
 
-        $AccessToken = new Payment($cKey,$cSecret,$aUrl);
-        $token=$AccessToken->authorization();
-        
-        $Express_url = env('EXPRESS_URL');
-        
-        
-        $passKey =env('PASS_KEY');
         $Timestamp=Carbon::now()->format('YmdHis');
         $cart = new Cart(session()->get('cart'));
 
-        $BusinessShortCode=env('SHORTCODE');
-        $password=base64_encode($BusinessShortCode.$passKey.$Timestamp);
+        
+        $password=base64_encode($this->BusinessShortCode.$this->passKey.$Timestamp);
         $TransactionType=env('TRANSC_TYPE');
         $Amount=$cart->totalPrice;
         $PartyA=preg_replace('/^0/','254',str_replace("+","",$request->phone));
         $PartyB=env('PARTY_B');
         $PhoneNumber=$PartyA;
-        $callbackURL=env('CALL_BACK_URL');
-        $AccountReference='Maanar-shop';
+        $AccountReference='MaanarShop';
         $TransactionDesc='Order the Product';
 
         try {
-            $response=Http::withToken($token)->post($Express_url,[
-                'BusinessShortCode'=>$BusinessShortCode,
+            $response=Http::withToken($this->accessToken)->post($this->STKpushURL,[
+                'BusinessShortCode'=>$this->BusinessShortCode,
                 'Password'=>$password,
                 'Timestamp'=>$Timestamp,
                 'TransactionType'=>$TransactionType,
@@ -52,7 +57,7 @@ class PaymentController extends Controller
                 'PartyA'=>$PartyA,
                 'PartyB'=>$PartyB,
                 'PhoneNumber'=>$PhoneNumber,
-                'CallBackURL'=>$callbackURL,
+                'CallBackURL'=>$this->callbackURL,
                 'AccountReference'=>$AccountReference,
                 'TransactionDesc'=>$TransactionDesc
             ]);
