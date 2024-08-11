@@ -104,5 +104,7 @@ class PaymentController extends Controller
             $payment->Status='Failed';
             $payment->save();
         }
+
+        Storage::disk('local')->put('stk.json',$data);
     }
 }
