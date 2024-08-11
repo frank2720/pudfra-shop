@@ -35,7 +35,7 @@
             </div>
         </div>
         <div class="products-footer tc mt__40">
-            <button class="button load-more-data">Load More</button>
+            <button class="button load-more-data" style="border-radius: 12px">Load More</button>
         </div>
     </div>
 </div>
