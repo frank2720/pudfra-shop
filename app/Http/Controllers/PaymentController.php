@@ -16,40 +16,43 @@ use Illuminate\Support\Facades\Storage;
 class PaymentController extends Controller
 {
 
-    protected $accessToken;
-    protected $consumerKey = env('CONSUMER_KEY');
-    protected $consumerSecret = env('SECRET_KEY');
-    protected $authUrl = env('AUTH_URL');
-    protected $STKpushURL = env('EXPRESS_URL');
-    protected $passKey =env('PASS_KEY');
-    protected $BusinessShortCode=env('SHORTCODE');
-    protected $callbackURL=env('CALL_BACK_URL');
-
+    protected $access_token;
     public function __construct()
     {
-        $response=Http::withBasicAuth($this->consumerKey,$this->consumerSecret)->get($this->authUrl);
-        $this->accessToken = $response['access_token'];
+        $consumerKey = env('CONSUMER_KEY');
+        $consumerSecret = env('SECRET_KEY');
+        $auth_url = env('AUTH_URL');
+        
+        $response=Http::withBasicAuth($consumerKey,$consumerSecret)->get($auth_url);
+        $this->access_token = $response['access_token'];
     }
 
     public function initiatestk(Request $request)
     {
 
+        $token=$this->access_token;
+        
+        $Express_url = env('EXPRESS_URL');
+        
+        
+        $passKey =env('PASS_KEY');
         $Timestamp=Carbon::now()->format('YmdHis');
         $cart = new Cart(session()->get('cart'));
 
-        
-        $password=base64_encode($this->BusinessShortCode.$this->passKey.$Timestamp);
+        $BusinessShortCode=env('SHORTCODE');
+        $password=base64_encode($BusinessShortCode.$passKey.$Timestamp);
         $TransactionType=env('TRANSC_TYPE');
         $Amount=$cart->totalPrice;
         $PartyA=preg_replace('/^0/','254',str_replace("+","",$request->phone));
         $PartyB=env('PARTY_B');
         $PhoneNumber=$PartyA;
-        $AccountReference='MaanarShop';
+        $callbackURL=env('CALL_BACK_URL');
+        $AccountReference='Maanar-shop';
         $TransactionDesc='Order the Product';
 
         try {
-            $response=Http::withToken($this->accessToken)->post($this->STKpushURL,[
-                'BusinessShortCode'=>$this->BusinessShortCode,
+            $response=Http::withToken($token)->post($Express_url,[
+                'BusinessShortCode'=>$BusinessShortCode,
                 'Password'=>$password,
                 'Timestamp'=>$Timestamp,
                 'TransactionType'=>$TransactionType,
@@ -57,7 +60,7 @@ class PaymentController extends Controller
                 'PartyA'=>$PartyA,
                 'PartyB'=>$PartyB,
                 'PhoneNumber'=>$PhoneNumber,
-                'CallBackURL'=>$this->callbackURL,
+                'CallBackURL'=>$callbackURL,
                 'AccountReference'=>$AccountReference,
                 'TransactionDesc'=>$TransactionDesc
             ]);
