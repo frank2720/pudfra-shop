@@ -69,9 +69,9 @@ Route::group([
       'prefix'=>'payments'
 ],function(){
       Route::post('/initiatepush',[PaymentController::class,'initiatestk'])->name('stkpush');
+      Route::post('/maanarPayCalls',[PaymentController::class,'stkcallback'])->name('stkcallback');
+      Route::get('/stkQuery',[PaymentController::class,'stkQuery'])->name('stkQuery');
 });
-
-Route::post('/maanarPay',[PaymentController::class,'stkcallback'])->name('stkcallback');
 
 
 Route::get('/shop', [UserProductController::class, 'products'])->name('shop');

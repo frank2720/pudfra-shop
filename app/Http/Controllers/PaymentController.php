@@ -76,7 +76,6 @@ class PaymentController extends Controller
         $stkrequest->CheckoutRequestID=$res->CheckoutRequestID;
         $stkrequest->Status='Requested';
         $stkrequest->save();
-
         User::find(Auth::user()->id)->notify(new OrderSuccessful($stkrequest->Amount));
         toastr()->success($res->CustomerMessage);
 
@@ -86,9 +85,9 @@ class PaymentController extends Controller
     public function stkcallback()
     {
         $data = file_get_contents('php://input');
-        Storage::disk('public')->put('stk.txt',$data);
 
         $response = json_decode($data,true);
+        dd($response);
         $Item = $response['Body']['stkCallback']['CallbackMetadata']['Item'];
 
         $mpesaData = array_column($Item,'Value','Name');
@@ -114,5 +113,25 @@ class PaymentController extends Controller
             $payment->Status='Failed';
             $payment->update();
         }
+    }
+
+    public function stkQuery($ID,$Token,$ShortCode,$PassKey,$Timestamp,)
+    {
+        $accessToken=$this->access_token;
+        $BusinessShortCode=env('SHORTCODE');
+        $PassKey=env('PASS_KEY');
+        $Queryurl=env('STK_QUERY_URL');
+        $Timestamp=Carbon::now()->format('YmdHis');
+        $Password=base64_encode($BusinessShortCode.$PassKey.$Timestamp);
+        $CheckoutRequestID=$ID;
+        $response=Http::withToken($accessToken)->post($Queryurl,[
+
+            'BusinessShortCode'=>$BusinessShortCode,
+            'Timestamp'=>$Timestamp,
+            'Password'=>$Password,
+            'CheckoutRequestID'=>$CheckoutRequestID
+        ]);
+
+        return $response;
     }
 }
