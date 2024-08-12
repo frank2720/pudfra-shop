@@ -481,7 +481,7 @@
         <div class="type_toolbar_cart kalles_toolbar_item my-4">
             <a href="" class="js_addtc push_side">
                 <i class='bx bxs-shopping-bag h4 pr' id="mobcartvalue">
-                    <span class="jsccount toolbar_count" style="top: -1px;right:-5px">
+                    <span class="jsccount toolbar_count">
                         {{session()->get('cart')->totalQty??0}}
                     </span>
                 </i>
