@@ -72,14 +72,14 @@
     "src": "resources/js/admin.js"
   },
   "resources/js/app.css": {
-    "file": "assets/app-f7bc8bbd.css",
+    "file": "assets/app-01c2ef87.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
     "css": [
-      "assets/app-f7bc8bbd.css"
+      "assets/app-01c2ef87.css"
     ],
-    "file": "assets/app-e38ec356.js",
+    "file": "assets/app-23c8e0dd.js",
     "imports": [
       "_boxicons-0aef6dc0.js"
     ],
