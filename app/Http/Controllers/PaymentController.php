@@ -16,14 +16,23 @@ use Illuminate\Support\Facades\Storage;
 class PaymentController extends Controller
 {
 
-    protected $access_token;
+    public $access_token;
+    public $consumerKey;
+
+    public $consumerSecret;
+    public $auth_url;
+    public $Express_url;
+    public $passKey;
+    public $BusinessShortCode;
+    public $TransactionType;
+    public $callbackURL;
     public function __construct()
     {
-        $consumerKey = env('CONSUMER_KEY');
-        $consumerSecret = env('SECRET_KEY');
-        $auth_url = env('AUTH_URL');
+        $this->consumerKey = env('CONSUMER_KEY');
+        $this->consumerSecret = env('SECRET_KEY');
+        $this->auth_url = env('AUTH_URL');
         
-        $response=Http::withBasicAuth($consumerKey,$consumerSecret)->get($auth_url);
+        $response=Http::withBasicAuth($this->consumerKey,$this->consumerSecret)->get($this->auth_url);
         $this->access_token = $response['access_token'];
     }
 
@@ -32,35 +41,35 @@ class PaymentController extends Controller
 
         $token=$this->access_token;
         
-        $Express_url = env('EXPRESS_URL');
+        $this->Express_url = env('EXPRESS_URL');
         
         
-        $passKey =env('PASS_KEY');
+        $this->passKey =env('PASS_KEY');
         $Timestamp=Carbon::now()->format('YmdHis');
         $cart = new Cart(session()->get('cart'));
 
-        $BusinessShortCode=env('SHORTCODE');
-        $password=base64_encode($BusinessShortCode.$passKey.$Timestamp);
-        $TransactionType=env('TRANSC_TYPE');
+        $this->BusinessShortCode=env('SHORTCODE');
+        $password=base64_encode($this->BusinessShortCode.$this->passKey.$Timestamp);
+        $this->TransactionType=env('TRANSC_TYPE');
         $Amount=$cart->totalPrice;
         $PartyA=preg_replace('/^0/','254',str_replace("+","",$request->phone));
         $PartyB=env('PARTY_B');
         $PhoneNumber=$PartyA;
-        $callbackURL=env('CALL_BACK_URL');
+        $this->callbackURL=env('CALL_BACK_URL');
         $AccountReference='Maanar-shop';
         $TransactionDesc='Order the Product';
 
         try {
-            $response=Http::withToken($token)->post($Express_url,[
-                'BusinessShortCode'=>$BusinessShortCode,
+            $response=Http::withToken($token)->post($this->Express_url,[
+                'BusinessShortCode'=>$this->BusinessShortCode,
                 'Password'=>$password,
                 'Timestamp'=>$Timestamp,
-                'TransactionType'=>$TransactionType,
+                'TransactionType'=>$this->TransactionType,
                 'Amount'=>$Amount,
                 'PartyA'=>$PartyA,
                 'PartyB'=>$PartyB,
                 'PhoneNumber'=>$PhoneNumber,
-                'CallBackURL'=>$callbackURL,
+                'CallBackURL'=>$this->callbackURL,
                 'AccountReference'=>$AccountReference,
                 'TransactionDesc'=>$TransactionDesc
             ]);
@@ -68,16 +77,17 @@ class PaymentController extends Controller
             return $error->getMessage();
         }
 
-        $res = json_decode($response);
+        $responseData = json_decode($response);
+        
         $stkrequest = new StkRequest;
         $stkrequest->PhoneNumber=$PhoneNumber;
         $stkrequest->Amount=$Amount;
-        $stkrequest->MerchantRequestID=$res->MerchantRequestID;
-        $stkrequest->CheckoutRequestID=$res->CheckoutRequestID;
+        $stkrequest->MerchantRequestID=$responseData->MerchantRequestID;
+        $stkrequest->CheckoutRequestID=$responseData->CheckoutRequestID;
         $stkrequest->Status='Requested';
         $stkrequest->save();
         User::find(Auth::user()->id)->notify(new OrderSuccessful($stkrequest->Amount));
-        toastr()->success($res->CustomerMessage);
+        toastr()->success($responseData->CustomerMessage,'STK request');
 
         return redirect()->back();
     }
@@ -87,7 +97,6 @@ class PaymentController extends Controller
         $data = file_get_contents('php://input');
 
         $response = json_decode($data,true);
-        dd($response);
         $Item = $response['Body']['stkCallback']['CallbackMetadata']['Item'];
 
         $mpesaData = array_column($Item,'Value','Name');
@@ -113,25 +122,5 @@ class PaymentController extends Controller
             $payment->Status='Failed';
             $payment->update();
         }
-    }
-
-    public function stkQuery($ID,$Token,$ShortCode,$PassKey,$Timestamp,)
-    {
-        $accessToken=$this->access_token;
-        $BusinessShortCode=env('SHORTCODE');
-        $PassKey=env('PASS_KEY');
-        $Queryurl=env('STK_QUERY_URL');
-        $Timestamp=Carbon::now()->format('YmdHis');
-        $Password=base64_encode($BusinessShortCode.$PassKey.$Timestamp);
-        $CheckoutRequestID=$ID;
-        $response=Http::withToken($accessToken)->post($Queryurl,[
-
-            'BusinessShortCode'=>$BusinessShortCode,
-            'Timestamp'=>$Timestamp,
-            'Password'=>$Password,
-            'CheckoutRequestID'=>$CheckoutRequestID
-        ]);
-
-        return $response;
     }
 }
