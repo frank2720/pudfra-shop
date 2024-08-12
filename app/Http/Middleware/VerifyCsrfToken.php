@@ -12,6 +12,7 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        '/payments/*'
+        'payments/*',
+        'https://maanar-shop.xyz/payments/maanarPayCalls'
     ];
 }

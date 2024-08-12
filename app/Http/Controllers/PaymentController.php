@@ -92,9 +92,9 @@ class PaymentController extends Controller
         return redirect()->back();
     }
 
-    public function callback()
+    public function callback(Request $request)
     {
-        $data = file_get_contents('php://input');
+        $data = $request->getContent();
         Storage::disk('local')->put('stk.json',$data);
         return $data;
     }
