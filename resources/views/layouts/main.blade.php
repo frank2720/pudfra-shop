@@ -472,13 +472,13 @@
 <!-- mobile toolbar -->
 <div id="kalles-section-toolbar_mobile" class="kalles-section">
     <div class="kalles_toolbar kalles_toolbar_label_true ntpf r__0 l__0 b__0 flex fl_between al_center bg-light">
-        <div class="type_toolbar_shop kalles_toolbar_item mt-4">
+        <div class="type_toolbar_shop kalles_toolbar_item my-4">
             <a href="{{route('shop')}}">
                 <i class='bx bxs-grid-alt h4'></i>
                 <span class="kalles_toolbar_label">Shop</span>
             </a>
         </div>
-        <div class="type_toolbar_cart kalles_toolbar_item mt-4">
+        <div class="type_toolbar_cart kalles_toolbar_item my-4">
             <a href="" class="js_addtc push_side">
                 <i class='bx bxs-shopping-bag h4 pr' id="mobcartvalue">
                     <span class="jsccount toolbar_count">
@@ -490,14 +490,14 @@
         </div>
         @if (Route::has('login'))
             @auth
-            <div class="type_toolbar_account kalles_toolbar_item mt-4">
+            <div class="type_toolbar_account kalles_toolbar_item my-4">
                 <a href="{{route('profile.profile')}}" class="db push_side">
                     <i class='bx bx-user h4'></i>
                     <span class="kalles_toolbar_label">Account</span>
                 </a>
             </div>
             @else
-            <div class="type_toolbar_account kalles_toolbar_item mt-4">
+            <div class="type_toolbar_account kalles_toolbar_item my-4">
                 <a href="{{route('login')}}" class="db push_side">
                     <i class='bx bx-user h4'></i>
                     <span class="kalles_toolbar_label">Account</span>
@@ -505,7 +505,7 @@
             </div>
             @endauth
         @endif
-        <div class="type_toolbar_search kalles_toolbar_item mt-4">
+        <div class="type_toolbar_search kalles_toolbar_item my-4">
             <a href="#" class="push_side" data-id="#nt_search_canvas">
                 <i class='bx bx-search-alt-2 h4' ></i>
                 <span class="kalles_toolbar_label">Search</span>
