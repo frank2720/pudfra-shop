@@ -39,6 +39,13 @@ class PaymentController extends Controller
     public function initiatestk(Request $request)
     {
 
+        $cart = new Cart(session()->get('cart'));
+
+        if ($cart->totalPrice==null) {
+            toastr()->warning('No products in cart','Cart empty');
+            return redirect()->back();
+        }
+        
         $token=$this->access_token;
         
         $this->Express_url = env('EXPRESS_URL');
@@ -46,7 +53,6 @@ class PaymentController extends Controller
         
         $this->passKey =env('PASS_KEY');
         $Timestamp=Carbon::now()->format('YmdHis');
-        $cart = new Cart(session()->get('cart'));
 
         $this->BusinessShortCode=env('SHORTCODE');
         $password=base64_encode($this->BusinessShortCode.$this->passKey.$Timestamp);
