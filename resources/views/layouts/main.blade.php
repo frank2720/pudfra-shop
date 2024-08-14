@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="shortcut icon" type="image/png" href="{{Vite::asset('resources/assets/images/favicon.png')}}">
+    <link rel="shortcut icon" type="image/png" href="{{Vite::asset('resources/assets/logo/pudfra.jpg')}}">
     <title>@yield('title')</title>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
@@ -36,7 +36,7 @@
                             </div>
                             <div class="col-lg-2 col-md-4 col-6">
                                 <a class="dib" href="{{route("home")}}">
-                                    <img style="border-radius: 50%;width: 50px;height: 50px;overflow: hidden;" src="{{Vite::asset('resources/assets/logo/logo.png')}}" alt="Maanar Shop">
+                                    <img style="border-radius: 50%;width: 50px;height: 50px;overflow: hidden;" src="{{Vite::asset('resources/assets/logo/pudfra.jpg')}}" alt="Maanar Shop">
                                 </a>
                             </div>
                             <div class="col dn db_lg">
@@ -211,6 +211,7 @@
 
     <div id="nt_content">
         @yield('content')
+        @yield('auth')
     </div>
 
     <!-- footer -->
