@@ -1,15 +1,16 @@
 <?php
 
-use App\Http\Controllers\Admin\ProductController as AdminProductController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\Profile\ProfileController;
-use App\Http\Controllers\User\CartController;
-use App\Http\Controllers\User\ProductController as UserProductController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\User\CartController;
+use App\Http\Controllers\Profile\ProfileController;
+use App\Http\Controllers\Auth\VerificationController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
-use Illuminate\Http\Request;
+use App\Http\Controllers\User\ProductController as UserProductController;
+use App\Http\Controllers\Admin\ProductController as AdminProductController;
 
 Auth::routes();
 
@@ -17,9 +18,7 @@ Route::get('/', [HomeController::class,'index'])->name('welcome');
 
 Route::middleware('auth')->group(function () {
 
-      Route::get('email/verify', function(){
-            return view('auth.verify');
-      })->name('verification.notice');
+      Route::get('email/verify',[VerificationController::class,'show'])->name('verification.notice');
 
       Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
             $request->fulfill();

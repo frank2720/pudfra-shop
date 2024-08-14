@@ -1,4 +1,4 @@
-@extends('layouts.guest')
+@extends('layouts.main')
 @section('title')
     {{__('Verification')}}
 @endsection
@@ -8,7 +8,7 @@
         {{ __('A fresh verification link has been sent to your email address.') }}
     </div>
 @endif
-<div class="container mt-5"> 
+<div class="container my-3"> 
     <div class="alert alert-info" role="alert"> 
         <h6 class="mb-3"> 
             <div class="card-header">{{ __('Verify Your Email Address') }}</div> 
