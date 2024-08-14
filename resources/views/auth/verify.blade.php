@@ -3,11 +3,6 @@
     {{__('Verification')}}
 @endsection
 @section('auth')
-@if (session('resent'))
-    <div class="alert alert-success" role="alert">
-        {{ __('A fresh verification link has been sent to your email address.') }}
-    </div>
-@endif
 <div class="container my-3"> 
     <div class="alert alert-info" role="alert"> 
         <h6 class="mb-3"> 

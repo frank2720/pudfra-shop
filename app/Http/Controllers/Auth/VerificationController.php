@@ -6,9 +6,12 @@ use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\File;
 use Illuminate\Foundation\Auth\VerifiesEmails;
+use Illuminate\Auth\Access\AuthorizationException;
 
 class VerificationController extends Controller
 {
@@ -62,6 +65,50 @@ class VerificationController extends Controller
                             'cart_products'=>$cart->items,
                             'totalPrice'=>$cart->totalPrice,
                         ]);
+    }
+
+    public function verify(Request $request)
+    {
+        if (! hash_equals((string) $request->route('id'), (string) $request->user()->getKey())) {
+            throw new AuthorizationException;
+        }
+
+        if (! hash_equals((string) $request->route('hash'), sha1($request->user()->getEmailForVerification()))) {
+            throw new AuthorizationException;
+        }
+
+        if ($request->user()->hasVerifiedEmail()) {
+            return $request->wantsJson()
+                        ? new JsonResponse([], 204)
+                        : redirect($this->redirectPath());
+        }
+
+        if ($request->user()->markEmailAsVerified()) {
+            event(new Verified($request->user()));
+        }
+
+        if ($response = $this->verified($request)) {
+            return $response;
+        }
+
+        return $request->wantsJson()
+                    ? new JsonResponse([], 204)
+                    :  redirect($this->redirectPath())->with(toastr()->success('Your email has been verified.','Verified'), true);
+    }
+
+    public function resend(Request $request)
+    {
+        if ($request->user()->hasVerifiedEmail()) {
+            return $request->wantsJson()
+                        ? new JsonResponse([], 204)
+                        : redirect($this->redirectPath());
+        }
+
+        $request->user()->sendEmailVerificationNotification();
+
+        return $request->wantsJson()
+                    ? new JsonResponse([], 202)
+                    : back()->with(toastr()->success('A fresh verification link has been sent to your email address.','Resent'), true);
     }
 
     /**

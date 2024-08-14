@@ -19,17 +19,9 @@ Route::get('/', [HomeController::class,'index'])->name('welcome');
 Route::middleware('auth')->group(function () {
 
       Route::get('email/verify',[VerificationController::class,'show'])->name('verification.notice');
-
-      Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
-            $request->fulfill();
-            return redirect('/home');
-      })->middleware('signed')->name('verification.verify');
-
-      Route::post('/email/verification-notification', function (Request $request) {
-            $request->user()->sendEmailVerificationNotification();
-            return back()->with('resent', 'Verification link sent ');
-      })->middleware('throttle:6,1')->name('verification.resend');
-
+      Route::get('/email/verify/{id}/{hash}',[VerificationController::class,'verify'])->name('verification.verify');
+      Route::post('/email/verification-notification',[VerificationController::class,'resend'])->name('verification.resend');
+      
       Route::get('/mark-as-read',[HomeController::class,'markAsRead'])->name('mark-as-read');
 
 
