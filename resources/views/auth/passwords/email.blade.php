@@ -13,7 +13,7 @@
     <div class="row justify-content-center">
       <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="card shadow">
-          <div class="card-body">
+        <div class="card-body">
             <form action="{{ route('password.email') }}" method="post">
                 @csrf     
                 <div class="form-group">
@@ -29,10 +29,9 @@
                     <button type="submit" class="btn btn-primary btn-block">Send Password Reset Link</button>
                 </div>   
             </form>
-            
-          </div>
+        </div>
     </div>
   </div>
-</div>
+ </div>
 </div>
 @endsection

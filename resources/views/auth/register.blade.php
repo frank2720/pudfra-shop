@@ -9,7 +9,7 @@
       <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="card shadow">
           <div class="card-title text-center border-bottom">
-            <h2 class="p-3">Register</h2>
+            <h2>Register</h2>
           </div>
             <div class="card-body">
                 <form action="{{ route('register') }}" method="post">
