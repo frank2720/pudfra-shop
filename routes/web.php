@@ -8,7 +8,6 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\User\CartController;
 use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\Auth\VerificationController;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\User\ProductController as UserProductController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 
