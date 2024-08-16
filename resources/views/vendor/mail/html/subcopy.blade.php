@@ -1,7 +1,7 @@
-<table class="subcopy" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+<!-- start copy -->
 <tr>
-<td>
-{{ Illuminate\Mail\Markdown::parse($slot) }}
-</td>
+    <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 24px;">
+        {{ $slot }}
+    </td>
 </tr>
-</table>
+<!-- end copy -->

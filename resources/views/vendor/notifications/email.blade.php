@@ -1,58 +1,116 @@
 <x-mail::message>
 {{-- Greeting --}}
-@if (! empty($greeting))
-# {{ $greeting }}
-@else
-@if ($level === 'error')
-# @lang('Whoops!')
-@else
-# @lang('Hello!')
-@endif
-@endif
+
+<!-- start hero -->
+<tr>
+    <td align="center" bgcolor="#e9ecef">
+    <!--[if (gte mso 9)|(IE)]>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+    <td align="center" valign="top" width="600">
+    <![endif]-->
+    <table width="90%" border="0" cellpadding="0" cellspacing="0" align="center">
+        <tr>
+            <td align="center" bgcolor="#ffffff" style="border-top: 3px solid #d4dadf;">
+                @if (! empty($greeting))
+                <h1 style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 25px; font-weight:bold; padding-left:20px; padding-right:20px;">{{ $greeting }}</h1>
+                @else
+                @if ($level === 'error')
+                <h1 style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 25px; font-weight:bold; padding-left:20px; padding-right:20px;">{{ __('Whoops!') }}</h1>
+                @else
+                <h1 style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 25px; font-weight:bold; padding-left:20px; padding-right:20px;">{{ __('Hello!') }}</h1>
+                @endif
+                @endif
+            </td>
+        </tr>
+    </table>
+    <!--[if (gte mso 9)|(IE)]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </td>
+</tr>
+<!-- end hero -->
 
 {{-- Intro Lines --}}
-@foreach ($introLines as $line)
-{{ $line }}
 
-@endforeach
+<!-- start copy block -->
+<tr>
+    <td align="center" bgcolor="#e9ecef">
+    <!--[if (gte mso 9)|(IE)]>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+    <td align="center" valign="top" width="600">
+    <![endif]-->
+    <table width="90%" border="0" cellpadding="0" cellspacing="0" align="center">
 
-{{-- Outro Lines --}}
-@foreach ($outroLines as $line)
-{{ $line }}
+        <!-- start copy -->
+        <tr>
+            <td align="center" bgcolor="#ffffff">
+                {{-- Intro Lines --}}
+                @foreach ($introLines as $line)
+                    <p style="margin: 0; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size:14px;color:#202020; padding-left:20px; padding-right:20px; text-align:justify;">{{ $line }}</p>
+                @endforeach
 
-@endforeach
+                {{-- Outro Lines --}}
+                @foreach ($outroLines as $line)
+                <p style="margin: 0; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size:14px;color:#202020; padding-left:20px; padding-right:20px; text-align:justify;">{{ $line }}</p>
+                @endforeach
+            </td>
+        </tr>
+        <!-- end copy -->
 
-{{-- Action Button --}}
-@isset($actionText)
-<?php
-    $color = match ($level) {
-        'success', 'error' => $level,
-        default => 'primary',
-    };
-?>
-<x-mail::button :url="$actionUrl" :color="$color">
-{{ $actionText }}
-</x-mail::button>
-@endisset
+        <!-- start button -->
+        <tr>
+        <td align="left" bgcolor="#ffffff">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td align="center" bgcolor="#ffffff" style="padding: 12px;">
+                    {{-- Action Button --}}
+                    @isset($actionText)
+                    <x-mail::button :url="$actionUrl">
+                    {{ $actionText }}
+                    </x-mail::button>
+                    @endisset
+                </td>
+            </tr>
+            </table>
+        </td>
+        </tr>
+        <!-- end button -->
 
-{{-- Subcopy --}}
-@isset($actionText)
-<x-slot:subcopy>
-@lang(
-    "If the above button doesn't work, copy and paste the URL below into your web browser:",
-    [
-        'actionText' => $actionText,
-    ]
-) <span class="break-all">[{{ $displayableActionUrl }}]({{ $actionUrl }})</span>
-</x-slot:subcopy>
-@endisset
+        {{-- Subcopy --}}
+        @isset($actionText)
+        <x-slot:subcopy>
+            <p style="margin: 0;">If the above button doesn't work, you can reset your password by copy and paste the URL below into your web browser:</p>
+        <span class="break-all"><a href="{{ $actionUrl }}" target="_blank">[{{ $displayableActionUrl }}]({{ $actionUrl }})</a></span>
+        </x-slot:subcopy>
+        @endisset
 
-{{-- Salutation --}}
-@if (! empty($salutation))
-{{ $salutation }}
-@else
-@lang('Regards'),<br>
-{{ __('Admin, '.config('app.name')) }}
-@endif
+        {{-- Salutation --}}
+        @if (! empty($salutation))
+        {{ $salutation }}
+        @else
+        <!-- start copy -->
+        <tr>
+            <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 24px; border-bottom: 3px solid #d4dadf">
+                <p style="margin: 0;">Regards,
+                    <br> {{ __('Admin, '.config('app.name')) }}
+                </p>
+            </td>
+        </tr>
+        <!-- end copy -->
+        @endif
+
+    </table>
+    <!--[if (gte mso 9)|(IE)]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </td>
+</tr>
+<!-- end copy block -->
 
 </x-mail::message>
