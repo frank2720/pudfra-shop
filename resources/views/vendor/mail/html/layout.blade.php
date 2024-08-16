@@ -104,8 +104,6 @@
 
     {{ $slot }}
 
-    {{ $subcopy ?? '' }}
-
     {{ $footer ?? '' }}
 
 </table>

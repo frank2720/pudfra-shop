@@ -72,22 +72,25 @@
         </tr>
         <!-- end button -->
 
-        {{-- Subcopy --}}
         @isset($actionText)
-        <x-slot:subcopy>
-            <p style="margin: 0;">If the above button doesn't work, you can reset your password by copy and paste the URL below into your web browser:</p>
-        <span class="break-all"><a href="{{ $actionUrl }}" target="_blank">[{{ $displayableActionUrl }}]({{ $actionUrl }})</a></span>
-        </x-slot:subcopy>
+            <!-- start copy -->
+            <tr>
+                <td align="center" bgcolor="#ffffff">
+                    <p style="margin: 0; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size:14px;color:#202020;line-height: 24px;">If the above button doesn't work, you can reset your password by copy and paste the URL below into your web browser:</p>
+                    <span><a style="margin: 0; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size:14px;" href="{{ $actionUrl }}" target="_blank">{{ $actionUrl }}</a></span>
+                </td>
+            </tr>
+            <!-- end copy -->
         @endisset
 
         {{-- Salutation --}}
         @if (! empty($salutation))
-        {{ $salutation }}
+            {{ $salutation }}
         @else
         <!-- start copy -->
         <tr>
-            <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 24px; border-bottom: 3px solid #d4dadf">
-                <p style="margin: 0;">Regards,
+            <td align="left" bgcolor="#ffffff">
+                <p style="margin: 0;padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 24px;">Regards,
                     <br> {{ __('Admin, '.config('app.name')) }}
                 </p>
             </td>
