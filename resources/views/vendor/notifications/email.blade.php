@@ -1,6 +1,5 @@
 <x-mail::message>
-{{-- Greeting --}}
-
+@isset($actionText)
 <!-- start hero -->
 <tr>
     <td align="center" bgcolor="#e9ecef">
@@ -12,15 +11,7 @@
     <table width="90%" border="0" cellpadding="0" cellspacing="0" align="center">
         <tr>
             <td align="center" bgcolor="#ffffff" style="border-top: 3px solid #d4dadf;">
-                @if (! empty($greeting))
-                <h1 style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 25px; font-weight:bold; padding-left:20px; padding-right:20px;">{{ $greeting }}</h1>
-                @else
-                @if ($level === 'error')
-                <h1 style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 25px; font-weight:bold; padding-left:20px; padding-right:20px;">{{ __('Whoops!') }}</h1>
-                @else
-                <h1 style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 25px; font-weight:bold; padding-left:20px; padding-right:20px;">{{ __('Hello!') }}</h1>
-                @endif
-                @endif
+                <h1 style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 25px; font-weight:bold; padding-left:20px; padding-right:20px;">{{$actionText}}</h1>
             </td>
         </tr>
     </table>
@@ -32,6 +23,7 @@
     </td>
 </tr>
 <!-- end hero -->
+@endisset
 
 {{-- Intro Lines --}}
 
