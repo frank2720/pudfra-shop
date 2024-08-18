@@ -20,7 +20,6 @@
     "dependencies": {
         "@floating-ui/dom": "^1.6.8",
         "boxicons": "^2.1.4",
-        "dropzone": "^6.0.0-beta.2",
-        "js-cookie": "^3.0.5"
+        "dropzone": "^6.0.0-beta.2"
     }
 }

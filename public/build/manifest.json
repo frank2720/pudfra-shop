@@ -1,5 +1,5 @@
 {
-  "_boxicons-0aef6dc0.js": {
+  "_boxicons-90ebf280.js": {
     "assets": [
       "assets/boxicons-c23887bb.eot",
       "assets/boxicons-4b87cbc7.woff2",
@@ -10,7 +10,7 @@
     "css": [
       "assets/boxicons-b52582cf.css"
     ],
-    "file": "assets/boxicons-0aef6dc0.js"
+    "file": "assets/boxicons-90ebf280.js"
   },
   "boxicons.css": {
     "file": "assets/boxicons-b52582cf.css",
@@ -64,9 +64,9 @@
     "css": [
       "assets/admin-f3138f04.css"
     ],
-    "file": "assets/admin-baa167a6.js",
+    "file": "assets/admin-956a468d.js",
     "imports": [
-      "_boxicons-0aef6dc0.js"
+      "_boxicons-90ebf280.js"
     ],
     "isEntry": true,
     "src": "resources/js/admin.js"
@@ -79,9 +79,9 @@
     "css": [
       "assets/app-ff4f49f8.css"
     ],
-    "file": "assets/app-b8afe355.js",
+    "file": "assets/app-be069e84.js",
     "imports": [
-      "_boxicons-0aef6dc0.js"
+      "_boxicons-90ebf280.js"
     ],
     "isEntry": true,
     "src": "resources/js/app.js"

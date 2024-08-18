@@ -1,5 +1,0 @@
-[21-Apr-2024 22:21:06 UTC] PHP Warning:  require(/home/jatechso/maanar-shop/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/jatechso/maanar-shop/public/index.php on line 34
-[21-Apr-2024 22:21:06 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/jatechso/maanar-shop/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/jatechso/maanar-shop/public/index.php:34
-Stack trace:
-#0 {main}
-  thrown in /home/jatechso/maanar-shop/public/index.php on line 34
