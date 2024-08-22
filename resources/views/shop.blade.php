@@ -27,11 +27,11 @@
                     <a href="#" data-dev="mb" data-col="6" class="pr cat_view_page view_6"></a>
                 </div>
             </div>
-            <div class="cat_sortby cat_sortby_js col tr kalles_dropdown kalles_dropdown_container">
+            <div class="cat_sortby cat_sortby_js col tr">
 
-                <select id="sortCriteria" class="col-md-3 selectpicker show-tick in_flex fl_between al_center sortby_pick kalles_dropDown_label featurnBtn rounded-pill dropdown-toggle show">
+                <select id="sortCriteria" class="col-md-3 selectpicker show-tick in_flex fl_between al_center sortby_pick featurnBtn rounded-pill dropdown-toggle show">
                     <div class="nt_sortby dn">
-                        <div class="nt_ajaxsortby wrap_sortby">
+                        <div class="nt_ajaxsortby">
                             <option value="" disabled selected>Sort product by:</option>
                             <option value="name_asc">Alphabetical, A-Z</option>
                             <option value="name_desc">Alphabetical, Z-A</option>
