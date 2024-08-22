@@ -3,54 +3,97 @@
     {{__('Products in cart')}}
 @endsection
 @section('content')
-<!--cart section-->
-<div class="container mt__60">
-    @if (session()->has('cart') && $totalPrice>0)
-        <div class="card cart-card mt-5 mb-5 cart">
-            <div class="d-flex justify-content-center row">
-                <div class="">
-                    <div class="p-2">
-                        <h4><b>Shopping Cart</b></h4>
-                    </div>
-                    @foreach ($cart_products as $product)
-                        <div class="row border-bottom">
-                            <div class="row align-items-center">
-                                <div class="col-2"><img class="img-fluid rounded" style="width: 3.5rem" src="{{Storage::url($product['item']->images[0]->url??$product['item']->images[1]->url??null)}}"></div>
-                                <div class="col">
-                                    <div class="row">{{$product['item']->name}}</div>
-                                </div>
-                                <div class="col">
-                                    <a href="{{route('reduceQty',['id'=>$product['item']->id])}}"><i class='bx bx-minus text-danger mx-2'></i></a>
-                                    <a href="" class="border">{{__($product['qty'])}}</a>
-                                    <a href="{{route('increaseQty',['id'=>$product['item']->id])}}"><i class='bx bx-plus text-success mx-2' ></i></a>
-                                </div>
-                                <div class="col"><a href="{{route('removeProduct',['id'=>$product['item']->id])}}"><span class="text-danger font-weight-bold">&#10005;</span></a></div>
-                            </div>
-                        </div>
-                    @endforeach
 
-                    <form action="{{route('stkpush')}}" method="POST" class="form-inline">
-                        @csrf
-                        <div class="form-group">
-                            <label for="no." class="small fw-bold mt-3">PHONE NUMBER</label>
-                            <input type="text" name="phone" style="border-radius: 1rem" required placeholder="Enter phone number" class="my-3"/>
-                            <button type="submit" class="button button_primary btn checkout-payment__btn-place-order">Place order</button>
-                        </div>
-                    </form>
+@if (session()->has('cart') && $totalPrice>0)
+
+<!-- ====== Shopping Cart Start ====== -->
+<div class="container py-3">
+    <h3>Shopping Cart</h3>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-8">
+        @foreach ($cart_products as $product)
+        <!-- single cart item  -->
+        <hr style="margin:0rem 0rem" />
+        <div class="cart-item">
+            <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="d-flex justify-content-between mb-3">
+                <img
+                    class="cart-image d-block"
+                    src="{{Storage::url($product['item']->images[0]->url??$product['item']->images[1]->url??null)}}"
+                    alt=""
+                />
+                <div class="mx-3">
+                    <p>{{$product['item']->name}}</p>
+                    <h5>Ksh. {{number_format($product['item']->price)}}</h5>
+                    <small
+                    class="text-white bg-success px-2 py-1 d-inline-block rounded-3 mt-2"
+                    >In Stock</small
+                    >
+                </div>
                 </div>
             </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="d-flex justify-content-between">
+                <div>
+                    <a href="{{route('reduceQty',['id'=>$product['item']->id])}}"><i class='bx bx-minus text-danger mx-4'></i></a>
+                    <select class="form-select">
+                    <option selected disabled>{{__($product['qty'])}}</option>
+                    </select>
+                    <a href="{{route('increaseQty',['id'=>$product['item']->id])}}"><i class='bx bx-plus text-success mx-4' ></i></a>
+                </div>
+                <div>
+                    <a class="btn-close" href="{{route('removeProduct',['id'=>$product['item']->id])}}"></a>
+                </div>
+                </div>
+            </div>
+            </div>
         </div>
-    @else
-    <div class="tc my-60"><h1><i class='bx bx-shopping-bag display-1'></i></h1>
-        <h3>Your cart is empty.</h3>
-        <p class="return-to-shop mb__15">
-            <a class="button button_primary tu js_add_ld" href="{{route('shop')}}">Return To Shop</a>
-        </p>
+        <!-- ./ single cart item end  -->
+        @endforeach
+        <hr style="margin:0rem 0rem" />
+        </div>
+        <div class="col-12 col-sm-12 col-md-8 col-lg-4">
+        <div class="bg-light rounded-3 p-4 sticky-top">
+            <h6 class="mb-4">Order Summary</h6>
+            <div class="d-flex justify-content-between align-items-center">
+            <div>Subtotal</div>
+            <div><strong>Ksh. {{number_format($totalPrice)}}</strong></div>
+            </div>
+            <hr style="margin:0rem 0rem" />
+            <div class="d-flex justify-content-between align-items-center">
+                @php
+                    $delivery = 100;
+                    $Total = $totalPrice + $delivery
+                @endphp
+            <div>Delivery Charge</div>
+            <div><strong>Ksh. {{number_format($delivery)}}</strong></div>
+            </div>
+            <hr style="margin:0rem 0rem" />
+            <div class="d-flex justify-content-between align-items-center">
+            <div>Total</div>
+            <div><strong>Ksh. {{number_format($Total)}}</strong></div>
+            </div>
+            <form action="{{route('stkpush')}}" method="POST">
+                @csrf
+                <div class="form-group">
+                    <input type="text" name="phone" style="border-radius: 1rem" required placeholder="Enter phone number" class="w-100 mt-4"/>
+                    <button type="submit" class="button button_primary w-100 mt-4 btn checkout-payment__btn-place-order w-100 mt-4">Place order</button>
+                </div>
+            </form>
+        </div>
+        </div>
     </div>
-    @endif
 </div>
-<!--end cart section-->
-
+<!-- ====== Shopping Cart End ====== -->
+@else
+<div class="tc my-60"><h1><i class='bx bx-shopping-bag display-1'></i></h1>
+    <h3>Your cart is empty.</h3>
+    <p class="return-to-shop mb__15">
+        <a class="button button_primary tu js_add_ld" href="{{route('shop')}}">Return To Shop</a>
+    </p>
+</div>
+@endif
 <!--product recommendations section-->
 <div class="kalles-section tp_se_cdt">
     <div class="related product-extra mt__70">
