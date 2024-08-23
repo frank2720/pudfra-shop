@@ -23,7 +23,7 @@
         <div class="kalles-header__wrapper ntheader_wrapper pr z_200">
             <div class="sp_header_mid">
                 <div class="header__mid">
-                    <div class="container bg-light">
+                    <div class="container">
                         <div class="row al_center css_h_se">
                             <div class="col-md-4 col-3 dn_lg">
                                 <a href="#" data-id="#nt_menu_canvas" class="push_side push-menu-btn  lh__1 flex al_center">
@@ -34,7 +34,7 @@
                                     </svg>
                                 </a>
                             </div>
-                            <div class="col-lg-2 col-md-4 col-6">
+                            <div class="col-lg-2 col-md-4 col-5">
                                 <a class="dib" href="{{route("home")}}">
                                     <img style="border-radius: 50%;width: 50px;height: 50px;overflow: hidden;" src="{{Vite::asset('resources/assets/logo/pudfra.jpg')}}" alt="Maanar Shop">
                                 </a>
@@ -168,9 +168,6 @@
                                             </a>
                                         </div>
                                         <div class="notf" id="box">
-                                            @if (auth()->user()->unreadNotifications->count()!==0)
-                                                <a href="{{route('mark-as-read')}}"><span class="badge rounded-pill bg-primary p-2 ms-2 my-2">View all</span></a>
-                                            @endif
                                             
                                             @foreach (auth()->user()->unreadNotifications as $notification)
                                             <div class="notf-item">
@@ -199,6 +196,10 @@
                                                 </div>
                                             </div>
                                             @endforeach 
+
+                                            @if (auth()->user()->unreadNotifications->count()!==0)
+                                                <a href="{{route('mark-as-read')}}"><span class="badge rounded-pill bg-primary p-2 ms-2 my-2  d-flex justify-content-center">View all</span></a>
+                                            @endif
                                         </div>
                                         
                                         @else
@@ -222,7 +223,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
