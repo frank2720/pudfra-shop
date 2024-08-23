@@ -36,14 +36,14 @@
             <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                 <div class="d-flex justify-content-between">
                 <div>
-                    <a href="{{route('reduceQty',['id'=>$product['item']->id])}}"><i class='bx bx-minus text-danger mx-4'></i></a>
+                    <a href="{{route('reduceQty',['id'=>$product['item']->id])}}"><i class='bx bx-minus text-danger mx-4 h5'></i></a>
                     <select class="form-select">
                     <option selected disabled>{{__($product['qty'])}}</option>
                     </select>
-                    <a href="{{route('increaseQty',['id'=>$product['item']->id])}}"><i class='bx bx-plus text-success mx-4' ></i></a>
+                    <a href="{{route('increaseQty',['id'=>$product['item']->id])}}"><i class='bx bx-plus text-success mx-4 h5' ></i></a>
                 </div>
                 <div>
-                    <a class="btn-close" href="{{route('removeProduct',['id'=>$product['item']->id])}}"></a>
+                    <a class="btn-close h3" href="{{route('removeProduct',['id'=>$product['item']->id])}}"></a>
                 </div>
                 </div>
             </div>
