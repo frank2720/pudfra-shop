@@ -11,7 +11,7 @@ import"./boxicons-90ebf280.js";(function(t){const n=t("body"),p=t(window),u=n.ha
                                 <a href="" class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left add-to-cart-btn" data-product-id="${u.id}">
                                     <span class="tt_txt">Quick Shop</span>
                                     <i class='bx bxs-cart-add'></i>
-                                    <span>Quick Shop</span>
+                                    <span>Add to Cart</span>
                                 </a>
                             </div>
                         </div>

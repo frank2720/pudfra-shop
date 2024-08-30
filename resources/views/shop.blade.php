@@ -63,9 +63,9 @@
                                         </div>
                                         <div class="hover_button op__0 tc pa flex column ts__03">
                                             <a href="" class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left add-to-cart-btn" data-product-id="{{$product->id}}">
-                                                <span class="tt_txt">Quick Shop</span>
-                                                <i class='bx bxs-cart-add'></i>
-                                                <span>Quick Shop</span>
+                                                <span class="tt_txt">Add to Cart</span>
+                                                <i class='bx bxs-shopping-bag'></i>
+                                                <span>Add to Cart</span>
                                             </a>
                                         </div>
                                     </div>

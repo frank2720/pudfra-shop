@@ -3,12 +3,28 @@
 {{$product->name}}{{__(' details')}}
 @endsection
 @section('content')
-<div class="container">
+
+<style>
+.img-big-wrap{
+overflow: hidden;
+}
+.img-showcase{
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+</style>
+<div class="container my-4">
     <div class="card">
         <div class="row">
         <aside class="col-sm-5 border-right">
                 <article class="gallery-wrap"> 
                     <div class="img-big-wrap">
+                        <div class = "img-showcase">
+                            @foreach ($product->images as $image)
+                                <img src = "https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_1.jpg" alt = "">
+                            @endforeach
+                        </div>
                         <div> <a href="#"><img src="{{Storage::url($product->images[0]->url)}}"></a></div>
                     </div>
                     <div class="img-small-wrap">
