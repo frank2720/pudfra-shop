@@ -7,22 +7,27 @@
     <div class = "card">
       <!-- card left -->
       <div class = "product-imgs">
-        <div class = "img-display">
+        <div class = "img-display ml-4">
           <div class = "img-showcase">
             @foreach ($product->images as $index => $image)
                 <img src = "{{ Storage::url($image->url) }}" alt = "">
             @endforeach
           </div>
         </div>
+        @php
+            $number_pics = count($product->images)
+        @endphp
+        @if ($number_pics>1)
         <div class = "img-select">
-            @foreach ($product->images as $index => $image)
-                <div class="img-item">
-                    <a href="#" data-id="{{ $index + 1 }}">
-                        <img src="{{ Storage::url($image->url) }}" alt="">
-                    </a>
-                </div>
-            @endforeach
-        </div>
+          @foreach ($product->images as $index => $image)
+              <div class="img-item">
+                  <a href="#" data-id="{{ $index + 1 }}">
+                      <img src="{{ Storage::url($image->url) }}" alt="">
+                  </a>
+              </div>
+          @endforeach
+      </div>
+        @endif
       </div>
       <!-- card right -->
       <div class = "product-content">

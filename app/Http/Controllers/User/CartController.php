@@ -8,6 +8,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Cookie;
 
 class CartController extends Controller
 {
@@ -93,6 +94,9 @@ class CartController extends Controller
                 ->latest()
                 ->paginate(8);
 
+        $recentlyViewed = json_decode(Cookie::get('recently_viewed', '[]'), true);
+        $recommendedProducts = Product::whereIn('id', $recentlyViewed)->with('images')->get();
+
         $json_data = File::get(storage_path('app/public/towns/towns.json'));
 
         $towns = json_decode($json_data);
@@ -105,6 +109,7 @@ class CartController extends Controller
         'nav_products'=>$nav_products,
         'trending_products'=>$trending_products,
         'latest'=>$latest,
+        'recommendedProducts'=>$recommendedProducts,
         'cart_products'=>$cart->items,
         'totalPrice'=>$cart->totalPrice]);
     }

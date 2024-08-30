@@ -8,6 +8,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Cookie;
 
 class ProductController extends Controller
 {
@@ -15,6 +16,22 @@ class ProductController extends Controller
 
     public function product_details($id)
     {
+        $recentlyViewed = json_decode(Cookie::get('recently_viewed', '[]'), true);
+
+        // Add the product ID to the array
+        if (!in_array($id, $recentlyViewed)) {
+            $recentlyViewed[] = $id;
+        }
+
+        // Limit the number of stored products, for example, to the last 10 viewed
+        if (count($recentlyViewed) > 10) {
+            array_shift($recentlyViewed);
+        }
+
+        // Store the updated array back in the cookie
+        Cookie::queue('recently_viewed', json_encode($recentlyViewed), 60 * 24 * 7); // Cookie valid for 7 days
+
+
         $nav_products = Product::with('images')->get();
         $categories =  Category::all();
         $json_data = File::get(storage_path('app/public/towns/towns.json'));
