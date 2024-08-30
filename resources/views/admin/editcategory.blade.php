@@ -98,7 +98,7 @@
                     <div class="col-md-6">
                         <div class="form-group my-3">
                             <label class="fw-bolder mb-2">{{__('Category Name')}}</label>
-                            <input class="form-control" type="text" name="name" value="{{$category->category}}">
+                            <input type="text" name="name" value="{{$category->category}}">
                         </div>
                     </div>
                     <div class="col-md-6">

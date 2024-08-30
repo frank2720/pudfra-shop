@@ -106,14 +106,14 @@
                     <div class="col-md-6">
                         <div class="form-group my-3">
                             <label class="fw-bolder mb-2">{{__('Product Name')}}</label>
-                            <input class="form-control" type="text" name="name" value="{{$product->name}}">
+                            <input type="text" name="name" value="{{$product->name}}">
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group my-3">
                             <label for="category" class="fw-bolder mb-2">Product Category:</label>
-                            <select name="category" required class="form-control" id="category">
+                            <select name="category" required id="category">
                                 <option value="">--- Choose a category ---</option>
 
                                 @foreach ($categories as $category)
@@ -127,13 +127,13 @@
                     <div class="col-md-6">
                         <div class="form-group my-3">
                             <label class="fw-bolder mb-2">{{__('Product Price')}}</label>
-                            <input class="form-control" type="number" min="0" name="price" value="{{$product->price}}">
+                            <input type="number" min="0" name="price" value="{{$product->price}}">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group my-3">
                             <label class="fw-bolder mb-2">{{__('Retail Price')}}</label>
-                            <input class="form-control" type="number" min="0" name="retail_price" value="{{$product->retail_price}}">
+                            <input type="number" min="0" name="retail_price" value="{{$product->retail_price}}">
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -190,7 +190,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="fw-bolder my-2" for="p_img">{{__('Images')}}</label>
-                                <input type="file" id="p_img" name="img[]" class="form-control" multiple required autocomplete="off">
+                                <input type="file" id="p_img" name="img[]" multiple required autocomplete="off">
                             </div>
                         </div>
                     </div>

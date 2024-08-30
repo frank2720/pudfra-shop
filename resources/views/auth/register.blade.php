@@ -15,7 +15,7 @@
                 <form action="{{ route('register') }}" method="post">
                     @csrf     
                     <div class="form-group">
-                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Your name">
+                        <input type="text" name="name" class="@error('name') is-invalid @enderror" placeholder="Your name">
                         @error('name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -23,7 +23,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email">
+                        <input type="email" name="email" class="@error('email') is-invalid @enderror" name="email" placeholder="Email">
                         @error('email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -32,7 +32,7 @@
                     </div>
                 
                     <div class="form-group">
-                        <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password">
+                        <input type="password" name="password" class="@error('password') is-invalid @enderror" placeholder="Password">
                         @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -41,7 +41,7 @@
                     </div>
                 
                     <div class="form-group">
-                        <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password">
+                        <input type="password" name="password_confirmation" placeholder="Confirm Password">
                     </div>
                 
                     <div class="form-group">

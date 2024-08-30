@@ -239,7 +239,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="fw-bolder my-2" for="p_name">{{__('Product Name')}}</label>
-                                    <input class="form-control" type="text" id="p_name" name="name" required autocomplete="off">
+                                    <input type="text" id="p_name" name="name" required autocomplete="off">
                                 </div>
                             </div>
 
@@ -258,19 +258,19 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="fw-bolder my-2" for="p_price">{{__('Product Price')}}</label>
-                                    <input class="form-control" id="p_price" type="number" min="0" name="price" required autocomplete="off">
+                                    <input id="p_price" type="number" min="0" name="price" required autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="fw-bolder my-2" for="o_price">{{__('Retail Price')}}</label>
-                                    <input class="form-control" id="o_price" type="number" min="0" name="retail_price" required autocomplete="off">
+                                    <input id="o_price" type="number" min="0" name="retail_price" required autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="fw-bolder my-2" for="p_img">{{__('Images')}}</label>
-                                    <input type="file" id="p_img" name="img[]" class="form-control" multiple required autocomplete="off">
+                                    <input type="file" id="p_img" name="img[]" multiple required autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-md-12">
