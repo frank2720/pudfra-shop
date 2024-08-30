@@ -3,59 +3,84 @@
 {{$product->name}}{{__(' details')}}
 @endsection
 @section('content')
-
-<style>
-.img-big-wrap{
-overflow: hidden;
-}
-.img-showcase{
-    display: flex;
-    width: 100%;
-    transition: all 0.5s ease;
-}
-</style>
-<div class="container my-4">
-    <div class="card">
-        <div class="row">
-        <aside class="col-sm-5 border-right">
-                <article class="gallery-wrap"> 
-                    <div class="img-big-wrap">
-                        <div class = "img-showcase">
-                            @foreach ($product->images as $image)
-                                <img src = "https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_1.jpg" alt = "">
-                            @endforeach
-                        </div>
-                        <div> <a href="#"><img src="{{Storage::url($product->images[0]->url)}}"></a></div>
-                    </div>
-                    <div class="img-small-wrap">
-                        @foreach ($product->images as $image)
-                            <div class="item-gallery"><img src="{{Storage::url($image->url)}}" height="256"></div>
-                        @endforeach
-                    </div>
-                    <div class="zoomed-image"></div>
-                </article>
-		</aside>
-        <aside class="col-sm-7">
-            <article class="card-body p-5">
-                <h3 class="title mb-3">{{$product->name}}</h3>
-                <p class="price-detail-wrap"> 
-                    <span class="price h3 text-warning"> 
-                        <span class="currency">Ksh</span><span class="num">{{number_format($product->price)}}</span>
-                    </span>
-                </p>
-                <dl class="item-property">
-                    <dd>
-                        <p>{!! $product->description !!}
-                        </p>
-                    </dd>
-                </dl>
-                <hr>
-                <button type="button" data-product-id="{{$product->id}}" class="single_add_to_cart_button button truncate w__100 mt__20 order-4 d-inline-block animated add-to-cart-btn">
-                        <span class="txt_add ">Add to cart</span>
-                </button>
-            </article>
-		</aside>
+<div class = "container my-4">
+    <div class = "card">
+      <!-- card left -->
+      <div class = "product-imgs">
+        <div class = "img-display">
+          <div class = "img-showcase">
+            @foreach ($product->images as $index => $image)
+                <img src = "{{ Storage::url($image->url) }}" alt = "">
+            @endforeach
+          </div>
+        </div>
+        <div class = "img-select">
+            @foreach ($product->images as $index => $image)
+                <div class="img-item">
+                    <a href="#" data-id="{{ $index + 1 }}">
+                        <img src="{{ Storage::url($image->url) }}" alt="">
+                    </a>
+                </div>
+            @endforeach
+        </div>
+      </div>
+      <!-- card right -->
+      <div class = "product-content">
+        <h2 class = "product-name">{{$product->name}}</h2>
+        <div class = "product-rating">
+          <i class='bx bxs-star' ></i>
+          <i class='bx bxs-star' ></i>
+          <i class='bx bxs-star' ></i>
+          <i class='bx bxs-star' ></i>
+          <i class='bx bxs-star-half' ></i>
+          <span>4.7(21)</span>
+        </div>
+  
+        <div class = "product-price">
+            @if ($product->price<$product->retail_price)
+                <p class = "last-price">Old Price: <span>{{number_format($product->retail_price)}}</span></p>
+                @php
+                    $discount = ($product->price/$product->retail_price)*100;
+                @endphp
+                <p class = "new-price">New Price: <span>{{number_format($product->price)}} ({{$discount}}%)</span></p>    
+            @else
+            <p class = "new-price">Price: <span>{{number_format($product->price)}}</span></p>
+            @endif
+        </div>
+  
+        <div class = "product-detail">
+          <h2>about this item: </h2>
+          <p>{!! $product->description !!}</p>
+        </div>
+  
+        <div class = "purchase-info">
+          <button type = "button" data-product-id="{{$product->id}}" class = "add-to-cart-btn">
+            Add to Cart <i class = "fas fa-shopping-cart"></i>
+          </button>
+        </div>
+      </div>
     </div>
-</div>
-</div>
+  </div>
+
+  <script>
+    const imgs = document.querySelectorAll('.img-select a');
+    const imgBtns = [...imgs];
+    let imgId = 1;
+
+    imgBtns.forEach((imgItem) => {
+        imgItem.addEventListener('click', (event) => {
+            event.preventDefault();
+            imgId = imgItem.dataset.id;
+            slideImage();
+        });
+    });
+
+    function slideImage(){
+        const displayWidth = document.querySelector('.img-showcase img:first-child').clientWidth;
+
+        document.querySelector('.img-showcase').style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
+    }
+
+    window.addEventListener('resize', slideImage);
+  </script>
 @endsection
