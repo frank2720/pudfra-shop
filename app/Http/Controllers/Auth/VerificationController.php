@@ -6,6 +6,8 @@ use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Swap\Laravel\Facades\Swap;
+use Torann\GeoIP\Facades\GeoIP;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Verified;
@@ -30,6 +32,13 @@ class VerificationController extends Controller
 
     public function show(Request $request)
     {
+        $location = GeoIP::getLocation(env('IP_ADDRESS'));
+        $currency = $location->currency;
+        $rate = Swap::latest('EUR/'.$currency['code']);
+        $currencyExchangeRate = $rate->getValue();
+
+        $name = $rate->getProviderName();
+        
         $nav_products = Product::with('images')->get();
 
         $categories =  Category::all();
@@ -56,6 +65,8 @@ class VerificationController extends Controller
         return $request->user()->hasVerifiedEmail()
                         ? redirect($this->redirectPath()) 
                         : view('auth.verify',[
+                            'currencyExchangeRate'=>$currencyExchangeRate,
+                            'currency'=>$currency["symbol"],
                             'towns'=>$towns,
                             'nav_products'=>$nav_products,
                             'categories'=> $categories,

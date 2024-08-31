@@ -6,6 +6,8 @@ use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Swap\Laravel\Facades\Swap;
+use Torann\GeoIP\Facades\GeoIP;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
@@ -28,6 +30,13 @@ class ForgotPasswordController extends Controller
 
     public function showLinkRequestForm()
     {
+        $location = GeoIP::getLocation(env('IP_ADDRESS'));
+        $currency = $location->currency;
+        $rate = Swap::latest('EUR/'.$currency['code']);
+        $currencyExchangeRate = $rate->getValue();
+
+        $name = $rate->getProviderName();
+        
         $nav_products = Product::with('images')->get();
 
         $categories =  Category::all();
@@ -52,6 +61,8 @@ class ForgotPasswordController extends Controller
         $cart = new Cart($oldCart);
 
         return view('auth.passwords.email',[
+            'currencyExchangeRate'=>$currencyExchangeRate,
+            'currency'=>$currency["symbol"],
             'towns'=>$towns,
             'nav_products'=>$nav_products,
             'categories'=> $categories,

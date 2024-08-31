@@ -2,23 +2,30 @@
 
 namespace App\Http\Controllers\Profile;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Profile\ProfileUpdateRequest;
 use App\Models\Cart;
-use App\Models\Category;
 use App\Models\Product;
-use Illuminate\Http\RedirectResponse;
+use App\Models\Category;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Swap\Laravel\Facades\Swap;
+use Torann\GeoIP\Facades\GeoIP;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\View\View;
+use App\Http\Requests\Profile\ProfileUpdateRequest;
 
 class ProfileController extends Controller
 {
 
     public function profile(Request $request): View
     {
+        $location = GeoIP::getLocation(env('IP_ADDRESS'));
+        $currency = $location->currency;
+        $rate = Swap::latest('EUR/'.$currency['code']);
+        $currencyExchangeRate = $rate->getValue();
+        
         $nav_products = Product::with('images')->get();
         $categories =  Category::all();
         $latest = Product::with('images')
@@ -31,6 +38,8 @@ class ProfileController extends Controller
         //dd(session()->get('cart'));
         $cart = new Cart($oldCart);
         return view('profile.profile', [
+            'currencyExchangeRate'=>$currencyExchangeRate,
+            'currency'=>$currency["symbol"],
             'towns'=>$towns,
             'nav_products'=>$nav_products,
             'categories'=>$categories,

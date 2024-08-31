@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Category;
+use Swap\Laravel\Facades\Swap;
+use Torann\GeoIP\Facades\GeoIP;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -26,6 +28,13 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
+        $location = GeoIP::getLocation(env('IP_ADDRESS'));
+        $currency = $location->currency;
+        $rate = Swap::latest('EUR/'.$currency['code']);
+        $currencyExchangeRate = $rate->getValue();
+
+        $name = $rate->getProviderName();
+
         $nav_products = Product::with('images')->get();
 
         $categories =  Category::all();
@@ -50,6 +59,8 @@ class LoginController extends Controller
         $cart = new Cart($oldCart);
 
         return view('auth.login',[
+            'currencyExchangeRate'=>$currencyExchangeRate,
+            'currency'=>$currency["symbol"],
             'towns'=>$towns,
             'nav_products'=>$nav_products,
             'categories'=> $categories,
