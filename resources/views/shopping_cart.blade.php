@@ -25,7 +25,7 @@
                 />
                 <div class="mx-3">
                     <p>{{$product['item']->name}}</p>
-                    <h5>Ksh. {{number_format($product['item']->price)}}</h5>
+                    <h5>{{$currency}} {{number_format($product['item']->price*$currencyExachangeRate)}}</h5>
                     <small
                     class="text-white bg-success px-2 py-1 d-inline-block rounded-3 mt-2"
                     >In Stock</small
@@ -58,7 +58,7 @@
             <h6 class="mb-4">Order Summary</h6>
             <div class="d-flex justify-content-between align-items-center">
             <div>Subtotal</div>
-            <div><strong>Ksh. {{number_format($totalPrice)}}</strong></div>
+            <div><strong>{{$currency}} {{number_format($totalPrice*$currencyExachangeRate)}}</strong></div>
             </div>
             <hr style="margin:0rem 0rem" />
             <div class="d-flex justify-content-between align-items-center">
@@ -67,12 +67,12 @@
                     $Total = $totalPrice + $delivery
                 @endphp
             <div>Delivery Charge</div>
-            <div><strong>Ksh. {{number_format($delivery)}}</strong></div>
+            <div><strong>{{$currency}} {{number_format($delivery*$currencyExachangeRate)}}</strong></div>
             </div>
             <hr style="margin:0rem 0rem" />
             <div class="d-flex justify-content-between align-items-center">
             <div>Total</div>
-            <div><strong>Ksh. {{number_format($Total)}}</strong></div>
+            <div><strong>{{$currency}} {{number_format($Total*$currencyExachangeRate)}}</strong></div>
             </div>
             <form action="{{route('stkpush')}}" method="POST">
                 @csrf
@@ -132,7 +132,7 @@
                                 <h3 class="product-title position-relative fs__14 mg__0 fwm">
                                     <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">{{__(ucfirst(strtolower($product->name)))}}</a>
                                 </h3>
-                                <span class="price dib mb__5">Ksh {{number_format($product->price,2,".",",")}}</span>
+                                <span class="price dib mb__5">{{$currency}} {{number_format($product->price*$currencyExachangeRate,2,".",",")}}</span>
                             </div>
                         </div>
                     </div>

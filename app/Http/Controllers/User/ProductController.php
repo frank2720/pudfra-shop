@@ -6,6 +6,8 @@ use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Swap\Laravel\Facades\Swap;
+use Torann\GeoIP\Facades\GeoIP;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Cookie;
@@ -56,6 +58,11 @@ class ProductController extends Controller
 
     public function products(Request $request)
     {
+        $location = GeoIP::getLocation('102.215.33.229');
+        $currency = $location->currency;
+        $rate = Swap::latest('EUR/'.$currency['code']);
+        $currencyExachangeRate = $rate->getValue();
+        
         switch ($request->creteria) {
             case 'name_asc':
                 $products = Product::with('images')->orderBy('name', 'asc')->get();
@@ -89,6 +96,8 @@ class ProductController extends Controller
         $cart = new Cart($oldCart);
 
         return view('shop', [
+            'currencyExachangeRate'=>$currencyExachangeRate,
+            'currency'=>$currency["symbol"],
             'towns' => $towns,
             'nav_products' => $nav_products,
             'categories' => $categories,
