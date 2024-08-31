@@ -6,6 +6,8 @@ use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Swap\Laravel\Facades\Swap;
+use Torann\GeoIP\Facades\GeoIP;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
@@ -14,6 +16,13 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
+        $location = GeoIP::getLocation();
+        $currency = $location->currency;
+        $rate = Swap::latest('EUR/'.$currency);
+        $currencyExachangeRate = $rate->getValue();
+
+        $name = $rate->getProviderName();
+
         $nav_products = Product::with('images')->get();
 
         $categories =  Category::all();
@@ -45,6 +54,8 @@ class HomeController extends Controller
         }
 
         return view('home',[
+            'currencyExachangeRate'=>$currencyExachangeRate,
+            'name'=>$name,
             'towns'=>$towns,
             'nav_products'=>$nav_products,
             'categories'=> $categories,
