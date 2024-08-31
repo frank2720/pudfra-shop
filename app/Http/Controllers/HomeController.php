@@ -19,7 +19,7 @@ class HomeController extends Controller
         $location = GeoIP::getLocation(env('IP_ADDRESS'));
         $currency = $location->currency;
         $rate = Swap::latest('EUR/'.$currency['code']);
-        $currencyExachangeRate = $rate->getValue();
+        $currencyExchangeRate = $rate->getValue();
 
         $name = $rate->getProviderName();
 
@@ -54,7 +54,7 @@ class HomeController extends Controller
         }
 
         return view('home',[
-            'currencyExachangeRate'=>$currencyExachangeRate,
+            'currencyExchangeRate'=>$currencyExchangeRate,
             'currency'=>$currency["symbol"],
             'towns'=>$towns,
             'nav_products'=>$nav_products,
@@ -69,13 +69,30 @@ class HomeController extends Controller
 
     public function product_search(Request $request)
     {
+        $location = GeoIP::getLocation(env('IP_ADDRESS'));
+        $currency = $location->currency;
+        $rate = Swap::latest('EUR/'.$currency['code']);
+        $currencyExchangeRate = $rate->getValue();
+        $currencyCode = $currency['symbol'];
+
         $products = Product::with('images')
                 ->where('name','like', '%'.$request->search_string.'%')
                 ->orwhere('description','like', '%'.$request->search_string.'%')
                 ->get();
         if (count($products) >=1) {
-            return response()->json($products);
+            return response()->json([
+                'products' => $products,
+                'currencyCode' => $currencyCode,
+                'exchangeRate' => $currencyExchangeRate
+            ]);
         }
+
+        return response()->json([
+            'products' => [],
+            'currencyCode' => $currencyCode,
+            'exchangeRate' => $currencyExchangeRate,
+            'message' => 'No products found'
+        ]);
     }
 
     public function markAsRead(){

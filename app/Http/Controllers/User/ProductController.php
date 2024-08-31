@@ -21,7 +21,7 @@ class ProductController extends Controller
         $location = GeoIP::getLocation(env('IP_ADDRESS'));
         $currency = $location->currency;
         $rate = Swap::latest('EUR/'.$currency['code']);
-        $currencyExachangeRate = $rate->getValue();
+        $currencyExchangeRate = $rate->getValue();
 
         $recentlyViewed = json_decode(Cookie::get('recently_viewed', '[]'), true);
 
@@ -52,7 +52,7 @@ class ProductController extends Controller
         //dd(session()->get('cart'));
         $cart = new Cart($oldCart);
         return view('product-detail', [
-        'currencyExachangeRate'=>$currencyExachangeRate,
+        'currencyExchangeRate'=>$currencyExchangeRate,
         'currency'=>$currency["symbol"],
         'towns'=>$towns,
         'product'=>$product,
@@ -68,7 +68,8 @@ class ProductController extends Controller
         $location = GeoIP::getLocation(env('IP_ADDRESS'));
         $currency = $location->currency;
         $rate = Swap::latest('EUR/'.$currency['code']);
-        $currencyExachangeRate = $rate->getValue();
+        $currencyCode = $currency['symbol'];
+        $currencyExchangeRate = $rate->getValue();
         
         switch ($request->creteria) {
             case 'name_asc':
@@ -90,7 +91,11 @@ class ProductController extends Controller
 
         if ($request->ajax()) {
             // If the request is AJAX, return the sorted products as JSON
-            return response()->json($products);
+            return response()->json([
+                'products' => $products,
+                'currencyCode' => $currencyCode,
+                'exchangeRate' => $currencyExchangeRate
+            ]);
         }
 
         // If the request is not AJAX, return the standard view
@@ -103,7 +108,7 @@ class ProductController extends Controller
         $cart = new Cart($oldCart);
 
         return view('shop', [
-            'currencyExachangeRate'=>$currencyExachangeRate,
+            'currencyExchangeRate'=>$currencyExchangeRate,
             'currency'=>$currency["symbol"],
             'towns' => $towns,
             'nav_products' => $nav_products,

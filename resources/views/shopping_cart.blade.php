@@ -25,7 +25,7 @@
                 />
                 <div class="mx-3">
                     <p>{{$product['item']->name}}</p>
-                    <h5>{{$currency}} {{number_format($product['item']->price*$currencyExachangeRate)}}</h5>
+                    <h5>{{$currency}} {{number_format($product['item']->price*$currencyExchangeRate)}}</h5>
                     <small
                     class="text-white bg-success px-2 py-1 d-inline-block rounded-3 mt-2"
                     >In Stock</small
@@ -58,7 +58,7 @@
             <h6 class="mb-4">Order Summary</h6>
             <div class="d-flex justify-content-between align-items-center">
             <div>Subtotal</div>
-            <div><strong>{{$currency}} {{number_format($totalPrice*$currencyExachangeRate)}}</strong></div>
+            <div><strong>{{$currency}} {{number_format($totalPrice*$currencyExchangeRate)}}</strong></div>
             </div>
             <hr style="margin:0rem 0rem" />
             <div class="d-flex justify-content-between align-items-center">
@@ -67,18 +67,18 @@
                     $Total = $totalPrice + $delivery
                 @endphp
             <div>Delivery Charge</div>
-            <div><strong>{{$currency}} {{number_format($delivery*$currencyExachangeRate)}}</strong></div>
+            <div><strong>{{$currency}} {{number_format($delivery*$currencyExchangeRate)}}</strong></div>
             </div>
             <hr style="margin:0rem 0rem" />
             <div class="d-flex justify-content-between align-items-center">
             <div>Total</div>
-            <div><strong>{{$currency}} {{number_format($Total*$currencyExachangeRate)}}</strong></div>
+            <div><strong>{{$currency}} {{number_format($Total*$currencyExchangeRate)}}</strong></div>
             </div>
             <form action="{{route('stkpush')}}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <input type="text" name="phone" style="border-radius: 1rem" required placeholder="Enter phone number" class="w-100 mt-4"/>
-                    <button type="submit" class="button button_primary w-100 mt-4 btn checkout-payment__btn-place-order w-100 mt-4">Place order</button>
+                    <input type="text" name="phone" disabled style="border-radius: 1rem" required placeholder="Enter phone number" class="w-100 mt-4"/>
+                    <button type="submit" disabled class="button button_primary w-100 mt-4 btn checkout-payment__btn-place-order w-100 mt-4">Place order</button>
                 </div>
             </form>
         </div>
@@ -132,7 +132,7 @@
                                 <h3 class="product-title position-relative fs__14 mg__0 fwm">
                                     <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">{{__(ucfirst(strtolower($product->name)))}}</a>
                                 </h3>
-                                <span class="price dib mb__5">{{$currency}} {{number_format($product->price*$currencyExachangeRate,2,".",",")}}</span>
+                                <span class="price dib mb__5">{{$currency}} {{number_format($product->price*$currencyExchangeRate)}}</span>
                             </div>
                         </div>
                     </div>

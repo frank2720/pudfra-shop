@@ -124,7 +124,7 @@
                         <h3 class="product-title pr fs__14 mg__0 fwm">
                             <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">{{__(ucfirst(strtolower($product->name)))}}</a>
                         </h3>
-                        <span class="price dib mb__5">{{$currency}} {{number_format($product->price*$currencyExachangeRate,2,".",",")}}</span>
+                        <span class="price dib mb__5">{{$currency}} {{number_format($product->price*$currencyExchangeRate)}}</span>
                     </div>
                 </div>
             </div>

@@ -86,7 +86,7 @@
                                                                             <h3 class="product-title pr fs__14 mg__0 fwm">
                                                                                 <a class="cd chp" href="">{{__(ucfirst(strtolower($product->name)))}}</a>
                                                                             </h3>
-                                                                            <span class="price dib mb__5">{{$currency}} {{number_format($product->price*$currencyExachangeRate,2,'.',',')}}</span>
+                                                                            <span class="price dib mb__5">{{$currency}} {{number_format($product->price*$currencyExchangeRate)}}</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -131,7 +131,7 @@
                                                                             <h3 class="product-title pr fs__14 mg__0 fwm">
                                                                                 <a class="cd chp" href="">{{__(ucfirst(strtolower($product->name)))}}</a>
                                                                             </h3>
-                                                                            <span class="price dib mb__5">{{$currency}} {{number_format($product->price*$currencyExachangeRate,2,'.',',')}}</span>
+                                                                            <span class="price dib mb__5">{{$currency}} {{number_format($product->price*$currencyExchangeRate)}}</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -359,7 +359,7 @@
                                             <p class="cart_selling_plan"></p>
                                             <div class="cart_meta_price price">
                                                 <div class="cart_price">
-                                                    <ins>{{$currency}} {{$product['price']*$currencyExachangeRate}}</ins>
+                                                    <ins>{{$currency}} {{number_format($product['price']*$currencyExchangeRate)}}</ins>
                                                 </div>
                                             </div>
                                         </div>
@@ -400,7 +400,7 @@
                 <div class="total row fl_between al_center">
                     <div class="col-auto"><strong>Subtotal:</strong></div>
                     <div class="col-auto tr js_cat_ttprice">
-                        <div class="cart_tot_price">{{$currency}} {{number_format($totalPrice*$currencyExachangeRate,2,'.',',')}}</div>
+                        <div class="cart_tot_price">{{$currency}} {{number_format($totalPrice*$currencyExchangeRate)}}</div>
                     </div>
                 </div>
                 <p class="txt_tax_ship mb__5 fs__12">Taxes, shipping and discounts codes calculated at checkout</p>
@@ -476,7 +476,7 @@
                                             <a class='product-title db' href='{{route('product.details',['id'=>$product->id])}}'>
                                                 {{$product->name}}
                                             </a>
-                                            {{$currency}} {{number_format($product->price*$currencyExachangeRate)}}
+                                            {{$currency}} {{number_format($product->price*$currencyExchangeRate)}}
                                             </div>
                                         </div>
                                     @endforeach
