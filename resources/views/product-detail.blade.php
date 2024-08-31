@@ -43,13 +43,10 @@
   
         <div class = "product-price">
             @if ($product->price<$product->retail_price)
-                <p class = "last-price">Old Price: <span>{{number_format($product->retail_price)}}</span></p>
-                @php
-                    $discount = ($product->price/$product->retail_price)*100;
-                @endphp
-                <p class = "new-price">New Price: <span>{{number_format($product->price)}} ({{$discount}}%)</span></p>    
+                <p class = "last-price">Old Price: <span>{{$currency}} {{number_format($product->retail_price*$currencyExachangeRate)}}</span></p>
+                <p class = "new-price">New Price: <span>{{$currency}} {{number_format($product->price*$currencyExachangeRate)}}</span></p>    
             @else
-            <p class = "new-price">Price: <span>{{number_format($product->price)}}</span></p>
+            <p class = "new-price">Price: <span>{{$currency}} {{number_format($product->price*$currencyExachangeRate)}}</span></p>
             @endif
         </div>
   

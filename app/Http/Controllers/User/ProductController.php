@@ -18,6 +18,11 @@ class ProductController extends Controller
 
     public function product_details($id)
     {
+        $location = GeoIP::getLocation(env('IP_ADDRESS'));
+        $currency = $location->currency;
+        $rate = Swap::latest('EUR/'.$currency['code']);
+        $currencyExachangeRate = $rate->getValue();
+
         $recentlyViewed = json_decode(Cookie::get('recently_viewed', '[]'), true);
 
         // Add the product ID to the array
@@ -47,6 +52,8 @@ class ProductController extends Controller
         //dd(session()->get('cart'));
         $cart = new Cart($oldCart);
         return view('product-detail', [
+        'currencyExachangeRate'=>$currencyExachangeRate,
+        'currency'=>$currency["symbol"],
         'towns'=>$towns,
         'product'=>$product,
         'categories'=>$categories,
