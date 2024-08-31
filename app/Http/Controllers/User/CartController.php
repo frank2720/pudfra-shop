@@ -86,7 +86,7 @@ class CartController extends Controller
 
     public function getCart()
     {
-        $location = GeoIP::getLocation('102.215.33.229');
+        $location = GeoIP::getLocation(env('IP_ADDRESS'));
         $currency = $location->currency;
         $rate = Swap::latest('EUR/'.$currency['code']);
         $currencyExachangeRate = $rate->getValue();
