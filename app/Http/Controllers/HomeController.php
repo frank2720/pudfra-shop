@@ -16,7 +16,7 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
-        $location = GeoIP::getLocation('102.215.33.229');
+        $location = GeoIP::getLocation();
         $currency = $location->currency;
         $rate = Swap::latest('EUR/'.$currency['code']);
         $currencyExachangeRate = $rate->getValue();

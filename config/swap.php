@@ -82,7 +82,7 @@ return [
     |
     */
     'services' => [
-        'fixer' => ['access_key' => 'befc0dc36ec17868b77066a9c487fca7', 'enterprise' => false],
+        'fixer' => ['access_key' => 'b715023d44c4ecca8f7e16441468099d', 'enterprise' => false],
     ],
 
     /*
