@@ -34,8 +34,8 @@
             <td scope="row"><a href="{{route('admin.products.edit',['product'=>$product->id])}}"><img src="{{Storage::url($product->images[0]->url??null)}}" alt=""></a></td>
             <td>{{$product->name}}</td>
             <td>{{$product->category->category??null}}</td>
-            <td><ins>Ksh {{number_format($product->price)}}</ins></td>
-            <td>{{number_format($product->retail_price)}}</td>
+            <td>Ksh {{number_format($product->price)}}</td>
+            <td>Ksh {{number_format($product->retail_price)}}</td>
             <td>{{$product->retail_price>$product->price?round((($product->retail_price-$product->price)/$product->retail_price)*100).__('%'):null}}</td>
             <td>
                 <ul class="list-inline m-0">

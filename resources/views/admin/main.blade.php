@@ -194,7 +194,7 @@
         </a>
         </li>
         <li>
-        <a href="{{route('admin.customers.list')}}">
+        <a href="">
             <i class='bx bx-male-female'></i><span>Customers</span>
         </a>
         </li>
