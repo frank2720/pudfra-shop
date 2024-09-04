@@ -6,8 +6,6 @@ use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use Swap\Laravel\Facades\Swap;
-use Torann\GeoIP\Facades\GeoIP;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Cookie;
@@ -16,13 +14,6 @@ class CartController extends Controller
 {
     public function addToCart(Request $request, $id)
     {
-
-        $location = GeoIP::getLocation(env('IP_ADDRESS'));
-        $currency = $location->currency;
-        $rate = Swap::latest('EUR/'.$currency['code']);
-        $currencyCode = $currency['symbol'];
-        $currencyExchangeRate = $rate->getValue();
-
         $product = Product::with('images')->find($id);
         $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
         $cart = new Cart($oldCart);
@@ -33,8 +24,6 @@ class CartController extends Controller
             'cart_products'=>$cart->items,
             'totalQty'=>$cart->totalQty,
             'subtotal'=>$cart->totalPrice,
-            'currencyCode' => $currencyCode,
-            'exchangeRate' => $currencyExchangeRate
         ]);
     }
 
@@ -59,11 +48,6 @@ class CartController extends Controller
 
     public function reduceInCart(Request $request, $id)
     {
-        $location = GeoIP::getLocation(env('IP_ADDRESS'));
-        $currency = $location->currency;
-        $rate = Swap::latest('EUR/'.$currency['code']);
-        $currencyCode = $currency['symbol'];
-        $currencyExchangeRate = $rate->getValue();
 
         $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
         $cart = new Cart($oldCart);
@@ -74,8 +58,6 @@ class CartController extends Controller
             'totalQty'=>$cart->totalQty??0,
             'subtotal'=>$cart->totalPrice??0,
             'productquantity'=>$cart->items[$id]['qty']??0,
-            'currencyCode' => $currencyCode,
-            'exchangeRate' => $currencyExchangeRate
         ]);
     }
     
@@ -90,12 +72,6 @@ class CartController extends Controller
     }
     public function removefromCart(Request $request, $id)
     {
-        $location = GeoIP::getLocation(env('IP_ADDRESS'));
-        $currency = $location->currency;
-        $rate = Swap::latest('EUR/'.$currency['code']);
-        $currencyCode = $currency['symbol'];
-        $currencyExchangeRate = $rate->getValue();
-
         $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->remove($id);
@@ -104,17 +80,11 @@ class CartController extends Controller
         return response()->json([
             'totalQty'=>$cart->totalQty,
             'subtotal'=>$cart->totalPrice,
-            'currencyCode' => $currencyCode,
-            'exchangeRate' => $currencyExchangeRate
         ]);
     }
 
     public function getCart()
     {
-        $location = GeoIP::getLocation(env('IP_ADDRESS'));
-        $currency = $location->currency;
-        $rate = Swap::latest('EUR/'.$currency['code']);
-        $currencyExchangeRate = $rate->getValue();
         
         $products = Product::with('images')->get();
         $nav_products = Product::with('images')->get();
@@ -135,8 +105,6 @@ class CartController extends Controller
         $oldCart = session()->get('cart');
         $cart = new Cart($oldCart);
         return view('shopping_cart',[
-        'currencyExchangeRate'=>$currencyExchangeRate,
-        'currency'=>$currency["symbol"],
         'towns'=>$towns,
         'products'=>$products,
         'categories'=> $categories,

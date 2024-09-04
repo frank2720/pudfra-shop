@@ -32,13 +32,6 @@ class VerificationController extends Controller
 
     public function show(Request $request)
     {
-        $location = GeoIP::getLocation(env('IP_ADDRESS'));
-        $currency = $location->currency;
-        $rate = Swap::latest('EUR/'.$currency['code']);
-        $currencyExchangeRate = $rate->getValue();
-
-        $name = $rate->getProviderName();
-        
         $nav_products = Product::with('images')->get();
 
         $categories =  Category::all();
@@ -65,8 +58,6 @@ class VerificationController extends Controller
         return $request->user()->hasVerifiedEmail()
                         ? redirect($this->redirectPath()) 
                         : view('auth.verify',[
-                            'currencyExchangeRate'=>$currencyExchangeRate,
-                            'currency'=>$currency["symbol"],
                             'towns'=>$towns,
                             'nav_products'=>$nav_products,
                             'categories'=> $categories,

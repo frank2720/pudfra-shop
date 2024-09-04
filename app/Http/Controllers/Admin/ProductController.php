@@ -3,14 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use Carbon\Carbon;
-use App\Models\Order;
 use App\Models\Product;
 use App\Models\Category;
-use App\Models\Customer;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use Brian2694\Toastr\Facades\Toastr;
 use Intervention\Image\ImageManager;
 use App\Models\Image as ProductImage;
 use Illuminate\Http\RedirectResponse;
@@ -27,10 +23,6 @@ class ProductController extends Controller
     {
         $Tproducts = Product::count();
         $categories = Category::all();
-        $Tcustomers = Customer::count();
-        $TCustomerBusiness = Customer::where("type","B")->count();
-        $TCustomerIndividual = Customer::where("type","I")->count();
-        $Torders = Order::count();
 
         $yesterday =  Carbon::yesterday();
         $today = Carbon::now();
@@ -41,26 +33,8 @@ class ProductController extends Controller
 
         $productsIncrease = Product::whereBetween('created_at',[$yesterday,$today])->count();
         $Tproducts==0?$pIncrease = 0:$pIncrease = $this->getIncrease($productsIncrease,$Tproducts);
-        
-        $ordersIncrease = Order::whereBetween('created_at',[$yesterday,$today])->count();
-        $Torders==0?$cIncrease = 0:$oIncrease = $this->getIncrease($ordersIncrease,$Torders);
-        
-        $customersIncrease = Customer::whereBetween('created_at',[$yesterday,$today])->count();
-        $Tcustomers==0?$cIncrease = 0:$cIncrease = $this->getIncrease($customersIncrease,$Tcustomers);
 
         $products = Product::whereBetween('created_at', [$startDate, $endDate])
-                        ->selectRaw('MONTH(created_at) as month, COUNT(*) as total')
-                        ->groupBy('month')
-                        ->pluck('total', 'month')
-                        ->toArray();
-        
-        $orders = Order::whereBetween('created_at', [$startDate, $endDate])
-                    ->selectRaw('MONTH(created_at) as month, COUNT(*) as total')
-                    ->groupBy('month')
-                    ->pluck('total', 'month')
-                    ->toArray();
-
-        $customers = Customer::whereBetween('created_at', [$startDate, $endDate])
                         ->selectRaw('MONTH(created_at) as month, COUNT(*) as total')
                         ->groupBy('month')
                         ->pluck('total', 'month')
@@ -71,8 +45,6 @@ class ProductController extends Controller
         })->reverse()->values()->all();
 
         $monthlyProducts = $this->formatMonthlyData($products, 9);
-        $monthlyOrders = $this->formatMonthlyData($orders, 9);
-        $monthlyCustomers = $this->formatMonthlyData($customers, 9);
 
         /*$data = DB::table('products')
                     ->join('categories', 'products.category_id', '=', 'categories.id')
@@ -94,20 +66,12 @@ class ProductController extends Controller
         return view('admin.index',[
             'Tproducts'=>$Tproducts,
             'productsIncrease'=> $pIncrease,
-            'ordersIncrease'=> $oIncrease,
-            'customersIncrease'=> $cIncrease,
-            'Tcustomers'=> $Tcustomers,
-            'TCustomerIndividual'=> $TCustomerIndividual,
-            'TCustomerBusiness'=>$TCustomerBusiness,
-            'Torders' => $Torders,
             'user'=>$user,
             'categoryData'=>$categoryData,
             'categories'=>$categories,
 
             'months' => $months,
             'monthlyProducts' => $monthlyProducts,
-            'monthlyOrders' => $monthlyOrders,
-            'monthlyCustomers' => $monthlyCustomers
         ]);
     }
 
@@ -129,18 +93,6 @@ class ProductController extends Controller
             'products'=>$products,
             'categories' => $categories,
             'user'=>$user
-        ]);
-    }
-
-    public function customers()
-    {
-        $user=request()->user();
-        $customers = Customer::orderBy('name')->paginate(20);
-        $categories = Category::all();
-        return view('admin.customers',[
-                'user'=>$user,
-                'customers'=>$customers,
-                'categories' => $categories,
         ]);
     }
 

@@ -6,8 +6,6 @@ use App\Models\Cart;
 use App\Models\User;
 use App\Models\Product;
 use App\Models\Category;
-use Swap\Laravel\Facades\Swap;
-use Torann\GeoIP\Facades\GeoIP;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
@@ -31,12 +29,6 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
-        $location = GeoIP::getLocation(env('IP_ADDRESS'));
-        $currency = $location->currency;
-        $rate = Swap::latest('EUR/'.$currency['code']);
-        $currencyExchangeRate = $rate->getValue();
-
-        $name = $rate->getProviderName();
         $nav_products = Product::with('images')->get();
 
         $categories =  Category::all();
@@ -61,8 +53,6 @@ class RegisterController extends Controller
         $cart = new Cart($oldCart);
 
         return view('auth.register',[
-            'currencyExchangeRate'=>$currencyExchangeRate,
-            'currency'=>$currency["symbol"],
             'towns'=>$towns,
             'nav_products'=>$nav_products,
             'categories'=> $categories,

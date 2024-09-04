@@ -28,12 +28,6 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        $location = GeoIP::getLocation(env('IP_ADDRESS'));
-        $currency = $location->currency;
-        $rate = Swap::latest('EUR/'.$currency['code']);
-        $currencyExchangeRate = $rate->getValue();
-
-        $name = $rate->getProviderName();
 
         $nav_products = Product::with('images')->get();
 
@@ -59,8 +53,6 @@ class LoginController extends Controller
         $cart = new Cart($oldCart);
 
         return view('auth.login',[
-            'currencyExchangeRate'=>$currencyExchangeRate,
-            'currency'=>$currency["symbol"],
             'towns'=>$towns,
             'nav_products'=>$nav_products,
             'categories'=> $categories,

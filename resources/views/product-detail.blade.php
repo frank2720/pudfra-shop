@@ -43,10 +43,10 @@
   
         <div class = "product-price">
             @if ($product->price<$product->retail_price)
-                <p class = "last-price">Old Price: <span>{{$currency}} {{number_format($product->retail_price*$currencyExchangeRate)}}</span></p>
-                <p class = "new-price">New Price: <span>{{$currency}} {{number_format($product->price*$currencyExchangeRate)}}</span></p>    
+                <p class = "last-price">Old Price: <span><ins>Ksh {{number_format($product->retail_price)}}</ins></span></p>
+                <p class = "new-price">New Price: <span><ins>Ksh {{number_format($product->price)}}</ins></span></p>    
             @else
-            <p class = "new-price">Price: <span>{{$currency}} {{number_format($product->price*$currencyExchangeRate)}}</span></p>
+            <p class = "new-price">Price: <span><ins>Ksh {{number_format($product->price)}}</ins></span></p>
             @endif
         </div>
   
