@@ -103,17 +103,17 @@
             @method('patch')
             <div class="controls">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group my-3">
                             <label class="fw-bolder mb-2">{{__('Product Name')}}</label>
-                            <input type="text" name="name" value="{{$product->name}}">
+                            <input type="text" class="form-control" name="name" value="{{$product->name}}">
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group my-3">
-                            <label for="category" class="fw-bolder mb-2">Product Category:</label>
-                            <select name="category" required id="category">
+                            <label for="category" class="fw-bolder mb-2">{{__('Product Category')}}</label>
+                            <select name="category" class="form-control" required id="category">
                                 <option value="">--- Choose a category ---</option>
 
                                 @foreach ($categories as $category)
@@ -124,16 +124,16 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group my-3">
                             <label class="fw-bolder mb-2">{{__('Product Price')}}</label>
-                            <input type="number" min="0" name="price" value="{{$product->price}}">
+                            <input type="number" min="0" class="form-control" name="price" value="{{$product->price}}">
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group my-3">
                             <label class="fw-bolder mb-2">{{__('Retail Price')}}</label>
-                            <input type="number" min="0" name="retail_price" value="{{$product->retail_price}}">
+                            <input type="number" min="0" class="form-control" name="retail_price" value="{{$product->retail_price}}">
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -145,7 +145,7 @@
                             <textarea name="description" hidden id="quill-editor-area"></textarea>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="my-5">
                             <input type="submit" class="btn btn-success btn-update" value="Update">
                         </div>
@@ -187,10 +187,10 @@
             <div class="modal-body">
                 <div class="controls">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label class="fw-bolder my-2" for="p_img">{{__('Images')}}</label>
-                                <input type="file" id="p_img" name="img[]" multiple required autocomplete="off">
+                                <input type="file" id="p_img" class="form-control-file" name="img[]" multiple required autocomplete="off">
                             </div>
                         </div>
                     </div>

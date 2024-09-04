@@ -239,14 +239,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="fw-bolder my-2" for="p_name">{{__('Product Name')}}</label>
-                                    <input type="text" id="p_name" name="name" required autocomplete="off">
+                                    <input type="text" id="p_name" class="form-control" name="name" required autocomplete="off">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="fw-bolder my-2">Select Category</label>
-                                  <select class="form-select" required name="category">
+                                  <select class="form-control" required name="category">
                                     <option selected disabled>{{__('Open to select Category')}}</option>
                                     @foreach ($categories as $category)
                                         <option value={{$category->id}}>{{$category->category}}</option>
@@ -258,19 +258,19 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="fw-bolder my-2" for="p_price">{{__('Product Price')}}</label>
-                                    <input id="p_price" type="number" min="0" name="price" required autocomplete="off">
+                                    <input id="p_price" type="number" min="0" class="form-control" name="price" required autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="fw-bolder my-2" for="o_price">{{__('Retail Price')}}</label>
-                                    <input id="o_price" type="number" min="0" name="retail_price" required autocomplete="off">
+                                    <input id="o_price" type="number" min="0" name="retail_price" class="form-control" required autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="fw-bolder my-2" for="p_img">{{__('Images')}}</label>
-                                    <input type="file" id="p_img" name="img[]" multiple required autocomplete="off">
+                                    <input type="file" id="p_img" class="form-control-file" name="img[]" multiple required autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-md-12">
