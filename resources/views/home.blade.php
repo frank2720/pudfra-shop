@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('title')
-{{config('app.name')}} {{__('Shop')}}
+{{config('app.name')}} {{__('Your One-Stop Online Store for Quality Products')}}
 @endsection
 @section('content')
 <div class="">

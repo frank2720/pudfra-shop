@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('title')
-    {{__('List of products')}}
+    {{__('List of Quality Products at Maanar Shop')}}
 @endsection
 @section('content')
 <div id="nt_content">

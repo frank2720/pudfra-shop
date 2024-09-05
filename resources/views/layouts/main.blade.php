@@ -7,8 +7,15 @@
     <meta name="description" content="Maanar Shop offers a wide range of stylish and affordable fashion, accessories, 
     and lifestyle products. Discover the latest trends and elevate your everyday look with our premium collection. 
     Shop now for exclusive deals and fast shipping!" />
-    <link rel="shortcut icon" type="image/png" href="{{Vite::asset('resources/assets/logo/pudfra.jpg')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{Vite::asset('resources/assets/logo/pudfra.png')}}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{Vite::asset('resources/assets/logo/pudfra.png')}}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{Vite::asset('resources/assets/logo/pudfra.png')}}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{Vite::asset('resources/assets/logo/pudfra.png')}}">
+    <link rel="icon" href="{{Vite::asset('resources/assets/logo/pudfra.png')}}" type="image/x-icon">
+    <meta name="theme-color" content="#ffffff">
+
     <title>@yield('title')</title>
+
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
@@ -39,7 +46,7 @@
                             </div>
                             <div class="col-lg-2 col-md-4 col-5">
                                 <a class="dib" href="{{route("home")}}">
-                                    <img style="border-radius: 50%;width: 50px;height: 50px;overflow: hidden;" src="{{Vite::asset('resources/assets/logo/pudfra.jpg')}}" alt="Maanar Shop">
+                                    <img style="border-radius: 50%;width: 50px;height: 50px;overflow: hidden;" src="{{Vite::asset('resources/assets/logo/pudfra.png')}}" alt="Maanar Shop">
                                 </a>
                             </div>
                             <div class="col dn db_lg">

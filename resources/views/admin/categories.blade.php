@@ -1,6 +1,6 @@
 @extends('admin.main')
 @section('title')
-    {{__('List of categories')}}
+    {{__('List of Quality Products categories at Maanar Shop')}}
 @endsection
 @section('maintitle')
     {{__('Ecommerce')}}

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('title')
-{{$product->name}}{{__(' details')}}
+{{$product->name}} {{__('Quality Product at Maanar Shop')}}
 @endsection
 @section('content')
 <div class = "container my-4">

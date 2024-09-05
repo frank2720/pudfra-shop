@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('title')
-    {{__('Products in cart')}}
+    {{__('Your products shopping cart at Maanar Shop')}}
 @endsection
 @section('content')
 
