@@ -369,7 +369,7 @@
                                             <p class="cart_selling_plan"></p>
                                             <div class="cart_meta_price price">
                                                 <div class="cart_price">
-                                                    <ins>{{number_format($product['price'])}}</ins>
+                                                    <ins>Ksh {{number_format($product['price'])}}</ins>
                                                 </div>
                                             </div>
                                         </div>
