@@ -221,7 +221,7 @@
                                         @endauth
                                     @endif
 
-                                    <div class="notf_icon pr">
+                                    <div class="notf_icon pr d-none d-sm-block">
                                         <a class="push_side position-relative js_addtc cb chp db" href="">
                                             <i class='bx bxs-shopping-bag pr' id="cartvalue">
                                                 <span class="op__0 ts_op pa tcount bgb br__50 cw tc">
