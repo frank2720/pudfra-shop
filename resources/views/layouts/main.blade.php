@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="description" content="Maanar Shop offers a wide range of stylish and affordable fashion, accessories, 
+    and lifestyle products. Discover the latest trends and elevate your everyday look with our premium collection. 
+    Shop now for exclusive deals and fast shipping!" />
     <link rel="shortcut icon" type="image/png" href="{{Vite::asset('resources/assets/logo/pudfra.jpg')}}">
     <title>@yield('title')</title>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
