@@ -1,25 +1,8 @@
 @extends('layouts.main')
 @section('title')
-{{config('app.name')}}-{{__('Home')}}
+{{config('app.name')}} {{__('Shop')}}
 @endsection
 @section('content')
-
-<style>
-    
-
-    
-   
-    
-   
-    .col-md-3 .card:hover{box-shadow: 0 4px 15px rgb(153 153 153 / 30%)}
-   
-    h6{font-weight: bold}
-    #cool{height:50px;width:100px;margin-left: 200px;}
-    .color{background-color:lightblue;padding-top: 70px;padding-bottom: 70px;}
-    .form{background-color: #fff;border:1px solid #fff;padding:20px;}
-
-    
-</style>
 <div class="">
     <div class="row">
         <div class = "col-md-6">
