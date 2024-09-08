@@ -13,11 +13,15 @@
     
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pagination/paginate-products</loc>
+        <loc>http://127.0.0.1:8000/login</loc>
     
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/search</loc>
+        <loc>http://127.0.0.1:8000/register</loc>
+    
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/about-us</loc>
     
             </url>
     <url>
