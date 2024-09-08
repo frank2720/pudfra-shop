@@ -59,6 +59,45 @@ class HomeController extends Controller
         ]);
     }
 
+    public function about_us(Request $request)
+    {
+
+        $nav_products = Product::with('images')->get();
+
+        $categories =  Category::all();
+
+        $trending_products = Product::with('images')
+                                ->inRandomOrder()
+                                ->paginate(12);
+
+        $json_data = File::get(storage_path('app/public/towns/towns.json'));
+
+        $towns = json_decode($json_data);
+
+        $bestsales = Product::with('images')
+                        ->inRandomOrder()
+                        ->paginate(8);
+
+        $latest = Product::with('images')
+                        ->latest()
+                        ->paginate(8);
+
+        $oldCart = session()->get('cart');
+        $cart = new Cart($oldCart);
+
+        return view('about-us',[
+            'towns'=>$towns,
+            'nav_products'=>$nav_products,
+            'categories'=> $categories,
+            'trending_products'=>$trending_products,
+            'bestsales'=>$bestsales,
+            'latest'=>$latest,
+            'cart_products'=>$cart->items,
+            'totalPrice'=>$cart->totalPrice,
+        ]);
+    }
+
+
     public function product_search(Request $request)
     {
 

@@ -246,87 +246,68 @@
     </div>
 
     <!-- footer -->
-    <footer id="nt_footer" class="bgbl footer-1">
-        <div id="kalles-section-footer_top" class="kalles-section footer__top type_instagram">
-            <div class="footer__top_wrap footer_sticky_false footer_collapse_true nt_bg_overlay pr oh pb__30 pt__80">
+    <footer id="nt_footer" class="">
+        <div id="kalles-section-footer_top" class="">
+            <div class="footer__top_wrap footer_sticky_false footer_collapse_true pr oh pb__30 pt__80">
                 <div class="container pr z_100">
                     <div class="row">
                         <div class="col-lg-3 col-md-6 col-12 mb__50 order-lg-1 order-1">
-                            <div class="widget widget_text widget_logo">
-                                <h3 class="widget-title fwsb flex al_center fl_between fs__16 mg__0 mb__30">
-                                    <span class="txt_title">Get in touch</span>
+                            <div class="widget widget_nav_menu">
+                                <h3 class="footer-heading widget-title fwsb flex al_center fl_between fs__16 mg__0 mb__30 text-uppercase">
+                                    <span class="txt_title">Information</span>
                                     <span class="nav_link_icon ml__5"></span>
                                 </h3>
-                                <div class="widget_footer">
-                                    <div class="footer-contact">
-                                        <ul class="menu">
-                                            <li class="menu-item">
-                                                <a href="https://wa.me/254741061815">WhatsApp Contact</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a href="mailto:otienof534@gmail.com">Send an Email</a>
-                                            </li>
-                                        </ul>
-                                        <p>
-                                            <span></span>
-                                        </p>
-                                    </div>
+                                <div class="menu_footer widget_footer">
+                                    <ul class="list-unstyled footer-link mt-4 menu">
+                                        <li class="menu-item"><a href="">Location</a></li>
+                                        <li class="menu-item"><a href="">Our Team</a></li>
+                                        <li class="menu-item"><a href="">Categories</a></li>
+                                        <li class="menu-item"><a href="">More products</a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-6 col-12 mb__50 order-lg-2 order-1">
                             <div class="widget widget_nav_menu">
-                                <h3 class="widget-title fwsb flex al_center fl_between fs__16 mg__0 mb__30">
-                                    <span class="txt_title">Categories</span>
+                                <h3 class="footer-heading widget-title fwsb flex al_center fl_between fs__16 mg__0 mb__30 text-uppercase">
+                                    <span class="txt_title">Resources</span>
                                     <span class="nav_link_icon ml__5"></span>
                                 </h3>
                                 <div class="menu_footer widget_footer">
-                                    <ul class="menu">
-                                        @foreach ($categories as $category)
-                                        <li class="menu-item">
-                                            <a href="{{route('shop')}}"></i>{{$category->category}}</a>
-                                        </li>
-                                        @endforeach
+                                    <ul class="list-unstyled footer-link mt-4 menu">
+                                        <li class="menu-item"><a href="">Special offers</a></li>
+                                        <li class="menu-item"><a href="">My account</a></li>
+                                        <li class="menu-item"><a href="">Term &amp; Service</a></li>
+                                        <li class="menu-item"><a href="">MaanarShop API</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-6 col-12 mb__50 order-lg-3 order-1">
                             <div class="widget widget_nav_menu">
-                                <h3 class="widget-title fwsb flex al_center fl_between fs__16 mg__0 mb__30">
-                                    <span class="txt_title">Infomation</span>
+                                <h3 class="footer-heading widget-title fwsb flex al_center fl_between fs__16 mg__0 mb__30 text-uppercase">
+                                    <span class="txt_title">Help</span>
                                     <span class="nav_link_icon ml__5"></span>
                                 </h3>
                                 <div class="menu_footer widget_footer">
-                                    <ul class="menu">
-                                        <li class="menu-item">
-                                            <a href="">About Us</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="mailto:otienof534@gmail.com">Contact Us</a>
-                                        </li>
+                                    <ul class="list-unstyled footer-link mt-4 menu">
+                                        <li class="menu-item"><a href="{{route('register')}}">Sign Up </a></li>
+                                        <li class="menu-item"><a href="{{route('login')}}">Login </a></li>
+                                        <li class="menu-item"><a href="{{route('about-us')}}">About Us</a></li>
+                                        <li class="menu-item"><a href="">Privacy of Policy</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-6 col-12 mb__50 order-lg-4 order-1">
                             <div class="widget widget_nav_menu">
-                                <h3 class="widget-title fwsb flex al_center fl_between fs__16 mg__0 mb__30">
-                                    <span class="txt_title">Useful links</span>
+                                <h3 class="footer-heading widget-title fwsb flex al_center fl_between fs__16 mg__0 mb__30 text-uppercase">
+                                    <span class="txt_title">Contact Us</span>
                                     <span class="nav_link_icon ml__5"></span>
                                 </h3>
                                 <div class="menu_footer widget_footer">
-                                    <ul class="menu">
-                                        <li class="menu-item">
-                                            <a href="{{route('shop')}}">Store</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="{{route('profile.profile')}}">My Account</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="">APIs documentation</a>
-                                        </li>
-                                    </ul>
+                                    <p class="contact-info mt-4">Contact us if need help with anything</p>
+                                    <a href="mailto:otienof534@gmail.com"><p class="contact-info text-danger">Send email here</p></a>
                                 </div>
                             </div>
                         </div>
@@ -486,7 +467,7 @@
                                             <a class='product-title db' href='{{route('product.details',['id'=>$product->id])}}'>
                                                 {{$product->name}}
                                             </a>
-                                            {{number_format($product->price)}}
+                                            <ins>Ksh {{number_format($product->price)}}</ins>
                                             </div>
                                         </div>
                                     @endforeach
