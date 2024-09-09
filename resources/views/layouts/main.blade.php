@@ -251,10 +251,10 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-6 col-12 mb__50 order-lg-1 order-1">
                             <div class="widget widget_nav_menu">
-                                <h3 class="footer-heading widget-title fwsb flex al_center fl_between fs__16 mg__0 mb__30 text-uppercase">
+                                <h2 class="footer-heading widget-title fwsb flex al_center fl_between fs__16 mg__0 mb__30 text-uppercase">
                                     <span class="txt_title">Information</span>
                                     <span class="nav_link_icon ml__5"></span>
-                                </h3>
+                                </h2>
                                 <div class="menu_footer widget_footer">
                                     <ul class="list-unstyled footer-link mt-4 menu">
                                         <li class="menu-item"><a href="">Location</a></li>
@@ -267,10 +267,10 @@
                         </div>
                         <div class="col-lg-2 col-md-6 col-12 mb__50 order-lg-2 order-1">
                             <div class="widget widget_nav_menu">
-                                <h3 class="footer-heading widget-title fwsb flex al_center fl_between fs__16 mg__0 mb__30 text-uppercase">
+                                <h2 class="footer-heading widget-title fwsb flex al_center fl_between fs__16 mg__0 mb__30 text-uppercase">
                                     <span class="txt_title">Resources</span>
                                     <span class="nav_link_icon ml__5"></span>
-                                </h3>
+                                </h2>
                                 <div class="menu_footer widget_footer">
                                     <ul class="list-unstyled footer-link mt-4 menu">
                                         <li class="menu-item"><a href="">Special offers</a></li>
@@ -283,10 +283,10 @@
                         </div>
                         <div class="col-lg-2 col-md-6 col-12 mb__50 order-lg-3 order-1">
                             <div class="widget widget_nav_menu">
-                                <h3 class="footer-heading widget-title fwsb flex al_center fl_between fs__16 mg__0 mb__30 text-uppercase">
+                                <h2 class="footer-heading widget-title fwsb flex al_center fl_between fs__16 mg__0 mb__30 text-uppercase">
                                     <span class="txt_title">Help</span>
                                     <span class="nav_link_icon ml__5"></span>
-                                </h3>
+                                </h2>
                                 <div class="menu_footer widget_footer">
                                     <ul class="list-unstyled footer-link mt-4 menu">
                                         <li class="menu-item"><a href="{{route('register')}}">Sign Up </a></li>
@@ -299,10 +299,10 @@
                         </div>
                         <div class="col-lg-2 col-md-6 col-12 mb__50 order-lg-4 order-1">
                             <div class="widget widget_nav_menu">
-                                <h3 class="footer-heading widget-title fwsb flex al_center fl_between fs__16 mg__0 mb__30 text-uppercase">
+                                <h2 class="footer-heading widget-title fwsb flex al_center fl_between fs__16 mg__0 mb__30 text-uppercase">
                                     <span class="txt_title">Contact Us</span>
                                     <span class="nav_link_icon ml__5"></span>
-                                </h3>
+                                </h2>
                                 <div class="menu_footer widget_footer">
                                     <p class="contact-info mt-4">Contact us if need help with anything</p>
                                     <a href="mailto:otienof534@gmail.com"><p class="contact-info text-danger">Send email here</p></a>

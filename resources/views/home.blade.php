@@ -42,15 +42,17 @@
 <div class="nt_section type_featured_collection tp_se_cdt">
     <div class="kalles-otp-01__feature container">
         <div class="wrap_title des_title_2">
-            <h3 class="section-title tc position-relative flex fl_center al_center fs__24 title_2">
+            <h1 class="section-title tc position-relative flex fl_center al_center fs__24 title_2">
                 <span class="mr__10 ml__10">TRENDING</span>
-            </h3>
+            </h1>
             <span class="dn tt_divider">
                 <span></span>
                 <i class="dn clprfalse title_2 la-gem"></i>
                 <span></span>
             </span>
-            <span class="section-subtitle db tc sub-title">Top view in this week</span>
+            <h2>
+                <span class="section-subtitle db tc sub-title">Top view in this week</span>
+            </h2>
         </div>
         <div id="data-wrapper">
             <div class="products nt_products_holder row fl_center row_pr_1 cdt_des_5 round_cd_true nt_cover ratio_nt position_8 space_30">
@@ -68,15 +70,17 @@
 <div class="kalles-section nt_section type_featured_collection tp_se_cdt">
     <div class="kalles-otp-01__featured-collection-2 container">
         <div class="wrap_title  des_title_2">
-            <h3 class="section-title tc pr flex fl_center al_center fs__24 title_2">
+            <h2 class="section-title tc pr flex fl_center al_center fs__24 title_2">
                 <span class="mr__10 ml__10">BEST SELLER</span>
-            </h3>
+            </h2>
             <span class="dn tt_divider">
             <span></span>
             <i class="dn clprfalse title_2 la-gem"></i>
             <span></span>
         </span>
+           <h2>
             <span class="section-subtitle db tc sub-title">Top sale in this week</span>
+           </h2>
         </div>
 
         <div class="products nt_products_holder row fl_center row_pr_1 cdt_des_1 round_cd_false nt_cover ratio_nt position_8 space_30">
