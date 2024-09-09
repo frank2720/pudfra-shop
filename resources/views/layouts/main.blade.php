@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="description" content="Maanar Shop offers a wide range of stylish and affordable fashion, accessories, 
-    and lifestyle products. Discover the latest trends and elevate your everyday look with our premium collection. 
-    Shop now for exclusive deals and fast shipping!" />
+    <meta name="description" content="Discover stylish and affordable fashion, accessories, and lifestyle products at Maanar Shop. Shop now for exclusive deals and fast shipping!" />
     <link rel="apple-touch-icon" sizes="180x180" href="{{Vite::asset('resources/assets/logo/pudfra.png')}}">
     <link rel="apple-touch-icon" sizes="152x152" href="{{Vite::asset('resources/assets/logo/pudfra.png')}}">
     <link rel="apple-touch-icon" sizes="120x120" href="{{Vite::asset('resources/assets/logo/pudfra.png')}}">
