@@ -305,7 +305,7 @@
                                 </h2>
                                 <div class="menu_footer widget_footer">
                                     <p class="contact-info mt-4">Contact us if need help with anything</p>
-                                    <a href="mailto:otienof534@gmail.com"><p class="contact-info text-danger">Send email here</p></a>
+                                    <a href="mailto:admin@maanar.xyz"><p class="contact-info text-danger">Send email here</p></a>
                                 </div>
                             </div>
                         </div>
