@@ -83,14 +83,12 @@
 </div>
 
 <section class="section">
-<div class="row">
+<div class="">
     <div class="col-lg-12">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Product Categories Chart</h5>
-
             <!-- Bar Chart -->
-            <div id="cartegoryChart"></div>
+            <div id="cartegoryChart" class="mt-4"></div>
 
             <script>
                 document.addEventListener("DOMContentLoaded", () => {
@@ -99,6 +97,7 @@
                     const seriesData = data.map(item => item.total);
                     new ApexCharts(document.querySelector("#cartegoryChart"), {
                     series: [{
+                        name: "Total products",
                         data: seriesData
                     }],
                     chart: {
@@ -107,16 +106,31 @@
                     },
                     plotOptions: {
                         bar: {
-                        borderRadius: 4,
-                        horizontal: true,
+                            borderRadius: 4,
+                            borderRadiusApplication: 'end',
+                            horizontal: true,
+                            distributed: true,
+                            dataLabels: {
+                            position: 'bottom'
+                            },
                         }
                     },
                     dataLabels: {
-                        enabled: false
+                        enabled: false,
                     },
                     xaxis: {
-                        categories: categories,
-                    }
+                        categories: categories
+                    },
+                    yaxis: {
+                        labels: {
+                            show: false
+                        }
+                    },
+                    title: {
+                        text: 'Product Categories',
+                        align: 'center',
+                        floating: true
+                    },
                     }).render();
                 });
             </script>
