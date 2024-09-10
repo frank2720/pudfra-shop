@@ -26,11 +26,12 @@ class ProductController extends Controller
         if (count($recentlyViewed) > 10) {
             array_shift($recentlyViewed);
         }
+        $recommendedProducts = Product::whereIn('id', $recentlyViewed)->with('images')->get();
+
         Cookie::queue('recently_viewed', json_encode($recentlyViewed), 60 * 24 * 7);
         $nav_products = Product::with('images')->get();
         $categories =  Category::all();
         $json_data = File::get(storage_path('app/public/towns/towns.json'));
-
         
         $towns = json_decode($json_data);
         $product = Product::with('images')->find($id);
@@ -47,6 +48,7 @@ class ProductController extends Controller
         'nav_products'=>$nav_products,
         'latest'=>$latest,
         'cart_products'=>$cart->items,
+        'recommendedProducts'=>$recommendedProducts,
         'totalPrice'=>$cart->totalPrice]);
     }
 
