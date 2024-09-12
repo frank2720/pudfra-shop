@@ -19,8 +19,8 @@
             <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                 <div class="d-flex justify-content-between mb-3">
                 <img
-                    class="cart-image d-block"
-                    src="{{Storage::url($product['item']->images[0]->url??$product['item']->images[1]->url??null)}}"
+                    class="cart-image d-block lazyload"
+                    data-src="{{Storage::url($product['item']->images[0]->url??$product['item']->images[1]->url??null)}}"
                     alt=""
                 />
                 <div class="mx-3">
@@ -115,10 +115,12 @@
                                     </span>
                                 @endif
                                 <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
-                                    <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="{{Storage::url($product->images[0]->url??null)}}"></div>
+                                    <img data-src="{{Storage::url($product->images[0]->url??null)}}" class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" alt="">
+                                    
                                 </a>
                                 <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
-                                    <div class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_571" data-bgset="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}"></div>
+                                    <img data-src="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}" class="pr_lazy_img back-img pa nt_bg_lz lazyload" alt="">
+                                    
                                 </div>
                                 <div class="hover_button op__0 tc pa flex column ts__03">
                                     <a href="" class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left add-to-cart-btn" data-product-id="{{$product->id}}">

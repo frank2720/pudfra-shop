@@ -24,7 +24,7 @@
         a:active { text-decoration: none; }
     </style>
 </head>
-<body class="header_full_true des_header_3 css_scrollbar lazy_icons btnt4_style_2 zoom_tp_2 css_scrollbar template-index kalles_toolbar_true hover_img2 swatch_style_rounded swatch_list_size_small label_style_rounded wrapper_full_width header_full_true hide_scrolld_true lazyload font-poppins">
+<body class="header_full_true des_header_3 css_scrollbar lazy_icons btnt4_style_2 zoom_tp_2 css_scrollbar template-index toolbar_true hover_img2 swatch_style_rounded swatch_list_size_small label_style_rounded wrapper_full_width header_full_true hide_scrolld_true font-poppins">
 <div id="nt_wrapper">
     <!-- header -->
     <header class="ntheader header_3 h_icon_iccl ">
@@ -51,10 +51,10 @@
                                 <nav class="nt_navigation kl_navigation tc hover_side_up nav_arrow_false">
                                     <ul id="nt_menu_id" class="nt_menu in_flex wrap al_center">
                                         <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr" href="{{route("home")}}">Home</a>
+                                            <a class="lh__1 flex al_center pr text-uppercase" href="{{route("home")}}">Home</a>
                                         </li>
                                         <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr kalles-lbl__nav-sale" href="{{route('shop')}}">Products</a>
+                                            <a class="lh__1 flex al_center pr text-uppercase" href="{{route('shop')}}">Products</a>
                                             <div class="cus sub-menu">
                                                 <div class="container megamenu-content-1200px">
                                                     <div class="row lazy_menu lazyload" data-jspackery='{ "itemSelector": ".sub-column-item","gutter": 0,"percentPosition": true,"originLeft": true }'>
@@ -77,10 +77,10 @@
                                                                             </span>
                                                                             @endif
                                                                             <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
-                                                                                <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="{{Storage::url($product->images[0]->url??null)}}"></div>
+                                                                                <img data-src="{{Storage::url($product->images[0]->url??null)}}" class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" alt="">
                                                                             </a>
                                                                             <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
-                                                                                <div class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_571" data-bgset="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}"></div>
+                                                                                <img data-src="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}" class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_571" alt="">
                                                                             </div>
                                                                             <div class="hover_button op__0 tc pa flex column ts__03">
                                                                                 <a href="" class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left add-to-cart-btn" data-product-id="{{$product->id}}">
@@ -91,7 +91,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="product-info mt__15">
-                                                                            <h3 class="product-title pr fs__14 mg__0 fwm">
+                                                                            <h3 class="product-title pr fs__14 mg__0">
                                                                                 <a class="cd chp" href="">{{__(ucfirst(strtolower($product->name)))}}</a>
                                                                             </h3>
                                                                             <span class="price dib mb__5"><ins>Ksh {{number_format($product->price)}}</ins></span>
@@ -106,7 +106,7 @@
                                             </div>
                                         </li>
                                         <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr kalles-lbl__nav-sale" href="">New arrivals
+                                            <a class="lh__1 flex al_center pr lbl__nav-sale text-uppercase" href="">New arrivals
                                                 <span class="lbc_nav">New</span>
                                             </a>
                                             <div class="cus sub-menu">
@@ -122,10 +122,10 @@
                                                                             <span class="nt_label new">New</span>
                                                                         </span>
                                                                             <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
-                                                                                <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" data-bgset="{{Storage::url($product->images[0]->url??null)}}"></div>
+                                                                                <img data-src="{{Storage::url($product->images[0]->url??null)}}" class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" alt="">
                                                                             </a>
                                                                             <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
-                                                                                <div class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_571" data-bgset="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}"></div>
+                                                                                <img data-src="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}" class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_571" alt="">
                                                                             </div>
                                                                             <div class="hover_button op__0 tc pa flex column ts__03">
                                                                                 <a href="#" class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left add-to-cart-btn" data-product-id="{{$product->id}}">
@@ -136,7 +136,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="product-info mt__15">
-                                                                            <h3 class="product-title pr fs__14 mg__0 fwm">
+                                                                            <h3 class="product-title pr fs__14 mg__0">
                                                                                 <a class="cd chp" href="">{{__(ucfirst(strtolower($product->name)))}}</a>
                                                                             </h3>
                                                                             <span class="price dib mb__5"><ins>Ksh {{number_format($product->price)}} </ins></span>
@@ -571,7 +571,7 @@
 <script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 {!! Toastr::message() !!}
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-<script src="{{asset('assets/js/lazysizes.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 </body>
 </html>
