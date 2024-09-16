@@ -105,9 +105,9 @@
         <div class="">
             <div class="row nt_slider round_cd_false nt_cover ratio_nt position_8 space_30 prev_next_0 btn_owl_1 dot_owl_1 dot_color_1 btn_vi_1 is-draggable" >
                 @forelse ($recommendedProducts as $product)
-                    <div class="col-lg-3 col-md-3 col-6">
+                    <div class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1">
                         <div class="product-inner pr">
-                            <div class="product-image">
+                            <div class="product-image position-relative oh lazyload">
                                 @if ($product->retail_price>$product->price)
                                     <span class="tc nt_labels pa pe_none cw">
                                         <span class="onsale nt_label">
@@ -116,11 +116,11 @@
                                     </span>
                                 @endif
                                 <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
-                                    <img data-src="{{Storage::url($product->images[0]->url??null)}}" class="lazyload" alt="">
+                                    <img data-src="{{Storage::url($product->images[0]->url??null)}}" class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload" alt="">
                                     
                                 </a>
                                 <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
-                                    <img data-src="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}" class="lazyload" alt="">
+                                    <img data-src="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}" class="pr_lazy_img back-img pa nt_bg_lz lazyload" alt="">
                                     
                                 </div>
                                 <div class="hover_button op__0 tc pa flex column ts__03">
@@ -131,8 +131,8 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="product-info">
-                                <h3 class="product-title position-relative fs__14 mg__0">
+                            <div class="product-info mt__15">
+                                <h3 class="product-title pr fs__14 mg__0 fwm">
                                     <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">{{__(ucfirst(strtolower($product->name)))}}</a>
                                 </h3>
                                 <span class="price dib mb__5"><ins>Ksh {{number_format($product->price)}}</ins></span>
