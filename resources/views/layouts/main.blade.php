@@ -47,21 +47,21 @@
                                 <nav class="nt_navigation kl_navigation tc hover_side_up nav_arrow_false">
                                     <ul id="nt_menu_id" class="nt_menu in_flex wrap al_center">
                                         <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr nav-link text-uppercase font-weight-bold" href="{{route("home")}}">Home</a>
+                                            <a class="lh__1 flex al_center pr text-uppercase font-weight-bold" href="{{route("home")}}">Home</a>
                                         </li>
                                         <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr lbl__nav-sale nav-link text-uppercase font-weight-bold" href="">New arrivals
+                                            <a class="lh__1 flex al_center pr lbl__nav-sale text-uppercase font-weight-bold" href="">New arrivals
                                                 <span class="lbc_nav">New</span>
                                             </a>
                                         </li>
                                         <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr nav-link text-uppercase font-weight-bold" href="{{route('shop')}}">Men</a>
+                                            <a class="lh__1 flex al_center pr text-uppercase font-weight-bold" href="{{route('shop')}}">Men</a>
                                         </li>
                                         <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr nav-link text-uppercase font-weight-bold" href="{{route('shop')}}">Women</a>
+                                            <a class="lh__1 flex al_center pr text-uppercase font-weight-bold" href="{{route('shop')}}">Women</a>
                                         </li>
                                         <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr nav-link text-uppercase font-weight-bold font-weight-bold" href="{{route('shop')}}">Accessories</a>
+                                            <a class="lh__1 flex al_center pr text-uppercase font-weight-bold font-weight-bold" href="{{route('shop')}}">Accessories</a>
                                         </li>
                                     </ul>
                                 </nav>
