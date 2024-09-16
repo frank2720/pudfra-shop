@@ -50,12 +50,18 @@
                                             <a class="lh__1 flex al_center pr nav-link text-uppercase " href="{{route("home")}}">Home</a>
                                         </li>
                                         <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr nav-link text-uppercase" href="{{route('shop')}}">Products</a>
-                                        </li>
-                                        <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
                                             <a class="lh__1 flex al_center pr lbl__nav-sale nav-link text-uppercase" href="">New arrivals
                                                 <span class="lbc_nav">New</span>
                                             </a>
+                                        </li>
+                                        <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
+                                            <a class="lh__1 flex al_center pr nav-link text-uppercase" href="{{route('shop')}}">Men</a>
+                                        </li>
+                                        <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
+                                            <a class="lh__1 flex al_center pr nav-link text-uppercase" href="{{route('shop')}}">Women</a>
+                                        </li>
+                                        <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
+                                            <a class="lh__1 flex al_center pr nav-link text-uppercase" href="{{route('shop')}}">Accessories</a>
                                         </li>
                                     </ul>
                                 </nav>

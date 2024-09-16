@@ -5,9 +5,9 @@
 @section('content')
 <div class="">
     <div class="row">
-        <div class = "col-md-6">
+        <div class = "col-md-6 d-md-block">
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner mt-2" id="car">
+                <div class="carousel-inner" id="car">
                     <div class="carousel-item active">
                         <img class="w-100 h-75 d-inline-block lazyload" data-src="https://www.karkhanawala.in/wp-content/uploads/2020/04/Bags.jpg.webp" alt="First slide">
                     </div>
@@ -17,17 +17,23 @@
                     <div class="carousel-item">
                         <img class="w-100 h-75 d-inline-block lazyload" data-src="https://www.aryabags.com/uploads/1645192063.jpg" alt="Third slide">
                     </div>
+                    <div class="carousel-item">
+                        <img class="w-100 h-75 d-inline-block lazyload" data-src="https://img.freepik.com/premium-photo/happy-teen-girl-carry-backpack-childhood-happiness-back-school-cheerful-kid-with-school-bag-banner-schoolgirl-student-school-child-pupil-portrait-with-copy-space_545934-46467.jpg" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="w-100 h-75 d-inline-block lazyload" data-src="https://st.depositphotos.com/47153598/56770/i/450/depositphotos_567706376-stock-photo-happy-kid-portrait-has-long.jpg" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="w-100 h-75 d-inline-block lazyload" data-src="https://cdn.shopify.com/s/files/1/0814/7035/7814/files/bags.jpg?v=1694690783" alt="Third slide">
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class = "col-md-6 d-none d-md-block">
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div>
                 <div class="carousel-inner" id="car">
                     <div class="carousel-item active">
-                        <img class="w-100 h-75 d-inline-block lazyload" data-src="https://img.freepik.com/premium-photo/happy-teen-girl-carry-backpack-childhood-happiness-back-school-cheerful-kid-with-school-bag-banner-schoolgirl-student-school-child-pupil-portrait-with-copy-space_545934-46467.jpg" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
                         <img class="w-100 h-75 d-inline-block lazyload" data-src="https://st.depositphotos.com/47153598/56770/i/450/depositphotos_567706376-stock-photo-happy-kid-portrait-has-long.jpg" alt="Second slide">
                     </div>
                     <div class="carousel-item">
