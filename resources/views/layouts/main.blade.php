@@ -47,28 +47,28 @@
                                 <nav class="nt_navigation kl_navigation tc hover_side_up nav_arrow_false">
                                     <ul id="nt_menu_id" class="nt_menu in_flex wrap al_center">
                                         <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr nav-link text-uppercase " href="{{route("home")}}">Home</a>
+                                            <a class="lh__1 flex al_center pr nav-link text-uppercase font-weight-bold" href="{{route("home")}}">Home</a>
                                         </li>
                                         <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr lbl__nav-sale nav-link text-uppercase" href="">New arrivals
+                                            <a class="lh__1 flex al_center pr lbl__nav-sale nav-link text-uppercase font-weight-bold" href="">New arrivals
                                                 <span class="lbc_nav">New</span>
                                             </a>
                                         </li>
                                         <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr nav-link text-uppercase" href="{{route('shop')}}">Men</a>
+                                            <a class="lh__1 flex al_center pr nav-link text-uppercase font-weight-bold" href="{{route('shop')}}">Men</a>
                                         </li>
                                         <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr nav-link text-uppercase" href="{{route('shop')}}">Women</a>
+                                            <a class="lh__1 flex al_center pr nav-link text-uppercase font-weight-bold" href="{{route('shop')}}">Women</a>
                                         </li>
                                         <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr nav-link text-uppercase" href="{{route('shop')}}">Accessories</a>
+                                            <a class="lh__1 flex al_center pr nav-link text-uppercase font-weight-bold font-weight-bold" href="{{route('shop')}}">Accessories</a>
                                         </li>
                                     </ul>
                                 </nav>
                             </div>
                             <div class="col-lg-auto col-md-4 col-3 tr col_group_btns">
                                 <div class="nt_action in_flex al_center cart_des_1">
-                                    <a class="icon_search push_side cb chp" data-id="#nt_search_canvas" href="#">
+                                    <a class="icon_search push_side cb chp d-none d-sm-block" data-id="#nt_search_canvas" href="#">
                                         <i class='bx bx-search-alt-2' ></i>
                                     </a>
                                     @if (Route::has('login'))
