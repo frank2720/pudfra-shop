@@ -29,7 +29,6 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
-        $nav_products = Product::with('images')->get();
 
         $categories =  Category::all();
         
@@ -54,7 +53,6 @@ class RegisterController extends Controller
 
         return view('auth.register',[
             'towns'=>$towns,
-            'nav_products'=>$nav_products,
             'categories'=> $categories,
             'trending_products'=>$trending_products,
             'bestsales'=>$bestsales,

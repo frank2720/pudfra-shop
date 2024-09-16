@@ -29,7 +29,6 @@ class ProductController extends Controller
         $recommendedProducts = Product::whereIn('id', $recentlyViewed)->with('images')->get();
 
         Cookie::queue('recently_viewed', json_encode($recentlyViewed), 60 * 24 * 7);
-        $nav_products = Product::with('images')->get();
         $categories =  Category::all();
         $json_data = File::get(storage_path('app/public/towns/towns.json'));
         
@@ -45,7 +44,6 @@ class ProductController extends Controller
         'towns'=>$towns,
         'product'=>$product,
         'categories'=>$categories,
-        'nav_products'=>$nav_products,
         'latest'=>$latest,
         'cart_products'=>$cart->items,
         'recommendedProducts'=>$recommendedProducts,
@@ -79,7 +77,6 @@ class ProductController extends Controller
         }
 
         $categories = Category::all();
-        $nav_products = Product::with('images')->get();
         $latest = Product::with('images')->latest()->paginate(8);
         $oldCart = session()->get('cart');
         $json_data = File::get(storage_path('app/public/towns/towns.json'));
@@ -88,7 +85,6 @@ class ProductController extends Controller
 
         return view('shop', [
             'towns' => $towns,
-            'nav_products' => $nav_products,
             'categories' => $categories,
             'products'=>$products,
             'latest' => $latest,

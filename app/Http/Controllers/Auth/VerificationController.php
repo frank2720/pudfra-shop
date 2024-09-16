@@ -32,7 +32,6 @@ class VerificationController extends Controller
 
     public function show(Request $request)
     {
-        $nav_products = Product::with('images')->get();
 
         $categories =  Category::all();
         
@@ -59,7 +58,6 @@ class VerificationController extends Controller
                         ? redirect($this->redirectPath()) 
                         : view('auth.verify',[
                             'towns'=>$towns,
-                            'nav_products'=>$nav_products,
                             'categories'=> $categories,
                             'trending_products'=>$trending_products,
                             'bestsales'=>$bestsales,

@@ -30,8 +30,6 @@ class ResetPasswordController extends Controller
     {
         $token = $request->route()->parameter('token');
 
-        $nav_products = Product::with('images')->get();
-
         $categories =  Category::all();
         
         $trending_products = Product::with('images')
@@ -56,7 +54,6 @@ class ResetPasswordController extends Controller
         return view('auth.passwords.reset')->with(
             [
                 'towns'=>$towns,
-                'nav_products'=>$nav_products,
                 'categories'=> $categories,
                 'trending_products'=>$trending_products,
                 'bestsales'=>$bestsales,

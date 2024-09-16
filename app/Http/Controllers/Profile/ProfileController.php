@@ -19,8 +19,6 @@ class ProfileController extends Controller
 
     public function profile(Request $request): View
     {
-        
-        $nav_products = Product::with('images')->get();
         $categories =  Category::all();
         $latest = Product::with('images')
             ->latest()
@@ -33,7 +31,6 @@ class ProfileController extends Controller
         $cart = new Cart($oldCart);
         return view('profile.profile', [
             'towns'=>$towns,
-            'nav_products'=>$nav_products,
             'categories'=>$categories,
             'latest'=>$latest,
             'cart_products'=>$cart->items,

@@ -17,8 +17,6 @@ class HomeController extends Controller
     public function index(Request $request)
     {
 
-        $nav_products = Product::with('images')->get();
-
         $categories =  Category::all();
 
         $trending_products = Product::with('images')
@@ -49,7 +47,6 @@ class HomeController extends Controller
 
         return view('home',[
             'towns'=>$towns,
-            'nav_products'=>$nav_products,
             'categories'=> $categories,
             'trending_products'=>$trending_products,
             'bestsales'=>$bestsales,
@@ -59,10 +56,8 @@ class HomeController extends Controller
         ]);
     }
 
-    public function about_us(Request $request)
+    public function about_us()
     {
-
-        $nav_products = Product::with('images')->get();
 
         $categories =  Category::all();
 
@@ -87,7 +82,6 @@ class HomeController extends Controller
 
         return view('about-us',[
             'towns'=>$towns,
-            'nav_products'=>$nav_products,
             'categories'=> $categories,
             'trending_products'=>$trending_products,
             'bestsales'=>$bestsales,

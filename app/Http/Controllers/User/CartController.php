@@ -87,7 +87,6 @@ class CartController extends Controller
     {
         
         $products = Product::with('images')->get();
-        $nav_products = Product::with('images')->get();
         $categories =  Category::all();
         $latest = Product::with('images')
                         ->latest()
@@ -108,7 +107,6 @@ class CartController extends Controller
         'towns'=>$towns,
         'products'=>$products,
         'categories'=> $categories,
-        'nav_products'=>$nav_products,
         'trending_products'=>$trending_products,
         'latest'=>$latest,
         'recommendedProducts'=>$recommendedProducts,

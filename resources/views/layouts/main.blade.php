@@ -19,10 +19,6 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <style>
-        a:hover { text-decoration: none; }
-        a:active { text-decoration: none; }
-    </style>
 </head>
 <body class="header_full_true des_header_3 css_scrollbar lazy_icons btnt4_style_2 zoom_tp_2 css_scrollbar template-index toolbar_true hover_img2 swatch_style_rounded swatch_list_size_small label_style_rounded wrapper_full_width header_full_true hide_scrolld_true font-poppins">
 <div id="nt_wrapper">
@@ -31,7 +27,7 @@
         <div class="kalles-header__wrapper ntheader_wrapper pr z_200">
             <div class="sp_header_mid">
                 <div class="header__mid">
-                    <div class="container">
+                    <div class="">
                         <div class="row al_center css_h_se">
                             <div class="col-md-4 col-3 dn_lg">
                                 <a href="#" data-id="#nt_menu_canvas" class="push_side push-menu-btn  lh__1 flex al_center">
@@ -42,7 +38,7 @@
                                     </svg>
                                 </a>
                             </div>
-                            <div class="col-lg-2 col-md-4 col-5">
+                            <div class="col-lg-2 col-md-4 col-5 ml-4">
                                 <a class="dib" href="{{route("home")}}">
                                     <img style="border-radius: 50%;width: 50px;height: 50px;overflow: hidden;" src="{{Vite::asset('resources/assets/logo/pudfra.png')}}" alt="Maanar Shop">
                                 </a>
@@ -51,104 +47,15 @@
                                 <nav class="nt_navigation kl_navigation tc hover_side_up nav_arrow_false">
                                     <ul id="nt_menu_id" class="nt_menu in_flex wrap al_center">
                                         <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr text-uppercase" href="{{route("home")}}">Home</a>
+                                            <a class="lh__1 flex al_center pr nav-link text-uppercase " href="{{route("home")}}">Home</a>
                                         </li>
                                         <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr text-uppercase" href="{{route('shop')}}">Products</a>
-                                            <div class="cus sub-menu">
-                                                <div class="container megamenu-content-1200px">
-                                                    <div class="row lazy_menu lazyload" data-jspackery='{ "itemSelector": ".sub-column-item","gutter": 0,"percentPosition": true,"originLeft": true }'>
-                                                        <div class="type_mn_link2 menu-item sub-column-item col-2">
-                                                            @foreach ($categories as $category)
-                                                                <a href="{{route('shop')}}">{{$category->category}}</a>
-                                                            @endforeach
-                                                        </div>
-                                                        <div class="type_mn_pr menu-item sub-column-item col-10">
-                                                            <div class="prs_nav js_carousel nt_slider products nt_products_holder row al_center row_pr_1 cdt_des_1 round_cd_false nt_cover ratio_nt position_8 flickity-enabled is-draggable" data-flickity='{"imagesLoaded": 0,"adaptiveHeight": 0, "contain": 1, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": 1,"prevNextButtons": 1,"percentPosition": 1,"pageDots": 0, "autoPlay" : 0, "pauseAutoPlayOnHover" : 1, "rightToLeft": false }'>
-                                                                @foreach ($nav_products as $product)
-                                                                <div class="col-lg-3 col-md-12 col-12 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1">
-                                                                    <div class="product-inner pr">
-                                                                        <div class="product-image pr oh lazyload">
-                                                                            @if ($product->retail_price>$product->price)
-                                                                            <span class="tc nt_labels pa pe_none cw">
-                                                                                <span class="onsale nt_label">
-                                                                                    <span>{{round((($product->price-$product->retail_price)/$product->retail_price)*100)}} %</span>
-                                                                                </span>
-                                                                            </span>
-                                                                            @endif
-                                                                            <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
-                                                                                <img data-src="{{Storage::url($product->images[0]->url??null)}}" class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" alt="">
-                                                                            </a>
-                                                                            <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
-                                                                                <img data-src="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}" class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_571" alt="">
-                                                                            </div>
-                                                                            <div class="hover_button op__0 tc pa flex column ts__03">
-                                                                                <a href="" class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left add-to-cart-btn" data-product-id="{{$product->id}}">
-                                                                                    <span class="tt_txt">Add to Cart</span>
-                                                                                    <i class='bx bxs-shopping-bag'></i>
-                                                                                    <span>Add to Cart</span>
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="product-info mt__15">
-                                                                            <h3 class="product-title pr fs__14 mg__0">
-                                                                                <a class="cd chp" href="">{{__(ucfirst(strtolower($product->name)))}}</a>
-                                                                            </h3>
-                                                                            <span class="price dib mb__5"><ins>Ksh {{number_format($product->price)}}</ins></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                @endforeach
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <a class="lh__1 flex al_center pr nav-link text-uppercase" href="{{route('shop')}}">Products</a>
                                         </li>
                                         <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr lbl__nav-sale text-uppercase" href="">New arrivals
+                                            <a class="lh__1 flex al_center pr lbl__nav-sale nav-link text-uppercase" href="">New arrivals
                                                 <span class="lbc_nav">New</span>
                                             </a>
-                                            <div class="cus sub-menu">
-                                                <div class="container megamenu-content-1200px">
-                                                    <div class="row lazy_menu lazyload" data-jspackery='{ "itemSelector": ".sub-column-item","gutter": 0,"percentPosition": true,"originLeft": true }'>
-                                                        <div class="type_mn_pr menu-item sub-column-item col-10">
-                                                            <div class="prs_nav js_carousel nt_slider products nt_products_holder row al_center row_pr_1 cdt_des_1 round_cd_false nt_cover ratio_nt position_8 flickity-enabled is-draggable" data-flickity='{"imagesLoaded": 0,"adaptiveHeight": 0, "contain": 1, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": 1,"prevNextButtons": 1,"percentPosition": 1,"pageDots": 0, "autoPlay" : 0, "pauseAutoPlayOnHover" : 1, "rightToLeft": false }'>
-                                                                @foreach ($latest as $product)
-                                                                <div class="col-lg-3 col-md-12 col-12 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1">
-                                                                    <div class="product-inner pr">
-                                                                        <div class="product-image pr oh lazyload">
-                                                                        <span class="tc nt_labels pa pe_none cw">
-                                                                            <span class="nt_label new">New</span>
-                                                                        </span>
-                                                                            <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
-                                                                                <img data-src="{{Storage::url($product->images[0]->url??null)}}" class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571" alt="">
-                                                                            </a>
-                                                                            <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
-                                                                                <img data-src="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}" class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_571" alt="">
-                                                                            </div>
-                                                                            <div class="hover_button op__0 tc pa flex column ts__03">
-                                                                                <a href="#" class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left add-to-cart-btn" data-product-id="{{$product->id}}">
-                                                                                    <span class="tt_txt">Add to Cart</span>
-                                                                                    <i class='bx bxs-shopping-bag'></i>
-                                                                                    <span>Add to Cart</span>
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="product-info mt__15">
-                                                                            <h3 class="product-title pr fs__14 mg__0">
-                                                                                <a class="cd chp" href="">{{__(ucfirst(strtolower($product->name)))}}</a>
-                                                                            </h3>
-                                                                            <span class="price dib mb__5"><ins>Ksh {{number_format($product->price)}} </ins></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                @endforeach
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </li>
                                     </ul>
                                 </nav>

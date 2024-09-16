@@ -29,8 +29,6 @@ class LoginController extends Controller
     public function showLoginForm()
     {
 
-        $nav_products = Product::with('images')->get();
-
         $categories =  Category::all();
         
         $trending_products = Product::with('images')
@@ -54,7 +52,6 @@ class LoginController extends Controller
 
         return view('auth.login',[
             'towns'=>$towns,
-            'nav_products'=>$nav_products,
             'categories'=> $categories,
             'trending_products'=>$trending_products,
             'bestsales'=>$bestsales,

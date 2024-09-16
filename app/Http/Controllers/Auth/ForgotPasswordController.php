@@ -28,8 +28,6 @@ class ForgotPasswordController extends Controller
 
     public function showLinkRequestForm()
     {
-        
-        $nav_products = Product::with('images')->get();
 
         $categories =  Category::all();
         
@@ -54,7 +52,6 @@ class ForgotPasswordController extends Controller
 
         return view('auth.passwords.email',[
             'towns'=>$towns,
-            'nav_products'=>$nav_products,
             'categories'=> $categories,
             'trending_products'=>$trending_products,
             'bestsales'=>$bestsales,
