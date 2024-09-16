@@ -15,7 +15,7 @@
               <p>
                   {{$exception->getMessage()}}.
               </p>
-              <a class="btn bsb-btn-5xl btn-dark rounded-pill px-5 fs-6 m-0" href="{{route('welcome')}}" role="button">Back to Home</a>
+              <a class="btn bsb-btn-5xl btn-dark rounded-pill px-5 fs-6 m-0" href="{{route('home')}}" role="button">Back to Home</a>
             </div>
           </div>
         </div>

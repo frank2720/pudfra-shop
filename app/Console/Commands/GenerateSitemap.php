@@ -29,7 +29,6 @@ class GenerateSitemap extends Command
     {
         $sitemap = Sitemap::create();
         $sitemap->add('/');
-        $sitemap->add('/home');
         $sitemap->add('/shop');
         $sitemap->add('/login');
         $sitemap->add('/register');

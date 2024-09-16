@@ -11,7 +11,6 @@
     <link rel="icon" type="image/png" sizes="192x192" href="{{Vite::asset('resources/assets/logo/pudfra.png')}}">
     <link rel="icon" href="{{Vite::asset('resources/assets/logo/pudfra.png')}}" type="image/x-icon">
     <meta name="theme-color" content="#ffffff">
-
     <title>@yield('title')</title>
 
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -19,6 +18,14 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <style>
+        li a:hover{
+            text-decoration: none
+        }
+        h3 a{
+            text-decoration: none
+        }
+    </style>
 </head>
 <body class="header_full_true des_header_3 css_scrollbar lazy_icons btnt4_style_2 zoom_tp_2 css_scrollbar template-index toolbar_true hover_img2 swatch_style_rounded swatch_list_size_small label_style_rounded wrapper_full_width header_full_true hide_scrolld_true font-poppins">
 <div id="nt_wrapper">

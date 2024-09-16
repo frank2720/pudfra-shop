@@ -12,7 +12,7 @@
           </h2>
           <h3 class="h2 mb-2">Oops! server error</h3><h2>{{$exception->getMessage()}}</h2>
           <p class="mb-5">We apologize for any inconvinience caused. Try again later</p>
-          <a class="btn bsb-btn-5xl btn-dark rounded-pill px-5 fs-6 m-0" href="{{route('welcome')}}" role="button">Back to Home</a>
+          <a class="btn bsb-btn-5xl btn-dark rounded-pill px-5 fs-6 m-0" href="{{route('home')}}" role="button">Back to Home</a>
         </div>
       </div>
     </div>

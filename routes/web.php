@@ -11,8 +11,7 @@ use App\Http\Controllers\Admin\ProductController as AdminProductController;
 
 Auth::routes();
 
-Route::get('/', [HomeController::class,'index'])->name('welcome');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/about-us',[HomeController::class,'about_us'])->name('about-us');
 
 Route::middleware('auth')->group(function () {

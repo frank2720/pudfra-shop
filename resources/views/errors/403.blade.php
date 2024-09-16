@@ -16,7 +16,7 @@
           <i class='bx bxs-lock-alt'></i>
           <h3 class="h2 mb-2">Access to this page is restricted.</h3>
           <p class="mb-5">Please check with the site admin if you believe this is a mistake.</p>
-          <a class="btn bsb-btn-5xl btn-dark rounded-pill px-5 fs-6 m-0" href="{{route('welcome')}}" role="button">Back to Home</a>
+          <a class="btn bsb-btn-5xl btn-dark rounded-pill px-5 fs-6 m-0" href="{{route('home')}}" role="button">Back to Home</a>
         </div>
       </div>
     </div>
