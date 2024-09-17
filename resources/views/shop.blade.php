@@ -30,15 +30,11 @@
             <div class="cat_sortby cat_sortby_js col tr">
 
                 <select id="sortCriteria" class="col-md-3 selectpicker show-tick in_flex fl_between al_center sortby_pick featurnBtn rounded-pill dropdown-toggle show">
-                    <div class="nt_sortby dn">
-                        <div class="nt_ajaxsortby">
-                            <option value="" disabled selected>Sort product by:</option>
-                            <option value="name_asc">Alphabetical, A-Z</option>
-                            <option value="name_desc">Alphabetical, Z-A</option>
-                            <option value="price_asc">Price, low to high</option>
-                            <option value="price_desc">Price, high to low</option>
-                        </div>
-                    </div>
+                    <option value="" disabled selected>Sort product by:</option>
+                    <option value="name_asc">Alphabetical, A-Z</option>
+                    <option value="name_desc">Alphabetical, Z-A</option>
+                    <option value="price_asc">Price, low to high</option>
+                    <option value="price_desc">Price, high to low</option>
                 </select>
             </div>
         </div>
