@@ -32,7 +32,7 @@
             <div class="image-column col-md-6 col-sm-12 col-xs-12">
               <div class="inner-column " data-wow-delay="0ms" data-wow-duration="1500ms">
                   <div class="image">
-                      <img data-src="https://www.pickcel.com/blog/images/og/shopping-mall-signage-tr.jpg" class="lazyload" alt="">
+                      <img data-src="https://www.pickcel.com/blog/images/og/shopping-mall-signage-tr.jpg" class="lazyload" alt="..">
                         <div class="overlay-box">
                           <div class="year-box">Let's <br> Begin <br>Here</div>
                         </div>

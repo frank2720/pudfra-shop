@@ -32,7 +32,7 @@
                                                 <div class="d-flex my-4 flex-wrap">
                                                     <div class="box me-4 my-1 bg-light">
                                                         <img src="https://www.freepnglogos.com/uploads/box-png/cardboard-box-brown-vector-graphic-pixabay-2.png"
-                                                            alt="">
+                                                            alt="..">
                                                         <div class="d-flex align-items-center mt-2">
                                                             <div class="tag">Orders placed</div>
                                                             <div class="ms-auto number">10</div>
@@ -40,7 +40,7 @@
                                                     </div>
                                                     <div class="box me-4 my-1 bg-light">
                                                         <img src="https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-campus-recreation-university-nebraska-lincoln-30.png"
-                                                            alt="">
+                                                            alt="..">
                                                         <div class="d-flex align-items-center mt-2">
                                                             <div class="tag">Items in Cart</div>
                                                             <div class="ms-auto number">{{session()->get('cart')->totalQty??0}}</div>

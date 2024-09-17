@@ -31,7 +31,7 @@
         <tbody>
         @foreach ($products as $product)
         <tr>
-            <td scope="row"><a href="{{route('admin.products.edit',['product'=>$product->id])}}"><img src="{{Storage::url($product->images[0]->url??null)}}" alt=""></a></td>
+            <td scope="row"><a href="{{route('admin.products.edit',['product'=>$product->id])}}"><img src="{{Storage::url($product->images[0]->url??null)}}" alt=".."></a></td>
             <td>{{$product->name}}</td>
             <td>{{$product->category->category??null}}</td>
             <td>Ksh {{number_format($product->price)}}</td>

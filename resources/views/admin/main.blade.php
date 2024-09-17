@@ -82,7 +82,7 @@
 
         <li class="message-item">
             <a href="#">
-            <img src="{{Vite::asset('resources/assets/images/favicon.png')}}" alt="" class="rounded-circle">
+            <img src="{{Vite::asset('resources/assets/images/favicon.png')}}" alt=".." class="rounded-circle">
             <div>
                 <h4>Maria Hudson</h4>
                 <p>some message from client</p>
@@ -96,7 +96,7 @@
 
         <li class="message-item">
             <a href="#">
-            <img src="{{Vite::asset('resources/assets/images/favicon.png')}}" alt="" class="rounded-circle">
+            <img src="{{Vite::asset('resources/assets/images/favicon.png')}}" alt=".." class="rounded-circle">
             <div>
                 <h4>Anna Nelson</h4>
                 <p>Notification from client here</p>
@@ -115,7 +115,7 @@
     <li class="nav-item dropdown pe-3">
 
         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-        <img src="{{Vite::asset($user->profileImage??'resources/assets/images/favicon.png')}}" alt="Profile" class="rounded-circle">
+        <img src="{{Vite::asset($user->profileImage??'resources/assets/images/favicon.png')}}" alt="..." class="rounded-circle">
         </a><!-- End Profile Iamge Icon -->
 
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">

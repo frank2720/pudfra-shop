@@ -45,7 +45,7 @@
                             </div>
                             <div class="col-lg-2 col-md-4 col-5 ml-4">
                                 <a class="dib" href="{{route("home")}}">
-                                    <img style="border-radius: 50%;width: 50px;height: 50px;overflow: hidden;" src="{{Vite::asset('resources/assets/logo/pudfra.png')}}" alt="Maanar Shop">
+                                    <img style="border-radius: 50%;width: 50px;height: 50px;overflow: hidden;" src="{{Vite::asset('resources/assets/logo/pudfra.png')}}" alt="..">
                                 </a>
                             </div>
                             <div class="col dn db_lg">
@@ -258,7 +258,7 @@
                                 <div class="mini_cart_item js_cart_item flex al_center pr oh">
                                     <div class="ld_cart_bar"></div>
                                     <a href="{{route('product.details',['id'=>$product['item']->id])}}" class="mini_cart_img">
-                                        <img class="w__100 lazyload" style="height: 100px;width:100px;object-fit:cover" data-src="{{Storage::url($product['item']->images[0]->url??$product['item']->images[1]->url??null)}}" width="120" height="153" alt="" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTUzIiB2aWV3Qm94PSIwIDAgMTIwIDE1MyI+PC9zdmc+">
+                                        <img class="w__100 lazyload" style="height: 100px;width:100px;object-fit:cover" data-src="{{Storage::url($product['item']->images[0]->url??$product['item']->images[1]->url??null)}}" width="120" height="153" alt=".." src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTUzIiB2aWV3Qm94PSIwIDAgMTIwIDE1MyI+PC9zdmc+">
                                     </a>
                                     <div class="mini_cart_info">
                                         <a href="{{route('product.details',['id'=>$product['item']->id])}}" class="mini_cart_title truncate">{{$product['item']->name}}</a>
@@ -376,7 +376,7 @@
                                         <div class='row mb__10 pb__10'>
                                             <div class='col widget_img_pr'>
                                                 <a class='db pr oh' href='{{route('product.details',['id'=>$product->id])}}'>
-                                                    <img src='data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%201200%201200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E' class='w__100 lz_op_ef lazyload' alt='sunlight bell solar lamp' data-src='{{Storage::url($product->images[0]->url??null)}}' width='80' height='80'>
+                                                    <img src='data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%201200%201200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E' class='w__100 lz_op_ef lazyload' alt='..' data-src='{{Storage::url($product->images[0]->url??null)}}' width='80' height='80'>
                                                 </a>
                                             </div>
                                             <div class='col widget_if_pr'>

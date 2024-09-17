@@ -92,7 +92,7 @@
         <div class="row my-3">
             @foreach ($images as $image)
             <div class="column">
-                <img src="{{Storage::url($image->url??null)}}"  alt="product image">
+                <img src="{{Storage::url($image->url??null)}}"  alt="..">
                 <a class="remove-image" href="{{route('admin.image.delete',['id'=>$image->id])}}" style="display: inline;" data-title="Delete image">&#215;</a>
             </div>
             @endforeach

@@ -22,7 +22,7 @@
           @foreach ($product->images as $index => $image)
               <div class="img-item">
                   <a href="#" data-id="{{ $index + 1 }}">
-                      <img data-src="{{ Storage::url($image->url) }}" class="lazyload" alt="">
+                      <img data-src="{{ Storage::url($image->url) }}" class="lazyload" alt="..">
                   </a>
               </div>
           @endforeach
@@ -86,11 +86,11 @@
                                     </span>
                                 @endif
                                 <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
-                                    <img data-flickity-lazyload="{{Storage::url($product->images[0]->url??null)}}" class="pr_lazy_img main-img nt_img_ratio nt_bg_lz carousel-cell-image" alt="">
+                                    <img data-flickity-lazyload="{{Storage::url($product->images[0]->url??null)}}" class="pr_lazy_img main-img nt_img_ratio nt_bg_lz carousel-cell-image" alt="..">
                                     
                                 </a>
                                 <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
-                                    <img data-flickity-lazyload="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}" class="pr_lazy_img back-img pa nt_bg_lz carousel-cell-image" alt="">
+                                    <img data-flickity-lazyload="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}" class="pr_lazy_img back-img pa nt_bg_lz carousel-cell-image" alt="..">
                                     
                                 </div>
                                 <div class="hover_button op__0 tc pa flex column ts__03">

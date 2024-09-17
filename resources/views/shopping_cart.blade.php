@@ -21,7 +21,7 @@
                 <img
                     class="cart-image d-block lazyload"
                     data-src="{{Storage::url($product['item']->images[0]->url??$product['item']->images[1]->url??null)}}"
-                    alt=""
+                    alt=".."
                 />
                 <div class="mx-3">
                     <p>{{$product['item']->name}}</p>
@@ -116,11 +116,11 @@
                                     </span>
                                 @endif
                                 <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
-                                    <img data-flickity-lazyload="{{Storage::url($product->images[0]->url??null)}}" class="pr_lazy_img main-img nt_img_ratio nt_bg_lz carousel-cell-image" alt="">
+                                    <img data-flickity-lazyload="{{Storage::url($product->images[0]->url??null)}}" class="pr_lazy_img main-img nt_img_ratio nt_bg_lz carousel-cell-image" alt="..">
                                     
                                 </a>
                                 <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
-                                    <img data-flickity-lazyload="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}" class="pr_lazy_img back-img pa nt_bg_lz carousel-cell-image" alt="">
+                                    <img data-flickity-lazyload="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}" class="pr_lazy_img back-img pa nt_bg_lz carousel-cell-image" alt="..">
                                     
                                 </div>
                                 <div class="hover_button op__0 tc pa flex column ts__03">
