@@ -10,7 +10,7 @@
                     </span>
                 @endif
                 <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
-                    <img data-src="{{Storage::url($product->images[0]->url??null)}}" class="main-img nt_img_ratio nt_bg_lz lazyload" alt="..">
+                    <img src="{{Storage::url($product->images[0]->url??null)}}" class="main-img nt_img_ratio nt_bg_lz" alt="..">
                 </a>
                 <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
                     <img src="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}" class="back-img pa nt_bg_lz lazyload" alt="..">

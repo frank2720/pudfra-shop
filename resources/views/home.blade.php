@@ -34,7 +34,7 @@
             <div>
                 <div class="carousel-inner" id="car">
                     <div class="carousel-item active">
-                        <img class="w-100 h-75 d-inline-block lazyload" data-src="https://st.depositphotos.com/47153598/56770/i/450/depositphotos_567706376-stock-photo-happy-kid-portrait-has-long.jpg" alt="..">
+                        <img class="w-100 h-75 d-inline-block" src="https://st.depositphotos.com/47153598/56770/i/450/depositphotos_567706376-stock-photo-happy-kid-portrait-has-long.jpg" alt="..">
                     </div>
                     <div class="carousel-item">
                         <img class="w-100 h-75 d-inline-block lazyload" data-src="https://cdn.shopify.com/s/files/1/0814/7035/7814/files/bags.jpg?v=1694690783" alt="..">
