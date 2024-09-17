@@ -25,7 +25,7 @@
         }
     </style>
 </head>
-<body class="header_full_true des_header_3 css_scrollbar lazy_icons btnt4_style_2 zoom_tp_2 css_scrollbar template-index toolbar_true hover_img2 swatch_style_rounded swatch_list_size_small label_style_rounded wrapper_full_width header_full_true hide_scrolld_true font-poppins">
+<body class="header_full_true des_header_3 css_scrollbar lazy_icons btnt4_style_2 zoom_tp_2 css_scrollbar template-index toolbar_true hover_img2 swatch_style_rounded swatch_list_size_small label_style_rounded wrapper_full_width header_full_true hide_scrolld_true font-poppins lazyload">
 <div id="nt_wrapper">
     <!-- header -->
     <header class="ntheader header_3 h_icon_iccl ">
