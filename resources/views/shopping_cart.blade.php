@@ -103,9 +103,9 @@
             </h3>
         </div>
         <div class="">
-            <div class="row nt_slider round_cd_false nt_cover ratio_nt position_8 space_30 prev_next_0 btn_owl_1 dot_owl_1 dot_color_1 btn_vi_1 is-draggable" >
+            <div class="row carousel" data-flickity='{ "lazyLoad": true, "groupCells": true }'>
                 @forelse ($recommendedProducts as $product)
-                    <div class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1">
+                    <div class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1 carousel-cell">
                         <div class="product-inner pr">
                             <div class="product-image position-relative oh lazyload">
                                 @if ($product->retail_price>$product->price)
@@ -116,11 +116,11 @@
                                     </span>
                                 @endif
                                 <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
-                                    <img data-src="{{Storage::url($product->images[0]->url??null)}}" class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload" alt="">
+                                    <img data-flickity-lazyload="{{Storage::url($product->images[0]->url??null)}}" class="pr_lazy_img main-img nt_img_ratio nt_bg_lz carousel-cell-image" alt="">
                                     
                                 </a>
                                 <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
-                                    <img data-src="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}" class="pr_lazy_img back-img pa nt_bg_lz lazyload" alt="">
+                                    <img data-flickity-lazyload="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}" class="pr_lazy_img back-img pa nt_bg_lz carousel-cell-image" alt="">
                                     
                                 </div>
                                 <div class="hover_button op__0 tc pa flex column ts__03">
