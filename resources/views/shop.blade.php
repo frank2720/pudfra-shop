@@ -47,7 +47,7 @@
         <!--product container-->
         <div class="row">
             <div class="col-lg-12 col-12">
-                <div class="kalles-section tp_se_cdt">
+                <div class="maanar-section tp_se_cdt">
 
                     <!--products list-->
                     <div class="on_list_view_false products nt_products_holder row fl_center row_pr_1 cdt_des_1 round_cd_false nt_cover ratio_nt position_8 space_30 nt_default" id="productList">

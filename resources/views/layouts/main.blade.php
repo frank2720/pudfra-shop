@@ -19,7 +19,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <style>
-        li a:hover,a i:hover,a i:hover span, .product-title a{
+        li a:hover,a i:hover,a i:hover span, .product-title a, a .bx,a.product-title{
             text-decoration: none
         }
     </style>
@@ -28,7 +28,7 @@
 <div id="nt_wrapper">
     <!-- header -->
     <header class="ntheader header_3 h_icon_iccl ">
-        <div class="kalles-header__wrapper ntheader_wrapper pr z_200">
+        <div class="maanar-header__wrapper ntheader_wrapper pr z_200">
             <div class="sp_header_mid">
                 <div class="header__mid">
                     <div class="">
@@ -162,7 +162,7 @@
 
     <!-- footer -->
     <footer id="nt_footer" class="">
-        <div id="kalles-section-footer_top" class="">
+        <div id="maanar-section-footer_top" class="">
             <div class="footer__top_wrap footer_sticky_false footer_collapse_true pr oh pb__30 pt__80">
                 <div class="container pr z_100">
                     <div class="row">
@@ -398,45 +398,45 @@
 <!-- end search box -->
 
 <!-- mobile toolbar -->
-<div id="kalles-section-toolbar_mobile" class="kalles-section">
-    <div class="kalles_toolbar kalles_toolbar_label_true ntpf r__0 l__0 b__0 flex fl_between al_center bg-light">
-        <div class="type_toolbar_shop kalles_toolbar_item my-4">
+<div id="maanar-section-toolbar_mobile" class="maanar-section">
+    <div class="maanar_toolbar maanar_toolbar_label_true ntpf r__0 l__0 b__0 flex fl_between al_center bg-light">
+        <div class="type_toolbar_shop maanar_toolbar_item my-4">
             <a href="{{route('shop')}}">
                 <i class='bx bxs-grid-alt h4'></i>
-                <span class="kalles_toolbar_label">Shop</span>
+                <span class="maanar_toolbar_label">Shop</span>
             </a>
         </div>
-        <div class="type_toolbar_cart kalles_toolbar_item my-4">
+        <div class="type_toolbar_cart maanar_toolbar_item my-4">
             <a href="" class="js_addtc push_side">
                 <i class='bx bxs-shopping-bag h4 pr' id="mobcartvalue">
                     <span class="jsccount toolbar_count">
                         {{session()->get('cart')->totalQty??0}}
                     </span>
                 </i>
-                <span class="kalles_toolbar_label">Cart</span>
+                <span class="maanar_toolbar_label">Cart</span>
             </a>
         </div>
         @if (Route::has('login'))
             @auth
-            <div class="type_toolbar_account kalles_toolbar_item my-4">
+            <div class="type_toolbar_account maanar_toolbar_item my-4">
                 <a href="{{route('profile.profile')}}" class="db push_side">
                     <i class='bx bx-user h4'></i>
-                    <span class="kalles_toolbar_label">Account</span>
+                    <span class="maanar_toolbar_label">Account</span>
                 </a>
             </div>
             @else
-            <div class="type_toolbar_account kalles_toolbar_item my-4">
+            <div class="type_toolbar_account maanar_toolbar_item my-4">
                 <a href="{{route('login')}}" class="db push_side">
                     <i class='bx bx-user h4'></i>
-                    <span class="kalles_toolbar_label">Account</span>
+                    <span class="maanar_toolbar_label">Account</span>
                 </a>
             </div>
             @endauth
         @endif
-        <div class="type_toolbar_search kalles_toolbar_item my-4">
+        <div class="type_toolbar_search maanar_toolbar_item my-4">
             <a href="#" class="push_side" data-id="#nt_search_canvas">
                 <i class='bx bx-search-alt-2 h4' ></i>
-                <span class="kalles_toolbar_label">Search</span>
+                <span class="maanar_toolbar_label">Search</span>
             </a>
         </div>
     </div>
@@ -447,15 +447,15 @@
 <div id="nt_menu_canvas" class="nt_fk_canvas nt_sleft dn lazyload">
     <i class='bx bx-x close_pp pegk ts__03 cd'></i>
     <div class="mb_nav_tabs flex al_center mb_cat_true">
-        <div class="mb_nav_title pr mb_nav_ul flex al_center fl_center active" data-id="#kalles-section-mb_nav_js">
+        <div class="mb_nav_title pr mb_nav_ul flex al_center fl_center active" data-id="#maanar-section-mb_nav_js">
             <span class="db truncate">Menu</span>
         </div>
-        <div class="mb_nav_title pr flex al_center fl_center" data-id="#kalles-section-mb_cat_js">
+        <div class="mb_nav_title pr flex al_center fl_center" data-id="#maanar-section-mb_cat_js">
             <span class="db truncate">Categories</span>
         </div>
     </div>
-    <div id="kalles-section-mb_nav_js" class="mb_nav_tab active">
-        <div id="kalles-section-mb_nav" class="kalles-section">
+    <div id="maanar-section-mb_nav_js" class="mb_nav_tab active">
+        <div id="maanar-section-mb_nav" class="maanar-section">
             <ul id="menu_mb_ul" class="nt_mb_menu">
                 <li class="menu-item menu-item-has-children only_icon_false">
                     <a href="{{route('shop')}}"><span class="nav_link_txt flex al_center">Shop</span><span class="nav_link_icon ml__5"></span></a>
@@ -468,8 +468,8 @@
             </ul>
         </div>
     </div>
-    <div id="kalles-section-mb_cat_js" class="mb_nav_tab">
-        <div id="kalles-section-mb_cat" class="kalles-section">
+    <div id="maanar-section-mb_cat_js" class="mb_nav_tab">
+        <div id="maanar-section-mb_cat" class="maanar-section">
             <ul id="menu_mb_cat" class="nt_mb_menu">
                 @foreach ($categories as $category)
                 <li class="menu-item">

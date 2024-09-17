@@ -46,7 +46,7 @@
 </div>
 <!-- featured collection -->
 <div class="nt_section type_featured_collection tp_se_cdt">
-    <div class="kalles-otp-01__feature container">
+    <div class="maanar-otp-01__feature container">
         <div class="wrap_title des_title_2">
             <h1 class="section-title tc position-relative flex fl_center al_center fs__24 title_2">
                 <span class="mr__10 ml__10">TRENDING</span>
@@ -73,8 +73,8 @@
 <!-- end featured collection -->
 
 <!-- bestseller products-->
-<div class="kalles-section nt_section type_featured_collection tp_se_cdt">
-    <div class="kalles-otp-01__featured-collection-2 container">
+<div class="maanar-section nt_section type_featured_collection tp_se_cdt">
+    <div class="maanar-otp-01__featured-collection-2 container">
         <div class="wrap_title  des_title_2">
             <h2 class="section-title tc pr flex fl_center al_center fs__24 title_2">
                 <span class="mr__10 ml__10">BEST SELLER</span>
