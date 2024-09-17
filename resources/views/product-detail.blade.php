@@ -73,7 +73,7 @@
             </h3>
         </div>
         <div class="">
-            <div class="row carousel" data-flickity='{ "lazyLoad": true }'>
+            <div class="row carousel" data-flickity='{ "lazyLoad": true, "groupCells": true }'>
                 @forelse ($recommendedProducts as $product)
                     <div class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1 carousel-cell">
                         <div class="product-inner pr">
