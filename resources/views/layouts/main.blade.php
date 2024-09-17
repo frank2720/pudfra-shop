@@ -19,7 +19,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <style>
-        li a:hover,a i:hover,a i:hover span, .product-title a, a .bx,a.product-title{
+        li a:hover,a i:hover,a i:hover span, .product-title a, a i.bx span,a.product-title{
             text-decoration: none
         }
     </style>
