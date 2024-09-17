@@ -9,22 +9,22 @@
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner" id="car">
                     <div class="carousel-item active">
-                        <img class="w-100 h-75 d-inline-block lazyload" data-src="https://www.karkhanawala.in/wp-content/uploads/2020/04/Bags.jpg.webp" alt="..">
+                        <img class="w-100 h-75 d-inline-block" src="https://www.karkhanawala.in/wp-content/uploads/2020/04/Bags.jpg.webp" alt="..">
                     </div>
                     <div class="carousel-item">
-                        <img class="w-100 h-75 d-inline-block lazyload" data-src="https://rkgsbags.com/wp-content/uploads/slider/cache/80212ff7d9008ff5b19fd38750121179/slider2-3.jpg" alt="..">
+                        <img class="w-100 h-75 d-inline-block" src="https://rkgsbags.com/wp-content/uploads/slider/cache/80212ff7d9008ff5b19fd38750121179/slider2-3.jpg" alt="..">
                     </div>
                     <div class="carousel-item">
-                        <img class="w-100 h-75 d-inline-block lazyload" data-src="https://www.aryabags.com/uploads/1645192063.jpg" alt="..">
+                        <img class="w-100 h-75 d-inline-block" src="https://www.aryabags.com/uploads/1645192063.jpg" alt="..">
                     </div>
                     <div class="carousel-item">
-                        <img class="w-100 h-75 d-inline-block lazyload" data-src="https://img.freepik.com/premium-photo/happy-teen-girl-carry-backpack-childhood-happiness-back-school-cheerful-kid-with-school-bag-banner-schoolgirl-student-school-child-pupil-portrait-with-copy-space_545934-46467.jpg" alt="..">
+                        <img class="w-100 h-75 d-inline-block" src="https://img.freepik.com/premium-photo/happy-teen-girl-carry-backpack-childhood-happiness-back-school-cheerful-kid-with-school-bag-banner-schoolgirl-student-school-child-pupil-portrait-with-copy-space_545934-46467.jpg" alt="..">
                     </div>
                     <div class="carousel-item">
-                        <img class="w-100 h-75 d-inline-block lazyload" data-src="https://st.depositphotos.com/47153598/56770/i/450/depositphotos_567706376-stock-photo-happy-kid-portrait-has-long.jpg" alt="..">
+                        <img class="w-100 h-75 d-inline-block" src="https://st.depositphotos.com/47153598/56770/i/450/depositphotos_567706376-stock-photo-happy-kid-portrait-has-long.jpg" alt="..">
                     </div>
                     <div class="carousel-item">
-                        <img class="w-100 h-75 d-inline-block lazyload" data-src="https://cdn.shopify.com/s/files/1/0814/7035/7814/files/bags.jpg?v=1694690783" alt="..">
+                        <img class="w-100 h-75 d-inline-block" src="https://cdn.shopify.com/s/files/1/0814/7035/7814/files/bags.jpg?v=1694690783" alt="..">
                     </div>
                 </div>
             </div>
