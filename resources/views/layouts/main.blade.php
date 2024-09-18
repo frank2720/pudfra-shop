@@ -25,131 +25,127 @@
         }
     </style>
 </head>
-<body class="header_full_true des_header_3 css_scrollbar lazy_icons btnt4_style_2 zoom_tp_2 css_scrollbar template-index toolbar_true hover_img2 swatch_style_rounded swatch_list_size_small label_style_rounded wrapper_full_width header_full_true hide_scrolld_true font-poppins lazyload">
+<body class="des_header_3 css_scrollbar lazy_icons btnt4_style_2 zoom_tp_2 css_scrollbar template-index toolbar_true hover_img2 swatch_style_rounded swatch_list_size_small label_style_rounded wrapper_full_width header_full_true hide_scrolld_true font-poppins lazyload">
 <div id="nt_wrapper">
     <!-- header -->
     <header class="ntheader header_3 h_icon_iccl ">
         <div class="maanar-header__wrapper ntheader_wrapper pr z_200">
             <div class="sp_header_mid">
-                <div class="header__mid">
-                    <div class="">
-                        <div class="row al_center css_h_se">
-                            <div class="col-md-4 col-3 dn_lg">
-                                <a href="#" data-id="#nt_menu_canvas" class="push_side push-menu-btn  lh__1 flex al_center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" viewBox="0 0 30 16">
-                                        <rect width="30" height="1.5"></rect>
-                                        <rect y="7" width="20" height="1.5"></rect>
-                                        <rect y="14" width="30" height="1.5"></rect>
-                                    </svg>
+                <div class="container-fluid">
+                    <div class="row al_center">
+                        <div class="col d-lg-none d-xl-none d-xxl-none">
+                            <a href="#" data-id="#nt_menu_canvas" class="push_side push-menu-btn  lh__1 flex al_center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                                    <path d="M4 11h12v2H4zm0-5h16v2H4zm0 12h7.235v-2H4z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a class="dib" href="{{route("home")}}">
+                                <img style="border-radius: 50%;width: 50px;height: 50px;overflow: hidden;" src="{{Vite::asset('resources/assets/logo/pudfra.png')}}" alt="..">
+                            </a>
+                        </div>
+                        <div class="col-8 d-none d-lg-block d-xl-block d-xxl-block">
+                            <nav class="">
+                                <ul id="nt_menu_id" class="nt_menu in_flex wrap al_center">
+                                    <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
+                                        <a class="lh__1 flex al_center pr text-uppercase font-weight-bold" href="{{route("home")}}">Home</a>
+                                    </li>
+                                    <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
+                                        <a class="lh__1 flex al_center pr lbl__nav-sale text-uppercase font-weight-bold" href="">New arrivals
+                                            <span class="lbc_nav">New</span>
+                                        </a>
+                                    </li>
+                                    <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
+                                        <a class="lh__1 flex al_center pr text-uppercase font-weight-bold" href="{{route('shop')}}">Men</a>
+                                    </li>
+                                    <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
+                                        <a class="lh__1 flex al_center pr text-uppercase font-weight-bold" href="{{route('shop')}}">Women</a>
+                                    </li>
+                                    <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
+                                        <a class="lh__1 flex al_center pr text-uppercase font-weight-bold font-weight-bold" href="{{route('shop')}}">Accessories</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col tr">
+                            <div class="nt_action in_flex al_center cart_des_1">
+                                <a class="icon_search push_side cb chp" data-id="#nt_search_canvas" href="#">
+                                    <i class='bx bx-search-alt-2' ></i>
                                 </a>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-5 ml-4">
-                                <a class="dib" href="{{route("home")}}">
-                                    <img style="border-radius: 50%;width: 50px;height: 50px;overflow: hidden;" src="{{Vite::asset('resources/assets/logo/pudfra.png')}}" alt="..">
-                                </a>
-                            </div>
-                            <div class="col dn db_lg">
-                                <nav class="nt_navigation kl_navigation tc hover_side_up nav_arrow_false">
-                                    <ul id="nt_menu_id" class="nt_menu in_flex wrap al_center">
-                                        <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr text-uppercase font-weight-bold" href="{{route("home")}}">Home</a>
-                                        </li>
-                                        <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr lbl__nav-sale text-uppercase font-weight-bold" href="">New arrivals
-                                                <span class="lbc_nav">New</span>
-                                            </a>
-                                        </li>
-                                        <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr text-uppercase font-weight-bold" href="{{route('shop')}}">Men</a>
-                                        </li>
-                                        <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr text-uppercase font-weight-bold" href="{{route('shop')}}">Women</a>
-                                        </li>
-                                        <li class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
-                                            <a class="lh__1 flex al_center pr text-uppercase font-weight-bold font-weight-bold" href="{{route('shop')}}">Accessories</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <div class="col-lg-auto col-md-4 col-3 tr col_group_btns">
-                                <div class="nt_action in_flex al_center cart_des_1">
-                                    <a class="icon_search push_side cb chp d-none d-sm-block" data-id="#nt_search_canvas" href="#">
-                                        <i class='bx bx-search-alt-2' ></i>
-                                    </a>
-                                    @if (Route::has('login'))
-                                        @auth
-                                        <div class="my-account ts__05 position-relative dn db_md">
-                                            <a class="cb chp db push_side" href="{{route('profile.profile')}}">
-                                                <i class='bx bx-user'></i>
-                                            </a>
-                                        </div>
+                                @if (Route::has('login'))
+                                    @auth
+                                    <div class="my-account ts__05 position-relative dn db_md">
+                                        <a class="cb chp db push_side" href="{{route('profile.profile')}}">
+                                            <i class='bx bx-user'></i>
+                                        </a>
+                                    </div>
 
-                                        <div class="push_side notf_icon pr">
-                                            <a class="position-relative cb chp db" href="" id="notfbell">
-                                                <i class='bx bx-bell'>
-                                                    <span class="op__0 ts_op pa ntc br__50 cw tc">
-                                                        {{auth()->user()->unreadNotifications->count()}}
-                                                    </span>
-                                                </i>
-                                            </a>
-                                        </div>
-                                        <div class="notf" id="box">
-                                            
-                                            @foreach (auth()->user()->unreadNotifications as $notification)
-                                            <div class="notf-item">
-                                                <div class="text">
-                                                    @php
-                                                        $string = $notification->type;
-                                                        $parts = explode('\\', $string);
-                                                        $lastPart = end($parts);
-                                                        $formatted = preg_replace('/([a-z])([A-Z])/', '$1 $2', $lastPart);
-                                                    @endphp
-                                                    <ul>
-                                                        <li class="starbucks success">
-                                                            <div class="notify_icon">
-                                                                <span class="icon"></span>  
-                                                            </div>
-                                                            <div class="notify_data">
-                                                                <div class="title">
-                                                                    {{$formatted}} 
-                                                                </div>
-                                                                <div class="sub_title">
-                                                                    {{$notification->data['data']}} something geee
-                                                              </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            @endforeach 
-
-                                            @if (auth()->user()->unreadNotifications->count()!==0)
-                                                <a href="{{route('mark-as-read')}}"><span class="badge rounded-pill bg-primary p-2 ms-2 my-2  d-flex justify-content-center">View all</span></a>
-                                            @endif
-                                        </div>
-                                        
-                                        @else
-                                            <div class="my-account ts__05 position-relative dn db_md">
-                                                <a class="cb chp db push_side" href="{{route('login')}}">
-                                                    <i class='bx bx-user'></i>
-                                                </a>
-                                            </div>
-                                        @endauth
-                                    @endif
-
-                                    <div class="notf_icon pr d-none d-sm-block">
-                                        <a class="push_side position-relative js_addtc cb chp db" href="">
-                                            <i class='bx bxs-shopping-bag pr' id="cartvalue">
-                                                <span class="op__0 ts_op pa tcount bgb br__50 cw tc">
-                                                    {{session()->get('cart')->totalQty??0}}
+                                    <div class="push_side notf_icon pr">
+                                        <a class="position-relative cb chp db" href="" id="notfbell">
+                                            <i class='bx bx-bell'>
+                                                <span class="op__0 ts_op pa ntc br__50 cw tc">
+                                                    {{auth()->user()->unreadNotifications->count()}}
                                                 </span>
                                             </i>
                                         </a>
                                     </div>
+                                    <div class="notf" id="box">
+                                        
+                                        @foreach (auth()->user()->unreadNotifications as $notification)
+                                        <div class="notf-item">
+                                            <div class="text">
+                                                @php
+                                                    $string = $notification->type;
+                                                    $parts = explode('\\', $string);
+                                                    $lastPart = end($parts);
+                                                    $formatted = preg_replace('/([a-z])([A-Z])/', '$1 $2', $lastPart);
+                                                @endphp
+                                                <ul>
+                                                    <li class="starbucks success">
+                                                        <div class="notify_icon">
+                                                            <span class="icon"></span>  
+                                                        </div>
+                                                        <div class="notify_data">
+                                                            <div class="title">
+                                                                {{$formatted}} 
+                                                            </div>
+                                                            <div class="sub_title">
+                                                                {{$notification->data['data']}} something geee
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        @endforeach 
+
+                                        @if (auth()->user()->unreadNotifications->count()!==0)
+                                            <a href="{{route('mark-as-read')}}"><span class="badge rounded-pill bg-primary p-2 ms-2 my-2  d-flex justify-content-center">View all</span></a>
+                                        @endif
+                                    </div>
+                                    
+                                    @else
+                                        <div class="my-account ts__05 position-relative dn db_md">
+                                            <a class="cb chp db push_side" href="{{route('login')}}">
+                                                <i class='bx bx-user'></i>
+                                            </a>
+                                        </div>
+                                    @endauth
+                                @endif
+
+                                <div class="notf_icon pr d-none d-sm-block">
+                                    <a class="push_side position-relative js_addtc cb chp db" href="">
+                                        <i class='bx bxs-shopping-bag pr' id="cartvalue">
+                                            <span class="op__0 ts_op pa tcount bgb br__50 cw tc">
+                                                {{session()->get('cart')->totalQty??0}}
+                                            </span>
+                                        </i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                    
+                    </div>
                 </div>
             </div>
         </div>
