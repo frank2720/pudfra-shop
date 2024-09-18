@@ -7,7 +7,7 @@
     <div class = "row">
       <!-- card left -->
       <div class = "product-imgs col-md-6">
-        <div class = "img-display ml-4">
+        <div class = "img-display">
           <div class = "img-showcase">
             @foreach ($product->images as $index => $image)
                 <img data-src = "{{ Storage::url($image->url) }}" class="lazyload" alt = "">
