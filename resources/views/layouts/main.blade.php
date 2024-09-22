@@ -75,36 +75,11 @@
                                 </a>
                                 @if (Route::has('login'))
                                     @auth
-                                    <div class="my-account ts__05 position-relative dn db_md">
-                                        <a class="cb chp db push_side" href="{{route('profile.profile')}}">
-                                            <i class='bx bx-user'></i>
-                                        </a>
-                                    </div>
-                                    <div class="notf" id="box">
-                                        
-                                        @foreach (auth()->user()->unreadNotifications as $notification)
-                                        <div class="notf-item">
-                                            <div class="text">
-                                                <ul>
-                                                    <li class="starbucks success">
-                                                        <div class="notify_icon">
-                                                            <span class="icon"></span>  
-                                                        </div>
-                                                        <div class="notify_data">
-                                                            <div class="title">
-                                                                {{$formatted}} 
-                                                            </div>
-                                                            <div class="sub_title">
-                                                                {{$notification->data['data']}} something geee
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        @endforeach 
-                                    </div>
-                                    
+                                        <div class="my-account ts__05 position-relative dn db_md">
+                                            <a class="cb chp db push_side" href="{{route('profile.profile')}}">
+                                                <i class='bx bx-user'></i>
+                                            </a>
+                                        </div>  
                                     @else
                                         <div class="my-account ts__05 position-relative dn db_md">
                                             <a class="cb chp db push_side" href="{{route('login')}}">
