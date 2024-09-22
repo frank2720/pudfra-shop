@@ -35,47 +35,22 @@
         </a>
     </li><!-- End Search Icon-->
 
-    <li class="nav-item dropdown">
-
-        <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-        <i class='bx bx-bell' ></i>
-        <span class="badge bg-primary badge-number">4</span>
-        </a><!-- End Notification Icon -->
-
-        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-        <li class="dropdown-header">
-            You have 4 new notifications
-            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-        </li>
-        <li>
-            <hr class="dropdown-divider">
-        </li>
-
-        <li class="notification-item">
-            <i class="bi bi-exclamation-circle text-warning"></i>
-            <div>
-            <h4>Jackton</h4>
-            <p>Some messages here</p>
-            <p>30 min. ago</p>
-            </div>
-        </li>
-
-        </ul><!-- End Notification Dropdown Items -->
-
-    </li><!-- End Notification Nav -->
 
     <li class="nav-item dropdown">
 
         <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
         <i class='bx bx-message-alt' ></i>
-        <span class="badge bg-success badge-number">3</span>
+        <span class="badge bg-success badge-number"> {{auth()->user()->unreadNotifications->count()}}</span>
         </a><!-- End Messages Icon -->
 
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
         <li class="dropdown-header">
-            You have 3 new messages
-            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            You have  {{auth()->user()->unreadNotifications->count()}} new messages
+            @if (auth()->user()->unreadNotifications->count()!==0)
+                <a href="{{route('mark-as-read')}}"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            @endif
         </li>
+        @foreach (auth()->user()->unreadNotifications as $notification)
         <li>
             <hr class="dropdown-divider">
         </li>
@@ -84,29 +59,13 @@
             <a href="#">
             <img src="{{Vite::asset('resources/assets/images/favicon.png')}}" alt=".." class="rounded-circle">
             <div>
-                <h4>Maria Hudson</h4>
-                <p>some message from client</p>
-                <p>4 hrs. ago</p>
+                <h4>Customer Order</h4>
+                <p>{{$notification->data['data']}}</p>
+                <p>mins ago</p>
             </div>
             </a>
         </li>
-        <li>
-            <hr class="dropdown-divider">
-        </li>
-
-        <li class="message-item">
-            <a href="#">
-            <img src="{{Vite::asset('resources/assets/images/favicon.png')}}" alt=".." class="rounded-circle">
-            <div>
-                <h4>Anna Nelson</h4>
-                <p>Notification from client here</p>
-                <p>6 hrs. ago</p>
-            </div>
-            </a>
-        </li>
-        <li>
-            <hr class="dropdown-divider">
-        </li>
+        @endforeach
 
         </ul><!-- End Messages Dropdown Items -->
 

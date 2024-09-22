@@ -60,7 +60,7 @@ class PaymentController extends Controller
         $PartyB=env('PARTY_B');
         $PhoneNumber=$PartyA;
         $this->callbackURL=env('CALL_BACK_URL');
-        $AccountReference='Maanar-shop';
+        $AccountReference='MaanarShop';
         $TransactionDesc='Order the Product';
 
         try {
@@ -90,7 +90,7 @@ class PaymentController extends Controller
         $stkrequest->CheckoutRequestID=$responseData->CheckoutRequestID;
         $stkrequest->Status='Requested';
         $stkrequest->save();
-        User::find(Auth::user()->id)->notify(new OrderSuccessful($stkrequest->Amount));
+        User::find(1)->notify(new OrderSuccessful($stkrequest->Amount,Auth::user()->name));
         toastr()->success($responseData->CustomerMessage,'STK request');
 
         return redirect()->back();

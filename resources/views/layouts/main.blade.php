@@ -80,27 +80,11 @@
                                             <i class='bx bx-user'></i>
                                         </a>
                                     </div>
-
-                                    <div class="push_side notf_icon pr">
-                                        <a class="position-relative cb chp db" href="" id="notfbell">
-                                            <i class='bx bx-bell'>
-                                                <span class="op__0 ts_op pa ntc br__50 cw tc">
-                                                    {{auth()->user()->unreadNotifications->count()}}
-                                                </span>
-                                            </i>
-                                        </a>
-                                    </div>
                                     <div class="notf" id="box">
                                         
                                         @foreach (auth()->user()->unreadNotifications as $notification)
                                         <div class="notf-item">
                                             <div class="text">
-                                                @php
-                                                    $string = $notification->type;
-                                                    $parts = explode('\\', $string);
-                                                    $lastPart = end($parts);
-                                                    $formatted = preg_replace('/([a-z])([A-Z])/', '$1 $2', $lastPart);
-                                                @endphp
                                                 <ul>
                                                     <li class="starbucks success">
                                                         <div class="notify_icon">
@@ -119,10 +103,6 @@
                                             </div>
                                         </div>
                                         @endforeach 
-
-                                        @if (auth()->user()->unreadNotifications->count()!==0)
-                                            <a href="{{route('mark-as-read')}}"><span class="badge rounded-pill bg-primary p-2 ms-2 my-2  d-flex justify-content-center">View all</span></a>
-                                        @endif
                                     </div>
                                     
                                     @else

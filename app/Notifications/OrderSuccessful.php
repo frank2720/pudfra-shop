@@ -13,13 +13,15 @@ class OrderSuccessful extends Notification
     use Queueable;
 
     protected $amount;
+    protected $customer;
 
     /**
      * Create a new notification instance.
      */
-    public function __construct($amount)
+    public function __construct($amount,$customer)
     {
         $this->amount = $amount;
+        $this->customer = $customer;
     }
 
     /**
@@ -38,10 +40,10 @@ class OrderSuccessful extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-                    ->greeting('Hello '.Auth::user()->name)  
-                    ->line('The introduction to the notification.')
-                    ->action('View dashboard', url('/admin/home'))
-                    ->line('Thank you for using our application!');
+                    ->greeting('Hello')  
+                    ->line('You have a new order alert')
+                    ->action('View', url('/admin/home'))
+                    ->line('Thank you!');
     }
 
     /**
@@ -52,7 +54,7 @@ class OrderSuccessful extends Notification
     public function toArray(object $notifiable): array
     {
         return [
-            'data' =>'Your deposit of '. $this->amount.' was successful'
+            'data' =>'The deposit of '. $this->amount.' by '. $this->customer.' was unsuccessful'
         ];
     }
 }
