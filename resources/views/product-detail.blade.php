@@ -5,62 +5,62 @@
 @section('content')
 <div class = "container my-4">
     <div class = "row">
-      <!-- card left -->
-      <div class = "product-imgs col-md-6">
-        <div class = "img-display">
-          <div class = "img-showcase">
-            @foreach ($product->images as $index => $image)
-                <img data-src = "{{ Storage::url($image->url) }}" class="lazyload" alt = "">
-            @endforeach
-          </div>
+        <!-- card left -->
+        <div class = "product-imgs col-md-6">
+                <div class = "img-display">
+                <div class = "img-showcase">
+                    @foreach ($product->img_urls['urls'] as $index => $image)
+                        <img data-src = "{{ Storage::url($image) }}" class="lazyload" alt = "">
+                    @endforeach
+                </div>
+                </div>
+                @php
+                    $number_pics = count($product->img_urls['urls'])
+                @endphp
+                @if ($number_pics>1)
+                <div class = "img-select">
+                    @foreach ($product->img_urls['urls'] as $index => $image)
+                        <div class="img-item">
+                            <a href="#" data-id="{{ $index + 1 }}">
+                                <img data-src="{{ Storage::url($image) }}" class="lazyload" alt="..">
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+                @endif
         </div>
-        @php
-            $number_pics = count($product->images)
-        @endphp
-        @if ($number_pics>1)
-        <div class = "img-select">
-          @foreach ($product->images as $index => $image)
-              <div class="img-item">
-                  <a href="#" data-id="{{ $index + 1 }}">
-                      <img data-src="{{ Storage::url($image->url) }}" class="lazyload" alt="..">
-                  </a>
-              </div>
-          @endforeach
+        <!-- card right -->
+        <div class = "product-content col-md-6">
+            <h2 class = "product-name">{{$product->name}}</h2>
+            <div class = "product-rating">
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star-half' ></i>
+                <span>4.7(21)</span>
+            </div>
+        
+            <div class = "product-price">
+                @if ($product->entity[0]->price<$product->entity[0]->retail_price)
+                    <p class = "last-price">Old Price: <span>Ksh {{number_format($product->entity[0]->retail_price)}}</span></p>
+                    <p class = "new-price">New Price: <span>Ksh {{number_format($product->entity[0]->price)}}</span></p>    
+                @else
+                <p class = "new-price">Price: <span>Ksh {{number_format($product->entity[0]->price)}}</span></p>
+                @endif
+            </div>
+        
+            <div class = "product-detail">
+                <h2>about this item: </h2>
+                <p>{!! $product->description !!}</p>
+            </div>
+        
+            <div class = "purchase-info">
+                <button type = "button" data-product-id="{{$product->id}}" class = "add-to-cart-btn" style="border-radius: 12px">
+                Add to Cart <i class = "fas fa-shopping-cart"></i>
+                </button>
+            </div>
         </div>
-        @endif
-      </div>
-      <!-- card right -->
-      <div class = "product-content col-md-6">
-          <h2 class = "product-name">{{$product->name}}</h2>
-          <div class = "product-rating">
-            <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star-half' ></i>
-            <span>4.7(21)</span>
-          </div>
-    
-          <div class = "product-price">
-              @if ($product->price<$product->retail_price)
-                  <p class = "last-price">Old Price: <span>Ksh {{number_format($product->retail_price)}}</span></p>
-                  <p class = "new-price">New Price: <span>Ksh {{number_format($product->price)}}</span></p>    
-              @else
-              <p class = "new-price">Price: <span>Ksh {{number_format($product->price)}}</span></p>
-              @endif
-          </div>
-    
-          <div class = "product-detail">
-            <h2>about this item: </h2>
-            <p>{!! $product->description !!}</p>
-          </div>
-    
-          <div class = "purchase-info">
-            <button type = "button" data-product-id="{{$product->id}}" class = "add-to-cart-btn" style="border-radius: 12px">
-              Add to Cart <i class = "fas fa-shopping-cart"></i>
-            </button>
-          </div>
-      </div>
     </div>
 </div>
 
@@ -78,19 +78,19 @@
                     <div class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1 carousel-cell">
                         <div class="product-inner pr">
                             <div class="product-image position-relative oh lazyload">
-                                @if ($product->retail_price>$product->price)
+                                @if ($product->entity[0]->retail_price>$product->entity[0]->price)
                                     <span class="tc nt_labels pa pe_none cw">
                                         <span class="onsale nt_label">
-                                            <span>{{round((($product->price-$product->retail_price)/$product->retail_price)*100)}} %</span>
+                                            <span>{{round((($product->entity[0]->price-$product->entity[0]->retail_price)/$product->entity[0]->retail_price)*100)}} %</span>
                                         </span>
                                     </span>
                                 @endif
                                 <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
-                                    <img data-flickity-lazyload="{{Storage::url($product->images[0]->url??null)}}" class="pr_lazy_img main-img nt_img_ratio nt_bg_lz carousel-cell-image" alt="..">
+                                    <img data-flickity-lazyload="{{Storage::url($product->img_urls['urls'][0]??null)}}" class="pr_lazy_img main-img nt_img_ratio nt_bg_lz carousel-cell-image" alt="..">
                                     
                                 </a>
                                 <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
-                                    <img data-flickity-lazyload="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}" class="pr_lazy_img back-img pa nt_bg_lz carousel-cell-image" alt="..">
+                                    <img data-flickity-lazyload="{{Storage::url($product->img_urls['urls'][1]??$product->img_urls['urls'][0]??null)}}" class="pr_lazy_img back-img pa nt_bg_lz carousel-cell-image" alt="..">
                                     
                                 </div>
                                 <div class="hover_button op__0 tc pa flex column ts__03">
@@ -105,7 +105,7 @@
                                 <h3 class="product-title pr fs__14 mg__0 fwm">
                                     <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">{{__(ucfirst(strtolower($product->name)))}}</a>
                                 </h3>
-                                <span class="price dib mb__5"><ins>Ksh {{number_format($product->price)}}</ins></span>
+                                <span class="price dib mb__5"><ins>Ksh {{number_format($product->entity[0]->price)}}</ins></span>
                             </div>
                         </div>
                     </div>

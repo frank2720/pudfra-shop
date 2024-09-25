@@ -20,12 +20,12 @@
                 <div class="d-flex justify-content-between mb-3">
                 <img
                     class="cart-image d-block lazyload"
-                    data-src="{{Storage::url($product['item']->images[0]->url??$product['item']->images[1]->url??null)}}"
+                    data-src="{{Storage::url($product['item']->img_urls['urls'][0]??$product['item']->img_urls['urls'][1]??null)}}"
                     alt=".."
                 />
                 <div class="mx-3">
                     <p>{{$product['item']->name}}</p>
-                    <h5>Ksh {{number_format($product['item']->price)}}</h5>
+                    <h5>Ksh {{number_format($product['item']->entity[0]->price)}}</h5>
                     <small
                     class="text-white bg-success px-2 py-1 d-inline-block rounded-3 mt-2"
                     >In Stock</small
@@ -108,19 +108,19 @@
                     <div class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1 carousel-cell">
                         <div class="product-inner pr">
                             <div class="product-image position-relative oh lazyload">
-                                @if ($product->retail_price>$product->price)
+                                @if ($product->entity[0]->retail_price>$product->entity[0]->price)
                                     <span class="tc nt_labels pa pe_none cw">
                                         <span class="onsale nt_label">
-                                            <span>{{round((($product->price-$product->retail_price)/$product->retail_price)*100)}} %</span>
+                                            <span>{{round((($product->entity[0]->price-$product->entity[0]->retail_price)/$product->entity[0]->retail_price)*100)}} %</span>
                                         </span>
                                     </span>
                                 @endif
                                 <a class="d-block" href="{{route('product.details',['id'=>$product->id])}}">
-                                    <img data-flickity-lazyload="{{Storage::url($product->images[0]->url??null)}}" class="pr_lazy_img main-img nt_img_ratio nt_bg_lz carousel-cell-image" alt="..">
+                                    <img data-flickity-lazyload="{{Storage::url($product->img_urls['urls'][0]??null)}}" class="pr_lazy_img main-img nt_img_ratio nt_bg_lz carousel-cell-image" alt="..">
                                     
                                 </a>
                                 <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
-                                    <img data-flickity-lazyload="{{Storage::url($product->images[1]->url??$product->images[0]->url??null)}}" class="pr_lazy_img back-img pa nt_bg_lz carousel-cell-image" alt="..">
+                                    <img data-flickity-lazyload="{{Storage::url($product->img_urls['urls'][1]??$product->img_urls['urls'][0]??null)}}" class="pr_lazy_img back-img pa nt_bg_lz carousel-cell-image" alt="..">
                                     
                                 </div>
                                 <div class="hover_button op__0 tc pa flex column ts__03">
@@ -135,7 +135,7 @@
                                 <h3 class="product-title pr fs__14 mg__0 fwm">
                                     <a class="cd chp" href="{{route('product.details',['id'=>$product->id])}}">{{__(ucfirst(strtolower($product->name)))}}</a>
                                 </h3>
-                                <span class="price dib mb__5"><ins>Ksh {{number_format($product->price)}}</ins></span>
+                                <span class="price dib mb__5"><ins>Ksh {{number_format($product->entity[0]->price)}}</ins></span>
                             </div>
                         </div>
                     </div>

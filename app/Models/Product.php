@@ -8,30 +8,38 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Product extends Model
 {
-   use HasFactory;
+    use HasFactory;
 
-   /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
 
-   protected $fillable = [
-         'name',
-         'category_id',
-         'price',
-         'retail_price',
-         'description',
-         'img',
-      ];
+    protected $casts = [
+      'img_urls' => 'array'
+    ];
 
-      public function images():HasMany
-      {
-         return $this->hasMany(Image::class, 'product_id');
-      }
+    /**
+       * The attributes that are mass assignable.
+       *
+       * @var array
+       */
 
-      public function category()
-      {
-         return $this->belongsTo(Category::class,'category_id');
-      }
+    protected $fillable = [
+          'name',
+          'price',
+          'retail_price',
+          'description',
+          'img_urls',
+          'categories'
+        ];
+
+public function subcategories()
+{
+  return $this->belongsTo(SubCategory::class);
+}
+
+
+public function entity()
+{
+  return $this->hasMany(ProductEntity::class,'product_id');
+}
+
+
 }

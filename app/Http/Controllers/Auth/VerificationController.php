@@ -35,7 +35,7 @@ class VerificationController extends Controller
 
         $categories =  Category::all();
         
-        $trending_products = Product::with('images')
+        $trending_products = Product::with('entity')
                                 ->inRandomOrder()
                                 ->paginate(12);
 
@@ -43,11 +43,11 @@ class VerificationController extends Controller
 
         $towns = json_decode($json_data);
 
-        $bestsales = Product::with('images')
+        $bestsales = Product::with('entity')
                         ->inRandomOrder()
                         ->paginate(8);
 
-        $latest = Product::with('images')
+        $latest = Product::with('entity')
                         ->latest()
                         ->paginate(8);
 

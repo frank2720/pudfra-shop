@@ -14,10 +14,10 @@ class CartController extends Controller
 {
     public function addToCart(Request $request, $id)
     {
-        $product = Product::with('images')->find($id);
+        $product = Product::with('entity')->find($id);
         $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
         $cart = new Cart($oldCart);
-        $cart->add($product, $product->id);
+        $cart->add($product, $id);
 
         $request->session()->put('cart',$cart);
         return response()->json([
@@ -29,7 +29,7 @@ class CartController extends Controller
 
     public function increaseQty(Request $request, $id)
     {
-        $product = Product::with('images')->find($id);
+        $product = Product::with('entity')->find($id);
         $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->add($product, $product->id);
@@ -86,17 +86,12 @@ class CartController extends Controller
     public function getCart()
     {
         
-        $products = Product::with('images')->get();
-        $categories =  Category::all();
-        $latest = Product::with('images')
-                        ->latest()
-                        ->paginate(8);
-        $trending_products = Product::with('images')
-                ->latest()
-                ->paginate(8);
+        $products = Product::with('entity')->get();
+        $latest = Product::latest()->paginate(8);
+        $trending_products = Product::latest()->paginate(8);
 
         $recentlyViewed = json_decode(Cookie::get('recently_viewed', '[]'), true);
-        $recommendedProducts = Product::whereIn('id', $recentlyViewed)->with('images')->get();
+        $recommendedProducts = Product::whereIn('id', $recentlyViewed)->with('entity')->get();
 
         $json_data = File::get(storage_path('app/public/towns/towns.json'));
 
@@ -106,7 +101,6 @@ class CartController extends Controller
         return view('shopping_cart',[
         'towns'=>$towns,
         'products'=>$products,
-        'categories'=> $categories,
         'trending_products'=>$trending_products,
         'latest'=>$latest,
         'recommendedProducts'=>$recommendedProducts,

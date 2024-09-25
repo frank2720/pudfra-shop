@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use Carbon\Carbon;
 use App\Models\Product;
-use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Intervention\Image\ImageManager;
@@ -22,7 +21,6 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $Tproducts = Product::count();
-        $categories = Category::all();
 
         $yesterday =  Carbon::yesterday();
         $today = Carbon::now();
@@ -52,14 +50,14 @@ class ProductController extends Controller
                     ->groupBy('categories.category')
                     ->get();*/
 
-        $categoryData = Category::withCount('products')
+        /*$categoryData = Category::withCount('products')
                             ->get()
                             ->map(function($category) {
                                 return [
                                     'category' => $category->category,
                                     'total' => $category->products_count
                                 ];
-                            });
+                            });*/
         
 
         $user = $request->user();
@@ -67,9 +65,6 @@ class ProductController extends Controller
             'Tproducts'=>$Tproducts,
             'productsIncrease'=> $pIncrease,
             'user'=>$user,
-            'categoryData'=>$categoryData,
-            'categories'=>$categories,
-
             'months' => $months,
             'monthlyProducts' => $monthlyProducts,
         ]);
@@ -84,7 +79,7 @@ class ProductController extends Controller
         return $formatted;
     }
 
-    public function products(Request $request)
+  /*  public function products(Request $request)
     {
         $user = $request->user();
         $products = Product::with(['images','category'])->paginate(10);
@@ -94,26 +89,26 @@ class ProductController extends Controller
             'categories' => $categories,
             'user'=>$user
         ]);
-    }
+    }*/
 
     public function categories()
     {
         $user=request()->user();
-        $categories = Category::all();
+        //$categories = Category::all();
         return view('admin.categories',[
                 'user'=>$user,
-                'categories' => $categories,
+               // 'categories' => $categories,
         ]);
     }
 
     public function edit_category($category)
     {
         $user = request()->user();
-        $categories = Category::all();
-        $category = Category::find($category);
+      //  $categories = Category::all();
+       // $category = Category::find($category);
         return view('admin.editcategory',[
             'category'=>$category,
-            'categories'=>$categories,
+          //  'categories'=>$categories,
             'user'=>$user
         ]);
     }
@@ -123,15 +118,15 @@ class ProductController extends Controller
         $request->validate([
             'name'=>'sometimes|string',
         ]);
-        $product = Category::find($id);
-        $product->category = $request->name;
-        $product->save();
+       // $product = Category::find($id);
+       // $product->category = $request->name;
+      //  $product->save();
         return back()->with('success','updated successfully!');
     }
 
     public function destroy_category($category):RedirectResponse
     {
-        $category = Category::find($category);
+      //  $category = Category::find($category);
         $category->delete();
         return back()->with('success','deleted successfully!');
     }
@@ -167,7 +162,7 @@ class ProductController extends Controller
         foreach ($request->file('img') as $productImg) {
             $imagename = str()->uuid().'.webp';
             $manager = new ImageManager(new Driver());
-            $manager->read($productImg)->scale(360,360)->toWebp()->save(storage_path('app/public/products/'.$imagename));
+            $manager->read($productImg)->toWebp()->save(storage_path('app/public/products/'.$imagename));
             //$path =  $productImg->store('products');
             //$path =Storage::disk('public')->put('products',$productImg);
             $image = new ProductImage;
@@ -181,13 +176,13 @@ class ProductController extends Controller
     public function edit($product)
     {
         $user = request()->user();
-        $categories = Category::all();
+      //  $categories = Category::all();
         $product = Product::with(['category'])->find($product);
-        $images = ProductImage::where('product_id','=',$product->id)->get();
+      //  $images = ProductImage::where('product_id','=',$product->id)->get();
         return view('admin.editproduct',[
             'product'=>$product,
-            'images'=>$images,
-            'categories'=>$categories,
+          ///  'images'=>$images,
+           // 'categories'=>$categories,
             'user'=>$user
         ]);
     }
@@ -210,7 +205,7 @@ class ProductController extends Controller
         $product->update();
         return back()->with('success','updated successfully!');
     }
-
+/*
     public function moreImages(Request $request, $id)
     {
         $request->validate([
@@ -220,11 +215,11 @@ class ProductController extends Controller
         foreach ($request->file('img') as $productImg) {
             $imagename = str()->uuid().'.webp';
             $manager = new ImageManager(new Driver());
-            $manager->read($productImg)->scale(360,360)->toWebp()->save(storage_path('app/public/products/'.$imagename));
-            $image = new ProductImage;
-            $image->url = 'products/'.$imagename;
-            $image->product_id = $id;
-            $image->save();
+            $manager->read($productImg)->scaleDown(360,388)->toWebp()->save(storage_path('app/public/products/'.$imagename));
+           // $image = new ProductImage;
+           // $image->url = 'products/'.$imagename;
+           // $image->product_id = $id;
+           // $image->save();
         }
         return back()->with('success','added successfully!');
     }
@@ -232,7 +227,7 @@ class ProductController extends Controller
     public function destroy($product):RedirectResponse
     {
         $product = Product::find($product);
-        $images = ProductImage::where('product_id','=',$product->id)->get();
+       /* $images = ProductImage::where('product_id','=',$product->id)->get();
         if(!$product&&$images) abort(404);
         $product->delete();
         foreach ($images as $image) {
@@ -255,5 +250,5 @@ class ProductController extends Controller
             $img->delete();
             return back()->with('success','image deleted!');
         }
-    }
+    }*/
 }

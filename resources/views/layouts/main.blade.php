@@ -19,6 +19,8 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider@15.8.1/dist/nouislider.min.css">
+    
     <style>
         li a:hover,a i:hover,a i:hover span, .product-title a, a i::before,a.product-title{
             text-decoration: none
@@ -209,7 +211,7 @@
                                 <div class="mini_cart_item js_cart_item flex al_center pr oh">
                                     <div class="ld_cart_bar"></div>
                                     <a href="{{route('product.details',['id'=>$product['item']->id])}}" class="mini_cart_img">
-                                        <img class="w__100 lazyload" style="height: 100px;width:100px;object-fit:cover" data-src="{{Storage::url($product['item']->images[0]->url??$product['item']->images[1]->url??null)}}" width="120" height="153" alt=".." src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTUzIiB2aWV3Qm94PSIwIDAgMTIwIDE1MyI+PC9zdmc+">
+                                        <img class="w__100 lazyload" style="height: 100px;width:100px;object-fit:cover" data-src="{{Storage::url($product['item']->img_urls['urls'][0]??$product['item']->img_urls['urls'][0]??null)}}" width="120" height="153" alt=".." src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTUzIiB2aWV3Qm94PSIwIDAgMTIwIDE1MyI+PC9zdmc+">
                                     </a>
                                     <div class="mini_cart_info">
                                         <a href="{{route('product.details',['id'=>$product['item']->id])}}" class="mini_cart_title truncate">{{$product['item']->name}}</a>
@@ -217,7 +219,7 @@
                                             <p class="cart_selling_plan"></p>
                                             <div class="cart_meta_price price">
                                                 <div class="cart_price">
-                                                    <ins>Ksh {{number_format($product['price'])}}</ins>
+                                                    <ins>Ksh {{number_format($product['item']->entity[0]->price)}}</ins>
                                                 </div>
                                             </div>
                                         </div>
@@ -302,16 +304,8 @@
         </div>
         <div class="mini_cart_wrap">
             <div class="search_header mini_search_frm pr js_frm_search" role="search">
-                <div class="frm_search_cat mb__20">
-                    <select name="product_type">
-                        <option value="*">All Categories</option>
-                        @foreach ($categories as $category)
-                            <option value="">{{$category->category}}</option>
-                        @endforeach
-                    </select>
-                </div>
                 <div class="frm_search_input pr oh">
-                    <input class="search_header__input js_iput_search placeholder-black" autocomplete="search" type="text" name="search" id="search" placeholder="Search for products">
+                    <input class="search_header__input js_iput_search placeholder-black" type="text" name="search" id="search" placeholder="Search for products">
                     <button class="search_header__submit js_btn_search" type="submit"><i class='bx bx-search-alt-2' ></i>
                     </button>
                 </div>
@@ -327,14 +321,14 @@
                                         <div class='row mb__10 pb__10'>
                                             <div class='col widget_img_pr'>
                                                 <a class='db pr oh' href='{{route('product.details',['id'=>$product->id])}}'>
-                                                    <img src='data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%201200%201200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E' class='w__100 lz_op_ef lazyload' alt='..' data-src='{{Storage::url($product->images[0]->url??null)}}' width='80' height='80'>
+                                                    <img src='data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%201200%201200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E' class='w__100 lz_op_ef lazyload' alt='..' data-src='{{Storage::url($product->img_urls['urls'][0]??null)}}' width='80' height='80'>
                                                 </a>
                                             </div>
                                             <div class='col widget_if_pr'>
                                             <a class='product-title db' href='{{route('product.details',['id'=>$product->id])}}'>
                                                 {{$product->name}}
                                             </a>
-                                            <ins>Ksh {{number_format($product->price)}}</ins>
+                                            <ins>Ksh {{number_format($product->entity[0]->price)}}</ins>
                                             </div>
                                         </div>
                                     @endforeach
@@ -423,11 +417,9 @@
     <div id="maanar-section-mb_cat_js" class="mb_nav_tab">
         <div id="maanar-section-mb_cat" class="maanar-section">
             <ul id="menu_mb_cat" class="nt_mb_menu">
-                @foreach ($categories as $category)
                 <li class="menu-item">
-                    <a href="{{route('shop')}}"></i>{{$category->category}}</a>
+                    <a href="{{route('shop')}}"></i>Clothes</a>
                 </li>
-                @endforeach
             </ul>
         </div>
     </div>
@@ -439,6 +431,7 @@
 
 <script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 {!! Toastr::message() !!}
+<script src="https://cdn.jsdelivr.net/npm/nouislider@15.8.1/dist/nouislider.min.js"></script>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>

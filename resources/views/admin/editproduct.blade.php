@@ -127,13 +127,13 @@
                     <div class="col-md-4">
                         <div class="form-group my-3">
                             <label class="fw-bolder mb-2">{{__('Product Price')}}</label>
-                            <input type="number" min="0" class="form-control" name="price" value="{{$product->price}}">
+                            <input type="number" min="0" class="form-control" name="price" value="{{$product->entity[0]->price}}">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group my-3">
                             <label class="fw-bolder mb-2">{{__('Retail Price')}}</label>
-                            <input type="number" min="0" class="form-control" name="retail_price" value="{{$product->retail_price}}">
+                            <input type="number" min="0" class="form-control" name="retail_price" value="{{$product->entity[0]->retail_price}}">
                         </div>
                     </div>
                     <div class="col-md-12">

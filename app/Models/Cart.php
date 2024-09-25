@@ -19,23 +19,23 @@ class Cart
 
     public function add($item, $id)
     {
-        $storedItem = ['qty'=>0, 'price'=>$item->price, 'item'=>$item];
+        $storedItem = ['qty'=>0, 'price'=>$item->entity[0]->price, 'item'=>$item];
         if (array_key_exists($id, $this->items)) {
             $storedItem = $this->items[$id];
         }
         $storedItem['qty']++;
-        $storedItem['price'] = $item->price * $storedItem['qty'];
+        $storedItem['price'] = $item->entity[0]->price * $storedItem['qty'];
         $this->items[$id] = $storedItem;
         $this->totalQty++;
-        $this->totalPrice += $item->price;
+        $this->totalPrice += $item->entity[0]->price;
     }
 
     public function reduce($id)
     {
         $this->items[$id]['qty']--;
-        $this->items[$id]['price'] -= $this->items[$id]['item']->price;
+        $this->items[$id]['price'] -= $this->items[$id]['item']->entity[0]->price;
         $this->totalQty--;
-        $this->totalPrice -= $this->items[$id]['item']->price;
+        $this->totalPrice -= $this->items[$id]['item']->entity[0]->price;
 
         if ($this->items[$id]['qty']<=0)
         {

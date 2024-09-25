@@ -1,8 +1,8 @@
 <?php
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\User\HomeController;
+use App\Http\Controllers\User\PaymentController;
 use App\Http\Controllers\User\CartController;
 use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\Auth\VerificationController;

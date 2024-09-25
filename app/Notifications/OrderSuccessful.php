@@ -54,7 +54,7 @@ class OrderSuccessful extends Notification
     public function toArray(object $notifiable): array
     {
         return [
-            'data' =>'The deposit of '. $this->amount.' by '. $this->customer.' was unsuccessful'
+            'data' =>'The deposit of Ksh.'. number_format($this->amount).' by '. $this->customer.' was unsuccessful'
         ];
     }
 }

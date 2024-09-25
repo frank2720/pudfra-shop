@@ -20,7 +20,7 @@ class ProfileController extends Controller
     public function profile(Request $request): View
     {
         $categories =  Category::all();
-        $latest = Product::with('images')
+        $latest = Product::with('entity')
             ->latest()
             ->paginate(8);
         $json_data = File::get(storage_path('app/public/towns/towns.json'));

@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
 use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use Swap\Laravel\Facades\Swap;
-use Torann\GeoIP\Facades\GeoIP;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
@@ -17,23 +16,12 @@ class HomeController extends Controller
     public function index(Request $request)
     {
 
-        $categories =  Category::all();
-
-        $trending_products = Product::with('images')
-                                ->inRandomOrder()
-                                ->paginate(12);
+        $trending_products = Product::with('entity')->inRandomOrder()->paginate(12);
+        $bestsales = Product::inRandomOrder()->paginate(8);
+        $latest = Product::latest()->paginate(8);
 
         $json_data = File::get(storage_path('app/public/towns/towns.json'));
-
         $towns = json_decode($json_data);
-
-        $bestsales = Product::with('images')
-                        ->inRandomOrder()
-                        ->paginate(8);
-
-        $latest = Product::with('images')
-                        ->latest()
-                        ->paginate(8);
 
         $oldCart = session()->get('cart');
         $cart = new Cart($oldCart);
@@ -47,7 +35,6 @@ class HomeController extends Controller
 
         return view('home',[
             'towns'=>$towns,
-            'categories'=> $categories,
             'trending_products'=>$trending_products,
             'bestsales'=>$bestsales,
             'latest'=>$latest,
@@ -59,30 +46,18 @@ class HomeController extends Controller
     public function about_us()
     {
 
-        $categories =  Category::all();
-
-        $trending_products = Product::with('images')
-                                ->inRandomOrder()
-                                ->paginate(12);
+        $trending_products = Product::inRandomOrder()->paginate(12);
+        $bestsales = Product::inRandomOrder()->paginate(8);
+        $latest = Product::latest()->paginate(8);
 
         $json_data = File::get(storage_path('app/public/towns/towns.json'));
-
         $towns = json_decode($json_data);
-
-        $bestsales = Product::with('images')
-                        ->inRandomOrder()
-                        ->paginate(8);
-
-        $latest = Product::with('images')
-                        ->latest()
-                        ->paginate(8);
 
         $oldCart = session()->get('cart');
         $cart = new Cart($oldCart);
 
         return view('about-us',[
             'towns'=>$towns,
-            'categories'=> $categories,
             'trending_products'=>$trending_products,
             'bestsales'=>$bestsales,
             'latest'=>$latest,
@@ -95,11 +70,9 @@ class HomeController extends Controller
     public function product_search(Request $request)
     {
 
-        $products = Product::with('images')
-                ->where('name','like', '%'.$request->search_string.'%')
-                ->orwhere('description','like', '%'.$request->search_string.'%')
-                ->get();
-                                      
+        $products = Product::with('entity')->where('name','like', "%$request->search_string%")
+                            ->orwhere('description','like', "%$request->search_string%")
+                            ->get();
         
         return response()->json([
             'products' => $products,

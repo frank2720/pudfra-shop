@@ -26,15 +26,14 @@ class ProductController extends Controller
         if (count($recentlyViewed) > 10) {
             array_shift($recentlyViewed);
         }
-        $recommendedProducts = Product::whereIn('id', $recentlyViewed)->with('images')->get();
+        $recommendedProducts = Product::whereIn('id', $recentlyViewed)->get();
 
         Cookie::queue('recently_viewed', json_encode($recentlyViewed), 60 * 24 * 7);
-        $categories =  Category::all();
         $json_data = File::get(storage_path('app/public/towns/towns.json'));
         
         $towns = json_decode($json_data);
-        $product = Product::with('images')->find($id);
-        $latest = Product::with('images')
+        $product = Product::with('entity')->find($id);
+        $latest = Product::with('entity')
                         ->latest()
                         ->paginate(8);
         $oldCart = session()->get('cart');
@@ -43,7 +42,6 @@ class ProductController extends Controller
         return view('product-detail', [
         'towns'=>$towns,
         'product'=>$product,
-        'categories'=>$categories,
         'latest'=>$latest,
         'cart_products'=>$cart->items,
         'recommendedProducts'=>$recommendedProducts,
@@ -52,23 +50,23 @@ class ProductController extends Controller
 
     public function products(Request $request)
     {
-        switch ($request->creteria) {
-            case 'name_asc':
-                $products = Product::with('images')->orderBy('name', 'asc')->get();
-                break;
-            case 'name_desc':
-                $products = Product::with('images')->orderBy('name', 'desc')->get();
-                break;
-            case 'price_asc':
-                $products = Product::with('images')->orderBy('price', 'asc')->get();
-                break;
-            case 'price_desc':
-                $products = Product::with('images')->orderBy('price', 'desc')->get();
-                break;
-            default:
-                $products = Product::with('images')->orderBy('name', 'asc')->get(); 
-                break;
-        }
+        $products = match ($request->creteria) {
+                'name_asc' => Product::join('product_entities','products.id','=','product_entities.product_id')
+                                        ->orderBy('name', 'asc')
+                                        ->get(),
+                'name_desc'=> Product::join('product_entities','products.id','=','product_entities.product_id')
+                                        ->orderBy('name', 'desc')
+                                        ->get(),
+                'price_asc'=> Product::join('product_entities','products.id','=','product_entities.product_id')
+                                        ->orderBy('price', 'asc')
+                                        ->get(),
+                'price_desc'=> Product::join('product_entities','products.id','=','product_entities.product_id')
+                                        ->orderBy('price', 'desc')
+                                        ->get(),
+                default=> Product::join('product_entities','products.id','=','product_entities.product_id')
+                                    ->orderBy('name', 'asc')
+                                    ->get(),
+        };
 
         if ($request->ajax()) {
             return response()->json([
@@ -76,8 +74,7 @@ class ProductController extends Controller
             ]);
         }
 
-        $categories = Category::all();
-        $latest = Product::with('images')->latest()->paginate(8);
+        $latest = Product::latest()->paginate(8);
         $oldCart = session()->get('cart');
         $json_data = File::get(storage_path('app/public/towns/towns.json'));
         $towns = json_decode($json_data);
@@ -85,7 +82,6 @@ class ProductController extends Controller
 
         return view('shop', [
             'towns' => $towns,
-            'categories' => $categories,
             'products'=>$products,
             'latest' => $latest,
             'cart_products' => $cart->items,
