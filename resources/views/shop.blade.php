@@ -143,7 +143,7 @@
             <!--left sidebar-->
             <div class="js_sidebar sidebar sidebar_nt col-lg-3 order-12  col-12 space_30 hidden_false lazyload">
                 <div id="maanar-section-sidebar_shop" class="maanar-section nt_ajaxFilter section_sidebar_shop type_instagram">
-                    <div class="h3 mg__0 tu bgb cw visible-sm fs__16 pr">Sidebar<i class="close_pp pegk pe-7s-close fs__40 ml__5"></i>
+                    <div class="h3 mg__0 tu bgb cw visible-sm fs__16 pr">Sidebar<i class="close_pp pegk bx bx-x fs__40 ml__5"></i>
                     </div>
                     <div class="cat_shop_wrap">
                         <div class="cat_fixcl-scroll">
