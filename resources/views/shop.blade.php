@@ -47,7 +47,7 @@
          <!--filter panel area-->
          <div class="filter_area_js filter_area">
             <div id="maanar-section-nt_filter" class="maanar-section nt_ajaxFilter section_nt_filter">
-                <div class="h3 mg__0 tu bgb cw visible-sm fs__16 pr">Filter<i class='close_pp pegk pe-7s-close bx bx-x fs__40 ml__5' ></i>
+                <div class="h3 mg__0 tu bgb cw visible-sm fs__16 pr">Filter<i class='close_pp pegk bx bx-x fs__40 ml__5' ></i>
                 </div>
                 <div class="cat_shop_wrap">
                     <div class="cat_fixcl-scroll">
