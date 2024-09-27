@@ -9,6 +9,10 @@
 
         <!--grid control-->
         <div class="cat_toolbar row fl_center al_center mt__30">
+            <div class="cat_filter col-auto">
+                <a href="#" data-opennt="#maanar-section-nt_filter" data-pos="left" data-remove="true" data-class="popup_filter" data-bg="hide_btn" class="has_icon btn_filter mgr"><i class="iccl fwb bx bx-filter fwb mr__5"></i>Filter</a>
+                    <a href="#" data-id="#maanar-section-nt_filter" class="btn_filter js_filter dn mgr"><i class="iccl fwb bx bx-filter fwb mr__5"></i>Filter</a>
+            </div>
             <div class="cat_view col-auto">
                 <div class="dn dev_desktop">
                     <a href="#" data-mode="grid" data-dev="dk" data-col="6" class="pr mr__10 cat_view_page view_6"></a>
@@ -29,7 +33,7 @@
             </div>
 
             <div class="cat_sortby cat_sortby_js col tr">
-                <select id="sortCriteria" class="col-md-3 selectpicker show-tick in_flex fl_between al_center sortby_pick featurnBtn rounded-pill dropdown-toggle show">
+                <select id="sortCriteria" class="col-md-6 selectpicker show-tick in_flex fl_between al_center sortby_pick featurnBtn rounded-pill dropdown-toggle show">
                     <option value="" disabled selected>Sort product by:</option>
                     <option value="name_asc">Alphabetical, A-Z</option>
                     <option value="name_desc">Alphabetical, Z-A</option>
@@ -40,10 +44,10 @@
         </div>
         <!--end grid control-->
 
-        <!--filter panel area-->
-        <div class="filter_area_js filter_area lazyload">
+         <!--filter panel area-->
+         <div class="filter_area_js filter_area">
             <div id="maanar-section-nt_filter" class="maanar-section nt_ajaxFilter section_nt_filter">
-                <div class="h3 mg__0 tu bgb cw visible-sm fs__16 pr">Filter<i class="close_pp pegk pe-7s-close fs__40 ml__5"></i>
+                <div class="h3 mg__0 tu bgb cw visible-sm fs__16 pr">Filter<i class='close_pp pegk pe-7s-close bx bx-x fs__40 ml__5' ></i>
                 </div>
                 <div class="cat_shop_wrap">
                     <div class="cat_fixcl-scroll">
@@ -75,6 +79,31 @@
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-3 widget">
+                                    <h5 class="widget-title">By Size</h5>
+                                    <div class="loke_scroll">
+                                        <ul class="nt_filter_block nt_filter_styleck css_ntbar" data-filter_condition="and">
+                                            <li>
+                                                <a href="#" aria-label="Narrow selection to products matching tag size s">s</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" aria-label="Narrow selection to products matching tag size m">m</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" aria-label="Narrow selection to products matching tag size l">l</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" aria-label="Narrow selection to products matching tag size xs">xs</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" aria-label="Narrow selection to products matching tag size xl">xl</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" aria-label="Narrow selection to products matching tag size xxl">xxl</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-3 widget">
                                     <h5 class="widget-title">By Brand</h5>
                                     <div class="loke_scroll">
                                         <ul class="nt_filter_block nt_filter_styleck css_ntbar" data-filter_condition="and">
@@ -85,7 +114,7 @@
                                                 <a href="#" aria-label="Narrow selection to products matching tag vendor h&amp;m">h&amp;m</a>
                                             </li>
                                             <li>
-                                                <a href="#" aria-label="Narrow selection to products matching tag vendor maanar">maanar</a>
+                                                <a href="#" aria-label="Narrow selection to products matching tag vendor kalles">kalles</a>
                                             </li>
                                             <li>
                                                 <a href="#" aria-label="Narrow selection to products matching tag vendor levi's">levi's</a>
@@ -100,8 +129,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12 tc mt__20 mb__20 dn">
-                                    <a class="button clear_filter_js" href="#">Clear All Filter</a>
-                                </div>
+                                    <a class="button clear_filter_js" href="#">Clear All Filter</a></div>
                             </div>
                         </div>
                     </div>
@@ -125,64 +153,39 @@
                                         <h5 class="widget-title">Product Categories</h5>
                                         <ul class="product-categories">
                                             <li class="cat-item">
-                                                <a href="shop-full-width-layout.html">Acessories <span class="cat_count">(24)</span></a>
+                                                <a href="">Acessories <span class="cat_count">(24)</span></a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="shop-1600px-layout.html">Bottom <span class="cat_count">(13)</span></a>
+                                                <a href="">Bottom <span class="cat_count">(13)</span></a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="shop-filter-options.html">Denim <span class="cat_count">(6)</span></a>
+                                                <a href="">Denim <span class="cat_count">(6)</span></a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="shop-full-width-layout.html">Dress <span class="cat_count">(7)</span></a>
+                                                <a href="">Dress <span class="cat_count">(7)</span></a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="shop-1600px-layout.html">Jackets <span class="cat_count">(6)</span></a>
+                                                <a href="">Jackets <span class="cat_count">(6)</span></a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="shop-filter-options.html">Jewellry <span class="cat_count">(9)</span></a>
+                                                <a href="">Jewellry <span class="cat_count">(9)</span></a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="shop-full-width-layout.html">Men <span class="cat_count">(18)</span></a>
+                                                <a href="">Men <span class="cat_count">(18)</span></a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="shop-1600px-layout.html">Shoes <span class="cat_count">(7)</span></a>
+                                                <a href="">Shoes <span class="cat_count">(7)</span></a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="shop-filter-options.html">Tops <span class="cat_count">(8)</span></a>
+                                                <a href="">Tops <span class="cat_count">(8)</span></a>
                                             </li>
                                             <li class="cat-item current-cat">
-                                                <a href="shop-full-width-layout.html">Women <span class="cat_count">(39)</span></a>
+                                                <a href="">Women <span class="cat_count">(39)</span></a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="shop-1600px-layout.html">T-Shirt <span class="cat_count">(9)</span></a>
+                                                <a href="">T-Shirt <span class="cat_count">(9)</span></a>
                                             </li>
                                         </ul>
-                                    </div>
-                                    <div class="col-12 col-md-12 widget">
-                                        <h5 class="widget-title">Filter by price</h5>
-                                        <div class="loke_scroll">
-                                            <ul class="nt_filter_block nt_filter_styleck css_ntbar">
-                                                <li>
-                                                    <a href="#" aria-label="Narrow selection to products matching tag price $50-$100">$50-$100</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" aria-label="Narrow selection to products matching tag price $100-$150">$100-$150</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" aria-label="Narrow selection to products matching tag price $150-$200">$150-$200</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" aria-label="Narrow selection to products matching tag price $250-$300">$250-$300</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" aria-label="Narrow selection to products matching tag price $350-$400">$350-$400</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" aria-label="Narrow selection to products matching tag price $450-$500">$450-$500</a>
-                                                </li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

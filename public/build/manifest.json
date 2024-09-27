@@ -44,6 +44,14 @@
     "file": "assets/favicon-ff1983d7.png",
     "src": "resources/assets/images/favicon.png"
   },
+  "resources/assets/images/filter_selected.svg": {
+    "file": "assets/filter_selected-cf4f002b.svg",
+    "src": "resources/assets/images/filter_selected.svg"
+  },
+  "resources/assets/images/lds-sw.svg": {
+    "file": "assets/lds-sw-5944ae61.svg",
+    "src": "resources/assets/images/lds-sw.svg"
+  },
   "resources/assets/images/plyr.svg": {
     "file": "assets/plyr-abe6c300.svg",
     "src": "resources/assets/images/plyr.svg"
@@ -72,14 +80,14 @@
     "src": "resources/js/admin.js"
   },
   "resources/js/app.css": {
-    "file": "assets/app-098caf26.css",
+    "file": "assets/app-636c56f3.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
     "css": [
-      "assets/app-098caf26.css"
+      "assets/app-636c56f3.css"
     ],
-    "file": "assets/app-1ea8c49d.js",
+    "file": "assets/app-e8d55108.js",
     "imports": [
       "_boxicons-a460ae34.js"
     ],
