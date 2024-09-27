@@ -5,15 +5,15 @@
 @section('content')
 <div id="nt_content">
 
-    <div class="container container_cat pop_default cat_default mb__20">
+    <div class="container-fluid container_cat pop_default cat_default mb__20">
 
         <!--grid control-->
         <div class="cat_toolbar row fl_center al_center mt__30">
-            <div class="cat_filter col-auto">
+            <div class="cat_filter col">
                 <a href="#" data-opennt="#maanar-section-nt_filter" data-pos="left" data-remove="true" data-class="popup_filter" data-bg="hide_btn" class="has_icon btn_filter mgr"><i class="iccl fwb bx bx-filter fwb mr__5"></i>Filter</a>
                     <a href="#" data-id="#maanar-section-nt_filter" class="btn_filter js_filter dn mgr"><i class="iccl fwb bx bx-filter fwb mr__5"></i>Filter</a>
             </div>
-            <div class="cat_view col-auto">
+            <div class="cat_view col">
                 <div class="dn dev_desktop">
                     <a href="#" data-mode="grid" data-dev="dk" data-col="6" class="pr mr__10 cat_view_page view_6"></a>
                     <a href="#" data-mode="grid" data-dev="dk" data-col="4" class="pr mr__10 cat_view_page view_4"></a>
