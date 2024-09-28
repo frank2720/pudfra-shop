@@ -34,8 +34,8 @@
                     <button type="submit" class="btn btn-primary btn-block">Log in</button>
                 </div>
                 <div class="clearfix">
-                    <label class="float-left form-check-label"><input type="checkbox" name="remember"> Remember me</label>
-                    <a href="{{ route('password.request') }}" class="float-right">Forgot Password?</a>
+                    <label class="float-start form-check-label"><input type="checkbox" name="remember"> Remember me</label>
+                    <a href="{{ route('password.request') }}" class="float-end">Forgot Password?</a>
                 </div>        
             </form>
             <p class="text-center"><a href="{{route('register')}}">Create an Account</a></p>            
