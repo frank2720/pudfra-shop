@@ -4,10 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Models\Cart;
 use App\Models\Product;
-use App\Models\Category;
 use Illuminate\Http\Request;
-use Swap\Laravel\Facades\Swap;
-use Torann\GeoIP\Facades\GeoIP;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Cookie;

@@ -30,16 +30,16 @@ class Product extends Model
           'categories'
         ];
 
-public function subcategories()
-{
-  return $this->belongsTo(SubCategory::class);
-}
+      public function subcategories()
+      {
+        return $this->belongsTo(SubCategory::class);
+      }
 
 
-public function entity()
-{
-  return $this->hasMany(ProductEntity::class,'product_id');
-}
+      public function entity()
+      {
+        return $this->hasMany(ProductEntity::class,'product_id');
+      }
 
 
 }

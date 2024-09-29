@@ -90,9 +90,9 @@
             <!-- Bar Chart -->
             <div id="cartegoryChart" class="mt-4"></div>
 
-            <script>
+            <!--<script>
                 document.addEventListener("DOMContentLoaded", () => {
-                    const data = @json($categoryData);
+                    const data = json(categoryData);
                     const categories = data.map(item => item.category);
                     const seriesData = data.map(item => item.total);
                     new ApexCharts(document.querySelector("#cartegoryChart"), {
@@ -133,7 +133,7 @@
                     },
                     }).render();
                 });
-            </script>
+            </script>-->
             <!-- End Bar Chart -->
 
           </div>

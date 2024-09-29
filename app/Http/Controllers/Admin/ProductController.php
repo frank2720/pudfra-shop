@@ -4,7 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use Carbon\Carbon;
 use App\Models\Product;
+use App\Models\Category;
+use App\Models\ProductSize;
+use App\Models\ProductColor;
 use Illuminate\Http\Request;
+use App\Models\ProductEntity;
 use App\Http\Controllers\Controller;
 use Intervention\Image\ImageManager;
 use App\Models\Image as ProductImage;
@@ -18,6 +22,7 @@ class ProductController extends Controller
         $percentageIncrease = round(($rise/$cVal)*100,1);
         return $percentageIncrease;
     }
+
     public function index(Request $request)
     {
         $Tproducts = Product::count();
@@ -58,17 +63,86 @@ class ProductController extends Controller
                                     'total' => $category->products_count
                                 ];
                             });*/
-        
-
+        $categories = Category::get()->all();
+        $colors = ProductColor::get()->all();
+        $sizes = ProductSize::get()->all();
         $user = $request->user();
         return view('admin.index',[
             'Tproducts'=>$Tproducts,
             'productsIncrease'=> $pIncrease,
             'user'=>$user,
+            'categories'=>$categories,
+            'colors'=>$colors,
+            'sizes'=>$sizes,
             'months' => $months,
             'monthlyProducts' => $monthlyProducts,
         ]);
     }
+
+
+    public function products(Request $request)
+    {
+        $categories = Category::get()->all();
+        $colors = ProductColor::get()->all();
+        $sizes = ProductSize::get()->all();
+        $user = $request->user();
+        $products = Product::with(['entity'])->paginate(10);
+        return view('admin.products',[
+            'categories'=>$categories,
+            'colors'=>$colors,
+            'sizes'=>$sizes,
+            'products'=>$products,
+            'user'=>$user
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name'=>'required|string|max:255',
+            'img.*'=>'image|mimes:jpeg,png,jpg,gif,svg,webp',
+            'category'=>'required',
+            'description'=>'required|string',
+            'color'=>'integer',
+            'size'=>'integer',
+            'sku'=>'required|string|max:255',
+            'price'=>'required',
+            'retail_price'=>'required',
+            'quantity'=>'required|integer'
+        ]);
+
+        $imageUrls = [];
+
+        if($request->hasFile('img'))
+        {
+            foreach ($request->file('img') as $productImg) {
+                $imagename = str()->uuid().'.webp';
+                $manager = new ImageManager(new Driver());
+                $manager->read($productImg)->toWebp()->save(storage_path("app/public/products/$imagename"));
+                $imageUrls[] = "products/$imagename";
+            }
+        }
+
+        $product = new Product;
+        $product->name = $request->name;
+        $product->img_urls = ['urls' => $imageUrls];
+        $product->category_id = $request->category;
+        $product->description = $request->description;
+        $product->save();
+
+        $product_entity = new ProductEntity;
+        $product_entity->product_id = $product->id;
+        $product_entity->color_attribute_id = $request->color;
+        $product_entity->size_attribute_id = $request->size;
+        $product_entity->sku = $request->sku;
+        $product_entity->price = $request->price;
+        $product_entity->retail_price = $request->retail_price;
+        $product_entity->quantity = $request->quantity;
+        $product_entity->save();
+
+        return back()->with('success','added successfully!');
+    }
+
 
     private function formatMonthlyData($data, $months)
     {
@@ -78,18 +152,6 @@ class ProductController extends Controller
         }
         return $formatted;
     }
-
-  /*  public function products(Request $request)
-    {
-        $user = $request->user();
-        $products = Product::with(['images','category'])->paginate(10);
-        $categories = Category::all();
-        return view('admin.products',[
-            'products'=>$products,
-            'categories' => $categories,
-            'user'=>$user
-        ]);
-    }*/
 
     public function categories()
     {
@@ -129,48 +191,6 @@ class ProductController extends Controller
       //  $category = Category::find($category);
         $category->delete();
         return back()->with('success','deleted successfully!');
-    }
-
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name'=>'required|string',
-            'category'=>'required',
-            'price'=>'required',
-            'retail_price'=>'required',
-            'description'=>'required|string',
-            'img.*'=>'required|image',
-        ],
-        [
-            'name.required'=>'Product name required',
-            'price.required'=>'Product price required',
-            'retail_price.required'=>'Product retail price required',
-            'description.required'=>'Product description required',
-            'img.required'=>'Upload product image',
-            'img.image'=>'file must be an image'
-
-        ]);
-
-        $product = new Product;
-        $product->name = $request->name;
-        $product->category_id = $request->category;
-        $product->price = $request->price;
-        $product->retail_price = $request->retail_price;
-        $product->description = $request->description;
-        $product->save();
-
-        foreach ($request->file('img') as $productImg) {
-            $imagename = str()->uuid().'.webp';
-            $manager = new ImageManager(new Driver());
-            $manager->read($productImg)->toWebp()->save(storage_path('app/public/products/'.$imagename));
-            //$path =  $productImg->store('products');
-            //$path =Storage::disk('public')->put('products',$productImg);
-            $image = new ProductImage;
-            $image->url = 'products/'.$imagename;
-            $image->product_id = $product->id;
-            $image->save();
-        }
-        return back()->with('success','added successfully!');
     }
 
     public function edit($product)

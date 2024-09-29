@@ -206,11 +206,46 @@
                                 <div class="form-group">
                                     <label class="fw-bolder my-2">Select Category</label>
                                   <select class="form-control" required name="category">
-                                    <option selected disabled>{{__('Open to select Category')}}</option>
                                     @foreach ($categories as $category)
-                                        <option value={{$category->id}}>{{$category->category}}</option>
+                                        <option value={{$category->id}}>{{$category->name}}</option>
                                     @endforeach
                                   </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="fw-bolder my-2">Select Color</label>
+                                  <select class="form-control" required name="color">
+                                    @foreach ($colors as $color)
+                                        <option value={{$color->id}}>{{$color->value}}</option>
+                                    @endforeach
+                                  </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="fw-bolder my-2">Select Size</label>
+                                  <select class="form-control" required name="size">
+                                    @foreach ($sizes as $size)
+                                        <option value={{$size->id}}>{{$size->value}}</option>
+                                    @endforeach
+                                  </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="fw-bolder my-2" for="p_sku">{{__('SKU')}}</label>
+                                    <input type="text" id="p_sku" class="form-control" name="sku" required autocomplete="off">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="fw-bolder my-2" for="p_quantity">{{__('Quantity')}}</label>
+                                    <input type="text" id="p_quantity" class="form-control" name="quantity" required autocomplete="off">
                                 </div>
                             </div>
 
@@ -266,6 +301,7 @@
         </div>
         </div>
     </div><!-- End addproduct Modal-->
+    
     @if (session('warning'))
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
             <i class='bx bxs-x-circle me-1'></i>

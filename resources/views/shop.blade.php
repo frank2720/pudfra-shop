@@ -153,37 +153,37 @@
                                         <h5 class="widget-title">Product Categories</h5>
                                         <ul class="product-categories">
                                             <li class="cat-item">
-                                                <a href="">Acessories <span class="cat_count">(24)</span></a>
+                                                <a href="javascript:void(0)">Acessories <span class="cat_count">(24)</span></a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="">Bottom <span class="cat_count">(13)</span></a>
+                                                <a href="javascript:void(0)">Bottom <span class="cat_count">(13)</span></a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="">Denim <span class="cat_count">(6)</span></a>
+                                                <a href="javascript:void(0)">Denim <span class="cat_count">(6)</span></a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="">Dress <span class="cat_count">(7)</span></a>
+                                                <a href="javascript:void(0)">Dress <span class="cat_count">(7)</span></a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="">Jackets <span class="cat_count">(6)</span></a>
+                                                <a href="javascript:void(0)">Jackets <span class="cat_count">(6)</span></a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="">Jewellry <span class="cat_count">(9)</span></a>
+                                                <a href="javascript:void(0)">Jewellry <span class="cat_count">(9)</span></a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="">Men <span class="cat_count">(18)</span></a>
+                                                <a href="javascript:void(0)">Men <span class="cat_count">(18)</span></a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="">Shoes <span class="cat_count">(7)</span></a>
+                                                <a href="javascript:void(0)">Shoes <span class="cat_count">(7)</span></a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="">Tops <span class="cat_count">(8)</span></a>
+                                                <a href="javascript:void(0)">Tops <span class="cat_count">(8)</span></a>
                                             </li>
                                             <li class="cat-item current-cat">
-                                                <a href="">Women <span class="cat_count">(39)</span></a>
+                                                <a href="javascript:void(0)">Women <span class="cat_count">(39)</span></a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="">T-Shirt <span class="cat_count">(9)</span></a>
+                                                <a href="javascript:void(0)">T-Shirt <span class="cat_count">(9)</span></a>
                                             </li>
                                         </ul>
                                     </div>
