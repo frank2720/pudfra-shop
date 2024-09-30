@@ -36,13 +36,17 @@ class ProductController extends Controller
         $oldCart = session()->get('cart');
         $cart = new Cart($oldCart);
 
-        return view('product-detail', [
-        'towns'=>$towns,
-        'product'=>$product,
-        'latest'=>$latest,
-        'cart_products'=>$cart->items,
-        'recommendedProducts'=>$recommendedProducts,
-        'totalPrice'=>$cart->totalPrice]);
+        if($product != null){
+            return view('product-detail', [
+                'towns'=>$towns,
+                'product'=>$product,
+                'latest'=>$latest,
+                'cart_products'=>$cart->items,
+                'recommendedProducts'=>$recommendedProducts,
+                'totalPrice'=>$cart->totalPrice]);
+        }else{
+            return view('errors.product.unavailable');
+        }
     }
 
     public function products(Request $request)

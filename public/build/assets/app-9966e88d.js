@@ -17,7 +17,7 @@ import"./boxicons-a460ae34.js";(function(t){const o=t("body"),p=t(window),u=o.ha
                         </div>
                         <div class="product-info mt__15">
                             <h3 class="product-title pr fs__14 mg__0 fwm">
-                                <a class="cd chp" href="/product-details_${u.id}">${u.name}</a>
+                                <a class="cd chp max-lines" href="/product-details_${u.id}">${u.name}</a>
                             </h3>
                             <span class="price dib mb__5">
                                 <ins>

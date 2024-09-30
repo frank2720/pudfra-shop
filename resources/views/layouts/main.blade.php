@@ -306,7 +306,7 @@
             <div class="search_header mini_search_frm pr js_frm_search" role="search">
                 <div class="frm_search_input pr oh">
                     <input class="search_header__input js_iput_search placeholder-black" type="text" name="search" id="search" placeholder="Search for products">
-                    <button class="search_header__submit js_btn_search" type="submit"><i class='bx bx-search-alt-2' ></i>
+                    <button class="search_header__submit js_btn_search" type="submit">
                     </button>
                 </div>
                 <div class="ld_bar_search"></div>
