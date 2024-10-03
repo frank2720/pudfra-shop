@@ -6,6 +6,7 @@ use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Cookie;
 
@@ -15,6 +16,7 @@ class ProductController extends Controller
 
     public function product_details($id)
     {
+        $categories = Category::with('subcategories')->get();
 
         $recentlyViewed = json_decode(Cookie::get('recently_viewed', '[]'), true);
         if (!in_array($id, $recentlyViewed)) {
@@ -41,6 +43,7 @@ class ProductController extends Controller
                 'towns'=>$towns,
                 'product'=>$product,
                 'latest'=>$latest,
+                'categories'=>$categories,
                 'cart_products'=>$cart->items,
                 'recommendedProducts'=>$recommendedProducts,
                 'totalPrice'=>$cart->totalPrice]);
@@ -51,6 +54,7 @@ class ProductController extends Controller
 
     public function products(Request $request)
     {
+        $categories = Category::with('subcategories')->get();
         $products = match ($request->creteria) {
                 'name_asc' => Product::join('product_entities','products.id','=','product_entities.product_id')
                                         ->orderBy('name', 'asc')
@@ -83,6 +87,7 @@ class ProductController extends Controller
 
         return view('shop', [
             'towns' => $towns,
+            'categories'=>$categories,
             'products'=>$products,
             'latest' => $latest,
             'cart_products' => $cart->items,

@@ -152,9 +152,11 @@
                                     <div class="col-12 col-md-12 widget widget_product_categories cat_count_false">
                                         <h5 class="widget-title">Product Categories</h5>
                                         <ul class="product-categories">
+                                            @foreach ($categories as $category)
                                             <li class="cat-item">
-                                                <a href="javascript:void(0)">Acessories <span class="cat_count">(24)</span></a>
+                                                <a href="javascript:void(0)">{{$category->name}} <span class="cat_count">(24)</span></a>
                                             </li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </div>

@@ -398,14 +398,18 @@
     <div id="maanar-section-mb_nav_js" class="mb_nav_tab active">
         <div id="maanar-section-mb_nav" class="maanar-section">
             <ul id="menu_mb_ul" class="nt_mb_menu">
+                @foreach ($categories as $category)
                 <li class="menu-item menu-item-has-children only_icon_false">
-                    <a href="{{route('shop')}}"><span class="nav_link_txt flex al_center">Shop</span><span class="nav_link_icon ml__5"></span></a>
+                    <a href="{{route('shop')}}"><span class="nav_link_txt flex al_center">{{$category->name}}</span><span class="nav_link_icon ml__5"></span></a>
                     <ul class="sub-menu">
+                        @foreach ($category->subcategories as $subcat)
                         <li class="menu-item">
-                            <a href="">Shopping cart</a>
+                            <a href="">{{$subcat->name}}</a>
                         </li>
+                        @endforeach
                     </ul>
                 </li>
+                @endforeach
             </ul>
         </div>
     </div>

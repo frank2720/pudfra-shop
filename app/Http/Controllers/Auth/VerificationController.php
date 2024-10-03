@@ -33,7 +33,7 @@ class VerificationController extends Controller
     public function show(Request $request)
     {
 
-        $categories =  Category::all();
+        $categories =  Category::with('subcategories')->get();
         
         $trending_products = Product::with('entity')
                                 ->inRandomOrder()

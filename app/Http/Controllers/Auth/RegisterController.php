@@ -30,7 +30,7 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
 
-        $categories =  Category::all();
+        $categories =  Category::with('subcategories')->get();
         
         $trending_products = Product::with('entity')
                                 ->inRandomOrder()

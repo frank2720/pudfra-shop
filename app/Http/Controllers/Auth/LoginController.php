@@ -29,7 +29,7 @@ class LoginController extends Controller
     public function showLoginForm()
     {
 
-        $categories =  Category::all();
+        $categories =  Category::with('subcategories')->get();
         
         $trending_products = Product::with('entity')
                                 ->inRandomOrder()

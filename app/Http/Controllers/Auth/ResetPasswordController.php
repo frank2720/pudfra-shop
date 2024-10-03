@@ -30,7 +30,7 @@ class ResetPasswordController extends Controller
     {
         $token = $request->route()->parameter('token');
 
-        $categories =  Category::all();
+        $categories =  Category::with('subcategories')->get();
         
         $trending_products = Product::with('entity')
                                 ->inRandomOrder()

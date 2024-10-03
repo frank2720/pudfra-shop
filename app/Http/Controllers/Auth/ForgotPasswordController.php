@@ -29,7 +29,7 @@ class ForgotPasswordController extends Controller
     public function showLinkRequestForm()
     {
 
-        $categories =  Category::all();
+        $categories =  Category::with('subcategories')->get();
         
         $trending_products = Product::with('entity')
                                 ->inRandomOrder()

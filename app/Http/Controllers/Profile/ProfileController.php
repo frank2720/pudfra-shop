@@ -19,7 +19,7 @@ class ProfileController extends Controller
 
     public function profile(Request $request): View
     {
-        $categories =  Category::all();
+        $categories =  Category::with('subcategories')->get();
         $latest = Product::with('entity')
             ->latest()
             ->paginate(8);

@@ -85,7 +85,7 @@ class CartController extends Controller
 
     public function getCart()
     {
-        
+        $categories = Category::with('subcategories')->get();
         $products = Product::with('entity')->get();
         $latest = Product::latest()->paginate(8);
         $trending_products = Product::latest()->paginate(8);
@@ -101,6 +101,7 @@ class CartController extends Controller
         return view('shopping_cart',[
         'towns'=>$towns,
         'products'=>$products,
+        'categories'=>$categories,
         'trending_products'=>$trending_products,
         'latest'=>$latest,
         'recommendedProducts'=>$recommendedProducts,

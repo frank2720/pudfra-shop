@@ -16,6 +16,7 @@ class HomeController extends Controller
     public function index(Request $request)
     {
 
+        $categories = Category::with('subcategories')->get();
         $trending_products = Product::with('entity')->inRandomOrder()->paginate(12);
         $bestsales = Product::inRandomOrder()->paginate(8);
         $latest = Product::latest()->paginate(8);
@@ -37,6 +38,7 @@ class HomeController extends Controller
             'towns'=>$towns,
             'trending_products'=>$trending_products,
             'bestsales'=>$bestsales,
+            'categories'=>$categories,
             'latest'=>$latest,
             'cart_products'=>$cart->items,
             'totalPrice'=>$cart->totalPrice,
@@ -45,7 +47,7 @@ class HomeController extends Controller
 
     public function about_us()
     {
-
+        $categories = Category::with('subcategories')->get();
         $trending_products = Product::inRandomOrder()->paginate(12);
         $bestsales = Product::inRandomOrder()->paginate(8);
         $latest = Product::latest()->paginate(8);
@@ -61,6 +63,7 @@ class HomeController extends Controller
             'trending_products'=>$trending_products,
             'bestsales'=>$bestsales,
             'latest'=>$latest,
+            'categories'=>$categories,
             'cart_products'=>$cart->items,
             'totalPrice'=>$cart->totalPrice,
         ]);
