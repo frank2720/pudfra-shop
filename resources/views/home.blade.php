@@ -113,7 +113,7 @@
                         <h3 class="product-title pr fs__14 mg__0">
                             <a class="cd chp max-lines" href="{{route('product.details',['id'=>$product->id])}}">{{__(ucfirst(strtolower($product->name)))}}</a>
                         </h3>
-                        <span class="price dib mb__5"><ins>Ksh {{number_format($product->entity[0]->price)}}</ins></span>
+                        <span class="price dib mb__5"><ins>USD {{number_format($product->entity[0]->price)}}</ins></span>
                     </div>
                 </div>
             </div>

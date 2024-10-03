@@ -25,7 +25,7 @@
                 />
                 <div class="mx-3">
                     <p>{{$product['item']->name}}</p>
-                    <h5>Ksh {{number_format($product['item']->entity[0]->price)}}</h5>
+                    <h5>USD {{number_format($product['item']->entity[0]->price)}}</h5>
                     <small
                     class="text-white bg-success px-2 py-1 d-inline-block rounded-3 mt-2"
                     >In Stock</small
@@ -58,7 +58,7 @@
             <h6 class="mb-4">Order Summary</h6>
             <div class="d-flex justify-content-between align-items-center">
             <div>Subtotal</div>
-            <div><strong>Ksh {{number_format($totalPrice)}}</strong></div>
+            <div><strong>USD {{number_format($totalPrice)}}</strong></div>
             </div>
             <hr style="margin:0rem 0rem" />
             <div class="d-flex justify-content-between align-items-center">
@@ -67,12 +67,12 @@
                     $Total = $totalPrice + $delivery
                 @endphp
             <div>Delivery Charge</div>
-            <div><strong>Ksh {{number_format($delivery)}}</strong></div>
+            <div><strong>USD {{number_format($delivery)}}</strong></div>
             </div>
             <hr style="margin:0rem 0rem" />
             <div class="d-flex justify-content-between align-items-center">
             <div>Total</div>
-            <div><strong>Ksh {{number_format($Total)}}</strong></div>
+            <div><strong>USD {{number_format($Total)}}</strong></div>
             </div>
             <form action="{{route('stkpush')}}" method="POST">
                 @csrf
@@ -135,7 +135,7 @@
                                 <h3 class="product-title pr fs__14 mg__0 fwm">
                                     <a class="cd chp max-lines" href="{{route('product.details',['id'=>$product->id])}}">{{__(ucfirst(strtolower($product->name)))}}</a>
                                 </h3>
-                                <span class="price dib mb__5"><ins>Ksh {{number_format($product->entity[0]->price)}}</ins></span>
+                                <span class="price dib mb__5"><ins>USD {{number_format($product->entity[0]->price)}}</ins></span>
                             </div>
                         </div>
                     </div>

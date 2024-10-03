@@ -219,7 +219,7 @@
                                             <p class="cart_selling_plan"></p>
                                             <div class="cart_meta_price price">
                                                 <div class="cart_price">
-                                                    <ins>Ksh {{number_format($product['item']->entity[0]->price)}}</ins>
+                                                    <ins>USD {{number_format($product['item']->entity[0]->price)}}</ins>
                                                 </div>
                                             </div>
                                         </div>
@@ -260,7 +260,7 @@
                 <div class="total row fl_between al_center">
                     <div class="col-auto"><strong>Subtotal:</strong></div>
                     <div class="col-auto tr js_cat_ttprice">
-                        <div class="cart_tot_price">Ksh {{number_format($totalPrice)}}</div>
+                        <div class="cart_tot_price">USD {{number_format($totalPrice)}}</div>
                     </div>
                 </div>
                 <p class="txt_tax_ship mb__5 fs__12">Taxes, shipping and discounts codes calculated at checkout</p>
@@ -326,7 +326,7 @@
                                             <a class='product-title db' href='{{route('product.details',['id'=>$product->id])}}'>
                                                 {{$product->name}}
                                             </a>
-                                            <ins>Ksh {{number_format($product->entity[0]->price)}}</ins>
+                                            <ins>USD {{number_format($product->entity[0]->price)}}</ins>
                                             </div>
                                         </div>
                                     @endforeach
@@ -391,10 +391,7 @@
 <div id="nt_menu_canvas" class="nt_fk_canvas nt_sleft dn lazyload">
     <i class='bx bx-x close_pp pegk ts__03 cd'></i>
     <div class="mb_nav_tabs flex al_center mb_cat_true">
-        <div class="mb_nav_title pr mb_nav_ul flex al_center fl_center active" data-id="#maanar-section-mb_nav_js">
-            <span class="db truncate">Menu</span>
-        </div>
-        <div class="mb_nav_title pr flex al_center fl_center" data-id="#maanar-section-mb_cat_js">
+        <div class="mb_nav_title pr mb_nav_ul flex al_center fl_center" data-id="#maanar-section-mb_nav_js">
             <span class="db truncate">Categories</span>
         </div>
     </div>
@@ -408,15 +405,6 @@
                             <a href="">Shopping cart</a>
                         </li>
                     </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div id="maanar-section-mb_cat_js" class="mb_nav_tab">
-        <div id="maanar-section-mb_cat" class="maanar-section">
-            <ul id="menu_mb_cat" class="nt_mb_menu">
-                <li class="menu-item">
-                    <a href="{{route('shop')}}"></i>Clothes</a>
                 </li>
             </ul>
         </div>

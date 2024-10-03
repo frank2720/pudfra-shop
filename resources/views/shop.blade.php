@@ -155,36 +155,6 @@
                                             <li class="cat-item">
                                                 <a href="javascript:void(0)">Acessories <span class="cat_count">(24)</span></a>
                                             </li>
-                                            <li class="cat-item">
-                                                <a href="javascript:void(0)">Bottom <span class="cat_count">(13)</span></a>
-                                            </li>
-                                            <li class="cat-item">
-                                                <a href="javascript:void(0)">Denim <span class="cat_count">(6)</span></a>
-                                            </li>
-                                            <li class="cat-item">
-                                                <a href="javascript:void(0)">Dress <span class="cat_count">(7)</span></a>
-                                            </li>
-                                            <li class="cat-item">
-                                                <a href="javascript:void(0)">Jackets <span class="cat_count">(6)</span></a>
-                                            </li>
-                                            <li class="cat-item">
-                                                <a href="javascript:void(0)">Jewellry <span class="cat_count">(9)</span></a>
-                                            </li>
-                                            <li class="cat-item">
-                                                <a href="javascript:void(0)">Men <span class="cat_count">(18)</span></a>
-                                            </li>
-                                            <li class="cat-item">
-                                                <a href="javascript:void(0)">Shoes <span class="cat_count">(7)</span></a>
-                                            </li>
-                                            <li class="cat-item">
-                                                <a href="javascript:void(0)">Tops <span class="cat_count">(8)</span></a>
-                                            </li>
-                                            <li class="cat-item current-cat">
-                                                <a href="javascript:void(0)">Women <span class="cat_count">(39)</span></a>
-                                            </li>
-                                            <li class="cat-item">
-                                                <a href="javascript:void(0)">T-Shirt <span class="cat_count">(9)</span></a>
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -223,7 +193,7 @@
                                         <h3 class="product-title position-relative mg__0">
                                             <a class="cd chp max-lines" href="{{route('product.details',['id'=>$product->id])}}">{{__(ucfirst(strtolower($product->name)))}}</a>
                                         </h3>
-                                        <span class="price dib mb__5"><ins>Ksh {{number_format($product->entity[0]->price)}}</ins></span>
+                                        <span class="price dib mb__5"><ins>USD {{number_format($product->entity[0]->price)}}</ins></span>
                                     </div>
                                 </div>
                             </div>
