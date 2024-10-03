@@ -78,7 +78,7 @@
                 @csrf
                 <div class="form-group">
                     <input type="text" name="phone" style="border-radius: 1rem" required placeholder="Enter phone number" class="w-100 mt-4"/>
-                    <button type="submit" class="button button_primary w-100 mt-4 btn checkout-payment__btn-place-order w-100 mt-4">Place order</button>
+                    <button type="submit" disabled class="button button_primary w-100 mt-4 btn checkout-payment__btn-place-order w-100 mt-4">Place order</button>
                 </div>
             </form>
         </div>
